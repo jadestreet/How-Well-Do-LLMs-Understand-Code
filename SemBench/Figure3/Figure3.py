@@ -5,11 +5,11 @@ import pandas as pd
 from pathlib import Path
 
 CUR_dir = Path(__file__).parent.resolve()
-DEFAULT_INPUT = CUR_dir.parent / "sembench_updated3.csv"
-DEFAULT_OUT_PNG = CUR_dir / "Figure 2.png"
-DEFAULT_OUT_PDF = CUR_dir / "Figure 2.pdf"
+DEFAULT_INPUT = CUR_dir.parent / "finalresult.csv"
+DEFAULT_OUT_PNG = CUR_dir / "Figure 3.png"
+DEFAULT_OUT_PDF = CUR_dir / "Figure 3.pdf"
 # --- Canonical order you want on the plots ---
-categories = ["Data-Dep", "Dead Code", "Dominators", "Func-Reach", "Liveness", "Loop-Reach"]
+categories = ["Data-Dep", "Dead-Code-S", "Dominators", "Func-Reach", "Liveness", "Dead-Code-L"]
 
 # --- EXACT mapping: canonical name -> name in your CSV ---
 NAME_MAP = {
@@ -43,8 +43,6 @@ model_families = [
 ]
 
 # --- columns in your CSV ---
-
-CSV_PATH = DEFAULT_INPUT
 CSV_CATEGORY_COLS = ["DataDep_p1", "DeadCode_p1", "Dominators_p1", "FuncReach_p1", "Liveness_p1", "LoopReach_p1"]
 CSV_OVERALL_COL = "All_geo_p1"
 
@@ -58,7 +56,7 @@ plt.rcParams.update({
 })
 
 # ===== Read CSV =====
-df = pd.read_csv(CSV_PATH)
+df = pd.read_csv(DEFAULT_INPUT)
 
 # Validate required columns
 required_cols = ["model", CSV_OVERALL_COL] + CSV_CATEGORY_COLS
@@ -132,6 +130,7 @@ means = means[cat_order]
 sds = sds[cat_order]
 sub_acc = sub_acc[:, cat_order]
 
+#ax2.bar(x_cat, means, color="#DEA22C", edgecolor="none")
 ax2.bar(
     x_cat,
     means,
@@ -187,6 +186,7 @@ for rank in sorted(family_best_rank):
 
 means = sub_acc_sorted[family_best_rank].mean(axis=0)
 sds = sub_acc_sorted[family_best_rank].std(axis=0, ddof=0)
+
 ax3.set_xlim(x_cat[0] - 0.1, x_cat[-1] + 0.1)
 ax3.set_xticks(x_cat)
 ax3.set_xticklabels(categories_sorted, rotation=45, ha="right")
@@ -195,6 +195,7 @@ ax3.set_title("Accuracy of the best model in each \n family across semantic cate
 ax3.set_ylim(0, 105)
 ax3.set_yticks(np.arange(0, 101, 20))
 ax3.grid(alpha=0.25, linewidth=0.7)
+
 handles, labels = ax3.get_legend_handles_labels()
 ax3.legend(handles[::-1], labels[::-1],
            loc="upper left", bbox_to_anchor=(1.02, 1.0),

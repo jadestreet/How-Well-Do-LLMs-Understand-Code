@@ -12,7 +12,7 @@ import matplotlib.colors as mcolors
 
 # ------------------------- setting -------------------------
 CUR_dir = Path(__file__).parent.resolve()
-DEFAULT_INPUT = CUR_dir.parent / "sembench_updated3.csv"
+DEFAULT_INPUT = CUR_dir.parent / "finalresult.csv"
 DEFAULT_OUT_PNG = CUR_dir / "Figure 1.png"
 DEFAULT_OUT_PDF = CUR_dir / "Figure 1.pdf"
 
@@ -131,7 +131,7 @@ def draw_gradient_spine_y(ax, side="left", cmap=None, norm_y=None, lw=3.0):
     ax.spines[side].set_visible(False)  
 
 
-# ------------------------- main -------------------------
+# ------------------------- Main Process -------------------------
 def main():
     parser = argparse.ArgumentParser(description="SemBench vs HumanEval dual-axis plot with gradient axes/lines.")
     parser.add_argument("-i", "--input", default=DEFAULT_INPUT, help="Path to sembench CSV (default: sembench_updated3.csv)")
@@ -162,7 +162,6 @@ def main():
                      [r["SemBench"], r["HumanEval"]],
                      color=pair_gray, alpha=0.35, linewidth=1.1, zorder=1)
 
-    # 
     for _, r in dfp.iterrows():
         x = r["SizeB"]; mk = model_to_marker[r["Model"]]
         c_sem = cmap_left(norm_y(r["SemBench"]))
@@ -170,7 +169,7 @@ def main():
         ax_left.scatter([x], [r["SemBench"]], s=84, marker=mk,
                         facecolors=c_sem, edgecolors=c_sem, linewidths=1.0, zorder=4)
         ax_right.scatter([x], [r["HumanEval"]], s=92, marker=mk,
-                         facecolors="white", edgecolors=c_he, linewidths=1.6, zorder=4)
+                         facecolors=c_he, edgecolors=c_he, linewidths=1.6, zorder=4)
 
 
     def plot_grad_trend(ax, x_sizeB, y_vals, cmap):
@@ -185,7 +184,6 @@ def main():
     plot_grad_trend(ax_left, dfp["SizeB"], dfp["SemBench"], cmap_left)
     plot_grad_trend(ax_right, dfp["SizeB"], dfp["HumanEval"], cmap_right)
 
-    # 轴域、刻度
     ax_left.set_xlim(min(TICK_POSITIONS) - 0.8, max(TICK_POSITIONS) + 0.8)
     ax_left.set_xticks(TICK_POSITIONS)
     ax_left.set_xticklabels(TICK_LABELS)
@@ -204,7 +202,7 @@ def main():
     draw_gradient_spine_y(ax_left, side="left", cmap=cmap_left, norm_y=norm_y, lw=3.0)
     draw_gradient_spine_y(ax_right, side="right", cmap=cmap_right, norm_y=norm_y, lw=3.0)
 
-
+    '''
     legend_items = [
         Line2D([0], [0], color=pair_gray, linestyle="-", linewidth=1.1, label="Pair link"),
         Line2D([0], [0], color="black", linewidth=2.2, label="SemBench trend (log-size)"),
@@ -221,6 +219,35 @@ def main():
             Line2D([0], [0], marker=model_to_marker[m], linestyle="None",
                    markersize=7, markerfacecolor="white", markeredgecolor="0.25", label=m)
         )
+    ax_left.legend(handles=legend_items, frameon=False, fontsize=9, ncol=2, loc="lower right")
+    '''
+    # ---- Legend (colored) ----
+    sem_mid = cmap_left(norm_y(50))
+    he_mid  = cmap_right(norm_y(50))
+
+    model_face_edge = {
+        r["Model"]: (
+            cmap_left(norm_y(r["SemBench"])),
+            cmap_right(norm_y(r["HumanEval"]))
+        )
+        for _, r in dfp.iterrows()
+    }
+
+    legend_items = [
+        Line2D([0], [0], color=pair_gray, linestyle="-", linewidth=1.1, label="Pair link"),
+        Line2D([0], [0], color=sem_mid, linewidth=2.2, label="SemBench line and data point"),
+        Line2D([0], [0], color=he_mid,  linewidth=2.2, label="HumanEval line and data point"),
+
+    ]
+    
+    for m in model_list:
+        mk = model_to_marker[m]
+        fcol, ecol = model_face_edge[m]
+        legend_items.append(
+            Line2D([0], [0],
+                marker=mk, linestyle="None", markersize=7, label=m) #markerfacecolor=fcol, markeredgecolor=ecol,
+        )
+
     ax_left.legend(handles=legend_items, frameon=False, fontsize=9, ncol=2, loc="lower right")
 
     fig.tight_layout()
