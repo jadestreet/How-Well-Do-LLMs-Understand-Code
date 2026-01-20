@@ -1,6 +1,5 @@
 # SemBench: Coding without Understanding
-This repository includes the data and script of this project. After downloading the repository and setting up the environment, enter this directory by ```cd Coding_Without_Understanding
-```.
+This repository includes the data and script of this project. After downloading the repository and setting up the environment, enter this directory by ```cd Coding_Without_Understanding```.
 
 ## file execution
 This folder contains files from the data collection stage. To view and execute the script, enter this directory by ```cd file_execution```.
@@ -190,6 +189,7 @@ Computes Spearman correlation between SemBench and benchmark results.
 Background queries.
 2. script\util.py
 Utility functions for the four main scripts.
+
 
 
 
