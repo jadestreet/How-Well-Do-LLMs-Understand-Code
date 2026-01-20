@@ -33,18 +33,20 @@ TEMPLATES = {
         lambda cond: f"Is it possible that the loop with condition '{cond}' is never executed?"
     ],
     "dominators": [
-        lambda cond: (
-            f"In the control‑flow graph, does the loop‑header block for condition "
-            f"'{cond}' strictly dominate every block in the loop body?"
+        lambda a, b: (
+            f"Does the statement {a} dominate {b}?"
         ),
-        lambda cond: (
-            f"For condition '{cond}', must all paths from function entry to any "
-            f"loop‑body statement pass through the loop header?"
-        )
+        lambda a, b: (
+            f"Is it guaranteed that whenever {b} is reached, the statement {a} has already been reached?"
+        ),
     ],
     "data_dependency": [
-        lambda var: f"Is variable '{var}' used after its definition?",
-        lambda var: f"Does the value assigned to '{var}' affect subsequent computations?"
+        lambda a_id, b_id: (
+            f"Does the value of {a_id} depend on the value of {b_id}?"
+        ),
+        lambda a_id, b_id: (
+            f"Does {b_id} determine the value stored in {a_id}?"
+        ),    
     ],
     "liveness": [
         lambda func, var: f"Is variable '{var}' live at the end of function '{func}'?",
@@ -54,10 +56,6 @@ TEMPLATES = {
         lambda code: f"Is the statement '{code}' unreachable during execution?",
         lambda code: f"Can the statement '{code}' be considered dead code because it is never executed?"
     ],
-    "pointer_aliasing": [
-        lambda p1, p2: f"Can pointer '{p1}' alias pointer '{p2}'?",
-        lambda p1, p2: f"Do pointers '{p1}' and '{p2}' refer to the same memory location?"
-    ]
 }
 
 # Complementary templates (alternate phrasing) to balance queries.
@@ -68,23 +66,11 @@ COMPLEMENTARY_TEMPLATES = {
     "loop_reachability": [
         lambda cond: f"Is the loop with condition '{cond}' always executed?"
     ],
-    "dominators": [
-        lambda cond: (
-            f"Is there at least one path that reaches the body of the loop "
-            f"with condition '{cond}' without passing through its header block?"
-        )    
-    ],
-    "data_dependency": [
-        lambda var: f"Does the computation remain unaffected if '{var}' is not used after its definition?"
-    ],
     "liveness": [
         lambda func, var: f"Is variable '{var}' dead at the end of function '{func}'?"
     ],
     "dead_code": [
         lambda code: f"Is it guaranteed that the statement '{code}' will never execute?"
-    ],
-    "pointer_aliasing": [
-        lambda p1, p2: f"Is it guaranteed that pointers '{p1}' and '{p2}' do not alias?"
     ]
 }
 
@@ -189,76 +175,277 @@ def generate_loop_reachability_queries(parsed_code):
         print("Warning: Only one type of answer generated in loop reachability queries.")
     return queries, ground_truth
 
-def generate_loop_dominator_queries(parsed_code):
-    queries, ground_truth = [], []
-    loops = parsed_code.get("loops", [])
-    if not loops:
-        print("No loops found for dominator queries.")
-        return queries, ground_truth
-    pos_count, neg_count = max_query, max_query
-    for loop in loops:
-        if pos_count == 0 and neg_count == 0:
-            break
-        condition = loop.get("cond", "unknown")
-        if loop.get("dominates_body", False) and pos_count > 0:
-            template = random.choice(TEMPLATES["dominators"])
-            q = template(condition)
-            queries.append(q)
-            ground_truth.append(True)
-            pos_count -= 1
-        elif not loop.get("dominates_body", False) and neg_count > 0:
-            template = random.choice(COMPLEMENTARY_TEMPLATES["dominators"])
-            q = template(condition)
-            queries.append(q)
-            ground_truth.append(False)
-            neg_count -= 1
-    if queries and len(set(ground_truth)) < 2:
-        print("Warning: Only one type of answer generated in dominator queries.")
-    return queries, ground_truth
+def generate_statement_dominator_queries(parsed_code):
+    import random
+    rng = random.Random(42)
 
-def generate_variable_dependency_queries(parsed_code):
-    queries, ground_truth = [], []
-    dependencies = parsed_code.get("dependencies", [])
-    if not dependencies:
-        print("No variable dependencies found.")
-        return queries, ground_truth
-    var_counts = Counter([dep.get("var", "unknown") for dep in dependencies])
-    pos_count, neg_count = max_query, max_query
-    for dep in dependencies:
-        if pos_count == 0 and neg_count == 0:
+    MAX_QUERY = 2
+
+    def fmt_stmt(line, code):
+        return f"line {line}:  <statement> {code} </statement>"
+
+    strict_doms = parsed_code.get("strict_dominators", [])
+    if not strict_doms:
+        print("No strict dominator pairs found for this file.")
+        return [], []
+
+    # -------------------------
+    # Positives by function
+    # -------------------------
+    pos_by_func = {}
+    stmts_by_func = {}
+
+    for rec in strict_doms:
+        fn = rec.get("function", "__global__")
+        pos_by_func.setdefault(fn, []).append(rec)
+        stmts_by_func.setdefault(fn, set()).add((rec["a_line"], rec["a_code"]))
+        stmts_by_func[fn].add((rec["b_line"], rec["b_code"]))
+
+    # Fast positive lookup
+    pos_set = {
+        (rec.get("function", "__global__"), rec["a_code"], rec["b_code"])
+        for rec in strict_doms
+    }
+
+    queries, gts = [], []
+    used_pos = set()
+    used_funcs = set()
+
+    # ---------------------------------------------------
+    # Helper: sample ONE negative for a function
+    # ---------------------------------------------------
+    def cross_function_negative(fn_src, fn_dst):
+        a_line, a_code = rng.choice(list(stmts_by_func[fn_src]))
+        b_line, b_code = rng.choice(list(stmts_by_func[fn_dst]))
+        return a_line, a_code, b_line, b_code
+    # ---------------------------------------------------
+    # Priority 1: 1 pos + 1 neg, different functions
+    # ---------------------------------------------------
+    # --------------------------------------------------
+    # Priority 1: 1 positive + 1 negative (different functions)
+    # --------------------------------------------------
+    pos_candidates = [(fn, rec) for fn, lst in pos_by_func.items() for rec in lst]
+    rng.shuffle(pos_candidates)
+
+    func_list = list(stmts_by_func.keys())
+
+    for fn_p, rec in pos_candidates:
+        if fn_p in used_funcs:
+            continue
+
+        # need another function to form negative
+        other_funcs = [f for f in func_list if f != fn_p]
+        if not other_funcs:
+            continue
+
+        fn_n = rng.choice(other_funcs)
+
+        key = (fn_p, rec["a_line"], rec["b_line"])
+        if key in used_pos:
+            continue
+
+        # positive
+        used_pos.add(key)
+        queries.append(
+            rng.choice(TEMPLATES["dominators_new"])(
+                fmt_stmt(rec["a_line"], rec["a_code"]),
+                fmt_stmt(rec["b_line"], rec["b_code"])
+            )
+        )
+        gts.append(True)
+        used_funcs.add(fn_p)
+
+        # negative (cross-function, guaranteed False)
+        a_l, a_c, b_l, b_c = cross_function_negative(fn_p, fn_n)
+        queries.append(
+            rng.choice(TEMPLATES["dominators_new"])(
+                fmt_stmt(a_l, a_c),
+                fmt_stmt(b_l, b_c)
+            )
+        )
+        gts.append(False)
+        used_funcs.add(fn_n)
+
+        print("Generated 1 pos + 1 neg (cross-function)")
+        return queries[:MAX_QUERY], gts[:MAX_QUERY]
+    # --------------------------------------------------
+    # Fallback 1.5: reverse a positive to make a negative
+    # (ONLY when no cross-function negative exists)
+    # --------------------------------------------------
+    if len(stmts_by_func) == 1:
+        fn = next(iter(pos_by_func))
+        pos_list = pos_by_func[fn][:]
+        rng.shuffle(pos_list)
+
+        # Step 1: generate ONE standalone negative by reversing a positive
+        neg_rec = None
+        for rec in pos_list:
+            key = (fn, rec["a_line"], rec["b_line"])
+            if key in used_pos:
+                continue
+            neg_rec = rec
+            used_pos.add(key)  # consume this positive
             break
-        var_name = dep.get("var", "unknown")
-        if var_counts[var_name] > 1:
-            if DISAMBIGUATE_BY == 'line':
-                var_id = f"{var_name} (line {dep.get('line', '?')})"
-            elif DISAMBIGUATE_BY == 'code':
-                snippet = None
-                for stmt in parsed_code.get("dead_code", []):
-                    if stmt.get("line") == dep.get("line"):
-                        snippet = stmt.get("code", "").strip()
-                        break
-                if snippet:
-                    var_id = f"{var_name} ({snippet})"
-                else:
-                    var_id = f"{var_name} (line {dep.get('line', '?')})"
-            else:
-                var_id = var_name
-        else:
-            var_id = var_name
-        if dep.get("used_after_definition", False) and pos_count > 0:
-            template = random.choice(TEMPLATES["data_dependency"])
-            q = template(var_id)
-            queries.append(q)
-            ground_truth.append(True)
-            pos_count -= 1
-        elif not dep.get("used_after_definition", False) and neg_count > 0:
-            template = random.choice(COMPLEMENTARY_TEMPLATES["data_dependency"])
-            q = template(var_id)
-            queries.append(q)
-            ground_truth.append(False)
-            neg_count -= 1
+
+        if neg_rec is not None:
+            # negative only (reversed)
+            queries.append(
+                rng.choice(TEMPLATES["dominators_new"])(
+                    fmt_stmt(neg_rec["b_line"], neg_rec["b_code"]),
+                    fmt_stmt(neg_rec["a_line"], neg_rec["a_code"])
+                )
+            )
+            gts.append(False)
+
+            # Step 2: try to add ONE independent positive (if available)
+            for rec in pos_list:
+                key = (fn, rec["a_line"], rec["b_line"])
+                if key in used_pos:
+                    continue
+                used_pos.add(key)
+                queries.append(
+                    rng.choice(TEMPLATES["dominators_new"])(
+                        fmt_stmt(rec["a_line"], rec["a_code"]),
+                        fmt_stmt(rec["b_line"], rec["b_code"])
+                    )
+                )
+                gts.append(True)
+                break
+
+            print("Fallback: standalone reversed negative + independent positive")
+            return queries[:MAX_QUERY], gts[:MAX_QUERY]
+    # ---------------------------------------------------
+    # Fallback 2: two positives, different functions
+    # ---------------------------------------------------
+    for fn, lst in pos_by_func.items():
+        if fn in used_funcs:
+            continue
+        for rec in lst:
+            key = (fn, rec["a_line"], rec["b_line"])
+            if key in used_pos:
+                continue
+            used_pos.add(key)
+            queries.append(
+                rng.choice(TEMPLATES["dominators_new"])(
+                    fmt_stmt(rec["a_line"], rec["a_code"]),
+                    fmt_stmt(rec["b_line"], rec["b_code"])
+                )
+            )
+            gts.append(True)
+            used_funcs.add(fn)
+            if len(queries) >= MAX_QUERY:
+                print("Fallback: 2 positives (different functions)")
+                return queries[:MAX_QUERY], gts[:MAX_QUERY]
+
+    # ---------------------------------------------------
+    # Fallback 3: two positives anywhere
+    # ---------------------------------------------------
+    for fn, lst in pos_by_func.items():
+        for rec in lst:
+            key = (fn, rec["a_line"], rec["b_line"])
+            if key in used_pos:
+                continue
+            used_pos.add(key)
+            queries.append(
+                rng.choice(TEMPLATES["dominators_new"])(
+                    fmt_stmt(rec["a_line"], rec["a_code"]),
+                    fmt_stmt(rec["b_line"], rec["b_code"])
+                )
+            )
+            gts.append(True)
+            if len(queries) >= MAX_QUERY:
+                print("Fallback: 2 positives (same function allowed)")
+                return queries[:MAX_QUERY], gts[:MAX_QUERY]
+
+    print("Insufficient dominator samples")
+    return queries, gts
+
+def generate_variable_dependency_pair_queries(parsed_code, file_name):
+    """
+    Generate queries for TEMPLATES["data_dependency_new"] from var_dependencies.
+
+    - must     -> ground_truth True
+    - negative -> ground_truth False
+    - a_id / b_id format:
+      variable {var} at line {line}: <statement> {code} </statement>
+    """
+    def load_parsed_code_self(file_name):
+        parsed_path = os.path.join("/home/jade/LLM_semantic/data/loop3_1000/parsed_datadependency", f"{file_name}.json")
+        if os.path.exists(parsed_path):
+            with open(parsed_path, "r") as f:
+                return json.load(f)
+        return None
+    parsed_code = load_parsed_code_self(file_name)
+
+    import random
+    random.seed(42)
+
+    queries = []
+    ground_truth = []
+
+    deps = parsed_code.get("var_dependencies", [])
+    if not deps:
+        return queries, ground_truth
+
+    # 按 label 分池
+    pos_edges = [
+        d for d in deps
+        if d.get("label") == "must"
+        and d["from"]["line"] != d["depends_on"]["line"]
+    ]
+    neg_edges = [d for d in deps if d.get("label") == "negative"]
+
+    random.shuffle(pos_edges)
+    random.shuffle(neg_edges)
+
+    pos_used = 0
+    neg_used = 0
+
+    def make_id(x):
+        return (
+            f"variable {x['var']} at line {x['line']}: "
+            f"<statement> {x['code']} </statement>"
+        )
+
+    # 正样本（must）
+    for d in pos_edges:
+        if pos_used >= max_query:
+            break
+
+        a = d["from"]
+        b = d["depends_on"]
+
+        a_id = make_id(a)
+        b_id = make_id(b)
+
+        tmpl = random.choice(TEMPLATES["data_dependency_new"])
+        q = tmpl(a_id, b_id)
+
+        queries.append(q)
+        ground_truth.append(True)
+        pos_used += 1
+
+    # 负样本（negative）
+    for d in neg_edges:
+        if neg_used >= max_query:
+            break
+
+        a = d["from"]
+        b = d["depends_on"]
+
+        a_id = make_id(a)
+        b_id = make_id(b)
+
+        tmpl = random.choice(TEMPLATES["data_dependency_new"])
+        q = tmpl(a_id, b_id)
+
+        queries.append(q)
+        ground_truth.append(False)
+        neg_used += 1
+
     if queries and len(set(ground_truth)) < 2:
-        print("Warning: Only one type of answer generated in variable dependency queries.")
+        print("[warn] only one type of answer generated for data_dependency_new")
+
     return queries, ground_truth
 
 def generate_liveness_queries(parsed_code):
@@ -376,7 +563,7 @@ def generate_dead_code_queries(parsed_code):
         print("Warning: Only one type of answer generated in dead code queries.")
     return queries, ground_truth
 
-def generate_queries(parsed_code):
+def generate_queries(parsed_code, program_name):
     queries, ground_truth = {}, {}
     fq, ft = generate_function_reachability_queries(parsed_code)
     queries["function_reachability"] = fq
@@ -386,11 +573,11 @@ def generate_queries(parsed_code):
     queries["loop_reachability"] = lq
     ground_truth["loop_reachability"] = lt
 
-    ldq, ldt = generate_loop_dominator_queries(parsed_code)
+    ldq, ldt = generate_statement_dominator_queries(parsed_code)
     queries["dominators"] = ldq
     ground_truth["dominators"] = ldt
 
-    vdq, vdt = generate_variable_dependency_queries(parsed_code)
+    vdq, vdt = generate_variable_dependency_pair_queries(parsed_code, program_name)
     queries["data_dependency"] = vdq
     ground_truth["data_dependency"] = vdt
 
@@ -426,7 +613,7 @@ def process_file(file_name):
     parsed_code = load_parsed_code(program_name)
     if not parsed_code:
         return
-    queries, ground_truth = generate_queries(parsed_code)
+    queries, ground_truth = generate_queries(parsed_code, program_name)
     query_path = os.path.join(QUERY_DIR, f"{program_name}.json")
     truth_path = os.path.join(GROUND_TRUTH_DIR, f"{program_name}.json")
     with open(query_path, "w") as f:

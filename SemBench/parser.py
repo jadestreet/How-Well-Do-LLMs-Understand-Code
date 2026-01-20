@@ -4,12 +4,21 @@ import argparse
 import re
 import json
 import subprocess
+import sys
 import tempfile
 from collections import defaultdict
 import networkx as nx
 from clang.cindex import Index, CursorKind
 from clang import cindex
 CURDIR = os.path.join(os.getcwd(), "data", "loop3_1000")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEST_DIR = os.path.join(BASE_DIR, "test")
+if TEST_DIR not in sys.path:
+    sys.path.insert(0, TEST_DIR)
+from parser_helper import extract_semantics
+
+
 
 SUPPORTED_EXTENSIONS = ('.c')
 
@@ -319,6 +328,7 @@ def parse_c_file(path: str) -> dict:
     deps, live = extract_def_use_and_liveness(path)
     info['dependencies'] = deps
     info['liveness'] = live
+    info.update(extract_semantics(path))
     return info
 
 if __name__ == '__main__':
