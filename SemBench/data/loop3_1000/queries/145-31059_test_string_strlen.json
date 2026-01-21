@@ -12,12 +12,11 @@
     "Is the loop with condition 'mask<(1u<<__WORDSIZE/8)' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'len<BUFLEN' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'mask<(1u<<__WORDSIZE/8)' without passing through its header block?"
+    "Is it guaranteed that whenever line 8:  <statement> assert(strlen(\"\")==0); </statement> is reached, the statement line 19:  <statement> assert(strlen(buf+i)==len+1-i); </statement> has already been reached?",
+    "Does the statement line 17:  <statement> buf[len+2+bit] = (mask & (1u<<bit)) ? 0xff : 0; </statement> dominate line 18:  <statement> for (i=0; i<=len; ++i) </statement>?"
   ],
   "data_dependency": [
-    "Is variable 'buf (line 6)' used after its definition?",
-    "Is variable 'buf (line 11)' used after its definition?"
+    "Does variable len at line 9: <statement>   for (len=0; len<BUFLEN; ++len) { </statement> determine the value stored in variable i at line 18: <statement> \t\t  for (i=0; i<=len; ++i) </statement>?"
   ],
   "liveness": [
     "Does variable 'buf' remain in use at the end of function 'main'?"

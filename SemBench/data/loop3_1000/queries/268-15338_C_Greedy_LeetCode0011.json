@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < j && *j <= mMinHeight' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < j && *i <= mMinHeight' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < j && *j <= mMinHeight' without passing through its header block?"
+    "Is it guaranteed that whenever line 6:  <statement> int mMinHeight = *i < *j ? *i : *j; </statement> is reached, the statement line 14:  <statement> return mContain; </statement> has already been reached?",
+    "Is it guaranteed that whenever line 11:  <statement> while (i < j && *j <= mMinHeight) </statement> is reached, the statement line 6:  <statement> int mMinHeight = *i < *j ? *i : *j; </statement> has already been reached?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'height (line 2)' affect subsequent computations?",
-    "Is variable 'heightSize (line 2)' used after its definition?"
+    "Does the value of variable mTmpContain at line 7: <statement>         int mTmpContain = (j - i) * mMinHeight; </statement> depend on the value of variable mMinHeight at line 6: <statement>         int mMinHeight = *i < *j ? *i : *j; </statement>?",
+    "Does variable height at line 2: <statement> int maxArea(int* height, int heightSize) </statement> determine the value stored in variable j at line 12: <statement>             j--; </statement>?"
   ],
   "liveness": [
     "Does variable 'mMinHeight' remain in use at the end of function 'maxArea'?",

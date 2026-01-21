@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < (sizeof(input_val) / sizeof(unsigned char))' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'bit >= 0' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < (sizeof(input_val) / sizeof(unsigned char))' without passing through its header block?"
+    "Is it guaranteed that whenever line 15:  <statement> unsigned char input_val[] = { </statement> is reached, the statement line 24:  <statement> unsigned char result = update_bit(input_val[i], bit_val[j]); </statement> has already been reached?",
+    "Does the statement line 20:  <statement> }; </statement> dominate line 30:  <statement> return 0; </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'reg (line 2)' affect subsequent computations?",
-    "Does the value assigned to 'val (line 2)' affect subsequent computations?"
+    "Does variable bit at line 7: <statement> \tfor (int bit = 7; bit >= 0; bit--) { </statement> determine the value stored in variable bit_val at line 10: <statement> \t\tbit_val >>= bit; </statement>?",
+    "Does the value of variable j at line 23: <statement> \t\tfor (int j = 0; j < 2; j++) { </statement> depend on the value of variable bit_val at line 21: <statement> \tunsigned char bit_val[] = {0, 1}; </statement>?"
   ],
   "liveness": [
     "Is variable 'reg' live at the end of function 'update_bit'?",

@@ -12,12 +12,12 @@
     "Is the loop with condition 'k < l->n_elems' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'k > l->n_elems - i - 1' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'k < l->n_elems' without passing through its header block?"
+    "Does the statement line 109:  <statement> l = arraylist_tail(l); </statement> dominate line 108:  <statement> printf(\"head(l) = %ld\\n\", arraylist_head(l)); </statement>?",
+    "Does the statement line 103:  <statement> l = arraylist_cons(1, arraylist_cons(2, arraylist_cons(3, l))); </statement> dominate line 107:  <statement> printf(\"after inserting at pos 2, l = \"); arraylist_print(l); </statement>?"
   ],
   "data_dependency": [
-    "Is variable 'l (line 11)' used after its definition?",
-    "Does the value assigned to 'l (line 12)' affect subsequent computations?"
+    "Does variable l at line 102: <statement>         l = arraylist_new(); </statement> determine the value stored in variable l at line 103: <statement>         l = arraylist_cons(1, arraylist_cons(2, arraylist_cons(3, l))); </statement>?",
+    "Does variable rec at line 44: <statement>         struct arraylist *rec; </statement> determine the value stored in variable new_head at line 47: <statement>         new_head = arraylist_head(l); </statement>?"
   ],
   "liveness": [
     "Does variable 'l (line 11)' remain in use at the end of function 'arraylist_new'?",

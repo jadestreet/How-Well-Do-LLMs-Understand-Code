@@ -10,12 +10,12 @@
     "Is the loop with condition 'i < index - 1 && current != NULL' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < index && current != NULL' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < index - 1 && current != NULL' without passing through its header block?"
+    "Is it guaranteed that whenever line 28:  <statement> while (current != NULL) { </statement> is reached, the statement line 29:  <statement> length++; </statement> has already been reached?",
+    "Does the statement line 35:  <statement> struct Node third; </statement> dominate line 44:  <statement> return 0; </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'first (line 6)' affect subsequent computations?",
-    "Does the value assigned to 'index (line 6)' affect subsequent computations?"
+    "Does variable current at line 7: <statement> \tstruct Node* current = first; </statement> determine the value stored in variable current at line 9: <statement> \t\tcurrent = current->next; </statement>?",
+    "Does variable first at line 6: <statement> int list_get(struct Node* first, int index) { </statement> determine the value stored in variable i at line 8: <statement> \tfor (int i = 0; i < index && current != NULL; i++) { </statement>?"
   ],
   "liveness": [
     "Does variable 'index (line 6)' remain in use at the end of function 'list_get'?",

@@ -12,12 +12,12 @@
     "Is the loop with condition 'k' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'mti<N' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'k' without passing through its header block?"
+    "Is it guaranteed that whenever line 46:  <statement> int kk; </statement> is reached, the statement line 64:  <statement> y ^= (y << 15) & 0xefc60000UL; </statement> has already been reached?",
+    "Does the statement line 51:  <statement> mt[kk] = mt[kk+M] ^ (y >> 1) ^ mag01[y & 0x1UL]; </statement> dominate line 61:  <statement> y = mt[mti++]; </statement>?"
   ],
   "data_dependency": [
-    "Is variable 'mt (line 7)' used after its definition?",
-    "Does the value assigned to 'mti (line 8)' affect subsequent computations?"
+    "Does the value of variable y at line 54: <statement>             y = (mt[kk]&UPPER_MASK)|(mt[kk+1]&LOWER_MASK); </statement> depend on the value of variable kk at line 53: <statement>         for (;kk<N-1;kk++) { </statement>?",
+    "Does variable mag01 at line 44: <statement>     static unsigned long mag01[2]={0x0UL, MATRIX_A}; </statement> determine the value stored in variable y at line 50: <statement>             y = (mt[kk]&UPPER_MASK)|(mt[kk+1]&LOWER_MASK); </statement>?"
   ],
   "liveness": [
     "Does variable 's' remain in use at the end of function 'init_genrand'?",

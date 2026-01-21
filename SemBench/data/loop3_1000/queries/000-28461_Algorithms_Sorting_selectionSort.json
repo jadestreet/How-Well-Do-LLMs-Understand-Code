@@ -12,12 +12,12 @@
     "Is the loop with condition 'j < n' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < n-1' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'j < n' without passing through its header block?"
+    "Does the statement line 15:  <statement> if (arr[j] < arr[min_idx]) </statement> dominate line 11:  <statement> for (i = 0; i < n-1; i++) </statement>?",
+    "Does the statement line 14:  <statement> for (j = i+1; j < n; j++) </statement> dominate line 15:  <statement> if (arr[j] < arr[min_idx]) </statement>?"
   ],
   "data_dependency": [
-    "Is variable 'xp (line 2)' used after its definition?",
-    "Is variable 'yp (line 2)' used after its definition?"
+    "Does variable j at line 14: <statement>         for (j = i+1; j < n; j++) </statement> determine the value stored in variable min_idx at line 16: <statement>             min_idx = j; </statement>?",
+    "Does variable n at line 8: <statement> void selectionSort(int arr[], int n) </statement> determine the value stored in variable min_idx at line 10: <statement>     int i, j, min_idx; </statement>?"
   ],
   "liveness": [
     "Does variable 'xp' remain in use at the end of function 'swap'?",

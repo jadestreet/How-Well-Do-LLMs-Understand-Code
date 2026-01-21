@@ -12,12 +12,12 @@
     "Is the loop with condition 'j < offset_count' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < moov_atom_size - 4' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'j < offset_count' without passing through its header block?"
+    "Does the statement line 197:  <statement> moov_atom[i + 12 + j * 8 + 0] = (current_offset >> 56) & 0xFF; </statement> dominate line 195:  <statement> current_offset  = BE_64(&moov_atom[i + 12 + j * 8]); </statement>?",
+    "Does the statement line 20:  <statement> ((uint64_t)(((uint8_t*)(x))[2]) << 40) |  \\ </statement> dominate line 25:  <statement> ((uint64_t)( (uint8_t*)(x))[7])) </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'argc (line 47)' affect subsequent computations?",
-    "Is variable 'argv (line 47)' used after its definition?"
+    "Does variable moov_atom_size at line 151: <statement>     moov_atom_size = atom_size; </statement> determine the value stored in variable current_offset at line 179: <statement>                 current_offset += moov_atom_size; </statement>?",
+    "Does the value of variable current_offset at line 196: <statement>                 current_offset += moov_atom_size; </statement> depend on the value of variable atom_type at line 168: <statement>         atom_type = BE_32(&moov_atom[i]); </statement>?"
   ],
   "liveness": [
     "Does variable 'moov_atom_size' remain in use at the end of function 'main'?",

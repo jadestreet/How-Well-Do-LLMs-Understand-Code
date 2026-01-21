@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < bits' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i >>= 1' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < bits' without passing through its header block?"
+    "Does the statement line 38:  <statement> printf(\"What about %d (INT_MIN)?\\n\", -(((unsigned int) ~0) >> 1)-1); </statement> dominate line 31:  <statement> printf(\"I see that there are %d bits in a char\\n\", (int) size_t_unit()); </statement>?",
+    "Does the statement line 35:  <statement> printbinary(-1); </statement> dominate line 36:  <statement> printf(\"Nice! What about %d (INT_MAX)?\\n\", ((unsigned int) ~0) >> 1); </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'res (line 3)' affect subsequent computations?",
-    "Is variable 'c (line 4)' used after its definition?"
+    "Does the value of variable i at line 17: <statement> \tfor (res = 0; i >>= 1; res++); </statement> depend on the value of variable i at line 15: <statement> \tunsigned int i = (unsigned) ~0; </statement>?",
+    "Does the value of variable j at line 23: <statement> \tunsigned int j = 1 << (bits-1); </statement> depend on the value of variable i at line 21: <statement> \tint i; </statement>?"
   ],
   "liveness": [
     "Is variable 'c' live at the end of function 'size_t_unit'?",

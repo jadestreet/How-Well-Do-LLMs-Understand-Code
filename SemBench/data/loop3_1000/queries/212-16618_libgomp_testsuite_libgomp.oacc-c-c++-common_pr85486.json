@@ -10,11 +10,12 @@
     "Is the loop with condition 'ix < n' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'ix < n' without passing through its header block?"
+    "Does the statement line 22:  <statement> Vector (&ary[0][0], m * n, (1 << 24) - (1 << 16)); </statement> dominate line 15:  <statement> unsigned ix,  iy; </statement>?",
+    "Is it guaranteed that whenever line 26:  <statement> if (ary[ix][iy] != ((1 << 24) + (ix << 8) + iy)) </statement> is reached, the statement line 14:  <statement> int ary[m][n]; </statement> has already been reached?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'ptr (line 4)' affect subsequent computations?",
-    "Does the value assigned to 'n (line 4)' affect subsequent computations?"
+    "Does the value of variable ary at line 14: <statement>   int ary[m][n]; </statement> depend on the value of variable n at line 13: <statement>   const int n = 32, m=32; </statement>?",
+    "Does the value of variable ix at line 24: <statement>   for (ix = m; ix--;) </statement> depend on the value of variable n at line 13: <statement>   const int n = 32, m=32; </statement>?"
   ],
   "liveness": [
     "Does variable 'ix (line 7)' remain in use at the end of function 'Vector'?",

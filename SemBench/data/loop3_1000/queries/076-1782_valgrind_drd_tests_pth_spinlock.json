@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < n_threads' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i > 0' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < n_threads' without passing through its header block?"
+    "Does the statement line 32:  <statement> for (i = 0; i < n_threads; i++) </statement> dominate line 31:  <statement> pthread_create(&tid[i], 0, thread_func, 0); </statement>?",
+    "Does the statement line 23:  <statement> int i; </statement> dominate line 30:  <statement> for (i = 0; i < n_threads; i++) </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 's_barrier (line 5)' affect subsequent computations?",
-    "Is variable 's_spinlock (line 6)' used after its definition?"
+    "Does the value of variable s_iterations at line 26: <statement>   s_iterations = argc > 1 ? atoi(argv[1]) : 1000; </statement> depend on the value of variable argc at line 21: <statement> int main(int argc, char** argv) </statement>?",
+    "Does the value of variable i at line 23: <statement>   int i; </statement> depend on the value of variable argc at line 21: <statement> int main(int argc, char** argv) </statement>?"
   ],
   "liveness": [
     "Does variable '__bsx' remain in use at the end of function '__bswap_16'?",

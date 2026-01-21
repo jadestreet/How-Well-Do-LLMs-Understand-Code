@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < (str_len - substr_len + 1)' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < len' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < (str_len - substr_len + 1)' without passing through its header block?"
+    "Is it guaranteed that whenever line 17:  <statement> int substr_hash; </statement> is reached, the statement line 25:  <statement> str_len++; </statement> has already been reached?",
+    "Is it guaranteed that whenever line 25:  <statement> str_len++; </statement> is reached, the statement line 19:  <statement> int str_len = 0; </statement> has already been reached?"
   ],
   "data_dependency": [
-    "Is variable 'str (line 3)' used after its definition?",
-    "Does the value assigned to 'len (line 3)' affect subsequent computations?"
+    "Does the value of variable str_hash at line 43: <statement>         str_hash -= str[i]; </statement> depend on the value of variable str_hash at line 35: <statement>     str_hash = hash_function(str, substr_len); </statement>?",
+    "Does the value of variable str_len at line 25: <statement>         str_len++; </statement> depend on the value of variable t_ptr at line 22: <statement>     t_ptr = str; </statement>?"
   ],
   "liveness": [
     "Is variable 'len' live at the end of function 'hash_function'?",

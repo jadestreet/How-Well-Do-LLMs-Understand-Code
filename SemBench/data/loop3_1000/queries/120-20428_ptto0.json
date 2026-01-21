@@ -12,12 +12,11 @@
     "Is the loop with condition 'j<(*ac->c)[i].sz' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i<ac->sz' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'j<(*ac->c)[i].sz' without passing through its header block?"
+    "Does the statement line 52:  <statement> for(i=0;i<ac->sz;++i) { </statement> dominate line 47:  <statement> (*ac->c)=malloc(ac->sz*sizeof(ca_t)); </statement>?",
+    "Does the statement line 33:  <statement> int j; </statement> dominate line 35:  <statement> c->pca = malloc(sizeof(char*)); </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'c (line 12)' affect subsequent computations?",
-    "Is variable 'c (line 14)' used after its definition?"
+    "Does the value of variable i at line 48: <statement>     for(i=0;i<ac->sz;++i) { </statement> depend on the value of variable ac at line 44: <statement>     aca_t *ac=malloc(sizeof(aca_t)); </statement>?"
   ],
   "liveness": [
     "Is variable 'c (line 14)' live at the end of function 'reall_pca'?",

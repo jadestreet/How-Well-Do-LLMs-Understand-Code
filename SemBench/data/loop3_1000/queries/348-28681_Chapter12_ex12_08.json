@@ -12,12 +12,12 @@
     "Is the loop with condition 'currentPtr != NULL && value > currentPtr->data' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i<25' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'currentPtr != NULL && value > currentPtr->data' without passing through its header block?"
+    "Is it guaranteed that whenever line 122:  <statement> while( currentPtr != NULL) { </statement> is reached, the statement line 127:  <statement> return result; </statement> has already been reached?",
+    "Is it guaranteed that whenever line 72:  <statement> currentPtr = currentPtr->nextPtr; </statement> is reached, the statement line 70:  <statement> while( currentPtr != NULL && currentPtr->data != value ) { </statement> has already been reached?"
   ],
   "data_dependency": [
-    "Is variable 'startPtr1 (line 19)' used after its definition?",
-    "Does the value assigned to 'i (line 20)' affect subsequent computations?"
+    "Does the value of variable currentPtr at line 72: <statement>             currentPtr = currentPtr->nextPtr; </statement> depend on the value of variable currentPtr at line 69: <statement>         currentPtr = ( *sPtr )->nextPtr; </statement>?",
+    "Does the value of variable currentPtr at line 69: <statement>         currentPtr = ( *sPtr )->nextPtr; </statement> depend on the value of variable value at line 57: <statement> int delete( ListNodePtr *sPtr, int value ) </statement>?"
   ],
   "liveness": [
     "Does variable 'i' remain in use at the end of function 'main'?",

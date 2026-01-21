@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < size' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < nmemb' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < size' without passing through its header block?"
+    "Is it guaranteed that whenever line 20:  <statement> vect = malloc(size * sizeof(int)); </statement> is reached, the statement line 23:  <statement> return NULL; </statement> has already been reached?",
+    "Does the statement line 34:  <statement> printf(\"[%d]\", v[i]); </statement> dominate line 35:  <statement> printf(\"\\n\"); </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'nmemb (line 3)' affect subsequent computations?",
-    "Is variable 'size (line 3)' used after its definition?"
+    "Does variable size at line 41: <statement> \tint size = 10; </statement> determine the value stored in variable v at line 42: <statement> \tv = malloc_init_vector(size); </statement>?",
+    "Does variable nmemb at line 3: <statement> static int* calloc_init_vector(size_t nmemb, size_t size) </statement> determine the value stored in variable i at line 12: <statement> \tfor (i = 0; i < nmemb; i++) </statement>?"
   ],
   "liveness": [
     "Is variable 'i (line 5)' live at the end of function 'calloc_init_vector'?",

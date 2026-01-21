@@ -10,12 +10,12 @@
     "Is the loop with condition 'j < 32' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < 32768' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'j < 32' without passing through its header block?"
+    "Is it guaranteed that whenever line 6:  <statement> float arr[32768]; </statement> is reached, the statement line 42:  <statement> assert (res == hres); </statement> has already been reached?",
+    "Is it guaranteed that whenever line 36:  <statement> hres += arr[j * 1024 + (1023 - i)]; </statement> is reached, the statement line 11:  <statement> reduction(+:res) reduction(max:mres) copy(res, mres) </statement> has already been reached?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'argc' affect subsequent computations?",
-    "Is variable 'argv' used after its definition?"
+    "Does the value of variable hres at line 36: <statement> \thres += arr[j * 1024 + (1023 - i)]; </statement> depend on the value of variable arr at line 6: <statement>   float arr[32768]; </statement>?",
+    "Does the value of variable j at line 14: <statement>     for (j = 0; j < 32; j++) </statement> depend on the value of variable res at line 7: <statement>   float res = 0, mres = 0, hres = 0, hmres = 0; </statement>?"
   ],
   "liveness": [
     "Is variable 'res' live at the end of function 'main'?",

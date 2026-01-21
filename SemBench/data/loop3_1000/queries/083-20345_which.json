@@ -12,12 +12,12 @@
     "Is the loop with condition '*path == ':'' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'path[pathlen] != 0 && path[pathlen] != ':'' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition '*path == ':'' without passing through its header block?"
+    "Does the statement line 28:  <statement> buf[pathlen + len] = 0; </statement> dominate line 27:  <statement> memcpy(buf + pathlen, argv[1], len); </statement>?",
+    "Does the statement line 15:  <statement> do { </statement> dominate line 23:  <statement> if (pathlen + 1 + len + 1 > sizeof buf) </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'argc (line 4)' affect subsequent computations?",
-    "Is variable 'argv (line 4)' used after its definition?"
+    "Does variable path at line 17: <statement>       ++path; </statement> determine the value stored in variable path at line 35: <statement>     path += pathlen; </statement>?",
+    "Does variable argc at line 4: <statement> int main(int argc, char* argv[]) </statement> determine the value stored in variable len at line 9: <statement>   unsigned long len; </statement>?"
   ],
   "liveness": [
     "Is variable 'len' live at the end of function 'main'?",

@@ -10,12 +10,12 @@
     "Is the loop with condition 'i < num_states' always executed?"
   ],
   "dominators": [
-    "Is there at least one path that reaches the body of the loop with condition 'i < argc' without passing through its header block?",
-    "Is there at least one path that reaches the body of the loop with condition 'i < num_states' without passing through its header block?"
+    "Is it guaranteed that whenever line 20:  <statement> states[i] = argv[i]; </statement> is reached, the statement line 28:  <statement> printf(\"newarray: %d: %s\\n\", i, newarray[i]); </statement> has already been reached?",
+    "Does the statement line 5:  <statement> while (i >= 0) { </statement> dominate line 32:  <statement> printf(\"newarray: %d: %s\\n\", i, newarray[i]); </statement>?"
   ],
   "data_dependency": [
-    "Does the value assigned to 'argc (line 2)' affect subsequent computations?",
-    "Does the value assigned to 'argv (line 2)' affect subsequent computations?"
+    "Does the value of variable i at line 7: <statement>         i--; </statement> depend on the value of variable i at line 4: <statement>     int i = (argc - 1); </statement>?",
+    "Does the value of variable i at line 23: <statement>     for (i = 0; i < num_states; i++) { </statement> depend on the value of variable argc at line 2: <statement> int main(int argc, char *argv[]) </statement>?"
   ],
   "liveness": [
     "Does variable 'states' remain in use at the end of function 'main'?",
