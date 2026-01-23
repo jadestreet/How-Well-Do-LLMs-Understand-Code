@@ -186,12 +186,28 @@ def style_ax(ax, title=None, xlabel=None, ylabel=None):
     ax.set_ylim(0, 100)
 
 # -------------------------
+# Helper: panel labels (a, b, c, ...)
+# -------------------------
+def add_panel_label(ax, label, xy=(0.03, 0.06)):
+    t = ax.text(
+        xy[0], xy[1], f"({label})",
+        transform=ax.transAxes,
+        ha="left", va="bottom",
+        fontsize=12, fontweight="bold",
+        zorder=10
+    )
+    # optional: subtle white halo to keep readable on gridlines
+    t.set_path_effects([pe.Stroke(linewidth=2.0, foreground="white"), pe.Normal()])
+
+
+# -------------------------
 # Plotting
 # -------------------------
 # Top row: HumanEval vs category
 for j, (nice_name, col) in enumerate(cat_colshuman):
     ax = axes[0][j]
     style_ax(ax, title=nice_name, xlabel="HumanEval Pass@1 (%)", ylabel=("Accuracy (%)" if j == 0 else None))
+    add_panel_label(ax, chr(ord("a") + j), xy=(0.03, 0.06))
     sub = df.dropna(subset=["HumanEval_p1", col])
     for _, row in sub.iterrows():
         ax.scatter(
@@ -213,6 +229,7 @@ for j, (nice_name, col) in enumerate(cat_colsmbpp):
         xlabel=f"MBPP Pass@1 (%)", 
         ylabel=("Accuracy (%)" if j == 0 else None)
     )
+    add_panel_label(ax, chr(ord("g") + j), xy=(0.03, 0.06))
     sub = df.dropna(subset=["MBPP_p1", col])
     for _, row in sub.iterrows():
         ax.scatter(
