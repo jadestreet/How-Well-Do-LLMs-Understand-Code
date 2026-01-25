@@ -48,7 +48,7 @@ SIZE_MAP = {
 
 
 TICK_POSITIONS = [7, 8, 13, 14, 16, 20]
-TICK_LABELS = ["7B", "8B", "13B", "14B", "16B", "open source"]
+TICK_LABELS = ["7B", "8B", "13B", "14B", "16B", "closed source"]
 
 
 def read_and_prepare(path_csv: Path) -> pd.DataFrame:
