@@ -254,45 +254,7 @@ IDENT_RE      = re.compile(r"\b([A-Za-z_]\w*)\b")
 TYPE_KEYWORDS = {'int','double','float','char','void','long','short','unsigned','signed'}
 CONTROL_KEYWORDS = {"for","while","if","else","switch","case","break","continue","return","do","default","goto"}
 
-def extract_def_use_and_liveness(path: str) -> tuple:
-    text = open(path).read()
-    if HAS_LIBCLANG:
-        index = Index.create()
-        tu = index.parse(path, args=_get_parse_args(path))
-        # collect declarations
-        decls = {n.spelling for n in tu.cursor.walk_preorder()
-                 if n.kind in (CursorKind.VAR_DECL, CursorKind.PARM_DECL)}
-        # scan tokens for occurrences
-        deps = []
-        for tok in tu.get_tokens(extent=tu.cursor.extent):
-            var = tok.spelling
-            if var in decls:
-                ln = tok.location.line
-                deps.append({
-                    "var": var,
-                    "line": ln,
-                    "used_after_definition": True
-                })
-        live = []
-        for var in decls:
-            live_out = re.search(r"\b" + re.escape(var) + r"\b", text[-120:]) is not None
-            live.append({"var": var, "live_out": bool(live_out)})
-        return deps, live
-
-    lines = text.splitlines()
-    cand = {v for v in re.findall(r"\b([A-Za-z_]\w*)\b", text)
-            if v not in TYPE_KEYWORDS | CONTROL_KEYWORDS and not v.isdigit()}
-    deps, live = [], []
-    for i, ln in enumerate(lines, start=1):
-        for var in cand:
-            if re.search(r"\b" + re.escape(var) + r"\b", ln):
-                deps.append({"var": var, "line": i, "used_after_definition": True})
-    for var in cand:
-        live_out = re.search(r"\b" + re.escape(var) + r"\b", text[-120:]) is not None
-        live.append({"var": var, "live_out": bool(live_out)})
-    return deps, live
-
-def _attach_liveness_to_functions(info, path):
+def _attach_variables_to_functions(info, path):
     index = Index.create()
     tu = index.parse(path, args=_get_parse_args(path))
     lines = open(path).read().splitlines()
@@ -302,21 +264,17 @@ def _attach_liveness_to_functions(info, path):
                      and n.is_definition()
                      and n.spelling == func["name"]), None)
         if not node:
-            func["live_out"] = {}
+            func["variables"] = {}
             continue
 
         vars_decl = set()
         for child in node.walk_preorder():
             if child.kind in (CursorKind.PARM_DECL, CursorKind.VAR_DECL):
-                vars_decl.add(child.spelling)
+                if child.spelling:
+                    vars_decl.add(child.spelling)
 
-        start, end = node.extent.start, node.extent.end
-        body = "\n".join(lines[start.line-1:end.line])
-        tail = body[-120:]
-        live_map = {v: (re.search(r"\b" + re.escape(v) + r"\b", tail) is not None)
-                    for v in vars_decl}
-        func["live_out"] = live_map
-        
+        func["variables"] = sorted(vars_decl)  
+       
 def parse_c_file(path: str) -> dict:
     code = open(path).read()
     info = {
@@ -324,10 +282,7 @@ def parse_c_file(path: str) -> dict:
         'loops': extract_loops_and_dominators(code, path),
         'dead_code': detect_dead_code(path)
     }
-    _attach_liveness_to_functions(info, path)
-    deps, live = extract_def_use_and_liveness(path)
-    info['dependencies'] = deps
-    info['liveness'] = live
+    _attach_variables_to_functions(info, path)
     info.update(extract_semantics(path))
     return info
 

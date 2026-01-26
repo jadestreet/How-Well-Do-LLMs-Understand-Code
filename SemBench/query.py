@@ -4,6 +4,7 @@ import random
 import networkx as nx
 from itertools import permutations
 from collections import Counter
+from pathlib import Path
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -13,7 +14,7 @@ BASE_DIR = os.path.join(os.getcwd(), "data")
 QUERY_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "queries")
 GROUND_TRUTH_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "ground_truth")
 PARSED_CODE_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "parsed_code")
-
+PARSED_CODE_LIVENESS_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "CFG_liveness_parsed")
 os.makedirs(QUERY_DIR, exist_ok=True)
 os.makedirs(GROUND_TRUTH_DIR, exist_ok=True)
 
@@ -448,20 +449,30 @@ def generate_variable_dependency_pair_queries(parsed_code, file_name):
 
     return queries, ground_truth
 
-def generate_liveness_queries(parsed_code):
+def generate_liveness_queries(parsed_code, program_name):
     """
     Create yes/no questions about whether a variable is live at the end
-    of a specific function. Uses the per‑function live_out map produced by the parser.
+    of a specific function. Uses the per‑function variables map produced by the parser.
     """
     queries, ground_truth = [], []
     functions = parsed_code.get("functions", [])
     if not functions:
         return queries, ground_truth
+    
+    liveness_path = PARSED_CODE_LIVENESS_DIR / f"{program_name}.json"
+    try:
+        with open(liveness_path, "r", encoding="utf-8") as f:
+            parsed_liveness = json.load(f)
+    except Exception:
+        parsed_liveness = {}    
+    liveness_funcs = parsed_liveness.get("functions", {}) if isinstance(parsed_liveness, dict) else {}
+
     # Count occurrences of each variable across all functions for disambiguation
-    var_counts = Counter([var for fn in functions for var in fn.get("live_out", {})])
+    var_counts = Counter([var for fn in functions for var in fn.get("variables", [])])
     # Map function names to their definition line (from dead_code listing)
     func_def_lines = {}
-    code_lines = parsed_code.get("dead_code", [])
+    code_lines = parsed_code.get("dead_code", []) or []
+    
     for stmt in code_lines:
         code_text = stmt.get("code", "")
         if not code_text:
@@ -472,13 +483,15 @@ def generate_liveness_queries(parsed_code):
                 name = fn.get("name")
                 if name and name in code_text:
                     func_def_lines[name] = stmt.get("line")
+
     for i, fn in enumerate(functions):
         fn_name = fn.get("name")
         if not fn_name:
             continue
-        live_map = fn.get("live_out", {})
-        if not live_map:
+        variables_list = fn.get("variables", [])
+        if not variables_list:
             continue
+
         # Determine next function's start line for range end
         if i < len(functions) - 1:
             next_fn_name = functions[i+1].get("name")
@@ -488,7 +501,13 @@ def generate_liveness_queries(parsed_code):
             if code_lines:
                 next_start = code_lines[-1].get("line", float('inf')) + 1
         f_start = func_def_lines.get(fn_name, 0)
-        for var, is_live in live_map.items():
+
+        fn_live_blob = liveness_funcs.get(fn_name, {}) if isinstance(liveness_funcs, dict) else {}
+        liveout_map = fn_live_blob.get("liveout", {}) if isinstance(fn_live_blob, dict) else {}
+        base_liveout = fn_live_blob.get("base_liveout", []) if isinstance(fn_live_blob, dict) else []
+        return_vars = fn_live_blob.get("return_vars", []) if isinstance(fn_live_blob, dict) else []
+
+        for var in variables_list:
             if var_counts[var] > 1:
                 if DISAMBIGUATE_BY == 'line':
                     decl_line = None
@@ -524,6 +543,15 @@ def generate_liveness_queries(parsed_code):
                     var_id = var
             else:
                 var_id = var
+            
+            is_live = False
+            if isinstance(liveout_map, dict) and var in liveout_map:
+                is_live = bool(liveout_map.get(var, False))
+            else:
+                if isinstance(base_liveout, list) and var in base_liveout:
+                    is_live = True
+                if isinstance(return_vars, list) and var in return_vars:
+                    is_live = True            
             template = random.choice(TEMPLATES["liveness"])
             question = template(fn_name, var_id)
             queries.append(question)
@@ -581,7 +609,7 @@ def generate_queries(parsed_code, program_name):
     queries["data_dependency"] = vdq
     ground_truth["data_dependency"] = vdt
 
-    lq2, lt2 = generate_liveness_queries(parsed_code)
+    lq2, lt2 = generate_liveness_queries(parsed_code, program_name)
     queries["liveness"] = lq2
     ground_truth["liveness"] = lt2
 
