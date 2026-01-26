@@ -9,18 +9,15 @@ background_info = {
         "Loop reachability examines whether a loop is executed during program execution based on its condition and structure. "
     ),
     "dominators": (
-        "Dominator analysis in C is about identifying whether certain code sections (like loop headers) must execute before other parts of the loop. "
+        "Statement x dominates statement y if every path passes statement y must go through statement x."
     ),
     "data_dependency": (
-        "Data dependency analysis involves determining if a variable’s defined value is used and influences subsequent computations. "
+        "Variable x depends on variable y if the value of x is determined by the value of y."
     ),
     "liveness": (
         "Liveness analysis determines whether a variable’s value is used later in the program. "
     ),
     "dead_code": (        
         "Dead code consists of segments that are never executed, such as code following an unconditional return or unreachable branches. "
-    ),
-    "pointer_aliasing": (                
-        "Pointer aliasing occurs when two or more pointers refer to the same memory location, potentially leading to unexpected behavior. "
     )
 }

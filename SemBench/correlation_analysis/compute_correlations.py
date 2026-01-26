@@ -14,10 +14,9 @@ CATEGORIES = [
     "LoopReach",
 ]
 def corr(x, y):
-    """Return (spearman_rho, spearman_p, kendall_tau, kendall_p)."""
+    """Return (spearman_rho, spearman_p)."""
     rho, p_rho = spearmanr(x, y)
-    tau, p_tau = kendalltau(x, y, nan_policy="omit")
-    return rho, p_rho, tau, p_tau
+    return rho, p_rho
 
 def main(input_file, output_file):
     df = pd.read_csv(input_file)
@@ -36,15 +35,13 @@ def main(input_file, output_file):
             if len(sub) < 3:
                 print(f"[WARN] Too few models with both {col} and {bench_col} (n={len(sub)})")
                 continue
-            rho, p_rho, tau, p_tau = corr(sub[col], sub[bench_col])
+            rho, p_rho= corr(sub[col], sub[bench_col])
             results.append(dict(
                 Category=cat.replace("SemBench_", ""),
                 Metric=postfix.strip("_"),
                 Benchmark=bench,
                 Spearman_rho=rho,
                 Spearman_p=p_rho,
-                Kendall_tau=tau,
-                Kendall_p=p_tau,
                 N=len(sub),
             ))
 
@@ -62,14 +59,15 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input_file",
         type=str,
-        default=os.path.join(current_dir, "sembench_updated3.csv"),
-        help="Input CSV file (default: ./sembench_updated3.csv)"
+        default=os.path.join(current_dir, "finalresult.csv"),
+        help="Input CSV file"
     )
+    #
     parser.add_argument(
         "--output_file",
         type=str,
-        default=os.path.join(current_dir, "corr_updated3.csv"),
-        help="Output CSV file (default: ./corr_updated3.csv)"
+        default=os.path.join(current_dir, "corr_updated.csv"),
+        help="Output CSV file (default: ./corr_updated.csv)"
     )
 
     args = parser.parse_args()
