@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import sys
 import json
@@ -7,8 +6,6 @@ import subprocess
 import re
 import traceback
 from unittest import result
-
-# --------- Utilities ---------
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
