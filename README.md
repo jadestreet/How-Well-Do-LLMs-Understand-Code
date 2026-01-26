@@ -124,8 +124,8 @@ Computes Spearman correlation between SemBench and benchmark results.
 **Arguments**
 | Flag | Description | Default |
 |------|-------------|----------|
-| `--input_file` | Input SemBench CSV file. | `./sembench_updated3.csv` |
-| `--output_file` | Output correlation CSV file. | `./corr_updated3.csv` |
+| `--input_file` | Input SemBench CSV file. | `./finalresult.csv` |
+| `--output_file` | Output correlation CSV file. | `./corr_updated.csv` |
 
 **Sample command**
 ```python correlation_analysis/compute_correlations.py```
@@ -135,7 +135,8 @@ Computes Spearman correlation between SemBench and benchmark results.
 Background queries.
 2. script\util.py
 Utility functions for the four main scripts.
-
+3. parser_helper.py & parser_helper_liveness.py
+Decompose some complicated functions into separate files.
 
 ## file execution
 This folder contains files from the data collection stage. To view and execute the script, enter this directory by ```cd file_execution```.
@@ -190,6 +191,7 @@ python collect.py \
 - rdtsc.c: it is the helper script to generate librdtsc.so.
 - librdtsc.so: the file uses the shared library librdtsc.so to access the CPU’s time-stamp counter (TSC) directly via the rdtsc instruction.
 - col.sh: the sbatch script you may use to run the collect.py script if you are working on a SLURM system.
+
 
 
 
