@@ -15,7 +15,7 @@ background_info = {
         "Variable x depends on variable y if the value of x is determined by the value of y."
     ),
     "liveness": (
-        "Liveness analysis determines whether a variable’s value is used later in the program. "
+        "A variable x is live at some point if it holds a value that may be needed in the future."
     ),
     "dead_code": (        
         "Dead code consists of segments that are never executed, such as code following an unconditional return or unreachable branches. "
