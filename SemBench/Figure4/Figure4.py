@@ -141,17 +141,17 @@ cat_colshuman = [
     ("Function Reachability", "FuncReach_p1"),
     ("Dead Code - statement", "DeadCode_p1"),
     ("Dead Code - loop", "LoopReach_p1"),
+    ("Liveness", "Liveness_p1"),
     ("Data Dependency", "DataDep_p1"),
     ("Dominators", "Dominators_p1"),
-    ("Liveness", "Liveness_p1"),
 ]
 
 cat_colsmbpp = [
     ("Function Reachability", "FuncReach_p1"),
+    ("Liveness", "Liveness_p1"),
     ("Dead Code - statement", "DeadCode_p1"),
     ("Dead Code - loop", "LoopReach_p1"),
     ("Dominators", "Dominators_p1"),
-    ("Liveness", "Liveness_p1"),
     ("Data Dependency", "DataDep_p1"),
 ]
 
