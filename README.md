@@ -1,59 +1,5 @@
 # SemBench: Coding without Understanding
 This repository includes the data and script of this project. After downloading the repository and setting up the environment, enter this directory by ```cd Coding_Without_Understanding```.
-
-## file execution
-This folder contains files from the data collection stage. To view and execute the script, enter this directory by ```cd file_execution```.
-### Data
-1. c_main_indep_with_code.csv
-This file includes all files' information qualified for our first stage of file selection. Including file_name,program_id,code_length,lines_of_code,repo_name,path,standard_libs,custom_libs,code,unique_id. 
-The files downloaded from CodeParrot exist in the form of a group of .arrow files. The unique_id is composed of the number of the .arrow file and the order of the file inside the .arrow file.
-2. loop_5rs_loop_5rs_full.csv
-This file records a selected pool of executable files from the last step. We execute each file for five rounds for stability and only select files that execute successfully into the next stage. 
-
-3. ml_exe_loop_code.csv
-This file includes the information on the finally qualified files. 
-### Script
-1. collect.py
-This script reads the c_main_indep_with_code.csv, automatically decomposes it into individual C files, compiles, then executes and collects its attributes.
-```bash
-python collect.py \
-  --version 1.0 \
-  --rs colv1.0 \
-  --rdtsc_lib ./librdtsc.so \
-  --code_path ./c_main_indep_with_code.csv \
-  --profile_result_path ./ml_profile_1.0.csv \
-  --summary_txt ./run_summary_1.0.txt \
-  --file_decomposition_output_directory ./decomposed \
-  --thread_num 25 \
-  --gcc_command "gcc -o {output_file} {input_file} {flags}" \
-  --default_flags "-O2" \
-  --compile_timeout 30 \
-  --run_timeout 30
-```
-
-**Arguments**
-
-| Flag | Description | Default |
-|------|-------------|---------|
-| `--version` | Run version tag used in suggested output filenames. | `1.0` |
-| `--rs` | Run suffix. If omitted, auto-derived as `colv<version>`. | `colv<version>` |
-| `--rdtsc_lib` | Path to `librdtsc.so` used for reading CPU cycle counters. | `./librdtsc.so` |
-| `--code_path` | **Required.** Input CSV containing code rows. | `./c_main_indep_with_code.csv` |
-| `--profile_result_path` | Output CSV summarizing profiling metrics. | `./ml_profile_<version>.csv` *(fallback: `./ml_profile.csv`)* |
-| `--summary_txt` | Output TXT summary with descriptive statistics. | `./run_summary_<version>.txt` *(fallback: `./run_summary.txt`)* |
-| `--file_decomposition_output_directory` | Directory where source files and compiled binaries are stored. | `./decomposed` |
-| `--thread_num` | Maximum number of worker threads. | `25` |
-| `--gcc_command` | GCC compilation template. Must include `{output_file}`, `{input_file}`, `{flags}`. | `"gcc -o {output_file} {input_file} {flags}"` |
-| `--default_flags` | Compiler flags injected into the template. | `-O2` |
-| `--compile_timeout` | Compilation timeout in seconds. | `30` |
-| `--run_timeout` | Execution timeout in seconds. | `30` |
-
----
-
-2. Helper files
-- rdtsc.c: it is the helper script to generate librdtsc.so.
-- librdtsc.so: the file uses the shared library librdtsc.so to access the CPU’s time-stamp counter (TSC) directly via the rdtsc instruction.
-- col.sh: the sbatch script you may use to run the collect.py script if you are working on a SLURM system.
 ## SemBench
 This folder contains files of question generation and the evaluation stage, and figure plotting scripts.
 To view and execute the script, enter this directory by ```cd SemBench```.
@@ -189,6 +135,62 @@ Computes Spearman correlation between SemBench and benchmark results.
 Background queries.
 2. script\util.py
 Utility functions for the four main scripts.
+
+
+## file execution
+This folder contains files from the data collection stage. To view and execute the script, enter this directory by ```cd file_execution```.
+### Data
+1. c_main_indep_with_code.csv
+This file includes all files' information qualified for our first stage of file selection. Including file_name,program_id,code_length,lines_of_code,repo_name,path,standard_libs,custom_libs,code,unique_id. 
+The files downloaded from CodeParrot exist in the form of a group of .arrow files. The unique_id is composed of the number of the .arrow file and the order of the file inside the .arrow file.
+2. loop_5rs_loop_5rs_full.csv
+This file records a selected pool of executable files from the last step. We execute each file for five rounds for stability and only select files that execute successfully into the next stage. 
+
+3. ml_exe_loop_code.csv
+This file includes the information on the finally qualified files. 
+### Script
+1. collect.py
+This script reads the c_main_indep_with_code.csv, automatically decomposes it into individual C files, compiles, then executes and collects its attributes.
+```bash
+python collect.py \
+  --version 1.0 \
+  --rs colv1.0 \
+  --rdtsc_lib ./librdtsc.so \
+  --code_path ./c_main_indep_with_code.csv \
+  --profile_result_path ./ml_profile_1.0.csv \
+  --summary_txt ./run_summary_1.0.txt \
+  --file_decomposition_output_directory ./decomposed \
+  --thread_num 25 \
+  --gcc_command "gcc -o {output_file} {input_file} {flags}" \
+  --default_flags "-O2" \
+  --compile_timeout 30 \
+  --run_timeout 30
+```
+
+**Arguments**
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--version` | Run version tag used in suggested output filenames. | `1.0` |
+| `--rs` | Run suffix. If omitted, auto-derived as `colv<version>`. | `colv<version>` |
+| `--rdtsc_lib` | Path to `librdtsc.so` used for reading CPU cycle counters. | `./librdtsc.so` |
+| `--code_path` | **Required.** Input CSV containing code rows. | `./c_main_indep_with_code.csv` |
+| `--profile_result_path` | Output CSV summarizing profiling metrics. | `./ml_profile_<version>.csv` *(fallback: `./ml_profile.csv`)* |
+| `--summary_txt` | Output TXT summary with descriptive statistics. | `./run_summary_<version>.txt` *(fallback: `./run_summary.txt`)* |
+| `--file_decomposition_output_directory` | Directory where source files and compiled binaries are stored. | `./decomposed` |
+| `--thread_num` | Maximum number of worker threads. | `25` |
+| `--gcc_command` | GCC compilation template. Must include `{output_file}`, `{input_file}`, `{flags}`. | `"gcc -o {output_file} {input_file} {flags}"` |
+| `--default_flags` | Compiler flags injected into the template. | `-O2` |
+| `--compile_timeout` | Compilation timeout in seconds. | `30` |
+| `--run_timeout` | Execution timeout in seconds. | `30` |
+
+---
+
+2. Helper files
+- rdtsc.c: it is the helper script to generate librdtsc.so.
+- librdtsc.so: the file uses the shared library librdtsc.so to access the CPU’s time-stamp counter (TSC) directly via the rdtsc instruction.
+- col.sh: the sbatch script you may use to run the collect.py script if you are working on a SLURM system.
+
 
 
 
