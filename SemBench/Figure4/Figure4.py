@@ -138,22 +138,14 @@ def add_fit_line(ax, x_series, y_series, line_kwargs=None, text_anchor=(0.03, 0.
 # -------------------------
 # Columns correspond to the 6 semantic categories
 cat_colshuman = [
-    ("Function Reachability", "FuncReach_p1"),
     ("Dead Code - statement", "DeadCode_p1"),
+    ("Data Dependency", "DataDep_p1"),
+    ("Function Reachability", "FuncReach_p1"),
+    ("Dominators", "Dominators_p1"),
     ("Dead Code - loop", "LoopReach_p1"),
     ("Liveness", "Liveness_p1"),
-    ("Data Dependency", "DataDep_p1"),
-    ("Dominators", "Dominators_p1"),
 ]
-
-cat_colsmbpp = [
-    ("Function Reachability", "FuncReach_p1"),
-    ("Liveness", "Liveness_p1"),
-    ("Dead Code - statement", "DeadCode_p1"),
-    ("Dead Code - loop", "LoopReach_p1"),
-    ("Dominators", "Dominators_p1"),
-    ("Data Dependency", "DataDep_p1"),
-]
+cat_colsmbpp = cat_colshuman
 
 fig = plt.figure(figsize=(18, 6.8))
 gs = GridSpec(2, 6, wspace=0.25, hspace=0.35)

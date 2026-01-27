@@ -17,8 +17,7 @@ import torch.distributed as dist
 import transformers.modeling_utils as mu
 mu.caching_allocator_warmup = lambda *args, **kwargs: None
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteriaList, StoppingCriteria
-from script.util import parse_llm_response, majority_vote, construct_input_large
-from script.prompts.FOLLOWUP import followup_prompts
+from script.util import parse_llm_response, construct_input_large
 
 # ---------------- Distributed Setup ----------------
 def setup_distributed():

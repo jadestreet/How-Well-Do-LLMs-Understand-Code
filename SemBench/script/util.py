@@ -1,7 +1,5 @@
 import re
 from typing import Optional, List
-INSTRUCTION = "Given the C code and background information, you should solve this problem step by step briefly and your response should end with an option between \"[Final answer: yes]\" or \"[Final answer: no]\"."
-INSTRUCTION_simple = "Given the C code and background information, answer each test question with an option between [yes] and [no]."
 INSTRUCTION = "Given the C code and background information, your response should start with an option between \"[Final answer: yes]\" or \"[Final answer: no]\" then you should explain your solution step by step briefly."
 
 _BOILERPLATE_RE = re.compile(
@@ -20,21 +18,16 @@ def parse_llm_response(response: str) -> Optional[bool]:
     cleaned = _clean_re.sub('', response)
     for line in reversed(cleaned.splitlines()):
         low = line.lower()
-        # skip any line that doesn't even mention 'answer'
         if 'answer' not in low:
             continue
-        # skip lines with >1 bracketed "[Final answer: yes]" or "[Final answer: no]"
         if len(_bracket_re.findall(line)) > 1:
             continue
-        # require at least one 'answer:' or 'final answer:' prefix
         if not _prefix_re.search(line):
             continue
-        # if the line still literally mentions both 'yes' and 'no', skip
         has_yes = bool(_word_yes.search(line))
         has_no  = bool(_word_no.search(line))
         if has_yes and has_no:
             continue
-        # apply your exact verdict regex
         hits = _verdict_re.findall(line)
         if not hits:
             continue
@@ -44,22 +37,6 @@ def parse_llm_response(response: str) -> Optional[bool]:
         if unique == {'no'}:
             return False
     return None
-
-
-def majority_vote(decisions):
-    """
-    Given a list of boolean decisions (or Nones), returns the majority decision
-    and the ratio of votes for that decision.
-    """
-    yes_votes = sum(1 for d in decisions if d is True)
-    no_votes  = sum(1 for d in decisions if d is False)
-    total = yes_votes + no_votes
-    if total == 0:
-        return None, 0
-    if yes_votes >= no_votes:
-        return True, yes_votes / total
-    else:
-        return False, no_votes / total
 
 def construct_input_large(code_file, prompt, category):
     """

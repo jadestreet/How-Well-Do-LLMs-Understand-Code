@@ -7,15 +7,12 @@ import openai
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from script.util import parse_llm_response, construct_input_large, convert_tensors
-from script.prompts.FOLLOWUP import followup_prompts  # (ok if unused for now)
-from script.util_file_selection import select_files_by_token_length
 
 # =========================
 # Pricing & usage helpers
 # =========================
 
 # Rates are dollars per 1,000 tokens. 
-# Set prompt_cached to your account/model's cached-input rate when you have it.
 PRICING_PER_1K = {
     "gpt-5": {
         "prompt": 0.00125,
@@ -169,7 +166,6 @@ selected_code_files = [
     for f in os.listdir(CODE_DIR)
     if os.path.isfile(os.path.join(CODE_DIR, f))
 ]
-#done_files, tem_lengths = collect_code_files_from_csv(CONFIG.file) #filter out usage
 print(f"Loaded all {len(selected_code_files)} programs from {CODE_DIR}")
 
 
