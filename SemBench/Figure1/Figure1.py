@@ -202,25 +202,6 @@ def main():
     draw_gradient_spine_y(ax_left, side="left", cmap=cmap_left, norm_y=norm_y, lw=3.0)
     draw_gradient_spine_y(ax_right, side="right", cmap=cmap_right, norm_y=norm_y, lw=3.0)
 
-    '''
-    legend_items = [
-        Line2D([0], [0], color=pair_gray, linestyle="-", linewidth=1.1, label="Pair link"),
-        Line2D([0], [0], color="black", linewidth=2.2, label="SemBench trend (log-size)"),
-        Line2D([0], [0], color="black", linewidth=2.2, label="HumanEval trend (log-size)"),
-        Line2D([0], [0], marker="o", linestyle="None", markersize=7,
-               markerfacecolor="grey", markeredgecolor="grey",
-               label="SemBench point (y-colored)"),
-        Line2D([0], [0], marker="o", linestyle="None", markersize=7,
-               markerfacecolor="white", markeredgecolor="grey",
-               label="HumanEval point (y-colored edge)"),
-    ]
-    for m in model_list:
-        legend_items.append(
-            Line2D([0], [0], marker=model_to_marker[m], linestyle="None",
-                   markersize=7, markerfacecolor="white", markeredgecolor="0.25", label=m)
-        )
-    ax_left.legend(handles=legend_items, frameon=False, fontsize=9, ncol=2, loc="lower right")
-    '''
     # ---- Legend (colored) ----
     sem_mid = cmap_left(norm_y(50))
     he_mid  = cmap_right(norm_y(50))
