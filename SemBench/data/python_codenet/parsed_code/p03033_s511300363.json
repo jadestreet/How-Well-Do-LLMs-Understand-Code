@@ -1,0 +1,5938 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "MOD = 10 ** 9 + 7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 3
+    },
+    {
+      "code": "INF = 10 ** 18",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 4
+    },
+    {
+      "code": "from collections.abc import Sequence, Set",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "from bisect import bisect_left",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 13,
+      "node_id": 6
+    },
+    {
+      "code": "from itertools import chain",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 14,
+      "node_id": 7
+    },
+    {
+      "code": "from heapq import heappush, heappop",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 16,
+      "node_id": 8
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 128,
+      "node_id": 9
+    },
+    {
+      "code": "return [int(x) for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "function": "LI",
+      "kind": "Return",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "return [int(x) - 1 for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "function": "LI_",
+      "kind": "Return",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "return [float(x) for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "function": "LF",
+      "kind": "Return",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "return sys.stdin.readline().split()",
+      "dead": false,
+      "function": "LS",
+      "kind": "Return",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "return int(sys.stdin.readline())",
+      "dead": false,
+      "function": "II",
+      "kind": "Return",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "function": "SI",
+      "kind": "Return",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "self._set = set()",
+      "dead": false,
+      "function": "HeapSet.__init__",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "self._list = list()",
+      "dead": false,
+      "function": "HeapSet.__init__",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 2
+    },
+    {
+      "code": "if a in self._set: return else: self._set.add(a) heappush(self._list, a)",
+      "dead": false,
+      "function": "HeapSet.add",
+      "kind": "If",
+      "line": 25,
+      "node_id": 1
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "HeapSet.add",
+      "kind": "Return",
+      "line": 26,
+      "node_id": 2
+    },
+    {
+      "code": "self._set.add(a)",
+      "dead": false,
+      "function": "HeapSet.add",
+      "kind": "Expr",
+      "line": 28,
+      "node_id": 3
+    },
+    {
+      "code": "heappush(self._list, a)",
+      "dead": false,
+      "function": "HeapSet.add",
+      "kind": "Expr",
+      "line": 29,
+      "node_id": 4
+    },
+    {
+      "code": "if a not in self._set: raise ValueError else: self._set.remove(a)",
+      "dead": false,
+      "function": "HeapSet.remove",
+      "kind": "If",
+      "line": 32,
+      "node_id": 1
+    },
+    {
+      "code": "raise ValueError",
+      "dead": false,
+      "function": "HeapSet.remove",
+      "kind": "Raise",
+      "line": 33,
+      "node_id": 2
+    },
+    {
+      "code": "self._set.remove(a)",
+      "dead": false,
+      "function": "HeapSet.remove",
+      "kind": "Expr",
+      "line": 35,
+      "node_id": 3
+    },
+    {
+      "code": "if not self._set: self._list = list() raise IndexError",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "If",
+      "line": 38,
+      "node_id": 1
+    },
+    {
+      "code": "self._list = list()",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 2
+    },
+    {
+      "code": "raise IndexError",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Raise",
+      "line": 40,
+      "node_id": 3
+    },
+    {
+      "code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "While",
+      "line": 41,
+      "node_id": 4
+    },
+    {
+      "code": "a = self._list[0]",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 5
+    },
+    {
+      "code": "if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "If",
+      "line": 43,
+      "node_id": 6
+    },
+    {
+      "code": "heappop(self._list)",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Expr",
+      "line": 44,
+      "node_id": 7
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Continue",
+      "line": 45,
+      "node_id": 8
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Break",
+      "line": 47,
+      "node_id": 9
+    },
+    {
+      "code": "self._set.remove(a)",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Expr",
+      "line": 48,
+      "node_id": 10
+    },
+    {
+      "code": "return a",
+      "dead": false,
+      "function": "HeapSet.pop",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 11
+    },
+    {
+      "code": "if not self._set: self._list = list() raise IndexError",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "If",
+      "line": 52,
+      "node_id": 1
+    },
+    {
+      "code": "self._list = list()",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 2
+    },
+    {
+      "code": "raise IndexError",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Raise",
+      "line": 54,
+      "node_id": 3
+    },
+    {
+      "code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "While",
+      "line": 55,
+      "node_id": 4
+    },
+    {
+      "code": "a = self._list[0]",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 5
+    },
+    {
+      "code": "if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "If",
+      "line": 57,
+      "node_id": 6
+    },
+    {
+      "code": "heappop(self._list)",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 7
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Continue",
+      "line": 59,
+      "node_id": 8
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Break",
+      "line": 61,
+      "node_id": 9
+    },
+    {
+      "code": "return a",
+      "dead": false,
+      "function": "HeapSet.peek",
+      "kind": "Return",
+      "line": 62,
+      "node_id": 10
+    },
+    {
+      "code": "return self._set",
+      "dead": false,
+      "function": "HeapSet.get_set",
+      "kind": "Return",
+      "line": 64,
+      "node_id": 1
+    },
+    {
+      "code": "return self._list",
+      "dead": false,
+      "function": "HeapSet.get_heapq",
+      "kind": "Return",
+      "line": 65,
+      "node_id": 1
+    },
+    {
+      "code": "return self._list",
+      "dead": false,
+      "function": "HeapSet.get_list",
+      "kind": "Return",
+      "line": 66,
+      "node_id": 1
+    },
+    {
+      "code": "return True if self._set else False",
+      "dead": false,
+      "function": "HeapSet.__bool__",
+      "kind": "Return",
+      "line": 67,
+      "node_id": 1
+    },
+    {
+      "code": "return a in self._set",
+      "dead": false,
+      "function": "HeapSet.__contains__",
+      "kind": "Return",
+      "line": 68,
+      "node_id": 1
+    },
+    {
+      "code": "return len(self._set)",
+      "dead": false,
+      "function": "HeapSet.__len__",
+      "kind": "Return",
+      "line": 69,
+      "node_id": 1
+    },
+    {
+      "code": "return \"HeapSet(\" + (repr(self._set) if self._set else '') + \")\"",
+      "dead": false,
+      "function": "HeapSet.__repr__",
+      "kind": "Return",
+      "line": 71,
+      "node_id": 1
+    },
+    {
+      "code": "N, Q = LI()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 78,
+      "node_id": 1
+    },
+    {
+      "code": "events = []",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 79,
+      "node_id": 2
+    },
+    {
+      "code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 80,
+      "node_id": 3
+    },
+    {
+      "code": "stx = LI()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 81,
+      "node_id": 4
+    },
+    {
+      "code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 84,
+      "node_id": 5
+    },
+    {
+      "code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 85,
+      "node_id": 6
+    },
+    {
+      "code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 86,
+      "node_id": 7
+    },
+    {
+      "code": "events.append((II(), INF, -1))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 87,
+      "node_id": 8
+    },
+    {
+      "code": "events.sort()",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 90,
+      "node_id": 9
+    },
+    {
+      "code": "from array import array",
+      "dead": false,
+      "function": "main",
+      "kind": "ImportFrom",
+      "line": 92,
+      "node_id": 10
+    },
+    {
+      "code": "ans = array('i')",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 93,
+      "node_id": 11
+    },
+    {
+      "code": "m = HeapSet()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 95,
+      "node_id": 12
+    },
+    {
+      "code": "change_flag = True",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 97,
+      "node_id": 13
+    },
+    {
+      "code": "min_ = INF",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 98,
+      "node_id": 14
+    },
+    {
+      "code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 99,
+      "node_id": 15
+    },
+    {
+      "code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 100,
+      "node_id": 16
+    },
+    {
+      "code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 101,
+      "node_id": 17
+    },
+    {
+      "code": "ans.append(-1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 102,
+      "node_id": 18
+    },
+    {
+      "code": "if change_flag: min_ = m.peek() change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 105,
+      "node_id": 19
+    },
+    {
+      "code": "min_ = m.peek()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 106,
+      "node_id": 20
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 107,
+      "node_id": 21
+    },
+    {
+      "code": "ans.append(min_)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 108,
+      "node_id": 22
+    },
+    {
+      "code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 110,
+      "node_id": 23
+    },
+    {
+      "code": "m.add(txa[1])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 111,
+      "node_id": 24
+    },
+    {
+      "code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 112,
+      "node_id": 25
+    },
+    {
+      "code": "min_ = txa[1]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 113,
+      "node_id": 26
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 114,
+      "node_id": 27
+    },
+    {
+      "code": "m.remove(txa[1])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 116,
+      "node_id": 28
+    },
+    {
+      "code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 117,
+      "node_id": 29
+    },
+    {
+      "code": "min_ = m.peek()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 118,
+      "node_id": 30
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 119,
+      "node_id": 31
+    },
+    {
+      "code": "elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 120,
+      "node_id": 32
+    },
+    {
+      "code": "min_ = INF",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 121,
+      "node_id": 33
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 122,
+      "node_id": 34
+    },
+    {
+      "code": "print('\\n'.join(map(str, ans.tolist())))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 126,
+      "node_id": 35
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "return [int(x) for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "return [int(x) - 1 for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "return [float(x) for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "return sys.stdin.readline().split()",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "return int(sys.stdin.readline())",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "MOD = 10 ** 9 + 7",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "INF = 10 ** 18",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "from collections.abc import Sequence, Set",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "from bisect import bisect_left",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "from itertools import chain",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "from heapq import heappush, heappop",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "self._set = set()",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "self._list = list()",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "if a in self._set: return else: self._set.add(a) heappush(self._list, a)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "self._set.add(a)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "heappush(self._list, a)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if a not in self._set: raise ValueError else: self._set.remove(a)",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "raise ValueError",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "self._set.remove(a)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "if not self._set: self._list = list() raise IndexError",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "self._list = list()",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "raise IndexError",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "a = self._list[0]",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "heappop(self._list)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "self._set.remove(a)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "return a",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "if not self._set: self._list = list() raise IndexError",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "self._list = list()",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "raise IndexError",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "a = self._list[0]",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "if a not in self._set: heappop(self._list) continue else: break",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "heappop(self._list)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "return a",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "return self._set",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "return self._list",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "return self._list",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "return True if self._set else False",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "return a in self._set",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "return len(self._set)",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "return \"HeapSet(\" + (repr(self._set) if self._set else '') + \")\"",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "N, Q = LI()",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "events = []",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "dead": false,
+      "line": 80
+    },
+    {
+      "code": "stx = LI()",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "dead": false,
+      "line": 84
+    },
+    {
+      "code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "dead": false,
+      "line": 85
+    },
+    {
+      "code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "events.append((II(), INF, -1))",
+      "dead": false,
+      "line": 87
+    },
+    {
+      "code": "events.sort()",
+      "dead": false,
+      "line": 90
+    },
+    {
+      "code": "from array import array",
+      "dead": false,
+      "line": 92
+    },
+    {
+      "code": "ans = array('i')",
+      "dead": false,
+      "line": 93
+    },
+    {
+      "code": "m = HeapSet()",
+      "dead": false,
+      "line": 95
+    },
+    {
+      "code": "change_flag = True",
+      "dead": false,
+      "line": 97
+    },
+    {
+      "code": "min_ = INF",
+      "dead": false,
+      "line": 98
+    },
+    {
+      "code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "line": 99
+    },
+    {
+      "code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "line": 100
+    },
+    {
+      "code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "dead": false,
+      "line": 101
+    },
+    {
+      "code": "ans.append(-1)",
+      "dead": false,
+      "line": 102
+    },
+    {
+      "code": "if change_flag: min_ = m.peek() change_flag = False",
+      "dead": false,
+      "line": 105
+    },
+    {
+      "code": "min_ = m.peek()",
+      "dead": false,
+      "line": 106
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "line": 107
+    },
+    {
+      "code": "ans.append(min_)",
+      "dead": false,
+      "line": 108
+    },
+    {
+      "code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "line": 110
+    },
+    {
+      "code": "m.add(txa[1])",
+      "dead": false,
+      "line": 111
+    },
+    {
+      "code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "dead": false,
+      "line": 112
+    },
+    {
+      "code": "min_ = txa[1]",
+      "dead": false,
+      "line": 113
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "line": 114
+    },
+    {
+      "code": "m.remove(txa[1])",
+      "dead": false,
+      "line": 116
+    },
+    {
+      "code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "line": 117
+    },
+    {
+      "code": "min_ = m.peek()",
+      "dead": false,
+      "line": 118
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "line": 119
+    },
+    {
+      "code": "elif not m: min_ = INF change_flag = False",
+      "dead": false,
+      "line": 120
+    },
+    {
+      "code": "min_ = INF",
+      "dead": false,
+      "line": 121
+    },
+    {
+      "code": "change_flag = False",
+      "dead": false,
+      "line": 122
+    },
+    {
+      "code": "print('\\n'.join(map(str, ans.tolist())))",
+      "dead": false,
+      "line": 126
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 128
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03033_s511300363.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 3,
+      "lineno": 3,
+      "name": "LI",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 4,
+      "lineno": 4,
+      "name": "LI_",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 5,
+      "lineno": 5,
+      "name": "LF",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 6,
+      "lineno": 6,
+      "name": "LS",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 7,
+      "lineno": 7,
+      "name": "II",
+      "variables": [
+        "sys.stdin"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 8,
+      "name": "SI",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 22,
+      "lineno": 20,
+      "name": "HeapSet.__init__",
+      "variables": [
+        "self",
+        "self._list",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 29,
+      "lineno": 24,
+      "name": "HeapSet.add",
+      "variables": [
+        "a",
+        "self",
+        "self._list",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 35,
+      "lineno": 31,
+      "name": "HeapSet.remove",
+      "variables": [
+        "ValueError",
+        "a",
+        "self",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 49,
+      "lineno": 37,
+      "name": "HeapSet.pop",
+      "variables": [
+        "IndexError",
+        "a",
+        "self",
+        "self._list",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 62,
+      "lineno": 51,
+      "name": "HeapSet.peek",
+      "variables": [
+        "IndexError",
+        "a",
+        "self",
+        "self._list",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 64,
+      "lineno": 64,
+      "name": "HeapSet.get_set",
+      "variables": [
+        "self",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 65,
+      "lineno": 65,
+      "name": "HeapSet.get_heapq",
+      "variables": [
+        "self",
+        "self._list"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 66,
+      "lineno": 66,
+      "name": "HeapSet.get_list",
+      "variables": [
+        "self",
+        "self._list"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 67,
+      "lineno": 67,
+      "name": "HeapSet.__bool__",
+      "variables": [
+        "self",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 68,
+      "lineno": 68,
+      "name": "HeapSet.__contains__",
+      "variables": [
+        "a",
+        "self",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 69,
+      "lineno": 69,
+      "name": "HeapSet.__len__",
+      "variables": [
+        "self",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 71,
+      "lineno": 70,
+      "name": "HeapSet.__repr__",
+      "variables": [
+        "self",
+        "self._set"
+      ]
+    },
+    {
+      "calls": [
+        "HeapSet.__init__",
+        "II",
+        "LI"
+      ],
+      "end_lineno": 126,
+      "lineno": 77,
+      "name": "main",
+      "variables": [
+        "INF",
+        "N",
+        "Q",
+        "_",
+        "ans",
+        "array",
+        "change_flag",
+        "events",
+        "m",
+        "min_",
+        "str",
+        "stx",
+        "txa"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "HeapSet.__bool__": {
+        "base_liveout": [
+          "self._set"
+        ],
+        "live_before": [
+          {
+            "code": "return True if self._set else False",
+            "line": 67,
+            "vars": [
+              "self._set"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._set": true
+        },
+        "return_vars": [
+          "self._set"
+        ]
+      },
+      "HeapSet.__contains__": {
+        "base_liveout": [
+          "a",
+          "self._set"
+        ],
+        "live_before": [
+          {
+            "code": "return a in self._set",
+            "line": 68,
+            "vars": [
+              "a",
+              "self._set"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "self": false,
+          "self._set": true
+        },
+        "return_vars": [
+          "a",
+          "self._set"
+        ]
+      },
+      "HeapSet.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self._set = set()",
+            "line": 21,
+            "vars": []
+          },
+          {
+            "code": "self._list = list()",
+            "line": 22,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._list": false,
+          "self._set": false
+        },
+        "return_vars": []
+      },
+      "HeapSet.__len__": {
+        "base_liveout": [
+          "self._set"
+        ],
+        "live_before": [
+          {
+            "code": "return len(self._set)",
+            "line": 69,
+            "vars": [
+              "self._set"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._set": true
+        },
+        "return_vars": [
+          "self._set"
+        ]
+      },
+      "HeapSet.__repr__": {
+        "base_liveout": [
+          "self._set"
+        ],
+        "live_before": [
+          {
+            "code": "return \"HeapSet(\" + (repr(self._set) if self._set else '') + \")\"",
+            "line": 71,
+            "vars": [
+              "self._set"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._set": true
+        },
+        "return_vars": [
+          "self._set"
+        ]
+      },
+      "HeapSet.add": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if a in self._set: return else: self._set.add(a) heappush(self._list, a)",
+            "line": 25,
+            "vars": [
+              "a",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 26,
+            "vars": [
+              "a",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "self._set.add(a)",
+            "line": 28,
+            "vars": [
+              "a",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "heappush(self._list, a)",
+            "line": 29,
+            "vars": [
+              "a",
+              "self._list"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "self": false,
+          "self._list": false,
+          "self._set": false
+        },
+        "return_vars": []
+      },
+      "HeapSet.get_heapq": {
+        "base_liveout": [
+          "self._list"
+        ],
+        "live_before": [
+          {
+            "code": "return self._list",
+            "line": 65,
+            "vars": [
+              "self._list"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._list": true
+        },
+        "return_vars": [
+          "self._list"
+        ]
+      },
+      "HeapSet.get_list": {
+        "base_liveout": [
+          "self._list"
+        ],
+        "live_before": [
+          {
+            "code": "return self._list",
+            "line": 66,
+            "vars": [
+              "self._list"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._list": true
+        },
+        "return_vars": [
+          "self._list"
+        ]
+      },
+      "HeapSet.get_set": {
+        "base_liveout": [
+          "self._set"
+        ],
+        "live_before": [
+          {
+            "code": "return self._set",
+            "line": 64,
+            "vars": [
+              "self._set"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._set": true
+        },
+        "return_vars": [
+          "self._set"
+        ]
+      },
+      "HeapSet.peek": {
+        "base_liveout": [
+          "a"
+        ],
+        "live_before": [
+          {
+            "code": "if not self._set: self._list = list() raise IndexError",
+            "line": 52,
+            "vars": [
+              "IndexError",
+              "self._set"
+            ]
+          },
+          {
+            "code": "self._list = list()",
+            "line": 53,
+            "vars": [
+              "IndexError",
+              "self._set"
+            ]
+          },
+          {
+            "code": "raise IndexError",
+            "line": 54,
+            "vars": [
+              "IndexError",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+            "line": 55,
+            "vars": [
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "a = self._list[0]",
+            "line": 56,
+            "vars": [
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "if a not in self._set: heappop(self._list) continue else: break",
+            "line": 57,
+            "vars": [
+              "a",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "heappop(self._list)",
+            "line": 58,
+            "vars": [
+              "a",
+              "self._list"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 59,
+            "vars": [
+              "a"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 61,
+            "vars": [
+              "a"
+            ]
+          },
+          {
+            "code": "return a",
+            "line": 62,
+            "vars": [
+              "a"
+            ]
+          }
+        ],
+        "liveout": {
+          "IndexError": false,
+          "a": true,
+          "self": false,
+          "self._list": false,
+          "self._set": false
+        },
+        "return_vars": [
+          "a"
+        ]
+      },
+      "HeapSet.pop": {
+        "base_liveout": [
+          "a"
+        ],
+        "live_before": [
+          {
+            "code": "if not self._set: self._list = list() raise IndexError",
+            "line": 38,
+            "vars": [
+              "IndexError",
+              "self._set"
+            ]
+          },
+          {
+            "code": "self._list = list()",
+            "line": 39,
+            "vars": [
+              "IndexError",
+              "self._set"
+            ]
+          },
+          {
+            "code": "raise IndexError",
+            "line": 40,
+            "vars": [
+              "IndexError",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+            "line": 41,
+            "vars": [
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "a = self._list[0]",
+            "line": 42,
+            "vars": [
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "if a not in self._set: heappop(self._list) continue else: break",
+            "line": 43,
+            "vars": [
+              "a",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "heappop(self._list)",
+            "line": 44,
+            "vars": [
+              "a",
+              "self._list",
+              "self._set"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 45,
+            "vars": [
+              "a",
+              "self._set"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 47,
+            "vars": [
+              "a",
+              "self._set"
+            ]
+          },
+          {
+            "code": "self._set.remove(a)",
+            "line": 48,
+            "vars": [
+              "a",
+              "self._set"
+            ]
+          },
+          {
+            "code": "return a",
+            "line": 49,
+            "vars": [
+              "a"
+            ]
+          }
+        ],
+        "liveout": {
+          "IndexError": false,
+          "a": true,
+          "self": false,
+          "self._list": false,
+          "self._set": false
+        },
+        "return_vars": [
+          "a"
+        ]
+      },
+      "HeapSet.remove": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if a not in self._set: raise ValueError else: self._set.remove(a)",
+            "line": 32,
+            "vars": [
+              "ValueError",
+              "a",
+              "self._set"
+            ]
+          },
+          {
+            "code": "raise ValueError",
+            "line": 33,
+            "vars": [
+              "ValueError",
+              "a",
+              "self._set"
+            ]
+          },
+          {
+            "code": "self._set.remove(a)",
+            "line": 35,
+            "vars": [
+              "a",
+              "self._set"
+            ]
+          }
+        ],
+        "liveout": {
+          "ValueError": false,
+          "a": false,
+          "self": false,
+          "self._set": false
+        },
+        "return_vars": []
+      },
+      "II": {
+        "base_liveout": [
+          "sys.stdin"
+        ],
+        "live_before": [
+          {
+            "code": "return int(sys.stdin.readline())",
+            "line": 7,
+            "vars": [
+              "sys.stdin"
+            ]
+          }
+        ],
+        "liveout": {
+          "sys.stdin": true
+        },
+        "return_vars": [
+          "sys.stdin"
+        ]
+      },
+      "LF": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return [float(x) for x in sys.stdin.readline().split()]",
+            "line": 5,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LI": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return [int(x) for x in sys.stdin.readline().split()]",
+            "line": 3,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LI_": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return [int(x) - 1 for x in sys.stdin.readline().split()]",
+            "line": 4,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LS": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().split()",
+            "line": 6,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "SI": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().strip()",
+            "line": 8,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**7)",
+            "line": 2,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "MOD = 10 ** 9 + 7",
+            "line": 9,
+            "vars": []
+          },
+          {
+            "code": "INF = 10 ** 18",
+            "line": 10,
+            "vars": []
+          },
+          {
+            "code": "from collections.abc import Sequence, Set",
+            "line": 12,
+            "vars": []
+          },
+          {
+            "code": "from bisect import bisect_left",
+            "line": 13,
+            "vars": []
+          },
+          {
+            "code": "from itertools import chain",
+            "line": 14,
+            "vars": []
+          },
+          {
+            "code": "from heapq import heappush, heappop",
+            "line": 16,
+            "vars": []
+          },
+          {
+            "code": "main()",
+            "line": 128,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "MOD": false,
+          "sys": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "N, Q = LI()",
+            "line": 78,
+            "vars": [
+              "INF",
+              "str"
+            ]
+          },
+          {
+            "code": "events = []",
+            "line": 79,
+            "vars": [
+              "INF",
+              "N",
+              "Q",
+              "str"
+            ]
+          },
+          {
+            "code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+            "line": 80,
+            "vars": [
+              "INF",
+              "N",
+              "Q",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "stx = LI()",
+            "line": 81,
+            "vars": [
+              "INF",
+              "Q",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "events.append((stx[0] - stx[2], stx[2], True))",
+            "line": 84,
+            "vars": [
+              "INF",
+              "Q",
+              "events",
+              "str",
+              "stx"
+            ]
+          },
+          {
+            "code": "events.append((stx[1] - stx[2], stx[2], False))",
+            "line": 85,
+            "vars": [
+              "INF",
+              "Q",
+              "events",
+              "str",
+              "stx"
+            ]
+          },
+          {
+            "code": "for _ in range(Q): events.append((II(), INF, -1))",
+            "line": 86,
+            "vars": [
+              "INF",
+              "Q",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "events.append((II(), INF, -1))",
+            "line": 87,
+            "vars": [
+              "INF",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "events.sort()",
+            "line": 90,
+            "vars": [
+              "INF",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "from array import array",
+            "line": 92,
+            "vars": [
+              "INF",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "ans = array('i')",
+            "line": 93,
+            "vars": [
+              "INF",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "m = HeapSet()",
+            "line": 95,
+            "vars": [
+              "INF",
+              "ans",
+              "events",
+              "str"
+            ]
+          },
+          {
+            "code": "change_flag = True",
+            "line": 97,
+            "vars": [
+              "INF",
+              "ans",
+              "events",
+              "m",
+              "str"
+            ]
+          },
+          {
+            "code": "min_ = INF",
+            "line": 98,
+            "vars": [
+              "INF",
+              "ans",
+              "change_flag",
+              "events",
+              "m",
+              "str"
+            ]
+          },
+          {
+            "code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+            "line": 99,
+            "vars": [
+              "INF",
+              "ans",
+              "change_flag",
+              "events",
+              "m",
+              "str"
+            ]
+          },
+          {
+            "code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+            "line": 100,
+            "vars": [
+              "INF",
+              "ans",
+              "change_flag",
+              "m",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+            "line": 101,
+            "vars": [
+              "INF",
+              "ans",
+              "change_flag",
+              "m",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "ans.append(-1)",
+            "line": 102,
+            "vars": [
+              "INF",
+              "ans",
+              "change_flag",
+              "m",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "if change_flag: min_ = m.peek() change_flag = False",
+            "line": 105,
+            "vars": [
+              "INF",
+              "ans",
+              "change_flag",
+              "m",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "min_ = m.peek()",
+            "line": 106,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "change_flag = False",
+            "line": 107,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "ans.append(min_)",
+            "line": 108,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+            "line": 110,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "m.add(txa[1])",
+            "line": 111,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+            "line": 112,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "min_ = txa[1]",
+            "line": 113,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "change_flag = False",
+            "line": 114,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "m.remove(txa[1])",
+            "line": 116,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+            "line": 117,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "min_",
+              "str",
+              "txa"
+            ]
+          },
+          {
+            "code": "min_ = m.peek()",
+            "line": 118,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "str"
+            ]
+          },
+          {
+            "code": "change_flag = False",
+            "line": 119,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "str"
+            ]
+          },
+          {
+            "code": "elif not m: min_ = INF change_flag = False",
+            "line": 120,
+            "vars": [
+              "INF",
+              "ans",
+              "m",
+              "str"
+            ]
+          },
+          {
+            "code": "min_ = INF",
+            "line": 121,
+            "vars": [
+              "INF",
+              "ans",
+              "str"
+            ]
+          },
+          {
+            "code": "change_flag = False",
+            "line": 122,
+            "vars": [
+              "ans",
+              "str"
+            ]
+          },
+          {
+            "code": "print('\\n'.join(map(str, ans.tolist())))",
+            "line": 126,
+            "vars": [
+              "ans",
+              "str"
+            ]
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "N": false,
+          "Q": false,
+          "_": false,
+          "ans": false,
+          "array": false,
+          "change_flag": false,
+          "events": false,
+          "m": false,
+          "min_": false,
+          "str": false,
+          "stx": false,
+          "txa": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "always_runs",
+      "code": "while True:",
+      "cond": "True",
+      "function": "HeapSet.peek",
+      "header_id": 4,
+      "line": 55,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "while True:",
+      "cond": "True",
+      "function": "HeapSet.pop",
+      "header_id": 4,
+      "line": 41,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(N):",
+      "cond": "for _ in range(N)",
+      "function": "main",
+      "header_id": 3,
+      "line": 80,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(Q):",
+      "cond": "for _ in range(Q)",
+      "function": "main",
+      "header_id": 7,
+      "line": 86,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for txa in events:",
+      "cond": "for txa in events",
+      "function": "main",
+      "header_id": 15,
+      "line": 99,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10**7)",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "INF = 10 ** 18",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "INF = 10 ** 18",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 9,
+      "b_code": "INF = 10 ** 18",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from collections.abc import Sequence, Set",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "from collections.abc import Sequence, Set",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 9,
+      "b_code": "from collections.abc import Sequence, Set",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = 10 ** 18",
+      "a_line": 10,
+      "b_code": "from collections.abc import Sequence, Set",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from bisect import bisect_left",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "from bisect import bisect_left",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 9,
+      "b_code": "from bisect import bisect_left",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = 10 ** 18",
+      "a_line": 10,
+      "b_code": "from bisect import bisect_left",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections.abc import Sequence, Set",
+      "a_line": 12,
+      "b_code": "from bisect import bisect_left",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from itertools import chain",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "from itertools import chain",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 9,
+      "b_code": "from itertools import chain",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = 10 ** 18",
+      "a_line": 10,
+      "b_code": "from itertools import chain",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections.abc import Sequence, Set",
+      "a_line": 12,
+      "b_code": "from itertools import chain",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left",
+      "a_line": 13,
+      "b_code": "from itertools import chain",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 9,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = 10 ** 18",
+      "a_line": 10,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections.abc import Sequence, Set",
+      "a_line": 12,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left",
+      "a_line": 13,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import chain",
+      "a_line": 14,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 9,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = 10 ** 18",
+      "a_line": 10,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections.abc import Sequence, Set",
+      "a_line": 12,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left",
+      "a_line": 13,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import chain",
+      "a_line": 14,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 16,
+      "b_code": "main()",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self._set = set()",
+      "a_line": 21,
+      "b_code": "self._list = list()",
+      "b_line": 22,
+      "function": "HeapSet.__init__"
+    },
+    {
+      "a_code": "if a in self._set: return else: self._set.add(a) heappush(self._list, a)",
+      "a_line": 25,
+      "b_code": "return",
+      "b_line": 26,
+      "function": "HeapSet.add"
+    },
+    {
+      "a_code": "if a in self._set: return else: self._set.add(a) heappush(self._list, a)",
+      "a_line": 25,
+      "b_code": "self._set.add(a)",
+      "b_line": 28,
+      "function": "HeapSet.add"
+    },
+    {
+      "a_code": "if a in self._set: return else: self._set.add(a) heappush(self._list, a)",
+      "a_line": 25,
+      "b_code": "heappush(self._list, a)",
+      "b_line": 29,
+      "function": "HeapSet.add"
+    },
+    {
+      "a_code": "self._set.add(a)",
+      "a_line": 28,
+      "b_code": "heappush(self._list, a)",
+      "b_line": 29,
+      "function": "HeapSet.add"
+    },
+    {
+      "a_code": "if a not in self._set: raise ValueError else: self._set.remove(a)",
+      "a_line": 32,
+      "b_code": "raise ValueError",
+      "b_line": 33,
+      "function": "HeapSet.remove"
+    },
+    {
+      "a_code": "if a not in self._set: raise ValueError else: self._set.remove(a)",
+      "a_line": 32,
+      "b_code": "self._set.remove(a)",
+      "b_line": 35,
+      "function": "HeapSet.remove"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "self._list = list()",
+      "b_line": 39,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "raise IndexError",
+      "b_line": 40,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "self._list = list()",
+      "a_line": 39,
+      "b_code": "raise IndexError",
+      "b_line": 40,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 41,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "a = self._list[0]",
+      "b_line": 42,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "a = self._list[0]",
+      "b_line": 42,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 43,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 43,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 42,
+      "b_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 43,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "heappop(self._list)",
+      "b_line": 44,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "heappop(self._list)",
+      "b_line": 44,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 42,
+      "b_code": "heappop(self._list)",
+      "b_line": 44,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 43,
+      "b_code": "heappop(self._list)",
+      "b_line": 44,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "heappop(self._list)",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "break",
+      "b_line": 47,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "break",
+      "b_line": 47,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 42,
+      "b_code": "break",
+      "b_line": 47,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 43,
+      "b_code": "break",
+      "b_line": 47,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "self._set.remove(a)",
+      "b_line": 48,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "self._set.remove(a)",
+      "b_line": 48,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 38,
+      "b_code": "return a",
+      "b_line": 49,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 41,
+      "b_code": "return a",
+      "b_line": 49,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "self._set.remove(a)",
+      "a_line": 48,
+      "b_code": "return a",
+      "b_line": 49,
+      "function": "HeapSet.pop"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "self._list = list()",
+      "b_line": 53,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "raise IndexError",
+      "b_line": 54,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "self._list = list()",
+      "a_line": 53,
+      "b_code": "raise IndexError",
+      "b_line": 54,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 55,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "a = self._list[0]",
+      "b_line": 56,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 55,
+      "b_code": "a = self._list[0]",
+      "b_line": 56,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 57,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 55,
+      "b_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 57,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 56,
+      "b_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "b_line": 57,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "heappop(self._list)",
+      "b_line": 58,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 55,
+      "b_code": "heappop(self._list)",
+      "b_line": 58,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 56,
+      "b_code": "heappop(self._list)",
+      "b_line": 58,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 57,
+      "b_code": "heappop(self._list)",
+      "b_line": 58,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "continue",
+      "b_line": 59,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 55,
+      "b_code": "continue",
+      "b_line": 59,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 56,
+      "b_code": "continue",
+      "b_line": 59,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 57,
+      "b_code": "continue",
+      "b_line": 59,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "heappop(self._list)",
+      "a_line": 58,
+      "b_code": "continue",
+      "b_line": 59,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "break",
+      "b_line": 61,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 55,
+      "b_code": "break",
+      "b_line": 61,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "a = self._list[0]",
+      "a_line": 56,
+      "b_code": "break",
+      "b_line": 61,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 57,
+      "b_code": "break",
+      "b_line": 61,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "if not self._set: self._list = list() raise IndexError",
+      "a_line": 52,
+      "b_code": "return a",
+      "b_line": 62,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "while True: a = self._list[0] if a not in self._set: heappop(self._list) continue else: break",
+      "a_line": 55,
+      "b_code": "return a",
+      "b_line": 62,
+      "function": "HeapSet.peek"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "events = []",
+      "b_line": 79,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 80,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 80,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "stx = LI()",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "stx = LI()",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "stx = LI()",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "stx = LI()",
+      "a_line": 81,
+      "b_code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 85,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 85,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 85,
+      "function": "main"
+    },
+    {
+      "a_code": "stx = LI()",
+      "a_line": 81,
+      "b_code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 85,
+      "function": "main"
+    },
+    {
+      "a_code": "events.append((stx[0] - stx[2], stx[2], True))",
+      "a_line": 84,
+      "b_code": "events.append((stx[1] - stx[2], stx[2], False))",
+      "b_line": 85,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "b_line": 86,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "b_line": 86,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "b_line": 86,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "events.append((II(), INF, -1))",
+      "b_line": 87,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "events.append((II(), INF, -1))",
+      "b_line": 87,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "events.append((II(), INF, -1))",
+      "b_line": 87,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "events.append((II(), INF, -1))",
+      "b_line": 87,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "events.sort()",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "events.sort()",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "events.sort()",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "events.sort()",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "from array import array",
+      "b_line": 92,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "from array import array",
+      "b_line": 92,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "from array import array",
+      "b_line": 92,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "from array import array",
+      "b_line": 92,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "from array import array",
+      "b_line": 92,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "ans = array('i')",
+      "b_line": 93,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "ans = array('i')",
+      "b_line": 93,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "ans = array('i')",
+      "b_line": 93,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "ans = array('i')",
+      "b_line": 93,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "ans = array('i')",
+      "b_line": 93,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "ans = array('i')",
+      "b_line": 93,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "m = HeapSet()",
+      "b_line": 95,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "change_flag = True",
+      "b_line": 97,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "min_ = INF",
+      "b_line": 98,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 99,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 100,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "b_line": 101,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "a_line": 101,
+      "b_code": "ans.append(-1)",
+      "b_line": 102,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "a_line": 101,
+      "b_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "b_line": 105,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "a_line": 101,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "a_line": 105,
+      "b_code": "min_ = m.peek()",
+      "b_line": 106,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "a_line": 101,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "a_line": 105,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = m.peek()",
+      "a_line": 106,
+      "b_code": "change_flag = False",
+      "b_line": 107,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_)",
+      "a_line": 101,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "if change_flag: min_ = m.peek() change_flag = False",
+      "a_line": 105,
+      "b_code": "ans.append(min_)",
+      "b_line": 108,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 110,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "m.add(txa[1])",
+      "b_line": 111,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "m.add(txa[1])",
+      "a_line": 111,
+      "b_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "b_line": 112,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "m.add(txa[1])",
+      "a_line": 111,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "a_line": 112,
+      "b_code": "min_ = txa[1]",
+      "b_line": 113,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "m.add(txa[1])",
+      "a_line": 111,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] < min_: min_ = txa[1] change_flag = False",
+      "a_line": 112,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = txa[1]",
+      "a_line": 113,
+      "b_code": "change_flag = False",
+      "b_line": 114,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "m.remove(txa[1])",
+      "b_line": 116,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "m.remove(txa[1])",
+      "a_line": 116,
+      "b_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "b_line": 117,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "m.remove(txa[1])",
+      "a_line": 116,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 117,
+      "b_code": "min_ = m.peek()",
+      "b_line": 118,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "m.remove(txa[1])",
+      "a_line": 116,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 117,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = m.peek()",
+      "a_line": 118,
+      "b_code": "change_flag = False",
+      "b_line": 119,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "m.remove(txa[1])",
+      "a_line": 116,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 117,
+      "b_code": "elif not m: min_ = INF change_flag = False",
+      "b_line": 120,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "m.remove(txa[1])",
+      "a_line": 116,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 117,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "elif not m: min_ = INF change_flag = False",
+      "a_line": 120,
+      "b_code": "min_ = INF",
+      "b_line": 121,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 100,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 110,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "m.remove(txa[1])",
+      "a_line": 116,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 117,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "elif not m: min_ = INF change_flag = False",
+      "a_line": 120,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 121,
+      "b_code": "change_flag = False",
+      "b_line": 122,
+      "function": "main"
+    },
+    {
+      "a_code": "N, Q = LI()",
+      "a_line": 78,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "events = []",
+      "a_line": 79,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(N): stx = LI() # events.append((s - x, x, True)) # S-X, X, add_flag # events.append((t - x, x, False)) # T-X, X, add_flag events.append((stx[0] - stx[2], stx[2], True)) # S-X, X, add_flag events.append((stx[1] - stx[2], stx[2], False))",
+      "a_line": 80,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(Q): events.append((II(), INF, -1))",
+      "a_line": 86,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "events.sort()",
+      "a_line": 90,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "from array import array",
+      "a_line": 92,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = array('i')",
+      "a_line": 93,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "m = HeapSet()",
+      "a_line": 95,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "change_flag = True",
+      "a_line": 97,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "min_ = INF",
+      "a_line": 98,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    },
+    {
+      "a_code": "for txa in events: if txa[2] == -1: if not m: ans.append(-1) # ans += '-1\\n' else: if change_flag: min_ = m.peek() change_flag = False ans.append(min_) # ans += str(m[0])+'\\n' elif txa[2]: m.add(txa[1]) if txa[1] < min_: min_ = txa[1] change_flag = False else: m.remove(txa[1]) if txa[1] == min_ and m: min_ = m.peek() change_flag = False elif not m: min_ = INF change_flag = False",
+      "a_line": 99,
+      "b_code": "print('\\n'.join(map(str, ans.tolist())))",
+      "b_line": 126,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped ans.tolist at line 126",
+      "external attribute call skipped m.peek at line 106",
+      "external attribute call skipped m.peek at line 118",
+      "external attribute call skipped sys.setrecursionlimit at line 2",
+      "external attribute call skipped sys.stdin.readline at line 3",
+      "external attribute call skipped sys.stdin.readline at line 4",
+      "external attribute call skipped sys.stdin.readline at line 5",
+      "external attribute call skipped sys.stdin.readline at line 6",
+      "external attribute call skipped sys.stdin.readline at line 7",
+      "external attribute call skipped sys.stdin.readline at line 8",
+      "external call skipped array at line 93",
+      "external call skipped heappop at line 44",
+      "external call skipped heappop at line 58",
+      "external call skipped heappush at line 29",
+      "external call skipped repr at line 71"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped ans.tolist at line 126",
+    "external attribute call skipped m.peek at line 106",
+    "external attribute call skipped m.peek at line 118",
+    "external attribute call skipped sys.setrecursionlimit at line 2",
+    "external attribute call skipped sys.stdin.readline at line 3",
+    "external attribute call skipped sys.stdin.readline at line 4",
+    "external attribute call skipped sys.stdin.readline at line 5",
+    "external attribute call skipped sys.stdin.readline at line 6",
+    "external attribute call skipped sys.stdin.readline at line 7",
+    "external attribute call skipped sys.stdin.readline at line 8",
+    "external call skipped array at line 93",
+    "external call skipped heappop at line 44",
+    "external call skipped heappop at line 58",
+    "external call skipped heappush at line 29",
+    "external call skipped repr at line 71"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "INF"
+      },
+      "from": {
+        "code": "MOD = 10 ** 9 + 7",
+        "line": 9,
+        "var": "MOD"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10 ** 9 + 7",
+        "line": 9,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "INF = 10 ** 18",
+        "line": 10,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self):",
+        "line": 20,
+        "var": "self"
+      },
+      "from": {
+        "code": "self._set = set()",
+        "line": 21,
+        "var": "self._set"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self):",
+        "line": 20,
+        "var": "self"
+      },
+      "from": {
+        "code": "self._list = list()",
+        "line": 22,
+        "var": "self._list"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def pop(self):",
+        "line": 37,
+        "var": "IndexError"
+      },
+      "from": {
+        "code": "self._list = list()",
+        "line": 39,
+        "var": "self._list"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self._list = list()",
+        "line": 39,
+        "var": "self._list"
+      },
+      "from": {
+        "code": "a = self._list[0]",
+        "line": 42,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def pop(self):",
+        "line": 37,
+        "var": "IndexError"
+      },
+      "from": {
+        "code": "a = self._list[0]",
+        "line": 42,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def peek(self):",
+        "line": 51,
+        "var": "IndexError"
+      },
+      "from": {
+        "code": "self._list = list()",
+        "line": 53,
+        "var": "self._list"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self._list = list()",
+        "line": 53,
+        "var": "self._list"
+      },
+      "from": {
+        "code": "a = self._list[0]",
+        "line": 56,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def peek(self):",
+        "line": 51,
+        "var": "IndexError"
+      },
+      "from": {
+        "code": "a = self._list[0]",
+        "line": 56,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "N, Q = LI()",
+        "line": 78,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "N, Q = LI()",
+        "line": 78,
+        "var": "Q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "events = []",
+        "line": 79,
+        "var": "events"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "stx = LI()",
+        "line": 81,
+        "var": "stx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans = array('i')",
+        "line": 93,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "m = HeapSet()",
+        "line": 95,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "change_flag = True",
+        "line": 97,
+        "var": "change_flag"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "min_ = INF",
+        "line": 98,
+        "var": "INF"
+      },
+      "from": {
+        "code": "min_ = INF",
+        "line": 98,
+        "var": "min_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, Q = LI()",
+        "line": 78,
+        "var": "N"
+      },
+      "from": {
+        "code": "min_ = INF",
+        "line": 98,
+        "var": "min_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "m = HeapSet()",
+        "line": 95,
+        "var": "m"
+      },
+      "from": {
+        "code": "min_ = m.peek()",
+        "line": 106,
+        "var": "min_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "min_ = m.peek()",
+        "line": 106,
+        "var": "min_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "change_flag = False",
+        "line": 107,
+        "var": "change_flag"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "min_ = txa[1]",
+        "line": 113,
+        "var": "txa"
+      },
+      "from": {
+        "code": "min_ = txa[1]",
+        "line": 113,
+        "var": "min_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "min_ = txa[1]",
+        "line": 113,
+        "var": "min_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "change_flag = False",
+        "line": 114,
+        "var": "change_flag"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "m = HeapSet()",
+        "line": 95,
+        "var": "m"
+      },
+      "from": {
+        "code": "min_ = m.peek()",
+        "line": 118,
+        "var": "min_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "min_ = m.peek()",
+        "line": 118,
+        "var": "min_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "change_flag = False",
+        "line": 119,
+        "var": "change_flag"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "min_ = INF",
+        "line": 121,
+        "var": "INF"
+      },
+      "from": {
+        "code": "min_ = INF",
+        "line": 121,
+        "var": "min_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, Q = LI()",
+        "line": 78,
+        "var": "N"
+      },
+      "from": {
+        "code": "min_ = INF",
+        "line": 121,
+        "var": "min_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 77,
+        "var": "INF"
+      },
+      "from": {
+        "code": "change_flag = False",
+        "line": 122,
+        "var": "change_flag"
+      },
+      "label": "negative"
+    }
+  ]
+}

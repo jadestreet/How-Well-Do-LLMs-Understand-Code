@@ -1,0 +1,447 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if not merged or merged[-1][1] < cand[0]: merged.append(cand[:]) else: merged[-1][1] = max(merged[-1][1], cand[1])",
+      "dead": false,
+      "function": "_append_or_merge",
+      "kind": "If",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "merged.append(cand[:])",
+      "dead": false,
+      "function": "_append_or_merge",
+      "kind": "Expr",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "merged[-1][1] = max(merged[-1][1], cand[1])",
+      "dead": false,
+      "function": "_append_or_merge",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "if not intervals: return []",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "If",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 2
+    },
+    {
+      "code": "intervals.sort(key=lambda x: x[0])",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "Expr",
+      "line": 13,
+      "node_id": 3
+    },
+    {
+      "code": "merged: List[List[int]] = []",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "AnnAssign",
+      "line": 14,
+      "node_id": 4
+    },
+    {
+      "code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "For",
+      "line": 15,
+      "node_id": 5
+    },
+    {
+      "code": "_append_or_merge(merged, seg)",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "Expr",
+      "line": 16,
+      "node_id": 6
+    },
+    {
+      "code": "return merged",
+      "dead": false,
+      "function": "merge_intervals",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 7
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "if not merged or merged[-1][1] < cand[0]: merged.append(cand[:]) else: merged[-1][1] = max(merged[-1][1], cand[1])",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "merged.append(cand[:])",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "merged[-1][1] = max(merged[-1][1], cand[1])",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if not intervals: return []",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "intervals.sort(key=lambda x: x[0])",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "merged: List[List[int]] = []",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "_append_or_merge(merged, seg)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return merged",
+      "dead": false,
+      "line": 17
+    }
+  ],
+  "file": "SemBench/data/python/code/12.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 4,
+      "name": "_append_or_merge",
+      "variables": [
+        "cand",
+        "merged"
+      ]
+    },
+    {
+      "calls": [
+        "_append_or_merge"
+      ],
+      "end_lineno": 17,
+      "lineno": 10,
+      "name": "merge_intervals",
+      "variables": [
+        "intervals",
+        "merged",
+        "seg",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_append_or_merge": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if not merged or merged[-1][1] < cand[0]: merged.append(cand[:]) else: merged[-1][1] = max(merged[-1][1], cand[1])",
+            "line": 5,
+            "vars": [
+              "cand",
+              "merged"
+            ]
+          },
+          {
+            "code": "merged.append(cand[:])",
+            "line": 6,
+            "vars": [
+              "cand",
+              "merged"
+            ]
+          },
+          {
+            "code": "merged[-1][1] = max(merged[-1][1], cand[1])",
+            "line": 8,
+            "vars": [
+              "cand",
+              "merged"
+            ]
+          }
+        ],
+        "liveout": {
+          "cand": false,
+          "merged": false
+        },
+        "return_vars": []
+      },
+      "merge_intervals": {
+        "base_liveout": [
+          "merged"
+        ],
+        "live_before": [
+          {
+            "code": "if not intervals: return []",
+            "line": 11,
+            "vars": [
+              "intervals",
+              "x"
+            ]
+          },
+          {
+            "code": "return []",
+            "line": 12,
+            "vars": [
+              "intervals",
+              "x"
+            ]
+          },
+          {
+            "code": "intervals.sort(key=lambda x: x[0])",
+            "line": 13,
+            "vars": [
+              "intervals",
+              "x"
+            ]
+          },
+          {
+            "code": "merged: List[List[int]] = []",
+            "line": 14,
+            "vars": [
+              "intervals"
+            ]
+          },
+          {
+            "code": "for seg in intervals: _append_or_merge(merged, seg)",
+            "line": 15,
+            "vars": [
+              "intervals",
+              "merged"
+            ]
+          },
+          {
+            "code": "_append_or_merge(merged, seg)",
+            "line": 16,
+            "vars": [
+              "merged",
+              "seg"
+            ]
+          },
+          {
+            "code": "return merged",
+            "line": 17,
+            "vars": [
+              "merged"
+            ]
+          }
+        ],
+        "liveout": {
+          "intervals": false,
+          "merged": true,
+          "seg": false,
+          "x": false
+        },
+        "return_vars": [
+          "merged"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for seg in intervals:",
+      "cond": "for seg in intervals",
+      "function": "merge_intervals",
+      "header_id": 5,
+      "line": 15,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if not merged or merged[-1][1] < cand[0]: merged.append(cand[:]) else: merged[-1][1] = max(merged[-1][1], cand[1])",
+      "a_line": 5,
+      "b_code": "merged.append(cand[:])",
+      "b_line": 6,
+      "function": "_append_or_merge"
+    },
+    {
+      "a_code": "if not merged or merged[-1][1] < cand[0]: merged.append(cand[:]) else: merged[-1][1] = max(merged[-1][1], cand[1])",
+      "a_line": 5,
+      "b_code": "merged[-1][1] = max(merged[-1][1], cand[1])",
+      "b_line": 8,
+      "function": "_append_or_merge"
+    },
+    {
+      "a_code": "if not intervals: return []",
+      "a_line": 11,
+      "b_code": "return []",
+      "b_line": 12,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "if not intervals: return []",
+      "a_line": 11,
+      "b_code": "intervals.sort(key=lambda x: x[0])",
+      "b_line": 13,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "if not intervals: return []",
+      "a_line": 11,
+      "b_code": "merged: List[List[int]] = []",
+      "b_line": 14,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "intervals.sort(key=lambda x: x[0])",
+      "a_line": 13,
+      "b_code": "merged: List[List[int]] = []",
+      "b_line": 14,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "if not intervals: return []",
+      "a_line": 11,
+      "b_code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "b_line": 15,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "intervals.sort(key=lambda x: x[0])",
+      "a_line": 13,
+      "b_code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "b_line": 15,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "merged: List[List[int]] = []",
+      "a_line": 14,
+      "b_code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "b_line": 15,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "if not intervals: return []",
+      "a_line": 11,
+      "b_code": "_append_or_merge(merged, seg)",
+      "b_line": 16,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "intervals.sort(key=lambda x: x[0])",
+      "a_line": 13,
+      "b_code": "_append_or_merge(merged, seg)",
+      "b_line": 16,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "merged: List[List[int]] = []",
+      "a_line": 14,
+      "b_code": "_append_or_merge(merged, seg)",
+      "b_line": 16,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "a_line": 15,
+      "b_code": "_append_or_merge(merged, seg)",
+      "b_line": 16,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "if not intervals: return []",
+      "a_line": 11,
+      "b_code": "return merged",
+      "b_line": 17,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "intervals.sort(key=lambda x: x[0])",
+      "a_line": 13,
+      "b_code": "return merged",
+      "b_line": 17,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "merged: List[List[int]] = []",
+      "a_line": 14,
+      "b_code": "return merged",
+      "b_line": 17,
+      "function": "merge_intervals"
+    },
+    {
+      "a_code": "for seg in intervals: _append_or_merge(merged, seg)",
+      "a_line": 15,
+      "b_code": "return merged",
+      "b_line": 17,
+      "function": "merge_intervals"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def _append_or_merge(merged:",
+        "line": 4,
+        "var": "cand"
+      },
+      "from": {
+        "code": "merged[-1][1] = max(merged[-1][1], cand[1])",
+        "line": 8,
+        "var": "merged"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _append_or_merge(merged:",
+        "line": 4,
+        "var": "merged"
+      },
+      "from": {
+        "code": "merged[-1][1] = max(merged[-1][1], cand[1])",
+        "line": 8,
+        "var": "merged"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge_intervals(intervals:",
+        "line": 10,
+        "var": "intervals"
+      },
+      "from": {
+        "code": "merged: List[List[int]] = []",
+        "line": 14,
+        "var": "merged"
+      },
+      "label": "negative"
+    }
+  ]
+}

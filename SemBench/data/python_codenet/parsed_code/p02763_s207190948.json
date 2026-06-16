@@ -1,0 +1,4283 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys, bisect, math, itertools, heapq, collections",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "from operator import itemgetter",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "from functools import lru_cache",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "sys.setrecursionlimit(10**8)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 6,
+      "node_id": 4
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 5
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 6
+    },
+    {
+      "code": "mod = 10**9+7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 7
+    },
+    {
+      "code": "eps = 10**-7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 8
+    },
+    {
+      "code": "n=inp()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 83,
+      "node_id": 9
+    },
+    {
+      "code": "s=input()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 84,
+      "node_id": 10
+    },
+    {
+      "code": "st = SegmentTree(0,n)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 85,
+      "node_id": 11
+    },
+    {
+      "code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 86,
+      "node_id": 12
+    },
+    {
+      "code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 87,
+      "node_id": 13
+    },
+    {
+      "code": "q = inp()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 88,
+      "node_id": 14
+    },
+    {
+      "code": "ans = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 89,
+      "node_id": 15
+    },
+    {
+      "code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 90,
+      "node_id": 16
+    },
+    {
+      "code": "mode, first, second = input().split()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 91,
+      "node_id": 17
+    },
+    {
+      "code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 92,
+      "node_id": 18
+    },
+    {
+      "code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 93,
+      "node_id": 19
+    },
+    {
+      "code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 95,
+      "node_id": 20
+    },
+    {
+      "code": "for i in ans: print(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 96,
+      "node_id": 21
+    },
+    {
+      "code": "print(i)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 97,
+      "node_id": 22
+    },
+    {
+      "code": "''' \u4e00\u3064\u306e\u6574\u6570 '''",
+      "dead": false,
+      "function": "inp",
+      "kind": "Expr",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "function": "inp",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 2
+    },
+    {
+      "code": "''' \u4e00\u884c\u306b\u8907\u6570\u306e\u6574\u6570 '''",
+      "dead": false,
+      "function": "inpl",
+      "kind": "Expr",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "function": "inpl",
+      "kind": "Return",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "\"\"\" Parameters ---------- init_val:int identity element N:int the number of nodes \"\"\"",
+      "dead": false,
+      "function": "SegmentTree.__init__",
+      "kind": "Expr",
+      "line": 24,
+      "node_id": 1
+    },
+    {
+      "code": "self.init_val=init_val",
+      "dead": false,
+      "function": "SegmentTree.__init__",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 2
+    },
+    {
+      "code": "self.N0 = 2**(N-1).bit_length()",
+      "dead": false,
+      "function": "SegmentTree.__init__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 3
+    },
+    {
+      "code": "self.data = [self.init_val] * (2 * self.N0)",
+      "dead": false,
+      "function": "SegmentTree.__init__",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 4
+    },
+    {
+      "code": "res= left | right",
+      "dead": false,
+      "function": "SegmentTree._segfunc",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 1
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "SegmentTree._segfunc",
+      "kind": "Return",
+      "line": 40,
+      "node_id": 2
+    },
+    {
+      "code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "dead": false,
+      "function": "SegmentTree.update",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 1
+    },
+    {
+      "code": "k += self.N0-1",
+      "dead": false,
+      "function": "SegmentTree.update",
+      "kind": "AugAssign",
+      "line": 51,
+      "node_id": 2
+    },
+    {
+      "code": "self.data[k] = x",
+      "dead": false,
+      "function": "SegmentTree.update",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 3
+    },
+    {
+      "code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "dead": false,
+      "function": "SegmentTree.update",
+      "kind": "While",
+      "line": 53,
+      "node_id": 4
+    },
+    {
+      "code": "k = (k - 1) // 2",
+      "dead": false,
+      "function": "SegmentTree.update",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 5
+    },
+    {
+      "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "dead": false,
+      "function": "SegmentTree.update",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 6
+    },
+    {
+      "code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 1
+    },
+    {
+      "code": "L = l + self.N0",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 2
+    },
+    {
+      "code": "R = r + self.N0",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Assign",
+      "line": 70,
+      "node_id": 3
+    },
+    {
+      "code": "s = self.init_val",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Assign",
+      "line": 71,
+      "node_id": 4
+    },
+    {
+      "code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "While",
+      "line": 72,
+      "node_id": 5
+    },
+    {
+      "code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "If",
+      "line": 73,
+      "node_id": 6
+    },
+    {
+      "code": "R -= 1",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "AugAssign",
+      "line": 74,
+      "node_id": 7
+    },
+    {
+      "code": "s = self._segfunc(s, self.data[R-1])",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Assign",
+      "line": 75,
+      "node_id": 8
+    },
+    {
+      "code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "If",
+      "line": 77,
+      "node_id": 9
+    },
+    {
+      "code": "s = self._segfunc(s,self.data[L-1])",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Assign",
+      "line": 78,
+      "node_id": 10
+    },
+    {
+      "code": "L += 1",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "AugAssign",
+      "line": 79,
+      "node_id": 11
+    },
+    {
+      "code": "L >>= 1",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "AugAssign",
+      "line": 80,
+      "node_id": 12
+    },
+    {
+      "code": "R >>= 1",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "AugAssign",
+      "line": 80,
+      "node_id": 13
+    },
+    {
+      "code": "return s",
+      "dead": false,
+      "function": "SegmentTree.query",
+      "kind": "Return",
+      "line": 81,
+      "node_id": 14
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys, bisect, math, itertools, heapq, collections",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "from operator import itemgetter",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "from functools import lru_cache",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "sys.setrecursionlimit(10**8)",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "mod = 10**9+7",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "eps = 10**-7",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "''' \u4e00\u3064\u306e\u6574\u6570 '''",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "''' \u4e00\u884c\u306b\u8907\u6570\u306e\u6574\u6570 '''",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "\"\"\" Parameters ---------- init_val:int identity element N:int the number of nodes \"\"\"",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "self.init_val=init_val",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "self.N0 = 2**(N-1).bit_length()",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "self.data = [self.init_val] * (2 * self.N0)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "res= left | right",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "k += self.N0-1",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "self.data[k] = x",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "k = (k - 1) // 2",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "L = l + self.N0",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "R = r + self.N0",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "s = self.init_val",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "R -= 1",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "s = self._segfunc(s, self.data[R-1])",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "s = self._segfunc(s,self.data[L-1])",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "L += 1",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "L >>= 1",
+      "dead": false,
+      "line": 80
+    },
+    {
+      "code": "R >>= 1",
+      "dead": false,
+      "line": 80
+    },
+    {
+      "code": "return s",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "n=inp()",
+      "dead": false,
+      "line": 83
+    },
+    {
+      "code": "s=input()",
+      "dead": false,
+      "line": 84
+    },
+    {
+      "code": "st = SegmentTree(0,n)",
+      "dead": false,
+      "line": 85
+    },
+    {
+      "code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "dead": false,
+      "line": 87
+    },
+    {
+      "code": "q = inp()",
+      "dead": false,
+      "line": 88
+    },
+    {
+      "code": "ans = []",
+      "dead": false,
+      "line": 89
+    },
+    {
+      "code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "dead": false,
+      "line": 90
+    },
+    {
+      "code": "mode, first, second = input().split()",
+      "dead": false,
+      "line": 91
+    },
+    {
+      "code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "dead": false,
+      "line": 92
+    },
+    {
+      "code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "dead": false,
+      "line": 93
+    },
+    {
+      "code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "dead": false,
+      "line": 95
+    },
+    {
+      "code": "for i in ans: print(i)",
+      "dead": false,
+      "line": 96
+    },
+    {
+      "code": "print(i)",
+      "dead": true,
+      "line": 97
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p02763_s207190948.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 15,
+      "lineno": 11,
+      "name": "inp",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 20,
+      "lineno": 16,
+      "name": "inpl",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 36,
+      "lineno": 23,
+      "name": "SegmentTree.__init__",
+      "variables": [
+        "N",
+        "init_val",
+        "self",
+        "self.N0",
+        "self.data",
+        "self.init_val"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 40,
+      "lineno": 38,
+      "name": "SegmentTree._segfunc",
+      "variables": [
+        "left",
+        "res",
+        "right",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "SegmentTree._segfunc"
+      ],
+      "end_lineno": 55,
+      "lineno": 42,
+      "name": "SegmentTree.update",
+      "variables": [
+        "k",
+        "self",
+        "self.N0",
+        "self.data",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "SegmentTree._segfunc"
+      ],
+      "end_lineno": 81,
+      "lineno": 57,
+      "name": "SegmentTree.query",
+      "variables": [
+        "L",
+        "R",
+        "l",
+        "r",
+        "s",
+        "self",
+        "self.N0",
+        "self.data",
+        "self.init_val"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "SegmentTree.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "\"\"\" Parameters ---------- init_val:int identity element N:int the number of nodes \"\"\"",
+            "line": 24,
+            "vars": [
+              "init_val"
+            ]
+          },
+          {
+            "code": "self.init_val=init_val",
+            "line": 32,
+            "vars": [
+              "init_val"
+            ]
+          },
+          {
+            "code": "self.N0 = 2**(N-1).bit_length()",
+            "line": 34,
+            "vars": [
+              "self.init_val"
+            ]
+          },
+          {
+            "code": "self.data = [self.init_val] * (2 * self.N0)",
+            "line": 36,
+            "vars": [
+              "self.N0",
+              "self.init_val"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": false,
+          "init_val": false,
+          "self": false,
+          "self.N0": false,
+          "self.data": false,
+          "self.init_val": false
+        },
+        "return_vars": []
+      },
+      "SegmentTree._segfunc": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "res= left | right",
+            "line": 39,
+            "vars": [
+              "left",
+              "right"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 40,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "left": false,
+          "res": true,
+          "right": false,
+          "self": false
+        },
+        "return_vars": [
+          "res"
+        ]
+      },
+      "SegmentTree.query": {
+        "base_liveout": [
+          "s"
+        ],
+        "live_before": [
+          {
+            "code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+            "line": 58,
+            "vars": [
+              "l",
+              "r",
+              "self",
+              "self.N0",
+              "self.data",
+              "self.init_val"
+            ]
+          },
+          {
+            "code": "L = l + self.N0",
+            "line": 69,
+            "vars": [
+              "l",
+              "r",
+              "self",
+              "self.N0",
+              "self.data",
+              "self.init_val"
+            ]
+          },
+          {
+            "code": "R = r + self.N0",
+            "line": 70,
+            "vars": [
+              "L",
+              "r",
+              "self",
+              "self.N0",
+              "self.data",
+              "self.init_val"
+            ]
+          },
+          {
+            "code": "s = self.init_val",
+            "line": 71,
+            "vars": [
+              "L",
+              "R",
+              "self",
+              "self.data",
+              "self.init_val"
+            ]
+          },
+          {
+            "code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+            "line": 72,
+            "vars": [
+              "L",
+              "R",
+              "s",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+            "line": 73,
+            "vars": [
+              "L",
+              "R",
+              "s",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "R -= 1",
+            "line": 74,
+            "vars": [
+              "L",
+              "s",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "s = self._segfunc(s, self.data[R-1])",
+            "line": 75,
+            "vars": [
+              "L",
+              "R",
+              "s",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+            "line": 77,
+            "vars": [
+              "L",
+              "s",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "s = self._segfunc(s,self.data[L-1])",
+            "line": 78,
+            "vars": [
+              "L",
+              "s",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "L += 1",
+            "line": 79,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "L >>= 1",
+            "line": 80,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "R >>= 1",
+            "line": 80,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "return s",
+            "line": 81,
+            "vars": [
+              "s"
+            ]
+          }
+        ],
+        "liveout": {
+          "L": false,
+          "R": false,
+          "l": false,
+          "r": false,
+          "s": true,
+          "self": false,
+          "self.N0": false,
+          "self.data": false,
+          "self.init_val": false
+        },
+        "return_vars": [
+          "s"
+        ]
+      },
+      "SegmentTree.update": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+            "line": 43,
+            "vars": [
+              "self",
+              "self.N0",
+              "x"
+            ]
+          },
+          {
+            "code": "k += self.N0-1",
+            "line": 51,
+            "vars": [
+              "self",
+              "self.N0",
+              "x"
+            ]
+          },
+          {
+            "code": "self.data[k] = x",
+            "line": 52,
+            "vars": [
+              "k",
+              "self",
+              "x"
+            ]
+          },
+          {
+            "code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+            "line": 53,
+            "vars": [
+              "k",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "k = (k - 1) // 2",
+            "line": 54,
+            "vars": [
+              "k",
+              "self",
+              "self.data"
+            ]
+          },
+          {
+            "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+            "line": 55,
+            "vars": [
+              "k",
+              "self",
+              "self.data"
+            ]
+          }
+        ],
+        "liveout": {
+          "k": false,
+          "self": false,
+          "self.N0": false,
+          "self.data": false,
+          "x": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys, bisect, math, itertools, heapq, collections",
+            "line": 1,
+            "vars": [
+              "int",
+              "sys",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "from operator import itemgetter",
+            "line": 2,
+            "vars": [
+              "int",
+              "sys",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "from functools import lru_cache",
+            "line": 4,
+            "vars": [
+              "int",
+              "sys",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**8)",
+            "line": 6,
+            "vars": [
+              "int",
+              "sys",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "input = sys.stdin.readline",
+            "line": 7,
+            "vars": [
+              "int",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "INF = float('inf')",
+            "line": 8,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "mod = 10**9+7",
+            "line": 9,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "eps = 10**-7",
+            "line": 10,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "n=inp()",
+            "line": 83,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "s=input()",
+            "line": 84,
+            "vars": [
+              "int",
+              "n"
+            ]
+          },
+          {
+            "code": "st = SegmentTree(0,n)",
+            "line": 85,
+            "vars": [
+              "int",
+              "n",
+              "s"
+            ]
+          },
+          {
+            "code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+            "line": 86,
+            "vars": [
+              "int",
+              "n",
+              "s",
+              "st"
+            ]
+          },
+          {
+            "code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+            "line": 87,
+            "vars": [
+              "i",
+              "int",
+              "s",
+              "st"
+            ]
+          },
+          {
+            "code": "q = inp()",
+            "line": 88,
+            "vars": [
+              "int",
+              "st"
+            ]
+          },
+          {
+            "code": "ans = []",
+            "line": 89,
+            "vars": [
+              "int",
+              "q",
+              "st"
+            ]
+          },
+          {
+            "code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+            "line": 90,
+            "vars": [
+              "ans",
+              "int",
+              "q",
+              "st"
+            ]
+          },
+          {
+            "code": "mode, first, second = input().split()",
+            "line": 91,
+            "vars": [
+              "ans",
+              "int",
+              "st"
+            ]
+          },
+          {
+            "code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+            "line": 92,
+            "vars": [
+              "ans",
+              "first",
+              "int",
+              "mode",
+              "second",
+              "st"
+            ]
+          },
+          {
+            "code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+            "line": 93,
+            "vars": [
+              "ans",
+              "first",
+              "int",
+              "second",
+              "st"
+            ]
+          },
+          {
+            "code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+            "line": 95,
+            "vars": [
+              "ans"
+            ]
+          },
+          {
+            "code": "for i in ans: print(i)",
+            "line": 96,
+            "vars": [
+              "ans"
+            ]
+          },
+          {
+            "code": "print(i)",
+            "line": 97,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "ans": false,
+          "eps": false,
+          "first": false,
+          "i": false,
+          "input": false,
+          "int": false,
+          "mod": false,
+          "mode": false,
+          "n": false,
+          "q": false,
+          "s": false,
+          "second": false,
+          "st": false,
+          "sys": false,
+          "sys.stdin.readline": false
+        },
+        "return_vars": []
+      },
+      "inp": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "''' \u4e00\u3064\u306e\u6574\u6570 '''",
+            "line": 12,
+            "vars": []
+          },
+          {
+            "code": "return int(input())",
+            "line": 15,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "inpl": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "''' \u4e00\u884c\u306b\u8907\u6570\u306e\u6574\u6570 '''",
+            "line": 17,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "return list(map(int, input().split()))",
+            "line": 20,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while L < R:",
+      "cond": "L < R",
+      "function": "SegmentTree.query",
+      "header_id": 5,
+      "line": 72,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while k > 0:",
+      "cond": "k > 0",
+      "function": "SegmentTree.update",
+      "header_id": 4,
+      "line": 53,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "__module__",
+      "header_id": 12,
+      "line": 86,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(q):",
+      "cond": "for i in range(q)",
+      "function": "__module__",
+      "header_id": 16,
+      "line": 90,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for i in ans:",
+      "cond": "for i in ans",
+      "function": "__module__",
+      "header_id": 21,
+      "line": 96,
+      "reachable": false
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "from operator import itemgetter",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "from functools import lru_cache",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "from functools import lru_cache",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10**8)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "sys.setrecursionlimit(10**8)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "sys.setrecursionlimit(10**8)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "INF = float('inf')",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "INF = float('inf')",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "INF = float('inf')",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "INF = float('inf')",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "INF = float('inf')",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "mod = 10**9+7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "mod = 10**9+7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "mod = 10**9+7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "mod = 10**9+7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "mod = 10**9+7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "mod = 10**9+7",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "eps = 10**-7",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "n=inp()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "s=input()",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "st = SegmentTree(0,n)",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "q = inp()",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "ans = []",
+      "b_line": 89,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = []",
+      "a_line": 89,
+      "b_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 90,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = []",
+      "a_line": 89,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 90,
+      "b_code": "mode, first, second = input().split()",
+      "b_line": 91,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = []",
+      "a_line": 89,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 90,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mode, first, second = input().split()",
+      "a_line": 91,
+      "b_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = []",
+      "a_line": 89,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 90,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mode, first, second = input().split()",
+      "a_line": 91,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 92,
+      "b_code": "st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = []",
+      "a_line": 89,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 90,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mode, first, second = input().split()",
+      "a_line": 91,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 92,
+      "b_code": "ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "b_line": 95,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, bisect, math, itertools, heapq, collections",
+      "a_line": 1,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter",
+      "a_line": 2,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 4,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**8)",
+      "a_line": 6,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 7,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 8,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 9,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 10**-7",
+      "a_line": 10,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n=inp()",
+      "a_line": 83,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=input()",
+      "a_line": 84,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "st = SegmentTree(0,n)",
+      "a_line": 85,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n): st.update(i,1<<(int.from_bytes(s[i].encode(),'little')-int.from_bytes('a'.encode(),'little')))",
+      "a_line": 86,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = inp()",
+      "a_line": 88,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = []",
+      "a_line": 89,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(q): mode, first, second = input().split() if mode == \"1\": st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) else: ans.append(bin(st.query(int(first) - 1, int(second))).count(\"1\"))",
+      "a_line": 90,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 96,
+      "function": "__module__"
+    },
+    {
+      "a_code": "''' \u4e00\u3064\u306e\u6574\u6570 '''",
+      "a_line": 12,
+      "b_code": "return int(input())",
+      "b_line": 15,
+      "function": "inp"
+    },
+    {
+      "a_code": "''' \u4e00\u884c\u306b\u8907\u6570\u306e\u6574\u6570 '''",
+      "a_line": 17,
+      "b_code": "return list(map(int, input().split()))",
+      "b_line": 20,
+      "function": "inpl"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- init_val:int identity element N:int the number of nodes \"\"\"",
+      "a_line": 24,
+      "b_code": "self.init_val=init_val",
+      "b_line": 32,
+      "function": "SegmentTree.__init__"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- init_val:int identity element N:int the number of nodes \"\"\"",
+      "a_line": 24,
+      "b_code": "self.N0 = 2**(N-1).bit_length()",
+      "b_line": 34,
+      "function": "SegmentTree.__init__"
+    },
+    {
+      "a_code": "self.init_val=init_val",
+      "a_line": 32,
+      "b_code": "self.N0 = 2**(N-1).bit_length()",
+      "b_line": 34,
+      "function": "SegmentTree.__init__"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- init_val:int identity element N:int the number of nodes \"\"\"",
+      "a_line": 24,
+      "b_code": "self.data = [self.init_val] * (2 * self.N0)",
+      "b_line": 36,
+      "function": "SegmentTree.__init__"
+    },
+    {
+      "a_code": "self.init_val=init_val",
+      "a_line": 32,
+      "b_code": "self.data = [self.init_val] * (2 * self.N0)",
+      "b_line": 36,
+      "function": "SegmentTree.__init__"
+    },
+    {
+      "a_code": "self.N0 = 2**(N-1).bit_length()",
+      "a_line": 34,
+      "b_code": "self.data = [self.init_val] * (2 * self.N0)",
+      "b_line": 36,
+      "function": "SegmentTree.__init__"
+    },
+    {
+      "a_code": "res= left | right",
+      "a_line": 39,
+      "b_code": "return res",
+      "b_line": 40,
+      "function": "SegmentTree._segfunc"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "a_line": 43,
+      "b_code": "k += self.N0-1",
+      "b_line": 51,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "a_line": 43,
+      "b_code": "self.data[k] = x",
+      "b_line": 52,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "k += self.N0-1",
+      "a_line": 51,
+      "b_code": "self.data[k] = x",
+      "b_line": 52,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "a_line": 43,
+      "b_code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 53,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "k += self.N0-1",
+      "a_line": 51,
+      "b_code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 53,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "self.data[k] = x",
+      "a_line": 52,
+      "b_code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 53,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "a_line": 43,
+      "b_code": "k = (k - 1) // 2",
+      "b_line": 54,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "k += self.N0-1",
+      "a_line": 51,
+      "b_code": "k = (k - 1) // 2",
+      "b_line": 54,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "self.data[k] = x",
+      "a_line": 52,
+      "b_code": "k = (k - 1) // 2",
+      "b_line": 54,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "a_line": 53,
+      "b_code": "k = (k - 1) // 2",
+      "b_line": 54,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- k:int target index(0-index) x:any target value \"\"\"",
+      "a_line": 43,
+      "b_code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 55,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "k += self.N0-1",
+      "a_line": 51,
+      "b_code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 55,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "self.data[k] = x",
+      "a_line": 52,
+      "b_code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 55,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "while k > 0: k = (k - 1) // 2 self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "a_line": 53,
+      "b_code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 55,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "k = (k - 1) // 2",
+      "a_line": 54,
+      "b_code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+      "b_line": 55,
+      "function": "SegmentTree.update"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "L = l + self.N0",
+      "b_line": 69,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "R = r + self.N0",
+      "b_line": 70,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "R = r + self.N0",
+      "b_line": 70,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "s = self.init_val",
+      "b_line": 71,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "s = self.init_val",
+      "b_line": 71,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "s = self.init_val",
+      "b_line": 71,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "b_line": 72,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "b_line": 72,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "b_line": 72,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "b_line": 72,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "b_line": 73,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "b_line": 73,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "b_line": 73,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "b_line": 73,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "b_line": 73,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "R -= 1",
+      "b_line": 74,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "R -= 1",
+      "b_line": 74,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "R -= 1",
+      "b_line": 74,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "R -= 1",
+      "b_line": 74,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "R -= 1",
+      "b_line": 74,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "R -= 1",
+      "b_line": 74,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R -= 1",
+      "a_line": 74,
+      "b_code": "s = self._segfunc(s, self.data[R-1])",
+      "b_line": 75,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "b_line": 77,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "b_line": 77,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "b_line": 77,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "b_line": 77,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "b_line": 77,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "b_line": 77,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "a_line": 77,
+      "b_code": "s = self._segfunc(s,self.data[L-1])",
+      "b_line": 78,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "a_line": 77,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self._segfunc(s,self.data[L-1])",
+      "a_line": 78,
+      "b_code": "L += 1",
+      "b_line": 79,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "a_line": 77,
+      "b_code": "L >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1])",
+      "a_line": 73,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1",
+      "a_line": 77,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L >>= 1",
+      "a_line": 80,
+      "b_code": "R >>= 1",
+      "b_line": 80,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "\"\"\" Parameters ---------- l,r:int target range [l,r) Return ---------- res:any val \"\"\"",
+      "a_line": 58,
+      "b_code": "return s",
+      "b_line": 81,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "L = l + self.N0",
+      "a_line": 69,
+      "b_code": "return s",
+      "b_line": 81,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "R = r + self.N0",
+      "a_line": 70,
+      "b_code": "return s",
+      "b_line": 81,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "s = self.init_val",
+      "a_line": 71,
+      "b_code": "return s",
+      "b_line": 81,
+      "function": "SegmentTree.query"
+    },
+    {
+      "a_code": "while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1",
+      "a_line": 72,
+      "b_code": "return s",
+      "b_line": 81,
+      "function": "SegmentTree.query"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped int.from_bytes at line 87",
+      "external attribute call skipped int.from_bytes at line 93",
+      "external attribute call skipped s.encode at line 87",
+      "external attribute call skipped second.encode at line 93",
+      "external attribute call skipped st.query at line 95",
+      "external attribute call skipped sys.setrecursionlimit at line 6",
+      "external attribute call skipped unknown.bit_length at line 34",
+      "external attribute call skipped unknown.encode at line 87",
+      "external attribute call skipped unknown.encode at line 93",
+      "external call skipped bin at line 95",
+      "external call skipped input at line 15",
+      "external call skipped input at line 20",
+      "external call skipped input at line 84",
+      "external call skipped input at line 91"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped int.from_bytes at line 87",
+    "external attribute call skipped int.from_bytes at line 93",
+    "external attribute call skipped s.encode at line 87",
+    "external attribute call skipped second.encode at line 93",
+    "external attribute call skipped st.query at line 95",
+    "external attribute call skipped sys.setrecursionlimit at line 6",
+    "external attribute call skipped unknown.bit_length at line 34",
+    "external attribute call skipped unknown.encode at line 87",
+    "external attribute call skipped unknown.encode at line 93",
+    "external call skipped bin at line 95",
+    "external call skipped input at line 15",
+    "external call skipped input at line 20",
+    "external call skipped input at line 84",
+    "external call skipped input at line 91"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "input = sys.stdin.readline",
+        "line": 7,
+        "var": "sys.stdin.readline"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 7,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "INF"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 7,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "mod = 10**9+7",
+        "line": 9,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "eps = 10**-7",
+        "line": 10,
+        "var": "eps"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "n=inp()",
+        "line": 83,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "s=input()",
+        "line": 84,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n=inp()",
+        "line": 83,
+        "var": "n"
+      },
+      "from": {
+        "code": "st = SegmentTree(0,n)",
+        "line": 85,
+        "var": "st"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "st = SegmentTree(0,n)",
+        "line": 85,
+        "var": "st"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "q = inp()",
+        "line": 88,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans = []",
+        "line": 89,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "mode, first, second = input().split()",
+        "line": 91,
+        "var": "first"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "mode, first, second = input().split()",
+        "line": 91,
+        "var": "mode"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 8,
+        "var": "INF"
+      },
+      "from": {
+        "code": "mode, first, second = input().split()",
+        "line": 91,
+        "var": "second"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, init_val, N):",
+        "line": 23,
+        "var": "init_val"
+      },
+      "from": {
+        "code": "self.init_val=init_val",
+        "line": 32,
+        "var": "self.init_val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, init_val, N):",
+        "line": 23,
+        "var": "N"
+      },
+      "from": {
+        "code": "self.init_val=init_val",
+        "line": 32,
+        "var": "self.init_val"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, init_val, N):",
+        "line": 23,
+        "var": "N"
+      },
+      "from": {
+        "code": "self.N0 = 2**(N-1).bit_length()",
+        "line": 34,
+        "var": "self.N0"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, init_val, N):",
+        "line": 23,
+        "var": "init_val"
+      },
+      "from": {
+        "code": "self.data = [self.init_val] * (2 * self.N0)",
+        "line": 36,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.N0 = 2**(N-1).bit_length()",
+        "line": 34,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "self.data = [self.init_val] * (2 * self.N0)",
+        "line": 36,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.init_val=init_val",
+        "line": 32,
+        "var": "self.init_val"
+      },
+      "from": {
+        "code": "self.data = [self.init_val] * (2 * self.N0)",
+        "line": 36,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, init_val, N):",
+        "line": 23,
+        "var": "N"
+      },
+      "from": {
+        "code": "self.data = [self.init_val] * (2 * self.N0)",
+        "line": 36,
+        "var": "self.data"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _segfunc(self, left, right):",
+        "line": 38,
+        "var": "left"
+      },
+      "from": {
+        "code": "res= left | right",
+        "line": 39,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _segfunc(self, left, right):",
+        "line": 38,
+        "var": "right"
+      },
+      "from": {
+        "code": "res= left | right",
+        "line": 39,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _segfunc(self, left, right):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "res= left | right",
+        "line": 39,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "k += self.N0-1",
+        "line": 51,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "k += self.N0-1",
+        "line": 51,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self,k, x):",
+        "line": 42,
+        "var": "self"
+      },
+      "from": {
+        "code": "k += self.N0-1",
+        "line": 51,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "k += self.N0-1",
+        "line": 51,
+        "var": "k"
+      },
+      "from": {
+        "code": "self.data[k] = x",
+        "line": 52,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.data[k] = x",
+        "line": 52,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "self.data[k] = x",
+        "line": 52,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self,k, x):",
+        "line": 42,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.data[k] = x",
+        "line": 52,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self,k, x):",
+        "line": 42,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.data[k] = x",
+        "line": 52,
+        "var": "self.data"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "k += self.N0-1",
+        "line": 51,
+        "var": "k"
+      },
+      "from": {
+        "code": "k = (k - 1) // 2",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = (k - 1) // 2",
+        "line": 54,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "k = (k - 1) // 2",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self,k, x):",
+        "line": 42,
+        "var": "self"
+      },
+      "from": {
+        "code": "k = (k - 1) // 2",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "k = (k - 1) // 2",
+        "line": 54,
+        "var": "k"
+      },
+      "from": {
+        "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+        "line": 55,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self,k, x):",
+        "line": 42,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+        "line": 55,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+        "line": 55,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+        "line": 55,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.data[k] = x",
+        "line": 52,
+        "var": "self.data"
+      },
+      "from": {
+        "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+        "line": 55,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self,k, x):",
+        "line": 42,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.data[k] = self._segfunc(self.data[2*k+1], self.data[2*k+2])",
+        "line": 55,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "l"
+      },
+      "from": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "R"
+      },
+      "from": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "r"
+      },
+      "from": {
+        "code": "R = r + self.N0",
+        "line": 70,
+        "var": "R"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "R = r + self.N0",
+        "line": 70,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "R = r + self.N0",
+        "line": 70,
+        "var": "R"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "from": {
+        "code": "R = r + self.N0",
+        "line": 70,
+        "var": "R"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "s = self.init_val",
+        "line": 71,
+        "var": "self.init_val"
+      },
+      "from": {
+        "code": "s = self.init_val",
+        "line": 71,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "from": {
+        "code": "s = self.init_val",
+        "line": 71,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "from": {
+        "code": "R -= 1",
+        "line": 74,
+        "var": "R"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "R -= 1",
+        "line": 74,
+        "var": "R"
+      },
+      "from": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self.init_val",
+        "line": 71,
+        "var": "s"
+      },
+      "from": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "self"
+      },
+      "from": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "self.data"
+      },
+      "from": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "self.init_val"
+      },
+      "from": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "from": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L = l + self.N0",
+        "line": 69,
+        "var": "L"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "R -= 1",
+        "line": 74,
+        "var": "R"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "l"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self._segfunc(s, self.data[R-1])",
+        "line": 75,
+        "var": "s"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "self"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "self.N0"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "self.data"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "self.init_val"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, l, r):",
+        "line": 57,
+        "var": "r"
+      },
+      "from": {
+        "code": "s = self._segfunc(s,self.data[L-1])",
+        "line": 78,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "R -= 1",
+        "line": 74,
+        "var": "R"
+      },
+      "from": {
+        "code": "L += 1",
+        "line": 79,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "R -= 1",
+        "line": 74,
+        "var": "R"
+      },
+      "from": {
+        "code": "L >>= 1",
+        "line": 80,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L >>= 1",
+        "line": 80,
+        "var": "L"
+      },
+      "from": {
+        "code": "R >>= 1",
+        "line": 80,
+        "var": "R"
+      },
+      "label": "negative"
+    }
+  ]
+}

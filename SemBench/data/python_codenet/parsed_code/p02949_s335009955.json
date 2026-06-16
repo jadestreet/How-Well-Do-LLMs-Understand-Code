@@ -1,0 +1,6527 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "n,m,p=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 68,
+      "node_id": 2
+    },
+    {
+      "code": "ef=[[]for _ in range(n)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 3
+    },
+    {
+      "code": "ee=[[]for _ in range(n)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 70,
+      "node_id": 4
+    },
+    {
+      "code": "e=[]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 71,
+      "node_id": 5
+    },
+    {
+      "code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 72,
+      "node_id": 6
+    },
+    {
+      "code": "a,b,c=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 73,
+      "node_id": 7
+    },
+    {
+      "code": "a-=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 74,
+      "node_id": 8
+    },
+    {
+      "code": "b-=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 75,
+      "node_id": 9
+    },
+    {
+      "code": "c-=p",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 76,
+      "node_id": 10
+    },
+    {
+      "code": "ef[a].append(b)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 77,
+      "node_id": 11
+    },
+    {
+      "code": "ee[b].append(a)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 78,
+      "node_id": 12
+    },
+    {
+      "code": "e.append([a,b,c])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 79,
+      "node_id": 13
+    },
+    {
+      "code": "eff=glaph_bfs(0,n,ef)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 80,
+      "node_id": 14
+    },
+    {
+      "code": "eef=glaph_bfs(n-1,n,ee)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 81,
+      "node_id": 15
+    },
+    {
+      "code": "edge=[]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 82,
+      "node_id": 16
+    },
+    {
+      "code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 83,
+      "node_id": 17
+    },
+    {
+      "code": "if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "dead": true,
+      "function": "__module__",
+      "kind": "If",
+      "line": 84,
+      "node_id": 18
+    },
+    {
+      "code": "edge.append([a,b,-c])",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 85,
+      "node_id": 19
+    },
+    {
+      "code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 86,
+      "node_id": 20
+    },
+    {
+      "code": "print(-1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 86,
+      "node_id": 21
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 86,
+      "node_id": 22
+    },
+    {
+      "code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 87,
+      "node_id": 23
+    },
+    {
+      "code": "d=n*[10**20]",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "d[0]=0",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 2
+    },
+    {
+      "code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "For",
+      "line": 5,
+      "node_id": 3
+    },
+    {
+      "code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "For",
+      "line": 6,
+      "node_id": 4
+    },
+    {
+      "code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "If",
+      "line": 7,
+      "node_id": 5
+    },
+    {
+      "code": "d[j]=d[i]+k",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 6
+    },
+    {
+      "code": "if h==n-1:return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "If",
+      "line": 9,
+      "node_id": 7
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Return",
+      "line": 9,
+      "node_id": 8
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 9
+    },
+    {
+      "code": "x=[0]*n",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "d=deque()",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 2
+    },
+    {
+      "code": "t=[]",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 3
+    },
+    {
+      "code": "c=0",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 4
+    },
+    {
+      "code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "For",
+      "line": 21,
+      "node_id": 5
+    },
+    {
+      "code": "for j in e[i]:x[j]+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "For",
+      "line": 22,
+      "node_id": 6
+    },
+    {
+      "code": "x[j]+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "AugAssign",
+      "line": 22,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "For",
+      "line": 23,
+      "node_id": 8
+    },
+    {
+      "code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "If",
+      "line": 24,
+      "node_id": 9
+    },
+    {
+      "code": "d.append(i)",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Expr",
+      "line": 25,
+      "node_id": 10
+    },
+    {
+      "code": "t.append(i)",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 11
+    },
+    {
+      "code": "c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "AugAssign",
+      "line": 27,
+      "node_id": 12
+    },
+    {
+      "code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "While",
+      "line": 28,
+      "node_id": 13
+    },
+    {
+      "code": "i=d.popleft()",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 14
+    },
+    {
+      "code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "For",
+      "line": 30,
+      "node_id": 15
+    },
+    {
+      "code": "x[j]-=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "AugAssign",
+      "line": 31,
+      "node_id": 16
+    },
+    {
+      "code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "If",
+      "line": 32,
+      "node_id": 17
+    },
+    {
+      "code": "d.append(j)",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Expr",
+      "line": 33,
+      "node_id": 18
+    },
+    {
+      "code": "t.append(j)",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Expr",
+      "line": 34,
+      "node_id": 19
+    },
+    {
+      "code": "c+=1",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "AugAssign",
+      "line": 35,
+      "node_id": 20
+    },
+    {
+      "code": "if flag==0:return c==n else:return t",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "If",
+      "line": 36,
+      "node_id": 21
+    },
+    {
+      "code": "return c==n",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 22
+    },
+    {
+      "code": "return t",
+      "dead": false,
+      "function": "find_loop",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 23
+    },
+    {
+      "code": "inf=10**20",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 1
+    },
+    {
+      "code": "d=[inf]*n",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 2
+    },
+    {
+      "code": "d[s]=0",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 3
+    },
+    {
+      "code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "While",
+      "line": 44,
+      "node_id": 4
+    },
+    {
+      "code": "f=True",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 5
+    },
+    {
+      "code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "For",
+      "line": 46,
+      "node_id": 6
+    },
+    {
+      "code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "If",
+      "line": 47,
+      "node_id": 7
+    },
+    {
+      "code": "d[j]=d[i]+k",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 8
+    },
+    {
+      "code": "f=False",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 9
+    },
+    {
+      "code": "if f:break",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "If",
+      "line": 48,
+      "node_id": 10
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Break",
+      "line": 48,
+      "node_id": 11
+    },
+    {
+      "code": "return d",
+      "dead": false,
+      "function": "bellman_ford",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 12
+    },
+    {
+      "code": "ans=[0]*n",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 1
+    },
+    {
+      "code": "Q=[s]",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 2
+    },
+    {
+      "code": "visited={s}",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 3
+    },
+    {
+      "code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "While",
+      "line": 57,
+      "node_id": 4
+    },
+    {
+      "code": "P=[]",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Assign",
+      "line": 58,
+      "node_id": 5
+    },
+    {
+      "code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "For",
+      "line": 59,
+      "node_id": 6
+    },
+    {
+      "code": "ans[i]=1",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 7
+    },
+    {
+      "code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "For",
+      "line": 61,
+      "node_id": 8
+    },
+    {
+      "code": "if j in visited:continue",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "If",
+      "line": 62,
+      "node_id": 9
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Continue",
+      "line": 62,
+      "node_id": 10
+    },
+    {
+      "code": "visited.add(j)",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Expr",
+      "line": 63,
+      "node_id": 11
+    },
+    {
+      "code": "P.append(j)",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Expr",
+      "line": 64,
+      "node_id": 12
+    },
+    {
+      "code": "Q=P",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Assign",
+      "line": 65,
+      "node_id": 13
+    },
+    {
+      "code": "return ans",
+      "dead": false,
+      "function": "glaph_bfs",
+      "kind": "Return",
+      "line": 66,
+      "node_id": 14
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "d=n*[10**20]",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "d[0]=0",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "d[j]=d[i]+k",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if h==n-1:return True",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "x=[0]*n",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "d=deque()",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "t=[]",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "c=0",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "for j in e[i]:x[j]+=1",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "x[j]+=1",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "d.append(i)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "t.append(i)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "c+=1",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "i=d.popleft()",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "x[j]-=1",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "d.append(j)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "t.append(j)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "c+=1",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "if flag==0:return c==n else:return t",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "return c==n",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "return t",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "d=[inf]*n",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "d[s]=0",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "inf=10**20",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "f=True",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "d[j]=d[i]+k",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "f=False",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "if f:break",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "return d",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "ans=[0]*n",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "Q=[s]",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "visited={s}",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "P=[]",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "ans[i]=1",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "if j in visited:continue",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "visited.add(j)",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "P.append(j)",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "Q=P",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "return ans",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "n,m,p=map(int,input().split())",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "ef=[[]for _ in range(n)]",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "ee=[[]for _ in range(n)]",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "e=[]",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "a,b,c=map(int,input().split())",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "a-=1",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "b-=1",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "c-=p",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "ef[a].append(b)",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "ee[b].append(a)",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "e.append([a,b,c])",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "eff=glaph_bfs(0,n,ef)",
+      "dead": false,
+      "line": 80
+    },
+    {
+      "code": "eef=glaph_bfs(n-1,n,ee)",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "edge=[]",
+      "dead": false,
+      "line": 82
+    },
+    {
+      "code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "dead": false,
+      "line": 83
+    },
+    {
+      "code": "if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "dead": true,
+      "line": 84
+    },
+    {
+      "code": "edge.append([a,b,-c])",
+      "dead": true,
+      "line": 85
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "print(-1)",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "dead": false,
+      "line": 87
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p02949_s335009955.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 3,
+      "name": "find_negative_loop",
+      "variables": [
+        "d",
+        "e",
+        "h",
+        "i",
+        "j",
+        "k",
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 37,
+      "lineno": 16,
+      "name": "find_loop",
+      "variables": [
+        "c",
+        "d",
+        "e",
+        "flag",
+        "i",
+        "j",
+        "n",
+        "t",
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 49,
+      "lineno": 42,
+      "name": "bellman_ford",
+      "variables": [
+        "d",
+        "e",
+        "f",
+        "i",
+        "inf",
+        "j",
+        "k",
+        "n",
+        "s"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 66,
+      "lineno": 53,
+      "name": "glaph_bfs",
+      "variables": [
+        "P",
+        "Q",
+        "ans",
+        "e",
+        "i",
+        "j",
+        "n",
+        "s",
+        "visited"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from collections import deque",
+            "line": 15,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "n,m,p=map(int,input().split())",
+            "line": 68,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "ef=[[]for _ in range(n)]",
+            "line": 69,
+            "vars": [
+              "int",
+              "m",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "ee=[[]for _ in range(n)]",
+            "line": 70,
+            "vars": [
+              "ef",
+              "int",
+              "m",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "e=[]",
+            "line": 71,
+            "vars": [
+              "ee",
+              "ef",
+              "int",
+              "m",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+            "line": 72,
+            "vars": [
+              "e",
+              "ee",
+              "ef",
+              "int",
+              "m",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "a,b,c=map(int,input().split())",
+            "line": 73,
+            "vars": [
+              "e",
+              "ee",
+              "ef",
+              "int",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "a-=1",
+            "line": 74,
+            "vars": [
+              "e",
+              "ee",
+              "ef",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "b-=1",
+            "line": 75,
+            "vars": [
+              "a",
+              "e",
+              "ee",
+              "ef",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "c-=p",
+            "line": 76,
+            "vars": [
+              "a",
+              "b",
+              "e",
+              "ee",
+              "ef",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "ef[a].append(b)",
+            "line": 77,
+            "vars": [
+              "a",
+              "b",
+              "c",
+              "e",
+              "ee",
+              "ef",
+              "n"
+            ]
+          },
+          {
+            "code": "ee[b].append(a)",
+            "line": 78,
+            "vars": [
+              "a",
+              "b",
+              "c",
+              "e",
+              "ee",
+              "ef",
+              "n"
+            ]
+          },
+          {
+            "code": "e.append([a,b,c])",
+            "line": 79,
+            "vars": [
+              "a",
+              "b",
+              "c",
+              "e",
+              "ee",
+              "ef",
+              "n"
+            ]
+          },
+          {
+            "code": "eff=glaph_bfs(0,n,ef)",
+            "line": 80,
+            "vars": [
+              "e",
+              "ee",
+              "ef",
+              "n"
+            ]
+          },
+          {
+            "code": "eef=glaph_bfs(n-1,n,ee)",
+            "line": 81,
+            "vars": [
+              "e",
+              "ee",
+              "eff",
+              "n"
+            ]
+          },
+          {
+            "code": "edge=[]",
+            "line": 82,
+            "vars": [
+              "e",
+              "eef",
+              "eff",
+              "n"
+            ]
+          },
+          {
+            "code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+            "line": 83,
+            "vars": [
+              "e",
+              "edge",
+              "eef",
+              "eff",
+              "n"
+            ]
+          },
+          {
+            "code": "if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+            "line": 84,
+            "vars": [
+              "a",
+              "b",
+              "c",
+              "edge",
+              "eef",
+              "eff",
+              "n"
+            ]
+          },
+          {
+            "code": "edge.append([a,b,-c])",
+            "line": 85,
+            "vars": [
+              "a",
+              "b",
+              "c",
+              "edge",
+              "n"
+            ]
+          },
+          {
+            "code": "if find_negative_loop(n,edge):print(-1);exit()",
+            "line": 86,
+            "vars": [
+              "edge",
+              "n"
+            ]
+          },
+          {
+            "code": "print(-1)",
+            "line": 86,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "exit()",
+            "line": 86,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+            "line": 87,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "_": false,
+          "a": false,
+          "b": false,
+          "c": false,
+          "e": false,
+          "edge": false,
+          "ee": false,
+          "eef": false,
+          "ef": false,
+          "eff": false,
+          "int": false,
+          "m": false,
+          "n": false,
+          "p": false
+        },
+        "return_vars": []
+      },
+      "bellman_ford": {
+        "base_liveout": [
+          "d"
+        ],
+        "live_before": [
+          {
+            "code": "inf=10**20",
+            "line": 43,
+            "vars": [
+              "e",
+              "n",
+              "s"
+            ]
+          },
+          {
+            "code": "d=[inf]*n",
+            "line": 43,
+            "vars": [
+              "e",
+              "inf",
+              "n",
+              "s"
+            ]
+          },
+          {
+            "code": "d[s]=0",
+            "line": 43,
+            "vars": [
+              "e",
+              "inf",
+              "s"
+            ]
+          },
+          {
+            "code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+            "line": 44,
+            "vars": [
+              "d",
+              "e",
+              "inf"
+            ]
+          },
+          {
+            "code": "f=True",
+            "line": 45,
+            "vars": [
+              "d",
+              "e",
+              "inf"
+            ]
+          },
+          {
+            "code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+            "line": 46,
+            "vars": [
+              "d",
+              "e",
+              "inf"
+            ]
+          },
+          {
+            "code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+            "line": 47,
+            "vars": [
+              "d",
+              "i",
+              "inf",
+              "j",
+              "k"
+            ]
+          },
+          {
+            "code": "d[j]=d[i]+k",
+            "line": 47,
+            "vars": [
+              "d",
+              "i",
+              "j",
+              "k"
+            ]
+          },
+          {
+            "code": "f=False",
+            "line": 47,
+            "vars": [
+              "d"
+            ]
+          },
+          {
+            "code": "if f:break",
+            "line": 48,
+            "vars": [
+              "d",
+              "f"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 48,
+            "vars": [
+              "d"
+            ]
+          },
+          {
+            "code": "return d",
+            "line": 49,
+            "vars": [
+              "d"
+            ]
+          }
+        ],
+        "liveout": {
+          "d": true,
+          "e": false,
+          "f": false,
+          "i": false,
+          "inf": false,
+          "j": false,
+          "k": false,
+          "n": false,
+          "s": false
+        },
+        "return_vars": [
+          "d"
+        ]
+      },
+      "find_loop": {
+        "base_liveout": [
+          "c",
+          "n",
+          "t"
+        ],
+        "live_before": [
+          {
+            "code": "x=[0]*n",
+            "line": 17,
+            "vars": [
+              "e",
+              "flag",
+              "n"
+            ]
+          },
+          {
+            "code": "d=deque()",
+            "line": 18,
+            "vars": [
+              "e",
+              "flag",
+              "n",
+              "x"
+            ]
+          },
+          {
+            "code": "t=[]",
+            "line": 19,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "x"
+            ]
+          },
+          {
+            "code": "c=0",
+            "line": 20,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "for i in range(n): for j in e[i]:x[j]+=1",
+            "line": 21,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "for j in e[i]:x[j]+=1",
+            "line": 22,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "i",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "x[j]+=1",
+            "line": 22,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "j",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+            "line": 23,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+            "line": 24,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "i",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "d.append(i)",
+            "line": 25,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "i",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "t.append(i)",
+            "line": 26,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "i",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "c+=1",
+            "line": 27,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+            "line": 28,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "i=d.popleft()",
+            "line": 29,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+            "line": 30,
+            "vars": [
+              "d",
+              "e",
+              "flag",
+              "i",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "x[j]-=1",
+            "line": 31,
+            "vars": [
+              "d",
+              "flag",
+              "j",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+            "line": 32,
+            "vars": [
+              "d",
+              "flag",
+              "j",
+              "n",
+              "t",
+              "x"
+            ]
+          },
+          {
+            "code": "d.append(j)",
+            "line": 33,
+            "vars": [
+              "d",
+              "flag",
+              "j",
+              "n",
+              "t"
+            ]
+          },
+          {
+            "code": "t.append(j)",
+            "line": 34,
+            "vars": [
+              "flag",
+              "j",
+              "n",
+              "t"
+            ]
+          },
+          {
+            "code": "c+=1",
+            "line": 35,
+            "vars": [
+              "flag",
+              "n",
+              "t"
+            ]
+          },
+          {
+            "code": "if flag==0:return c==n else:return t",
+            "line": 36,
+            "vars": [
+              "c",
+              "flag",
+              "n",
+              "t"
+            ]
+          },
+          {
+            "code": "return c==n",
+            "line": 36,
+            "vars": [
+              "c",
+              "n",
+              "t"
+            ]
+          },
+          {
+            "code": "return t",
+            "line": 37,
+            "vars": [
+              "t"
+            ]
+          }
+        ],
+        "liveout": {
+          "c": true,
+          "d": false,
+          "e": false,
+          "flag": false,
+          "i": false,
+          "j": false,
+          "n": true,
+          "t": true,
+          "x": false
+        },
+        "return_vars": [
+          "c",
+          "n",
+          "t"
+        ]
+      },
+      "find_negative_loop": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "d=n*[10**20]",
+            "line": 4,
+            "vars": [
+              "e",
+              "n"
+            ]
+          },
+          {
+            "code": "d[0]=0",
+            "line": 4,
+            "vars": [
+              "e",
+              "n"
+            ]
+          },
+          {
+            "code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+            "line": 5,
+            "vars": [
+              "d",
+              "e",
+              "n"
+            ]
+          },
+          {
+            "code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+            "line": 6,
+            "vars": [
+              "d",
+              "e",
+              "h",
+              "n"
+            ]
+          },
+          {
+            "code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+            "line": 7,
+            "vars": [
+              "d",
+              "h",
+              "i",
+              "j",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "d[j]=d[i]+k",
+            "line": 8,
+            "vars": [
+              "d",
+              "h",
+              "i",
+              "j",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "if h==n-1:return True",
+            "line": 9,
+            "vars": [
+              "h",
+              "n"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 9,
+            "vars": []
+          },
+          {
+            "code": "return False",
+            "line": 10,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "d": false,
+          "e": false,
+          "h": false,
+          "i": false,
+          "j": false,
+          "k": false,
+          "n": false
+        },
+        "return_vars": []
+      },
+      "glaph_bfs": {
+        "base_liveout": [
+          "ans"
+        ],
+        "live_before": [
+          {
+            "code": "ans=[0]*n",
+            "line": 54,
+            "vars": [
+              "e",
+              "n",
+              "s"
+            ]
+          },
+          {
+            "code": "Q=[s]",
+            "line": 55,
+            "vars": [
+              "e",
+              "s"
+            ]
+          },
+          {
+            "code": "visited={s}",
+            "line": 56,
+            "vars": [
+              "Q",
+              "e",
+              "s"
+            ]
+          },
+          {
+            "code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+            "line": 57,
+            "vars": [
+              "Q",
+              "e",
+              "visited"
+            ]
+          },
+          {
+            "code": "P=[]",
+            "line": 58,
+            "vars": [
+              "Q",
+              "e",
+              "visited"
+            ]
+          },
+          {
+            "code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+            "line": 59,
+            "vars": [
+              "P",
+              "Q",
+              "e",
+              "visited"
+            ]
+          },
+          {
+            "code": "ans[i]=1",
+            "line": 60,
+            "vars": [
+              "P",
+              "e",
+              "i",
+              "visited"
+            ]
+          },
+          {
+            "code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+            "line": 61,
+            "vars": [
+              "P",
+              "ans",
+              "e",
+              "i",
+              "visited"
+            ]
+          },
+          {
+            "code": "if j in visited:continue",
+            "line": 62,
+            "vars": [
+              "P",
+              "ans",
+              "j",
+              "visited"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 62,
+            "vars": [
+              "P",
+              "ans",
+              "j",
+              "visited"
+            ]
+          },
+          {
+            "code": "visited.add(j)",
+            "line": 63,
+            "vars": [
+              "P",
+              "ans",
+              "j",
+              "visited"
+            ]
+          },
+          {
+            "code": "P.append(j)",
+            "line": 64,
+            "vars": [
+              "P",
+              "ans",
+              "j"
+            ]
+          },
+          {
+            "code": "Q=P",
+            "line": 65,
+            "vars": [
+              "P",
+              "ans"
+            ]
+          },
+          {
+            "code": "return ans",
+            "line": 66,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "P": false,
+          "Q": false,
+          "ans": true,
+          "e": false,
+          "i": false,
+          "j": false,
+          "n": false,
+          "s": false,
+          "visited": false
+        },
+        "return_vars": [
+          "ans"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(m):",
+      "cond": "for _ in range(m)",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 72,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for a,b,c in e:",
+      "cond": "for a,b,c in e",
+      "function": "__module__",
+      "header_id": 17,
+      "line": 83,
+      "reachable": false
+    },
+    {
+      "certainty": "always_runs",
+      "code": "while 1:",
+      "cond": "1",
+      "function": "bellman_ford",
+      "header_id": 4,
+      "line": 44,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i,j,k in e:",
+      "cond": "for i,j,k in e",
+      "function": "bellman_ford",
+      "header_id": 6,
+      "line": 46,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "find_loop",
+      "header_id": 5,
+      "line": 21,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in e[i]:",
+      "cond": "for j in e[i]",
+      "function": "find_loop",
+      "header_id": 6,
+      "line": 22,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "find_loop",
+      "header_id": 8,
+      "line": 23,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while d:",
+      "cond": "d",
+      "function": "find_loop",
+      "header_id": 13,
+      "line": 28,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in e[i]:",
+      "cond": "for j in e[i]",
+      "function": "find_loop",
+      "header_id": 15,
+      "line": 30,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for h in range(n):",
+      "cond": "for h in range(n)",
+      "function": "find_negative_loop",
+      "header_id": 3,
+      "line": 5,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i,j,k in e:",
+      "cond": "for i,j,k in e",
+      "function": "find_negative_loop",
+      "header_id": 4,
+      "line": 6,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while Q:",
+      "cond": "Q",
+      "function": "glaph_bfs",
+      "header_id": 4,
+      "line": 57,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in Q:",
+      "cond": "for i in Q",
+      "function": "glaph_bfs",
+      "header_id": 6,
+      "line": 59,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in e[i]:",
+      "cond": "for j in e[i]",
+      "function": "glaph_bfs",
+      "header_id": 8,
+      "line": 61,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "n,m,p=map(int,input().split())",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "ef=[[]for _ in range(n)]",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "ef=[[]for _ in range(n)]",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "ee=[[]for _ in range(n)]",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "ee=[[]for _ in range(n)]",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "ee=[[]for _ in range(n)]",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "e=[]",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "e=[]",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "e=[]",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "e=[]",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 73,
+      "b_code": "a-=1",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 73,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a-=1",
+      "a_line": 74,
+      "b_code": "b-=1",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 73,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a-=1",
+      "a_line": 74,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "b-=1",
+      "a_line": 75,
+      "b_code": "c-=p",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 73,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a-=1",
+      "a_line": 74,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "b-=1",
+      "a_line": 75,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c-=p",
+      "a_line": 76,
+      "b_code": "ef[a].append(b)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 73,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a-=1",
+      "a_line": 74,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "b-=1",
+      "a_line": 75,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c-=p",
+      "a_line": 76,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef[a].append(b)",
+      "a_line": 77,
+      "b_code": "ee[b].append(a)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 73,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a-=1",
+      "a_line": 74,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "b-=1",
+      "a_line": 75,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c-=p",
+      "a_line": 76,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef[a].append(b)",
+      "a_line": 77,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee[b].append(a)",
+      "a_line": 78,
+      "b_code": "e.append([a,b,c])",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "eff=glaph_bfs(0,n,ef)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "eff=glaph_bfs(0,n,ef)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "eff=glaph_bfs(0,n,ef)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "eff=glaph_bfs(0,n,ef)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "eff=glaph_bfs(0,n,ef)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "eff=glaph_bfs(0,n,ef)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "eef=glaph_bfs(n-1,n,ee)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eef=glaph_bfs(n-1,n,ee)",
+      "a_line": 81,
+      "b_code": "edge=[]",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eef=glaph_bfs(n-1,n,ee)",
+      "a_line": 81,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge=[]",
+      "a_line": 82,
+      "b_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eef=glaph_bfs(n-1,n,ee)",
+      "a_line": 81,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge=[]",
+      "a_line": 82,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "a_line": 83,
+      "b_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eef=glaph_bfs(n-1,n,ee)",
+      "a_line": 81,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge=[]",
+      "a_line": 82,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "a_line": 83,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "a_line": 86,
+      "b_code": "print(-1)",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eef=glaph_bfs(n-1,n,ee)",
+      "a_line": 81,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge=[]",
+      "a_line": 82,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "a_line": 83,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "a_line": 86,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print(-1)",
+      "a_line": 86,
+      "b_code": "exit()",
+      "b_line": 86,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 15,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n,m,p=map(int,input().split())",
+      "a_line": 68,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ef=[[]for _ in range(n)]",
+      "a_line": 69,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ee=[[]for _ in range(n)]",
+      "a_line": 70,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "e=[]",
+      "a_line": 71,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(m): a,b,c=map(int,input().split()) a-=1 b-=1 c-=p ef[a].append(b) ee[b].append(a) e.append([a,b,c])",
+      "a_line": 72,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eff=glaph_bfs(0,n,ef)",
+      "a_line": 80,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eef=glaph_bfs(n-1,n,ee)",
+      "a_line": 81,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge=[]",
+      "a_line": 82,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,c in e: if eff[a]==1 and eef[a]==1 and eff[b]==1 and eef[b]==1: edge.append([a,b,-c])",
+      "a_line": 83,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if find_negative_loop(n,edge):print(-1);exit()",
+      "a_line": 86,
+      "b_code": "print(max(-bellman_ford(0,n,edge)[n-1],0))",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "d[0]=0",
+      "b_line": 4,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 5,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 5,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 6,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 6,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 5,
+      "b_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 6,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 7,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 7,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 5,
+      "b_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 7,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 6,
+      "b_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "b_line": 7,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 8,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 8,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 5,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 8,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 6,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 8,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 7,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 8,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "if h==n-1:return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "if h==n-1:return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 5,
+      "b_code": "if h==n-1:return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 6,
+      "b_code": "if h==n-1:return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 7,
+      "b_code": "if h==n-1:return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[j]=d[i]+k",
+      "a_line": 8,
+      "b_code": "if h==n-1:return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 5,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 6,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 7,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[j]=d[i]+k",
+      "a_line": 8,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if h==n-1:return True",
+      "a_line": 9,
+      "b_code": "return True",
+      "b_line": 9,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d=n*[10**20]",
+      "a_line": 4,
+      "b_code": "return False",
+      "b_line": 10,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "d[0]=0",
+      "a_line": 4,
+      "b_code": "return False",
+      "b_line": 10,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for h in range(n): for i,j,k in e: if d[j]>d[i]+k: d[j]=d[i]+k if h==n-1:return True",
+      "a_line": 5,
+      "b_code": "return False",
+      "b_line": 10,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "d=deque()",
+      "b_line": 18,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "t=[]",
+      "b_line": 19,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "t=[]",
+      "b_line": 19,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "c=0",
+      "b_line": 20,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "c=0",
+      "b_line": 20,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "c=0",
+      "b_line": 20,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "b_line": 21,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "b_line": 21,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "b_line": 21,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "b_line": 21,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "for j in e[i]:x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "for j in e[i]:x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "for j in e[i]:x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "for j in e[i]:x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "for j in e[i]:x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for j in e[i]:x[j]+=1",
+      "a_line": 22,
+      "b_code": "x[j]+=1",
+      "b_line": 22,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 23,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 23,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 23,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 23,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 23,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 24,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 24,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 24,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 24,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 24,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "b_line": 24,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 24,
+      "b_code": "d.append(i)",
+      "b_line": 25,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 24,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d.append(i)",
+      "a_line": 25,
+      "b_code": "t.append(i)",
+      "b_line": 26,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 24,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d.append(i)",
+      "a_line": 25,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t.append(i)",
+      "a_line": 26,
+      "b_code": "c+=1",
+      "b_line": 27,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 28,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 28,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 28,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 28,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 28,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 28,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "i=d.popleft()",
+      "b_line": 29,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "i=d.popleft()",
+      "a_line": 29,
+      "b_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 30,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "i=d.popleft()",
+      "a_line": 29,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 30,
+      "b_code": "x[j]-=1",
+      "b_line": 31,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "i=d.popleft()",
+      "a_line": 29,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 30,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x[j]-=1",
+      "a_line": 31,
+      "b_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "b_line": 32,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "i=d.popleft()",
+      "a_line": 29,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 30,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x[j]-=1",
+      "a_line": 31,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 32,
+      "b_code": "d.append(j)",
+      "b_line": 33,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "i=d.popleft()",
+      "a_line": 29,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 30,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x[j]-=1",
+      "a_line": 31,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 32,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d.append(j)",
+      "a_line": 33,
+      "b_code": "t.append(j)",
+      "b_line": 34,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "i=d.popleft()",
+      "a_line": 29,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 30,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x[j]-=1",
+      "a_line": 31,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 32,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d.append(j)",
+      "a_line": 33,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t.append(j)",
+      "a_line": 34,
+      "b_code": "c+=1",
+      "b_line": 35,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "if flag==0:return c==n else:return t",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if flag==0:return c==n else:return t",
+      "a_line": 36,
+      "b_code": "return c==n",
+      "b_line": 36,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "x=[0]*n",
+      "a_line": 17,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "d=deque()",
+      "a_line": 18,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "t=[]",
+      "a_line": 19,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "c=0",
+      "a_line": 20,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in e[i]:x[j]+=1",
+      "a_line": 21,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "for i in range(n): if x[i]==0: d.append(i) t.append(i) c+=1",
+      "a_line": 23,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "while d: i=d.popleft() for j in e[i]: x[j]-=1 if x[j]==0: d.append(j) t.append(j) c+=1",
+      "a_line": 28,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "if flag==0:return c==n else:return t",
+      "a_line": 36,
+      "b_code": "return t",
+      "b_line": 37,
+      "function": "find_loop"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "d=[inf]*n",
+      "b_line": 43,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "d[s]=0",
+      "b_line": 43,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "d[s]=0",
+      "b_line": 43,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "b_line": 44,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "b_line": 44,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "b_line": 44,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "f=True",
+      "b_line": 45,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "f=True",
+      "b_line": 45,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "f=True",
+      "b_line": 45,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "f=True",
+      "b_line": 45,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 46,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 46,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 46,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 46,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "f=True",
+      "a_line": 45,
+      "b_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 46,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "f=True",
+      "a_line": 45,
+      "b_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 46,
+      "b_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "f=True",
+      "a_line": 45,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 46,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 47,
+      "b_code": "d[j]=d[i]+k",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "f=True",
+      "a_line": 45,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 46,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 47,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[j]=d[i]+k",
+      "a_line": 47,
+      "b_code": "f=False",
+      "b_line": 47,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "if f:break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "if f:break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "if f:break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "if f:break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "f=True",
+      "a_line": 45,
+      "b_code": "if f:break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 46,
+      "b_code": "if f:break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "f=True",
+      "a_line": 45,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False",
+      "a_line": 46,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "if f:break",
+      "a_line": 48,
+      "b_code": "break",
+      "b_line": 48,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "inf=10**20",
+      "a_line": 43,
+      "b_code": "return d",
+      "b_line": 49,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d=[inf]*n",
+      "a_line": 43,
+      "b_code": "return d",
+      "b_line": 49,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "d[s]=0",
+      "a_line": 43,
+      "b_code": "return d",
+      "b_line": 49,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "while 1: f=True for i,j,k in e: if d[i]!=inf and d[j]>d[i]+k:d[j]=d[i]+k;f=False if f:break",
+      "a_line": 44,
+      "b_code": "return d",
+      "b_line": 49,
+      "function": "bellman_ford"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "Q=[s]",
+      "b_line": 55,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "visited={s}",
+      "b_line": 56,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "visited={s}",
+      "b_line": 56,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "b_line": 57,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "b_line": 57,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "b_line": 57,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "P=[]",
+      "b_line": 58,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "P=[]",
+      "b_line": 58,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "P=[]",
+      "b_line": 58,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "P=[]",
+      "b_line": 58,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 59,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 59,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 59,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 59,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 59,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "ans[i]=1",
+      "b_line": 60,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "ans[i]=1",
+      "b_line": 60,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "ans[i]=1",
+      "b_line": 60,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "ans[i]=1",
+      "b_line": 60,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "ans[i]=1",
+      "b_line": 60,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "ans[i]=1",
+      "b_line": 60,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans[i]=1",
+      "a_line": 60,
+      "b_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "b_line": 61,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans[i]=1",
+      "a_line": 60,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 61,
+      "b_code": "if j in visited:continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans[i]=1",
+      "a_line": 60,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 61,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "if j in visited:continue",
+      "a_line": 62,
+      "b_code": "continue",
+      "b_line": 62,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans[i]=1",
+      "a_line": 60,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 61,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "if j in visited:continue",
+      "a_line": 62,
+      "b_code": "visited.add(j)",
+      "b_line": 63,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans[i]=1",
+      "a_line": 60,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 61,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "if j in visited:continue",
+      "a_line": 62,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited.add(j)",
+      "a_line": 63,
+      "b_code": "P.append(j)",
+      "b_line": 64,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "Q=P",
+      "b_line": 65,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "Q=P",
+      "b_line": 65,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "Q=P",
+      "b_line": 65,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "Q=P",
+      "b_line": 65,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "P=[]",
+      "a_line": 58,
+      "b_code": "Q=P",
+      "b_line": 65,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j)",
+      "a_line": 59,
+      "b_code": "Q=P",
+      "b_line": 65,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "ans=[0]*n",
+      "a_line": 54,
+      "b_code": "return ans",
+      "b_line": 66,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "Q=[s]",
+      "a_line": 55,
+      "b_code": "return ans",
+      "b_line": 66,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "visited={s}",
+      "a_line": 56,
+      "b_code": "return ans",
+      "b_line": 66,
+      "function": "glaph_bfs"
+    },
+    {
+      "a_code": "while Q: P=[] for i in Q: ans[i]=1 for j in e[i]: if j in visited:continue visited.add(j) P.append(j) Q=P",
+      "a_line": 57,
+      "b_code": "return ans",
+      "b_line": 66,
+      "function": "glaph_bfs"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped exit at line 86",
+      "external call skipped input at line 68",
+      "external call skipped input at line 73"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped exit at line 86",
+    "external call skipped input at line 68",
+    "external call skipped input at line 73"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "int"
+      },
+      "from": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "int"
+      },
+      "from": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "int"
+      },
+      "from": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ef=[[]for _ in range(n)]",
+        "line": 69,
+        "var": "int"
+      },
+      "from": {
+        "code": "ef=[[]for _ in range(n)]",
+        "line": 69,
+        "var": "ef"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "n"
+      },
+      "from": {
+        "code": "ef=[[]for _ in range(n)]",
+        "line": 69,
+        "var": "ef"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "ef=[[]for _ in range(n)]",
+        "line": 69,
+        "var": "ef"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ee=[[]for _ in range(n)]",
+        "line": 70,
+        "var": "int"
+      },
+      "from": {
+        "code": "ee=[[]for _ in range(n)]",
+        "line": 70,
+        "var": "ee"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "n"
+      },
+      "from": {
+        "code": "ee=[[]for _ in range(n)]",
+        "line": 70,
+        "var": "ee"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "ee=[[]for _ in range(n)]",
+        "line": 70,
+        "var": "ee"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "e=[]",
+        "line": 71,
+        "var": "e"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 73,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "a-=1",
+        "line": 74,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "b-=1",
+        "line": 75,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c-=p",
+        "line": 76,
+        "var": "int"
+      },
+      "from": {
+        "code": "c-=p",
+        "line": 76,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "p"
+      },
+      "from": {
+        "code": "c-=p",
+        "line": 76,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "c-=p",
+        "line": 76,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ef=[[]for _ in range(n)]",
+        "line": 69,
+        "var": "ef"
+      },
+      "from": {
+        "code": "eff=glaph_bfs(0,n,ef)",
+        "line": 80,
+        "var": "eff"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "eff=glaph_bfs(0,n,ef)",
+        "line": 80,
+        "var": "int"
+      },
+      "from": {
+        "code": "eff=glaph_bfs(0,n,ef)",
+        "line": 80,
+        "var": "eff"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "n"
+      },
+      "from": {
+        "code": "eff=glaph_bfs(0,n,ef)",
+        "line": 80,
+        "var": "eff"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "eff=glaph_bfs(0,n,ef)",
+        "line": 80,
+        "var": "eff"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ee=[[]for _ in range(n)]",
+        "line": 70,
+        "var": "ee"
+      },
+      "from": {
+        "code": "eef=glaph_bfs(n-1,n,ee)",
+        "line": 81,
+        "var": "eef"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "eef=glaph_bfs(n-1,n,ee)",
+        "line": 81,
+        "var": "int"
+      },
+      "from": {
+        "code": "eef=glaph_bfs(n-1,n,ee)",
+        "line": 81,
+        "var": "eef"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,m,p=map(int,input().split())",
+        "line": 68,
+        "var": "n"
+      },
+      "from": {
+        "code": "eef=glaph_bfs(n-1,n,ee)",
+        "line": 81,
+        "var": "eef"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "eef=glaph_bfs(n-1,n,ee)",
+        "line": 81,
+        "var": "eef"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "edge=[]",
+        "line": 82,
+        "var": "edge"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,e):",
+        "line": 3,
+        "var": "n"
+      },
+      "from": {
+        "code": "d=n*[10**20]",
+        "line": 4,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,e):",
+        "line": 3,
+        "var": "e"
+      },
+      "from": {
+        "code": "d=n*[10**20]",
+        "line": 4,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,e):",
+        "line": 3,
+        "var": "e"
+      },
+      "from": {
+        "code": "d[0]=0",
+        "line": 4,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d[0]=0",
+        "line": 4,
+        "var": "d"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "i"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "j"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "k"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,e):",
+        "line": 3,
+        "var": "e"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 8,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_loop(n,e,flag):",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "x=[0]*n",
+        "line": 17,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_loop(n,e,flag):",
+        "line": 16,
+        "var": "c"
+      },
+      "from": {
+        "code": "x=[0]*n",
+        "line": 17,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_loop(n,e,flag):",
+        "line": 16,
+        "var": "c"
+      },
+      "from": {
+        "code": "d=deque()",
+        "line": 18,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_loop(n,e,flag):",
+        "line": 16,
+        "var": "c"
+      },
+      "from": {
+        "code": "t=[]",
+        "line": 19,
+        "var": "t"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d=deque()",
+        "line": 18,
+        "var": "d"
+      },
+      "from": {
+        "code": "c=0",
+        "line": 20,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x[j]+=1",
+        "line": 22,
+        "var": "j"
+      },
+      "from": {
+        "code": "x[j]+=1",
+        "line": 22,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_loop(n,e,flag):",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "x[j]+=1",
+        "line": 22,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x=[0]*n",
+        "line": 17,
+        "var": "x"
+      },
+      "from": {
+        "code": "x[j]+=1",
+        "line": 22,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c=0",
+        "line": 20,
+        "var": "c"
+      },
+      "from": {
+        "code": "x[j]+=1",
+        "line": 22,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d=deque()",
+        "line": 18,
+        "var": "d"
+      },
+      "from": {
+        "code": "c+=1",
+        "line": 27,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d=deque()",
+        "line": 18,
+        "var": "d"
+      },
+      "from": {
+        "code": "i=d.popleft()",
+        "line": 29,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c+=1",
+        "line": 27,
+        "var": "c"
+      },
+      "from": {
+        "code": "i=d.popleft()",
+        "line": 29,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x[j]-=1",
+        "line": 31,
+        "var": "j"
+      },
+      "from": {
+        "code": "x[j]-=1",
+        "line": 31,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_loop(n,e,flag):",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "x[j]-=1",
+        "line": 31,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x[j]+=1",
+        "line": 22,
+        "var": "x"
+      },
+      "from": {
+        "code": "x[j]-=1",
+        "line": 31,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c+=1",
+        "line": 27,
+        "var": "c"
+      },
+      "from": {
+        "code": "x[j]-=1",
+        "line": 31,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d=deque()",
+        "line": 18,
+        "var": "d"
+      },
+      "from": {
+        "code": "c+=1",
+        "line": 35,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "d"
+      },
+      "from": {
+        "code": "inf=10**20",
+        "line": 43,
+        "var": "inf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "inf=10**20",
+        "line": 43,
+        "var": "inf"
+      },
+      "from": {
+        "code": "d=[inf]*n",
+        "line": 43,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "n"
+      },
+      "from": {
+        "code": "d=[inf]*n",
+        "line": 43,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "e"
+      },
+      "from": {
+        "code": "d=[inf]*n",
+        "line": 43,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "s"
+      },
+      "from": {
+        "code": "d[s]=0",
+        "line": 43,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "e"
+      },
+      "from": {
+        "code": "d[s]=0",
+        "line": 43,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d[s]=0",
+        "line": 43,
+        "var": "d"
+      },
+      "from": {
+        "code": "f=True",
+        "line": 45,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d[s]=0",
+        "line": 43,
+        "var": "d"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "i"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "j"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "k"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "s"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bellman_ford(s,n,e):",
+        "line": 42,
+        "var": "e"
+      },
+      "from": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d[j]=d[i]+k",
+        "line": 47,
+        "var": "d"
+      },
+      "from": {
+        "code": "f=False",
+        "line": 47,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def glaph_bfs(s,n,e):",
+        "line": 53,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans=[0]*n",
+        "line": 54,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def glaph_bfs(s,n,e):",
+        "line": 53,
+        "var": "P"
+      },
+      "from": {
+        "code": "ans=[0]*n",
+        "line": 54,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def glaph_bfs(s,n,e):",
+        "line": 53,
+        "var": "s"
+      },
+      "from": {
+        "code": "Q=[s]",
+        "line": 55,
+        "var": "Q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def glaph_bfs(s,n,e):",
+        "line": 53,
+        "var": "P"
+      },
+      "from": {
+        "code": "Q=[s]",
+        "line": 55,
+        "var": "Q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def glaph_bfs(s,n,e):",
+        "line": 53,
+        "var": "s"
+      },
+      "from": {
+        "code": "visited={s}",
+        "line": 56,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def glaph_bfs(s,n,e):",
+        "line": 53,
+        "var": "P"
+      },
+      "from": {
+        "code": "visited={s}",
+        "line": 56,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q=[s]",
+        "line": 55,
+        "var": "Q"
+      },
+      "from": {
+        "code": "P=[]",
+        "line": 58,
+        "var": "P"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i]=1",
+        "line": 60,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans[i]=1",
+        "line": 60,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "P=[]",
+        "line": 58,
+        "var": "P"
+      },
+      "from": {
+        "code": "ans[i]=1",
+        "line": 60,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "P=[]",
+        "line": 58,
+        "var": "P"
+      },
+      "from": {
+        "code": "Q=P",
+        "line": 65,
+        "var": "Q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i]=1",
+        "line": 60,
+        "var": "ans"
+      },
+      "from": {
+        "code": "Q=P",
+        "line": 65,
+        "var": "Q"
+      },
+      "label": "negative"
+    }
+  ]
+}

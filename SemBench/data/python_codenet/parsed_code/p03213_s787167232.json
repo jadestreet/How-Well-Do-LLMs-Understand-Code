@@ -1,0 +1,6745 @@
+{
+  "cfg_statements": [
+    {
+      "code": "N = int(input())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 1
+    },
+    {
+      "code": "if N == 1: print(0) exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 26,
+      "node_id": 2
+    },
+    {
+      "code": "print(0)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 27,
+      "node_id": 3
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 28,
+      "node_id": 4
+    },
+    {
+      "code": "dp = [[0]*101 for _ in range(N+1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 30,
+      "node_id": 6
+    },
+    {
+      "code": "li = factorization(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 7
+    },
+    {
+      "code": "n = len(li)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 8
+    },
+    {
+      "code": "li0 = [0]*n",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 9
+    },
+    {
+      "code": "li1 = {}",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 10
+    },
+    {
+      "code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 35,
+      "node_id": 11
+    },
+    {
+      "code": "li0[k] = li[k][0]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 12
+    },
+    {
+      "code": "li1[li[k][0]] = li[k][1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 13
+    },
+    {
+      "code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 38,
+      "node_id": 14
+    },
+    {
+      "code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 39,
+      "node_id": 15
+    },
+    {
+      "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 16
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Continue",
+      "line": 41,
+      "node_id": 17
+    },
+    {
+      "code": "dp[i][j] = dp[i-1][j]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 18
+    },
+    {
+      "code": "li = dp[N]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 19
+    },
+    {
+      "code": "li.sort()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 45,
+      "node_id": 20
+    },
+    {
+      "code": "from bisect import bisect_right",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 46,
+      "node_id": 21
+    },
+    {
+      "code": "indexa = bisect_right(li,0)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 22
+    },
+    {
+      "code": "lia = li[indexa:]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 23
+    },
+    {
+      "code": "na = len(lia)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 24
+    },
+    {
+      "code": "c2 = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 25
+    },
+    {
+      "code": "c4 = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 26
+    },
+    {
+      "code": "c14 = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 27
+    },
+    {
+      "code": "c24 = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 28
+    },
+    {
+      "code": "c74 = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 29
+    },
+    {
+      "code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 56,
+      "node_id": 30
+    },
+    {
+      "code": "if lia[i] >= 2: c2+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 57,
+      "node_id": 31
+    },
+    {
+      "code": "c2+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 58,
+      "node_id": 32
+    },
+    {
+      "code": "if lia[i] >= 4: c4+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 59,
+      "node_id": 33
+    },
+    {
+      "code": "c4+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 60,
+      "node_id": 34
+    },
+    {
+      "code": "if lia[i] >= 14: c14 +=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 61,
+      "node_id": 35
+    },
+    {
+      "code": "c14 +=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 62,
+      "node_id": 36
+    },
+    {
+      "code": "if lia[i] >= 24: c24+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 63,
+      "node_id": 37
+    },
+    {
+      "code": "c24+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 64,
+      "node_id": 38
+    },
+    {
+      "code": "if lia[i] >= 74: c74+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 65,
+      "node_id": 39
+    },
+    {
+      "code": "c74+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 66,
+      "node_id": 40
+    },
+    {
+      "code": "d4_2 = c2-c4",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 67,
+      "node_id": 41
+    },
+    {
+      "code": "d14_4 = c4 - c14",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 68,
+      "node_id": 42
+    },
+    {
+      "code": "d24_2 = c2 - c24",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 43
+    },
+    {
+      "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 76,
+      "node_id": 44
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 77,
+      "node_id": 45
+    },
+    {
+      "code": "return [int(k) for k in input().split()]",
+      "dead": false,
+      "function": "inputlist",
+      "kind": "Return",
+      "line": 2,
+      "node_id": 1
+    },
+    {
+      "code": "arr = []",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "temp = n",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "For",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "If",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "cnt=0",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 5
+    },
+    {
+      "code": "while temp%i==0: cnt+=1 temp //= i",
+      "dead": false,
+      "function": "factorization",
+      "kind": "While",
+      "line": 11,
+      "node_id": 6
+    },
+    {
+      "code": "cnt+=1",
+      "dead": false,
+      "function": "factorization",
+      "kind": "AugAssign",
+      "line": 12,
+      "node_id": 7
+    },
+    {
+      "code": "temp //= i",
+      "dead": false,
+      "function": "factorization",
+      "kind": "AugAssign",
+      "line": 13,
+      "node_id": 8
+    },
+    {
+      "code": "arr.append([i, cnt])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Expr",
+      "line": 14,
+      "node_id": 9
+    },
+    {
+      "code": "if temp!=1: arr.append([temp, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "If",
+      "line": 16,
+      "node_id": 10
+    },
+    {
+      "code": "arr.append([temp, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Expr",
+      "line": 17,
+      "node_id": 11
+    },
+    {
+      "code": "if arr==[]: arr.append([n, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "If",
+      "line": 19,
+      "node_id": 12
+    },
+    {
+      "code": "arr.append([n, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Expr",
+      "line": 20,
+      "node_id": 13
+    },
+    {
+      "code": "return arr",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Return",
+      "line": 22,
+      "node_id": 14
+    },
+    {
+      "code": "return i*(i-1)//2",
+      "dead": false,
+      "function": "comb2",
+      "kind": "Return",
+      "line": 72,
+      "node_id": 1
+    },
+    {
+      "code": "return i*(i-1)*(i-2)//6",
+      "dead": false,
+      "function": "comb3",
+      "kind": "Return",
+      "line": 74,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "return [int(k) for k in input().split()]",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "arr = []",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "temp = n",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "cnt=0",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "while temp%i==0: cnt+=1 temp //= i",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "cnt+=1",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "temp //= i",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "arr.append([i, cnt])",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if temp!=1: arr.append([temp, 1])",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "arr.append([temp, 1])",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "if arr==[]: arr.append([n, 1])",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "arr.append([n, 1])",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return arr",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "N = int(input())",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "if N == 1: print(0) exit()",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "print(0)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "dp = [[0]*101 for _ in range(N+1)]",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "li = factorization(i)",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "n = len(li)",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "li0 = [0]*n",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "li1 = {}",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "li0[k] = li[k][0]",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "li1[li[k][0]] = li[k][1]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "dp[i][j] = dp[i-1][j]",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "li = dp[N]",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "li.sort()",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "from bisect import bisect_right",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "indexa = bisect_right(li,0)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "lia = li[indexa:]",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "na = len(lia)",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "c2 = 0",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "c4 = 0",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "c14 = 0",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "c24 = 0",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "c74 = 0",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "if lia[i] >= 2: c2+=1",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "c2+=1",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "if lia[i] >= 4: c4+=1",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "c4+=1",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "if lia[i] >= 14: c14 +=1",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "c14 +=1",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "if lia[i] >= 24: c24+=1",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "c24+=1",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "if lia[i] >= 74: c74+=1",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "c74+=1",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "d4_2 = c2-c4",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "d14_4 = c4 - c14",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "d24_2 = c2 - c24",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "return i*(i-1)//2",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "return i*(i-1)*(i-2)//6",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 77
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03213_s787167232.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 2,
+      "lineno": 2,
+      "name": "inputlist",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 22,
+      "lineno": 5,
+      "name": "factorization",
+      "variables": [
+        "arr",
+        "cnt",
+        "i",
+        "n",
+        "temp"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 72,
+      "lineno": 71,
+      "name": "comb2",
+      "variables": [
+        "i"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 74,
+      "lineno": 73,
+      "name": "comb3",
+      "variables": [
+        "i"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "N = int(input())",
+            "line": 25,
+            "vars": []
+          },
+          {
+            "code": "if N == 1: print(0) exit()",
+            "line": 26,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "print(0)",
+            "line": 27,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "exit()",
+            "line": 28,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "dp = [[0]*101 for _ in range(N+1)]",
+            "line": 29,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+            "line": 30,
+            "vars": [
+              "N",
+              "dp"
+            ]
+          },
+          {
+            "code": "li = factorization(i)",
+            "line": 31,
+            "vars": [
+              "N",
+              "dp",
+              "i"
+            ]
+          },
+          {
+            "code": "n = len(li)",
+            "line": 32,
+            "vars": [
+              "N",
+              "dp",
+              "li"
+            ]
+          },
+          {
+            "code": "li0 = [0]*n",
+            "line": 33,
+            "vars": [
+              "N",
+              "dp",
+              "li",
+              "n"
+            ]
+          },
+          {
+            "code": "li1 = {}",
+            "line": 34,
+            "vars": [
+              "N",
+              "dp",
+              "li",
+              "n"
+            ]
+          },
+          {
+            "code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+            "line": 35,
+            "vars": [
+              "N",
+              "dp",
+              "li",
+              "n"
+            ]
+          },
+          {
+            "code": "li0[k] = li[k][0]",
+            "line": 36,
+            "vars": [
+              "N",
+              "dp",
+              "k",
+              "li"
+            ]
+          },
+          {
+            "code": "li1[li[k][0]] = li[k][1]",
+            "line": 37,
+            "vars": [
+              "N",
+              "dp",
+              "li",
+              "li0"
+            ]
+          },
+          {
+            "code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+            "line": 38,
+            "vars": [
+              "N",
+              "dp",
+              "li0",
+              "li1"
+            ]
+          },
+          {
+            "code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+            "line": 39,
+            "vars": [
+              "N",
+              "dp",
+              "j",
+              "li0",
+              "li1"
+            ]
+          },
+          {
+            "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+            "line": 40,
+            "vars": [
+              "N",
+              "dp",
+              "j",
+              "li1"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 41,
+            "vars": [
+              "N",
+              "dp",
+              "j"
+            ]
+          },
+          {
+            "code": "dp[i][j] = dp[i-1][j]",
+            "line": 42,
+            "vars": [
+              "N",
+              "dp",
+              "j"
+            ]
+          },
+          {
+            "code": "li = dp[N]",
+            "line": 44,
+            "vars": [
+              "N",
+              "dp"
+            ]
+          },
+          {
+            "code": "li.sort()",
+            "line": 45,
+            "vars": [
+              "li"
+            ]
+          },
+          {
+            "code": "from bisect import bisect_right",
+            "line": 46,
+            "vars": [
+              "li"
+            ]
+          },
+          {
+            "code": "indexa = bisect_right(li,0)",
+            "line": 47,
+            "vars": [
+              "li"
+            ]
+          },
+          {
+            "code": "lia = li[indexa:]",
+            "line": 48,
+            "vars": [
+              "indexa",
+              "li"
+            ]
+          },
+          {
+            "code": "na = len(lia)",
+            "line": 50,
+            "vars": [
+              "lia"
+            ]
+          },
+          {
+            "code": "c2 = 0",
+            "line": 51,
+            "vars": [
+              "lia",
+              "na"
+            ]
+          },
+          {
+            "code": "c4 = 0",
+            "line": 52,
+            "vars": [
+              "lia",
+              "na"
+            ]
+          },
+          {
+            "code": "c14 = 0",
+            "line": 53,
+            "vars": [
+              "lia",
+              "na"
+            ]
+          },
+          {
+            "code": "c24 = 0",
+            "line": 54,
+            "vars": [
+              "lia",
+              "na"
+            ]
+          },
+          {
+            "code": "c74 = 0",
+            "line": 55,
+            "vars": [
+              "lia",
+              "na"
+            ]
+          },
+          {
+            "code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+            "line": 56,
+            "vars": [
+              "lia",
+              "na"
+            ]
+          },
+          {
+            "code": "if lia[i] >= 2: c2+=1",
+            "line": 57,
+            "vars": [
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "c2+=1",
+            "line": 58,
+            "vars": [
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "if lia[i] >= 4: c4+=1",
+            "line": 59,
+            "vars": [
+              "c2",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "c4+=1",
+            "line": 60,
+            "vars": [
+              "c2",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "if lia[i] >= 14: c14 +=1",
+            "line": 61,
+            "vars": [
+              "c2",
+              "c4",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "c14 +=1",
+            "line": 62,
+            "vars": [
+              "c2",
+              "c4",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "if lia[i] >= 24: c24+=1",
+            "line": 63,
+            "vars": [
+              "c14",
+              "c2",
+              "c4",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "c24+=1",
+            "line": 64,
+            "vars": [
+              "c14",
+              "c2",
+              "c4",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "if lia[i] >= 74: c74+=1",
+            "line": 65,
+            "vars": [
+              "c14",
+              "c2",
+              "c24",
+              "c4",
+              "i",
+              "lia"
+            ]
+          },
+          {
+            "code": "c74+=1",
+            "line": 66,
+            "vars": [
+              "c14",
+              "c2",
+              "c24",
+              "c4"
+            ]
+          },
+          {
+            "code": "d4_2 = c2-c4",
+            "line": 67,
+            "vars": [
+              "c14",
+              "c2",
+              "c24",
+              "c4",
+              "c74"
+            ]
+          },
+          {
+            "code": "d14_4 = c4 - c14",
+            "line": 68,
+            "vars": [
+              "c14",
+              "c2",
+              "c24",
+              "c4",
+              "c74",
+              "d4_2"
+            ]
+          },
+          {
+            "code": "d24_2 = c2 - c24",
+            "line": 69,
+            "vars": [
+              "c14",
+              "c2",
+              "c24",
+              "c4",
+              "c74",
+              "d14_4",
+              "d4_2"
+            ]
+          },
+          {
+            "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+            "line": 76,
+            "vars": [
+              "c14",
+              "c24",
+              "c4",
+              "c74",
+              "d14_4",
+              "d24_2",
+              "d4_2"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 77,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": false,
+          "ans": false,
+          "c14": false,
+          "c2": false,
+          "c24": false,
+          "c4": false,
+          "c74": false,
+          "d14_4": false,
+          "d24_2": false,
+          "d4_2": false,
+          "dp": false,
+          "i": false,
+          "indexa": false,
+          "j": false,
+          "k": false,
+          "li": false,
+          "li0": false,
+          "li1": false,
+          "lia": false,
+          "n": false,
+          "na": false
+        },
+        "return_vars": []
+      },
+      "comb2": {
+        "base_liveout": [
+          "i"
+        ],
+        "live_before": [
+          {
+            "code": "return i*(i-1)//2",
+            "line": 72,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": true
+        },
+        "return_vars": [
+          "i"
+        ]
+      },
+      "comb3": {
+        "base_liveout": [
+          "i"
+        ],
+        "live_before": [
+          {
+            "code": "return i*(i-1)*(i-2)//6",
+            "line": 74,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": true
+        },
+        "return_vars": [
+          "i"
+        ]
+      },
+      "factorization": {
+        "base_liveout": [
+          "arr"
+        ],
+        "live_before": [
+          {
+            "code": "arr = []",
+            "line": 6,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "temp = n",
+            "line": 7,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+            "line": 8,
+            "vars": [
+              "arr",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+            "line": 9,
+            "vars": [
+              "arr",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "cnt=0",
+            "line": 10,
+            "vars": [
+              "arr",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "while temp%i==0: cnt+=1 temp //= i",
+            "line": 11,
+            "vars": [
+              "arr",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "cnt+=1",
+            "line": 12,
+            "vars": [
+              "arr",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "temp //= i",
+            "line": 13,
+            "vars": [
+              "arr",
+              "cnt",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "arr.append([i, cnt])",
+            "line": 14,
+            "vars": [
+              "arr",
+              "cnt",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "if temp!=1: arr.append([temp, 1])",
+            "line": 16,
+            "vars": [
+              "arr",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "arr.append([temp, 1])",
+            "line": 17,
+            "vars": [
+              "arr",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "if arr==[]: arr.append([n, 1])",
+            "line": 19,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "arr.append([n, 1])",
+            "line": 20,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "return arr",
+            "line": 22,
+            "vars": [
+              "arr"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": true,
+          "cnt": false,
+          "i": false,
+          "n": false,
+          "temp": false
+        },
+        "return_vars": [
+          "arr"
+        ]
+      },
+      "inputlist": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return [int(k) for k in input().split()]",
+            "line": 2,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(2,N+1):",
+      "cond": "for i in range(2,N+1)",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 30,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for k in range(n):",
+      "cond": "for k in range(n)",
+      "function": "__module__",
+      "header_id": 11,
+      "line": 35,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(2,101):",
+      "cond": "for j in range(2,101)",
+      "function": "__module__",
+      "header_id": 14,
+      "line": 38,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(na):",
+      "cond": "for i in range(na)",
+      "function": "__module__",
+      "header_id": 30,
+      "line": 56,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(2, int(-(-n**0.5//1))+1):",
+      "cond": "for i in range(2, int(-(-n**0.5//1))+1)",
+      "function": "factorization",
+      "header_id": 3,
+      "line": 8,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while temp%i==0:",
+      "cond": "temp % i == 0",
+      "function": "factorization",
+      "header_id": 6,
+      "line": 11,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if N == 1: print(0) exit()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "print(0)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "print(0)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "exit()",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "exit()",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print(0)",
+      "a_line": 27,
+      "b_code": "exit()",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li = factorization(i)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li = factorization(i)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li = factorization(i)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li = factorization(i)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "n = len(li)",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "n = len(li)",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "n = len(li)",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "n = len(li)",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "n = len(li)",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li0 = [0]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li0 = [0]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li0 = [0]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li0 = [0]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "li0 = [0]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "li0 = [0]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "li1 = {}",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "li0[k] = li[k][0]",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0[k] = li[k][0]",
+      "a_line": 36,
+      "b_code": "li1[li[k][0]] = li[k][1]",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 38,
+      "b_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 38,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "a_line": 39,
+      "b_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 38,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp[i][j] = dp[i-1][j] + li1[j]",
+      "a_line": 40,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = factorization(i)",
+      "a_line": 31,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = len(li)",
+      "a_line": 32,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li0 = [0]*n",
+      "a_line": 33,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li1 = {}",
+      "a_line": 34,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1]",
+      "a_line": 35,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 38,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue",
+      "a_line": 39,
+      "b_code": "dp[i][j] = dp[i-1][j]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li = dp[N]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li = dp[N]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li = dp[N]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li = dp[N]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "li.sort()",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "li.sort()",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "li.sort()",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "li.sort()",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "li.sort()",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "from bisect import bisect_right",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "from bisect import bisect_right",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "from bisect import bisect_right",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "from bisect import bisect_right",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "from bisect import bisect_right",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "from bisect import bisect_right",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "indexa = bisect_right(li,0)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "lia = li[indexa:]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "na = len(lia)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c2 = 0",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c4 = 0",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c14 = 0",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c24 = 0",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "c74 = 0",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "if lia[i] >= 2: c2+=1",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "c2+=1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "if lia[i] >= 4: c4+=1",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "c4+=1",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "if lia[i] >= 14: c14 +=1",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 14: c14 +=1",
+      "a_line": 61,
+      "b_code": "c14 +=1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 14: c14 +=1",
+      "a_line": 61,
+      "b_code": "if lia[i] >= 24: c24+=1",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 14: c14 +=1",
+      "a_line": 61,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 24: c24+=1",
+      "a_line": 63,
+      "b_code": "c24+=1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 14: c14 +=1",
+      "a_line": 61,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 24: c24+=1",
+      "a_line": 63,
+      "b_code": "if lia[i] >= 74: c74+=1",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 2: c2+=1",
+      "a_line": 57,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 4: c4+=1",
+      "a_line": 59,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 14: c14 +=1",
+      "a_line": 61,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 24: c24+=1",
+      "a_line": 63,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if lia[i] >= 74: c74+=1",
+      "a_line": 65,
+      "b_code": "c74+=1",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "d4_2 = c2-c4",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d4_2 = c2-c4",
+      "a_line": 67,
+      "b_code": "d14_4 = c4 - c14",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d4_2 = c2-c4",
+      "a_line": 67,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d14_4 = c4 - c14",
+      "a_line": 68,
+      "b_code": "d24_2 = c2 - c24",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d4_2 = c2-c4",
+      "a_line": 67,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d14_4 = c4 - c14",
+      "a_line": 68,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d24_2 = c2 - c24",
+      "a_line": 69,
+      "b_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 25,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if N == 1: print(0) exit()",
+      "a_line": 26,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dp = [[0]*101 for _ in range(N+1)]",
+      "a_line": 29,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(2,N+1): li = factorization(i) n = len(li) li0 = [0]*n li1 = {} for k in range(n): li0[k] = li[k][0] li1[li[k][0]] = li[k][1] for j in range(2,101): if j in li0: dp[i][j] = dp[i-1][j] + li1[j] continue dp[i][j] = dp[i-1][j]",
+      "a_line": 30,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li = dp[N]",
+      "a_line": 44,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "li.sort()",
+      "a_line": 45,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_right",
+      "a_line": 46,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "indexa = bisect_right(li,0)",
+      "a_line": 47,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lia = li[indexa:]",
+      "a_line": 48,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "na = len(lia)",
+      "a_line": 50,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c2 = 0",
+      "a_line": 51,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c4 = 0",
+      "a_line": 52,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c14 = 0",
+      "a_line": 53,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c24 = 0",
+      "a_line": 54,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c74 = 0",
+      "a_line": 55,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(na): if lia[i] >= 2: c2+=1 if lia[i] >= 4: c4+=1 if lia[i] >= 14: c14 +=1 if lia[i] >= 24: c24+=1 if lia[i] >= 74: c74+=1",
+      "a_line": 56,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d4_2 = c2-c4",
+      "a_line": 67,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d14_4 = c4 - c14",
+      "a_line": 68,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d24_2 = c2 - c24",
+      "a_line": 69,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+      "a_line": 76,
+      "b_code": "print(ans)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "temp = n",
+      "b_line": 7,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 8,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 8,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 9,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 9,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 9,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "cnt=0",
+      "b_line": 10,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "cnt=0",
+      "b_line": 10,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "cnt=0",
+      "b_line": 10,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 9,
+      "b_code": "cnt=0",
+      "b_line": 10,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 11,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 11,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 11,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 9,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 11,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 10,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 11,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "cnt+=1",
+      "b_line": 12,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "cnt+=1",
+      "b_line": 12,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "cnt+=1",
+      "b_line": 12,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 9,
+      "b_code": "cnt+=1",
+      "b_line": 12,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 10,
+      "b_code": "cnt+=1",
+      "b_line": 12,
+      "function": "factorization"
+    },
+    {
+      "a_code": "while temp%i==0: cnt+=1 temp //= i",
+      "a_line": 11,
+      "b_code": "cnt+=1",
+      "b_line": 12,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 9,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 10,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "while temp%i==0: cnt+=1 temp //= i",
+      "a_line": 11,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt+=1",
+      "a_line": 12,
+      "b_code": "temp //= i",
+      "b_line": 13,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 14,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 14,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 14,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 9,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 14,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 10,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 14,
+      "function": "factorization"
+    },
+    {
+      "a_code": "while temp%i==0: cnt+=1 temp //= i",
+      "a_line": 11,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 14,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "if temp!=1: arr.append([temp, 1])",
+      "b_line": 16,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "if temp!=1: arr.append([temp, 1])",
+      "b_line": 16,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "if temp!=1: arr.append([temp, 1])",
+      "b_line": 16,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 17,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 17,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 17,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 16,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 17,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 19,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 19,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 19,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 16,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 19,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 20,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 20,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 20,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 16,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 20,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if arr==[]: arr.append([n, 1])",
+      "a_line": 19,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 20,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 6,
+      "b_code": "return arr",
+      "b_line": 22,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 7,
+      "b_code": "return arr",
+      "b_line": 22,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 8,
+      "b_code": "return arr",
+      "b_line": 22,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 16,
+      "b_code": "return arr",
+      "b_line": 22,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if arr==[]: arr.append([n, 1])",
+      "a_line": 19,
+      "b_code": "return arr",
+      "b_line": 22,
+      "function": "factorization"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped bisect_right at line 47",
+      "external call skipped exit at line 28",
+      "external call skipped input at line 2",
+      "external call skipped input at line 25"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped bisect_right at line 47",
+    "external call skipped exit at line 28",
+    "external call skipped input at line 2",
+    "external call skipped input at line 25"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "dp = [[0]*101 for _ in range(N+1)]",
+        "line": 29,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "dp = [[0]*101 for _ in range(N+1)]",
+        "line": 29,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "i"
+      },
+      "from": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n = len(li)",
+        "line": 32,
+        "var": "i"
+      },
+      "from": {
+        "code": "n = len(li)",
+        "line": 32,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "from": {
+        "code": "n = len(li)",
+        "line": 32,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "n = len(li)",
+        "line": 32,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "li0 = [0]*n",
+        "line": 33,
+        "var": "i"
+      },
+      "from": {
+        "code": "li0 = [0]*n",
+        "line": 33,
+        "var": "li0"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "from": {
+        "code": "li0 = [0]*n",
+        "line": 33,
+        "var": "li0"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = len(li)",
+        "line": 32,
+        "var": "n"
+      },
+      "from": {
+        "code": "li0 = [0]*n",
+        "line": 33,
+        "var": "li0"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "li0 = [0]*n",
+        "line": 33,
+        "var": "li0"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "li1 = {}",
+        "line": 34,
+        "var": "li1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "li0[k] = li[k][0]",
+        "line": 36,
+        "var": "i"
+      },
+      "from": {
+        "code": "li0[k] = li[k][0]",
+        "line": 36,
+        "var": "li0"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li0[k] = li[k][0]",
+        "line": 36,
+        "var": "k"
+      },
+      "from": {
+        "code": "li0[k] = li[k][0]",
+        "line": 36,
+        "var": "li0"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "from": {
+        "code": "li0[k] = li[k][0]",
+        "line": 36,
+        "var": "li0"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "li0[k] = li[k][0]",
+        "line": 36,
+        "var": "li0"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "i"
+      },
+      "from": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "from": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp = [[0]*101 for _ in range(N+1)]",
+        "line": 29,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j] + li1[j]",
+        "line": 40,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = factorization(i)",
+        "line": 31,
+        "var": "li"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "from": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "i"
+      },
+      "from": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "j"
+      },
+      "from": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "from": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "i"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "j"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "i"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "j"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i][j] = dp[i-1][j]",
+        "line": 42,
+        "var": "dp"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "i"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indexa = bisect_right(li,0)",
+        "line": 47,
+        "var": "indexa"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "j"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li = dp[N]",
+        "line": 44,
+        "var": "li"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "li1[li[k][0]] = li[k][1]",
+        "line": 37,
+        "var": "li1"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lia = li[indexa:]",
+        "line": 48,
+        "var": "lia"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "na = len(lia)",
+        "line": 50,
+        "var": "na"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c2 = 0",
+        "line": 51,
+        "var": "c2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c4 = 0",
+        "line": 52,
+        "var": "c4"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c14 = 0",
+        "line": 53,
+        "var": "c14"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c24 = 0",
+        "line": 54,
+        "var": "c24"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c74 = 0",
+        "line": 55,
+        "var": "c74"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c2+=1",
+        "line": 58,
+        "var": "c2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c4+=1",
+        "line": 60,
+        "var": "c4"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c14 +=1",
+        "line": 62,
+        "var": "c14"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c24+=1",
+        "line": 64,
+        "var": "c24"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "c74+=1",
+        "line": 66,
+        "var": "c74"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c2+=1",
+        "line": 58,
+        "var": "c2"
+      },
+      "from": {
+        "code": "d4_2 = c2-c4",
+        "line": 67,
+        "var": "d4_2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c4+=1",
+        "line": 60,
+        "var": "c4"
+      },
+      "from": {
+        "code": "d4_2 = c2-c4",
+        "line": 67,
+        "var": "d4_2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "d4_2 = c2-c4",
+        "line": 67,
+        "var": "d4_2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c14 +=1",
+        "line": 62,
+        "var": "c14"
+      },
+      "from": {
+        "code": "d14_4 = c4 - c14",
+        "line": 68,
+        "var": "d14_4"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c4+=1",
+        "line": 60,
+        "var": "c4"
+      },
+      "from": {
+        "code": "d14_4 = c4 - c14",
+        "line": 68,
+        "var": "d14_4"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "d14_4 = c4 - c14",
+        "line": 68,
+        "var": "d14_4"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c2+=1",
+        "line": 58,
+        "var": "c2"
+      },
+      "from": {
+        "code": "d24_2 = c2 - c24",
+        "line": 69,
+        "var": "d24_2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c24+=1",
+        "line": 64,
+        "var": "c24"
+      },
+      "from": {
+        "code": "d24_2 = c2 - c24",
+        "line": 69,
+        "var": "d24_2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "d24_2 = c2 - c24",
+        "line": 69,
+        "var": "d24_2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c14 +=1",
+        "line": 62,
+        "var": "c14"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c2+=1",
+        "line": 58,
+        "var": "c2"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c24+=1",
+        "line": 64,
+        "var": "c24"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c4+=1",
+        "line": 60,
+        "var": "c4"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c74+=1",
+        "line": 66,
+        "var": "c74"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d14_4 = c4 - c14",
+        "line": 68,
+        "var": "d14_4"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d24_2 = c2 - c24",
+        "line": 69,
+        "var": "d24_2"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d4_2 = c2-c4",
+        "line": 67,
+        "var": "d4_2"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "ans = d4_2*comb2(c4) + 3*comb3(c4) + d14_4*c14 + 2*comb2(c14) + d24_2*c24 + 2*comb2(c24) +c74",
+        "line": 76,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def factorization(n):",
+        "line": 5,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "arr = []",
+        "line": 6,
+        "var": "arr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def factorization(n):",
+        "line": 5,
+        "var": "n"
+      },
+      "from": {
+        "code": "temp = n",
+        "line": 7,
+        "var": "temp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 6,
+        "var": "arr"
+      },
+      "from": {
+        "code": "temp = n",
+        "line": 7,
+        "var": "temp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 6,
+        "var": "arr"
+      },
+      "from": {
+        "code": "cnt=0",
+        "line": 10,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 6,
+        "var": "arr"
+      },
+      "from": {
+        "code": "cnt+=1",
+        "line": 12,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "temp //= i",
+        "line": 13,
+        "var": "i"
+      },
+      "from": {
+        "code": "temp //= i",
+        "line": 13,
+        "var": "temp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 6,
+        "var": "arr"
+      },
+      "from": {
+        "code": "temp //= i",
+        "line": 13,
+        "var": "temp"
+      },
+      "label": "negative"
+    }
+  ]
+}

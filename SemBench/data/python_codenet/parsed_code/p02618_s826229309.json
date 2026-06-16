@@ -1,0 +1,6694 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from random import randint, getrandbits, random",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "from math import exp",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "import time",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 4,
+      "node_id": 4
+    },
+    {
+      "code": "start = time.perf_counter()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 5
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 6
+    },
+    {
+      "code": "D = int(input())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 59,
+      "node_id": 7
+    },
+    {
+      "code": "C = list(map(int, input().split()))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 8
+    },
+    {
+      "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 61,
+      "node_id": 9
+    },
+    {
+      "code": "out = [randint(0, 25) for _ in range(D)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 62,
+      "node_id": 10
+    },
+    {
+      "code": "sc = sum(C)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 63,
+      "node_id": 11
+    },
+    {
+      "code": "score = scoring()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 64,
+      "node_id": 12
+    },
+    {
+      "code": "solve(score)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 65,
+      "node_id": 13
+    },
+    {
+      "code": "for i in out: print(i + 1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 66,
+      "node_id": 14
+    },
+    {
+      "code": "print(i + 1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 67,
+      "node_id": 15
+    },
+    {
+      "code": "last = [0] * 26",
+      "dead": false,
+      "function": "scoring",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "res = 0",
+      "dead": false,
+      "function": "scoring",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 2
+    },
+    {
+      "code": "penalty = 0",
+      "dead": false,
+      "function": "scoring",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 3
+    },
+    {
+      "code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "dead": false,
+      "function": "scoring",
+      "kind": "For",
+      "line": 12,
+      "node_id": 4
+    },
+    {
+      "code": "t = out[i]",
+      "dead": false,
+      "function": "scoring",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 5
+    },
+    {
+      "code": "res += S[i][t]",
+      "dead": false,
+      "function": "scoring",
+      "kind": "AugAssign",
+      "line": 14,
+      "node_id": 6
+    },
+    {
+      "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "dead": false,
+      "function": "scoring",
+      "kind": "AugAssign",
+      "line": 15,
+      "node_id": 7
+    },
+    {
+      "code": "res -= penalty",
+      "dead": false,
+      "function": "scoring",
+      "kind": "AugAssign",
+      "line": 16,
+      "node_id": 8
+    },
+    {
+      "code": "last[t] = i + 1",
+      "dead": false,
+      "function": "scoring",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 9
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "scoring",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 10
+    },
+    {
+      "code": "T0 = 2.e3",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "T1 = 6.e2",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 2
+    },
+    {
+      "code": "TL = 1.8",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 3
+    },
+    {
+      "code": "T = T0",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 4
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 5
+    },
+    {
+      "code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "dead": false,
+      "function": "solve",
+      "kind": "While",
+      "line": 26,
+      "node_id": 6
+    },
+    {
+      "code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 27,
+      "node_id": 7
+    },
+    {
+      "code": "now = time.perf_counter()",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 8
+    },
+    {
+      "code": "elapsed = now - start",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 9
+    },
+    {
+      "code": "if elapsed > TL: break",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 30,
+      "node_id": 10
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "solve",
+      "kind": "Break",
+      "line": 31,
+      "node_id": 11
+    },
+    {
+      "code": "t = elapsed / TL",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 12
+    },
+    {
+      "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 13
+    },
+    {
+      "code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 34,
+      "node_id": 14
+    },
+    {
+      "code": "d = randint(0, D - 1)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 15
+    },
+    {
+      "code": "q = randint(0, 25)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 16
+    },
+    {
+      "code": "old = out[d]",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 17
+    },
+    {
+      "code": "out[d] = q",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 18
+    },
+    {
+      "code": "tmp = scoring()",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 19
+    },
+    {
+      "code": "p = exp((tmp - score) / T)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 20
+    },
+    {
+      "code": "r = random()",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 21
+    },
+    {
+      "code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 42,
+      "node_id": 22
+    },
+    {
+      "code": "score = tmp",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 23
+    },
+    {
+      "code": "out[d] = old",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 24
+    },
+    {
+      "code": "d1 = randint(0, D - 2)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 25
+    },
+    {
+      "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 26
+    },
+    {
+      "code": "out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 27
+    },
+    {
+      "code": "tmp = scoring()",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 28
+    },
+    {
+      "code": "p = exp((tmp - score) / T)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 29
+    },
+    {
+      "code": "r = random()",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 30
+    },
+    {
+      "code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 53,
+      "node_id": 31
+    },
+    {
+      "code": "score = tmp",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 32
+    },
+    {
+      "code": "out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 33
+    },
+    {
+      "code": "cnt += 1",
+      "dead": false,
+      "function": "solve",
+      "kind": "AugAssign",
+      "line": 57,
+      "node_id": 34
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "from random import randint, getrandbits, random",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "from math import exp",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "import time",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "start = time.perf_counter()",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "last = [0] * 26",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "res = 0",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "penalty = 0",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "t = out[i]",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "res += S[i][t]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "res -= penalty",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "last[t] = i + 1",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "T0 = 2.e3",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "T1 = 6.e2",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "TL = 1.8",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "T = T0",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "now = time.perf_counter()",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "elapsed = now - start",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if elapsed > TL: break",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "t = elapsed / TL",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "d = randint(0, D - 1)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "q = randint(0, 25)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "old = out[d]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "out[d] = q",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "tmp = scoring()",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "p = exp((tmp - score) / T)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "r = random()",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "score = tmp",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "out[d] = old",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "d1 = randint(0, D - 2)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "tmp = scoring()",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "p = exp((tmp - score) / T)",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "r = random()",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "score = tmp",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "out[d1], out[d2] = out[d2], out[d1]",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "cnt += 1",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "D = int(input())",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "C = list(map(int, input().split()))",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "out = [randint(0, 25) for _ in range(D)]",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "sc = sum(C)",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "score = scoring()",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "solve(score)",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "for i in out: print(i + 1)",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "print(i + 1)",
+      "dead": false,
+      "line": 67
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p02618_s826229309.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 18,
+      "lineno": 8,
+      "name": "scoring",
+      "variables": [
+        "C",
+        "D",
+        "S",
+        "i",
+        "last",
+        "out",
+        "penalty",
+        "res",
+        "sc",
+        "t"
+      ]
+    },
+    {
+      "calls": [
+        "scoring"
+      ],
+      "end_lineno": 57,
+      "lineno": 20,
+      "name": "solve",
+      "variables": [
+        "D",
+        "T",
+        "T0",
+        "T1",
+        "TL",
+        "cnt",
+        "d",
+        "d1",
+        "d2",
+        "elapsed",
+        "now",
+        "old",
+        "out",
+        "p",
+        "q",
+        "r",
+        "score",
+        "start",
+        "t",
+        "time",
+        "tmp"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from random import randint, getrandbits, random",
+            "line": 1,
+            "vars": [
+              "int",
+              "sys.stdin.readline",
+              "time"
+            ]
+          },
+          {
+            "code": "from math import exp",
+            "line": 2,
+            "vars": [
+              "int",
+              "sys.stdin.readline",
+              "time"
+            ]
+          },
+          {
+            "code": "import time",
+            "line": 3,
+            "vars": [
+              "int",
+              "sys.stdin.readline",
+              "time"
+            ]
+          },
+          {
+            "code": "import sys",
+            "line": 4,
+            "vars": [
+              "int",
+              "sys.stdin.readline",
+              "time"
+            ]
+          },
+          {
+            "code": "start = time.perf_counter()",
+            "line": 5,
+            "vars": [
+              "int",
+              "sys.stdin.readline",
+              "time"
+            ]
+          },
+          {
+            "code": "input = sys.stdin.readline",
+            "line": 6,
+            "vars": [
+              "int",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "D = int(input())",
+            "line": 59,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "C = list(map(int, input().split()))",
+            "line": 60,
+            "vars": [
+              "D",
+              "int"
+            ]
+          },
+          {
+            "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+            "line": 61,
+            "vars": [
+              "C",
+              "D",
+              "int"
+            ]
+          },
+          {
+            "code": "out = [randint(0, 25) for _ in range(D)]",
+            "line": 62,
+            "vars": [
+              "C",
+              "D"
+            ]
+          },
+          {
+            "code": "sc = sum(C)",
+            "line": 63,
+            "vars": [
+              "C",
+              "out"
+            ]
+          },
+          {
+            "code": "score = scoring()",
+            "line": 64,
+            "vars": [
+              "out"
+            ]
+          },
+          {
+            "code": "solve(score)",
+            "line": 65,
+            "vars": [
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "for i in out: print(i + 1)",
+            "line": 66,
+            "vars": [
+              "out"
+            ]
+          },
+          {
+            "code": "print(i + 1)",
+            "line": 67,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "C": false,
+          "D": false,
+          "S": false,
+          "i": false,
+          "input": false,
+          "int": false,
+          "out": false,
+          "sc": false,
+          "score": false,
+          "start": false,
+          "sys.stdin.readline": false,
+          "time": false
+        },
+        "return_vars": []
+      },
+      "scoring": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "last = [0] * 26",
+            "line": 9,
+            "vars": [
+              "C",
+              "D",
+              "S",
+              "out",
+              "sc"
+            ]
+          },
+          {
+            "code": "res = 0",
+            "line": 10,
+            "vars": [
+              "C",
+              "D",
+              "S",
+              "last",
+              "out",
+              "sc"
+            ]
+          },
+          {
+            "code": "penalty = 0",
+            "line": 11,
+            "vars": [
+              "C",
+              "D",
+              "S",
+              "last",
+              "out",
+              "sc"
+            ]
+          },
+          {
+            "code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+            "line": 12,
+            "vars": [
+              "C",
+              "D",
+              "S",
+              "last",
+              "out",
+              "sc"
+            ]
+          },
+          {
+            "code": "t = out[i]",
+            "line": 13,
+            "vars": [
+              "C",
+              "S",
+              "i",
+              "last",
+              "out",
+              "sc"
+            ]
+          },
+          {
+            "code": "res += S[i][t]",
+            "line": 14,
+            "vars": [
+              "C",
+              "S",
+              "i",
+              "last",
+              "sc",
+              "t"
+            ]
+          },
+          {
+            "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+            "line": 15,
+            "vars": [
+              "C",
+              "i",
+              "last",
+              "sc",
+              "t"
+            ]
+          },
+          {
+            "code": "res -= penalty",
+            "line": 16,
+            "vars": [
+              "i",
+              "penalty",
+              "t"
+            ]
+          },
+          {
+            "code": "last[t] = i + 1",
+            "line": 17,
+            "vars": [
+              "i",
+              "res",
+              "t"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 18,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "C": false,
+          "D": false,
+          "S": false,
+          "i": false,
+          "last": false,
+          "out": false,
+          "penalty": false,
+          "res": true,
+          "sc": false,
+          "t": false
+        },
+        "return_vars": [
+          "res"
+        ]
+      },
+      "solve": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "T0 = 2.e3",
+            "line": 21,
+            "vars": [
+              "D",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "T1 = 6.e2",
+            "line": 22,
+            "vars": [
+              "D",
+              "T0",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "TL = 1.8",
+            "line": 23,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "T = T0",
+            "line": 24,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "cnt = 0",
+            "line": 25,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+            "line": 26,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "cnt",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+            "line": 27,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "cnt",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "now = time.perf_counter()",
+            "line": 28,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "out",
+              "score",
+              "start",
+              "time"
+            ]
+          },
+          {
+            "code": "elapsed = now - start",
+            "line": 29,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "now",
+              "out",
+              "score",
+              "start"
+            ]
+          },
+          {
+            "code": "if elapsed > TL: break",
+            "line": 30,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "elapsed",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 31,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "elapsed",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "t = elapsed / TL",
+            "line": 32,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "TL",
+              "elapsed",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+            "line": 33,
+            "vars": [
+              "D",
+              "T0",
+              "T1",
+              "out",
+              "score",
+              "t"
+            ]
+          },
+          {
+            "code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+            "line": 34,
+            "vars": [
+              "D",
+              "T",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "d = randint(0, D - 1)",
+            "line": 35,
+            "vars": [
+              "D",
+              "T",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "q = randint(0, 25)",
+            "line": 36,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "old = out[d]",
+            "line": 37,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "out",
+              "q",
+              "score"
+            ]
+          },
+          {
+            "code": "out[d] = q",
+            "line": 38,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "q",
+              "score"
+            ]
+          },
+          {
+            "code": "tmp = scoring()",
+            "line": 39,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "score"
+            ]
+          },
+          {
+            "code": "p = exp((tmp - score) / T)",
+            "line": 40,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "score",
+              "tmp"
+            ]
+          },
+          {
+            "code": "r = random()",
+            "line": 41,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "p",
+              "score",
+              "tmp"
+            ]
+          },
+          {
+            "code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+            "line": 42,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "p",
+              "r",
+              "score",
+              "tmp"
+            ]
+          },
+          {
+            "code": "score = tmp",
+            "line": 43,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "tmp"
+            ]
+          },
+          {
+            "code": "out[d] = old",
+            "line": 45,
+            "vars": [
+              "D",
+              "T",
+              "d",
+              "old",
+              "score"
+            ]
+          },
+          {
+            "code": "d1 = randint(0, D - 2)",
+            "line": 47,
+            "vars": [
+              "D",
+              "T",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+            "line": 48,
+            "vars": [
+              "D",
+              "T",
+              "d1",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "out[d1], out[d2] = out[d2], out[d1]",
+            "line": 49,
+            "vars": [
+              "T",
+              "d1",
+              "d2",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "tmp = scoring()",
+            "line": 50,
+            "vars": [
+              "T",
+              "d1",
+              "d2",
+              "out",
+              "score"
+            ]
+          },
+          {
+            "code": "p = exp((tmp - score) / T)",
+            "line": 51,
+            "vars": [
+              "T",
+              "d1",
+              "d2",
+              "out",
+              "score",
+              "tmp"
+            ]
+          },
+          {
+            "code": "r = random()",
+            "line": 52,
+            "vars": [
+              "d1",
+              "d2",
+              "out",
+              "p",
+              "score",
+              "tmp"
+            ]
+          },
+          {
+            "code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+            "line": 53,
+            "vars": [
+              "d1",
+              "d2",
+              "out",
+              "p",
+              "r",
+              "score",
+              "tmp"
+            ]
+          },
+          {
+            "code": "score = tmp",
+            "line": 54,
+            "vars": [
+              "d1",
+              "d2",
+              "out",
+              "tmp"
+            ]
+          },
+          {
+            "code": "out[d1], out[d2] = out[d2], out[d1]",
+            "line": 56,
+            "vars": [
+              "d1",
+              "d2",
+              "out"
+            ]
+          },
+          {
+            "code": "cnt += 1",
+            "line": 57,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "D": false,
+          "T": false,
+          "T0": false,
+          "T1": false,
+          "TL": false,
+          "cnt": false,
+          "d": false,
+          "d1": false,
+          "d2": false,
+          "elapsed": false,
+          "now": false,
+          "old": false,
+          "out": false,
+          "p": false,
+          "q": false,
+          "r": false,
+          "score": false,
+          "start": false,
+          "t": false,
+          "time": false,
+          "tmp": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in out:",
+      "cond": "for i in out",
+      "function": "__module__",
+      "header_id": 14,
+      "line": 66,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(D):",
+      "cond": "for i in range(D)",
+      "function": "scoring",
+      "header_id": 4,
+      "line": 12,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "while True:",
+      "cond": "True",
+      "function": "solve",
+      "header_id": 6,
+      "line": 26,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "from math import exp",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "import time",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "import time",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "import sys",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "import sys",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "import sys",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "start = time.perf_counter()",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "start = time.perf_counter()",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "start = time.perf_counter()",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "start = time.perf_counter()",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "D = int(input())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "D = int(input())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "D = int(input())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "D = int(input())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "D = int(input())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "D = int(input())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "C = list(map(int, input().split()))",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "a_line": 61,
+      "b_code": "out = [randint(0, 25) for _ in range(D)]",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "a_line": 61,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "out = [randint(0, 25) for _ in range(D)]",
+      "a_line": 62,
+      "b_code": "sc = sum(C)",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "a_line": 61,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "out = [randint(0, 25) for _ in range(D)]",
+      "a_line": 62,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sc = sum(C)",
+      "a_line": 63,
+      "b_code": "score = scoring()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "a_line": 61,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "out = [randint(0, 25) for _ in range(D)]",
+      "a_line": 62,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sc = sum(C)",
+      "a_line": 63,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "score = scoring()",
+      "a_line": 64,
+      "b_code": "solve(score)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "a_line": 61,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "out = [randint(0, 25) for _ in range(D)]",
+      "a_line": 62,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sc = sum(C)",
+      "a_line": 63,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "score = scoring()",
+      "a_line": 64,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "solve(score)",
+      "a_line": 65,
+      "b_code": "for i in out: print(i + 1)",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from random import randint, getrandbits, random",
+      "a_line": 1,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import exp",
+      "a_line": 2,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 3,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "start = time.perf_counter()",
+      "a_line": 5,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 6,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input())",
+      "a_line": 59,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "C = list(map(int, input().split()))",
+      "a_line": 60,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(map(int, input().split())) for _ in range(D)]",
+      "a_line": 61,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "out = [randint(0, 25) for _ in range(D)]",
+      "a_line": 62,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sc = sum(C)",
+      "a_line": 63,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "score = scoring()",
+      "a_line": 64,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "solve(score)",
+      "a_line": 65,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in out: print(i + 1)",
+      "a_line": 66,
+      "b_code": "print(i + 1)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "res = 0",
+      "b_line": 10,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "penalty = 0",
+      "b_line": 11,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "penalty = 0",
+      "b_line": 11,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "b_line": 12,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "b_line": 12,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "b_line": 12,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "t = out[i]",
+      "b_line": 13,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "t = out[i]",
+      "b_line": 13,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "t = out[i]",
+      "b_line": 13,
+      "function": "scoring"
+    },
+    {
+      "a_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "a_line": 12,
+      "b_code": "t = out[i]",
+      "b_line": 13,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "res += S[i][t]",
+      "b_line": 14,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "res += S[i][t]",
+      "b_line": 14,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "res += S[i][t]",
+      "b_line": 14,
+      "function": "scoring"
+    },
+    {
+      "a_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "a_line": 12,
+      "b_code": "res += S[i][t]",
+      "b_line": 14,
+      "function": "scoring"
+    },
+    {
+      "a_code": "t = out[i]",
+      "a_line": 13,
+      "b_code": "res += S[i][t]",
+      "b_line": 14,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "b_line": 15,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "b_line": 15,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "b_line": 15,
+      "function": "scoring"
+    },
+    {
+      "a_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "a_line": 12,
+      "b_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "b_line": 15,
+      "function": "scoring"
+    },
+    {
+      "a_code": "t = out[i]",
+      "a_line": 13,
+      "b_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "b_line": 15,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res += S[i][t]",
+      "a_line": 14,
+      "b_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "b_line": 15,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "a_line": 12,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "t = out[i]",
+      "a_line": 13,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res += S[i][t]",
+      "a_line": 14,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "a_line": 15,
+      "b_code": "res -= penalty",
+      "b_line": 16,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "a_line": 12,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "t = out[i]",
+      "a_line": 13,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res += S[i][t]",
+      "a_line": 14,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+      "a_line": 15,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res -= penalty",
+      "a_line": 16,
+      "b_code": "last[t] = i + 1",
+      "b_line": 17,
+      "function": "scoring"
+    },
+    {
+      "a_code": "last = [0] * 26",
+      "a_line": 9,
+      "b_code": "return res",
+      "b_line": 18,
+      "function": "scoring"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 10,
+      "b_code": "return res",
+      "b_line": 18,
+      "function": "scoring"
+    },
+    {
+      "a_code": "penalty = 0",
+      "a_line": 11,
+      "b_code": "return res",
+      "b_line": 18,
+      "function": "scoring"
+    },
+    {
+      "a_code": "for i in range(D): t = out[i] res += S[i][t] penalty += sc - (i + 1 - last[t]) * C[t] res -= penalty last[t] = i + 1",
+      "a_line": 12,
+      "b_code": "return res",
+      "b_line": 18,
+      "function": "scoring"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "T1 = 6.e2",
+      "b_line": 22,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "TL = 1.8",
+      "b_line": 23,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "TL = 1.8",
+      "b_line": 23,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "T = T0",
+      "b_line": 24,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "T = T0",
+      "b_line": 24,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "T = T0",
+      "b_line": 24,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "cnt = 0",
+      "b_line": 25,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "cnt = 0",
+      "b_line": 25,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "cnt = 0",
+      "b_line": 25,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "cnt = 0",
+      "b_line": 25,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "b_line": 26,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "b_line": 26,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "b_line": 26,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "b_line": 26,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "b_line": 26,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 27,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 27,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 27,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 27,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 27,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 27,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "now = time.perf_counter()",
+      "b_line": 28,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "now = time.perf_counter()",
+      "a_line": 28,
+      "b_code": "elapsed = now - start",
+      "b_line": 29,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "now = time.perf_counter()",
+      "a_line": 28,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "elapsed = now - start",
+      "a_line": 29,
+      "b_code": "if elapsed > TL: break",
+      "b_line": 30,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "now = time.perf_counter()",
+      "a_line": 28,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "elapsed = now - start",
+      "a_line": 29,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "if elapsed > TL: break",
+      "a_line": 30,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "now = time.perf_counter()",
+      "a_line": 28,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "elapsed = now - start",
+      "a_line": 29,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "if elapsed > TL: break",
+      "a_line": 30,
+      "b_code": "t = elapsed / TL",
+      "b_line": 32,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "now = time.perf_counter()",
+      "a_line": 28,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "elapsed = now - start",
+      "a_line": 29,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "if elapsed > TL: break",
+      "a_line": 30,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "t = elapsed / TL",
+      "a_line": 32,
+      "b_code": "T = pow(T0, 1 - t) * pow(T1, t)",
+      "b_line": 33,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 34,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "d = randint(0, D - 1)",
+      "b_line": 35,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "q = randint(0, 25)",
+      "b_line": 36,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "old = out[d]",
+      "b_line": 37,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "out[d] = q",
+      "b_line": 38,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d] = q",
+      "a_line": 38,
+      "b_code": "tmp = scoring()",
+      "b_line": 39,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d] = q",
+      "a_line": 38,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 39,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 40,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d] = q",
+      "a_line": 38,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 39,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 40,
+      "b_code": "r = random()",
+      "b_line": 41,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d] = q",
+      "a_line": 38,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 39,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 40,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "r = random()",
+      "a_line": 41,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "b_line": 42,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d] = q",
+      "a_line": 38,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 39,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 40,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "r = random()",
+      "a_line": 41,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "a_line": 42,
+      "b_code": "score = tmp",
+      "b_line": 43,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "d = randint(0, D - 1)",
+      "a_line": 35,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "q = randint(0, 25)",
+      "a_line": 36,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "old = out[d]",
+      "a_line": 37,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d] = q",
+      "a_line": 38,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 39,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 40,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "r = random()",
+      "a_line": 41,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "if tmp > score or r < p: score = tmp else: out[d] = old",
+      "a_line": 42,
+      "b_code": "out[d] = old",
+      "b_line": 45,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "d1 = randint(0, D - 2)",
+      "b_line": 47,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 49,
+      "b_code": "tmp = scoring()",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 49,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 50,
+      "b_code": "p = exp((tmp - score) / T)",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 49,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 50,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 51,
+      "b_code": "r = random()",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 49,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 50,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 51,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "r = random()",
+      "a_line": 52,
+      "b_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 49,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 50,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 51,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "r = random()",
+      "a_line": 52,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 53,
+      "b_code": "score = tmp",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "d1 = randint(0, D - 2)",
+      "a_line": 47,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+      "a_line": 48,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 49,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "tmp = scoring()",
+      "a_line": 50,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = exp((tmp - score) / T)",
+      "a_line": 51,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "r = random()",
+      "a_line": 52,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 53,
+      "b_code": "out[d1], out[d2] = out[d2], out[d1]",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "T0 = 2.e3",
+      "a_line": 21,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "T1 = 6.e2",
+      "a_line": 22,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "TL = 1.8",
+      "a_line": 23,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "T = T0",
+      "a_line": 24,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 25,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t) if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1] cnt += 1",
+      "a_line": 26,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "if cnt % 50 == 0: now = time.perf_counter() elapsed = now - start if elapsed > TL: break t = elapsed / TL T = pow(T0, 1 - t) * pow(T1, t)",
+      "a_line": 27,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "if getrandbits(1): d = randint(0, D - 1) q = randint(0, 25) old = out[d] out[d] = q tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d] = old else: d1 = randint(0, D - 2) d2 = randint(d1 + 1, min(d1 + 16, D - 1)) out[d1], out[d2] = out[d2], out[d1] tmp = scoring() p = exp((tmp - score) / T) r = random() if tmp > score or r < p: score = tmp else: out[d1], out[d2] = out[d2], out[d1]",
+      "a_line": 34,
+      "b_code": "cnt += 1",
+      "b_line": 57,
+      "function": "solve"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped time.perf_counter at line 28",
+      "external attribute call skipped time.perf_counter at line 5",
+      "external call skipped exp at line 40",
+      "external call skipped exp at line 51",
+      "external call skipped getrandbits at line 34",
+      "external call skipped input at line 59",
+      "external call skipped input at line 60",
+      "external call skipped input at line 61",
+      "external call skipped pow at line 33",
+      "external call skipped randint at line 35",
+      "external call skipped randint at line 36",
+      "external call skipped randint at line 47",
+      "external call skipped randint at line 48",
+      "external call skipped randint at line 62",
+      "external call skipped random at line 41",
+      "external call skipped random at line 52"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped time.perf_counter at line 28",
+    "external attribute call skipped time.perf_counter at line 5",
+    "external call skipped exp at line 40",
+    "external call skipped exp at line 51",
+    "external call skipped getrandbits at line 34",
+    "external call skipped input at line 59",
+    "external call skipped input at line 60",
+    "external call skipped input at line 61",
+    "external call skipped pow at line 33",
+    "external call skipped randint at line 35",
+    "external call skipped randint at line 36",
+    "external call skipped randint at line 47",
+    "external call skipped randint at line 48",
+    "external call skipped randint at line 62",
+    "external call skipped random at line 41",
+    "external call skipped random at line 52"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "start = time.perf_counter()",
+        "line": 5,
+        "var": "time"
+      },
+      "from": {
+        "code": "start = time.perf_counter()",
+        "line": 5,
+        "var": "start"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "C"
+      },
+      "from": {
+        "code": "start = time.perf_counter()",
+        "line": 5,
+        "var": "start"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "input = sys.stdin.readline",
+        "line": 6,
+        "var": "sys.stdin.readline"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 6,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "C"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 6,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "C"
+      },
+      "from": {
+        "code": "D = int(input())",
+        "line": 59,
+        "var": "D"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "int"
+      },
+      "from": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input())",
+        "line": 59,
+        "var": "D"
+      },
+      "from": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "C"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input())",
+        "line": 59,
+        "var": "D"
+      },
+      "from": {
+        "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+        "line": 61,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+        "line": 61,
+        "var": "int"
+      },
+      "from": {
+        "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+        "line": 61,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "C"
+      },
+      "from": {
+        "code": "S = [list(map(int, input().split())) for _ in range(D)]",
+        "line": 61,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input())",
+        "line": 59,
+        "var": "D"
+      },
+      "from": {
+        "code": "out = [randint(0, 25) for _ in range(D)]",
+        "line": 62,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "C"
+      },
+      "from": {
+        "code": "out = [randint(0, 25) for _ in range(D)]",
+        "line": 62,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "C"
+      },
+      "from": {
+        "code": "sc = sum(C)",
+        "line": 63,
+        "var": "sc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "sc = sum(C)",
+        "line": 63,
+        "var": "int"
+      },
+      "from": {
+        "code": "sc = sum(C)",
+        "line": 63,
+        "var": "sc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input())",
+        "line": 59,
+        "var": "D"
+      },
+      "from": {
+        "code": "sc = sum(C)",
+        "line": 63,
+        "var": "sc"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = list(map(int, input().split()))",
+        "line": 60,
+        "var": "C"
+      },
+      "from": {
+        "code": "score = scoring()",
+        "line": 64,
+        "var": "score"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "C"
+      },
+      "from": {
+        "code": "last = [0] * 26",
+        "line": 9,
+        "var": "last"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "C"
+      },
+      "from": {
+        "code": "res = 0",
+        "line": 10,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "C"
+      },
+      "from": {
+        "code": "penalty = 0",
+        "line": 11,
+        "var": "penalty"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "i"
+      },
+      "from": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "out"
+      },
+      "from": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "C"
+      },
+      "from": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "S"
+      },
+      "from": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "i"
+      },
+      "from": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "out"
+      },
+      "from": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "from": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "C"
+      },
+      "from": {
+        "code": "res += S[i][t]",
+        "line": 14,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "C"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "i"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "last = [0] * 26",
+        "line": 9,
+        "var": "last"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "out"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "sc"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "D"
+      },
+      "from": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "C"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "last = [0] * 26",
+        "line": 9,
+        "var": "last"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "out"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "penalty += sc - (i + 1 - last[t]) * C[t]",
+        "line": 15,
+        "var": "penalty"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "sc"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "D"
+      },
+      "from": {
+        "code": "res -= penalty",
+        "line": 16,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "last[t] = i + 1",
+        "line": 17,
+        "var": "i"
+      },
+      "from": {
+        "code": "last[t] = i + 1",
+        "line": 17,
+        "var": "last"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "last[t] = i + 1",
+        "line": 17,
+        "var": "out"
+      },
+      "from": {
+        "code": "last[t] = i + 1",
+        "line": 17,
+        "var": "last"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = out[i]",
+        "line": 13,
+        "var": "t"
+      },
+      "from": {
+        "code": "last[t] = i + 1",
+        "line": 17,
+        "var": "last"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def scoring():",
+        "line": 8,
+        "var": "C"
+      },
+      "from": {
+        "code": "last[t] = i + 1",
+        "line": 17,
+        "var": "last"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "T0 = 2.e3",
+        "line": 21,
+        "var": "T0"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "T1 = 6.e2",
+        "line": 22,
+        "var": "T1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "TL = 1.8",
+        "line": 23,
+        "var": "TL"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T0 = 2.e3",
+        "line": 21,
+        "var": "T0"
+      },
+      "from": {
+        "code": "T = T0",
+        "line": 24,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "T = T0",
+        "line": 24,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "cnt = 0",
+        "line": 25,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "time"
+      },
+      "from": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "from": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "start"
+      },
+      "from": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "time"
+      },
+      "from": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "TL = 1.8",
+        "line": 23,
+        "var": "TL"
+      },
+      "from": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "from": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "from": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "start"
+      },
+      "from": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "time"
+      },
+      "from": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T0 = 2.e3",
+        "line": 21,
+        "var": "T0"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T1 = 6.e2",
+        "line": 22,
+        "var": "T1"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "TL = 1.8",
+        "line": 23,
+        "var": "TL"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "start"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "time"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "D"
+      },
+      "from": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "q = randint(0, 25)",
+        "line": 36,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "D"
+      },
+      "from": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "from": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "out"
+      },
+      "from": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "out[d] = q",
+        "line": 38,
+        "var": "D"
+      },
+      "from": {
+        "code": "out[d] = q",
+        "line": 38,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "from": {
+        "code": "out[d] = q",
+        "line": 38,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = randint(0, 25)",
+        "line": 36,
+        "var": "q"
+      },
+      "from": {
+        "code": "out[d] = q",
+        "line": 38,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "out[d] = q",
+        "line": 38,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "tmp = scoring()",
+        "line": 39,
+        "var": "tmp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T0 = 2.e3",
+        "line": 21,
+        "var": "T0"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T1 = 6.e2",
+        "line": 22,
+        "var": "T1"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "TL = 1.8",
+        "line": 23,
+        "var": "TL"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "score"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "start"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "time"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = scoring()",
+        "line": 39,
+        "var": "tmp"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 40,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "r = random()",
+        "line": 41,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = scoring()",
+        "line": 39,
+        "var": "tmp"
+      },
+      "from": {
+        "code": "score = tmp",
+        "line": 43,
+        "var": "score"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "score = tmp",
+        "line": 43,
+        "var": "score"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "out[d] = old",
+        "line": 45,
+        "var": "D"
+      },
+      "from": {
+        "code": "out[d] = old",
+        "line": 45,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "from": {
+        "code": "out[d] = old",
+        "line": 45,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "from": {
+        "code": "out[d] = old",
+        "line": 45,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "out[d] = old",
+        "line": 45,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d1 = randint(0, D - 2)",
+        "line": 47,
+        "var": "D"
+      },
+      "from": {
+        "code": "d1 = randint(0, D - 2)",
+        "line": 47,
+        "var": "d1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "d1 = randint(0, D - 2)",
+        "line": 47,
+        "var": "d1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+        "line": 48,
+        "var": "D"
+      },
+      "from": {
+        "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+        "line": 48,
+        "var": "d2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d1 = randint(0, D - 2)",
+        "line": 47,
+        "var": "d1"
+      },
+      "from": {
+        "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+        "line": 48,
+        "var": "d2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+        "line": 48,
+        "var": "d2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "D"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d1 = randint(0, D - 2)",
+        "line": 47,
+        "var": "d1"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+        "line": 48,
+        "var": "d2"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "out[d] = old",
+        "line": 45,
+        "var": "out"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "tmp = scoring()",
+        "line": 50,
+        "var": "tmp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T0 = 2.e3",
+        "line": 21,
+        "var": "T0"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T1 = 6.e2",
+        "line": 22,
+        "var": "T1"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "TL = 1.8",
+        "line": 23,
+        "var": "TL"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elapsed = now - start",
+        "line": 29,
+        "var": "elapsed"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = time.perf_counter()",
+        "line": 28,
+        "var": "now"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "score = tmp",
+        "line": 43,
+        "var": "score"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "start"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = elapsed / TL",
+        "line": 32,
+        "var": "t"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "time"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = scoring()",
+        "line": 50,
+        "var": "tmp"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "p = exp((tmp - score) / T)",
+        "line": 51,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "r = random()",
+        "line": 52,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = scoring()",
+        "line": 50,
+        "var": "tmp"
+      },
+      "from": {
+        "code": "score = tmp",
+        "line": 54,
+        "var": "score"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "score = tmp",
+        "line": 54,
+        "var": "score"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "D"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d = randint(0, D - 1)",
+        "line": 35,
+        "var": "d"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d1 = randint(0, D - 2)",
+        "line": 47,
+        "var": "d1"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "d2 = randint(d1 + 1, min(d1 + 16, D - 1))",
+        "line": 48,
+        "var": "d2"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "old = out[d]",
+        "line": 37,
+        "var": "old"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 49,
+        "var": "out"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T = pow(T0, 1 - t) * pow(T1, t)",
+        "line": 33,
+        "var": "T"
+      },
+      "from": {
+        "code": "out[d1], out[d2] = out[d2], out[d1]",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(score):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "cnt += 1",
+        "line": 57,
+        "var": "cnt"
+      },
+      "label": "negative"
+    }
+  ]
+}

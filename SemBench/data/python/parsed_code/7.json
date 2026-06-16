@@ -1,0 +1,640 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "dead": false,
+      "function": "fib",
+      "kind": "If",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "raise ValueError(\"n must be non-negative\")",
+      "dead": false,
+      "function": "fib",
+      "kind": "Raise",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "if memo is None: memo = {}",
+      "dead": false,
+      "function": "fib",
+      "kind": "If",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "memo = {}",
+      "dead": false,
+      "function": "fib",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "if n <= 1: return n",
+      "dead": false,
+      "function": "fib",
+      "kind": "If",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "function": "fib",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "if n in memo: return memo[n]",
+      "dead": false,
+      "function": "fib",
+      "kind": "If",
+      "line": 11,
+      "node_id": 7
+    },
+    {
+      "code": "return memo[n]",
+      "dead": false,
+      "function": "fib",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 8
+    },
+    {
+      "code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "dead": false,
+      "function": "fib",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 9
+    },
+    {
+      "code": "return memo[n]",
+      "dead": false,
+      "function": "fib",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 10
+    },
+    {
+      "code": "res: List[int] = []",
+      "dead": false,
+      "function": "fib_series",
+      "kind": "AnnAssign",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "for i in range(k): res.append(fib(i))",
+      "dead": false,
+      "function": "fib_series",
+      "kind": "For",
+      "line": 18,
+      "node_id": 2
+    },
+    {
+      "code": "res.append(fib(i))",
+      "dead": false,
+      "function": "fib_series",
+      "kind": "Expr",
+      "line": 19,
+      "node_id": 3
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "fib_series",
+      "kind": "Return",
+      "line": 20,
+      "node_id": 4
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "raise ValueError(\"n must be non-negative\")",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "if memo is None: memo = {}",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "memo = {}",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if n <= 1: return n",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "if n in memo: return memo[n]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return memo[n]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return memo[n]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "res: List[int] = []",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "for i in range(k): res.append(fib(i))",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "res.append(fib(i))",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 20
+    }
+  ],
+  "file": "SemBench/data/python/code/7.py",
+  "functions": [
+    {
+      "calls": [
+        "fib"
+      ],
+      "end_lineno": 14,
+      "lineno": 4,
+      "name": "fib",
+      "variables": [
+        "memo",
+        "n"
+      ]
+    },
+    {
+      "calls": [
+        "fib"
+      ],
+      "end_lineno": 20,
+      "lineno": 16,
+      "name": "fib_series",
+      "variables": [
+        "i",
+        "k",
+        "res"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "fib": {
+        "base_liveout": [
+          "memo",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+            "line": 5,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"n must be non-negative\")",
+            "line": 6,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "if memo is None: memo = {}",
+            "line": 7,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "memo = {}",
+            "line": 8,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "if n <= 1: return n",
+            "line": 9,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return n",
+            "line": 10,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "if n in memo: return memo[n]",
+            "line": 11,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return memo[n]",
+            "line": 12,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+            "line": 13,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return memo[n]",
+            "line": 14,
+            "vars": [
+              "memo",
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "memo": true,
+          "n": true
+        },
+        "return_vars": [
+          "memo",
+          "n"
+        ]
+      },
+      "fib_series": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "res: List[int] = []",
+            "line": 17,
+            "vars": [
+              "k"
+            ]
+          },
+          {
+            "code": "for i in range(k): res.append(fib(i))",
+            "line": 18,
+            "vars": [
+              "k",
+              "res"
+            ]
+          },
+          {
+            "code": "res.append(fib(i))",
+            "line": 19,
+            "vars": [
+              "i",
+              "res"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 20,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "k": false,
+          "res": true
+        },
+        "return_vars": [
+          "res"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(k):",
+      "cond": "for i in range(k)",
+      "function": "fib_series",
+      "header_id": 2,
+      "line": 18,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "raise ValueError(\"n must be non-negative\")",
+      "b_line": 6,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "if memo is None: memo = {}",
+      "b_line": 7,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "memo = {}",
+      "b_line": 8,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "memo = {}",
+      "b_line": 8,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "if n <= 1: return n",
+      "b_line": 9,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "if n <= 1: return n",
+      "b_line": 9,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "return n",
+      "b_line": 10,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "return n",
+      "b_line": 10,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n <= 1: return n",
+      "a_line": 9,
+      "b_code": "return n",
+      "b_line": 10,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "if n in memo: return memo[n]",
+      "b_line": 11,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "if n in memo: return memo[n]",
+      "b_line": 11,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n <= 1: return n",
+      "a_line": 9,
+      "b_code": "if n in memo: return memo[n]",
+      "b_line": 11,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "return memo[n]",
+      "b_line": 12,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "return memo[n]",
+      "b_line": 12,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n <= 1: return n",
+      "a_line": 9,
+      "b_code": "return memo[n]",
+      "b_line": 12,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n in memo: return memo[n]",
+      "a_line": 11,
+      "b_code": "return memo[n]",
+      "b_line": 12,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "b_line": 13,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "b_line": 13,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n <= 1: return n",
+      "a_line": 9,
+      "b_code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "b_line": 13,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n in memo: return memo[n]",
+      "a_line": 11,
+      "b_code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "b_line": 13,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n < 0: raise ValueError(\"n must be non-negative\")",
+      "a_line": 5,
+      "b_code": "return memo[n]",
+      "b_line": 14,
+      "function": "fib"
+    },
+    {
+      "a_code": "if memo is None: memo = {}",
+      "a_line": 7,
+      "b_code": "return memo[n]",
+      "b_line": 14,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n <= 1: return n",
+      "a_line": 9,
+      "b_code": "return memo[n]",
+      "b_line": 14,
+      "function": "fib"
+    },
+    {
+      "a_code": "if n in memo: return memo[n]",
+      "a_line": 11,
+      "b_code": "return memo[n]",
+      "b_line": 14,
+      "function": "fib"
+    },
+    {
+      "a_code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+      "a_line": 13,
+      "b_code": "return memo[n]",
+      "b_line": 14,
+      "function": "fib"
+    },
+    {
+      "a_code": "res: List[int] = []",
+      "a_line": 17,
+      "b_code": "for i in range(k): res.append(fib(i))",
+      "b_line": 18,
+      "function": "fib_series"
+    },
+    {
+      "a_code": "res: List[int] = []",
+      "a_line": 17,
+      "b_code": "res.append(fib(i))",
+      "b_line": 19,
+      "function": "fib_series"
+    },
+    {
+      "a_code": "for i in range(k): res.append(fib(i))",
+      "a_line": 18,
+      "b_code": "res.append(fib(i))",
+      "b_line": 19,
+      "function": "fib_series"
+    },
+    {
+      "a_code": "res: List[int] = []",
+      "a_line": 17,
+      "b_code": "return res",
+      "b_line": 20,
+      "function": "fib_series"
+    },
+    {
+      "a_code": "for i in range(k): res.append(fib(i))",
+      "a_line": 18,
+      "b_code": "return res",
+      "b_line": 20,
+      "function": "fib_series"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def fib(n:",
+        "line": 4,
+        "var": "n"
+      },
+      "from": {
+        "code": "memo = {}",
+        "line": 8,
+        "var": "memo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "memo = {}",
+        "line": 8,
+        "var": "memo"
+      },
+      "from": {
+        "code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+        "line": 13,
+        "var": "memo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def fib(n:",
+        "line": 4,
+        "var": "n"
+      },
+      "from": {
+        "code": "memo[n] = fib(n - 1, memo) + fib(n - 2, memo)",
+        "line": 13,
+        "var": "memo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def fib_series(k:",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "res: List[int] = []",
+        "line": 17,
+        "var": "res"
+      },
+      "label": "negative"
+    }
+  ]
+}

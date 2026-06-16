@@ -1,0 +1,1334 @@
+{
+  "cfg_statements": [
+    {
+      "code": "N, M = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "to = [[] for _ in range(N)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "a, b = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "a, b = a - 1, b - 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 5
+    },
+    {
+      "code": "to[a].append(b)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 7,
+      "node_id": 6
+    },
+    {
+      "code": "to[b].append(a)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 8,
+      "node_id": 7
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 30,
+      "node_id": 8
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 31,
+      "node_id": 9
+    },
+    {
+      "code": "if seen == [1] * N: return 1",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 2
+    },
+    {
+      "code": "res = 0",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 3
+    },
+    {
+      "code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "dead": false,
+      "function": "dfs",
+      "kind": "For",
+      "line": 16,
+      "node_id": 4
+    },
+    {
+      "code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 17,
+      "node_id": 5
+    },
+    {
+      "code": "seen[nv] = 1",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 6
+    },
+    {
+      "code": "res += dfs(nv, seen)",
+      "dead": false,
+      "function": "dfs",
+      "kind": "AugAssign",
+      "line": 19,
+      "node_id": 7
+    },
+    {
+      "code": "seen[nv] = 0",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 8
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 9
+    },
+    {
+      "code": "seen = [0] * N",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 1
+    },
+    {
+      "code": "seen[0] = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 2
+    },
+    {
+      "code": "print(dfs(0, seen))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 27,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "N, M = map(int, input().split())",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "to = [[] for _ in range(N)]",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "a, b = map(int, input().split())",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "a, b = a - 1, b - 1",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "to[a].append(b)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "to[b].append(a)",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if seen == [1] * N: return 1",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "res = 0",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "seen[nv] = 1",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "res += dfs(nv, seen)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "seen[nv] = 0",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "seen = [0] * N",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "seen[0] = 1",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "print(dfs(0, seen))",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 31
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p03805_s713017617.py",
+  "functions": [
+    {
+      "calls": [
+        "dfs"
+      ],
+      "end_lineno": 21,
+      "lineno": 11,
+      "name": "dfs",
+      "variables": [
+        "N",
+        "nv",
+        "res",
+        "seen",
+        "to",
+        "v"
+      ]
+    },
+    {
+      "calls": [
+        "dfs"
+      ],
+      "end_lineno": 27,
+      "lineno": 24,
+      "name": "main",
+      "variables": [
+        "N",
+        "seen"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "N, M = map(int, input().split())",
+            "line": 1,
+            "vars": [
+              "__name__",
+              "int"
+            ]
+          },
+          {
+            "code": "to = [[] for _ in range(N)]",
+            "line": 2,
+            "vars": [
+              "M",
+              "N",
+              "__name__",
+              "int"
+            ]
+          },
+          {
+            "code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+            "line": 4,
+            "vars": [
+              "M",
+              "__name__",
+              "int",
+              "to"
+            ]
+          },
+          {
+            "code": "a, b = map(int, input().split())",
+            "line": 5,
+            "vars": [
+              "__name__",
+              "int",
+              "to"
+            ]
+          },
+          {
+            "code": "a, b = a - 1, b - 1",
+            "line": 6,
+            "vars": [
+              "__name__",
+              "a",
+              "b",
+              "to"
+            ]
+          },
+          {
+            "code": "to[a].append(b)",
+            "line": 7,
+            "vars": [
+              "__name__",
+              "a",
+              "b",
+              "to"
+            ]
+          },
+          {
+            "code": "to[b].append(a)",
+            "line": 8,
+            "vars": [
+              "__name__",
+              "a",
+              "to"
+            ]
+          },
+          {
+            "code": "if __name__ == \"__main__\": main()",
+            "line": 30,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 31,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "M": false,
+          "N": false,
+          "_": false,
+          "__name__": false,
+          "a": false,
+          "b": false,
+          "int": false,
+          "to": false
+        },
+        "return_vars": []
+      },
+      "dfs": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "if seen == [1] * N: return 1",
+            "line": 12,
+            "vars": [
+              "N",
+              "seen",
+              "to",
+              "v"
+            ]
+          },
+          {
+            "code": "return 1",
+            "line": 13,
+            "vars": [
+              "seen",
+              "to",
+              "v"
+            ]
+          },
+          {
+            "code": "res = 0",
+            "line": 15,
+            "vars": [
+              "seen",
+              "to",
+              "v"
+            ]
+          },
+          {
+            "code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+            "line": 16,
+            "vars": [
+              "seen",
+              "to",
+              "v"
+            ]
+          },
+          {
+            "code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+            "line": 17,
+            "vars": [
+              "nv",
+              "seen"
+            ]
+          },
+          {
+            "code": "seen[nv] = 1",
+            "line": 18,
+            "vars": [
+              "nv"
+            ]
+          },
+          {
+            "code": "res += dfs(nv, seen)",
+            "line": 19,
+            "vars": [
+              "nv",
+              "seen"
+            ]
+          },
+          {
+            "code": "seen[nv] = 0",
+            "line": 20,
+            "vars": [
+              "nv",
+              "res"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 21,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": false,
+          "nv": false,
+          "res": true,
+          "seen": false,
+          "to": false,
+          "v": false
+        },
+        "return_vars": [
+          "res"
+        ]
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "seen = [0] * N",
+            "line": 25,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "seen[0] = 1",
+            "line": 26,
+            "vars": []
+          },
+          {
+            "code": "print(dfs(0, seen))",
+            "line": 27,
+            "vars": [
+              "seen"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": false,
+          "seen": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(M):",
+      "cond": "for _ in range(M)",
+      "function": "__module__",
+      "header_id": 3,
+      "line": 4,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for nv in to[v]:",
+      "cond": "for nv in to[v]",
+      "function": "dfs",
+      "header_id": 4,
+      "line": 16,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "to = [[] for _ in range(N)]",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "a, b = map(int, input().split())",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "a, b = map(int, input().split())",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "a_line": 4,
+      "b_code": "a, b = map(int, input().split())",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "a, b = a - 1, b - 1",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "a, b = a - 1, b - 1",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "a_line": 4,
+      "b_code": "a, b = a - 1, b - 1",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a, b = map(int, input().split())",
+      "a_line": 5,
+      "b_code": "a, b = a - 1, b - 1",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "to[a].append(b)",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "to[a].append(b)",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "a_line": 4,
+      "b_code": "to[a].append(b)",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a, b = map(int, input().split())",
+      "a_line": 5,
+      "b_code": "to[a].append(b)",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a, b = a - 1, b - 1",
+      "a_line": 6,
+      "b_code": "to[a].append(b)",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "to[b].append(a)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "to[b].append(a)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "a_line": 4,
+      "b_code": "to[b].append(a)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a, b = map(int, input().split())",
+      "a_line": 5,
+      "b_code": "to[b].append(a)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a, b = a - 1, b - 1",
+      "a_line": 6,
+      "b_code": "to[b].append(a)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to[a].append(b)",
+      "a_line": 7,
+      "b_code": "to[b].append(a)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "a_line": 4,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "to = [[] for _ in range(N)]",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a, b = map(int, input().split()) a, b = a - 1, b - 1 to[a].append(b) to[b].append(a)",
+      "a_line": 4,
+      "b_code": "main()",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__ == \"__main__\": main()",
+      "a_line": 30,
+      "b_code": "main()",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "return 1",
+      "b_line": 13,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "res = 0",
+      "b_line": 15,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "b_line": 16,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 15,
+      "b_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "b_line": 16,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "b_line": 17,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 15,
+      "b_code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "b_line": 17,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 16,
+      "b_code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "b_line": 17,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "seen[nv] = 1",
+      "b_line": 18,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 15,
+      "b_code": "seen[nv] = 1",
+      "b_line": 18,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 16,
+      "b_code": "seen[nv] = 1",
+      "b_line": 18,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 17,
+      "b_code": "seen[nv] = 1",
+      "b_line": 18,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "res += dfs(nv, seen)",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 15,
+      "b_code": "res += dfs(nv, seen)",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 16,
+      "b_code": "res += dfs(nv, seen)",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 17,
+      "b_code": "res += dfs(nv, seen)",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "seen[nv] = 1",
+      "a_line": 18,
+      "b_code": "res += dfs(nv, seen)",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "seen[nv] = 0",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 15,
+      "b_code": "seen[nv] = 0",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 16,
+      "b_code": "seen[nv] = 0",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 17,
+      "b_code": "seen[nv] = 0",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "seen[nv] = 1",
+      "a_line": 18,
+      "b_code": "seen[nv] = 0",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res += dfs(nv, seen)",
+      "a_line": 19,
+      "b_code": "seen[nv] = 0",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if seen == [1] * N: return 1",
+      "a_line": 12,
+      "b_code": "return res",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "res = 0",
+      "a_line": 15,
+      "b_code": "return res",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for nv in to[v]: if not seen[nv]: seen[nv] = 1 res += dfs(nv, seen) seen[nv] = 0",
+      "a_line": 16,
+      "b_code": "return res",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "seen = [0] * N",
+      "a_line": 25,
+      "b_code": "seen[0] = 1",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [0] * N",
+      "a_line": 25,
+      "b_code": "print(dfs(0, seen))",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "seen[0] = 1",
+      "a_line": 26,
+      "b_code": "print(dfs(0, seen))",
+      "b_line": 27,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 1",
+      "external call skipped input at line 5"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 1",
+    "external call skipped input at line 5"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "int"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "N"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "int"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "N"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "N"
+      },
+      "from": {
+        "code": "to = [[] for _ in range(N)]",
+        "line": 2,
+        "var": "to"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "to = [[] for _ in range(N)]",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "to = [[] for _ in range(N)]",
+        "line": 2,
+        "var": "to"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "to = [[] for _ in range(N)]",
+        "line": 2,
+        "var": "to"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "int"
+      },
+      "from": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "int"
+      },
+      "from": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "a"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "b"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "int"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "a"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = map(int, input().split())",
+        "line": 5,
+        "var": "b"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "int"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "a, b = a - 1, b - 1",
+        "line": 6,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(v, seen):",
+        "line": 11,
+        "var": "N"
+      },
+      "from": {
+        "code": "res = 0",
+        "line": 15,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "seen[nv] = 1",
+        "line": 18,
+        "var": "nv"
+      },
+      "from": {
+        "code": "seen[nv] = 1",
+        "line": 18,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(v, seen):",
+        "line": 11,
+        "var": "N"
+      },
+      "from": {
+        "code": "seen[nv] = 1",
+        "line": 18,
+        "var": "seen"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "res += dfs(nv, seen)",
+        "line": 19,
+        "var": "nv"
+      },
+      "from": {
+        "code": "res += dfs(nv, seen)",
+        "line": 19,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "seen[nv] = 1",
+        "line": 18,
+        "var": "seen"
+      },
+      "from": {
+        "code": "res += dfs(nv, seen)",
+        "line": 19,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(v, seen):",
+        "line": 11,
+        "var": "N"
+      },
+      "from": {
+        "code": "res += dfs(nv, seen)",
+        "line": 19,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "seen[nv] = 0",
+        "line": 20,
+        "var": "nv"
+      },
+      "from": {
+        "code": "seen[nv] = 0",
+        "line": 20,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(v, seen):",
+        "line": 11,
+        "var": "N"
+      },
+      "from": {
+        "code": "seen[nv] = 0",
+        "line": 20,
+        "var": "seen"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "seen = [0] * N",
+        "line": 25,
+        "var": "N"
+      },
+      "from": {
+        "code": "seen = [0] * N",
+        "line": 25,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 24,
+        "var": "N"
+      },
+      "from": {
+        "code": "seen[0] = 1",
+        "line": 26,
+        "var": "seen"
+      },
+      "label": "negative"
+    }
+  ]
+}

@@ -1,0 +1,5877 @@
+{
+  "cfg_statements": [
+    {
+      "code": "h, w = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "A = [list(str(input())) for i in range(h)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "n = h*w",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "par = [-1]*n",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 4
+    },
+    {
+      "code": "rank = [0]*n",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 36,
+      "node_id": 6
+    },
+    {
+      "code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 37,
+      "node_id": 7
+    },
+    {
+      "code": "idx1 = i*w+j",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 8
+    },
+    {
+      "code": "idx2 = i*w+(w-1-j)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 9
+    },
+    {
+      "code": "idx3 = (h-1-i)*w+j",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 10
+    },
+    {
+      "code": "Unite(idx1, idx2, par, rank)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 41,
+      "node_id": 11
+    },
+    {
+      "code": "Unite(idx1, idx3, par, rank)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 42,
+      "node_id": 12
+    },
+    {
+      "code": "X = [0]*26",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 13
+    },
+    {
+      "code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 44,
+      "node_id": 14
+    },
+    {
+      "code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 45,
+      "node_id": 15
+    },
+    {
+      "code": "k = ord(A[i][j])-ord('a')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 16
+    },
+    {
+      "code": "X[k] += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 47,
+      "node_id": 17
+    },
+    {
+      "code": "temp = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 18
+    },
+    {
+      "code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 49,
+      "node_id": 19
+    },
+    {
+      "code": "if X[i] > 0: temp.append(X[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 50,
+      "node_id": 20
+    },
+    {
+      "code": "temp.append(X[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 51,
+      "node_id": 21
+    },
+    {
+      "code": "S = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 22
+    },
+    {
+      "code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 53,
+      "node_id": 23
+    },
+    {
+      "code": "if par[i] < 0: S.append(-par[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 54,
+      "node_id": 24
+    },
+    {
+      "code": "S.append(-par[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 55,
+      "node_id": 25
+    },
+    {
+      "code": "S.sort(reverse=True)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 59,
+      "node_id": 26
+    },
+    {
+      "code": "import heapq",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 60,
+      "node_id": 27
+    },
+    {
+      "code": "temp = [-1*t for t in temp]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 61,
+      "node_id": 28
+    },
+    {
+      "code": "heapq.heapify(temp)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 62,
+      "node_id": 29
+    },
+    {
+      "code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 63,
+      "node_id": 30
+    },
+    {
+      "code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 64,
+      "node_id": 31
+    },
+    {
+      "code": "t = heapq.heappop(temp)*(-1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 65,
+      "node_id": 32
+    },
+    {
+      "code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 66,
+      "node_id": 33
+    },
+    {
+      "code": "heapq.heappush(temp, (-1)*(t-s))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 67,
+      "node_id": 34
+    },
+    {
+      "code": "print('No')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 69,
+      "node_id": 35
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 70,
+      "node_id": 36
+    },
+    {
+      "code": "print('No')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 72,
+      "node_id": 37
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 73,
+      "node_id": 38
+    },
+    {
+      "code": "print('Yes')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 75,
+      "node_id": 39
+    },
+    {
+      "code": "if par[x] < 0: return x else: par[x] = Find(par[x], par) return par[x]",
+      "dead": false,
+      "function": "Find",
+      "kind": "If",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "function": "Find",
+      "kind": "Return",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "par[x] = Find(par[x], par)",
+      "dead": false,
+      "function": "Find",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "return par[x]",
+      "dead": false,
+      "function": "Find",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "x = Find(x, par)",
+      "dead": false,
+      "function": "Unite",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "y = Find(y, par)",
+      "dead": false,
+      "function": "Unite",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 2
+    },
+    {
+      "code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "dead": false,
+      "function": "Unite",
+      "kind": "If",
+      "line": 17,
+      "node_id": 3
+    },
+    {
+      "code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "dead": false,
+      "function": "Unite",
+      "kind": "If",
+      "line": 18,
+      "node_id": 4
+    },
+    {
+      "code": "par[y] += par[x]",
+      "dead": false,
+      "function": "Unite",
+      "kind": "AugAssign",
+      "line": 19,
+      "node_id": 5
+    },
+    {
+      "code": "par[x] = y",
+      "dead": false,
+      "function": "Unite",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 6
+    },
+    {
+      "code": "par[x] += par[y]",
+      "dead": false,
+      "function": "Unite",
+      "kind": "AugAssign",
+      "line": 22,
+      "node_id": 7
+    },
+    {
+      "code": "par[y] = x",
+      "dead": false,
+      "function": "Unite",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 8
+    },
+    {
+      "code": "if rank[x] == rank[y]: rank[x] += 1",
+      "dead": false,
+      "function": "Unite",
+      "kind": "If",
+      "line": 24,
+      "node_id": 9
+    },
+    {
+      "code": "rank[x] += 1",
+      "dead": false,
+      "function": "Unite",
+      "kind": "AugAssign",
+      "line": 25,
+      "node_id": 10
+    },
+    {
+      "code": "return Find(x, par) == Find(y, par)",
+      "dead": false,
+      "function": "Same",
+      "kind": "Return",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "return -par[Find(x, par)]",
+      "dead": false,
+      "function": "Size",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "h, w = map(int, input().split())",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "A = [list(str(input())) for i in range(h)]",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "n = h*w",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "if par[x] < 0: return x else: par[x] = Find(par[x], par) return par[x]",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "par[x] = Find(par[x], par)",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return par[x]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "x = Find(x, par)",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "y = Find(y, par)",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "par[y] += par[x]",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "par[x] = y",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "par[x] += par[y]",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "par[y] = x",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "if rank[x] == rank[y]: rank[x] += 1",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "rank[x] += 1",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "return Find(x, par) == Find(y, par)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "return -par[Find(x, par)]",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "par = [-1]*n",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "rank = [0]*n",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "idx1 = i*w+j",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "idx2 = i*w+(w-1-j)",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "idx3 = (h-1-i)*w+j",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "Unite(idx1, idx2, par, rank)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "Unite(idx1, idx3, par, rank)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "X = [0]*26",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "k = ord(A[i][j])-ord('a')",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "X[k] += 1",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "temp = []",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "if X[i] > 0: temp.append(X[i])",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "temp.append(X[i])",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "S = []",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "if par[i] < 0: S.append(-par[i])",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "S.append(-par[i])",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "S.sort(reverse=True)",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "import heapq",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "temp = [-1*t for t in temp]",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "heapq.heapify(temp)",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "t = heapq.heappop(temp)*(-1)",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "heapq.heappush(temp, (-1)*(t-s))",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "print('No')",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "print('No')",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "exit()",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "print('Yes')",
+      "dead": false,
+      "line": 75
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03593_s783459377.py",
+  "functions": [
+    {
+      "calls": [
+        "Find"
+      ],
+      "end_lineno": 11,
+      "lineno": 6,
+      "name": "Find",
+      "variables": [
+        "par",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "Find"
+      ],
+      "end_lineno": 25,
+      "lineno": 13,
+      "name": "Unite",
+      "variables": [
+        "par",
+        "rank",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "Find"
+      ],
+      "end_lineno": 28,
+      "lineno": 27,
+      "name": "Same",
+      "variables": [
+        "par",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "Find"
+      ],
+      "end_lineno": 31,
+      "lineno": 30,
+      "name": "Size",
+      "variables": [
+        "par",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "Find": {
+        "base_liveout": [
+          "par",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "if par[x] < 0: return x else: par[x] = Find(par[x], par) return par[x]",
+            "line": 7,
+            "vars": [
+              "par",
+              "x"
+            ]
+          },
+          {
+            "code": "return x",
+            "line": 8,
+            "vars": [
+              "par",
+              "x"
+            ]
+          },
+          {
+            "code": "par[x] = Find(par[x], par)",
+            "line": 10,
+            "vars": [
+              "par",
+              "x"
+            ]
+          },
+          {
+            "code": "return par[x]",
+            "line": 11,
+            "vars": [
+              "par",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "par": true,
+          "x": true
+        },
+        "return_vars": [
+          "par",
+          "x"
+        ]
+      },
+      "Same": {
+        "base_liveout": [
+          "par",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return Find(x, par) == Find(y, par)",
+            "line": 28,
+            "vars": [
+              "par",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "par": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "par",
+          "x",
+          "y"
+        ]
+      },
+      "Size": {
+        "base_liveout": [
+          "par",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "return -par[Find(x, par)]",
+            "line": 31,
+            "vars": [
+              "par",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "par": true,
+          "x": true
+        },
+        "return_vars": [
+          "par",
+          "x"
+        ]
+      },
+      "Unite": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "x = Find(x, par)",
+            "line": 14,
+            "vars": [
+              "par",
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "y = Find(y, par)",
+            "line": 15,
+            "vars": [
+              "par",
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+            "line": 17,
+            "vars": [
+              "par",
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+            "line": 18,
+            "vars": [
+              "par",
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "par[y] += par[x]",
+            "line": 19,
+            "vars": [
+              "par",
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "par[x] = y",
+            "line": 20,
+            "vars": [
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "par[x] += par[y]",
+            "line": 22,
+            "vars": [
+              "par",
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "par[y] = x",
+            "line": 23,
+            "vars": [
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if rank[x] == rank[y]: rank[x] += 1",
+            "line": 24,
+            "vars": [
+              "rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "rank[x] += 1",
+            "line": 25,
+            "vars": [
+              "rank",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "par": false,
+          "rank": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "h, w = map(int, input().split())",
+            "line": 1,
+            "vars": [
+              "heapq",
+              "int"
+            ]
+          },
+          {
+            "code": "A = [list(str(input())) for i in range(h)]",
+            "line": 2,
+            "vars": [
+              "h",
+              "heapq",
+              "w"
+            ]
+          },
+          {
+            "code": "n = h*w",
+            "line": 4,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "w"
+            ]
+          },
+          {
+            "code": "par = [-1]*n",
+            "line": 33,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "n",
+              "w"
+            ]
+          },
+          {
+            "code": "rank = [0]*n",
+            "line": 34,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "n",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+            "line": 36,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+            "line": 37,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "i",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "idx1 = i*w+j",
+            "line": 38,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "i",
+              "j",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "idx2 = i*w+(w-1-j)",
+            "line": 39,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "i",
+              "idx1",
+              "j",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "idx3 = (h-1-i)*w+j",
+            "line": 40,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "i",
+              "idx1",
+              "idx2",
+              "j",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "Unite(idx1, idx2, par, rank)",
+            "line": 41,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "idx1",
+              "idx2",
+              "idx3",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "Unite(idx1, idx3, par, rank)",
+            "line": 42,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "idx1",
+              "idx3",
+              "par",
+              "rank",
+              "w"
+            ]
+          },
+          {
+            "code": "X = [0]*26",
+            "line": 43,
+            "vars": [
+              "A",
+              "h",
+              "heapq",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+            "line": 44,
+            "vars": [
+              "A",
+              "X",
+              "h",
+              "heapq",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+            "line": 45,
+            "vars": [
+              "A",
+              "X",
+              "h",
+              "heapq",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "k = ord(A[i][j])-ord('a')",
+            "line": 46,
+            "vars": [
+              "A",
+              "X",
+              "h",
+              "heapq",
+              "j",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "X[k] += 1",
+            "line": 47,
+            "vars": [
+              "X",
+              "h",
+              "heapq",
+              "k",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "temp = []",
+            "line": 48,
+            "vars": [
+              "X",
+              "h",
+              "heapq",
+              "par",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+            "line": 49,
+            "vars": [
+              "X",
+              "h",
+              "heapq",
+              "par",
+              "temp",
+              "w"
+            ]
+          },
+          {
+            "code": "if X[i] > 0: temp.append(X[i])",
+            "line": 50,
+            "vars": [
+              "X",
+              "h",
+              "heapq",
+              "i",
+              "par",
+              "temp",
+              "w"
+            ]
+          },
+          {
+            "code": "temp.append(X[i])",
+            "line": 51,
+            "vars": [
+              "X",
+              "h",
+              "heapq",
+              "i",
+              "par",
+              "temp",
+              "w"
+            ]
+          },
+          {
+            "code": "S = []",
+            "line": 52,
+            "vars": [
+              "h",
+              "heapq",
+              "par",
+              "temp",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+            "line": 53,
+            "vars": [
+              "S",
+              "h",
+              "heapq",
+              "par",
+              "temp",
+              "w"
+            ]
+          },
+          {
+            "code": "if par[i] < 0: S.append(-par[i])",
+            "line": 54,
+            "vars": [
+              "S",
+              "heapq",
+              "i",
+              "par",
+              "temp"
+            ]
+          },
+          {
+            "code": "S.append(-par[i])",
+            "line": 55,
+            "vars": [
+              "S",
+              "heapq",
+              "i",
+              "par",
+              "temp"
+            ]
+          },
+          {
+            "code": "S.sort(reverse=True)",
+            "line": 59,
+            "vars": [
+              "S",
+              "heapq",
+              "temp"
+            ]
+          },
+          {
+            "code": "import heapq",
+            "line": 60,
+            "vars": [
+              "S",
+              "heapq",
+              "temp"
+            ]
+          },
+          {
+            "code": "temp = [-1*t for t in temp]",
+            "line": 61,
+            "vars": [
+              "S",
+              "heapq",
+              "temp"
+            ]
+          },
+          {
+            "code": "heapq.heapify(temp)",
+            "line": 62,
+            "vars": [
+              "S",
+              "heapq",
+              "temp"
+            ]
+          },
+          {
+            "code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+            "line": 63,
+            "vars": [
+              "S",
+              "heapq",
+              "temp"
+            ]
+          },
+          {
+            "code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+            "line": 64,
+            "vars": [
+              "heapq",
+              "s",
+              "temp"
+            ]
+          },
+          {
+            "code": "t = heapq.heappop(temp)*(-1)",
+            "line": 65,
+            "vars": [
+              "heapq",
+              "s",
+              "temp"
+            ]
+          },
+          {
+            "code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+            "line": 66,
+            "vars": [
+              "heapq",
+              "s",
+              "t",
+              "temp"
+            ]
+          },
+          {
+            "code": "heapq.heappush(temp, (-1)*(t-s))",
+            "line": 67,
+            "vars": [
+              "heapq",
+              "s",
+              "t",
+              "temp"
+            ]
+          },
+          {
+            "code": "print('No')",
+            "line": 69,
+            "vars": []
+          },
+          {
+            "code": "exit()",
+            "line": 70,
+            "vars": []
+          },
+          {
+            "code": "print('No')",
+            "line": 72,
+            "vars": []
+          },
+          {
+            "code": "exit()",
+            "line": 73,
+            "vars": []
+          },
+          {
+            "code": "print('Yes')",
+            "line": 75,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "A": false,
+          "S": false,
+          "X": false,
+          "h": false,
+          "heapq": false,
+          "i": false,
+          "idx1": false,
+          "idx2": false,
+          "idx3": false,
+          "int": false,
+          "j": false,
+          "k": false,
+          "n": false,
+          "par": false,
+          "rank": false,
+          "s": false,
+          "t": false,
+          "temp": false,
+          "w": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 36,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(w):",
+      "cond": "for j in range(w)",
+      "function": "__module__",
+      "header_id": 7,
+      "line": 37,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 14,
+      "line": 44,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(w):",
+      "cond": "for j in range(w)",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 45,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(26):",
+      "cond": "for i in range(26)",
+      "function": "__module__",
+      "header_id": 19,
+      "line": 49,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h*w):",
+      "cond": "for i in range(h*w)",
+      "function": "__module__",
+      "header_id": 23,
+      "line": 53,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for s in S:",
+      "cond": "for s in S",
+      "function": "__module__",
+      "header_id": 30,
+      "line": 63,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "A = [list(str(input())) for i in range(h)]",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "n = h*w",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "n = h*w",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "par = [-1]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "par = [-1]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "par = [-1]*n",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "rank = [0]*n",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "rank = [0]*n",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "rank = [0]*n",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "rank = [0]*n",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 37,
+      "b_code": "idx1 = i*w+j",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 37,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx1 = i*w+j",
+      "a_line": 38,
+      "b_code": "idx2 = i*w+(w-1-j)",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 37,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx1 = i*w+j",
+      "a_line": 38,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx2 = i*w+(w-1-j)",
+      "a_line": 39,
+      "b_code": "idx3 = (h-1-i)*w+j",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 37,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx1 = i*w+j",
+      "a_line": 38,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx2 = i*w+(w-1-j)",
+      "a_line": 39,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx3 = (h-1-i)*w+j",
+      "a_line": 40,
+      "b_code": "Unite(idx1, idx2, par, rank)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 37,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx1 = i*w+j",
+      "a_line": 38,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx2 = i*w+(w-1-j)",
+      "a_line": 39,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "idx3 = (h-1-i)*w+j",
+      "a_line": 40,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "Unite(idx1, idx2, par, rank)",
+      "a_line": 41,
+      "b_code": "Unite(idx1, idx3, par, rank)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "X = [0]*26",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "X = [0]*26",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "X = [0]*26",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "X = [0]*26",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "X = [0]*26",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "X = [0]*26",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 45,
+      "b_code": "k = ord(A[i][j])-ord('a')",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 45,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = ord(A[i][j])-ord('a')",
+      "a_line": 46,
+      "b_code": "X[k] += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "temp = []",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "if X[i] > 0: temp.append(X[i])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if X[i] > 0: temp.append(X[i])",
+      "a_line": 50,
+      "b_code": "temp.append(X[i])",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "S = []",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "if par[i] < 0: S.append(-par[i])",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if par[i] < 0: S.append(-par[i])",
+      "a_line": 54,
+      "b_code": "S.append(-par[i])",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "S.sort(reverse=True)",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "import heapq",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "temp = [-1*t for t in temp]",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "heapq.heapify(temp)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "t = heapq.heappop(temp)*(-1)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "t = heapq.heappop(temp)*(-1)",
+      "a_line": 65,
+      "b_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "t = heapq.heappop(temp)*(-1)",
+      "a_line": 65,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "a_line": 66,
+      "b_code": "heapq.heappush(temp, (-1)*(t-s))",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "t = heapq.heappop(temp)*(-1)",
+      "a_line": 65,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "a_line": 66,
+      "b_code": "print('No')",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "t = heapq.heappop(temp)*(-1)",
+      "a_line": 65,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit()",
+      "a_line": 66,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print('No')",
+      "a_line": 69,
+      "b_code": "exit()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "print('No')",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit()",
+      "a_line": 64,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print('No')",
+      "a_line": 72,
+      "b_code": "exit()",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = [list(str(input())) for i in range(h)]",
+      "a_line": 2,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = h*w",
+      "a_line": 4,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "par = [-1]*n",
+      "a_line": 33,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "rank = [0]*n",
+      "a_line": 34,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): idx1 = i*w+j idx2 = i*w+(w-1-j) idx3 = (h-1-i)*w+j Unite(idx1, idx2, par, rank) Unite(idx1, idx3, par, rank)",
+      "a_line": 36,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X = [0]*26",
+      "a_line": 43,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): k = ord(A[i][j])-ord('a') X[k] += 1",
+      "a_line": 44,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = []",
+      "a_line": 48,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(26): if X[i] > 0: temp.append(X[i])",
+      "a_line": 49,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = []",
+      "a_line": 52,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): if par[i] < 0: S.append(-par[i])",
+      "a_line": 53,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S.sort(reverse=True)",
+      "a_line": 59,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 60,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "temp = [-1*t for t in temp]",
+      "a_line": 61,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "heapq.heapify(temp)",
+      "a_line": 62,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for s in S: if temp: t = heapq.heappop(temp)*(-1) if t >= s: heapq.heappush(temp, (-1)*(t-s)) else: print('No') exit() else: print('No') exit() else: print('Yes')",
+      "a_line": 63,
+      "b_code": "print('Yes')",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if par[x] < 0: return x else: par[x] = Find(par[x], par) return par[x]",
+      "a_line": 7,
+      "b_code": "return x",
+      "b_line": 8,
+      "function": "Find"
+    },
+    {
+      "a_code": "if par[x] < 0: return x else: par[x] = Find(par[x], par) return par[x]",
+      "a_line": 7,
+      "b_code": "par[x] = Find(par[x], par)",
+      "b_line": 10,
+      "function": "Find"
+    },
+    {
+      "a_code": "if par[x] < 0: return x else: par[x] = Find(par[x], par) return par[x]",
+      "a_line": 7,
+      "b_code": "return par[x]",
+      "b_line": 11,
+      "function": "Find"
+    },
+    {
+      "a_code": "par[x] = Find(par[x], par)",
+      "a_line": 10,
+      "b_code": "return par[x]",
+      "b_line": 11,
+      "function": "Find"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "y = Find(y, par)",
+      "b_line": 15,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 17,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 17,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 18,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 18,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 18,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "par[y] += par[x]",
+      "b_line": 19,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "par[y] += par[x]",
+      "b_line": 19,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "par[y] += par[x]",
+      "b_line": 19,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 18,
+      "b_code": "par[y] += par[x]",
+      "b_line": 19,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "par[x] = y",
+      "b_line": 20,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "par[x] = y",
+      "b_line": 20,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "par[x] = y",
+      "b_line": 20,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 18,
+      "b_code": "par[x] = y",
+      "b_line": 20,
+      "function": "Unite"
+    },
+    {
+      "a_code": "par[y] += par[x]",
+      "a_line": 19,
+      "b_code": "par[x] = y",
+      "b_line": 20,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "par[x] += par[y]",
+      "b_line": 22,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "par[x] += par[y]",
+      "b_line": 22,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "par[x] += par[y]",
+      "b_line": 22,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 18,
+      "b_code": "par[x] += par[y]",
+      "b_line": 22,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "par[y] = x",
+      "b_line": 23,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "par[y] = x",
+      "b_line": 23,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "par[y] = x",
+      "b_line": 23,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 18,
+      "b_code": "par[y] = x",
+      "b_line": 23,
+      "function": "Unite"
+    },
+    {
+      "a_code": "par[x] += par[y]",
+      "a_line": 22,
+      "b_code": "par[y] = x",
+      "b_line": 23,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 24,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 24,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 24,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 18,
+      "b_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 24,
+      "function": "Unite"
+    },
+    {
+      "a_code": "par[x] += par[y]",
+      "a_line": 22,
+      "b_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 24,
+      "function": "Unite"
+    },
+    {
+      "a_code": "par[y] = x",
+      "a_line": 23,
+      "b_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "b_line": 24,
+      "function": "Unite"
+    },
+    {
+      "a_code": "x = Find(x, par)",
+      "a_line": 14,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    },
+    {
+      "a_code": "y = Find(y, par)",
+      "a_line": 15,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if x != y: if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 17,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] < rank[y]: par[y] += par[x] par[x] = y else: par[x] += par[y] par[y] = x if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 18,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    },
+    {
+      "a_code": "par[x] += par[y]",
+      "a_line": 22,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    },
+    {
+      "a_code": "par[y] = x",
+      "a_line": 23,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    },
+    {
+      "a_code": "if rank[x] == rank[y]: rank[x] += 1",
+      "a_line": 24,
+      "b_code": "rank[x] += 1",
+      "b_line": 25,
+      "function": "Unite"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped exit at line 70",
+      "external call skipped exit at line 73",
+      "external call skipped input at line 1",
+      "external call skipped input at line 2"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped exit at line 70",
+    "external call skipped exit at line 73",
+    "external call skipped input at line 1",
+    "external call skipped input at line 2"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "A"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "A"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "S"
+      },
+      "from": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "int"
+      },
+      "from": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "from": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "par = [-1]*n",
+        "line": 33,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "par = [-1]*n",
+        "line": 33,
+        "var": "int"
+      },
+      "from": {
+        "code": "par = [-1]*n",
+        "line": 33,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "n"
+      },
+      "from": {
+        "code": "par = [-1]*n",
+        "line": 33,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "from": {
+        "code": "par = [-1]*n",
+        "line": 33,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "par = [-1]*n",
+        "line": 33,
+        "var": "par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "rank = [0]*n",
+        "line": 34,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rank = [0]*n",
+        "line": 34,
+        "var": "int"
+      },
+      "from": {
+        "code": "rank = [0]*n",
+        "line": 34,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = h*w",
+        "line": 4,
+        "var": "n"
+      },
+      "from": {
+        "code": "rank = [0]*n",
+        "line": 34,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "from": {
+        "code": "rank = [0]*n",
+        "line": 34,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "rank = [0]*n",
+        "line": 34,
+        "var": "rank"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "i"
+      },
+      "from": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "idx1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "int"
+      },
+      "from": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "idx1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "j"
+      },
+      "from": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "idx1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "from": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "idx1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "idx1 = i*w+j",
+        "line": 38,
+        "var": "idx1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "i"
+      },
+      "from": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "idx2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "int"
+      },
+      "from": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "idx2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "j"
+      },
+      "from": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "idx2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "from": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "idx2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "idx2 = i*w+(w-1-j)",
+        "line": 39,
+        "var": "idx2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "idx3"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "i"
+      },
+      "from": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "idx3"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "int"
+      },
+      "from": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "idx3"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "j"
+      },
+      "from": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "idx3"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "w"
+      },
+      "from": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "idx3"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "idx3 = (h-1-i)*w+j",
+        "line": 40,
+        "var": "idx3"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "X = [0]*26",
+        "line": 43,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "int"
+      },
+      "from": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "j"
+      },
+      "from": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "S"
+      },
+      "from": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = [0]*26",
+        "line": 43,
+        "var": "X"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 1,
+        "var": "h"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "int"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "j"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = ord(A[i][j])-ord('a')",
+        "line": 46,
+        "var": "k"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "S"
+      },
+      "from": {
+        "code": "X[k] += 1",
+        "line": 47,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "temp = []",
+        "line": 48,
+        "var": "temp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "S = []",
+        "line": 52,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "temp = []",
+        "line": 48,
+        "var": "temp"
+      },
+      "from": {
+        "code": "temp = [-1*t for t in temp]",
+        "line": 61,
+        "var": "temp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "temp = [-1*t for t in temp]",
+        "line": 61,
+        "var": "temp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "t = heapq.heappop(temp)*(-1)",
+        "line": 65,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "t = heapq.heappop(temp)*(-1)",
+        "line": 65,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "temp = [-1*t for t in temp]",
+        "line": 61,
+        "var": "temp"
+      },
+      "from": {
+        "code": "t = heapq.heappop(temp)*(-1)",
+        "line": 65,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A = [list(str(input())) for i in range(h)]",
+        "line": 2,
+        "var": "A"
+      },
+      "from": {
+        "code": "t = heapq.heappop(temp)*(-1)",
+        "line": 65,
+        "var": "t"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Find(x, par):",
+        "line": 6,
+        "var": "par"
+      },
+      "from": {
+        "code": "par[x] = Find(par[x], par)",
+        "line": 10,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Find(x, par):",
+        "line": 6,
+        "var": "x"
+      },
+      "from": {
+        "code": "par[x] = Find(par[x], par)",
+        "line": 10,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "par"
+      },
+      "from": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "par"
+      },
+      "from": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "par"
+      },
+      "from": {
+        "code": "par[y] += par[x]",
+        "line": 19,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "from": {
+        "code": "par[y] += par[x]",
+        "line": 19,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "from": {
+        "code": "par[y] += par[x]",
+        "line": 19,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "par[y] += par[x]",
+        "line": 19,
+        "var": "par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "from": {
+        "code": "par[x] = y",
+        "line": 20,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "from": {
+        "code": "par[x] = y",
+        "line": 20,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "par[x] = y",
+        "line": 20,
+        "var": "par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "par[x] = y",
+        "line": 20,
+        "var": "par"
+      },
+      "from": {
+        "code": "par[x] += par[y]",
+        "line": 22,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "from": {
+        "code": "par[x] += par[y]",
+        "line": 22,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "from": {
+        "code": "par[x] += par[y]",
+        "line": 22,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "par[x] += par[y]",
+        "line": 22,
+        "var": "par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "from": {
+        "code": "par[y] = x",
+        "line": 23,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "from": {
+        "code": "par[y] = x",
+        "line": 23,
+        "var": "par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "par[y] = x",
+        "line": 23,
+        "var": "par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "par[y] = x",
+        "line": 23,
+        "var": "par"
+      },
+      "from": {
+        "code": "rank[x] += 1",
+        "line": 25,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Unite(x, y, par, rank):",
+        "line": 13,
+        "var": "rank"
+      },
+      "from": {
+        "code": "rank[x] += 1",
+        "line": 25,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = Find(x, par)",
+        "line": 14,
+        "var": "x"
+      },
+      "from": {
+        "code": "rank[x] += 1",
+        "line": 25,
+        "var": "rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = Find(y, par)",
+        "line": 15,
+        "var": "y"
+      },
+      "from": {
+        "code": "rank[x] += 1",
+        "line": 25,
+        "var": "rank"
+      },
+      "label": "negative"
+    }
+  ]
+}

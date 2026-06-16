@@ -1,0 +1,5788 @@
+{
+  "cfg_statements": [
+    {
+      "code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "import sys, re",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 11,
+      "node_id": 2
+    },
+    {
+      "code": "from collections import deque, defaultdict, Counter",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 12,
+      "node_id": 3
+    },
+    {
+      "code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 13,
+      "node_id": 4
+    },
+    {
+      "code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 14,
+      "node_id": 5
+    },
+    {
+      "code": "from math import gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 14,
+      "node_id": 6
+    },
+    {
+      "code": "from fractions import gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 15,
+      "node_id": 7
+    },
+    {
+      "code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 16,
+      "node_id": 8
+    },
+    {
+      "code": "from bisect import bisect_left, bisect_right",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 17,
+      "node_id": 9
+    },
+    {
+      "code": "from itertools import permutations, combinations, product",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 18,
+      "node_id": 10
+    },
+    {
+      "code": "from operator import itemgetter, mul",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 19,
+      "node_id": 11
+    },
+    {
+      "code": "from copy import copy, deepcopy",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 20,
+      "node_id": 12
+    },
+    {
+      "code": "from functools import reduce, partial",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 21,
+      "node_id": 13
+    },
+    {
+      "code": "from fractions import Fraction",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 22,
+      "node_id": 14
+    },
+    {
+      "code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 23,
+      "node_id": 15
+    },
+    {
+      "code": "sys.setrecursionlimit(10 ** 9)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 37,
+      "node_id": 16
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 17
+    },
+    {
+      "code": "MOD = 10 ** 9 + 7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 18
+    },
+    {
+      "code": "N = INT()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 19
+    },
+    {
+      "code": "cnt = 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 20
+    },
+    {
+      "code": "add = 2",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 21
+    },
+    {
+      "code": "while cnt < N: cnt += add add += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 45,
+      "node_id": 22
+    },
+    {
+      "code": "cnt += add",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 46,
+      "node_id": 23
+    },
+    {
+      "code": "add += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 47,
+      "node_id": 24
+    },
+    {
+      "code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 49,
+      "node_id": 25
+    },
+    {
+      "code": "c = add - 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 26
+    },
+    {
+      "code": "ans = list2d(add, c, 0)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 27
+    },
+    {
+      "code": "k = 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 28
+    },
+    {
+      "code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 54,
+      "node_id": 29
+    },
+    {
+      "code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 55,
+      "node_id": 30
+    },
+    {
+      "code": "ans[i][j] = k",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 31
+    },
+    {
+      "code": "ans[j+1][i] = k",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 32
+    },
+    {
+      "code": "k += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 58,
+      "node_id": 33
+    },
+    {
+      "code": "print('Yes')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 59,
+      "node_id": 34
+    },
+    {
+      "code": "print(add)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 60,
+      "node_id": 35
+    },
+    {
+      "code": "for i in range(add): print(c, *ans[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 61,
+      "node_id": 36
+    },
+    {
+      "code": "print(c, *ans[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 62,
+      "node_id": 37
+    },
+    {
+      "code": "print('No')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 64,
+      "node_id": 38
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "function": "input",
+      "kind": "Return",
+      "line": 25,
+      "node_id": 1
+    },
+    {
+      "code": "return [[c] * b for i in range(a)]",
+      "dead": false,
+      "function": "list2d",
+      "kind": "Return",
+      "line": 26,
+      "node_id": 1
+    },
+    {
+      "code": "return [[[d] * c for j in range(b)] for i in range(a)]",
+      "dead": false,
+      "function": "list3d",
+      "kind": "Return",
+      "line": 27,
+      "node_id": 1
+    },
+    {
+      "code": "return int(-(-x // y))",
+      "dead": false,
+      "function": "ceil",
+      "kind": "Return",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "return int((x*2+1) // 2)",
+      "dead": false,
+      "function": "round",
+      "kind": "Return",
+      "line": 29,
+      "node_id": 1
+    },
+    {
+      "code": "return x * pow(y, MOD-2, MOD) % MOD",
+      "dead": false,
+      "function": "fermat",
+      "kind": "Return",
+      "line": 30,
+      "node_id": 1
+    },
+    {
+      "code": "return (x * y) // gcd(x, y)",
+      "dead": false,
+      "function": "lcm",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 1
+    },
+    {
+      "code": "return reduce(lcm, nums, 1)",
+      "dead": false,
+      "function": "lcm_list",
+      "kind": "Return",
+      "line": 32,
+      "node_id": 1
+    },
+    {
+      "code": "return reduce(gcd, nums, nums[0])",
+      "dead": false,
+      "function": "gcd_list",
+      "kind": "Return",
+      "line": 33,
+      "node_id": 1
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "function": "INT",
+      "kind": "Return",
+      "line": 34,
+      "node_id": 1
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "function": "MAP",
+      "kind": "Return",
+      "line": 35,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "function": "LIST",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "import sys, re",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "from collections import deque, defaultdict, Counter",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "from math import gcd",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "from fractions import gcd",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "from bisect import bisect_left, bisect_right",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "from itertools import permutations, combinations, product",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "from operator import itemgetter, mul",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "from copy import copy, deepcopy",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "from functools import reduce, partial",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "from fractions import Fraction",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "return [[c] * b for i in range(a)]",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "return [[[d] * c for j in range(b)] for i in range(a)]",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "return int(-(-x // y))",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "return int((x*2+1) // 2)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "return x * pow(y, MOD-2, MOD) % MOD",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "return (x * y) // gcd(x, y)",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "return reduce(lcm, nums, 1)",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "return reduce(gcd, nums, nums[0])",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "sys.setrecursionlimit(10 ** 9)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "MOD = 10 ** 9 + 7",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "N = INT()",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "cnt = 1",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "add = 2",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "while cnt < N: cnt += add add += 1",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "cnt += add",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "add += 1",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "c = add - 1",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "ans = list2d(add, c, 0)",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "k = 1",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "ans[i][j] = k",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "ans[j+1][i] = k",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "k += 1",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "print('Yes')",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "print(add)",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "for i in range(add): print(c, *ans[i])",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "print(c, *ans[i])",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "print('No')",
+      "dead": false,
+      "line": 64
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03230_s936378682.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 25,
+      "lineno": 25,
+      "name": "input",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 26,
+      "lineno": 26,
+      "name": "list2d",
+      "variables": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 27,
+      "lineno": 27,
+      "name": "list3d",
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 28,
+      "lineno": 28,
+      "name": "ceil",
+      "variables": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 29,
+      "lineno": 29,
+      "name": "round",
+      "variables": [
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 30,
+      "lineno": 30,
+      "name": "fermat",
+      "variables": [
+        "MOD",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 31,
+      "lineno": 31,
+      "name": "lcm",
+      "variables": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 32,
+      "lineno": 32,
+      "name": "lcm_list",
+      "variables": [
+        "lcm",
+        "nums"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 33,
+      "lineno": 33,
+      "name": "gcd_list",
+      "variables": [
+        "gcd",
+        "nums"
+      ]
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 34,
+      "lineno": 34,
+      "name": "INT",
+      "variables": []
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 35,
+      "lineno": 35,
+      "name": "MAP",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 36,
+      "lineno": 36,
+      "name": "LIST",
+      "variables": [
+        "int"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "INT": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return int(input())",
+            "line": 34,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LIST": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int, input().split()))",
+            "line": 36,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "MAP": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return map(int, input().split())",
+            "line": 35,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+            "line": 3,
+            "vars": [
+              "sys",
+              "sys.version_info.minor"
+            ]
+          },
+          {
+            "code": "import sys, re",
+            "line": 11,
+            "vars": [
+              "sys",
+              "sys.version_info.minor"
+            ]
+          },
+          {
+            "code": "from collections import deque, defaultdict, Counter",
+            "line": 12,
+            "vars": [
+              "sys",
+              "sys.version_info.minor"
+            ]
+          },
+          {
+            "code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+            "line": 13,
+            "vars": [
+              "sys",
+              "sys.version_info.minor"
+            ]
+          },
+          {
+            "code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+            "line": 14,
+            "vars": [
+              "sys",
+              "sys.version_info.minor"
+            ]
+          },
+          {
+            "code": "from math import gcd",
+            "line": 14,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from fractions import gcd",
+            "line": 15,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from heapq import heappop, heappush, heapify, heappushpop",
+            "line": 16,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from bisect import bisect_left, bisect_right",
+            "line": 17,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from itertools import permutations, combinations, product",
+            "line": 18,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from operator import itemgetter, mul",
+            "line": 19,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from copy import copy, deepcopy",
+            "line": 20,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from functools import reduce, partial",
+            "line": 21,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from fractions import Fraction",
+            "line": 22,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from string import ascii_lowercase, ascii_uppercase, digits",
+            "line": 23,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10 ** 9)",
+            "line": 37,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "INF = float('inf')",
+            "line": 38,
+            "vars": []
+          },
+          {
+            "code": "MOD = 10 ** 9 + 7",
+            "line": 39,
+            "vars": []
+          },
+          {
+            "code": "N = INT()",
+            "line": 41,
+            "vars": []
+          },
+          {
+            "code": "cnt = 1",
+            "line": 43,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "add = 2",
+            "line": 44,
+            "vars": [
+              "N",
+              "cnt"
+            ]
+          },
+          {
+            "code": "while cnt < N: cnt += add add += 1",
+            "line": 45,
+            "vars": [
+              "N",
+              "add",
+              "cnt"
+            ]
+          },
+          {
+            "code": "cnt += add",
+            "line": 46,
+            "vars": [
+              "N",
+              "add"
+            ]
+          },
+          {
+            "code": "add += 1",
+            "line": 47,
+            "vars": [
+              "N",
+              "cnt"
+            ]
+          },
+          {
+            "code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+            "line": 49,
+            "vars": [
+              "N",
+              "add",
+              "cnt"
+            ]
+          },
+          {
+            "code": "c = add - 1",
+            "line": 51,
+            "vars": [
+              "add"
+            ]
+          },
+          {
+            "code": "ans = list2d(add, c, 0)",
+            "line": 52,
+            "vars": [
+              "add",
+              "c"
+            ]
+          },
+          {
+            "code": "k = 1",
+            "line": 53,
+            "vars": [
+              "add",
+              "c"
+            ]
+          },
+          {
+            "code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+            "line": 54,
+            "vars": [
+              "add",
+              "c",
+              "k"
+            ]
+          },
+          {
+            "code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+            "line": 55,
+            "vars": [
+              "add",
+              "c",
+              "i",
+              "k"
+            ]
+          },
+          {
+            "code": "ans[i][j] = k",
+            "line": 56,
+            "vars": [
+              "add",
+              "c",
+              "i",
+              "j",
+              "k"
+            ]
+          },
+          {
+            "code": "ans[j+1][i] = k",
+            "line": 57,
+            "vars": [
+              "add",
+              "c",
+              "i",
+              "k"
+            ]
+          },
+          {
+            "code": "k += 1",
+            "line": 58,
+            "vars": [
+              "add",
+              "ans",
+              "c"
+            ]
+          },
+          {
+            "code": "print('Yes')",
+            "line": 59,
+            "vars": [
+              "add",
+              "ans",
+              "c"
+            ]
+          },
+          {
+            "code": "print(add)",
+            "line": 60,
+            "vars": [
+              "add",
+              "ans",
+              "c"
+            ]
+          },
+          {
+            "code": "for i in range(add): print(c, *ans[i])",
+            "line": 61,
+            "vars": [
+              "add",
+              "ans",
+              "c"
+            ]
+          },
+          {
+            "code": "print(c, *ans[i])",
+            "line": 62,
+            "vars": [
+              "ans",
+              "c",
+              "i"
+            ]
+          },
+          {
+            "code": "print('No')",
+            "line": 64,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "MOD": false,
+          "N": false,
+          "add": false,
+          "ans": false,
+          "c": false,
+          "cnt": false,
+          "i": false,
+          "j": false,
+          "k": false,
+          "sys": false,
+          "sys.version_info.minor": false
+        },
+        "return_vars": []
+      },
+      "ceil": {
+        "base_liveout": [
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return int(-(-x // y))",
+            "line": 28,
+            "vars": [
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "x",
+          "y"
+        ]
+      },
+      "fermat": {
+        "base_liveout": [
+          "MOD",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return x * pow(y, MOD-2, MOD) % MOD",
+            "line": 30,
+            "vars": [
+              "MOD",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "MOD",
+          "x",
+          "y"
+        ]
+      },
+      "gcd_list": {
+        "base_liveout": [
+          "gcd",
+          "nums"
+        ],
+        "live_before": [
+          {
+            "code": "return reduce(gcd, nums, nums[0])",
+            "line": 33,
+            "vars": [
+              "gcd",
+              "nums"
+            ]
+          }
+        ],
+        "liveout": {
+          "gcd": true,
+          "nums": true
+        },
+        "return_vars": [
+          "gcd",
+          "nums"
+        ]
+      },
+      "input": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().strip()",
+            "line": 25,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "lcm": {
+        "base_liveout": [
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return (x * y) // gcd(x, y)",
+            "line": 31,
+            "vars": [
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "x",
+          "y"
+        ]
+      },
+      "lcm_list": {
+        "base_liveout": [
+          "lcm",
+          "nums"
+        ],
+        "live_before": [
+          {
+            "code": "return reduce(lcm, nums, 1)",
+            "line": 32,
+            "vars": [
+              "lcm",
+              "nums"
+            ]
+          }
+        ],
+        "liveout": {
+          "lcm": true,
+          "nums": true
+        },
+        "return_vars": [
+          "lcm",
+          "nums"
+        ]
+      },
+      "list2d": {
+        "base_liveout": [
+          "a",
+          "b",
+          "c"
+        ],
+        "live_before": [
+          {
+            "code": "return [[c] * b for i in range(a)]",
+            "line": 26,
+            "vars": [
+              "a",
+              "b",
+              "c"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "return_vars": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "list3d": {
+        "base_liveout": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "live_before": [
+          {
+            "code": "return [[[d] * c for j in range(b)] for i in range(a)]",
+            "line": 27,
+            "vars": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": true,
+          "c": true,
+          "d": true
+        },
+        "return_vars": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "round": {
+        "base_liveout": [
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "return int((x*2+1) // 2)",
+            "line": 29,
+            "vars": [
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "x": true
+        },
+        "return_vars": [
+          "x"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while cnt < N:",
+      "cond": "cnt < N",
+      "function": "__module__",
+      "header_id": 22,
+      "line": 45,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(add):",
+      "cond": "for i in range(add)",
+      "function": "__module__",
+      "header_id": 29,
+      "line": 54,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(i, c):",
+      "cond": "for j in range(i, c)",
+      "function": "__module__",
+      "header_id": 30,
+      "line": 55,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(add):",
+      "cond": "for i in range(add)",
+      "function": "__module__",
+      "header_id": 36,
+      "line": 61,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "import sys, re",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from collections import deque, defaultdict, Counter",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from collections import deque, defaultdict, Counter",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from math import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from math import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from math import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from math import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from math import gcd",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from fractions import gcd",
+      "b_line": 15,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from fractions import gcd",
+      "b_line": 15,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from fractions import gcd",
+      "b_line": 15,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from fractions import gcd",
+      "b_line": 15,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from fractions import gcd",
+      "b_line": 15,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from bisect import bisect_left, bisect_right",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from bisect import bisect_left, bisect_right",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from bisect import bisect_left, bisect_right",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from bisect import bisect_left, bisect_right",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from bisect import bisect_left, bisect_right",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from bisect import bisect_left, bisect_right",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "from itertools import permutations, combinations, product",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "from copy import copy, deepcopy",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "from functools import reduce, partial",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "from fractions import Fraction",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "INF = float('inf')",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "N = INT()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "cnt = 1",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "add = 2",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "while cnt < N: cnt += add add += 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "cnt += add",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt += add",
+      "a_line": 46,
+      "b_code": "add += 1",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "c = add - 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "ans = list2d(add, c, 0)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "k = 1",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 55,
+      "b_code": "ans[i][j] = k",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 55,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans[i][j] = k",
+      "a_line": 56,
+      "b_code": "ans[j+1][i] = k",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 55,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans[i][j] = k",
+      "a_line": 56,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans[j+1][i] = k",
+      "a_line": 57,
+      "b_code": "k += 1",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "print('Yes')",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print('Yes')",
+      "a_line": 59,
+      "b_code": "print(add)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print('Yes')",
+      "a_line": 59,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print(add)",
+      "a_line": 60,
+      "b_code": "for i in range(add): print(c, *ans[i])",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = add - 1",
+      "a_line": 51,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = list2d(add, c, 0)",
+      "a_line": 52,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = 1",
+      "a_line": 53,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1",
+      "a_line": 54,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print('Yes')",
+      "a_line": 59,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print(add)",
+      "a_line": 60,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(add): print(c, *ans[i])",
+      "a_line": 61,
+      "b_code": "print(c, *ans[i])",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" \u53c2\u8003\uff1ahttps://img.atcoder.jp/tenka1-2018/editorial.pdf https://ferin-tech.hatenablog.com/entry/2018/10/29/135010 https://babcs2035.hateblo.jp/entry/2018/11/03/143845 https://naoyat.hatenablog.jp/entry/tenka1-2018-vc https://atcoder.jp/contests/tenka1-2018-beginner/submissions/3996670 \"\"\"",
+      "a_line": 3,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 11,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 12,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt, hypot, factorial, pi, sin, cos, radians, log10",
+      "a_line": 13,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if sys.version_info.minor >= 5: from math import gcd else: from fractions import gcd",
+      "a_line": 14,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappop, heappush, heapify, heappushpop",
+      "a_line": 16,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect_left, bisect_right",
+      "a_line": 17,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import permutations, combinations, product",
+      "a_line": 18,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 19,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import copy, deepcopy",
+      "a_line": 20,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce, partial",
+      "a_line": 21,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import Fraction",
+      "a_line": 22,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 23,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 37,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 38,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 39,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = INT()",
+      "a_line": 41,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = 1",
+      "a_line": 43,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add = 2",
+      "a_line": 44,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while cnt < N: cnt += add add += 1",
+      "a_line": 45,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if cnt == N: # \u5404\u90e8\u5206\u96c6\u5408\u306e\u8981\u7d20\u6570:c \u90e8\u5206\u96c6\u5408\u306e\u6570:add c = add - 1 ans = list2d(add, c, 0) k = 1 for i in range(add): for j in range(i, c): ans[i][j] = k ans[j+1][i] = k k += 1 print('Yes') print(add) for i in range(add): print(c, *ans[i]) else: print('No')",
+      "a_line": 49,
+      "b_code": "print('No')",
+      "b_line": 64,
+      "function": "__module__"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 37",
+      "external attribute call skipped sys.stdin.readline at line 25",
+      "external call skipped gcd at line 31",
+      "external call skipped pow at line 30",
+      "external call skipped reduce at line 32",
+      "external call skipped reduce at line 33"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 37",
+    "external attribute call skipped sys.stdin.readline at line 25",
+    "external call skipped gcd at line 31",
+    "external call skipped pow at line 30",
+    "external call skipped reduce at line 32",
+    "external call skipped reduce at line 33"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "MOD = 10 ** 9 + 7",
+        "line": 39,
+        "var": "MOD"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "N = INT()",
+        "line": 41,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "cnt = 1",
+        "line": 43,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "add = 2",
+        "line": 44,
+        "var": "add"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "add = 2",
+        "line": 44,
+        "var": "add"
+      },
+      "from": {
+        "code": "cnt += add",
+        "line": 46,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "cnt += add",
+        "line": 46,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "add += 1",
+        "line": 47,
+        "var": "add"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "add += 1",
+        "line": 47,
+        "var": "add"
+      },
+      "from": {
+        "code": "c = add - 1",
+        "line": 51,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "c = add - 1",
+        "line": 51,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "add += 1",
+        "line": 47,
+        "var": "add"
+      },
+      "from": {
+        "code": "ans = list2d(add, c, 0)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = add - 1",
+        "line": 51,
+        "var": "c"
+      },
+      "from": {
+        "code": "ans = list2d(add, c, 0)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans = list2d(add, c, 0)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "k = 1",
+        "line": 53,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j] = k",
+        "line": 56,
+        "var": "j"
+      },
+      "from": {
+        "code": "ans[i][j] = k",
+        "line": 56,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = 1",
+        "line": 53,
+        "var": "k"
+      },
+      "from": {
+        "code": "ans[i][j] = k",
+        "line": 56,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans[i][j] = k",
+        "line": 56,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans[j+1][i] = k",
+        "line": 57,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans[j+1][i] = k",
+        "line": 57,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = 1",
+        "line": 53,
+        "var": "k"
+      },
+      "from": {
+        "code": "ans[j+1][i] = k",
+        "line": 57,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans[j+1][i] = k",
+        "line": 57,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 38,
+        "var": "INF"
+      },
+      "from": {
+        "code": "k += 1",
+        "line": 58,
+        "var": "k"
+      },
+      "label": "negative"
+    }
+  ]
+}

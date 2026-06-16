@@ -1,0 +1,4225 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "if __name__ == '__main__': solve()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 82,
+      "node_id": 2
+    },
+    {
+      "code": "solve()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 83,
+      "node_id": 3
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "function": "AlgUnionFind.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "self.parents = [-1] * n",
+      "dead": false,
+      "function": "AlgUnionFind.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "if self.parents[x] < 0: return x else: self.parents[x] = self.find(self.parents[x]) return self.parents[x]",
+      "dead": false,
+      "function": "AlgUnionFind.find",
+      "kind": "If",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "function": "AlgUnionFind.find",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 2
+    },
+    {
+      "code": "self.parents[x] = self.find(self.parents[x])",
+      "dead": false,
+      "function": "AlgUnionFind.find",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 3
+    },
+    {
+      "code": "return self.parents[x]",
+      "dead": false,
+      "function": "AlgUnionFind.find",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 4
+    },
+    {
+      "code": "x = self.find(x)",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 1
+    },
+    {
+      "code": "y = self.find(y)",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 2
+    },
+    {
+      "code": "if x == y: return",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "If",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "Return",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "If",
+      "line": 24,
+      "node_id": 5
+    },
+    {
+      "code": "x, y = y, x",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 6
+    },
+    {
+      "code": "self.parents[x] += self.parents[y]",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "AugAssign",
+      "line": 27,
+      "node_id": 7
+    },
+    {
+      "code": "self.parents[y] = x",
+      "dead": false,
+      "function": "AlgUnionFind.union",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 8
+    },
+    {
+      "code": "return -self.parents[self.find(x)]",
+      "dead": false,
+      "function": "AlgUnionFind.size",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 1
+    },
+    {
+      "code": "return self.find(x) == self.find(y)",
+      "dead": false,
+      "function": "AlgUnionFind.same",
+      "kind": "Return",
+      "line": 34,
+      "node_id": 1
+    },
+    {
+      "code": "root = self.find(x)",
+      "dead": false,
+      "function": "AlgUnionFind.members",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 1
+    },
+    {
+      "code": "return [i for i in range(self.n) if self.find(i) == root]",
+      "dead": false,
+      "function": "AlgUnionFind.members",
+      "kind": "Return",
+      "line": 38,
+      "node_id": 2
+    },
+    {
+      "code": "return [i for i, x in enumerate(self.parents) if x < 0]",
+      "dead": false,
+      "function": "AlgUnionFind.roots",
+      "kind": "Return",
+      "line": 41,
+      "node_id": 1
+    },
+    {
+      "code": "return len(self.roots())",
+      "dead": false,
+      "function": "AlgUnionFind.group_count",
+      "kind": "Return",
+      "line": 44,
+      "node_id": 1
+    },
+    {
+      "code": "return {r: self.members(r) for r in self.roots()}",
+      "dead": false,
+      "function": "AlgUnionFind.all_group_members",
+      "kind": "Return",
+      "line": 47,
+      "node_id": 1
+    },
+    {
+      "code": "return '\\n'.join('{}: {}'.format(r, self.members(r)) for r in self.roots())",
+      "dead": false,
+      "function": "AlgUnionFind.__str__",
+      "kind": "Return",
+      "line": 50,
+      "node_id": 1
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 1
+    },
+    {
+      "code": "mod = 10 ** 9 + 7",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 2
+    },
+    {
+      "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 3
+    },
+    {
+      "code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 4
+    },
+    {
+      "code": "uf = AlgUnionFind(n)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 58,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "dead": false,
+      "function": "solve",
+      "kind": "For",
+      "line": 59,
+      "node_id": 6
+    },
+    {
+      "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 7
+    },
+    {
+      "code": "uf.union(x-1, y-1)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Expr",
+      "line": 61,
+      "node_id": 8
+    },
+    {
+      "code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "dead": false,
+      "function": "solve",
+      "kind": "For",
+      "line": 62,
+      "node_id": 9
+    },
+    {
+      "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 63,
+      "node_id": 10
+    },
+    {
+      "code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "dead": false,
+      "function": "solve",
+      "kind": "While",
+      "line": 64,
+      "node_id": 11
+    },
+    {
+      "code": "c_sw = False",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 65,
+      "node_id": 12
+    },
+    {
+      "code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "dead": false,
+      "function": "solve",
+      "kind": "For",
+      "line": 66,
+      "node_id": 13
+    },
+    {
+      "code": "tn = p[i][0]",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 67,
+      "node_id": 14
+    },
+    {
+      "code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 68,
+      "node_id": 15
+    },
+    {
+      "code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 69,
+      "node_id": 16
+    },
+    {
+      "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 70,
+      "node_id": 17
+    },
+    {
+      "code": "p[i][1] = p[i][0] == i",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 71,
+      "node_id": 18
+    },
+    {
+      "code": "p[tn][1] = p[tn][0] == tn",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 72,
+      "node_id": 19
+    },
+    {
+      "code": "c_sw = True",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 73,
+      "node_id": 20
+    },
+    {
+      "code": "if not c_sw: break",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 74,
+      "node_id": 21
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "solve",
+      "kind": "Break",
+      "line": 75,
+      "node_id": 22
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 76,
+      "node_id": 23
+    },
+    {
+      "code": "for i in range(n): cnt += p[i][1]",
+      "dead": false,
+      "function": "solve",
+      "kind": "For",
+      "line": 77,
+      "node_id": 24
+    },
+    {
+      "code": "cnt += p[i][1]",
+      "dead": false,
+      "function": "solve",
+      "kind": "AugAssign",
+      "line": 78,
+      "node_id": 25
+    },
+    {
+      "code": "print(cnt)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Expr",
+      "line": 79,
+      "node_id": 26
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.parents = [-1] * n",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if self.parents[x] < 0: return x else: self.parents[x] = self.find(self.parents[x]) return self.parents[x]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "self.parents[x] = self.find(self.parents[x])",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return self.parents[x]",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "x = self.find(x)",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "y = self.find(y)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "if x == y: return",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "x, y = y, x",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "self.parents[x] += self.parents[y]",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "self.parents[y] = x",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "return -self.parents[self.find(x)]",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "return self.find(x) == self.find(y)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "root = self.find(x)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "return [i for i in range(self.n) if self.find(i) == root]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "return [i for i, x in enumerate(self.parents) if x < 0]",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "return len(self.roots())",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "return {r: self.members(r) for r in self.roots()}",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "return '\\n'.join('{}: {}'.format(r, self.members(r)) for r in self.roots())",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "mod = 10 ** 9 + 7",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "uf = AlgUnionFind(n)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "uf.union(x-1, y-1)",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "c_sw = False",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "tn = p[i][0]",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "p[i][1] = p[i][0] == i",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "p[tn][1] = p[tn][0] == tn",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "c_sw = True",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "if not c_sw: break",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "for i in range(n): cnt += p[i][1]",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "cnt += p[i][1]",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "print(cnt)",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "if __name__ == '__main__': solve()",
+      "dead": false,
+      "line": 82
+    },
+    {
+      "code": "solve()",
+      "dead": false,
+      "line": 83
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p03354_s834184012.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 6,
+      "name": "AlgUnionFind.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.n",
+        "self.parents"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.find"
+      ],
+      "end_lineno": 15,
+      "lineno": 10,
+      "name": "AlgUnionFind.find",
+      "variables": [
+        "self",
+        "self.parents",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.find"
+      ],
+      "end_lineno": 28,
+      "lineno": 17,
+      "name": "AlgUnionFind.union",
+      "variables": [
+        "self",
+        "self.parents",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.find"
+      ],
+      "end_lineno": 31,
+      "lineno": 30,
+      "name": "AlgUnionFind.size",
+      "variables": [
+        "self",
+        "self.parents",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.find"
+      ],
+      "end_lineno": 34,
+      "lineno": 33,
+      "name": "AlgUnionFind.same",
+      "variables": [
+        "self",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.find"
+      ],
+      "end_lineno": 38,
+      "lineno": 36,
+      "name": "AlgUnionFind.members",
+      "variables": [
+        "root",
+        "self",
+        "self.n",
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 41,
+      "lineno": 40,
+      "name": "AlgUnionFind.roots",
+      "variables": [
+        "self",
+        "self.parents"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.roots"
+      ],
+      "end_lineno": 44,
+      "lineno": 43,
+      "name": "AlgUnionFind.group_count",
+      "variables": [
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.members",
+        "AlgUnionFind.roots"
+      ],
+      "end_lineno": 47,
+      "lineno": 46,
+      "name": "AlgUnionFind.all_group_members",
+      "variables": [
+        "r",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.members",
+        "AlgUnionFind.roots"
+      ],
+      "end_lineno": 50,
+      "lineno": 49,
+      "name": "AlgUnionFind.__str__",
+      "variables": [
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "AlgUnionFind.__init__"
+      ],
+      "end_lineno": 79,
+      "lineno": 53,
+      "name": "solve",
+      "variables": [
+        "c_sw",
+        "cnt",
+        "i",
+        "input",
+        "int",
+        "m",
+        "mod",
+        "n",
+        "p",
+        "sys.stdin.readline",
+        "tn",
+        "uf",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "AlgUnionFind.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.n = n",
+            "line": 7,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.parents = [-1] * n",
+            "line": 8,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.n": false,
+          "self.parents": false
+        },
+        "return_vars": []
+      },
+      "AlgUnionFind.__str__": {
+        "base_liveout": [
+          "self"
+        ],
+        "live_before": [
+          {
+            "code": "return '\\n'.join('{}: {}'.format(r, self.members(r)) for r in self.roots())",
+            "line": 50,
+            "vars": [
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true
+        },
+        "return_vars": [
+          "self"
+        ]
+      },
+      "AlgUnionFind.all_group_members": {
+        "base_liveout": [
+          "r",
+          "self"
+        ],
+        "live_before": [
+          {
+            "code": "return {r: self.members(r) for r in self.roots()}",
+            "line": 47,
+            "vars": [
+              "r",
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "r": true,
+          "self": true
+        },
+        "return_vars": [
+          "r",
+          "self"
+        ]
+      },
+      "AlgUnionFind.find": {
+        "base_liveout": [
+          "self.parents",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "if self.parents[x] < 0: return x else: self.parents[x] = self.find(self.parents[x]) return self.parents[x]",
+            "line": 11,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          },
+          {
+            "code": "return x",
+            "line": 12,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          },
+          {
+            "code": "self.parents[x] = self.find(self.parents[x])",
+            "line": 14,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          },
+          {
+            "code": "return self.parents[x]",
+            "line": 15,
+            "vars": [
+              "self.parents",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.parents": true,
+          "x": true
+        },
+        "return_vars": [
+          "self.parents",
+          "x"
+        ]
+      },
+      "AlgUnionFind.group_count": {
+        "base_liveout": [
+          "self"
+        ],
+        "live_before": [
+          {
+            "code": "return len(self.roots())",
+            "line": 44,
+            "vars": [
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true
+        },
+        "return_vars": [
+          "self"
+        ]
+      },
+      "AlgUnionFind.members": {
+        "base_liveout": [
+          "root",
+          "self",
+          "self.n"
+        ],
+        "live_before": [
+          {
+            "code": "root = self.find(x)",
+            "line": 37,
+            "vars": [
+              "self",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "return [i for i in range(self.n) if self.find(i) == root]",
+            "line": 38,
+            "vars": [
+              "root",
+              "self",
+              "self.n"
+            ]
+          }
+        ],
+        "liveout": {
+          "root": true,
+          "self": true,
+          "self.n": true,
+          "x": false
+        },
+        "return_vars": [
+          "root",
+          "self",
+          "self.n"
+        ]
+      },
+      "AlgUnionFind.roots": {
+        "base_liveout": [
+          "self.parents"
+        ],
+        "live_before": [
+          {
+            "code": "return [i for i, x in enumerate(self.parents) if x < 0]",
+            "line": 41,
+            "vars": [
+              "self.parents"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.parents": true
+        },
+        "return_vars": [
+          "self.parents"
+        ]
+      },
+      "AlgUnionFind.same": {
+        "base_liveout": [
+          "self",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return self.find(x) == self.find(y)",
+            "line": 34,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "self",
+          "x",
+          "y"
+        ]
+      },
+      "AlgUnionFind.size": {
+        "base_liveout": [
+          "self",
+          "self.parents",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "return -self.parents[self.find(x)]",
+            "line": 31,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "self.parents": true,
+          "x": true
+        },
+        "return_vars": [
+          "self",
+          "self.parents",
+          "x"
+        ]
+      },
+      "AlgUnionFind.union": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "x = self.find(x)",
+            "line": 18,
+            "vars": [
+              "self",
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "y = self.find(y)",
+            "line": 19,
+            "vars": [
+              "self",
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if x == y: return",
+            "line": 21,
+            "vars": [
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 22,
+            "vars": [
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+            "line": 24,
+            "vars": [
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "x, y = y, x",
+            "line": 25,
+            "vars": [
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.parents[x] += self.parents[y]",
+            "line": 27,
+            "vars": [
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.parents[y] = x",
+            "line": 28,
+            "vars": [
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.parents": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "if __name__ == '__main__': solve()",
+            "line": 82,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "solve()",
+            "line": 83,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "__name__": false
+        },
+        "return_vars": []
+      },
+      "solve": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "input = sys.stdin.readline",
+            "line": 54,
+            "vars": [
+              "int",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "mod = 10 ** 9 + 7",
+            "line": 55,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+            "line": 56,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "p = list(map(int, input().rstrip('\\n').split()))",
+            "line": 57,
+            "vars": [
+              "int",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "uf = AlgUnionFind(n)",
+            "line": 58,
+            "vars": [
+              "int",
+              "m",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+            "line": 59,
+            "vars": [
+              "int",
+              "m",
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+            "line": 60,
+            "vars": [
+              "int",
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "uf.union(x-1, y-1)",
+            "line": 61,
+            "vars": [
+              "n",
+              "p",
+              "uf",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+            "line": 62,
+            "vars": [
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+            "line": 63,
+            "vars": [
+              "i",
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+            "line": 64,
+            "vars": [
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "c_sw = False",
+            "line": 65,
+            "vars": [
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+            "line": 66,
+            "vars": [
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "tn = p[i][0]",
+            "line": 67,
+            "vars": [
+              "i",
+              "n",
+              "p",
+              "uf"
+            ]
+          },
+          {
+            "code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+            "line": 68,
+            "vars": [
+              "i",
+              "n",
+              "p",
+              "tn",
+              "uf"
+            ]
+          },
+          {
+            "code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+            "line": 69,
+            "vars": [
+              "i",
+              "n",
+              "p",
+              "tn",
+              "uf"
+            ]
+          },
+          {
+            "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+            "line": 70,
+            "vars": [
+              "i",
+              "n",
+              "p",
+              "tn"
+            ]
+          },
+          {
+            "code": "p[i][1] = p[i][0] == i",
+            "line": 71,
+            "vars": [
+              "i",
+              "n",
+              "p",
+              "tn"
+            ]
+          },
+          {
+            "code": "p[tn][1] = p[tn][0] == tn",
+            "line": 72,
+            "vars": [
+              "n",
+              "p",
+              "tn"
+            ]
+          },
+          {
+            "code": "c_sw = True",
+            "line": 73,
+            "vars": [
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "if not c_sw: break",
+            "line": 74,
+            "vars": [
+              "c_sw",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 75,
+            "vars": [
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "cnt = 0",
+            "line": 76,
+            "vars": [
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "for i in range(n): cnt += p[i][1]",
+            "line": 77,
+            "vars": [
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "cnt += p[i][1]",
+            "line": 78,
+            "vars": [
+              "p"
+            ]
+          },
+          {
+            "code": "print(cnt)",
+            "line": 79,
+            "vars": [
+              "cnt"
+            ]
+          }
+        ],
+        "liveout": {
+          "c_sw": false,
+          "cnt": false,
+          "i": false,
+          "input": false,
+          "int": false,
+          "m": false,
+          "mod": false,
+          "n": false,
+          "p": false,
+          "sys.stdin.readline": false,
+          "tn": false,
+          "uf": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(m):",
+      "cond": "for i in range(m)",
+      "function": "solve",
+      "header_id": 6,
+      "line": 59,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "solve",
+      "header_id": 9,
+      "line": 62,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "while True:",
+      "cond": "True",
+      "function": "solve",
+      "header_id": 11,
+      "line": 64,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(len(p)):",
+      "cond": "for i in range(len(p))",
+      "function": "solve",
+      "header_id": 13,
+      "line": 66,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "solve",
+      "header_id": 24,
+      "line": 77,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if __name__ == '__main__': solve()",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "solve()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__ == '__main__': solve()",
+      "a_line": 82,
+      "b_code": "solve()",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.n = n",
+      "a_line": 7,
+      "b_code": "self.parents = [-1] * n",
+      "b_line": 8,
+      "function": "AlgUnionFind.__init__"
+    },
+    {
+      "a_code": "if self.parents[x] < 0: return x else: self.parents[x] = self.find(self.parents[x]) return self.parents[x]",
+      "a_line": 11,
+      "b_code": "return x",
+      "b_line": 12,
+      "function": "AlgUnionFind.find"
+    },
+    {
+      "a_code": "if self.parents[x] < 0: return x else: self.parents[x] = self.find(self.parents[x]) return self.parents[x]",
+      "a_line": 11,
+      "b_code": "self.parents[x] = self.find(self.parents[x])",
+      "b_line": 14,
+      "function": "AlgUnionFind.find"
+    },
+    {
+      "a_code": "if self.parents[x] < 0: return x else: self.parents[x] = self.find(self.parents[x]) return self.parents[x]",
+      "a_line": 11,
+      "b_code": "return self.parents[x]",
+      "b_line": 15,
+      "function": "AlgUnionFind.find"
+    },
+    {
+      "a_code": "self.parents[x] = self.find(self.parents[x])",
+      "a_line": 14,
+      "b_code": "return self.parents[x]",
+      "b_line": 15,
+      "function": "AlgUnionFind.find"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "y = self.find(y)",
+      "b_line": 19,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "if x == y: return",
+      "b_line": 21,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 19,
+      "b_code": "if x == y: return",
+      "b_line": 21,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "return",
+      "b_line": 22,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 19,
+      "b_code": "return",
+      "b_line": 22,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if x == y: return",
+      "a_line": 21,
+      "b_code": "return",
+      "b_line": 22,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "b_line": 24,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 19,
+      "b_code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "b_line": 24,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if x == y: return",
+      "a_line": 21,
+      "b_code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "b_line": 24,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "x, y = y, x",
+      "b_line": 25,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 19,
+      "b_code": "x, y = y, x",
+      "b_line": 25,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if x == y: return",
+      "a_line": 21,
+      "b_code": "x, y = y, x",
+      "b_line": 25,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "a_line": 24,
+      "b_code": "x, y = y, x",
+      "b_line": 25,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "self.parents[x] += self.parents[y]",
+      "b_line": 27,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 19,
+      "b_code": "self.parents[x] += self.parents[y]",
+      "b_line": 27,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if x == y: return",
+      "a_line": 21,
+      "b_code": "self.parents[x] += self.parents[y]",
+      "b_line": 27,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "a_line": 24,
+      "b_code": "self.parents[x] += self.parents[y]",
+      "b_line": 27,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 18,
+      "b_code": "self.parents[y] = x",
+      "b_line": 28,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 19,
+      "b_code": "self.parents[y] = x",
+      "b_line": 28,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if x == y: return",
+      "a_line": 21,
+      "b_code": "self.parents[y] = x",
+      "b_line": 28,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "if self.parents[x] > self.parents[y]: x, y = y, x",
+      "a_line": 24,
+      "b_code": "self.parents[y] = x",
+      "b_line": 28,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "self.parents[x] += self.parents[y]",
+      "a_line": 27,
+      "b_code": "self.parents[y] = x",
+      "b_line": 28,
+      "function": "AlgUnionFind.union"
+    },
+    {
+      "a_code": "root = self.find(x)",
+      "a_line": 37,
+      "b_code": "return [i for i in range(self.n) if self.find(i) == root]",
+      "b_line": 38,
+      "function": "AlgUnionFind.members"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "uf = AlgUnionFind(n)",
+      "b_line": 58,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "uf = AlgUnionFind(n)",
+      "b_line": 58,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "uf = AlgUnionFind(n)",
+      "b_line": 58,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "uf = AlgUnionFind(n)",
+      "b_line": 58,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "b_line": 59,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "b_line": 59,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "b_line": 59,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "b_line": 59,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "b_line": 59,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 60,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 60,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 60,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 60,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 60,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "b_line": 60,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 60,
+      "b_code": "uf.union(x-1, y-1)",
+      "b_line": 61,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 62,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 62,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 62,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 62,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 62,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 62,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "p[i] = [p[i]-1, p[i]-1 == i]",
+      "b_line": 63,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "b_line": 64,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "c_sw = False",
+      "b_line": 65,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 66,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "tn = p[i][0]",
+      "b_line": 67,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "tn = p[i][0]",
+      "a_line": 67,
+      "b_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 68,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "tn = p[i][0]",
+      "a_line": 67,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 68,
+      "b_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "b_line": 69,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "tn = p[i][0]",
+      "a_line": 67,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 68,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 69,
+      "b_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "b_line": 70,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "tn = p[i][0]",
+      "a_line": 67,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 68,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 69,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "a_line": 70,
+      "b_code": "p[i][1] = p[i][0] == i",
+      "b_line": 71,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "tn = p[i][0]",
+      "a_line": 67,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 68,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 69,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "a_line": 70,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "p[i][1] = p[i][0] == i",
+      "a_line": 71,
+      "b_code": "p[tn][1] = p[tn][0] == tn",
+      "b_line": 72,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "tn = p[i][0]",
+      "a_line": 67,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 68,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 69,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+      "a_line": 70,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "p[i][1] = p[i][0] == i",
+      "a_line": 71,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "p[tn][1] = p[tn][0] == tn",
+      "a_line": 72,
+      "b_code": "c_sw = True",
+      "b_line": 73,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "if not c_sw: break",
+      "b_line": 74,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "c_sw = False",
+      "a_line": 65,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True",
+      "a_line": 66,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "if not c_sw: break",
+      "a_line": 74,
+      "b_code": "break",
+      "b_line": 75,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "cnt = 0",
+      "b_line": 76,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 76,
+      "b_code": "for i in range(n): cnt += p[i][1]",
+      "b_line": 77,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 76,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): cnt += p[i][1]",
+      "a_line": 77,
+      "b_code": "cnt += p[i][1]",
+      "b_line": 78,
+      "function": "solve"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 54,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 55,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 56,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "p = list(map(int, input().rstrip('\\n').split()))",
+      "a_line": 57,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "uf = AlgUnionFind(n)",
+      "a_line": 58,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(m): x, y = list(map(int, input().rstrip('\\n').split())) uf.union(x-1, y-1)",
+      "a_line": 59,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): p[i] = [p[i]-1, p[i]-1 == i]",
+      "a_line": 62,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "while True: c_sw = False for i in range(len(p)): tn = p[i][0] if not p[i][1] and not p[tn][1]: if uf.same(tn, p[tn][0]): p[tn][0], p[i][0] = p[i][0], p[tn][0] p[i][1] = p[i][0] == i p[tn][1] = p[tn][0] == tn c_sw = True if not c_sw: break",
+      "a_line": 64,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 76,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    },
+    {
+      "a_code": "for i in range(n): cnt += p[i][1]",
+      "a_line": 77,
+      "b_code": "print(cnt)",
+      "b_line": 79,
+      "function": "solve"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped uf.same at line 69",
+      "external attribute call skipped uf.union at line 61",
+      "external attribute call skipped unknown.format at line 50",
+      "external call skipped input at line 56",
+      "external call skipped input at line 57",
+      "external call skipped input at line 60"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped uf.same at line 69",
+    "external attribute call skipped uf.union at line 61",
+    "external attribute call skipped unknown.format at line 50",
+    "external call skipped input at line 56",
+    "external call skipped input at line 57",
+    "external call skipped input at line 60"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 7,
+        "var": "self.n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 7,
+        "var": "self.n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.parents = [-1] * n",
+        "line": 8,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents = [-1] * n",
+        "line": 8,
+        "var": "self.parents"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 10,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents[x] = self.find(self.parents[x])",
+        "line": 14,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.parents[x] = self.find(self.parents[x])",
+        "line": 14,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "self.parents[x] = self.find(self.parents[x])",
+        "line": 14,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 10,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.parents[x] = self.find(self.parents[x])",
+        "line": 14,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self"
+      },
+      "from": {
+        "code": "x = self.find(x)",
+        "line": 18,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "x"
+      },
+      "from": {
+        "code": "x = self.find(x)",
+        "line": 18,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "x = self.find(x)",
+        "line": 18,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self"
+      },
+      "from": {
+        "code": "y = self.find(y)",
+        "line": 19,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "y"
+      },
+      "from": {
+        "code": "y = self.find(y)",
+        "line": 19,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "y = self.find(y)",
+        "line": 19,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find(x)",
+        "line": 18,
+        "var": "x"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find(y)",
+        "line": 19,
+        "var": "y"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find(y)",
+        "line": 19,
+        "var": "y"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents[x] += self.parents[y]",
+        "line": 27,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.parents[x] += self.parents[y]",
+        "line": 27,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "self.parents[x] += self.parents[y]",
+        "line": 27,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.parents[x] += self.parents[y]",
+        "line": 27,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.parents[x] += self.parents[y]",
+        "line": 27,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 17,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents[y] = x",
+        "line": 28,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.parents[y] = x",
+        "line": 28,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = y, x",
+        "line": 25,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.parents[y] = x",
+        "line": 28,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def members(self, x):",
+        "line": 36,
+        "var": "self"
+      },
+      "from": {
+        "code": "root = self.find(x)",
+        "line": 37,
+        "var": "root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def members(self, x):",
+        "line": 36,
+        "var": "x"
+      },
+      "from": {
+        "code": "root = self.find(x)",
+        "line": 37,
+        "var": "root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def members(self, x):",
+        "line": 36,
+        "var": "self.n"
+      },
+      "from": {
+        "code": "root = self.find(x)",
+        "line": 37,
+        "var": "root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "input = sys.stdin.readline",
+        "line": 54,
+        "var": "sys.stdin.readline"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 54,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 54,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "mod = 10 ** 9 + 7",
+        "line": 55,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p = list(map(int, input().rstrip('\\n').split()))",
+        "line": 57,
+        "var": "int"
+      },
+      "from": {
+        "code": "p = list(map(int, input().rstrip('\\n').split()))",
+        "line": 57,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "p = list(map(int, input().rstrip('\\n').split()))",
+        "line": 57,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "uf = AlgUnionFind(n)",
+        "line": 58,
+        "var": "int"
+      },
+      "from": {
+        "code": "uf = AlgUnionFind(n)",
+        "line": 58,
+        "var": "uf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m = list(map(int, input().rstrip('\\n').split()))",
+        "line": 56,
+        "var": "n"
+      },
+      "from": {
+        "code": "uf = AlgUnionFind(n)",
+        "line": 58,
+        "var": "uf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "uf = AlgUnionFind(n)",
+        "line": 58,
+        "var": "uf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+        "line": 60,
+        "var": "int"
+      },
+      "from": {
+        "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+        "line": 60,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+        "line": 60,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+        "line": 60,
+        "var": "int"
+      },
+      "from": {
+        "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+        "line": 60,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "x, y = list(map(int, input().rstrip('\\n').split()))",
+        "line": 60,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "i"
+      },
+      "from": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "int"
+      },
+      "from": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p = list(map(int, input().rstrip('\\n').split()))",
+        "line": 57,
+        "var": "p"
+      },
+      "from": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "c_sw = False",
+        "line": 65,
+        "var": "c_sw"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "i"
+      },
+      "from": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "tn"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "int"
+      },
+      "from": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "tn"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "p"
+      },
+      "from": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "tn"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c_sw = False",
+        "line": 65,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "tn"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "i"
+      },
+      "from": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "int"
+      },
+      "from": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[i] = [p[i]-1, p[i]-1 == i]",
+        "line": 63,
+        "var": "p"
+      },
+      "from": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c_sw = False",
+        "line": 65,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "i"
+      },
+      "from": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "int"
+      },
+      "from": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[tn][0], p[i][0] = p[i][0], p[tn][0]",
+        "line": 70,
+        "var": "p"
+      },
+      "from": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c_sw = False",
+        "line": 65,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "i"
+      },
+      "from": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "int"
+      },
+      "from": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[i][1] = p[i][0] == i",
+        "line": 71,
+        "var": "p"
+      },
+      "from": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "tn"
+      },
+      "from": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c_sw = False",
+        "line": 65,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve():",
+        "line": 53,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "c_sw = True",
+        "line": 73,
+        "var": "c_sw"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c_sw = True",
+        "line": 73,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "cnt = 0",
+        "line": 76,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "i"
+      },
+      "from": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "int"
+      },
+      "from": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[tn][1] = p[tn][0] == tn",
+        "line": 72,
+        "var": "p"
+      },
+      "from": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tn = p[i][0]",
+        "line": 67,
+        "var": "tn"
+      },
+      "from": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c_sw = True",
+        "line": 73,
+        "var": "c_sw"
+      },
+      "from": {
+        "code": "cnt += p[i][1]",
+        "line": 78,
+        "var": "cnt"
+      },
+      "label": "negative"
+    }
+  ]
+}

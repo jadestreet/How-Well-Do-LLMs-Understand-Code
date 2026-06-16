@@ -1,0 +1,684 @@
+{
+  "cfg_statements": [
+    {
+      "code": "letters = [c.lower() for c in s if c.isalnum()]",
+      "dead": false,
+      "function": "clean",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "return letters",
+      "dead": false,
+      "function": "clean",
+      "kind": "Return",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "if s is None: return False",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "If",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 2
+    },
+    {
+      "code": "letters = clean(s)",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 3
+    },
+    {
+      "code": "i, j = 0, len(letters) - 1",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 4
+    },
+    {
+      "code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "While",
+      "line": 13,
+      "node_id": 5
+    },
+    {
+      "code": "if letters[i] != letters[j]: return False",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "If",
+      "line": 14,
+      "node_id": 6
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 7
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "AugAssign",
+      "line": 16,
+      "node_id": 8
+    },
+    {
+      "code": "j -= 1",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "AugAssign",
+      "line": 17,
+      "node_id": 9
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "is_palindrome",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 10
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "letters = [c.lower() for c in s if c.isalnum()]",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "return letters",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "if s is None: return False",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "letters = clean(s)",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "i, j = 0, len(letters) - 1",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "if letters[i] != letters[j]: return False",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "j -= 1",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 18
+    }
+  ],
+  "file": "SemBench/data/python/code/8.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 6,
+      "lineno": 4,
+      "name": "clean",
+      "variables": [
+        "letters",
+        "s"
+      ]
+    },
+    {
+      "calls": [
+        "clean"
+      ],
+      "end_lineno": 18,
+      "lineno": 8,
+      "name": "is_palindrome",
+      "variables": [
+        "i",
+        "j",
+        "letters",
+        "s"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "clean": {
+        "base_liveout": [
+          "letters"
+        ],
+        "live_before": [
+          {
+            "code": "letters = [c.lower() for c in s if c.isalnum()]",
+            "line": 5,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "return letters",
+            "line": 6,
+            "vars": [
+              "letters"
+            ]
+          }
+        ],
+        "liveout": {
+          "letters": true,
+          "s": false
+        },
+        "return_vars": [
+          "letters"
+        ]
+      },
+      "is_palindrome": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if s is None: return False",
+            "line": 9,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 10,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "letters = clean(s)",
+            "line": 11,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "i, j = 0, len(letters) - 1",
+            "line": 12,
+            "vars": [
+              "letters"
+            ]
+          },
+          {
+            "code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+            "line": 13,
+            "vars": [
+              "i",
+              "j",
+              "letters"
+            ]
+          },
+          {
+            "code": "if letters[i] != letters[j]: return False",
+            "line": 14,
+            "vars": [
+              "i",
+              "j",
+              "letters"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 15,
+            "vars": []
+          },
+          {
+            "code": "i += 1",
+            "line": 16,
+            "vars": []
+          },
+          {
+            "code": "j -= 1",
+            "line": 17,
+            "vars": []
+          },
+          {
+            "code": "return True",
+            "line": 18,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "j": false,
+          "letters": false,
+          "s": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while i < j:",
+      "cond": "i < j",
+      "function": "is_palindrome",
+      "header_id": 5,
+      "line": 13,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "letters = [c.lower() for c in s if c.isalnum()]",
+      "a_line": 5,
+      "b_code": "return letters",
+      "b_line": 6,
+      "function": "clean"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "return False",
+      "b_line": 10,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "letters = clean(s)",
+      "b_line": 11,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "i, j = 0, len(letters) - 1",
+      "b_line": 12,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "i, j = 0, len(letters) - 1",
+      "b_line": 12,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "b_line": 13,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "b_line": 13,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i, j = 0, len(letters) - 1",
+      "a_line": 12,
+      "b_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "b_line": 13,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "if letters[i] != letters[j]: return False",
+      "b_line": 14,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "if letters[i] != letters[j]: return False",
+      "b_line": 14,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i, j = 0, len(letters) - 1",
+      "a_line": 12,
+      "b_code": "if letters[i] != letters[j]: return False",
+      "b_line": 14,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "a_line": 13,
+      "b_code": "if letters[i] != letters[j]: return False",
+      "b_line": 14,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "return False",
+      "b_line": 15,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "return False",
+      "b_line": 15,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i, j = 0, len(letters) - 1",
+      "a_line": 12,
+      "b_code": "return False",
+      "b_line": 15,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "a_line": 13,
+      "b_code": "return False",
+      "b_line": 15,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if letters[i] != letters[j]: return False",
+      "a_line": 14,
+      "b_code": "return False",
+      "b_line": 15,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "i += 1",
+      "b_line": 16,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "i += 1",
+      "b_line": 16,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i, j = 0, len(letters) - 1",
+      "a_line": 12,
+      "b_code": "i += 1",
+      "b_line": 16,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "a_line": 13,
+      "b_code": "i += 1",
+      "b_line": 16,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if letters[i] != letters[j]: return False",
+      "a_line": 14,
+      "b_code": "i += 1",
+      "b_line": 16,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "j -= 1",
+      "b_line": 17,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "j -= 1",
+      "b_line": 17,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i, j = 0, len(letters) - 1",
+      "a_line": 12,
+      "b_code": "j -= 1",
+      "b_line": 17,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "a_line": 13,
+      "b_code": "j -= 1",
+      "b_line": 17,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if letters[i] != letters[j]: return False",
+      "a_line": 14,
+      "b_code": "j -= 1",
+      "b_line": 17,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i += 1",
+      "a_line": 16,
+      "b_code": "j -= 1",
+      "b_line": 17,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "if s is None: return False",
+      "a_line": 9,
+      "b_code": "return True",
+      "b_line": 18,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "letters = clean(s)",
+      "a_line": 11,
+      "b_code": "return True",
+      "b_line": 18,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "i, j = 0, len(letters) - 1",
+      "a_line": 12,
+      "b_code": "return True",
+      "b_line": 18,
+      "function": "is_palindrome"
+    },
+    {
+      "a_code": "while i < j: if letters[i] != letters[j]: return False i += 1 j -= 1",
+      "a_line": 13,
+      "b_code": "return True",
+      "b_line": 18,
+      "function": "is_palindrome"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def clean(s:",
+        "line": 4,
+        "var": "s"
+      },
+      "from": {
+        "code": "letters = [c.lower() for c in s if c.isalnum()]",
+        "line": 5,
+        "var": "letters"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_palindrome(s:",
+        "line": 8,
+        "var": "s"
+      },
+      "from": {
+        "code": "letters = clean(s)",
+        "line": 11,
+        "var": "letters"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_palindrome(s:",
+        "line": 8,
+        "var": "i"
+      },
+      "from": {
+        "code": "letters = clean(s)",
+        "line": 11,
+        "var": "letters"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "letters = clean(s)",
+        "line": 11,
+        "var": "letters"
+      },
+      "from": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_palindrome(s:",
+        "line": 8,
+        "var": "s"
+      },
+      "from": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_palindrome(s:",
+        "line": 8,
+        "var": "j"
+      },
+      "from": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "letters = clean(s)",
+        "line": 11,
+        "var": "letters"
+      },
+      "from": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_palindrome(s:",
+        "line": 8,
+        "var": "s"
+      },
+      "from": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "j"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = 0, len(letters) - 1",
+        "line": 12,
+        "var": "j"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 16,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "j -= 1",
+        "line": 17,
+        "var": "j"
+      },
+      "label": "negative"
+    }
+  ]
+}

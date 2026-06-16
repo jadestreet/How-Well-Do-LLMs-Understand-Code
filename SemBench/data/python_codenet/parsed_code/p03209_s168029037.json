@@ -1,0 +1,5170 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys, re",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "from collections import deque, defaultdict, Counter",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 4,
+      "node_id": 4
+    },
+    {
+      "code": "from operator import itemgetter, mul",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 5,
+      "node_id": 5
+    },
+    {
+      "code": "from copy import deepcopy",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 6,
+      "node_id": 6
+    },
+    {
+      "code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 7,
+      "node_id": 7
+    },
+    {
+      "code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 8,
+      "node_id": 8
+    },
+    {
+      "code": "from heapq import heappush, heappop",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 9,
+      "node_id": 9
+    },
+    {
+      "code": "from functools import reduce",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 10,
+      "node_id": 10
+    },
+    {
+      "code": "sys.setrecursionlimit(10 ** 9)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 16,
+      "node_id": 11
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 12
+    },
+    {
+      "code": "mod = 10 ** 9 + 7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 13
+    },
+    {
+      "code": "from decimal import *",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 20,
+      "node_id": 14
+    },
+    {
+      "code": "N, X = MAP()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 15
+    },
+    {
+      "code": "p = [0]*(N+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 16
+    },
+    {
+      "code": "p[0] = 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 17
+    },
+    {
+      "code": "q = [0]*(N+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 18
+    },
+    {
+      "code": "q[0] = 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 19
+    },
+    {
+      "code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 31,
+      "node_id": 20
+    },
+    {
+      "code": "p[i] = 2*p[i-1] + 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 21
+    },
+    {
+      "code": "q[i] = 2*q[i-1] + 3",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 22
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 23
+    },
+    {
+      "code": "i = N",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 24
+    },
+    {
+      "code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 37,
+      "node_id": 25
+    },
+    {
+      "code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 38,
+      "node_id": 26
+    },
+    {
+      "code": "i -= 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 39,
+      "node_id": 27
+    },
+    {
+      "code": "X -= 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 40,
+      "node_id": 28
+    },
+    {
+      "code": "if 0 < X: X -= q[i] ans += p[i]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 41,
+      "node_id": 29
+    },
+    {
+      "code": "X -= q[i]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 42,
+      "node_id": 30
+    },
+    {
+      "code": "ans += p[i]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 43,
+      "node_id": 31
+    },
+    {
+      "code": "if 0 < X: X -= 1 ans += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 44,
+      "node_id": 32
+    },
+    {
+      "code": "X -= 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 45,
+      "node_id": 33
+    },
+    {
+      "code": "ans += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 46,
+      "node_id": 34
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 48,
+      "node_id": 35
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "function": "input",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "function": "INT",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "function": "MAP",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "function": "LIST",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return zip(*(MAP() for _ in range(n)))",
+      "dead": false,
+      "function": "ZIP",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys, re",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "from collections import deque, defaultdict, Counter",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "from operator import itemgetter, mul",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "from copy import deepcopy",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "from heapq import heappush, heappop",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "from functools import reduce",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return zip(*(MAP() for _ in range(n)))",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "sys.setrecursionlimit(10 ** 9)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "mod = 10 ** 9 + 7",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "from decimal import *",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "N, X = MAP()",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "p = [0]*(N+1)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "p[0] = 1",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "q = [0]*(N+1)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "q[0] = 1",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "p[i] = 2*p[i-1] + 1",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "q[i] = 2*q[i-1] + 3",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "i = N",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "i -= 1",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "X -= 1",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "if 0 < X: X -= q[i] ans += p[i]",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "X -= q[i]",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "ans += p[i]",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "if 0 < X: X -= 1 ans += 1",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "X -= 1",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "ans += 1",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 48
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03209_s168029037.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 11,
+      "lineno": 11,
+      "name": "input",
+      "variables": []
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 12,
+      "lineno": 12,
+      "name": "INT",
+      "variables": []
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 13,
+      "lineno": 13,
+      "name": "MAP",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 14,
+      "lineno": 14,
+      "name": "LIST",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [
+        "MAP"
+      ],
+      "end_lineno": 15,
+      "lineno": 15,
+      "name": "ZIP",
+      "variables": [
+        "n"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "INT": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return int(input())",
+            "line": 12,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LIST": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int, input().split()))",
+            "line": 14,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "MAP": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return map(int, input().split())",
+            "line": 13,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "ZIP": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return zip(*(MAP() for _ in range(n)))",
+            "line": 15,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys, re",
+            "line": 1,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from collections import deque, defaultdict, Counter",
+            "line": 2,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+            "line": 3,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+            "line": 4,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from operator import itemgetter, mul",
+            "line": 5,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from copy import deepcopy",
+            "line": 6,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from string import ascii_lowercase, ascii_uppercase, digits",
+            "line": 7,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from bisect import bisect, bisect_left, insort, insort_left",
+            "line": 8,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from heapq import heappush, heappop",
+            "line": 9,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "from functools import reduce",
+            "line": 10,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10 ** 9)",
+            "line": 16,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "INF = float('inf')",
+            "line": 17,
+            "vars": []
+          },
+          {
+            "code": "mod = 10 ** 9 + 7",
+            "line": 18,
+            "vars": []
+          },
+          {
+            "code": "from decimal import *",
+            "line": 20,
+            "vars": []
+          },
+          {
+            "code": "N, X = MAP()",
+            "line": 24,
+            "vars": []
+          },
+          {
+            "code": "p = [0]*(N+1)",
+            "line": 26,
+            "vars": [
+              "N",
+              "X"
+            ]
+          },
+          {
+            "code": "p[0] = 1",
+            "line": 27,
+            "vars": [
+              "N",
+              "X"
+            ]
+          },
+          {
+            "code": "q = [0]*(N+1)",
+            "line": 28,
+            "vars": [
+              "N",
+              "X",
+              "p"
+            ]
+          },
+          {
+            "code": "q[0] = 1",
+            "line": 29,
+            "vars": [
+              "N",
+              "X",
+              "p"
+            ]
+          },
+          {
+            "code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+            "line": 31,
+            "vars": [
+              "N",
+              "X",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "p[i] = 2*p[i-1] + 1",
+            "line": 32,
+            "vars": [
+              "N",
+              "X",
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "q[i] = 2*q[i-1] + 3",
+            "line": 33,
+            "vars": [
+              "N",
+              "X",
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 35,
+            "vars": [
+              "N",
+              "X",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "i = N",
+            "line": 36,
+            "vars": [
+              "N",
+              "X",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+            "line": 37,
+            "vars": [
+              "X",
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "while 0 < X < q[i]: i -= 1 X -= 1",
+            "line": 38,
+            "vars": [
+              "X",
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "i -= 1",
+            "line": 39,
+            "vars": [
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "X -= 1",
+            "line": 40,
+            "vars": [
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "if 0 < X: X -= q[i] ans += p[i]",
+            "line": 41,
+            "vars": [
+              "X",
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "X -= q[i]",
+            "line": 42,
+            "vars": [
+              "i",
+              "p",
+              "q"
+            ]
+          },
+          {
+            "code": "ans += p[i]",
+            "line": 43,
+            "vars": [
+              "X",
+              "i",
+              "p"
+            ]
+          },
+          {
+            "code": "if 0 < X: X -= 1 ans += 1",
+            "line": 44,
+            "vars": [
+              "X"
+            ]
+          },
+          {
+            "code": "X -= 1",
+            "line": 45,
+            "vars": []
+          },
+          {
+            "code": "ans += 1",
+            "line": 46,
+            "vars": []
+          },
+          {
+            "code": "print(ans)",
+            "line": 48,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "N": false,
+          "X": false,
+          "ans": false,
+          "i": false,
+          "mod": false,
+          "p": false,
+          "q": false,
+          "sys": false
+        },
+        "return_vars": []
+      },
+      "input": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().strip()",
+            "line": 11,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, N+1):",
+      "cond": "for i in range(1, N+1)",
+      "function": "__module__",
+      "header_id": 20,
+      "line": 31,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while 0 < X:",
+      "cond": "0 < X",
+      "function": "__module__",
+      "header_id": 25,
+      "line": 37,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while 0 < X < q[i]:",
+      "cond": "0 < X < q[i]",
+      "function": "__module__",
+      "header_id": 26,
+      "line": 38,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from collections import deque, defaultdict, Counter",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from operator import itemgetter, mul",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from copy import deepcopy",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from copy import deepcopy",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from copy import deepcopy",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from copy import deepcopy",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "from copy import deepcopy",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "from functools import reduce",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "sys.setrecursionlimit(10 ** 9)",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "INF = float('inf')",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "mod = 10 ** 9 + 7",
+      "b_line": 18,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "from decimal import *",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "N, X = MAP()",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "p = [0]*(N+1)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "p[0] = 1",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "q = [0]*(N+1)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "q[0] = 1",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "p[i] = 2*p[i-1] + 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[i] = 2*p[i-1] + 1",
+      "a_line": 32,
+      "b_code": "q[i] = 2*q[i-1] + 3",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "ans = 0",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "i = N",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "i -= 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i -= 1",
+      "a_line": 39,
+      "b_code": "X -= 1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "a_line": 41,
+      "b_code": "X -= q[i]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "a_line": 41,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X -= q[i]",
+      "a_line": 42,
+      "b_code": "ans += p[i]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "a_line": 41,
+      "b_code": "if 0 < X: X -= 1 ans += 1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "a_line": 41,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= 1 ans += 1",
+      "a_line": 44,
+      "b_code": "X -= 1",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X < q[i]: i -= 1 X -= 1",
+      "a_line": 38,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= q[i] ans += p[i]",
+      "a_line": 41,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if 0 < X: X -= 1 ans += 1",
+      "a_line": 44,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X -= 1",
+      "a_line": 45,
+      "b_code": "ans += 1",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, re",
+      "a_line": 1,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque, defaultdict, Counter",
+      "a_line": 2,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import ceil, sqrt, hypot, factorial, pi, sin, cos, tan, asin, acos, atan, radians, degrees, log2, gcd",
+      "a_line": 3,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby",
+      "a_line": 4,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import itemgetter, mul",
+      "a_line": 5,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 6,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from string import ascii_lowercase, ascii_uppercase, digits",
+      "a_line": 7,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_left, insort, insort_left",
+      "a_line": 8,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 9,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import reduce",
+      "a_line": 10,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10 ** 9)",
+      "a_line": 16,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 17,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10 ** 9 + 7",
+      "a_line": 18,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import *",
+      "a_line": 20,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, X = MAP()",
+      "a_line": 24,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = [0]*(N+1)",
+      "a_line": 26,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p[0] = 1",
+      "a_line": 27,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q = [0]*(N+1)",
+      "a_line": 28,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "q[0] = 1",
+      "a_line": 29,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N+1): p[i] = 2*p[i-1] + 1 q[i] = 2*q[i-1] + 3",
+      "a_line": 31,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 35,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "i = N",
+      "a_line": 36,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while 0 < X: while 0 < X < q[i]: i -= 1 X -= 1 if 0 < X: X -= q[i] ans += p[i] if 0 < X: X -= 1 ans += 1",
+      "a_line": 37,
+      "b_code": "print(ans)",
+      "b_line": 48,
+      "function": "__module__"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 16",
+      "external attribute call skipped sys.stdin.readline at line 11"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 16",
+    "external attribute call skipped sys.stdin.readline at line 11"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "N"
+      },
+      "from": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "mod = 10 ** 9 + 7",
+        "line": 18,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "N, X = MAP()",
+        "line": 24,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "N, X = MAP()",
+        "line": 24,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, X = MAP()",
+        "line": 24,
+        "var": "N"
+      },
+      "from": {
+        "code": "p = [0]*(N+1)",
+        "line": 26,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "p = [0]*(N+1)",
+        "line": 26,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "p[0] = 1",
+        "line": 27,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, X = MAP()",
+        "line": 24,
+        "var": "N"
+      },
+      "from": {
+        "code": "q = [0]*(N+1)",
+        "line": 28,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "q = [0]*(N+1)",
+        "line": 28,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "q[0] = 1",
+        "line": 29,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p[i] = 2*p[i-1] + 1",
+        "line": 32,
+        "var": "i"
+      },
+      "from": {
+        "code": "p[i] = 2*p[i-1] + 1",
+        "line": 32,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[0] = 1",
+        "line": 27,
+        "var": "p"
+      },
+      "from": {
+        "code": "p[i] = 2*p[i-1] + 1",
+        "line": 32,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "p[i] = 2*p[i-1] + 1",
+        "line": 32,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q[i] = 2*q[i-1] + 3",
+        "line": 33,
+        "var": "i"
+      },
+      "from": {
+        "code": "q[i] = 2*q[i-1] + 3",
+        "line": 33,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q[0] = 1",
+        "line": 29,
+        "var": "q"
+      },
+      "from": {
+        "code": "q[i] = 2*q[i-1] + 3",
+        "line": 33,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "q[i] = 2*q[i-1] + 3",
+        "line": 33,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, X = MAP()",
+        "line": 24,
+        "var": "N"
+      },
+      "from": {
+        "code": "i = N",
+        "line": 36,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "i = N",
+        "line": 36,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "i -= 1",
+        "line": 39,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "X -= 1",
+        "line": 40,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i -= 1",
+        "line": 39,
+        "var": "i"
+      },
+      "from": {
+        "code": "X -= q[i]",
+        "line": 42,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q[i] = 2*q[i-1] + 3",
+        "line": 33,
+        "var": "q"
+      },
+      "from": {
+        "code": "X -= q[i]",
+        "line": 42,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "X -= q[i]",
+        "line": 42,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i -= 1",
+        "line": 39,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += p[i]",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "p[i] = 2*p[i-1] + 1",
+        "line": 32,
+        "var": "p"
+      },
+      "from": {
+        "code": "ans += p[i]",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans += p[i]",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "X -= 1",
+        "line": 45,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 17,
+        "var": "INF"
+      },
+      "from": {
+        "code": "ans += 1",
+        "line": 46,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

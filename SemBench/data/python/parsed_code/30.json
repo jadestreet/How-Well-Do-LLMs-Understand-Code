@@ -1,0 +1,3556 @@
+{
+  "cfg_statements": [
+    {
+      "code": "res = []",
+      "dead": false,
+      "function": "neighbors",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "dead": false,
+      "function": "neighbors",
+      "kind": "For",
+      "line": 9,
+      "node_id": 2
+    },
+    {
+      "code": "nr, nc = r + dr, c + dc",
+      "dead": false,
+      "function": "neighbors",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "dead": false,
+      "function": "neighbors",
+      "kind": "If",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "res.append((nr, nc))",
+      "dead": false,
+      "function": "neighbors",
+      "kind": "Expr",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "neighbors",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 6
+    },
+    {
+      "code": "return abs(a[0]-b[0]) + abs(a[1]-b[1])",
+      "dead": false,
+      "function": "heuristic",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "cur = goal",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "path = [cur]",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "While",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "cur = came_from[cur]",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "path.append(cur)",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "Expr",
+      "line": 23,
+      "node_id": 5
+    },
+    {
+      "code": "path.reverse()",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "Expr",
+      "line": 24,
+      "node_id": 6
+    },
+    {
+      "code": "return path",
+      "dead": false,
+      "function": "reconstruct",
+      "kind": "Return",
+      "line": 25,
+      "node_id": 7
+    },
+    {
+      "code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "dead": false,
+      "function": "astar",
+      "kind": "If",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "astar",
+      "kind": "Return",
+      "line": 29,
+      "node_id": 2
+    },
+    {
+      "code": "open_heap = []",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 3
+    },
+    {
+      "code": "heapq.heappush(open_heap, (0, start))",
+      "dead": false,
+      "function": "astar",
+      "kind": "Expr",
+      "line": 31,
+      "node_id": 4
+    },
+    {
+      "code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "dead": false,
+      "function": "astar",
+      "kind": "AnnAssign",
+      "line": 32,
+      "node_id": 5
+    },
+    {
+      "code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "dead": false,
+      "function": "astar",
+      "kind": "AnnAssign",
+      "line": 33,
+      "node_id": 6
+    },
+    {
+      "code": "closed = set()",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 7
+    },
+    {
+      "code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "function": "astar",
+      "kind": "While",
+      "line": 35,
+      "node_id": 8
+    },
+    {
+      "code": "_, u = heapq.heappop(open_heap)",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 9
+    },
+    {
+      "code": "if u in closed: continue",
+      "dead": false,
+      "function": "astar",
+      "kind": "If",
+      "line": 37,
+      "node_id": 10
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "astar",
+      "kind": "Continue",
+      "line": 38,
+      "node_id": 11
+    },
+    {
+      "code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "dead": false,
+      "function": "astar",
+      "kind": "If",
+      "line": 39,
+      "node_id": 12
+    },
+    {
+      "code": "return reconstruct(came_from, start, goal)",
+      "dead": false,
+      "function": "astar",
+      "kind": "Return",
+      "line": 40,
+      "node_id": 13
+    },
+    {
+      "code": "closed.add(u)",
+      "dead": false,
+      "function": "astar",
+      "kind": "Expr",
+      "line": 41,
+      "node_id": 14
+    },
+    {
+      "code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "function": "astar",
+      "kind": "For",
+      "line": 42,
+      "node_id": 15
+    },
+    {
+      "code": "tentative = g[u] + 1",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 16
+    },
+    {
+      "code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "dead": false,
+      "function": "astar",
+      "kind": "If",
+      "line": 44,
+      "node_id": 17
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "astar",
+      "kind": "Continue",
+      "line": 45,
+      "node_id": 18
+    },
+    {
+      "code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "function": "astar",
+      "kind": "If",
+      "line": 46,
+      "node_id": 19
+    },
+    {
+      "code": "came_from[v] = u",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 20
+    },
+    {
+      "code": "g[v] = tentative",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 21
+    },
+    {
+      "code": "f = tentative + heuristic(v, goal)",
+      "dead": false,
+      "function": "astar",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 22
+    },
+    {
+      "code": "heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "function": "astar",
+      "kind": "Expr",
+      "line": 50,
+      "node_id": 23
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "astar",
+      "kind": "Return",
+      "line": 51,
+      "node_id": 24
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "res = []",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "nr, nc = r + dr, c + dc",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "res.append((nr, nc))",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return abs(a[0]-b[0]) + abs(a[1]-b[1])",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "cur = goal",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "path = [cur]",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "cur = came_from[cur]",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "path.append(cur)",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "path.reverse()",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "return path",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "open_heap = []",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "heapq.heappush(open_heap, (0, start))",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "closed = set()",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "_, u = heapq.heappop(open_heap)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "if u in closed: continue",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "return reconstruct(came_from, start, goal)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "closed.add(u)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "tentative = g[u] + 1",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "came_from[v] = u",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "g[v] = tentative",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "f = tentative + heuristic(v, goal)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "heapq.heappush(open_heap, (f, v))",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 51
+    }
+  ],
+  "file": "SemBench/data/python/code/30.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 13,
+      "lineno": 7,
+      "name": "neighbors",
+      "variables": [
+        "c",
+        "dc",
+        "dr",
+        "grid",
+        "nc",
+        "nr",
+        "r",
+        "res"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 15,
+      "name": "heuristic",
+      "variables": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 25,
+      "lineno": 18,
+      "name": "reconstruct",
+      "variables": [
+        "came_from",
+        "cur",
+        "goal",
+        "path",
+        "start"
+      ]
+    },
+    {
+      "calls": [
+        "heuristic",
+        "neighbors",
+        "reconstruct"
+      ],
+      "end_lineno": 51,
+      "lineno": 27,
+      "name": "astar",
+      "variables": [
+        "_",
+        "came_from",
+        "closed",
+        "f",
+        "g",
+        "goal",
+        "grid",
+        "heapq",
+        "open_heap",
+        "start",
+        "tentative",
+        "u",
+        "v"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "astar": {
+        "base_liveout": [
+          "came_from",
+          "goal",
+          "start"
+        ],
+        "live_before": [
+          {
+            "code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+            "line": 28,
+            "vars": [
+              "goal",
+              "grid",
+              "heapq",
+              "start"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 29,
+            "vars": [
+              "goal",
+              "grid",
+              "heapq",
+              "start"
+            ]
+          },
+          {
+            "code": "open_heap = []",
+            "line": 30,
+            "vars": [
+              "goal",
+              "grid",
+              "heapq",
+              "start"
+            ]
+          },
+          {
+            "code": "heapq.heappush(open_heap, (0, start))",
+            "line": 31,
+            "vars": [
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start"
+            ]
+          },
+          {
+            "code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+            "line": 32,
+            "vars": [
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start"
+            ]
+          },
+          {
+            "code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+            "line": 33,
+            "vars": [
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start"
+            ]
+          },
+          {
+            "code": "closed = set()",
+            "line": 34,
+            "vars": [
+              "came_from",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start"
+            ]
+          },
+          {
+            "code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+            "line": 35,
+            "vars": [
+              "came_from",
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start"
+            ]
+          },
+          {
+            "code": "_, u = heapq.heappop(open_heap)",
+            "line": 36,
+            "vars": [
+              "came_from",
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start"
+            ]
+          },
+          {
+            "code": "if u in closed: continue",
+            "line": 37,
+            "vars": [
+              "came_from",
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start",
+              "u"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 38,
+            "vars": [
+              "came_from",
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start",
+              "u"
+            ]
+          },
+          {
+            "code": "if u == goal: return reconstruct(came_from, start, goal)",
+            "line": 39,
+            "vars": [
+              "came_from",
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start",
+              "u"
+            ]
+          },
+          {
+            "code": "return reconstruct(came_from, start, goal)",
+            "line": 40,
+            "vars": [
+              "came_from",
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "start",
+              "u"
+            ]
+          },
+          {
+            "code": "closed.add(u)",
+            "line": 41,
+            "vars": [
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "u"
+            ]
+          },
+          {
+            "code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+            "line": 42,
+            "vars": [
+              "closed",
+              "g",
+              "goal",
+              "grid",
+              "heapq",
+              "open_heap",
+              "u"
+            ]
+          },
+          {
+            "code": "tentative = g[u] + 1",
+            "line": 43,
+            "vars": [
+              "closed",
+              "g",
+              "goal",
+              "heapq",
+              "open_heap",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+            "line": 44,
+            "vars": [
+              "closed",
+              "g",
+              "goal",
+              "heapq",
+              "open_heap",
+              "tentative",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 45,
+            "vars": [
+              "g",
+              "goal",
+              "heapq",
+              "open_heap",
+              "tentative",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+            "line": 46,
+            "vars": [
+              "g",
+              "goal",
+              "heapq",
+              "open_heap",
+              "tentative",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "came_from[v] = u",
+            "line": 47,
+            "vars": [
+              "goal",
+              "heapq",
+              "open_heap",
+              "tentative",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "g[v] = tentative",
+            "line": 48,
+            "vars": [
+              "goal",
+              "heapq",
+              "open_heap",
+              "tentative",
+              "v"
+            ]
+          },
+          {
+            "code": "f = tentative + heuristic(v, goal)",
+            "line": 49,
+            "vars": [
+              "goal",
+              "heapq",
+              "open_heap",
+              "tentative",
+              "v"
+            ]
+          },
+          {
+            "code": "heapq.heappush(open_heap, (f, v))",
+            "line": 50,
+            "vars": [
+              "f",
+              "heapq",
+              "open_heap",
+              "v"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 51,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "_": false,
+          "came_from": true,
+          "closed": false,
+          "f": false,
+          "g": false,
+          "goal": true,
+          "grid": false,
+          "heapq": false,
+          "open_heap": false,
+          "start": true,
+          "tentative": false,
+          "u": false,
+          "v": false
+        },
+        "return_vars": [
+          "came_from",
+          "goal",
+          "start"
+        ]
+      },
+      "heuristic": {
+        "base_liveout": [
+          "a",
+          "b"
+        ],
+        "live_before": [
+          {
+            "code": "return abs(a[0]-b[0]) + abs(a[1]-b[1])",
+            "line": 16,
+            "vars": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": true
+        },
+        "return_vars": [
+          "a",
+          "b"
+        ]
+      },
+      "neighbors": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "res = []",
+            "line": 8,
+            "vars": [
+              "c",
+              "grid",
+              "r"
+            ]
+          },
+          {
+            "code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+            "line": 9,
+            "vars": [
+              "c",
+              "grid",
+              "r",
+              "res"
+            ]
+          },
+          {
+            "code": "nr, nc = r + dr, c + dc",
+            "line": 10,
+            "vars": [
+              "c",
+              "dc",
+              "dr",
+              "grid",
+              "r",
+              "res"
+            ]
+          },
+          {
+            "code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+            "line": 11,
+            "vars": [
+              "grid",
+              "nc",
+              "nr",
+              "res"
+            ]
+          },
+          {
+            "code": "res.append((nr, nc))",
+            "line": 12,
+            "vars": [
+              "nc",
+              "nr",
+              "res"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 13,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "c": false,
+          "dc": false,
+          "dr": false,
+          "grid": false,
+          "nc": false,
+          "nr": false,
+          "r": false,
+          "res": true
+        },
+        "return_vars": [
+          "res"
+        ]
+      },
+      "reconstruct": {
+        "base_liveout": [
+          "path"
+        ],
+        "live_before": [
+          {
+            "code": "cur = goal",
+            "line": 19,
+            "vars": [
+              "came_from",
+              "goal",
+              "start"
+            ]
+          },
+          {
+            "code": "path = [cur]",
+            "line": 20,
+            "vars": [
+              "came_from",
+              "cur",
+              "start"
+            ]
+          },
+          {
+            "code": "while cur != start: cur = came_from[cur] path.append(cur)",
+            "line": 21,
+            "vars": [
+              "came_from",
+              "cur",
+              "path",
+              "start"
+            ]
+          },
+          {
+            "code": "cur = came_from[cur]",
+            "line": 22,
+            "vars": [
+              "came_from",
+              "cur",
+              "path"
+            ]
+          },
+          {
+            "code": "path.append(cur)",
+            "line": 23,
+            "vars": [
+              "cur",
+              "path"
+            ]
+          },
+          {
+            "code": "path.reverse()",
+            "line": 24,
+            "vars": [
+              "path"
+            ]
+          },
+          {
+            "code": "return path",
+            "line": 25,
+            "vars": [
+              "path"
+            ]
+          }
+        ],
+        "liveout": {
+          "came_from": false,
+          "cur": false,
+          "goal": false,
+          "path": true,
+          "start": false
+        },
+        "return_vars": [
+          "path"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while open_heap:",
+      "cond": "open_heap",
+      "function": "astar",
+      "header_id": 8,
+      "line": 35,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for v in neighbors(grid, *u):",
+      "cond": "for v in neighbors(grid, *u)",
+      "function": "astar",
+      "header_id": 15,
+      "line": 42,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)):",
+      "cond": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1))",
+      "function": "neighbors",
+      "header_id": 2,
+      "line": 9,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while cur != start:",
+      "cond": "cur != start",
+      "function": "reconstruct",
+      "header_id": 3,
+      "line": 21,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "res = []",
+      "a_line": 8,
+      "b_code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "b_line": 9,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "res = []",
+      "a_line": 8,
+      "b_code": "nr, nc = r + dr, c + dc",
+      "b_line": 10,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "a_line": 9,
+      "b_code": "nr, nc = r + dr, c + dc",
+      "b_line": 10,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "res = []",
+      "a_line": 8,
+      "b_code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "b_line": 11,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "a_line": 9,
+      "b_code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "b_line": 11,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "nr, nc = r + dr, c + dc",
+      "a_line": 10,
+      "b_code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "b_line": 11,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "res = []",
+      "a_line": 8,
+      "b_code": "res.append((nr, nc))",
+      "b_line": 12,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "a_line": 9,
+      "b_code": "res.append((nr, nc))",
+      "b_line": 12,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "nr, nc = r + dr, c + dc",
+      "a_line": 10,
+      "b_code": "res.append((nr, nc))",
+      "b_line": 12,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "a_line": 11,
+      "b_code": "res.append((nr, nc))",
+      "b_line": 12,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "res = []",
+      "a_line": 8,
+      "b_code": "return res",
+      "b_line": 13,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "for dr, dc in ((1,0),(-1,0),(0,1),(0,-1)): nr, nc = r + dr, c + dc if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 0: res.append((nr, nc))",
+      "a_line": 9,
+      "b_code": "return res",
+      "b_line": 13,
+      "function": "neighbors"
+    },
+    {
+      "a_code": "cur = goal",
+      "a_line": 19,
+      "b_code": "path = [cur]",
+      "b_line": 20,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "cur = goal",
+      "a_line": 19,
+      "b_code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "b_line": 21,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "path = [cur]",
+      "a_line": 20,
+      "b_code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "b_line": 21,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "cur = goal",
+      "a_line": 19,
+      "b_code": "cur = came_from[cur]",
+      "b_line": 22,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "path = [cur]",
+      "a_line": 20,
+      "b_code": "cur = came_from[cur]",
+      "b_line": 22,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "a_line": 21,
+      "b_code": "cur = came_from[cur]",
+      "b_line": 22,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "cur = goal",
+      "a_line": 19,
+      "b_code": "path.append(cur)",
+      "b_line": 23,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "path = [cur]",
+      "a_line": 20,
+      "b_code": "path.append(cur)",
+      "b_line": 23,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "a_line": 21,
+      "b_code": "path.append(cur)",
+      "b_line": 23,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "cur = came_from[cur]",
+      "a_line": 22,
+      "b_code": "path.append(cur)",
+      "b_line": 23,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "cur = goal",
+      "a_line": 19,
+      "b_code": "path.reverse()",
+      "b_line": 24,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "path = [cur]",
+      "a_line": 20,
+      "b_code": "path.reverse()",
+      "b_line": 24,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "a_line": 21,
+      "b_code": "path.reverse()",
+      "b_line": 24,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "cur = goal",
+      "a_line": 19,
+      "b_code": "return path",
+      "b_line": 25,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "path = [cur]",
+      "a_line": 20,
+      "b_code": "return path",
+      "b_line": 25,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "while cur != start: cur = came_from[cur] path.append(cur)",
+      "a_line": 21,
+      "b_code": "return path",
+      "b_line": 25,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "path.reverse()",
+      "a_line": 24,
+      "b_code": "return path",
+      "b_line": 25,
+      "function": "reconstruct"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "return None",
+      "b_line": 29,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "open_heap = []",
+      "b_line": 30,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "heapq.heappush(open_heap, (0, start))",
+      "b_line": 31,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "heapq.heappush(open_heap, (0, start))",
+      "b_line": 31,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "b_line": 32,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "b_line": 32,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "b_line": 32,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "b_line": 33,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "b_line": 33,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "b_line": 33,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "b_line": 33,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "closed = set()",
+      "b_line": 34,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "closed = set()",
+      "b_line": 34,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "closed = set()",
+      "b_line": 34,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "closed = set()",
+      "b_line": 34,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "closed = set()",
+      "b_line": 34,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 35,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 35,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 35,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 35,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 35,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 35,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "_, u = heapq.heappop(open_heap)",
+      "b_line": 36,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "if u in closed: continue",
+      "b_line": 37,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "continue",
+      "b_line": 38,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "b_line": 39,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "return reconstruct(came_from, start, goal)",
+      "b_line": 40,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "closed.add(u)",
+      "b_line": 41,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 42,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "tentative = g[u] + 1",
+      "b_line": 43,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "b_line": 44,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 45,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "a_line": 44,
+      "b_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "b_line": 46,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "a_line": 44,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 46,
+      "b_code": "came_from[v] = u",
+      "b_line": 47,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "a_line": 44,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 46,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from[v] = u",
+      "a_line": 47,
+      "b_code": "g[v] = tentative",
+      "b_line": 48,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "a_line": 44,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 46,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from[v] = u",
+      "a_line": 47,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "g[v] = tentative",
+      "a_line": 48,
+      "b_code": "f = tentative + heuristic(v, goal)",
+      "b_line": 49,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "_, u = heapq.heappop(open_heap)",
+      "a_line": 36,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u in closed: continue",
+      "a_line": 37,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "if u == goal: return reconstruct(came_from, start, goal)",
+      "a_line": 39,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed.add(u)",
+      "a_line": 41,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 42,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "tentative = g[u] + 1",
+      "a_line": 43,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "if v in closed and tentative >= g.get(v, 10**9): continue",
+      "a_line": 44,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 46,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from[v] = u",
+      "a_line": 47,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "g[v] = tentative",
+      "a_line": 48,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "f = tentative + heuristic(v, goal)",
+      "a_line": 49,
+      "b_code": "heapq.heappush(open_heap, (f, v))",
+      "b_line": 50,
+      "function": "astar"
+    },
+    {
+      "a_code": "if grid[start[0]][start[1]] == 1 or grid[goal[0]][goal[1]] == 1: return None",
+      "a_line": 28,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    },
+    {
+      "a_code": "open_heap = []",
+      "a_line": 30,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    },
+    {
+      "a_code": "heapq.heappush(open_heap, (0, start))",
+      "a_line": 31,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    },
+    {
+      "a_code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+      "a_line": 32,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    },
+    {
+      "a_code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+      "a_line": 33,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    },
+    {
+      "a_code": "closed = set()",
+      "a_line": 34,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    },
+    {
+      "a_code": "while open_heap: _, u = heapq.heappop(open_heap) if u in closed: continue if u == goal: return reconstruct(came_from, start, goal) closed.add(u) for v in neighbors(grid, *u): tentative = g[u] + 1 if v in closed and tentative >= g.get(v, 10**9): continue if tentative < g.get(v, 10**9): came_from[v] = u g[v] = tentative f = tentative + heuristic(v, goal) heapq.heappush(open_heap, (f, v))",
+      "a_line": 35,
+      "b_code": "return None",
+      "b_line": 51,
+      "function": "astar"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "c"
+      },
+      "from": {
+        "code": "res = []",
+        "line": 8,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "c"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "dc"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "dr"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "r"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "grid"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nc"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "c"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "dc"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "dr"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "r"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def neighbors(grid:",
+        "line": 7,
+        "var": "grid"
+      },
+      "from": {
+        "code": "nr, nc = r + dr, c + dc",
+        "line": 10,
+        "var": "nr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def reconstruct(came_from:",
+        "line": 18,
+        "var": "goal"
+      },
+      "from": {
+        "code": "cur = goal",
+        "line": 19,
+        "var": "cur"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def reconstruct(came_from:",
+        "line": 18,
+        "var": "came_from"
+      },
+      "from": {
+        "code": "cur = goal",
+        "line": 19,
+        "var": "cur"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cur = goal",
+        "line": 19,
+        "var": "cur"
+      },
+      "from": {
+        "code": "path = [cur]",
+        "line": 20,
+        "var": "path"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def reconstruct(came_from:",
+        "line": 18,
+        "var": "goal"
+      },
+      "from": {
+        "code": "path = [cur]",
+        "line": 20,
+        "var": "path"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def reconstruct(came_from:",
+        "line": 18,
+        "var": "came_from"
+      },
+      "from": {
+        "code": "path = [cur]",
+        "line": 20,
+        "var": "path"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def reconstruct(came_from:",
+        "line": 18,
+        "var": "came_from"
+      },
+      "from": {
+        "code": "cur = came_from[cur]",
+        "line": 22,
+        "var": "cur"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cur = goal",
+        "line": 19,
+        "var": "cur"
+      },
+      "from": {
+        "code": "cur = came_from[cur]",
+        "line": 22,
+        "var": "cur"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def reconstruct(came_from:",
+        "line": 18,
+        "var": "goal"
+      },
+      "from": {
+        "code": "cur = came_from[cur]",
+        "line": 22,
+        "var": "cur"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "path = [cur]",
+        "line": 20,
+        "var": "path"
+      },
+      "from": {
+        "code": "cur = came_from[cur]",
+        "line": 22,
+        "var": "cur"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "_"
+      },
+      "from": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "start"
+      },
+      "from": {
+        "code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+        "line": 32,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "_"
+      },
+      "from": {
+        "code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+        "line": 32,
+        "var": "g"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "_"
+      },
+      "from": {
+        "code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+        "line": 33,
+        "var": "came_from"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "_"
+      },
+      "from": {
+        "code": "closed = set()",
+        "line": 34,
+        "var": "closed"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "from": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "came_from: Dict[Tuple[int,int], Tuple[int,int]] = {}",
+        "line": 33,
+        "var": "came_from"
+      },
+      "from": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "from": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "g: Dict[Tuple[int,int], int] = {start: 0}",
+        "line": 32,
+        "var": "g"
+      },
+      "from": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "from": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "start"
+      },
+      "from": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "from": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "came_from"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "from": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "came_from"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "from": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "came_from"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "v"
+      },
+      "from": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "came_from"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "came_from[v] = u",
+        "line": 47,
+        "var": "came_from"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "start"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "v"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "g[v] = tentative",
+        "line": 48,
+        "var": "g"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "goal"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "open_heap = []",
+        "line": 30,
+        "var": "open_heap"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def astar(grid:",
+        "line": 27,
+        "var": "start"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tentative = g[u] + 1",
+        "line": 43,
+        "var": "tentative"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "u"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "v"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, u = heapq.heappop(open_heap)",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "f = tentative + heuristic(v, goal)",
+        "line": 49,
+        "var": "f"
+      },
+      "label": "negative"
+    }
+  ]
+}

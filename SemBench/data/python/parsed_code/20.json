@@ -1,0 +1,365 @@
+{
+  "cfg_statements": [
+    {
+      "code": "prefix = [0] * (len(arr) + 1)",
+      "dead": false,
+      "function": "build_prefix",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "for i, x in enumerate(arr, start=1): prefix[i] = prefix[i - 1] + x",
+      "dead": false,
+      "function": "build_prefix",
+      "kind": "For",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "prefix[i] = prefix[i - 1] + x",
+      "dead": false,
+      "function": "build_prefix",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "return prefix",
+      "dead": false,
+      "function": "build_prefix",
+      "kind": "Return",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "if l < 0 or r < l or r > len(prefix) - 1: raise IndexError(\"invalid range\")",
+      "dead": false,
+      "function": "range_sum",
+      "kind": "If",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "raise IndexError(\"invalid range\")",
+      "dead": false,
+      "function": "range_sum",
+      "kind": "Raise",
+      "line": 13,
+      "node_id": 2
+    },
+    {
+      "code": "return prefix[r] - prefix[l]",
+      "dead": false,
+      "function": "range_sum",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "prefix = [0] * (len(arr) + 1)",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "for i, x in enumerate(arr, start=1): prefix[i] = prefix[i - 1] + x",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "prefix[i] = prefix[i - 1] + x",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return prefix",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if l < 0 or r < l or r > len(prefix) - 1: raise IndexError(\"invalid range\")",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "raise IndexError(\"invalid range\")",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return prefix[r] - prefix[l]",
+      "dead": false,
+      "line": 14
+    }
+  ],
+  "file": "SemBench/data/python/code/20.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 4,
+      "name": "build_prefix",
+      "variables": [
+        "arr",
+        "i",
+        "prefix",
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 10,
+      "name": "range_sum",
+      "variables": [
+        "l",
+        "prefix",
+        "r"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "build_prefix": {
+        "base_liveout": [
+          "prefix"
+        ],
+        "live_before": [
+          {
+            "code": "prefix = [0] * (len(arr) + 1)",
+            "line": 5,
+            "vars": [
+              "arr"
+            ]
+          },
+          {
+            "code": "for i, x in enumerate(arr, start=1): prefix[i] = prefix[i - 1] + x",
+            "line": 6,
+            "vars": [
+              "arr",
+              "prefix"
+            ]
+          },
+          {
+            "code": "prefix[i] = prefix[i - 1] + x",
+            "line": 7,
+            "vars": [
+              "i",
+              "prefix",
+              "x"
+            ]
+          },
+          {
+            "code": "return prefix",
+            "line": 8,
+            "vars": [
+              "prefix"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": false,
+          "i": false,
+          "prefix": true,
+          "x": false
+        },
+        "return_vars": [
+          "prefix"
+        ]
+      },
+      "range_sum": {
+        "base_liveout": [
+          "l",
+          "prefix",
+          "r"
+        ],
+        "live_before": [
+          {
+            "code": "if l < 0 or r < l or r > len(prefix) - 1: raise IndexError(\"invalid range\")",
+            "line": 12,
+            "vars": [
+              "l",
+              "prefix",
+              "r"
+            ]
+          },
+          {
+            "code": "raise IndexError(\"invalid range\")",
+            "line": 13,
+            "vars": [
+              "l",
+              "prefix",
+              "r"
+            ]
+          },
+          {
+            "code": "return prefix[r] - prefix[l]",
+            "line": 14,
+            "vars": [
+              "l",
+              "prefix",
+              "r"
+            ]
+          }
+        ],
+        "liveout": {
+          "l": true,
+          "prefix": true,
+          "r": true
+        },
+        "return_vars": [
+          "l",
+          "prefix",
+          "r"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i, x in enumerate(arr, start=1):",
+      "cond": "for i, x in enumerate(arr, start=1)",
+      "function": "build_prefix",
+      "header_id": 2,
+      "line": 6,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "prefix = [0] * (len(arr) + 1)",
+      "a_line": 5,
+      "b_code": "for i, x in enumerate(arr, start=1): prefix[i] = prefix[i - 1] + x",
+      "b_line": 6,
+      "function": "build_prefix"
+    },
+    {
+      "a_code": "prefix = [0] * (len(arr) + 1)",
+      "a_line": 5,
+      "b_code": "prefix[i] = prefix[i - 1] + x",
+      "b_line": 7,
+      "function": "build_prefix"
+    },
+    {
+      "a_code": "for i, x in enumerate(arr, start=1): prefix[i] = prefix[i - 1] + x",
+      "a_line": 6,
+      "b_code": "prefix[i] = prefix[i - 1] + x",
+      "b_line": 7,
+      "function": "build_prefix"
+    },
+    {
+      "a_code": "prefix = [0] * (len(arr) + 1)",
+      "a_line": 5,
+      "b_code": "return prefix",
+      "b_line": 8,
+      "function": "build_prefix"
+    },
+    {
+      "a_code": "for i, x in enumerate(arr, start=1): prefix[i] = prefix[i - 1] + x",
+      "a_line": 6,
+      "b_code": "return prefix",
+      "b_line": 8,
+      "function": "build_prefix"
+    },
+    {
+      "a_code": "if l < 0 or r < l or r > len(prefix) - 1: raise IndexError(\"invalid range\")",
+      "a_line": 12,
+      "b_code": "raise IndexError(\"invalid range\")",
+      "b_line": 13,
+      "function": "range_sum"
+    },
+    {
+      "a_code": "if l < 0 or r < l or r > len(prefix) - 1: raise IndexError(\"invalid range\")",
+      "a_line": 12,
+      "b_code": "return prefix[r] - prefix[l]",
+      "b_line": 14,
+      "function": "range_sum"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def build_prefix(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "prefix = [0] * (len(arr) + 1)",
+        "line": 5,
+        "var": "prefix"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def build_prefix(arr:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "prefix = [0] * (len(arr) + 1)",
+        "line": 5,
+        "var": "prefix"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def build_prefix(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "prefix[i] = prefix[i - 1] + x",
+        "line": 7,
+        "var": "prefix"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prefix[i] = prefix[i - 1] + x",
+        "line": 7,
+        "var": "i"
+      },
+      "from": {
+        "code": "prefix[i] = prefix[i - 1] + x",
+        "line": 7,
+        "var": "prefix"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prefix = [0] * (len(arr) + 1)",
+        "line": 5,
+        "var": "prefix"
+      },
+      "from": {
+        "code": "prefix[i] = prefix[i - 1] + x",
+        "line": 7,
+        "var": "prefix"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prefix[i] = prefix[i - 1] + x",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "prefix[i] = prefix[i - 1] + x",
+        "line": 7,
+        "var": "prefix"
+      },
+      "label": "must"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if u == target: return True",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "If",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "Return",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "visited.add(u)",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "Expr",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "For",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "If",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "_dfs",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 7
+    },
+    {
+      "code": "if start is None or target is None: return False",
+      "dead": false,
+      "function": "path_exists",
+      "kind": "If",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "path_exists",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 2
+    },
+    {
+      "code": "visited: Set[Hashable] = set()",
+      "dead": false,
+      "function": "path_exists",
+      "kind": "AnnAssign",
+      "line": 16,
+      "node_id": 3
+    },
+    {
+      "code": "return _dfs(start, target, graph, visited)",
+      "dead": false,
+      "function": "path_exists",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 4
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "if u == target: return True",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "visited.add(u)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "if start is None or target is None: return False",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "visited: Set[Hashable] = set()",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return _dfs(start, target, graph, visited)",
+      "dead": false,
+      "line": 17
+    }
+  ],
+  "file": "SemBench/data/python/code/14.py",
+  "functions": [
+    {
+      "calls": [
+        "_dfs"
+      ],
+      "end_lineno": 11,
+      "lineno": 4,
+      "name": "_dfs",
+      "variables": [
+        "graph",
+        "target",
+        "u",
+        "v",
+        "visited"
+      ]
+    },
+    {
+      "calls": [
+        "_dfs"
+      ],
+      "end_lineno": 17,
+      "lineno": 13,
+      "name": "path_exists",
+      "variables": [
+        "graph",
+        "start",
+        "target",
+        "visited"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_dfs": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if u == target: return True",
+            "line": 5,
+            "vars": [
+              "graph",
+              "target",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 6,
+            "vars": [
+              "graph",
+              "target",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "visited.add(u)",
+            "line": 7,
+            "vars": [
+              "graph",
+              "target",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+            "line": 8,
+            "vars": [
+              "graph",
+              "target",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+            "line": 9,
+            "vars": [
+              "graph",
+              "target",
+              "v",
+              "visited"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 10,
+            "vars": []
+          },
+          {
+            "code": "return False",
+            "line": 11,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "graph": false,
+          "target": false,
+          "u": false,
+          "v": false,
+          "visited": false
+        },
+        "return_vars": []
+      },
+      "path_exists": {
+        "base_liveout": [
+          "graph",
+          "start",
+          "target",
+          "visited"
+        ],
+        "live_before": [
+          {
+            "code": "if start is None or target is None: return False",
+            "line": 14,
+            "vars": [
+              "graph",
+              "start",
+              "target"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 15,
+            "vars": [
+              "graph",
+              "start",
+              "target"
+            ]
+          },
+          {
+            "code": "visited: Set[Hashable] = set()",
+            "line": 16,
+            "vars": [
+              "graph",
+              "start",
+              "target"
+            ]
+          },
+          {
+            "code": "return _dfs(start, target, graph, visited)",
+            "line": 17,
+            "vars": [
+              "graph",
+              "start",
+              "target",
+              "visited"
+            ]
+          }
+        ],
+        "liveout": {
+          "graph": true,
+          "start": true,
+          "target": true,
+          "visited": true
+        },
+        "return_vars": [
+          "graph",
+          "start",
+          "target",
+          "visited"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for v in graph.get(u, []):",
+      "cond": "for v in graph.get(u, [])",
+      "function": "_dfs",
+      "header_id": 4,
+      "line": 8,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if u == target: return True",
+      "a_line": 5,
+      "b_code": "return True",
+      "b_line": 6,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if u == target: return True",
+      "a_line": 5,
+      "b_code": "visited.add(u)",
+      "b_line": 7,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if u == target: return True",
+      "a_line": 5,
+      "b_code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "b_line": 8,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "visited.add(u)",
+      "a_line": 7,
+      "b_code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "b_line": 8,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if u == target: return True",
+      "a_line": 5,
+      "b_code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+      "b_line": 9,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "visited.add(u)",
+      "a_line": 7,
+      "b_code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+      "b_line": 9,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "a_line": 8,
+      "b_code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+      "b_line": 9,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if u == target: return True",
+      "a_line": 5,
+      "b_code": "return True",
+      "b_line": 10,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "visited.add(u)",
+      "a_line": 7,
+      "b_code": "return True",
+      "b_line": 10,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "a_line": 8,
+      "b_code": "return True",
+      "b_line": 10,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if v not in visited and _dfs(v, target, graph, visited): return True",
+      "a_line": 9,
+      "b_code": "return True",
+      "b_line": 10,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if u == target: return True",
+      "a_line": 5,
+      "b_code": "return False",
+      "b_line": 11,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "visited.add(u)",
+      "a_line": 7,
+      "b_code": "return False",
+      "b_line": 11,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "for v in graph.get(u, []): if v not in visited and _dfs(v, target, graph, visited): return True",
+      "a_line": 8,
+      "b_code": "return False",
+      "b_line": 11,
+      "function": "_dfs"
+    },
+    {
+      "a_code": "if start is None or target is None: return False",
+      "a_line": 14,
+      "b_code": "return False",
+      "b_line": 15,
+      "function": "path_exists"
+    },
+    {
+      "a_code": "if start is None or target is None: return False",
+      "a_line": 14,
+      "b_code": "visited: Set[Hashable] = set()",
+      "b_line": 16,
+      "function": "path_exists"
+    },
+    {
+      "a_code": "if start is None or target is None: return False",
+      "a_line": 14,
+      "b_code": "return _dfs(start, target, graph, visited)",
+      "b_line": 17,
+      "function": "path_exists"
+    },
+    {
+      "a_code": "visited: Set[Hashable] = set()",
+      "a_line": 16,
+      "b_code": "return _dfs(start, target, graph, visited)",
+      "b_line": 17,
+      "function": "path_exists"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def path_exists(graph:",
+        "line": 13,
+        "var": "graph"
+      },
+      "from": {
+        "code": "visited: Set[Hashable] = set()",
+        "line": 16,
+        "var": "visited"
+      },
+      "label": "negative"
+    }
+  ]
+}

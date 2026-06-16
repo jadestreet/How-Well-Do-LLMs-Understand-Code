@@ -1,0 +1,1739 @@
+{
+  "cfg_statements": [
+    {
+      "code": "rows = len(M)",
+      "dead": false,
+      "function": "dims",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "cols = len(M[0]) if rows > 0 else 0",
+      "dead": false,
+      "function": "dims",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "return rows, cols",
+      "dead": false,
+      "function": "dims",
+      "kind": "Return",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "dead": false,
+      "function": "matmul",
+      "kind": "If",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "raise ValueError(\"empty matrix not allowed\")",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Raise",
+      "line": 11,
+      "node_id": 2
+    },
+    {
+      "code": "ra, ca = dims(A)",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 3
+    },
+    {
+      "code": "rb, cb = dims(B)",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 4
+    },
+    {
+      "code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "dead": false,
+      "function": "matmul",
+      "kind": "If",
+      "line": 14,
+      "node_id": 5
+    },
+    {
+      "code": "raise ValueError(\"incompatible shapes\")",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Raise",
+      "line": 15,
+      "node_id": 6
+    },
+    {
+      "code": "m, k, n = ra, ca, cb",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 7
+    },
+    {
+      "code": "C = [[0] * n for _ in range(m)]",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 8
+    },
+    {
+      "code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "dead": false,
+      "function": "matmul",
+      "kind": "For",
+      "line": 18,
+      "node_id": 9
+    },
+    {
+      "code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "dead": false,
+      "function": "matmul",
+      "kind": "For",
+      "line": 19,
+      "node_id": 10
+    },
+    {
+      "code": "s = 0",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 11
+    },
+    {
+      "code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "dead": false,
+      "function": "matmul",
+      "kind": "For",
+      "line": 21,
+      "node_id": 12
+    },
+    {
+      "code": "s += A[i][t] * B[t][j]",
+      "dead": false,
+      "function": "matmul",
+      "kind": "AugAssign",
+      "line": 22,
+      "node_id": 13
+    },
+    {
+      "code": "C[i][j] = s",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 14
+    },
+    {
+      "code": "return C",
+      "dead": false,
+      "function": "matmul",
+      "kind": "Return",
+      "line": 24,
+      "node_id": 15
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "rows = len(M)",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "cols = len(M[0]) if rows > 0 else 0",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "return rows, cols",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "raise ValueError(\"empty matrix not allowed\")",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "ra, ca = dims(A)",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "rb, cb = dims(B)",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "raise ValueError(\"incompatible shapes\")",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "m, k, n = ra, ca, cb",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "C = [[0] * n for _ in range(m)]",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "s = 0",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "s += A[i][t] * B[t][j]",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "C[i][j] = s",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "return C",
+      "dead": false,
+      "line": 24
+    }
+  ],
+  "file": "SemBench/data/python/code/9.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 7,
+      "lineno": 4,
+      "name": "dims",
+      "variables": [
+        "M",
+        "cols",
+        "rows"
+      ]
+    },
+    {
+      "calls": [
+        "dims"
+      ],
+      "end_lineno": 24,
+      "lineno": 9,
+      "name": "matmul",
+      "variables": [
+        "A",
+        "B",
+        "C",
+        "ca",
+        "cb",
+        "i",
+        "j",
+        "k",
+        "m",
+        "n",
+        "ra",
+        "rb",
+        "s",
+        "t"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "dims": {
+        "base_liveout": [
+          "cols",
+          "rows"
+        ],
+        "live_before": [
+          {
+            "code": "rows = len(M)",
+            "line": 5,
+            "vars": [
+              "M"
+            ]
+          },
+          {
+            "code": "cols = len(M[0]) if rows > 0 else 0",
+            "line": 6,
+            "vars": [
+              "M",
+              "rows"
+            ]
+          },
+          {
+            "code": "return rows, cols",
+            "line": 7,
+            "vars": [
+              "cols",
+              "rows"
+            ]
+          }
+        ],
+        "liveout": {
+          "M": false,
+          "cols": true,
+          "rows": true
+        },
+        "return_vars": [
+          "cols",
+          "rows"
+        ]
+      },
+      "matmul": {
+        "base_liveout": [
+          "C"
+        ],
+        "live_before": [
+          {
+            "code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+            "line": 10,
+            "vars": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"empty matrix not allowed\")",
+            "line": 11,
+            "vars": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "code": "ra, ca = dims(A)",
+            "line": 12,
+            "vars": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "code": "rb, cb = dims(B)",
+            "line": 13,
+            "vars": [
+              "A",
+              "B",
+              "ca",
+              "ra"
+            ]
+          },
+          {
+            "code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+            "line": 14,
+            "vars": [
+              "A",
+              "B",
+              "ca",
+              "cb",
+              "ra",
+              "rb"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"incompatible shapes\")",
+            "line": 15,
+            "vars": [
+              "A",
+              "B",
+              "ca",
+              "cb",
+              "ra"
+            ]
+          },
+          {
+            "code": "m, k, n = ra, ca, cb",
+            "line": 16,
+            "vars": [
+              "A",
+              "B",
+              "ca",
+              "cb",
+              "ra"
+            ]
+          },
+          {
+            "code": "C = [[0] * n for _ in range(m)]",
+            "line": 17,
+            "vars": [
+              "A",
+              "B",
+              "k",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+            "line": 18,
+            "vars": [
+              "A",
+              "B",
+              "k",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+            "line": 19,
+            "vars": [
+              "A",
+              "B",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "s = 0",
+            "line": 20,
+            "vars": [
+              "A",
+              "B",
+              "j",
+              "k"
+            ]
+          },
+          {
+            "code": "for t in range(k): s += A[i][t] * B[t][j]",
+            "line": 21,
+            "vars": [
+              "A",
+              "B",
+              "j",
+              "k"
+            ]
+          },
+          {
+            "code": "s += A[i][t] * B[t][j]",
+            "line": 22,
+            "vars": [
+              "A",
+              "B",
+              "j",
+              "t"
+            ]
+          },
+          {
+            "code": "C[i][j] = s",
+            "line": 23,
+            "vars": [
+              "j",
+              "s"
+            ]
+          },
+          {
+            "code": "return C",
+            "line": 24,
+            "vars": [
+              "C"
+            ]
+          }
+        ],
+        "liveout": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "ca": false,
+          "cb": false,
+          "i": false,
+          "j": false,
+          "k": false,
+          "m": false,
+          "n": false,
+          "ra": false,
+          "rb": false,
+          "s": false,
+          "t": false
+        },
+        "return_vars": [
+          "C"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(m):",
+      "cond": "for i in range(m)",
+      "function": "matmul",
+      "header_id": 9,
+      "line": 18,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(n):",
+      "cond": "for j in range(n)",
+      "function": "matmul",
+      "header_id": 10,
+      "line": 19,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for t in range(k):",
+      "cond": "for t in range(k)",
+      "function": "matmul",
+      "header_id": 12,
+      "line": 21,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "rows = len(M)",
+      "a_line": 5,
+      "b_code": "cols = len(M[0]) if rows > 0 else 0",
+      "b_line": 6,
+      "function": "dims"
+    },
+    {
+      "a_code": "rows = len(M)",
+      "a_line": 5,
+      "b_code": "return rows, cols",
+      "b_line": 7,
+      "function": "dims"
+    },
+    {
+      "a_code": "cols = len(M[0]) if rows > 0 else 0",
+      "a_line": 6,
+      "b_code": "return rows, cols",
+      "b_line": 7,
+      "function": "dims"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "raise ValueError(\"empty matrix not allowed\")",
+      "b_line": 11,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "ra, ca = dims(A)",
+      "b_line": 12,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "rb, cb = dims(B)",
+      "b_line": 13,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "rb, cb = dims(B)",
+      "b_line": 13,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "b_line": 14,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "b_line": 14,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "b_line": 14,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "raise ValueError(\"incompatible shapes\")",
+      "b_line": 15,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "raise ValueError(\"incompatible shapes\")",
+      "b_line": 15,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "raise ValueError(\"incompatible shapes\")",
+      "b_line": 15,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "raise ValueError(\"incompatible shapes\")",
+      "b_line": 15,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "m, k, n = ra, ca, cb",
+      "b_line": 16,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "m, k, n = ra, ca, cb",
+      "b_line": 16,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "m, k, n = ra, ca, cb",
+      "b_line": 16,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "m, k, n = ra, ca, cb",
+      "b_line": 16,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "C = [[0] * n for _ in range(m)]",
+      "b_line": 17,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "C = [[0] * n for _ in range(m)]",
+      "b_line": 17,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "C = [[0] * n for _ in range(m)]",
+      "b_line": 17,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "C = [[0] * n for _ in range(m)]",
+      "b_line": 17,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "C = [[0] * n for _ in range(m)]",
+      "b_line": 17,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 18,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 18,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 18,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 18,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 18,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 18,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 18,
+      "b_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "b_line": 19,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 18,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 19,
+      "b_code": "s = 0",
+      "b_line": 20,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 18,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 19,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 20,
+      "b_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "b_line": 21,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 18,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 19,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 20,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "a_line": 21,
+      "b_code": "s += A[i][t] * B[t][j]",
+      "b_line": 22,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 18,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 19,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 20,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for t in range(k): s += A[i][t] * B[t][j]",
+      "a_line": 21,
+      "b_code": "C[i][j] = s",
+      "b_line": 23,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if not A or not B: raise ValueError(\"empty matrix not allowed\")",
+      "a_line": 10,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    },
+    {
+      "a_code": "ra, ca = dims(A)",
+      "a_line": 12,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    },
+    {
+      "a_code": "rb, cb = dims(B)",
+      "a_line": 13,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    },
+    {
+      "a_code": "if ca != rb: raise ValueError(\"incompatible shapes\")",
+      "a_line": 14,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    },
+    {
+      "a_code": "m, k, n = ra, ca, cb",
+      "a_line": 16,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    },
+    {
+      "a_code": "C = [[0] * n for _ in range(m)]",
+      "a_line": 17,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    },
+    {
+      "a_code": "for i in range(m): for j in range(n): s = 0 for t in range(k): s += A[i][t] * B[t][j] C[i][j] = s",
+      "a_line": 18,
+      "b_code": "return C",
+      "b_line": 24,
+      "function": "matmul"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def dims(M:",
+        "line": 4,
+        "var": "M"
+      },
+      "from": {
+        "code": "rows = len(M)",
+        "line": 5,
+        "var": "rows"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dims(M:",
+        "line": 4,
+        "var": "cols"
+      },
+      "from": {
+        "code": "rows = len(M)",
+        "line": 5,
+        "var": "rows"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dims(M:",
+        "line": 4,
+        "var": "M"
+      },
+      "from": {
+        "code": "cols = len(M[0]) if rows > 0 else 0",
+        "line": 6,
+        "var": "cols"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rows = len(M)",
+        "line": 5,
+        "var": "rows"
+      },
+      "from": {
+        "code": "cols = len(M[0]) if rows > 0 else 0",
+        "line": 6,
+        "var": "cols"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ra"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ra"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "cb"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "cb"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "rb"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "rb"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "cb"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ra"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "C"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "cb"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ra"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "C"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "cb"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ra"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "C"
+      },
+      "from": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rb, cb = dims(B)",
+        "line": 13,
+        "var": "cb"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "m"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "m, k, n = ra, ca, cb",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ra"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "i"
+      },
+      "from": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "s = 0",
+        "line": 20,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "j"
+      },
+      "from": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "t"
+      },
+      "from": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [[0] * n for _ in range(m)]",
+        "line": 17,
+        "var": "C"
+      },
+      "from": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "A"
+      },
+      "from": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def matmul(A:",
+        "line": 9,
+        "var": "B"
+      },
+      "from": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "j"
+      },
+      "from": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s += A[i][t] * B[t][j]",
+        "line": 22,
+        "var": "s"
+      },
+      "from": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "t"
+      },
+      "from": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "C"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ra, ca = dims(A)",
+        "line": 12,
+        "var": "ca"
+      },
+      "from": {
+        "code": "C[i][j] = s",
+        "line": 23,
+        "var": "C"
+      },
+      "label": "negative"
+    }
+  ]
+}

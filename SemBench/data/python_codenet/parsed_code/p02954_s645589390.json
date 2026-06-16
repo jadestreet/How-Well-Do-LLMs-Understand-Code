@@ -1,0 +1,3666 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import math",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "from math import gcd,pi,sqrt",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "INF = float(\"inf\")",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "sys.setrecursionlimit(10**6)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 6,
+      "node_id": 5
+    },
+    {
+      "code": "import itertools",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 7,
+      "node_id": 6
+    },
+    {
+      "code": "from collections import Counter,deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 8,
+      "node_id": 7
+    },
+    {
+      "code": "if __name__==\"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 57,
+      "node_id": 8
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 9
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "function": "i_input",
+      "kind": "Return",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "function": "i_map",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "return list(i_map())",
+      "dead": false,
+      "function": "i_list",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "return [i_input() for _ in range(N)]",
+      "dead": false,
+      "function": "i_row",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return [i_list() for _ in range(N)]",
+      "dead": false,
+      "function": "i_row_list",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "return input()",
+      "dead": false,
+      "function": "s_input",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return input().split()",
+      "dead": false,
+      "function": "s_map",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "return list(s_map())",
+      "dead": false,
+      "function": "s_list",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "return [s_input for _ in range(N)]",
+      "dead": false,
+      "function": "s_row",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "return [s_list() for _ in range(N)]",
+      "dead": false,
+      "function": "s_row_str",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 1
+    },
+    {
+      "code": "return [list(s_input()) for _ in range(N)]",
+      "dead": false,
+      "function": "s_row_list",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "s = s_input()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 1
+    },
+    {
+      "code": "l = [0 for i in range(len(s))]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 2
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 3
+    },
+    {
+      "code": "flg = \"R\"",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 4
+    },
+    {
+      "code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 29,
+      "node_id": 5
+    },
+    {
+      "code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 30,
+      "node_id": 6
+    },
+    {
+      "code": "cnt += 1",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 31,
+      "node_id": 7
+    },
+    {
+      "code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 33,
+      "node_id": 8
+    },
+    {
+      "code": "f = math.ceil(cnt/2)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 9
+    },
+    {
+      "code": "b = cnt - f",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 10
+    },
+    {
+      "code": "l[n-1] = l[n-1] + f",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 11
+    },
+    {
+      "code": "l[n] = l[n] + b",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 12
+    },
+    {
+      "code": "flg = \"L\"",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 13
+    },
+    {
+      "code": "b = math.ceil(cnt/2)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 14
+    },
+    {
+      "code": "f = cnt - b",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 15
+    },
+    {
+      "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 16
+    },
+    {
+      "code": "l[n-cnt] = l[n-cnt] + b",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 17
+    },
+    {
+      "code": "flg = \"R\"",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 18
+    },
+    {
+      "code": "cnt = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 19
+    },
+    {
+      "code": "b = math.ceil(cnt/2)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 20
+    },
+    {
+      "code": "f = cnt - b",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 21
+    },
+    {
+      "code": "l[n-cnt] = l[n-cnt] + f",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 22
+    },
+    {
+      "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 23
+    },
+    {
+      "code": "print(\" \".join(map(str,l)))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 51,
+      "node_id": 24
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import math",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "from math import gcd,pi,sqrt",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "INF = float(\"inf\")",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "sys.setrecursionlimit(10**6)",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "import itertools",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "from collections import Counter,deque",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return list(i_map())",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return [i_input() for _ in range(N)]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return [i_list() for _ in range(N)]",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return input()",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return input().split()",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return list(s_map())",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return [s_input for _ in range(N)]",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return [s_list() for _ in range(N)]",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "return [list(s_input()) for _ in range(N)]",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "s = s_input()",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "l = [0 for i in range(len(s))]",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "flg = \"R\"",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "cnt += 1",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "f = math.ceil(cnt/2)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "b = cnt - f",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "l[n-1] = l[n-1] + f",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "l[n] = l[n] + b",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "flg = \"L\"",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "b = math.ceil(cnt/2)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "f = cnt - b",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "l[n-cnt] = l[n-cnt] + b",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "flg = \"R\"",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "cnt = 1",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "b = math.ceil(cnt/2)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "f = cnt - b",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "l[n-cnt] = l[n-cnt] + f",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "print(\" \".join(map(str,l)))",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "if __name__==\"__main__\": main()",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 58
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02954_s645589390.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 9,
+      "lineno": 9,
+      "name": "i_input",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 10,
+      "name": "i_map",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [
+        "i_map"
+      ],
+      "end_lineno": 11,
+      "lineno": 11,
+      "name": "i_list",
+      "variables": []
+    },
+    {
+      "calls": [
+        "i_input"
+      ],
+      "end_lineno": 12,
+      "lineno": 12,
+      "name": "i_row",
+      "variables": [
+        "N"
+      ]
+    },
+    {
+      "calls": [
+        "i_list"
+      ],
+      "end_lineno": 13,
+      "lineno": 13,
+      "name": "i_row_list",
+      "variables": [
+        "N"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 14,
+      "name": "s_input",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 15,
+      "lineno": 15,
+      "name": "s_map",
+      "variables": []
+    },
+    {
+      "calls": [
+        "s_map"
+      ],
+      "end_lineno": 16,
+      "lineno": 16,
+      "name": "s_list",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 17,
+      "name": "s_row",
+      "variables": [
+        "N",
+        "s_input"
+      ]
+    },
+    {
+      "calls": [
+        "s_list"
+      ],
+      "end_lineno": 18,
+      "lineno": 18,
+      "name": "s_row_str",
+      "variables": [
+        "N"
+      ]
+    },
+    {
+      "calls": [
+        "s_input"
+      ],
+      "end_lineno": 19,
+      "lineno": 19,
+      "name": "s_row_list",
+      "variables": [
+        "N"
+      ]
+    },
+    {
+      "calls": [
+        "s_input"
+      ],
+      "end_lineno": 51,
+      "lineno": 22,
+      "name": "main",
+      "variables": [
+        "b",
+        "cnt",
+        "f",
+        "flg",
+        "i",
+        "l",
+        "math",
+        "n",
+        "s",
+        "str"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import math",
+            "line": 1,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "from math import gcd,pi,sqrt",
+            "line": 2,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "INF = float(\"inf\")",
+            "line": 3,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "import sys",
+            "line": 5,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**6)",
+            "line": 6,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "import itertools",
+            "line": 7,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "from collections import Counter,deque",
+            "line": 8,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "if __name__==\"__main__\": main()",
+            "line": 57,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 58,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "__name__": false,
+          "sys": false
+        },
+        "return_vars": []
+      },
+      "i_input": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return int(input())",
+            "line": 9,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "i_list": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return list(i_map())",
+            "line": 11,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "i_map": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return map(int, input().split())",
+            "line": 10,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "i_row": {
+        "base_liveout": [
+          "N"
+        ],
+        "live_before": [
+          {
+            "code": "return [i_input() for _ in range(N)]",
+            "line": 12,
+            "vars": [
+              "N"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": true
+        },
+        "return_vars": [
+          "N"
+        ]
+      },
+      "i_row_list": {
+        "base_liveout": [
+          "N"
+        ],
+        "live_before": [
+          {
+            "code": "return [i_list() for _ in range(N)]",
+            "line": 13,
+            "vars": [
+              "N"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": true
+        },
+        "return_vars": [
+          "N"
+        ]
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "s = s_input()",
+            "line": 23,
+            "vars": [
+              "math",
+              "str"
+            ]
+          },
+          {
+            "code": "l = [0 for i in range(len(s))]",
+            "line": 25,
+            "vars": [
+              "math",
+              "s",
+              "str"
+            ]
+          },
+          {
+            "code": "cnt = 0",
+            "line": 26,
+            "vars": [
+              "l",
+              "math",
+              "s",
+              "str"
+            ]
+          },
+          {
+            "code": "flg = \"R\"",
+            "line": 27,
+            "vars": [
+              "l",
+              "math",
+              "s",
+              "str"
+            ]
+          },
+          {
+            "code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+            "line": 29,
+            "vars": [
+              "flg",
+              "l",
+              "math",
+              "s",
+              "str"
+            ]
+          },
+          {
+            "code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+            "line": 30,
+            "vars": [
+              "flg",
+              "i",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "cnt += 1",
+            "line": 31,
+            "vars": [
+              "i",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+            "line": 33,
+            "vars": [
+              "cnt",
+              "i",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "f = math.ceil(cnt/2)",
+            "line": 34,
+            "vars": [
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "b = cnt - f",
+            "line": 35,
+            "vars": [
+              "cnt",
+              "f",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "l[n-1] = l[n-1] + f",
+            "line": 36,
+            "vars": [
+              "b",
+              "cnt",
+              "f",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "l[n] = l[n] + b",
+            "line": 37,
+            "vars": [
+              "b",
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "flg = \"L\"",
+            "line": 38,
+            "vars": [
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "b = math.ceil(cnt/2)",
+            "line": 40,
+            "vars": [
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "f = cnt - b",
+            "line": 41,
+            "vars": [
+              "b",
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+            "line": 42,
+            "vars": [
+              "b",
+              "cnt",
+              "f",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "l[n-cnt] = l[n-cnt] + b",
+            "line": 43,
+            "vars": [
+              "b",
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "flg = \"R\"",
+            "line": 44,
+            "vars": [
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "cnt = 1",
+            "line": 45,
+            "vars": [
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "b = math.ceil(cnt/2)",
+            "line": 46,
+            "vars": [
+              "cnt",
+              "l",
+              "math",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "f = cnt - b",
+            "line": 47,
+            "vars": [
+              "b",
+              "cnt",
+              "l",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "l[n-cnt] = l[n-cnt] + f",
+            "line": 48,
+            "vars": [
+              "b",
+              "cnt",
+              "f",
+              "l",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+            "line": 49,
+            "vars": [
+              "b",
+              "cnt",
+              "l",
+              "n",
+              "str"
+            ]
+          },
+          {
+            "code": "print(\" \".join(map(str,l)))",
+            "line": 51,
+            "vars": [
+              "l",
+              "str"
+            ]
+          }
+        ],
+        "liveout": {
+          "b": false,
+          "cnt": false,
+          "f": false,
+          "flg": false,
+          "i": false,
+          "l": false,
+          "math": false,
+          "n": false,
+          "s": false,
+          "str": false
+        },
+        "return_vars": []
+      },
+      "s_input": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return input()",
+            "line": 14,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "s_list": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return list(s_map())",
+            "line": 16,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "s_map": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return input().split()",
+            "line": 15,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "s_row": {
+        "base_liveout": [
+          "N",
+          "s_input"
+        ],
+        "live_before": [
+          {
+            "code": "return [s_input for _ in range(N)]",
+            "line": 17,
+            "vars": [
+              "N",
+              "s_input"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": true,
+          "s_input": true
+        },
+        "return_vars": [
+          "N",
+          "s_input"
+        ]
+      },
+      "s_row_list": {
+        "base_liveout": [
+          "N"
+        ],
+        "live_before": [
+          {
+            "code": "return [list(s_input()) for _ in range(N)]",
+            "line": 19,
+            "vars": [
+              "N"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": true
+        },
+        "return_vars": [
+          "N"
+        ]
+      },
+      "s_row_str": {
+        "base_liveout": [
+          "N"
+        ],
+        "live_before": [
+          {
+            "code": "return [s_list() for _ in range(N)]",
+            "line": 18,
+            "vars": [
+              "N"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": true
+        },
+        "return_vars": [
+          "N"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for n,i in enumerate(s):",
+      "cond": "for n,i in enumerate(s)",
+      "function": "main",
+      "header_id": 5,
+      "line": 29,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "from math import gcd,pi,sqrt",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "INF = float(\"inf\")",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "INF = float(\"inf\")",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "import sys",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "import sys",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 3,
+      "b_code": "import sys",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10**6)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "sys.setrecursionlimit(10**6)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 3,
+      "b_code": "sys.setrecursionlimit(10**6)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 5,
+      "b_code": "sys.setrecursionlimit(10**6)",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "import itertools",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "import itertools",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 3,
+      "b_code": "import itertools",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 5,
+      "b_code": "import itertools",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**6)",
+      "a_line": 6,
+      "b_code": "import itertools",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "from collections import Counter,deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "from collections import Counter,deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 3,
+      "b_code": "from collections import Counter,deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 5,
+      "b_code": "from collections import Counter,deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**6)",
+      "a_line": 6,
+      "b_code": "from collections import Counter,deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 7,
+      "b_code": "from collections import Counter,deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 3,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 5,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**6)",
+      "a_line": 6,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 7,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter,deque",
+      "a_line": 8,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd,pi,sqrt",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 3,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 5,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**6)",
+      "a_line": 6,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 7,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter,deque",
+      "a_line": 8,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__==\"__main__\": main()",
+      "a_line": 57,
+      "b_code": "main()",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l = [0 for i in range(len(s))]",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "cnt = 0",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "cnt = 0",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "flg = \"R\"",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "flg = \"R\"",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "flg = \"R\"",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "cnt += 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "cnt += 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "cnt += 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "cnt += 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "cnt += 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "cnt += 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "f = math.ceil(cnt/2)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "f = math.ceil(cnt/2)",
+      "a_line": 34,
+      "b_code": "b = cnt - f",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "f = math.ceil(cnt/2)",
+      "a_line": 34,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "b = cnt - f",
+      "a_line": 35,
+      "b_code": "l[n-1] = l[n-1] + f",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "f = math.ceil(cnt/2)",
+      "a_line": 34,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "b = cnt - f",
+      "a_line": 35,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-1] = l[n-1] + f",
+      "a_line": 36,
+      "b_code": "l[n] = l[n] + b",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "f = math.ceil(cnt/2)",
+      "a_line": 34,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "b = cnt - f",
+      "a_line": 35,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-1] = l[n-1] + f",
+      "a_line": 36,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n] = l[n] + b",
+      "a_line": 37,
+      "b_code": "flg = \"L\"",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 40,
+      "b_code": "f = cnt - b",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 40,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "f = cnt - b",
+      "a_line": 41,
+      "b_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 40,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "f = cnt - b",
+      "a_line": 41,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "a_line": 42,
+      "b_code": "l[n-cnt] = l[n-cnt] + b",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 40,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "f = cnt - b",
+      "a_line": 41,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-cnt-1] = l[n-cnt-1] + f",
+      "a_line": 42,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-cnt] = l[n-cnt] + b",
+      "a_line": 43,
+      "b_code": "flg = \"R\"",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 30,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\"",
+      "a_line": 33,
+      "b_code": "cnt = 1",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "b = math.ceil(cnt/2)",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "f = cnt - b",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "f = cnt - b",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "f = cnt - b",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "f = cnt - b",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "f = cnt - b",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 46,
+      "b_code": "f = cnt - b",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 46,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "f = cnt - b",
+      "a_line": 47,
+      "b_code": "l[n-cnt] = l[n-cnt] + f",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 46,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "f = cnt - b",
+      "a_line": 47,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-cnt] = l[n-cnt] + f",
+      "a_line": 48,
+      "b_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "s = s_input()",
+      "a_line": 23,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [0 for i in range(len(s))]",
+      "a_line": 25,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 26,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "flg = \"R\"",
+      "a_line": 27,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for n,i in enumerate(s): if i == flg: cnt += 1 else: if i == \"L\": f = math.ceil(cnt/2) b = cnt - f l[n-1] = l[n-1] + f l[n] = l[n] + b flg = \"L\" else: b = math.ceil(cnt/2) f = cnt - b l[n-cnt-1] = l[n-cnt-1] + f l[n-cnt] = l[n-cnt] + b flg = \"R\" cnt = 1",
+      "a_line": 29,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "b = math.ceil(cnt/2)",
+      "a_line": 46,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "f = cnt - b",
+      "a_line": 47,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-cnt] = l[n-cnt] + f",
+      "a_line": 48,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "l[n-cnt+1] = l[n-cnt+1] + b",
+      "a_line": 49,
+      "b_code": "print(\" \".join(map(str,l)))",
+      "b_line": 51,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped math.ceil at line 34",
+      "external attribute call skipped math.ceil at line 40",
+      "external attribute call skipped math.ceil at line 46",
+      "external attribute call skipped sys.setrecursionlimit at line 6",
+      "external call skipped input at line 10",
+      "external call skipped input at line 14",
+      "external call skipped input at line 15",
+      "external call skipped input at line 9"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped math.ceil at line 34",
+    "external attribute call skipped math.ceil at line 40",
+    "external attribute call skipped math.ceil at line 46",
+    "external attribute call skipped sys.setrecursionlimit at line 6",
+    "external call skipped input at line 10",
+    "external call skipped input at line 14",
+    "external call skipped input at line 15",
+    "external call skipped input at line 9"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "__name__"
+      },
+      "from": {
+        "code": "INF = float(\"inf\")",
+        "line": 3,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 22,
+        "var": "b"
+      },
+      "from": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l = [0 for i in range(len(s))]",
+        "line": 25,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 22,
+        "var": "b"
+      },
+      "from": {
+        "code": "l = [0 for i in range(len(s))]",
+        "line": 25,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 22,
+        "var": "b"
+      },
+      "from": {
+        "code": "cnt = 0",
+        "line": 26,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 22,
+        "var": "b"
+      },
+      "from": {
+        "code": "flg = \"R\"",
+        "line": 27,
+        "var": "flg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 22,
+        "var": "b"
+      },
+      "from": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "math"
+      },
+      "from": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 22,
+        "var": "b"
+      },
+      "from": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "from": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "math"
+      },
+      "from": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"R\"",
+        "line": 27,
+        "var": "flg"
+      },
+      "from": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l = [0 for i in range(len(s))]",
+        "line": 25,
+        "var": "l"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "math"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "n"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "from": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-1] = l[n-1] + f",
+        "line": 36,
+        "var": "l"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "math"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "n"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"R\"",
+        "line": 27,
+        "var": "flg"
+      },
+      "from": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = cnt - f",
+        "line": 35,
+        "var": "b"
+      },
+      "from": {
+        "code": "flg = \"L\"",
+        "line": 38,
+        "var": "flg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "math"
+      },
+      "from": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = math.ceil(cnt/2)",
+        "line": 34,
+        "var": "f"
+      },
+      "from": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "math"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"L\"",
+        "line": 38,
+        "var": "flg"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n] = l[n] + b",
+        "line": 37,
+        "var": "l"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "math"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "n"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"L\"",
+        "line": 38,
+        "var": "flg"
+      },
+      "from": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt += 1",
+        "line": 31,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt-1] = l[n-cnt-1] + f",
+        "line": 42,
+        "var": "l"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "math"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "n"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"L\"",
+        "line": 38,
+        "var": "flg"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "from": {
+        "code": "flg = \"R\"",
+        "line": 44,
+        "var": "flg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 40,
+        "var": "b"
+      },
+      "from": {
+        "code": "cnt = 1",
+        "line": 45,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 1",
+        "line": 45,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "math"
+      },
+      "from": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 41,
+        "var": "f"
+      },
+      "from": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "b"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 1",
+        "line": 45,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "math"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"R\"",
+        "line": 44,
+        "var": "flg"
+      },
+      "from": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "b"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 1",
+        "line": 45,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "f"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt] = l[n-cnt] + b",
+        "line": 43,
+        "var": "l"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "math"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "n"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"R\"",
+        "line": 44,
+        "var": "flg"
+      },
+      "from": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = math.ceil(cnt/2)",
+        "line": 46,
+        "var": "b"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 1",
+        "line": 45,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f = cnt - b",
+        "line": 47,
+        "var": "f"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt] = l[n-cnt] + f",
+        "line": 48,
+        "var": "l"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "math"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "n"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s = s_input()",
+        "line": 23,
+        "var": "s"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "flg = \"R\"",
+        "line": 44,
+        "var": "flg"
+      },
+      "from": {
+        "code": "l[n-cnt+1] = l[n-cnt+1] + b",
+        "line": 49,
+        "var": "l"
+      },
+      "label": "negative"
+    }
+  ]
+}

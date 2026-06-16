@@ -1,0 +1,4923 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**9)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "N,M=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "graph=[[] for _ in range(N+1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 4
+    },
+    {
+      "code": "elist=[]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 5
+    },
+    {
+      "code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 40,
+      "node_id": 6
+    },
+    {
+      "code": "a,b,c=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 7
+    },
+    {
+      "code": "graph[a].append(b)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 42,
+      "node_id": 8
+    },
+    {
+      "code": "elist.append((a,b,-c))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 9
+    },
+    {
+      "code": "visited=[None]*(N+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 10
+    },
+    {
+      "code": "reachable=[None]*(N+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 11
+    },
+    {
+      "code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 70,
+      "node_id": 12
+    },
+    {
+      "code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 71,
+      "node_id": 13
+    },
+    {
+      "code": "visited=[False]*(N+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 72,
+      "node_id": 14
+    },
+    {
+      "code": "check_reachable(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 73,
+      "node_id": 15
+    },
+    {
+      "code": "elist2=[]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 76,
+      "node_id": 16
+    },
+    {
+      "code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 77,
+      "node_id": 17
+    },
+    {
+      "code": "if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "dead": true,
+      "function": "__module__",
+      "kind": "If",
+      "line": 78,
+      "node_id": 18
+    },
+    {
+      "code": "elist2.append((a,b,nc))",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 79,
+      "node_id": 19
+    },
+    {
+      "code": "M2=len(elist2)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 81,
+      "node_id": 20
+    },
+    {
+      "code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 82,
+      "node_id": 21
+    },
+    {
+      "code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 84,
+      "node_id": 22
+    },
+    {
+      "code": "print(\"inf\")",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 85,
+      "node_id": 23
+    },
+    {
+      "code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 87,
+      "node_id": 24
+    },
+    {
+      "code": "print(-res2[N])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 88,
+      "node_id": 25
+    },
+    {
+      "code": "dist=[float(\"inf\")]*n",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "dist[1]=0",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "For",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "For",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "e=es[j]",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "If",
+      "line": 13,
+      "node_id": 6
+    },
+    {
+      "code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 7
+    },
+    {
+      "code": "if i==n-1: return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "If",
+      "line": 15,
+      "node_id": 8
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 9
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "find_negative_loop",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 10
+    },
+    {
+      "code": "dist=[float(\"inf\")]*n",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 1
+    },
+    {
+      "code": "dist[s]=0",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 2
+    },
+    {
+      "code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "While",
+      "line": 26,
+      "node_id": 3
+    },
+    {
+      "code": "update=False",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 4
+    },
+    {
+      "code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "For",
+      "line": 28,
+      "node_id": 5
+    },
+    {
+      "code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "If",
+      "line": 30,
+      "node_id": 6
+    },
+    {
+      "code": "dist[q]=dist[p]+r",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 7
+    },
+    {
+      "code": "update=True",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 8
+    },
+    {
+      "code": "if not update: break",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "If",
+      "line": 33,
+      "node_id": 9
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Break",
+      "line": 34,
+      "node_id": 10
+    },
+    {
+      "code": "return dist",
+      "dead": false,
+      "function": "shortest_path",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 11
+    },
+    {
+      "code": "visited[u]=True",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 1
+    },
+    {
+      "code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "If",
+      "line": 49,
+      "node_id": 2
+    },
+    {
+      "code": "reachable[u]=True",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 3
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Return",
+      "line": 51,
+      "node_id": 4
+    },
+    {
+      "code": "elif reachable[u]!=None: return reachable[u]",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "If",
+      "line": 52,
+      "node_id": 5
+    },
+    {
+      "code": "return reachable[u]",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Return",
+      "line": 53,
+      "node_id": 6
+    },
+    {
+      "code": "cnt=0",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 7
+    },
+    {
+      "code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "For",
+      "line": 56,
+      "node_id": 8
+    },
+    {
+      "code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "If",
+      "line": 57,
+      "node_id": 9
+    },
+    {
+      "code": "ret=check_reachable(v)",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Assign",
+      "line": 58,
+      "node_id": 10
+    },
+    {
+      "code": "if ret: cnt+=1",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "If",
+      "line": 59,
+      "node_id": 11
+    },
+    {
+      "code": "cnt+=1",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "AugAssign",
+      "line": 60,
+      "node_id": 12
+    },
+    {
+      "code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "If",
+      "line": 62,
+      "node_id": 13
+    },
+    {
+      "code": "reachable[u]=True",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Assign",
+      "line": 63,
+      "node_id": 14
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Return",
+      "line": 64,
+      "node_id": 15
+    },
+    {
+      "code": "reachable[u]=False",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Assign",
+      "line": 66,
+      "node_id": 16
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "check_reachable",
+      "kind": "Return",
+      "line": 67,
+      "node_id": 17
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**9)",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "N,M=map(int,input().split())",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "dist=[float(\"inf\")]*n",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "dist[1]=0",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "e=es[j]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if i==n-1: return True",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "dist=[float(\"inf\")]*n",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "dist[s]=0",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "update=False",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "dist[q]=dist[p]+r",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "update=True",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "if not update: break",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "return dist",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "graph=[[] for _ in range(N+1)]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "elist=[]",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "a,b,c=map(int,input().split())",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "graph[a].append(b)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "elist.append((a,b,-c))",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "visited=[None]*(N+1)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "visited[u]=True",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "reachable[u]=True",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "elif reachable[u]!=None: return reachable[u]",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "return reachable[u]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "cnt=0",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "ret=check_reachable(v)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "if ret: cnt+=1",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "cnt+=1",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "reachable[u]=True",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "reachable[u]=False",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "reachable=[None]*(N+1)",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "visited=[False]*(N+1)",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "check_reachable(i)",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "elist2=[]",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "dead": true,
+      "line": 78
+    },
+    {
+      "code": "elist2.append((a,b,nc))",
+      "dead": true,
+      "line": 79
+    },
+    {
+      "code": "M2=len(elist2)",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "dead": false,
+      "line": 82
+    },
+    {
+      "code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "dead": false,
+      "line": 84
+    },
+    {
+      "code": "print(\"inf\")",
+      "dead": false,
+      "line": 85
+    },
+    {
+      "code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "dead": false,
+      "line": 87
+    },
+    {
+      "code": "print(-res2[N])",
+      "dead": false,
+      "line": 88
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03722_s178694294.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 5,
+      "name": "find_negative_loop",
+      "variables": [
+        "dist",
+        "e",
+        "es",
+        "i",
+        "j",
+        "n",
+        "w"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 36,
+      "lineno": 19,
+      "name": "shortest_path",
+      "variables": [
+        "dist",
+        "es",
+        "n",
+        "p",
+        "q",
+        "r",
+        "s",
+        "update",
+        "w"
+      ]
+    },
+    {
+      "calls": [
+        "check_reachable"
+      ],
+      "end_lineno": 67,
+      "lineno": 47,
+      "name": "check_reachable",
+      "variables": [
+        "N",
+        "cnt",
+        "graph",
+        "reachable",
+        "ret",
+        "u",
+        "v",
+        "visited"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "int",
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**9)",
+            "line": 2,
+            "vars": [
+              "int",
+              "sys"
+            ]
+          },
+          {
+            "code": "N,M=map(int,input().split())",
+            "line": 3,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "graph=[[] for _ in range(N+1)]",
+            "line": 38,
+            "vars": [
+              "M",
+              "N",
+              "int"
+            ]
+          },
+          {
+            "code": "elist=[]",
+            "line": 39,
+            "vars": [
+              "M",
+              "N",
+              "graph",
+              "int"
+            ]
+          },
+          {
+            "code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+            "line": 40,
+            "vars": [
+              "M",
+              "N",
+              "elist",
+              "graph",
+              "int"
+            ]
+          },
+          {
+            "code": "a,b,c=map(int,input().split())",
+            "line": 41,
+            "vars": [
+              "N",
+              "elist",
+              "graph",
+              "int"
+            ]
+          },
+          {
+            "code": "graph[a].append(b)",
+            "line": 42,
+            "vars": [
+              "N",
+              "a",
+              "b",
+              "c",
+              "elist",
+              "graph"
+            ]
+          },
+          {
+            "code": "elist.append((a,b,-c))",
+            "line": 43,
+            "vars": [
+              "N",
+              "a",
+              "b",
+              "c",
+              "elist"
+            ]
+          },
+          {
+            "code": "visited=[None]*(N+1)",
+            "line": 46,
+            "vars": [
+              "N",
+              "elist"
+            ]
+          },
+          {
+            "code": "reachable=[None]*(N+1)",
+            "line": 69,
+            "vars": [
+              "N",
+              "elist"
+            ]
+          },
+          {
+            "code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+            "line": 70,
+            "vars": [
+              "N",
+              "elist",
+              "reachable"
+            ]
+          },
+          {
+            "code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+            "line": 71,
+            "vars": [
+              "N",
+              "elist",
+              "i",
+              "reachable"
+            ]
+          },
+          {
+            "code": "visited=[False]*(N+1)",
+            "line": 72,
+            "vars": [
+              "N",
+              "elist",
+              "i",
+              "reachable"
+            ]
+          },
+          {
+            "code": "check_reachable(i)",
+            "line": 73,
+            "vars": [
+              "N",
+              "elist",
+              "i",
+              "reachable"
+            ]
+          },
+          {
+            "code": "elist2=[]",
+            "line": 76,
+            "vars": [
+              "N",
+              "elist",
+              "reachable"
+            ]
+          },
+          {
+            "code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+            "line": 77,
+            "vars": [
+              "N",
+              "elist",
+              "elist2",
+              "reachable"
+            ]
+          },
+          {
+            "code": "if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+            "line": 78,
+            "vars": [
+              "N",
+              "a",
+              "b",
+              "elist2",
+              "nc",
+              "reachable"
+            ]
+          },
+          {
+            "code": "elist2.append((a,b,nc))",
+            "line": 79,
+            "vars": [
+              "N",
+              "a",
+              "b",
+              "elist2",
+              "nc"
+            ]
+          },
+          {
+            "code": "M2=len(elist2)",
+            "line": 81,
+            "vars": [
+              "N",
+              "elist2"
+            ]
+          },
+          {
+            "code": "res1=find_negative_loop(N+1,M2,elist2)",
+            "line": 82,
+            "vars": [
+              "M2",
+              "N",
+              "elist2"
+            ]
+          },
+          {
+            "code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+            "line": 84,
+            "vars": [
+              "M2",
+              "N",
+              "elist2",
+              "res1"
+            ]
+          },
+          {
+            "code": "print(\"inf\")",
+            "line": 85,
+            "vars": [
+              "M2",
+              "N",
+              "elist2"
+            ]
+          },
+          {
+            "code": "res2=shortest_path(1,N+1,M2,elist2)",
+            "line": 87,
+            "vars": [
+              "M2",
+              "N",
+              "elist2"
+            ]
+          },
+          {
+            "code": "print(-res2[N])",
+            "line": 88,
+            "vars": [
+              "N",
+              "res2"
+            ]
+          }
+        ],
+        "liveout": {
+          "M": false,
+          "M2": false,
+          "N": false,
+          "_": false,
+          "a": false,
+          "b": false,
+          "c": false,
+          "elist": false,
+          "elist2": false,
+          "graph": false,
+          "i": false,
+          "int": false,
+          "nc": false,
+          "reachable": false,
+          "res1": false,
+          "res2": false,
+          "sys": false,
+          "visited": false
+        },
+        "return_vars": []
+      },
+      "check_reachable": {
+        "base_liveout": [
+          "reachable",
+          "u"
+        ],
+        "live_before": [
+          {
+            "code": "visited[u]=True",
+            "line": 48,
+            "vars": [
+              "N",
+              "graph",
+              "u"
+            ]
+          },
+          {
+            "code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+            "line": 49,
+            "vars": [
+              "N",
+              "graph",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "reachable[u]=True",
+            "line": 50,
+            "vars": [
+              "graph",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 51,
+            "vars": [
+              "graph",
+              "reachable",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "elif reachable[u]!=None: return reachable[u]",
+            "line": 52,
+            "vars": [
+              "graph",
+              "reachable",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "return reachable[u]",
+            "line": 53,
+            "vars": [
+              "graph",
+              "reachable",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "cnt=0",
+            "line": 55,
+            "vars": [
+              "graph",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+            "line": 56,
+            "vars": [
+              "graph",
+              "u",
+              "visited"
+            ]
+          },
+          {
+            "code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+            "line": 57,
+            "vars": [
+              "u",
+              "v",
+              "visited"
+            ]
+          },
+          {
+            "code": "ret=check_reachable(v)",
+            "line": 58,
+            "vars": [
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "if ret: cnt+=1",
+            "line": 59,
+            "vars": [
+              "ret",
+              "u"
+            ]
+          },
+          {
+            "code": "cnt+=1",
+            "line": 60,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+            "line": 62,
+            "vars": [
+              "cnt",
+              "u"
+            ]
+          },
+          {
+            "code": "reachable[u]=True",
+            "line": 63,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 64,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "reachable[u]=False",
+            "line": 66,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 67,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "N": false,
+          "cnt": false,
+          "graph": false,
+          "reachable": true,
+          "ret": false,
+          "u": true,
+          "v": false,
+          "visited": false
+        },
+        "return_vars": [
+          "reachable",
+          "u"
+        ]
+      },
+      "find_negative_loop": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "dist=[float(\"inf\")]*n",
+            "line": 6,
+            "vars": [
+              "es",
+              "n",
+              "w"
+            ]
+          },
+          {
+            "code": "dist[1]=0",
+            "line": 8,
+            "vars": [
+              "es",
+              "n",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+            "line": 10,
+            "vars": [
+              "dist",
+              "es",
+              "n",
+              "w"
+            ]
+          },
+          {
+            "code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+            "line": 11,
+            "vars": [
+              "dist",
+              "es",
+              "i",
+              "n",
+              "w"
+            ]
+          },
+          {
+            "code": "e=es[j]",
+            "line": 12,
+            "vars": [
+              "dist",
+              "es",
+              "i",
+              "j",
+              "n"
+            ]
+          },
+          {
+            "code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+            "line": 13,
+            "vars": [
+              "dist",
+              "e",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "dist[e[1]]=dist[e[0]]+e[2]",
+            "line": 14,
+            "vars": [
+              "dist",
+              "e",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "if i==n-1: return True",
+            "line": 15,
+            "vars": [
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 16,
+            "vars": []
+          },
+          {
+            "code": "return False",
+            "line": 17,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "dist": false,
+          "e": false,
+          "es": false,
+          "i": false,
+          "j": false,
+          "n": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "shortest_path": {
+        "base_liveout": [
+          "dist"
+        ],
+        "live_before": [
+          {
+            "code": "dist=[float(\"inf\")]*n",
+            "line": 22,
+            "vars": [
+              "es",
+              "n",
+              "s"
+            ]
+          },
+          {
+            "code": "dist[s]=0",
+            "line": 24,
+            "vars": [
+              "es",
+              "s"
+            ]
+          },
+          {
+            "code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+            "line": 26,
+            "vars": [
+              "dist",
+              "es"
+            ]
+          },
+          {
+            "code": "update=False",
+            "line": 27,
+            "vars": [
+              "dist",
+              "es"
+            ]
+          },
+          {
+            "code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+            "line": 28,
+            "vars": [
+              "dist",
+              "es"
+            ]
+          },
+          {
+            "code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+            "line": 30,
+            "vars": [
+              "dist",
+              "p",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "dist[q]=dist[p]+r",
+            "line": 31,
+            "vars": [
+              "dist",
+              "p",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "update=True",
+            "line": 32,
+            "vars": [
+              "dist"
+            ]
+          },
+          {
+            "code": "if not update: break",
+            "line": 33,
+            "vars": [
+              "dist",
+              "update"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 34,
+            "vars": [
+              "dist"
+            ]
+          },
+          {
+            "code": "return dist",
+            "line": 36,
+            "vars": [
+              "dist"
+            ]
+          }
+        ],
+        "liveout": {
+          "dist": true,
+          "es": false,
+          "n": false,
+          "p": false,
+          "q": false,
+          "r": false,
+          "s": false,
+          "update": false,
+          "w": false
+        },
+        "return_vars": [
+          "dist"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(M):",
+      "cond": "for _ in range(M)",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1,N+1):",
+      "cond": "for i in range(1,N+1)",
+      "function": "__module__",
+      "header_id": 12,
+      "line": 70,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for a,b,nc in elist:",
+      "cond": "for a,b,nc in elist",
+      "function": "__module__",
+      "header_id": 17,
+      "line": 77,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for v in graph[u]:",
+      "cond": "for v in graph[u]",
+      "function": "check_reachable",
+      "header_id": 8,
+      "line": 56,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "find_negative_loop",
+      "header_id": 3,
+      "line": 10,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(w):",
+      "cond": "for j in range(w)",
+      "function": "find_negative_loop",
+      "header_id": 4,
+      "line": 11,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "while True:",
+      "cond": "True",
+      "function": "shortest_path",
+      "header_id": 3,
+      "line": 26,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for p,q,r in es:",
+      "cond": "for p,q,r in es",
+      "function": "shortest_path",
+      "header_id": 5,
+      "line": 28,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10**9)",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "N,M=map(int,input().split())",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "N,M=map(int,input().split())",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "graph=[[] for _ in range(N+1)]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "graph=[[] for _ in range(N+1)]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "graph=[[] for _ in range(N+1)]",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "elist=[]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "elist=[]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "elist=[]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "elist=[]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "a,b,c=map(int,input().split())",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 41,
+      "b_code": "graph[a].append(b)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b,c=map(int,input().split())",
+      "a_line": 41,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph[a].append(b)",
+      "a_line": 42,
+      "b_code": "elist.append((a,b,-c))",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "visited=[None]*(N+1)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "visited=[None]*(N+1)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "visited=[None]*(N+1)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "visited=[None]*(N+1)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "visited=[None]*(N+1)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "visited=[None]*(N+1)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "reachable=[None]*(N+1)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 71,
+      "b_code": "visited=[False]*(N+1)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 71,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[False]*(N+1)",
+      "a_line": 72,
+      "b_code": "check_reachable(i)",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "elist2=[]",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "a_line": 77,
+      "b_code": "M2=len(elist2)",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "a_line": 77,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "M2=len(elist2)",
+      "a_line": 81,
+      "b_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "a_line": 77,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "M2=len(elist2)",
+      "a_line": 81,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "a_line": 82,
+      "b_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "a_line": 77,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "M2=len(elist2)",
+      "a_line": 81,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "a_line": 82,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "a_line": 84,
+      "b_code": "print(\"inf\")",
+      "b_line": 85,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "a_line": 77,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "M2=len(elist2)",
+      "a_line": 81,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "a_line": 82,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "a_line": 84,
+      "b_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "b_line": 87,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**9)",
+      "a_line": 2,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 3,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph=[[] for _ in range(N+1)]",
+      "a_line": 38,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist=[]",
+      "a_line": 39,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b,c=map(int,input().split()) graph[a].append(b) elist.append((a,b,-c))",
+      "a_line": 40,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited=[None]*(N+1)",
+      "a_line": 46,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "reachable=[None]*(N+1)",
+      "a_line": 69,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,N+1): if reachable[i]==None: visited=[False]*(N+1) check_reachable(i)",
+      "a_line": 70,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "elist2=[]",
+      "a_line": 76,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b,nc in elist: if reachable[a] and reachable[b]: elist2.append((a,b,nc))",
+      "a_line": 77,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "M2=len(elist2)",
+      "a_line": 81,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "res1=find_negative_loop(N+1,M2,elist2)",
+      "a_line": 82,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if res1: print(\"inf\") else: res2=shortest_path(1,N+1,M2,elist2) print(-res2[N])",
+      "a_line": 84,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "res2=shortest_path(1,N+1,M2,elist2)",
+      "a_line": 87,
+      "b_code": "print(-res2[N])",
+      "b_line": 88,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "dist[1]=0",
+      "b_line": 8,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 10,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 10,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 11,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 11,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 11,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "e=es[j]",
+      "b_line": 12,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "e=es[j]",
+      "b_line": 12,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "e=es[j]",
+      "b_line": 12,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 11,
+      "b_code": "e=es[j]",
+      "b_line": 12,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 13,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 13,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 13,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 11,
+      "b_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 13,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "e=es[j]",
+      "a_line": 12,
+      "b_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "b_line": 13,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "b_line": 14,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "b_line": 14,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "b_line": 14,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 11,
+      "b_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "b_line": 14,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "e=es[j]",
+      "a_line": 12,
+      "b_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "b_line": 14,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 13,
+      "b_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "b_line": 14,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 11,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "e=es[j]",
+      "a_line": 12,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 13,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "a_line": 14,
+      "b_code": "if i==n-1: return True",
+      "b_line": 15,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 11,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "e=es[j]",
+      "a_line": 12,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 13,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[e[1]]=dist[e[0]]+e[2]",
+      "a_line": 14,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "if i==n-1: return True",
+      "a_line": 15,
+      "b_code": "return True",
+      "b_line": 16,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 6,
+      "b_code": "return False",
+      "b_line": 17,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist[1]=0",
+      "a_line": 8,
+      "b_code": "return False",
+      "b_line": 17,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "for i in range(n): for j in range(w): e=es[j] if dist[e[1]]>dist[e[0]]+e[2]: dist[e[1]]=dist[e[0]]+e[2] if i==n-1: return True",
+      "a_line": 10,
+      "b_code": "return False",
+      "b_line": 17,
+      "function": "find_negative_loop"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "dist[s]=0",
+      "b_line": 24,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "b_line": 26,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "b_line": 26,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "update=False",
+      "b_line": 27,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "update=False",
+      "b_line": 27,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "update=False",
+      "b_line": 27,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 28,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 28,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 28,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "update=False",
+      "a_line": 27,
+      "b_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 28,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 30,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 30,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 30,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "update=False",
+      "a_line": 27,
+      "b_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 30,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 28,
+      "b_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "b_line": 30,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "dist[q]=dist[p]+r",
+      "b_line": 31,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "dist[q]=dist[p]+r",
+      "b_line": 31,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "dist[q]=dist[p]+r",
+      "b_line": 31,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "update=False",
+      "a_line": 27,
+      "b_code": "dist[q]=dist[p]+r",
+      "b_line": 31,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 28,
+      "b_code": "dist[q]=dist[p]+r",
+      "b_line": 31,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 30,
+      "b_code": "dist[q]=dist[p]+r",
+      "b_line": 31,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "update=False",
+      "a_line": 27,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 28,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 30,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[q]=dist[p]+r",
+      "a_line": 31,
+      "b_code": "update=True",
+      "b_line": 32,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "if not update: break",
+      "b_line": 33,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "if not update: break",
+      "b_line": 33,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "if not update: break",
+      "b_line": 33,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "update=False",
+      "a_line": 27,
+      "b_code": "if not update: break",
+      "b_line": 33,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 28,
+      "b_code": "if not update: break",
+      "b_line": 33,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "break",
+      "b_line": 34,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "break",
+      "b_line": 34,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "break",
+      "b_line": 34,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "update=False",
+      "a_line": 27,
+      "b_code": "break",
+      "b_line": 34,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True",
+      "a_line": 28,
+      "b_code": "break",
+      "b_line": 34,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "if not update: break",
+      "a_line": 33,
+      "b_code": "break",
+      "b_line": 34,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist=[float(\"inf\")]*n",
+      "a_line": 22,
+      "b_code": "return dist",
+      "b_line": 36,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "dist[s]=0",
+      "a_line": 24,
+      "b_code": "return dist",
+      "b_line": 36,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "while True: update=False for p,q,r in es: # e: \u8fbai\u306b\u3064\u3044\u3066 [from,to,cost] if dist[p]!=float(\"inf\") and dist[q]>dist[p]+r: dist[q]=dist[p]+r update=True if not update: break",
+      "a_line": 26,
+      "b_code": "return dist",
+      "b_line": 36,
+      "function": "shortest_path"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "b_line": 49,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "reachable[u]=True",
+      "b_line": 50,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "reachable[u]=True",
+      "b_line": 50,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "return True",
+      "b_line": 51,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "return True",
+      "b_line": 51,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "reachable[u]=True",
+      "a_line": 50,
+      "b_code": "return True",
+      "b_line": 51,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "elif reachable[u]!=None: return reachable[u]",
+      "b_line": 52,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "elif reachable[u]!=None: return reachable[u]",
+      "b_line": 52,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "return reachable[u]",
+      "b_line": 53,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "return reachable[u]",
+      "b_line": 53,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "return reachable[u]",
+      "b_line": 53,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "cnt=0",
+      "b_line": 55,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "cnt=0",
+      "b_line": 55,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "cnt=0",
+      "b_line": 55,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 56,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 56,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 56,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 56,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 57,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 57,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 57,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 57,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "b_line": 57,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "ret=check_reachable(v)",
+      "b_line": 58,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "ret=check_reachable(v)",
+      "b_line": 58,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "ret=check_reachable(v)",
+      "b_line": 58,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "ret=check_reachable(v)",
+      "b_line": 58,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "ret=check_reachable(v)",
+      "b_line": 58,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 57,
+      "b_code": "ret=check_reachable(v)",
+      "b_line": 58,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 57,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "ret=check_reachable(v)",
+      "a_line": 58,
+      "b_code": "if ret: cnt+=1",
+      "b_line": 59,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 57,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "ret=check_reachable(v)",
+      "a_line": 58,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if ret: cnt+=1",
+      "a_line": 59,
+      "b_code": "cnt+=1",
+      "b_line": 60,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "b_line": 62,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "b_line": 62,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "b_line": 62,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "b_line": 62,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "b_line": 62,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "reachable[u]=True",
+      "b_line": 63,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "reachable[u]=True",
+      "b_line": 63,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "reachable[u]=True",
+      "b_line": 63,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "reachable[u]=True",
+      "b_line": 63,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "reachable[u]=True",
+      "b_line": 63,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "a_line": 62,
+      "b_code": "reachable[u]=True",
+      "b_line": 63,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "a_line": 62,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "reachable[u]=True",
+      "a_line": 63,
+      "b_code": "return True",
+      "b_line": 64,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "reachable[u]=False",
+      "b_line": 66,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "reachable[u]=False",
+      "b_line": 66,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "reachable[u]=False",
+      "b_line": 66,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "reachable[u]=False",
+      "b_line": 66,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "reachable[u]=False",
+      "b_line": 66,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "a_line": 62,
+      "b_code": "reachable[u]=False",
+      "b_line": 66,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "visited[u]=True",
+      "a_line": 48,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if u==N: reachable[u]=True return True elif reachable[u]!=None: return reachable[u]",
+      "a_line": 49,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "elif reachable[u]!=None: return reachable[u]",
+      "a_line": 52,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 55,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "for v in graph[u]: if not visited[v]: ret=check_reachable(v) if ret: cnt+=1",
+      "a_line": 56,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "if cnt>0: reachable[u]=True return True else: reachable[u]=False return False",
+      "a_line": 62,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    },
+    {
+      "a_code": "reachable[u]=False",
+      "a_line": 66,
+      "b_code": "return False",
+      "b_line": 67,
+      "function": "check_reachable"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 2",
+      "external call skipped input at line 3",
+      "external call skipped input at line 41"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 2",
+    "external call skipped input at line 3",
+    "external call skipped input at line 41"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "M2"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "from": {
+        "code": "graph=[[] for _ in range(N+1)]",
+        "line": 38,
+        "var": "graph"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "graph=[[] for _ in range(N+1)]",
+        "line": 38,
+        "var": "int"
+      },
+      "from": {
+        "code": "graph=[[] for _ in range(N+1)]",
+        "line": 38,
+        "var": "graph"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "graph=[[] for _ in range(N+1)]",
+        "line": 38,
+        "var": "graph"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "elist=[]",
+        "line": 39,
+        "var": "elist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "a,b,c=map(int,input().split())",
+        "line": 41,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "from": {
+        "code": "visited=[None]*(N+1)",
+        "line": 46,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "visited=[None]*(N+1)",
+        "line": 46,
+        "var": "int"
+      },
+      "from": {
+        "code": "visited=[None]*(N+1)",
+        "line": 46,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "visited=[None]*(N+1)",
+        "line": 46,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "from": {
+        "code": "reachable=[None]*(N+1)",
+        "line": 69,
+        "var": "reachable"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "reachable=[None]*(N+1)",
+        "line": 69,
+        "var": "int"
+      },
+      "from": {
+        "code": "reachable=[None]*(N+1)",
+        "line": 69,
+        "var": "reachable"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "reachable=[None]*(N+1)",
+        "line": 69,
+        "var": "reachable"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "from": {
+        "code": "visited=[False]*(N+1)",
+        "line": 72,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "visited=[False]*(N+1)",
+        "line": 72,
+        "var": "int"
+      },
+      "from": {
+        "code": "visited=[False]*(N+1)",
+        "line": 72,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "visited=[False]*(N+1)",
+        "line": 72,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "elist2=[]",
+        "line": 76,
+        "var": "elist2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "elist2=[]",
+        "line": 76,
+        "var": "elist2"
+      },
+      "from": {
+        "code": "M2=len(elist2)",
+        "line": 81,
+        "var": "M2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "M2=len(elist2)",
+        "line": 81,
+        "var": "M2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "M2=len(elist2)",
+        "line": 81,
+        "var": "M2"
+      },
+      "from": {
+        "code": "res1=find_negative_loop(N+1,M2,elist2)",
+        "line": 82,
+        "var": "res1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "from": {
+        "code": "res1=find_negative_loop(N+1,M2,elist2)",
+        "line": 82,
+        "var": "res1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elist2=[]",
+        "line": 76,
+        "var": "elist2"
+      },
+      "from": {
+        "code": "res1=find_negative_loop(N+1,M2,elist2)",
+        "line": 82,
+        "var": "res1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res1=find_negative_loop(N+1,M2,elist2)",
+        "line": 82,
+        "var": "int"
+      },
+      "from": {
+        "code": "res1=find_negative_loop(N+1,M2,elist2)",
+        "line": 82,
+        "var": "res1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "res1=find_negative_loop(N+1,M2,elist2)",
+        "line": 82,
+        "var": "res1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "M2=len(elist2)",
+        "line": 81,
+        "var": "M2"
+      },
+      "from": {
+        "code": "res2=shortest_path(1,N+1,M2,elist2)",
+        "line": 87,
+        "var": "res2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "N"
+      },
+      "from": {
+        "code": "res2=shortest_path(1,N+1,M2,elist2)",
+        "line": 87,
+        "var": "res2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "elist2=[]",
+        "line": 76,
+        "var": "elist2"
+      },
+      "from": {
+        "code": "res2=shortest_path(1,N+1,M2,elist2)",
+        "line": 87,
+        "var": "res2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "res2=shortest_path(1,N+1,M2,elist2)",
+        "line": 87,
+        "var": "int"
+      },
+      "from": {
+        "code": "res2=shortest_path(1,N+1,M2,elist2)",
+        "line": 87,
+        "var": "res2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 3,
+        "var": "M"
+      },
+      "from": {
+        "code": "res2=shortest_path(1,N+1,M2,elist2)",
+        "line": 87,
+        "var": "res2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,w,es):",
+        "line": 5,
+        "var": "n"
+      },
+      "from": {
+        "code": "dist=[float(\"inf\")]*n",
+        "line": 6,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,w,es):",
+        "line": 5,
+        "var": "e"
+      },
+      "from": {
+        "code": "dist=[float(\"inf\")]*n",
+        "line": 6,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,w,es):",
+        "line": 5,
+        "var": "e"
+      },
+      "from": {
+        "code": "dist[1]=0",
+        "line": 8,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,w,es):",
+        "line": 5,
+        "var": "es"
+      },
+      "from": {
+        "code": "e=es[j]",
+        "line": 12,
+        "var": "e"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "e=es[j]",
+        "line": 12,
+        "var": "j"
+      },
+      "from": {
+        "code": "e=es[j]",
+        "line": 12,
+        "var": "e"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[1]=0",
+        "line": 8,
+        "var": "dist"
+      },
+      "from": {
+        "code": "e=es[j]",
+        "line": 12,
+        "var": "e"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dist[1]=0",
+        "line": 8,
+        "var": "dist"
+      },
+      "from": {
+        "code": "dist[e[1]]=dist[e[0]]+e[2]",
+        "line": 14,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "e=es[j]",
+        "line": 12,
+        "var": "e"
+      },
+      "from": {
+        "code": "dist[e[1]]=dist[e[0]]+e[2]",
+        "line": 14,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,w,es):",
+        "line": 5,
+        "var": "es"
+      },
+      "from": {
+        "code": "dist[e[1]]=dist[e[0]]+e[2]",
+        "line": 14,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[e[1]]=dist[e[0]]+e[2]",
+        "line": 14,
+        "var": "j"
+      },
+      "from": {
+        "code": "dist[e[1]]=dist[e[0]]+e[2]",
+        "line": 14,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_negative_loop(n,w,es):",
+        "line": 5,
+        "var": "i"
+      },
+      "from": {
+        "code": "dist[e[1]]=dist[e[0]]+e[2]",
+        "line": 14,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(s,n,w,es):",
+        "line": 19,
+        "var": "n"
+      },
+      "from": {
+        "code": "dist=[float(\"inf\")]*n",
+        "line": 22,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(s,n,w,es):",
+        "line": 19,
+        "var": "es"
+      },
+      "from": {
+        "code": "dist=[float(\"inf\")]*n",
+        "line": 22,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(s,n,w,es):",
+        "line": 19,
+        "var": "s"
+      },
+      "from": {
+        "code": "dist[s]=0",
+        "line": 24,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(s,n,w,es):",
+        "line": 19,
+        "var": "es"
+      },
+      "from": {
+        "code": "dist[s]=0",
+        "line": 24,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dist[s]=0",
+        "line": 24,
+        "var": "dist"
+      },
+      "from": {
+        "code": "update=False",
+        "line": 27,
+        "var": "update"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dist[s]=0",
+        "line": 24,
+        "var": "dist"
+      },
+      "from": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "p"
+      },
+      "from": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "q"
+      },
+      "from": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "r"
+      },
+      "from": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(s,n,w,es):",
+        "line": 19,
+        "var": "s"
+      },
+      "from": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(s,n,w,es):",
+        "line": 19,
+        "var": "es"
+      },
+      "from": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dist[q]=dist[p]+r",
+        "line": 31,
+        "var": "dist"
+      },
+      "from": {
+        "code": "update=True",
+        "line": 32,
+        "var": "update"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "u"
+      },
+      "from": {
+        "code": "visited[u]=True",
+        "line": 48,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "visited[u]=True",
+        "line": 48,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "u"
+      },
+      "from": {
+        "code": "reachable[u]=True",
+        "line": 50,
+        "var": "reachable"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "reachable[u]=True",
+        "line": 50,
+        "var": "reachable"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "cnt=0",
+        "line": 55,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ret=check_reachable(v)",
+        "line": 58,
+        "var": "v"
+      },
+      "from": {
+        "code": "ret=check_reachable(v)",
+        "line": 58,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "ret=check_reachable(v)",
+        "line": 58,
+        "var": "ret"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "cnt+=1",
+        "line": 60,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "u"
+      },
+      "from": {
+        "code": "reachable[u]=True",
+        "line": 63,
+        "var": "reachable"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "reachable[u]=True",
+        "line": 63,
+        "var": "reachable"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "u"
+      },
+      "from": {
+        "code": "reachable[u]=False",
+        "line": 66,
+        "var": "reachable"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def check_reachable(u):",
+        "line": 47,
+        "var": "N"
+      },
+      "from": {
+        "code": "reachable[u]=False",
+        "line": 66,
+        "var": "reachable"
+      },
+      "label": "negative"
+    }
+  ]
+}

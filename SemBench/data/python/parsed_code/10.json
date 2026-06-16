@@ -1,0 +1,1838 @@
+{
+  "cfg_statements": [
+    {
+      "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "AnnAssign",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "AnnAssign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "nodes: Set[Hashable] = set()",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "AnnAssign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "For",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "adj[u].append(v)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "Expr",
+      "line": 10,
+      "node_id": 5
+    },
+    {
+      "code": "indegree[v] += 1",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "AugAssign",
+      "line": 11,
+      "node_id": 6
+    },
+    {
+      "code": "nodes.add(u)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "Expr",
+      "line": 12,
+      "node_id": 7
+    },
+    {
+      "code": "nodes.add(v)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "Expr",
+      "line": 12,
+      "node_id": 8
+    },
+    {
+      "code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "For",
+      "line": 13,
+      "node_id": 9
+    },
+    {
+      "code": "indegree.setdefault(node, 0)",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "Expr",
+      "line": 14,
+      "node_id": 10
+    },
+    {
+      "code": "adj.setdefault(node, [])",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "Expr",
+      "line": 15,
+      "node_id": 11
+    },
+    {
+      "code": "return adj, indegree, nodes",
+      "dead": false,
+      "function": "build_graph",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 12
+    },
+    {
+      "code": "if edges is None: return []",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "If",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Return",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "adj, indegree, nodes = build_graph(edges)",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "order: List[Hashable] = []",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "AnnAssign",
+      "line": 23,
+      "node_id": 5
+    },
+    {
+      "code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "While",
+      "line": 24,
+      "node_id": 6
+    },
+    {
+      "code": "u = dq.popleft()",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 7
+    },
+    {
+      "code": "order.append(u)",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 8
+    },
+    {
+      "code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "For",
+      "line": 27,
+      "node_id": 9
+    },
+    {
+      "code": "indegree[v] -= 1",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "AugAssign",
+      "line": 28,
+      "node_id": 10
+    },
+    {
+      "code": "if indegree[v] == 0: dq.append(v)",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "If",
+      "line": 29,
+      "node_id": 11
+    },
+    {
+      "code": "dq.append(v)",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Expr",
+      "line": 30,
+      "node_id": 12
+    },
+    {
+      "code": "return order",
+      "dead": false,
+      "function": "topo_sort",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 13
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "nodes: Set[Hashable] = set()",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "adj[u].append(v)",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "indegree[v] += 1",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "nodes.add(u)",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "nodes.add(v)",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "indegree.setdefault(node, 0)",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "adj.setdefault(node, [])",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return adj, indegree, nodes",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "if edges is None: return []",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "adj, indegree, nodes = build_graph(edges)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "order: List[Hashable] = []",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "u = dq.popleft()",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "order.append(u)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "indegree[v] -= 1",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "if indegree[v] == 0: dq.append(v)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "dq.append(v)",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "return order",
+      "dead": false,
+      "line": 31
+    }
+  ],
+  "file": "SemBench/data/python/code/10.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 5,
+      "name": "build_graph",
+      "variables": [
+        "adj",
+        "edges",
+        "indegree",
+        "int",
+        "list",
+        "node",
+        "nodes",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "calls": [
+        "build_graph"
+      ],
+      "end_lineno": 31,
+      "lineno": 18,
+      "name": "topo_sort",
+      "variables": [
+        "adj",
+        "dq",
+        "edges",
+        "indegree",
+        "nodes",
+        "order",
+        "u",
+        "v"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "build_graph": {
+        "base_liveout": [
+          "adj",
+          "indegree",
+          "nodes"
+        ],
+        "live_before": [
+          {
+            "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+            "line": 6,
+            "vars": [
+              "edges",
+              "int",
+              "list"
+            ]
+          },
+          {
+            "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+            "line": 7,
+            "vars": [
+              "adj",
+              "edges",
+              "int"
+            ]
+          },
+          {
+            "code": "nodes: Set[Hashable] = set()",
+            "line": 8,
+            "vars": [
+              "adj",
+              "edges",
+              "indegree"
+            ]
+          },
+          {
+            "code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+            "line": 9,
+            "vars": [
+              "adj",
+              "edges",
+              "indegree",
+              "nodes"
+            ]
+          },
+          {
+            "code": "adj[u].append(v)",
+            "line": 10,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "indegree[v] += 1",
+            "line": 11,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "nodes.add(u)",
+            "line": 12,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "nodes.add(v)",
+            "line": 12,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes",
+              "v"
+            ]
+          },
+          {
+            "code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+            "line": 13,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes"
+            ]
+          },
+          {
+            "code": "indegree.setdefault(node, 0)",
+            "line": 14,
+            "vars": [
+              "adj",
+              "indegree",
+              "node",
+              "nodes"
+            ]
+          },
+          {
+            "code": "adj.setdefault(node, [])",
+            "line": 15,
+            "vars": [
+              "adj",
+              "indegree",
+              "node",
+              "nodes"
+            ]
+          },
+          {
+            "code": "return adj, indegree, nodes",
+            "line": 16,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes"
+            ]
+          }
+        ],
+        "liveout": {
+          "adj": true,
+          "edges": false,
+          "indegree": true,
+          "int": false,
+          "list": false,
+          "node": false,
+          "nodes": true,
+          "u": false,
+          "v": false
+        },
+        "return_vars": [
+          "adj",
+          "indegree",
+          "nodes"
+        ]
+      },
+      "topo_sort": {
+        "base_liveout": [
+          "order"
+        ],
+        "live_before": [
+          {
+            "code": "if edges is None: return []",
+            "line": 19,
+            "vars": [
+              "edges"
+            ]
+          },
+          {
+            "code": "return []",
+            "line": 20,
+            "vars": [
+              "edges"
+            ]
+          },
+          {
+            "code": "adj, indegree, nodes = build_graph(edges)",
+            "line": 21,
+            "vars": [
+              "edges"
+            ]
+          },
+          {
+            "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+            "line": 22,
+            "vars": [
+              "adj",
+              "indegree",
+              "nodes"
+            ]
+          },
+          {
+            "code": "order: List[Hashable] = []",
+            "line": 23,
+            "vars": [
+              "adj",
+              "dq",
+              "indegree"
+            ]
+          },
+          {
+            "code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+            "line": 24,
+            "vars": [
+              "adj",
+              "dq",
+              "indegree",
+              "order"
+            ]
+          },
+          {
+            "code": "u = dq.popleft()",
+            "line": 25,
+            "vars": [
+              "adj",
+              "dq",
+              "indegree",
+              "order"
+            ]
+          },
+          {
+            "code": "order.append(u)",
+            "line": 26,
+            "vars": [
+              "adj",
+              "dq",
+              "indegree",
+              "order",
+              "u"
+            ]
+          },
+          {
+            "code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+            "line": 27,
+            "vars": [
+              "adj",
+              "dq",
+              "indegree",
+              "order",
+              "u"
+            ]
+          },
+          {
+            "code": "indegree[v] -= 1",
+            "line": 28,
+            "vars": [
+              "dq",
+              "indegree",
+              "order",
+              "v"
+            ]
+          },
+          {
+            "code": "if indegree[v] == 0: dq.append(v)",
+            "line": 29,
+            "vars": [
+              "dq",
+              "indegree",
+              "order",
+              "v"
+            ]
+          },
+          {
+            "code": "dq.append(v)",
+            "line": 30,
+            "vars": [
+              "dq",
+              "order",
+              "v"
+            ]
+          },
+          {
+            "code": "return order",
+            "line": 31,
+            "vars": [
+              "order"
+            ]
+          }
+        ],
+        "liveout": {
+          "adj": false,
+          "dq": false,
+          "edges": false,
+          "indegree": false,
+          "nodes": false,
+          "order": true,
+          "u": false,
+          "v": false
+        },
+        "return_vars": [
+          "order"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for u, v in edges:",
+      "cond": "for u, v in edges",
+      "function": "build_graph",
+      "header_id": 4,
+      "line": 9,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for node in nodes:",
+      "cond": "for node in nodes",
+      "function": "build_graph",
+      "header_id": 9,
+      "line": 13,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while dq:",
+      "cond": "dq",
+      "function": "topo_sort",
+      "header_id": 6,
+      "line": 24,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for v in adj[u]:",
+      "cond": "for v in adj[u]",
+      "function": "topo_sort",
+      "header_id": 9,
+      "line": 27,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "b_line": 7,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "nodes: Set[Hashable] = set()",
+      "b_line": 8,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "nodes: Set[Hashable] = set()",
+      "b_line": 8,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "b_line": 9,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "b_line": 9,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "b_line": 9,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "adj[u].append(v)",
+      "b_line": 10,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "adj[u].append(v)",
+      "b_line": 10,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "adj[u].append(v)",
+      "b_line": 10,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "adj[u].append(v)",
+      "b_line": 10,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "indegree[v] += 1",
+      "b_line": 11,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "indegree[v] += 1",
+      "b_line": 11,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "indegree[v] += 1",
+      "b_line": 11,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "indegree[v] += 1",
+      "b_line": 11,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj[u].append(v)",
+      "a_line": 10,
+      "b_code": "indegree[v] += 1",
+      "b_line": 11,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "nodes.add(u)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "nodes.add(u)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "nodes.add(u)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "nodes.add(u)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj[u].append(v)",
+      "a_line": 10,
+      "b_code": "nodes.add(u)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree[v] += 1",
+      "a_line": 11,
+      "b_code": "nodes.add(u)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj[u].append(v)",
+      "a_line": 10,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree[v] += 1",
+      "a_line": 11,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes.add(u)",
+      "a_line": 12,
+      "b_code": "nodes.add(v)",
+      "b_line": 12,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "b_line": 13,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "b_line": 13,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "b_line": 13,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "b_line": 13,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "indegree.setdefault(node, 0)",
+      "b_line": 14,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "indegree.setdefault(node, 0)",
+      "b_line": 14,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "indegree.setdefault(node, 0)",
+      "b_line": 14,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "indegree.setdefault(node, 0)",
+      "b_line": 14,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "a_line": 13,
+      "b_code": "indegree.setdefault(node, 0)",
+      "b_line": 14,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "adj.setdefault(node, [])",
+      "b_line": 15,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "adj.setdefault(node, [])",
+      "b_line": 15,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "adj.setdefault(node, [])",
+      "b_line": 15,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "adj.setdefault(node, [])",
+      "b_line": 15,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "a_line": 13,
+      "b_code": "adj.setdefault(node, [])",
+      "b_line": 15,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree.setdefault(node, 0)",
+      "a_line": 14,
+      "b_code": "adj.setdefault(node, [])",
+      "b_line": 15,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+      "a_line": 6,
+      "b_code": "return adj, indegree, nodes",
+      "b_line": 16,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+      "a_line": 7,
+      "b_code": "return adj, indegree, nodes",
+      "b_line": 16,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "nodes: Set[Hashable] = set()",
+      "a_line": 8,
+      "b_code": "return adj, indegree, nodes",
+      "b_line": 16,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for u, v in edges: adj[u].append(v) indegree[v] += 1 nodes.add(u); nodes.add(v)",
+      "a_line": 9,
+      "b_code": "return adj, indegree, nodes",
+      "b_line": 16,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "for node in nodes: indegree.setdefault(node, 0) adj.setdefault(node, [])",
+      "a_line": 13,
+      "b_code": "return adj, indegree, nodes",
+      "b_line": 16,
+      "function": "build_graph"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "return []",
+      "b_line": 20,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "adj, indegree, nodes = build_graph(edges)",
+      "b_line": 21,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "b_line": 22,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "b_line": 22,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "order: List[Hashable] = []",
+      "b_line": 23,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "order: List[Hashable] = []",
+      "b_line": 23,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "order: List[Hashable] = []",
+      "b_line": 23,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 24,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 24,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 24,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 24,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "u = dq.popleft()",
+      "b_line": 25,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "u = dq.popleft()",
+      "b_line": 25,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "u = dq.popleft()",
+      "b_line": 25,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "u = dq.popleft()",
+      "b_line": 25,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "u = dq.popleft()",
+      "b_line": 25,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "order.append(u)",
+      "b_line": 26,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "order.append(u)",
+      "b_line": 26,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "order.append(u)",
+      "b_line": 26,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "order.append(u)",
+      "b_line": 26,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "order.append(u)",
+      "b_line": 26,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "u = dq.popleft()",
+      "a_line": 25,
+      "b_code": "order.append(u)",
+      "b_line": 26,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "u = dq.popleft()",
+      "a_line": 25,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order.append(u)",
+      "a_line": 26,
+      "b_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "b_line": 27,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "u = dq.popleft()",
+      "a_line": 25,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order.append(u)",
+      "a_line": 26,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 27,
+      "b_code": "indegree[v] -= 1",
+      "b_line": 28,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "u = dq.popleft()",
+      "a_line": 25,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order.append(u)",
+      "a_line": 26,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 27,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "indegree[v] -= 1",
+      "a_line": 28,
+      "b_code": "if indegree[v] == 0: dq.append(v)",
+      "b_line": 29,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "u = dq.popleft()",
+      "a_line": 25,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order.append(u)",
+      "a_line": 26,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 27,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "indegree[v] -= 1",
+      "a_line": 28,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if indegree[v] == 0: dq.append(v)",
+      "a_line": 29,
+      "b_code": "dq.append(v)",
+      "b_line": 30,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "if edges is None: return []",
+      "a_line": 19,
+      "b_code": "return order",
+      "b_line": 31,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "adj, indegree, nodes = build_graph(edges)",
+      "a_line": 21,
+      "b_code": "return order",
+      "b_line": 31,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+      "a_line": 22,
+      "b_code": "return order",
+      "b_line": 31,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 23,
+      "b_code": "return order",
+      "b_line": 31,
+      "function": "topo_sort"
+    },
+    {
+      "a_code": "while dq: u = dq.popleft() order.append(u) for v in adj[u]: indegree[v] -= 1 if indegree[v] == 0: dq.append(v)",
+      "a_line": 24,
+      "b_code": "return order",
+      "b_line": 31,
+      "function": "topo_sort"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+        "line": 6,
+        "var": "list"
+      },
+      "from": {
+        "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+        "line": 6,
+        "var": "adj"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def build_graph(edges:",
+        "line": 5,
+        "var": "edges"
+      },
+      "from": {
+        "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+        "line": 6,
+        "var": "adj"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+        "line": 7,
+        "var": "int"
+      },
+      "from": {
+        "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+        "line": 7,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+        "line": 6,
+        "var": "adj"
+      },
+      "from": {
+        "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+        "line": 7,
+        "var": "indegree"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+        "line": 6,
+        "var": "adj"
+      },
+      "from": {
+        "code": "nodes: Set[Hashable] = set()",
+        "line": 8,
+        "var": "nodes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "indegree: Dict[Hashable, int] = defaultdict(int)",
+        "line": 7,
+        "var": "indegree"
+      },
+      "from": {
+        "code": "indegree[v] += 1",
+        "line": 11,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indegree[v] += 1",
+        "line": 11,
+        "var": "int"
+      },
+      "from": {
+        "code": "indegree[v] += 1",
+        "line": 11,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indegree[v] += 1",
+        "line": 11,
+        "var": "v"
+      },
+      "from": {
+        "code": "indegree[v] += 1",
+        "line": 11,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj: Dict[Hashable, List[Hashable]] = defaultdict(list)",
+        "line": 6,
+        "var": "adj"
+      },
+      "from": {
+        "code": "indegree[v] += 1",
+        "line": 11,
+        "var": "indegree"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "edges"
+      },
+      "from": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "dq"
+      },
+      "from": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "edges"
+      },
+      "from": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "from": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "indegree"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "edges"
+      },
+      "from": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "nodes"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "from": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "nodes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "edges"
+      },
+      "from": {
+        "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+        "line": 22,
+        "var": "dq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "indegree"
+      },
+      "from": {
+        "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+        "line": 22,
+        "var": "dq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "nodes"
+      },
+      "from": {
+        "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+        "line": 22,
+        "var": "dq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "from": {
+        "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+        "line": 22,
+        "var": "dq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "from": {
+        "code": "order: List[Hashable] = []",
+        "line": 23,
+        "var": "order"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dq = deque([x for x in nodes if indegree[x] == 0])",
+        "line": 22,
+        "var": "dq"
+      },
+      "from": {
+        "code": "u = dq.popleft()",
+        "line": 25,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "edges"
+      },
+      "from": {
+        "code": "u = dq.popleft()",
+        "line": 25,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "indegree"
+      },
+      "from": {
+        "code": "u = dq.popleft()",
+        "line": 25,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "nodes"
+      },
+      "from": {
+        "code": "u = dq.popleft()",
+        "line": 25,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "from": {
+        "code": "u = dq.popleft()",
+        "line": 25,
+        "var": "u"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def topo_sort(edges:",
+        "line": 18,
+        "var": "edges"
+      },
+      "from": {
+        "code": "indegree[v] -= 1",
+        "line": 28,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "indegree"
+      },
+      "from": {
+        "code": "indegree[v] -= 1",
+        "line": 28,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "indegree[v] -= 1",
+        "line": 28,
+        "var": "v"
+      },
+      "from": {
+        "code": "indegree[v] -= 1",
+        "line": 28,
+        "var": "indegree"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adj, indegree, nodes = build_graph(edges)",
+        "line": 21,
+        "var": "adj"
+      },
+      "from": {
+        "code": "indegree[v] -= 1",
+        "line": 28,
+        "var": "indegree"
+      },
+      "label": "negative"
+    }
+  ]
+}

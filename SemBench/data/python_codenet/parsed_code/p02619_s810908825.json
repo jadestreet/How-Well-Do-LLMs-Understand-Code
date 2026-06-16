@@ -1,0 +1,4292 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys, heapq",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 41,
+      "node_id": 2
+    },
+    {
+      "code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 53,
+      "node_id": 3
+    },
+    {
+      "code": "D = int(input().strip())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 4
+    },
+    {
+      "code": "complaints = list(map(int, input().split() ) )",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 5
+    },
+    {
+      "code": "satisfications = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 6
+    },
+    {
+      "code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 58,
+      "node_id": 7
+    },
+    {
+      "code": "satisfication = list(map(int, input().split() ) )",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 59,
+      "node_id": 8
+    },
+    {
+      "code": "satisfications.append(satisfication)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 60,
+      "node_id": 9
+    },
+    {
+      "code": "HoldedContestDays =[0] * D",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 61,
+      "node_id": 10
+    },
+    {
+      "code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 62,
+      "node_id": 11
+    },
+    {
+      "code": "HoldedContestDays[i] = int(input().strip())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 63,
+      "node_id": 12
+    },
+    {
+      "code": "HoldedContestDays[i] -= 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 64,
+      "node_id": 13
+    },
+    {
+      "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 65,
+      "node_id": 14
+    },
+    {
+      "code": "for i in range(D): print(Scores[i+1])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 66,
+      "node_id": 15
+    },
+    {
+      "code": "print(Scores[i+1])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 67,
+      "node_id": 16
+    },
+    {
+      "code": "TotalSatisfications = [0]",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "ContestDays = [1] * 26",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 2
+    },
+    {
+      "code": "complaint_all = 0",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 3
+    },
+    {
+      "code": "for i in range(26): complaint_all += complaints[i]",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "For",
+      "line": 7,
+      "node_id": 4
+    },
+    {
+      "code": "complaint_all += complaints[i]",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "AugAssign",
+      "line": 8,
+      "node_id": 5
+    },
+    {
+      "code": "complaint_sum = 0",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "For",
+      "line": 11,
+      "node_id": 7
+    },
+    {
+      "code": "complaint_sum += complaint_all",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "AugAssign",
+      "line": 12,
+      "node_id": 8
+    },
+    {
+      "code": "Contest = HoldedContestDays[i]",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 9
+    },
+    {
+      "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "AugAssign",
+      "line": 14,
+      "node_id": 10
+    },
+    {
+      "code": "ContestDays[Contest] = 0",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 11
+    },
+    {
+      "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 12
+    },
+    {
+      "code": "TotalSatisfications.append(satisfication_day_i)",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Expr",
+      "line": 18,
+      "node_id": 13
+    },
+    {
+      "code": "for j in range(26): ContestDays[j] += 1",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "For",
+      "line": 19,
+      "node_id": 14
+    },
+    {
+      "code": "ContestDays[j] += 1",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "AugAssign",
+      "line": 20,
+      "node_id": 15
+    },
+    {
+      "code": "return TotalSatisfications",
+      "dead": false,
+      "function": "calcScores",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 16
+    },
+    {
+      "code": "ContestDays = [1] * 26",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 1
+    },
+    {
+      "code": "HoldedContests = [-1] * D",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "For",
+      "line": 26,
+      "node_id": 3
+    },
+    {
+      "code": "Demands = []",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 4
+    },
+    {
+      "code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "For",
+      "line": 28,
+      "node_id": 5
+    },
+    {
+      "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 6
+    },
+    {
+      "code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Expr",
+      "line": 30,
+      "node_id": 7
+    },
+    {
+      "code": "ContestDays[j] += 1",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "AugAssign",
+      "line": 31,
+      "node_id": 8
+    },
+    {
+      "code": "print(\"Day\", i, \":\", Demands)",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Expr",
+      "line": 32,
+      "node_id": 9
+    },
+    {
+      "code": "Demand_Contest = heapq.heappop(Demands)",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 10
+    },
+    {
+      "code": "Contest = Demand_Contest[1]",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 11
+    },
+    {
+      "code": "ContestDays[Contest] =1",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 12
+    },
+    {
+      "code": "HoldedContests[i] = Contest+1",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 13
+    },
+    {
+      "code": "return HoldedContests",
+      "dead": false,
+      "function": "calccontestnumbers",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 14
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys, heapq",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "TotalSatisfications = [0]",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "ContestDays = [1] * 26",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "complaint_all = 0",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "for i in range(26): complaint_all += complaints[i]",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "complaint_all += complaints[i]",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "complaint_sum = 0",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "complaint_sum += complaint_all",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "Contest = HoldedContestDays[i]",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "ContestDays[Contest] = 0",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "TotalSatisfications.append(satisfication_day_i)",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "for j in range(26): ContestDays[j] += 1",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "ContestDays[j] += 1",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return TotalSatisfications",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "ContestDays = [1] * 26",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "HoldedContests = [-1] * D",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "Demands = []",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "ContestDays[j] += 1",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "print(\"Day\", i, \":\", Demands)",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "Demand_Contest = heapq.heappop(Demands)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "Contest = Demand_Contest[1]",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "ContestDays[Contest] =1",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "HoldedContests[i] = Contest+1",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "return HoldedContests",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "D = int(input().strip())",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "complaints = list(map(int, input().split() ) )",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "satisfications = []",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "satisfication = list(map(int, input().split() ) )",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "satisfications.append(satisfication)",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "HoldedContestDays =[0] * D",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "HoldedContestDays[i] = int(input().strip())",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "HoldedContestDays[i] -= 1",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "for i in range(D): print(Scores[i+1])",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "print(Scores[i+1])",
+      "dead": false,
+      "line": 67
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p02619_s810908825.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 21,
+      "lineno": 3,
+      "name": "calcScores",
+      "variables": [
+        "Contest",
+        "ContestDays",
+        "D",
+        "HoldedContestDays",
+        "TotalSatisfications",
+        "complaint_all",
+        "complaint_sum",
+        "complaints",
+        "i",
+        "j",
+        "satisfication_day_i",
+        "satisfications"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 37,
+      "lineno": 23,
+      "name": "calccontestnumbers",
+      "variables": [
+        "Contest",
+        "ContestDays",
+        "D",
+        "Demand_Contest",
+        "Demand_j",
+        "Demands",
+        "HoldedContests",
+        "complaints",
+        "heapq",
+        "i",
+        "j",
+        "satisfications"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys, heapq",
+            "line": 1,
+            "vars": [
+              "__name__",
+              "int"
+            ]
+          },
+          {
+            "code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+            "line": 41,
+            "vars": [
+              "__name__",
+              "int"
+            ]
+          },
+          {
+            "code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+            "line": 53,
+            "vars": [
+              "__name__",
+              "int"
+            ]
+          },
+          {
+            "code": "D = int(input().strip())",
+            "line": 54,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "complaints = list(map(int, input().split() ) )",
+            "line": 55,
+            "vars": [
+              "D",
+              "int"
+            ]
+          },
+          {
+            "code": "satisfications = []",
+            "line": 57,
+            "vars": [
+              "D",
+              "complaints",
+              "int"
+            ]
+          },
+          {
+            "code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+            "line": 58,
+            "vars": [
+              "D",
+              "complaints",
+              "int",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "satisfication = list(map(int, input().split() ) )",
+            "line": 59,
+            "vars": [
+              "D",
+              "complaints",
+              "int",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "satisfications.append(satisfication)",
+            "line": 60,
+            "vars": [
+              "D",
+              "complaints",
+              "satisfication",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "HoldedContestDays =[0] * D",
+            "line": 61,
+            "vars": [
+              "D",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+            "line": 62,
+            "vars": [
+              "D",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "HoldedContestDays[i] = int(input().strip())",
+            "line": 63,
+            "vars": [
+              "D",
+              "complaints",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "HoldedContestDays[i] -= 1",
+            "line": 64,
+            "vars": [
+              "D",
+              "HoldedContestDays",
+              "complaints",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+            "line": 65,
+            "vars": [
+              "D",
+              "HoldedContestDays",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "for i in range(D): print(Scores[i+1])",
+            "line": 66,
+            "vars": [
+              "D",
+              "Scores"
+            ]
+          },
+          {
+            "code": "print(Scores[i+1])",
+            "line": 67,
+            "vars": [
+              "Scores",
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "D": false,
+          "HoldedContestDays": false,
+          "Scores": false,
+          "__name__": false,
+          "complaints": false,
+          "i": false,
+          "int": false,
+          "satisfication": false,
+          "satisfications": false
+        },
+        "return_vars": []
+      },
+      "calcScores": {
+        "base_liveout": [
+          "TotalSatisfications"
+        ],
+        "live_before": [
+          {
+            "code": "TotalSatisfications = [0]",
+            "line": 4,
+            "vars": [
+              "D",
+              "HoldedContestDays",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "ContestDays = [1] * 26",
+            "line": 5,
+            "vars": [
+              "D",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "complaint_all = 0",
+            "line": 6,
+            "vars": [
+              "ContestDays",
+              "D",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "for i in range(26): complaint_all += complaints[i]",
+            "line": 7,
+            "vars": [
+              "ContestDays",
+              "D",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "complaint_all += complaints[i]",
+            "line": 8,
+            "vars": [
+              "ContestDays",
+              "D",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaints",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "complaint_sum = 0",
+            "line": 10,
+            "vars": [
+              "ContestDays",
+              "D",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaint_all",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+            "line": 11,
+            "vars": [
+              "ContestDays",
+              "D",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaint_all",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "complaint_sum += complaint_all",
+            "line": 12,
+            "vars": [
+              "ContestDays",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaint_all",
+              "complaints",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "Contest = HoldedContestDays[i]",
+            "line": 13,
+            "vars": [
+              "ContestDays",
+              "HoldedContestDays",
+              "TotalSatisfications",
+              "complaints",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+            "line": 14,
+            "vars": [
+              "Contest",
+              "ContestDays",
+              "TotalSatisfications",
+              "complaints",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "ContestDays[Contest] = 0",
+            "line": 15,
+            "vars": [
+              "Contest",
+              "TotalSatisfications",
+              "complaint_sum",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+            "line": 17,
+            "vars": [
+              "Contest",
+              "ContestDays",
+              "TotalSatisfications",
+              "complaint_sum",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "TotalSatisfications.append(satisfication_day_i)",
+            "line": 18,
+            "vars": [
+              "ContestDays",
+              "TotalSatisfications",
+              "satisfication_day_i"
+            ]
+          },
+          {
+            "code": "for j in range(26): ContestDays[j] += 1",
+            "line": 19,
+            "vars": [
+              "ContestDays",
+              "TotalSatisfications"
+            ]
+          },
+          {
+            "code": "ContestDays[j] += 1",
+            "line": 20,
+            "vars": [
+              "ContestDays",
+              "TotalSatisfications",
+              "j"
+            ]
+          },
+          {
+            "code": "return TotalSatisfications",
+            "line": 21,
+            "vars": [
+              "TotalSatisfications"
+            ]
+          }
+        ],
+        "liveout": {
+          "Contest": false,
+          "ContestDays": false,
+          "D": false,
+          "HoldedContestDays": false,
+          "TotalSatisfications": true,
+          "complaint_all": false,
+          "complaint_sum": false,
+          "complaints": false,
+          "i": false,
+          "j": false,
+          "satisfication_day_i": false,
+          "satisfications": false
+        },
+        "return_vars": [
+          "TotalSatisfications"
+        ]
+      },
+      "calccontestnumbers": {
+        "base_liveout": [
+          "HoldedContests"
+        ],
+        "live_before": [
+          {
+            "code": "ContestDays = [1] * 26",
+            "line": 24,
+            "vars": [
+              "D",
+              "complaints",
+              "heapq",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "HoldedContests = [-1] * D",
+            "line": 25,
+            "vars": [
+              "ContestDays",
+              "D",
+              "complaints",
+              "heapq",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+            "line": 26,
+            "vars": [
+              "ContestDays",
+              "D",
+              "complaints",
+              "heapq",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "Demands = []",
+            "line": 27,
+            "vars": [
+              "ContestDays",
+              "complaints",
+              "heapq",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+            "line": 28,
+            "vars": [
+              "ContestDays",
+              "Demands",
+              "complaints",
+              "heapq",
+              "i",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+            "line": 29,
+            "vars": [
+              "ContestDays",
+              "Demands",
+              "complaints",
+              "heapq",
+              "i",
+              "j",
+              "satisfications"
+            ]
+          },
+          {
+            "code": "heapq.heappush(Demands, (-Demand_j, j) )",
+            "line": 30,
+            "vars": [
+              "ContestDays",
+              "Demand_j",
+              "Demands",
+              "heapq",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "ContestDays[j] += 1",
+            "line": 31,
+            "vars": [
+              "ContestDays",
+              "Demands",
+              "heapq",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "print(\"Day\", i, \":\", Demands)",
+            "line": 32,
+            "vars": [
+              "Demands",
+              "heapq",
+              "i"
+            ]
+          },
+          {
+            "code": "Demand_Contest = heapq.heappop(Demands)",
+            "line": 33,
+            "vars": [
+              "Demands",
+              "heapq",
+              "i"
+            ]
+          },
+          {
+            "code": "Contest = Demand_Contest[1]",
+            "line": 34,
+            "vars": [
+              "Demand_Contest",
+              "i"
+            ]
+          },
+          {
+            "code": "ContestDays[Contest] =1",
+            "line": 35,
+            "vars": [
+              "Contest",
+              "i"
+            ]
+          },
+          {
+            "code": "HoldedContests[i] = Contest+1",
+            "line": 36,
+            "vars": [
+              "Contest",
+              "i"
+            ]
+          },
+          {
+            "code": "return HoldedContests",
+            "line": 37,
+            "vars": [
+              "HoldedContests"
+            ]
+          }
+        ],
+        "liveout": {
+          "Contest": false,
+          "ContestDays": false,
+          "D": false,
+          "Demand_Contest": false,
+          "Demand_j": false,
+          "Demands": false,
+          "HoldedContests": true,
+          "complaints": false,
+          "heapq": false,
+          "i": false,
+          "j": false,
+          "satisfications": false
+        },
+        "return_vars": [
+          "HoldedContests"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(D):",
+      "cond": "for i in range(D)",
+      "function": "__module__",
+      "header_id": 7,
+      "line": 58,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(D):",
+      "cond": "for i in range(D)",
+      "function": "__module__",
+      "header_id": 11,
+      "line": 62,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(D):",
+      "cond": "for i in range(D)",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 66,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(26):",
+      "cond": "for i in range(26)",
+      "function": "calcScores",
+      "header_id": 4,
+      "line": 7,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(D):",
+      "cond": "for i in range(D)",
+      "function": "calcScores",
+      "header_id": 7,
+      "line": 11,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(26):",
+      "cond": "for j in range(26)",
+      "function": "calcScores",
+      "header_id": 14,
+      "line": 19,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(D):",
+      "cond": "for i in range(D)",
+      "function": "calccontestnumbers",
+      "header_id": 3,
+      "line": 26,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(26):",
+      "cond": "for j in range(26)",
+      "function": "calccontestnumbers",
+      "header_id": 5,
+      "line": 28,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "D = int(input().strip())",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "D = int(input().strip())",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "D = int(input().strip())",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "complaints = list(map(int, input().split() ) )",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "complaints = list(map(int, input().split() ) )",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "complaints = list(map(int, input().split() ) )",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "complaints = list(map(int, input().split() ) )",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "satisfications = []",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "satisfications = []",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "satisfications = []",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "satisfications = []",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "satisfications = []",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "b_line": 58,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "satisfication = list(map(int, input().split() ) )",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfication = list(map(int, input().split() ) )",
+      "a_line": 59,
+      "b_code": "satisfications.append(satisfication)",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "HoldedContestDays =[0] * D",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays =[0] * D",
+      "a_line": 61,
+      "b_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays =[0] * D",
+      "a_line": 61,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "a_line": 62,
+      "b_code": "HoldedContestDays[i] = int(input().strip())",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays =[0] * D",
+      "a_line": 61,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "a_line": 62,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays[i] = int(input().strip())",
+      "a_line": 63,
+      "b_code": "HoldedContestDays[i] -= 1",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays =[0] * D",
+      "a_line": 61,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "a_line": 62,
+      "b_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays =[0] * D",
+      "a_line": 61,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "a_line": 62,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "a_line": 65,
+      "b_code": "for i in range(D): print(Scores[i+1])",
+      "b_line": 66,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys, heapq",
+      "a_line": 1,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" 13: 19922, 89 20: 19830, 80 20: 19830 - 80 * 5 = 19430 13: 19922 - 89 * 2 = 19744 \u6bce\u65e51\u3064\u306e\u30b3\u30f3\u30c6\u30b9\u30c8 \u6e80\u8db3\u5ea6\u3092\u3042\u3052\u308b\u3088\u3046\u306b\u30b3\u30f3\u30c6\u30b9\u30c8 ci * (\u6700\u5f8c\u306b\u30b3\u30f3\u30c6\u30b9\u30c8\u3092\u884c\u3063\u3066\u304b\u3089\u306e\u7d4c\u904e\u65e5\u6570)\u6e80\u8db3\u5ea6\u4f4e\u4e0b \u4e0a\u6607\u5024\u306fs_d_i \"\"\"",
+      "a_line": 41,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(__name__ == \"__main__\"): D = int(input().strip()) complaints = list(map(int, input().split() ) ) satisfications = [] for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication) HoldedContestDays =[0] * D for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1 Scores = calcScores(D, complaints, satisfications, HoldedContestDays) for i in range(D): print(Scores[i+1])",
+      "a_line": 53,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "D = int(input().strip())",
+      "a_line": 54,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "complaints = list(map(int, input().split() ) )",
+      "a_line": 55,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "satisfications = []",
+      "a_line": 57,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): satisfication = list(map(int, input().split() ) ) satisfications.append(satisfication)",
+      "a_line": 58,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "HoldedContestDays =[0] * D",
+      "a_line": 61,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): HoldedContestDays[i] = int(input().strip()) HoldedContestDays[i] -= 1",
+      "a_line": 62,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+      "a_line": 65,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(D): print(Scores[i+1])",
+      "a_line": 66,
+      "b_code": "print(Scores[i+1])",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "ContestDays = [1] * 26",
+      "b_line": 5,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "complaint_all = 0",
+      "b_line": 6,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "complaint_all = 0",
+      "b_line": 6,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "for i in range(26): complaint_all += complaints[i]",
+      "b_line": 7,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "for i in range(26): complaint_all += complaints[i]",
+      "b_line": 7,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "for i in range(26): complaint_all += complaints[i]",
+      "b_line": 7,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "complaint_all += complaints[i]",
+      "b_line": 8,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "complaint_all += complaints[i]",
+      "b_line": 8,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "complaint_all += complaints[i]",
+      "b_line": 8,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "complaint_all += complaints[i]",
+      "b_line": 8,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "complaint_sum = 0",
+      "b_line": 10,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "complaint_sum = 0",
+      "b_line": 10,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "complaint_sum = 0",
+      "b_line": 10,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "complaint_sum = 0",
+      "b_line": 10,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "b_line": 11,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "b_line": 11,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "b_line": 11,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "b_line": 11,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "b_line": 11,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "complaint_sum += complaint_all",
+      "b_line": 12,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "complaint_sum += complaint_all",
+      "b_line": 12,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "complaint_sum += complaint_all",
+      "b_line": 12,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "complaint_sum += complaint_all",
+      "b_line": 12,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "complaint_sum += complaint_all",
+      "b_line": 12,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "complaint_sum += complaint_all",
+      "b_line": 12,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "Contest = HoldedContestDays[i]",
+      "b_line": 13,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "Contest = HoldedContestDays[i]",
+      "a_line": 13,
+      "b_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "b_line": 14,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "Contest = HoldedContestDays[i]",
+      "a_line": 13,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "a_line": 14,
+      "b_code": "ContestDays[Contest] = 0",
+      "b_line": 15,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "Contest = HoldedContestDays[i]",
+      "a_line": 13,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "a_line": 14,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays[Contest] = 0",
+      "a_line": 15,
+      "b_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "b_line": 17,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "Contest = HoldedContestDays[i]",
+      "a_line": 13,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "a_line": 14,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays[Contest] = 0",
+      "a_line": 15,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "a_line": 17,
+      "b_code": "TotalSatisfications.append(satisfication_day_i)",
+      "b_line": 18,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "Contest = HoldedContestDays[i]",
+      "a_line": 13,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "a_line": 14,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays[Contest] = 0",
+      "a_line": 15,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "a_line": 17,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications.append(satisfication_day_i)",
+      "a_line": 18,
+      "b_code": "for j in range(26): ContestDays[j] += 1",
+      "b_line": 19,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum += complaint_all",
+      "a_line": 12,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "Contest = HoldedContestDays[i]",
+      "a_line": 13,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+      "a_line": 14,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays[Contest] = 0",
+      "a_line": 15,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+      "a_line": 17,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications.append(satisfication_day_i)",
+      "a_line": 18,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for j in range(26): ContestDays[j] += 1",
+      "a_line": 19,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 20,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "TotalSatisfications = [0]",
+      "a_line": 4,
+      "b_code": "return TotalSatisfications",
+      "b_line": 21,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 5,
+      "b_code": "return TotalSatisfications",
+      "b_line": 21,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_all = 0",
+      "a_line": 6,
+      "b_code": "return TotalSatisfications",
+      "b_line": 21,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(26): complaint_all += complaints[i]",
+      "a_line": 7,
+      "b_code": "return TotalSatisfications",
+      "b_line": 21,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "complaint_sum = 0",
+      "a_line": 10,
+      "b_code": "return TotalSatisfications",
+      "b_line": 21,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "for i in range(D): complaint_sum += complaint_all Contest = HoldedContestDays[i] complaint_sum -= ContestDays[Contest] * complaints[Contest] ContestDays[Contest] = 0 satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum TotalSatisfications.append(satisfication_day_i) for j in range(26): ContestDays[j] += 1",
+      "a_line": 11,
+      "b_code": "return TotalSatisfications",
+      "b_line": 21,
+      "function": "calcScores"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "HoldedContests = [-1] * D",
+      "b_line": 25,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "b_line": 26,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "b_line": 26,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "Demands = []",
+      "b_line": 27,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "Demands = []",
+      "b_line": 27,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "Demands = []",
+      "b_line": 27,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "b_line": 28,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "b_line": 28,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "b_line": 28,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "b_line": 28,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "b_line": 29,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "b_line": 29,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "b_line": 29,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "b_line": 29,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "b_line": 29,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "b_line": 30,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "b_line": 30,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "b_line": 30,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "b_line": 30,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "b_line": 30,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "a_line": 29,
+      "b_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "b_line": 30,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+      "a_line": 29,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "heapq.heappush(Demands, (-Demand_j, j) )",
+      "a_line": 30,
+      "b_code": "ContestDays[j] += 1",
+      "b_line": 31,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "print(\"Day\", i, \":\", Demands)",
+      "b_line": 32,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "print(\"Day\", i, \":\", Demands)",
+      "b_line": 32,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "print(\"Day\", i, \":\", Demands)",
+      "b_line": 32,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "print(\"Day\", i, \":\", Demands)",
+      "b_line": 32,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "print(\"Day\", i, \":\", Demands)",
+      "b_line": 32,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "Demand_Contest = heapq.heappop(Demands)",
+      "b_line": 33,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "Demand_Contest = heapq.heappop(Demands)",
+      "b_line": 33,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "Demand_Contest = heapq.heappop(Demands)",
+      "b_line": 33,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "Demand_Contest = heapq.heappop(Demands)",
+      "b_line": 33,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "Demand_Contest = heapq.heappop(Demands)",
+      "b_line": 33,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "print(\"Day\", i, \":\", Demands)",
+      "a_line": 32,
+      "b_code": "Demand_Contest = heapq.heappop(Demands)",
+      "b_line": 33,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "print(\"Day\", i, \":\", Demands)",
+      "a_line": 32,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demand_Contest = heapq.heappop(Demands)",
+      "a_line": 33,
+      "b_code": "Contest = Demand_Contest[1]",
+      "b_line": 34,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "print(\"Day\", i, \":\", Demands)",
+      "a_line": 32,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demand_Contest = heapq.heappop(Demands)",
+      "a_line": 33,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Contest = Demand_Contest[1]",
+      "a_line": 34,
+      "b_code": "ContestDays[Contest] =1",
+      "b_line": 35,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demands = []",
+      "a_line": 27,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1",
+      "a_line": 28,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "print(\"Day\", i, \":\", Demands)",
+      "a_line": 32,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Demand_Contest = heapq.heappop(Demands)",
+      "a_line": 33,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "Contest = Demand_Contest[1]",
+      "a_line": 34,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays[Contest] =1",
+      "a_line": 35,
+      "b_code": "HoldedContests[i] = Contest+1",
+      "b_line": 36,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "ContestDays = [1] * 26",
+      "a_line": 24,
+      "b_code": "return HoldedContests",
+      "b_line": 37,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "HoldedContests = [-1] * D",
+      "a_line": 25,
+      "b_code": "return HoldedContests",
+      "b_line": 37,
+      "function": "calccontestnumbers"
+    },
+    {
+      "a_code": "for i in range(D): Demands = [] for j in range(26): Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j] heapq.heappush(Demands, (-Demand_j, j) ) ContestDays[j] += 1 print(\"Day\", i, \":\", Demands) Demand_Contest = heapq.heappop(Demands) Contest = Demand_Contest[1] ContestDays[Contest] =1 HoldedContests[i] = Contest+1",
+      "a_line": 26,
+      "b_code": "return HoldedContests",
+      "b_line": 37,
+      "function": "calccontestnumbers"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 54",
+      "external call skipped input at line 55",
+      "external call skipped input at line 59",
+      "external call skipped input at line 63"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 54",
+    "external call skipped input at line 55",
+    "external call skipped input at line 59",
+    "external call skipped input at line 63"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "complaints = list(map(int, input().split() ) )",
+        "line": 55,
+        "var": "int"
+      },
+      "from": {
+        "code": "complaints = list(map(int, input().split() ) )",
+        "line": 55,
+        "var": "complaints"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "complaints = list(map(int, input().split() ) )",
+        "line": 55,
+        "var": "complaints"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "satisfications = []",
+        "line": 57,
+        "var": "satisfications"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "satisfication = list(map(int, input().split() ) )",
+        "line": 59,
+        "var": "int"
+      },
+      "from": {
+        "code": "satisfication = list(map(int, input().split() ) )",
+        "line": 59,
+        "var": "satisfication"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "satisfication = list(map(int, input().split() ) )",
+        "line": 59,
+        "var": "satisfication"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "HoldedContestDays =[0] * D",
+        "line": 61,
+        "var": "HoldedContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "Scores"
+      },
+      "from": {
+        "code": "HoldedContestDays =[0] * D",
+        "line": 61,
+        "var": "HoldedContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "HoldedContestDays[i] = int(input().strip())",
+        "line": 63,
+        "var": "i"
+      },
+      "from": {
+        "code": "HoldedContestDays[i] = int(input().strip())",
+        "line": 63,
+        "var": "HoldedContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "HoldedContestDays[i] = int(input().strip())",
+        "line": 63,
+        "var": "HoldedContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "HoldedContestDays[i] = int(input().strip())",
+        "line": 63,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "HoldedContestDays[i] -= 1",
+        "line": 64,
+        "var": "HoldedContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "HoldedContestDays[i] -= 1",
+        "line": 64,
+        "var": "i"
+      },
+      "from": {
+        "code": "HoldedContestDays[i] -= 1",
+        "line": 64,
+        "var": "HoldedContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "HoldedContestDays[i] -= 1",
+        "line": 64,
+        "var": "HoldedContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "D = int(input().strip())",
+        "line": 54,
+        "var": "D"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "HoldedContestDays[i] -= 1",
+        "line": 64,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "complaints = list(map(int, input().split() ) )",
+        "line": 55,
+        "var": "complaints"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "i"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "int"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "satisfications = []",
+        "line": 57,
+        "var": "satisfications"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "__name__"
+      },
+      "from": {
+        "code": "Scores = calcScores(D, complaints, satisfications, HoldedContestDays)",
+        "line": 65,
+        "var": "Scores"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "TotalSatisfications = [0]",
+        "line": 4,
+        "var": "TotalSatisfications"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "ContestDays = [1] * 26",
+        "line": 5,
+        "var": "ContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "complaint_all = 0",
+        "line": 6,
+        "var": "complaint_all"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "complaints"
+      },
+      "from": {
+        "code": "complaint_all += complaints[i]",
+        "line": 8,
+        "var": "complaint_all"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "complaint_all += complaints[i]",
+        "line": 8,
+        "var": "i"
+      },
+      "from": {
+        "code": "complaint_all += complaints[i]",
+        "line": 8,
+        "var": "complaint_all"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "complaint_all += complaints[i]",
+        "line": 8,
+        "var": "complaint_all"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "complaint_sum = 0",
+        "line": 10,
+        "var": "complaint_sum"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "complaint_all += complaints[i]",
+        "line": 8,
+        "var": "complaint_all"
+      },
+      "from": {
+        "code": "complaint_sum += complaint_all",
+        "line": 12,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "complaints"
+      },
+      "from": {
+        "code": "complaint_sum += complaint_all",
+        "line": 12,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "complaint_sum += complaint_all",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "complaint_sum += complaint_all",
+        "line": 12,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "complaint_sum += complaint_all",
+        "line": 12,
+        "var": "complaint_sum"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "i"
+      },
+      "from": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays = [1] * 26",
+        "line": 5,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays = [1] * 26",
+        "line": 5,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "complaints"
+      },
+      "from": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "i"
+      },
+      "from": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "D"
+      },
+      "from": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "i"
+      },
+      "from": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "D"
+      },
+      "from": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "ContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "TotalSatisfications = [0]",
+        "line": 4,
+        "var": "TotalSatisfications"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "complaint_sum -= ContestDays[Contest] * complaints[Contest]",
+        "line": 14,
+        "var": "complaint_sum"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "complaints"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "i"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "satisfications"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "D"
+      },
+      "from": {
+        "code": "satisfication_day_i = TotalSatisfications[-1] + satisfications[i][Contest] - complaint_sum",
+        "line": 17,
+        "var": "satisfication_day_i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = HoldedContestDays[i]",
+        "line": 13,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[Contest] = 0",
+        "line": 15,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "HoldedContestDays"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "i"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "j"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calcScores(D, complaints, satisfications, HoldedContestDays):",
+        "line": 3,
+        "var": "D"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 20,
+        "var": "ContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "ContestDays = [1] * 26",
+        "line": 24,
+        "var": "ContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "D"
+      },
+      "from": {
+        "code": "HoldedContests = [-1] * D",
+        "line": 25,
+        "var": "HoldedContests"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "HoldedContests = [-1] * D",
+        "line": 25,
+        "var": "HoldedContests"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "Demands = []",
+        "line": 27,
+        "var": "Demands"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays = [1] * 26",
+        "line": 24,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+        "line": 29,
+        "var": "Demand_j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "complaints"
+      },
+      "from": {
+        "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+        "line": 29,
+        "var": "Demand_j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+        "line": 29,
+        "var": "j"
+      },
+      "from": {
+        "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+        "line": 29,
+        "var": "Demand_j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "satisfications"
+      },
+      "from": {
+        "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+        "line": 29,
+        "var": "Demand_j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "Demand_j = ContestDays[j] * complaints[j] + satisfications[i][j]",
+        "line": 29,
+        "var": "Demand_j"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays = [1] * 26",
+        "line": 24,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 31,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[j] += 1",
+        "line": 31,
+        "var": "j"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 31,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "ContestDays[j] += 1",
+        "line": 31,
+        "var": "ContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Demands = []",
+        "line": 27,
+        "var": "Demands"
+      },
+      "from": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "Demand_Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "Demand_Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "Demand_Contest"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "Demand_Contest"
+      },
+      "from": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demands = []",
+        "line": 27,
+        "var": "Demands"
+      },
+      "from": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "Contest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[j] += 1",
+        "line": 31,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "Contest"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "Demand_Contest"
+      },
+      "from": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demands = []",
+        "line": 27,
+        "var": "Demands"
+      },
+      "from": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "ContestDays"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def calccontestnumbers(D, complaints, satisfications):",
+        "line": 23,
+        "var": "D"
+      },
+      "from": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "ContestDays"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Contest = Demand_Contest[1]",
+        "line": 34,
+        "var": "Contest"
+      },
+      "from": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "HoldedContests"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demand_Contest = heapq.heappop(Demands)",
+        "line": 33,
+        "var": "Demand_Contest"
+      },
+      "from": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "HoldedContests"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Demands = []",
+        "line": 27,
+        "var": "Demands"
+      },
+      "from": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "HoldedContests"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "HoldedContests"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "i"
+      },
+      "from": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "HoldedContests"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ContestDays[Contest] =1",
+        "line": 35,
+        "var": "ContestDays"
+      },
+      "from": {
+        "code": "HoldedContests[i] = Contest+1",
+        "line": 36,
+        "var": "HoldedContests"
+      },
+      "label": "negative"
+    }
+  ]
+}

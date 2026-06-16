@@ -1,0 +1,3414 @@
+{
+  "cfg_statements": [
+    {
+      "code": "rows: List[List[str]] = []",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AnnAssign",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "field = ''",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "row: List[str] = []",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AnnAssign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "in_quotes = False",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "i = 0",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 5
+    },
+    {
+      "code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "While",
+      "line": 11,
+      "node_id": 6
+    },
+    {
+      "code": "ch = text[i]",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 7
+    },
+    {
+      "code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 13,
+      "node_id": 8
+    },
+    {
+      "code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 14,
+      "node_id": 9
+    },
+    {
+      "code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 15,
+      "node_id": 10
+    },
+    {
+      "code": "field += '\"'",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AugAssign",
+      "line": 16,
+      "node_id": 11
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AugAssign",
+      "line": 17,
+      "node_id": 12
+    },
+    {
+      "code": "in_quotes = False",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 13
+    },
+    {
+      "code": "field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AugAssign",
+      "line": 21,
+      "node_id": 14
+    },
+    {
+      "code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 23,
+      "node_id": 15
+    },
+    {
+      "code": "in_quotes = True",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 16
+    },
+    {
+      "code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 25,
+      "node_id": 17
+    },
+    {
+      "code": "row.append(field)",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 18
+    },
+    {
+      "code": "field = ''",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 19
+    },
+    {
+      "code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 27,
+      "node_id": 20
+    },
+    {
+      "code": "row.append(field)",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Expr",
+      "line": 28,
+      "node_id": 21
+    },
+    {
+      "code": "field = ''",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 22
+    },
+    {
+      "code": "rows.append(row)",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Expr",
+      "line": 29,
+      "node_id": 23
+    },
+    {
+      "code": "row = []",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 24
+    },
+    {
+      "code": "field += ch",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AugAssign",
+      "line": 31,
+      "node_id": 25
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "AugAssign",
+      "line": 32,
+      "node_id": 26
+    },
+    {
+      "code": "if field or row: row.append(field); rows.append(row)",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "If",
+      "line": 34,
+      "node_id": 27
+    },
+    {
+      "code": "row.append(field)",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Expr",
+      "line": 35,
+      "node_id": 28
+    },
+    {
+      "code": "rows.append(row)",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Expr",
+      "line": 35,
+      "node_id": 29
+    },
+    {
+      "code": "return rows",
+      "dead": false,
+      "function": "parse_csv",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 30
+    },
+    {
+      "code": "groups: Dict[str, List[float]] = {}",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "AnnAssign",
+      "line": 39,
+      "node_id": 1
+    },
+    {
+      "code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "For",
+      "line": 40,
+      "node_id": 2
+    },
+    {
+      "code": "if len(r) <= max(key_idx, val_idx): continue",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "If",
+      "line": 41,
+      "node_id": 3
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Continue",
+      "line": 42,
+      "node_id": 4
+    },
+    {
+      "code": "key = r[key_idx]",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 5
+    },
+    {
+      "code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Try",
+      "line": 44,
+      "node_id": 6
+    },
+    {
+      "code": "v = float(r[val_idx])",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 7
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Continue",
+      "line": 47,
+      "node_id": 8
+    },
+    {
+      "code": "groups.setdefault(key, []).append(v)",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Expr",
+      "line": 48,
+      "node_id": 9
+    },
+    {
+      "code": "return {k: agg(vs) for k, vs in groups.items()}",
+      "dead": false,
+      "function": "groupby_agg",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 10
+    },
+    {
+      "code": "xs = list(xs)",
+      "dead": false,
+      "function": "mean",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 1
+    },
+    {
+      "code": "return sum(xs) / len(xs) if xs else 0.0",
+      "dead": false,
+      "function": "mean",
+      "kind": "Return",
+      "line": 53,
+      "node_id": 2
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "rows: List[List[str]] = []",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "field = ''",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "row: List[str] = []",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "in_quotes = False",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "i = 0",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "ch = text[i]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "field += '\"'",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "in_quotes = False",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "field += ch",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "in_quotes = True",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "field = ''",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "row.append(field)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "field = ''",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "row.append(field)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "row = []",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "rows.append(row)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "field += ch",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "if field or row: row.append(field); rows.append(row)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "row.append(field)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "rows.append(row)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return rows",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "groups: Dict[str, List[float]] = {}",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "if len(r) <= max(key_idx, val_idx): continue",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "key = r[key_idx]",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "v = float(r[val_idx])",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "groups.setdefault(key, []).append(v)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "return {k: agg(vs) for k, vs in groups.items()}",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "xs = list(xs)",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "return sum(xs) / len(xs) if xs else 0.0",
+      "dead": false,
+      "line": 53
+    }
+  ],
+  "file": "SemBench/data/python/code/26.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 36,
+      "lineno": 4,
+      "name": "parse_csv",
+      "variables": [
+        "ch",
+        "field",
+        "i",
+        "in_quotes",
+        "row",
+        "rows",
+        "sep",
+        "text"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 49,
+      "lineno": 38,
+      "name": "groupby_agg",
+      "variables": [
+        "agg",
+        "groups",
+        "key",
+        "key_idx",
+        "r",
+        "rows",
+        "v",
+        "val_idx",
+        "vs"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 53,
+      "lineno": 51,
+      "name": "mean",
+      "variables": [
+        "xs"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "groupby_agg": {
+        "base_liveout": [
+          "groups",
+          "vs"
+        ],
+        "live_before": [
+          {
+            "code": "groups: Dict[str, List[float]] = {}",
+            "line": 39,
+            "vars": [
+              "key_idx",
+              "rows",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+            "line": 40,
+            "vars": [
+              "groups",
+              "key_idx",
+              "rows",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "if len(r) <= max(key_idx, val_idx): continue",
+            "line": 41,
+            "vars": [
+              "groups",
+              "key_idx",
+              "r",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 42,
+            "vars": [
+              "groups",
+              "key_idx",
+              "r",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "key = r[key_idx]",
+            "line": 43,
+            "vars": [
+              "groups",
+              "key_idx",
+              "r",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "try: v = float(r[val_idx]) except ValueError: continue",
+            "line": 44,
+            "vars": [
+              "groups",
+              "r",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "v = float(r[val_idx])",
+            "line": 45,
+            "vars": [
+              "groups",
+              "r",
+              "val_idx",
+              "vs"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 47,
+            "vars": [
+              "groups",
+              "v",
+              "vs"
+            ]
+          },
+          {
+            "code": "groups.setdefault(key, []).append(v)",
+            "line": 48,
+            "vars": [
+              "groups",
+              "v",
+              "vs"
+            ]
+          },
+          {
+            "code": "return {k: agg(vs) for k, vs in groups.items()}",
+            "line": 49,
+            "vars": [
+              "groups",
+              "vs"
+            ]
+          }
+        ],
+        "liveout": {
+          "agg": false,
+          "groups": true,
+          "key": false,
+          "key_idx": false,
+          "r": false,
+          "rows": false,
+          "v": false,
+          "val_idx": false,
+          "vs": true
+        },
+        "return_vars": [
+          "groups",
+          "vs"
+        ]
+      },
+      "mean": {
+        "base_liveout": [
+          "xs"
+        ],
+        "live_before": [
+          {
+            "code": "xs = list(xs)",
+            "line": 52,
+            "vars": [
+              "xs"
+            ]
+          },
+          {
+            "code": "return sum(xs) / len(xs) if xs else 0.0",
+            "line": 53,
+            "vars": [
+              "xs"
+            ]
+          }
+        ],
+        "liveout": {
+          "xs": true
+        },
+        "return_vars": [
+          "xs"
+        ]
+      },
+      "parse_csv": {
+        "base_liveout": [
+          "rows"
+        ],
+        "live_before": [
+          {
+            "code": "rows: List[List[str]] = []",
+            "line": 6,
+            "vars": [
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "field = ''",
+            "line": 7,
+            "vars": [
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "row: List[str] = []",
+            "line": 8,
+            "vars": [
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "in_quotes = False",
+            "line": 9,
+            "vars": [
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "i = 0",
+            "line": 10,
+            "vars": [
+              "in_quotes",
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+            "line": 11,
+            "vars": [
+              "i",
+              "in_quotes",
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "ch = text[i]",
+            "line": 12,
+            "vars": [
+              "i",
+              "in_quotes",
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+            "line": 13,
+            "vars": [
+              "ch",
+              "i",
+              "in_quotes",
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+            "line": 14,
+            "vars": [
+              "ch",
+              "i",
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+            "line": 15,
+            "vars": [
+              "ch",
+              "i",
+              "row",
+              "rows",
+              "sep",
+              "text"
+            ]
+          },
+          {
+            "code": "field += '\"'",
+            "line": 16,
+            "vars": [
+              "ch",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "i += 1",
+            "line": 17,
+            "vars": [
+              "ch",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "in_quotes = False",
+            "line": 19,
+            "vars": [
+              "ch",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "field += ch",
+            "line": 21,
+            "vars": [
+              "ch",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+            "line": 23,
+            "vars": [
+              "ch",
+              "field",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "in_quotes = True",
+            "line": 24,
+            "vars": [
+              "ch",
+              "field",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+            "line": 25,
+            "vars": [
+              "ch",
+              "field",
+              "row",
+              "rows",
+              "sep"
+            ]
+          },
+          {
+            "code": "row.append(field)",
+            "line": 26,
+            "vars": [
+              "ch",
+              "field",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "field = ''",
+            "line": 26,
+            "vars": [
+              "ch",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+            "line": 27,
+            "vars": [
+              "ch",
+              "field",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "row.append(field)",
+            "line": 28,
+            "vars": [
+              "ch",
+              "field",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "field = ''",
+            "line": 28,
+            "vars": [
+              "ch",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "rows.append(row)",
+            "line": 29,
+            "vars": [
+              "ch",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "row = []",
+            "line": 29,
+            "vars": [
+              "ch",
+              "rows"
+            ]
+          },
+          {
+            "code": "field += ch",
+            "line": 31,
+            "vars": [
+              "ch",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "i += 1",
+            "line": 32,
+            "vars": [
+              "field",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "if field or row: row.append(field); rows.append(row)",
+            "line": 34,
+            "vars": [
+              "field",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "row.append(field)",
+            "line": 35,
+            "vars": [
+              "field",
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "rows.append(row)",
+            "line": 35,
+            "vars": [
+              "row",
+              "rows"
+            ]
+          },
+          {
+            "code": "return rows",
+            "line": 36,
+            "vars": [
+              "rows"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "field": false,
+          "i": false,
+          "in_quotes": false,
+          "row": false,
+          "rows": true,
+          "sep": false,
+          "text": false
+        },
+        "return_vars": [
+          "rows"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for r in rows:",
+      "cond": "for r in rows",
+      "function": "groupby_agg",
+      "header_id": 2,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while i < len(text):",
+      "cond": "i < len(text)",
+      "function": "parse_csv",
+      "header_id": 6,
+      "line": 11,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "field = ''",
+      "b_line": 7,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "row: List[str] = []",
+      "b_line": 8,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "row: List[str] = []",
+      "b_line": 8,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "in_quotes = False",
+      "b_line": 9,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "in_quotes = False",
+      "b_line": 9,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "in_quotes = False",
+      "b_line": 9,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "i = 0",
+      "b_line": 10,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "i = 0",
+      "b_line": 10,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "i = 0",
+      "b_line": 10,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "i = 0",
+      "b_line": 10,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "b_line": 11,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "b_line": 11,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "b_line": 11,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "b_line": 11,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "b_line": 11,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "ch = text[i]",
+      "b_line": 12,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "ch = text[i]",
+      "b_line": 12,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "ch = text[i]",
+      "b_line": 12,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "ch = text[i]",
+      "b_line": 12,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "ch = text[i]",
+      "b_line": 12,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "ch = text[i]",
+      "b_line": 12,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 13,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "b_line": 14,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "a_line": 14,
+      "b_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "b_line": 15,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "a_line": 14,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "a_line": 15,
+      "b_code": "field += '\"'",
+      "b_line": 16,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "a_line": 14,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "a_line": 15,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field += '\"'",
+      "a_line": 16,
+      "b_code": "i += 1",
+      "b_line": 17,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "a_line": 14,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False",
+      "a_line": 15,
+      "b_code": "in_quotes = False",
+      "b_line": 19,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch",
+      "a_line": 14,
+      "b_code": "field += ch",
+      "b_line": 21,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 23,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "in_quotes = True",
+      "b_line": 24,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 25,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "row.append(field)",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row.append(field)",
+      "a_line": 26,
+      "b_code": "field = ''",
+      "b_line": 26,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "b_line": 27,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 27,
+      "b_code": "row.append(field)",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 27,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row.append(field)",
+      "a_line": 28,
+      "b_code": "field = ''",
+      "b_line": 28,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 27,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row.append(field)",
+      "a_line": 28,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 28,
+      "b_code": "rows.append(row)",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 27,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row.append(field)",
+      "a_line": 28,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 28,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows.append(row)",
+      "a_line": 29,
+      "b_code": "row = []",
+      "b_line": 29,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 23,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 25,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 27,
+      "b_code": "field += ch",
+      "b_line": 31,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "ch = text[i]",
+      "a_line": 12,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch",
+      "a_line": 13,
+      "b_code": "i += 1",
+      "b_line": 32,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "if field or row: row.append(field); rows.append(row)",
+      "b_line": 34,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "if field or row: row.append(field); rows.append(row)",
+      "b_line": 34,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "if field or row: row.append(field); rows.append(row)",
+      "b_line": 34,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "if field or row: row.append(field); rows.append(row)",
+      "b_line": 34,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "if field or row: row.append(field); rows.append(row)",
+      "b_line": 34,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "if field or row: row.append(field); rows.append(row)",
+      "b_line": 34,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if field or row: row.append(field); rows.append(row)",
+      "a_line": 34,
+      "b_code": "row.append(field)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if field or row: row.append(field); rows.append(row)",
+      "a_line": 34,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row.append(field)",
+      "a_line": 35,
+      "b_code": "rows.append(row)",
+      "b_line": 35,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "rows: List[List[str]] = []",
+      "a_line": 6,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "field = ''",
+      "a_line": 7,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "row: List[str] = []",
+      "a_line": 8,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "in_quotes = False",
+      "a_line": 9,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 10,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "while i < len(text): ch = text[i] if in_quotes: if ch == '\"': if i + 1 < len(text) and text[i+1] == '\"': field += '\"' i += 1 else: in_quotes = False else: field += ch else: if ch == '\"': in_quotes = True elif ch == sep: row.append(field); field = '' elif ch == '\\n': row.append(field); field = '' rows.append(row); row = [] else: field += ch i += 1",
+      "a_line": 11,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "if field or row: row.append(field); rows.append(row)",
+      "a_line": 34,
+      "b_code": "return rows",
+      "b_line": 36,
+      "function": "parse_csv"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "b_line": 40,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "b_line": 41,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "b_line": 41,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 42,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "continue",
+      "b_line": 42,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 42,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "key = r[key_idx]",
+      "b_line": 43,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "key = r[key_idx]",
+      "b_line": 43,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "a_line": 41,
+      "b_code": "key = r[key_idx]",
+      "b_line": 43,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "b_line": 44,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "b_line": 44,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "a_line": 41,
+      "b_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "b_line": 44,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "key = r[key_idx]",
+      "a_line": 43,
+      "b_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "b_line": 44,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "v = float(r[val_idx])",
+      "b_line": 45,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "v = float(r[val_idx])",
+      "b_line": 45,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "a_line": 41,
+      "b_code": "v = float(r[val_idx])",
+      "b_line": 45,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "key = r[key_idx]",
+      "a_line": 43,
+      "b_code": "v = float(r[val_idx])",
+      "b_line": 45,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "a_line": 44,
+      "b_code": "v = float(r[val_idx])",
+      "b_line": 45,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 47,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "continue",
+      "b_line": 47,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 47,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "key = r[key_idx]",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 47,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 47,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "groups.setdefault(key, []).append(v)",
+      "b_line": 48,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "groups.setdefault(key, []).append(v)",
+      "b_line": 48,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "if len(r) <= max(key_idx, val_idx): continue",
+      "a_line": 41,
+      "b_code": "groups.setdefault(key, []).append(v)",
+      "b_line": 48,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "key = r[key_idx]",
+      "a_line": 43,
+      "b_code": "groups.setdefault(key, []).append(v)",
+      "b_line": 48,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "try: v = float(r[val_idx]) except ValueError: continue",
+      "a_line": 44,
+      "b_code": "groups.setdefault(key, []).append(v)",
+      "b_line": 48,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "v = float(r[val_idx])",
+      "a_line": 45,
+      "b_code": "groups.setdefault(key, []).append(v)",
+      "b_line": 48,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "groups: Dict[str, List[float]] = {}",
+      "a_line": 39,
+      "b_code": "return {k: agg(vs) for k, vs in groups.items()}",
+      "b_line": 49,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "for r in rows: if len(r) <= max(key_idx, val_idx): continue key = r[key_idx] try: v = float(r[val_idx]) except ValueError: continue groups.setdefault(key, []).append(v)",
+      "a_line": 40,
+      "b_code": "return {k: agg(vs) for k, vs in groups.items()}",
+      "b_line": 49,
+      "function": "groupby_agg"
+    },
+    {
+      "a_code": "xs = list(xs)",
+      "a_line": 52,
+      "b_code": "return sum(xs) / len(xs) if xs else 0.0",
+      "b_line": 53,
+      "function": "mean"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped agg at line 49"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped agg at line 49"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "ch"
+      },
+      "from": {
+        "code": "rows: List[List[str]] = []",
+        "line": 6,
+        "var": "rows"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "ch"
+      },
+      "from": {
+        "code": "field = ''",
+        "line": 7,
+        "var": "field"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "ch"
+      },
+      "from": {
+        "code": "row: List[str] = []",
+        "line": 8,
+        "var": "row"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "ch"
+      },
+      "from": {
+        "code": "in_quotes = False",
+        "line": 9,
+        "var": "in_quotes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "ch"
+      },
+      "from": {
+        "code": "i = 0",
+        "line": 10,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i = 0",
+        "line": 10,
+        "var": "i"
+      },
+      "from": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "text"
+      },
+      "from": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "field = ''",
+        "line": 7,
+        "var": "field"
+      },
+      "from": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "field += '\"'",
+        "line": 16,
+        "var": "field"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 17,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "in_quotes = False",
+        "line": 19,
+        "var": "in_quotes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 21,
+        "var": "field"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 17,
+        "var": "i"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 21,
+        "var": "field"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "text"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 21,
+        "var": "field"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "in_quotes = False",
+        "line": 19,
+        "var": "in_quotes"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 21,
+        "var": "field"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "in_quotes = True",
+        "line": 24,
+        "var": "in_quotes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "field = ''",
+        "line": 26,
+        "var": "field"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "field = ''",
+        "line": 28,
+        "var": "field"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "row = []",
+        "line": 29,
+        "var": "row"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 31,
+        "var": "field"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 17,
+        "var": "i"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 31,
+        "var": "field"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_csv(text:",
+        "line": 4,
+        "var": "text"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 31,
+        "var": "field"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "in_quotes = True",
+        "line": 24,
+        "var": "in_quotes"
+      },
+      "from": {
+        "code": "field += ch",
+        "line": 31,
+        "var": "field"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = text[i]",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 32,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def groupby_agg(rows:",
+        "line": 38,
+        "var": "agg"
+      },
+      "from": {
+        "code": "groups: Dict[str, List[float]] = {}",
+        "line": 39,
+        "var": "groups"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def groupby_agg(rows:",
+        "line": 38,
+        "var": "key_idx"
+      },
+      "from": {
+        "code": "key = r[key_idx]",
+        "line": 43,
+        "var": "key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "key = r[key_idx]",
+        "line": 43,
+        "var": "r"
+      },
+      "from": {
+        "code": "key = r[key_idx]",
+        "line": 43,
+        "var": "key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def groupby_agg(rows:",
+        "line": 38,
+        "var": "agg"
+      },
+      "from": {
+        "code": "key = r[key_idx]",
+        "line": 43,
+        "var": "key"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "v = float(r[val_idx])",
+        "line": 45,
+        "var": "r"
+      },
+      "from": {
+        "code": "v = float(r[val_idx])",
+        "line": 45,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def groupby_agg(rows:",
+        "line": 38,
+        "var": "val_idx"
+      },
+      "from": {
+        "code": "v = float(r[val_idx])",
+        "line": 45,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def groupby_agg(rows:",
+        "line": 38,
+        "var": "agg"
+      },
+      "from": {
+        "code": "v = float(r[val_idx])",
+        "line": 45,
+        "var": "v"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def mean(xs:",
+        "line": 51,
+        "var": "xs"
+      },
+      "from": {
+        "code": "xs = list(xs)",
+        "line": 52,
+        "var": "xs"
+      },
+      "label": "must"
+    }
+  ]
+}

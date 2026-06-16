@@ -1,0 +1,3737 @@
+{
+  "cfg_statements": [
+    {
+      "code": "self.lo = lo",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "self.hi = hi",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "self.max_hi = hi",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "self.left: Optional[Node] = None",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "AnnAssign",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "self.right: Optional[Node] = None",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "AnnAssign",
+      "line": 10,
+      "node_id": 5
+    },
+    {
+      "code": "self.root: Optional[Node] = None",
+      "dead": false,
+      "function": "IntervalTree.__init__",
+      "kind": "AnnAssign",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "if not n: return",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "If",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 2
+    },
+    {
+      "code": "n.max_hi = n.hi",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 3
+    },
+    {
+      "code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "If",
+      "line": 19,
+      "node_id": 4
+    },
+    {
+      "code": "n.max_hi = n.left.max_hi",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 5
+    },
+    {
+      "code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "If",
+      "line": 20,
+      "node_id": 6
+    },
+    {
+      "code": "n.max_hi = n.right.max_hi",
+      "dead": false,
+      "function": "IntervalTree._update",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 7
+    },
+    {
+      "code": "if n is None: return Node(lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "If",
+      "line": 23,
+      "node_id": 1
+    },
+    {
+      "code": "return Node(lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "Return",
+      "line": 24,
+      "node_id": 2
+    },
+    {
+      "code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "If",
+      "line": 25,
+      "node_id": 3
+    },
+    {
+      "code": "n.left = self._insert(n.left, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 4
+    },
+    {
+      "code": "n.right = self._insert(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 5
+    },
+    {
+      "code": "self._update(n)",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "Expr",
+      "line": 29,
+      "node_id": 6
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "function": "IntervalTree._insert",
+      "kind": "Return",
+      "line": 30,
+      "node_id": 7
+    },
+    {
+      "code": "if lo > hi: lo, hi = hi, lo",
+      "dead": false,
+      "function": "IntervalTree.add",
+      "kind": "If",
+      "line": 33,
+      "node_id": 1
+    },
+    {
+      "code": "lo, hi = hi, lo",
+      "dead": false,
+      "function": "IntervalTree.add",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 2
+    },
+    {
+      "code": "self.root = self._insert(self.root, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree.add",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 3
+    },
+    {
+      "code": "return a[0] <= b[1] and b[0] <= a[1]",
+      "dead": false,
+      "function": "IntervalTree._overlap",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 1
+    },
+    {
+      "code": "res: List[Tuple[int,int]] = []",
+      "dead": false,
+      "function": "IntervalTree.query",
+      "kind": "AnnAssign",
+      "line": 40,
+      "node_id": 1
+    },
+    {
+      "code": "def dfs(n: Optional[Node]) -> None: if not n: return if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi)) if n.left and n.left.max_hi >= lo: dfs(n.left) if n.right and n.lo <= hi: dfs(n.right)",
+      "dead": false,
+      "function": "IntervalTree.query",
+      "kind": "FunctionDef",
+      "line": 41,
+      "node_id": 2
+    },
+    {
+      "code": "dfs(self.root)",
+      "dead": false,
+      "function": "IntervalTree.query",
+      "kind": "Expr",
+      "line": 46,
+      "node_id": 3
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "IntervalTree.query",
+      "kind": "Return",
+      "line": 47,
+      "node_id": 4
+    },
+    {
+      "code": "if not n: return",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "If",
+      "line": 42,
+      "node_id": 1
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "Return",
+      "line": 42,
+      "node_id": 2
+    },
+    {
+      "code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "If",
+      "line": 43,
+      "node_id": 3
+    },
+    {
+      "code": "res.append((n.lo, n.hi))",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 4
+    },
+    {
+      "code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "If",
+      "line": 44,
+      "node_id": 5
+    },
+    {
+      "code": "dfs(n.left)",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "Expr",
+      "line": 44,
+      "node_id": 6
+    },
+    {
+      "code": "if n.right and n.lo <= hi: dfs(n.right)",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "If",
+      "line": 45,
+      "node_id": 7
+    },
+    {
+      "code": "dfs(n.right)",
+      "dead": false,
+      "function": "IntervalTree.query.dfs",
+      "kind": "Expr",
+      "line": 45,
+      "node_id": 8
+    },
+    {
+      "code": "while n.left: n = n.left",
+      "dead": false,
+      "function": "IntervalTree._min_node",
+      "kind": "While",
+      "line": 50,
+      "node_id": 1
+    },
+    {
+      "code": "n = n.left",
+      "dead": false,
+      "function": "IntervalTree._min_node",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 2
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "function": "IntervalTree._min_node",
+      "kind": "Return",
+      "line": 52,
+      "node_id": 3
+    },
+    {
+      "code": "if not n: return None",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "If",
+      "line": 55,
+      "node_id": 1
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Return",
+      "line": 55,
+      "node_id": 2
+    },
+    {
+      "code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "If",
+      "line": 56,
+      "node_id": 3
+    },
+    {
+      "code": "n.left = self._remove(n.left, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 4
+    },
+    {
+      "code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "If",
+      "line": 58,
+      "node_id": 5
+    },
+    {
+      "code": "n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Assign",
+      "line": 59,
+      "node_id": 6
+    },
+    {
+      "code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "If",
+      "line": 61,
+      "node_id": 7
+    },
+    {
+      "code": "if not n.left: return n.right",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "If",
+      "line": 62,
+      "node_id": 8
+    },
+    {
+      "code": "return n.right",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Return",
+      "line": 62,
+      "node_id": 9
+    },
+    {
+      "code": "if not n.right: return n.left",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "If",
+      "line": 63,
+      "node_id": 10
+    },
+    {
+      "code": "return n.left",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Return",
+      "line": 63,
+      "node_id": 11
+    },
+    {
+      "code": "succ = self._min_node(n.right)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Assign",
+      "line": 64,
+      "node_id": 12
+    },
+    {
+      "code": "n.lo, n.hi = succ.lo, succ.hi",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Assign",
+      "line": 65,
+      "node_id": 13
+    },
+    {
+      "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Assign",
+      "line": 66,
+      "node_id": 14
+    },
+    {
+      "code": "n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Assign",
+      "line": 68,
+      "node_id": 15
+    },
+    {
+      "code": "self._update(n)",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Expr",
+      "line": 69,
+      "node_id": 16
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "function": "IntervalTree._remove",
+      "kind": "Return",
+      "line": 70,
+      "node_id": 17
+    },
+    {
+      "code": "if lo > hi: lo, hi = hi, lo",
+      "dead": false,
+      "function": "IntervalTree.remove",
+      "kind": "If",
+      "line": 73,
+      "node_id": 1
+    },
+    {
+      "code": "lo, hi = hi, lo",
+      "dead": false,
+      "function": "IntervalTree.remove",
+      "kind": "Assign",
+      "line": 73,
+      "node_id": 2
+    },
+    {
+      "code": "self.root = self._remove(self.root, lo, hi)",
+      "dead": false,
+      "function": "IntervalTree.remove",
+      "kind": "Assign",
+      "line": 74,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.hi = hi",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.lo = lo",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.max_hi = hi",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.left: Optional[Node] = None",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "self.right: Optional[Node] = None",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "self.root: Optional[Node] = None",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if not n: return",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "n.max_hi = n.hi",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "n.max_hi = n.left.max_hi",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "n.max_hi = n.right.max_hi",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "if n is None: return Node(lo, hi)",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "return Node(lo, hi)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "n.left = self._insert(n.left, lo, hi)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "n.right = self._insert(n.right, lo, hi)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "self._update(n)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "if lo > hi: lo, hi = hi, lo",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "lo, hi = hi, lo",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "self.root = self._insert(self.root, lo, hi)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "return a[0] <= b[1] and b[0] <= a[1]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "res: List[Tuple[int,int]] = []",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "def dfs(n: Optional[Node]) -> None: if not n: return if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi)) if n.left and n.left.max_hi >= lo: dfs(n.left) if n.right and n.lo <= hi: dfs(n.right)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if not n: return",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "res.append((n.lo, n.hi))",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "dfs(n.left)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "dfs(n.right)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "if n.right and n.lo <= hi: dfs(n.right)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "dfs(self.root)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "while n.left: n = n.left",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "n = n.left",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "if not n: return None",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "n.left = self._remove(n.left, lo, hi)",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "if not n.left: return n.right",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "return n.right",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "if not n.right: return n.left",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "return n.left",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "succ = self._min_node(n.right)",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "n.lo, n.hi = succ.lo, succ.hi",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "n.right = self._remove(n.right, lo, hi)",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "self._update(n)",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "return n",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "if lo > hi: lo, hi = hi, lo",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "lo, hi = hi, lo",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "self.root = self._remove(self.root, lo, hi)",
+      "dead": false,
+      "line": 74
+    }
+  ],
+  "file": "SemBench/data/python/code/28.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 6,
+      "name": "Node.__init__",
+      "variables": [
+        "hi",
+        "lo",
+        "self",
+        "self.hi",
+        "self.left",
+        "self.lo",
+        "self.max_hi",
+        "self.right"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 13,
+      "name": "IntervalTree.__init__",
+      "variables": [
+        "self",
+        "self.root"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 20,
+      "lineno": 16,
+      "name": "IntervalTree._update",
+      "variables": [
+        "n",
+        "n.hi",
+        "n.left",
+        "n.left.max_hi",
+        "n.max_hi",
+        "n.right",
+        "n.right.max_hi",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "IntervalTree._insert",
+        "IntervalTree._update",
+        "Node.__init__"
+      ],
+      "end_lineno": 30,
+      "lineno": 22,
+      "name": "IntervalTree._insert",
+      "variables": [
+        "hi",
+        "lo",
+        "n",
+        "n.left",
+        "n.lo",
+        "n.right",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "IntervalTree._insert"
+      ],
+      "end_lineno": 34,
+      "lineno": 32,
+      "name": "IntervalTree.add",
+      "variables": [
+        "hi",
+        "lo",
+        "self",
+        "self.root"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 37,
+      "lineno": 36,
+      "name": "IntervalTree._overlap",
+      "variables": [
+        "a",
+        "b",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "IntervalTree.query.dfs"
+      ],
+      "end_lineno": 47,
+      "lineno": 39,
+      "name": "IntervalTree.query",
+      "variables": [
+        "hi",
+        "lo",
+        "res",
+        "self",
+        "self.root"
+      ]
+    },
+    {
+      "calls": [
+        "IntervalTree._overlap",
+        "IntervalTree.query.dfs"
+      ],
+      "end_lineno": 45,
+      "lineno": 41,
+      "name": "IntervalTree.query.dfs",
+      "variables": [
+        "hi",
+        "lo",
+        "n",
+        "n.hi",
+        "n.left",
+        "n.left.max_hi",
+        "n.lo",
+        "n.right",
+        "res",
+        "self"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 52,
+      "lineno": 49,
+      "name": "IntervalTree._min_node",
+      "variables": [
+        "n",
+        "n.left",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "IntervalTree._min_node",
+        "IntervalTree._remove",
+        "IntervalTree._update"
+      ],
+      "end_lineno": 70,
+      "lineno": 54,
+      "name": "IntervalTree._remove",
+      "variables": [
+        "hi",
+        "lo",
+        "n",
+        "n.hi",
+        "n.left",
+        "n.lo",
+        "n.right",
+        "self",
+        "succ",
+        "succ.hi",
+        "succ.lo"
+      ]
+    },
+    {
+      "calls": [
+        "IntervalTree._remove"
+      ],
+      "end_lineno": 74,
+      "lineno": 72,
+      "name": "IntervalTree.remove",
+      "variables": [
+        "hi",
+        "lo",
+        "self",
+        "self.root"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "IntervalTree.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.root: Optional[Node] = None",
+            "line": 14,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.root": false
+        },
+        "return_vars": []
+      },
+      "IntervalTree._insert": {
+        "base_liveout": [
+          "hi",
+          "lo",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "if n is None: return Node(lo, hi)",
+            "line": 23,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self"
+            ]
+          },
+          {
+            "code": "return Node(lo, hi)",
+            "line": 24,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self"
+            ]
+          },
+          {
+            "code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+            "line": 25,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self"
+            ]
+          },
+          {
+            "code": "n.left = self._insert(n.left, lo, hi)",
+            "line": 26,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.right",
+              "self"
+            ]
+          },
+          {
+            "code": "n.right = self._insert(n.right, lo, hi)",
+            "line": 28,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.right",
+              "self"
+            ]
+          },
+          {
+            "code": "self._update(n)",
+            "line": 29,
+            "vars": [
+              "n",
+              "self"
+            ]
+          },
+          {
+            "code": "return n",
+            "line": 30,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "hi": true,
+          "lo": true,
+          "n": true,
+          "n.left": false,
+          "n.lo": false,
+          "n.right": false,
+          "self": false
+        },
+        "return_vars": [
+          "hi",
+          "lo",
+          "n"
+        ]
+      },
+      "IntervalTree._min_node": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "while n.left: n = n.left",
+            "line": 50,
+            "vars": [
+              "n.left"
+            ]
+          },
+          {
+            "code": "n = n.left",
+            "line": 51,
+            "vars": [
+              "n.left"
+            ]
+          },
+          {
+            "code": "return n",
+            "line": 52,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true,
+          "n.left": false,
+          "self": false
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "IntervalTree._overlap": {
+        "base_liveout": [
+          "a",
+          "b"
+        ],
+        "live_before": [
+          {
+            "code": "return a[0] <= b[1] and b[0] <= a[1]",
+            "line": 37,
+            "vars": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": true,
+          "self": false
+        },
+        "return_vars": [
+          "a",
+          "b"
+        ]
+      },
+      "IntervalTree._remove": {
+        "base_liveout": [
+          "n",
+          "n.left",
+          "n.right"
+        ],
+        "live_before": [
+          {
+            "code": "if not n: return None",
+            "line": 55,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 55,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+            "line": 56,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "n.left = self._remove(n.left, lo, hi)",
+            "line": 57,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+            "line": 58,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.lo",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "n.right = self._remove(n.right, lo, hi)",
+            "line": 59,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+            "line": 61,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "if not n.left: return n.right",
+            "line": 62,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "return n.right",
+            "line": 62,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "if not n.right: return n.left",
+            "line": 63,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "return n.left",
+            "line": 63,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.left",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "succ = self._min_node(n.right)",
+            "line": 64,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "n.lo, n.hi = succ.lo, succ.hi",
+            "line": 65,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+            "line": 66,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.right",
+              "self",
+              "succ.hi",
+              "succ.lo"
+            ]
+          },
+          {
+            "code": "n.right = self._remove(n.right, lo, hi)",
+            "line": 68,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.right",
+              "self"
+            ]
+          },
+          {
+            "code": "self._update(n)",
+            "line": 69,
+            "vars": [
+              "n",
+              "self"
+            ]
+          },
+          {
+            "code": "return n",
+            "line": 70,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "hi": false,
+          "lo": false,
+          "n": true,
+          "n.hi": false,
+          "n.left": true,
+          "n.lo": false,
+          "n.right": true,
+          "self": false,
+          "succ": false,
+          "succ.hi": false,
+          "succ.lo": false
+        },
+        "return_vars": [
+          "n",
+          "n.left",
+          "n.right"
+        ]
+      },
+      "IntervalTree._update": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if not n: return",
+            "line": 17,
+            "vars": [
+              "n",
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.right",
+              "n.right.max_hi"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 17,
+            "vars": [
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.right",
+              "n.right.max_hi"
+            ]
+          },
+          {
+            "code": "n.max_hi = n.hi",
+            "line": 18,
+            "vars": [
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.right",
+              "n.right.max_hi"
+            ]
+          },
+          {
+            "code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+            "line": 19,
+            "vars": [
+              "n.left",
+              "n.left.max_hi",
+              "n.max_hi",
+              "n.right",
+              "n.right.max_hi"
+            ]
+          },
+          {
+            "code": "n.max_hi = n.left.max_hi",
+            "line": 19,
+            "vars": [
+              "n.left.max_hi",
+              "n.right",
+              "n.right.max_hi"
+            ]
+          },
+          {
+            "code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+            "line": 20,
+            "vars": [
+              "n.max_hi",
+              "n.right",
+              "n.right.max_hi"
+            ]
+          },
+          {
+            "code": "n.max_hi = n.right.max_hi",
+            "line": 20,
+            "vars": [
+              "n.right.max_hi"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "n.hi": false,
+          "n.left": false,
+          "n.left.max_hi": false,
+          "n.max_hi": false,
+          "n.right": false,
+          "n.right.max_hi": false,
+          "self": false
+        },
+        "return_vars": []
+      },
+      "IntervalTree.add": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if lo > hi: lo, hi = hi, lo",
+            "line": 33,
+            "vars": [
+              "hi",
+              "lo",
+              "self",
+              "self.root"
+            ]
+          },
+          {
+            "code": "lo, hi = hi, lo",
+            "line": 33,
+            "vars": [
+              "hi",
+              "lo",
+              "self",
+              "self.root"
+            ]
+          },
+          {
+            "code": "self.root = self._insert(self.root, lo, hi)",
+            "line": 34,
+            "vars": [
+              "hi",
+              "lo",
+              "self",
+              "self.root"
+            ]
+          }
+        ],
+        "liveout": {
+          "hi": false,
+          "lo": false,
+          "self": false,
+          "self.root": false
+        },
+        "return_vars": []
+      },
+      "IntervalTree.query": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "res: List[Tuple[int,int]] = []",
+            "line": 40,
+            "vars": [
+              "self.root"
+            ]
+          },
+          {
+            "code": "def dfs(n: Optional[Node]) -> None: if not n: return if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi)) if n.left and n.left.max_hi >= lo: dfs(n.left) if n.right and n.lo <= hi: dfs(n.right)",
+            "line": 41,
+            "vars": [
+              "res",
+              "self.root"
+            ]
+          },
+          {
+            "code": "dfs(self.root)",
+            "line": 46,
+            "vars": [
+              "res",
+              "self.root"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 47,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "hi": false,
+          "lo": false,
+          "res": true,
+          "self": false,
+          "self.root": false
+        },
+        "return_vars": [
+          "res"
+        ]
+      },
+      "IntervalTree.query.dfs": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if not n: return",
+            "line": 42,
+            "vars": [
+              "hi",
+              "lo",
+              "n",
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.lo",
+              "n.right",
+              "res",
+              "self"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 42,
+            "vars": [
+              "hi",
+              "lo",
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.lo",
+              "n.right",
+              "res",
+              "self"
+            ]
+          },
+          {
+            "code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+            "line": 43,
+            "vars": [
+              "hi",
+              "lo",
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.lo",
+              "n.right",
+              "res",
+              "self"
+            ]
+          },
+          {
+            "code": "res.append((n.lo, n.hi))",
+            "line": 43,
+            "vars": [
+              "hi",
+              "lo",
+              "n.hi",
+              "n.left",
+              "n.left.max_hi",
+              "n.lo",
+              "n.right",
+              "res"
+            ]
+          },
+          {
+            "code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+            "line": 44,
+            "vars": [
+              "hi",
+              "lo",
+              "n.left",
+              "n.left.max_hi",
+              "n.lo",
+              "n.right"
+            ]
+          },
+          {
+            "code": "dfs(n.left)",
+            "line": 44,
+            "vars": [
+              "hi",
+              "n.left",
+              "n.lo",
+              "n.right"
+            ]
+          },
+          {
+            "code": "if n.right and n.lo <= hi: dfs(n.right)",
+            "line": 45,
+            "vars": [
+              "hi",
+              "n.lo",
+              "n.right"
+            ]
+          },
+          {
+            "code": "dfs(n.right)",
+            "line": 45,
+            "vars": [
+              "n.right"
+            ]
+          }
+        ],
+        "liveout": {
+          "hi": false,
+          "lo": false,
+          "n": false,
+          "n.hi": false,
+          "n.left": false,
+          "n.left.max_hi": false,
+          "n.lo": false,
+          "n.right": false,
+          "res": false,
+          "self": false
+        },
+        "return_vars": []
+      },
+      "IntervalTree.remove": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if lo > hi: lo, hi = hi, lo",
+            "line": 73,
+            "vars": [
+              "hi",
+              "lo",
+              "self",
+              "self.root"
+            ]
+          },
+          {
+            "code": "lo, hi = hi, lo",
+            "line": 73,
+            "vars": [
+              "hi",
+              "lo",
+              "self",
+              "self.root"
+            ]
+          },
+          {
+            "code": "self.root = self._remove(self.root, lo, hi)",
+            "line": 74,
+            "vars": [
+              "hi",
+              "lo",
+              "self",
+              "self.root"
+            ]
+          }
+        ],
+        "liveout": {
+          "hi": false,
+          "lo": false,
+          "self": false,
+          "self.root": false
+        },
+        "return_vars": []
+      },
+      "Node.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.lo = lo",
+            "line": 7,
+            "vars": [
+              "hi",
+              "lo"
+            ]
+          },
+          {
+            "code": "self.hi = hi",
+            "line": 7,
+            "vars": [
+              "hi"
+            ]
+          },
+          {
+            "code": "self.max_hi = hi",
+            "line": 8,
+            "vars": [
+              "hi"
+            ]
+          },
+          {
+            "code": "self.left: Optional[Node] = None",
+            "line": 9,
+            "vars": []
+          },
+          {
+            "code": "self.right: Optional[Node] = None",
+            "line": 10,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "hi": false,
+          "lo": false,
+          "self": false,
+          "self.hi": false,
+          "self.left": false,
+          "self.lo": false,
+          "self.max_hi": false,
+          "self.right": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while n.left:",
+      "cond": "n.left",
+      "function": "IntervalTree._min_node",
+      "header_id": 1,
+      "line": 50,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "self.lo = lo",
+      "a_line": 7,
+      "b_code": "self.hi = hi",
+      "b_line": 7,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.lo = lo",
+      "a_line": 7,
+      "b_code": "self.max_hi = hi",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.hi = hi",
+      "a_line": 7,
+      "b_code": "self.max_hi = hi",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.lo = lo",
+      "a_line": 7,
+      "b_code": "self.left: Optional[Node] = None",
+      "b_line": 9,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.hi = hi",
+      "a_line": 7,
+      "b_code": "self.left: Optional[Node] = None",
+      "b_line": 9,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.max_hi = hi",
+      "a_line": 8,
+      "b_code": "self.left: Optional[Node] = None",
+      "b_line": 9,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.lo = lo",
+      "a_line": 7,
+      "b_code": "self.right: Optional[Node] = None",
+      "b_line": 10,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.hi = hi",
+      "a_line": 7,
+      "b_code": "self.right: Optional[Node] = None",
+      "b_line": 10,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.max_hi = hi",
+      "a_line": 8,
+      "b_code": "self.right: Optional[Node] = None",
+      "b_line": 10,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.left: Optional[Node] = None",
+      "a_line": 9,
+      "b_code": "self.right: Optional[Node] = None",
+      "b_line": 10,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 17,
+      "b_code": "return",
+      "b_line": 17,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 17,
+      "b_code": "n.max_hi = n.hi",
+      "b_line": 18,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 17,
+      "b_code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "b_line": 19,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "n.max_hi = n.hi",
+      "a_line": 18,
+      "b_code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "b_line": 19,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 17,
+      "b_code": "n.max_hi = n.left.max_hi",
+      "b_line": 19,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "n.max_hi = n.hi",
+      "a_line": 18,
+      "b_code": "n.max_hi = n.left.max_hi",
+      "b_line": 19,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "a_line": 19,
+      "b_code": "n.max_hi = n.left.max_hi",
+      "b_line": 19,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 17,
+      "b_code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "n.max_hi = n.hi",
+      "a_line": 18,
+      "b_code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "a_line": 19,
+      "b_code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 17,
+      "b_code": "n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "n.max_hi = n.hi",
+      "a_line": 18,
+      "b_code": "n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if n.left and n.left.max_hi > n.max_hi: n.max_hi = n.left.max_hi",
+      "a_line": 19,
+      "b_code": "n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if n.right and n.right.max_hi > n.max_hi: n.max_hi = n.right.max_hi",
+      "a_line": 20,
+      "b_code": "n.max_hi = n.right.max_hi",
+      "b_line": 20,
+      "function": "IntervalTree._update"
+    },
+    {
+      "a_code": "if n is None: return Node(lo, hi)",
+      "a_line": 23,
+      "b_code": "return Node(lo, hi)",
+      "b_line": 24,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if n is None: return Node(lo, hi)",
+      "a_line": 23,
+      "b_code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "b_line": 25,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if n is None: return Node(lo, hi)",
+      "a_line": 23,
+      "b_code": "n.left = self._insert(n.left, lo, hi)",
+      "b_line": 26,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "a_line": 25,
+      "b_code": "n.left = self._insert(n.left, lo, hi)",
+      "b_line": 26,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if n is None: return Node(lo, hi)",
+      "a_line": 23,
+      "b_code": "n.right = self._insert(n.right, lo, hi)",
+      "b_line": 28,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "a_line": 25,
+      "b_code": "n.right = self._insert(n.right, lo, hi)",
+      "b_line": 28,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if n is None: return Node(lo, hi)",
+      "a_line": 23,
+      "b_code": "self._update(n)",
+      "b_line": 29,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "a_line": 25,
+      "b_code": "self._update(n)",
+      "b_line": 29,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if n is None: return Node(lo, hi)",
+      "a_line": 23,
+      "b_code": "return n",
+      "b_line": 30,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._insert(n.left, lo, hi) else: n.right = self._insert(n.right, lo, hi)",
+      "a_line": 25,
+      "b_code": "return n",
+      "b_line": 30,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "self._update(n)",
+      "a_line": 29,
+      "b_code": "return n",
+      "b_line": 30,
+      "function": "IntervalTree._insert"
+    },
+    {
+      "a_code": "if lo > hi: lo, hi = hi, lo",
+      "a_line": 33,
+      "b_code": "lo, hi = hi, lo",
+      "b_line": 33,
+      "function": "IntervalTree.add"
+    },
+    {
+      "a_code": "if lo > hi: lo, hi = hi, lo",
+      "a_line": 33,
+      "b_code": "self.root = self._insert(self.root, lo, hi)",
+      "b_line": 34,
+      "function": "IntervalTree.add"
+    },
+    {
+      "a_code": "res: List[Tuple[int,int]] = []",
+      "a_line": 40,
+      "b_code": "def dfs(n: Optional[Node]) -> None: if not n: return if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi)) if n.left and n.left.max_hi >= lo: dfs(n.left) if n.right and n.lo <= hi: dfs(n.right)",
+      "b_line": 41,
+      "function": "IntervalTree.query"
+    },
+    {
+      "a_code": "res: List[Tuple[int,int]] = []",
+      "a_line": 40,
+      "b_code": "dfs(self.root)",
+      "b_line": 46,
+      "function": "IntervalTree.query"
+    },
+    {
+      "a_code": "def dfs(n: Optional[Node]) -> None: if not n: return if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi)) if n.left and n.left.max_hi >= lo: dfs(n.left) if n.right and n.lo <= hi: dfs(n.right)",
+      "a_line": 41,
+      "b_code": "dfs(self.root)",
+      "b_line": 46,
+      "function": "IntervalTree.query"
+    },
+    {
+      "a_code": "res: List[Tuple[int,int]] = []",
+      "a_line": 40,
+      "b_code": "return res",
+      "b_line": 47,
+      "function": "IntervalTree.query"
+    },
+    {
+      "a_code": "def dfs(n: Optional[Node]) -> None: if not n: return if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi)) if n.left and n.left.max_hi >= lo: dfs(n.left) if n.right and n.lo <= hi: dfs(n.right)",
+      "a_line": 41,
+      "b_code": "return res",
+      "b_line": 47,
+      "function": "IntervalTree.query"
+    },
+    {
+      "a_code": "dfs(self.root)",
+      "a_line": 46,
+      "b_code": "return res",
+      "b_line": 47,
+      "function": "IntervalTree.query"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "return",
+      "b_line": 42,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "b_line": 43,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "res.append((n.lo, n.hi))",
+      "b_line": 43,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "a_line": 43,
+      "b_code": "res.append((n.lo, n.hi))",
+      "b_line": 43,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "b_line": 44,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "a_line": 43,
+      "b_code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "b_line": 44,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "dfs(n.left)",
+      "b_line": 44,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "a_line": 43,
+      "b_code": "dfs(n.left)",
+      "b_line": 44,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "a_line": 44,
+      "b_code": "dfs(n.left)",
+      "b_line": 44,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "if n.right and n.lo <= hi: dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "a_line": 43,
+      "b_code": "if n.right and n.lo <= hi: dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "a_line": 44,
+      "b_code": "if n.right and n.lo <= hi: dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if not n: return",
+      "a_line": 42,
+      "b_code": "dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if self._overlap((lo,hi), (n.lo, n.hi)): res.append((n.lo, n.hi))",
+      "a_line": 43,
+      "b_code": "dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if n.left and n.left.max_hi >= lo: dfs(n.left)",
+      "a_line": 44,
+      "b_code": "dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "if n.right and n.lo <= hi: dfs(n.right)",
+      "a_line": 45,
+      "b_code": "dfs(n.right)",
+      "b_line": 45,
+      "function": "IntervalTree.query.dfs"
+    },
+    {
+      "a_code": "while n.left: n = n.left",
+      "a_line": 50,
+      "b_code": "n = n.left",
+      "b_line": 51,
+      "function": "IntervalTree._min_node"
+    },
+    {
+      "a_code": "while n.left: n = n.left",
+      "a_line": 50,
+      "b_code": "return n",
+      "b_line": 52,
+      "function": "IntervalTree._min_node"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "return None",
+      "b_line": 55,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "b_line": 56,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "n.left = self._remove(n.left, lo, hi)",
+      "b_line": 57,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "n.left = self._remove(n.left, lo, hi)",
+      "b_line": 57,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "b_line": 58,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "b_line": 58,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 59,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 59,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 59,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "b_line": 61,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "b_line": 61,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "b_line": 61,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "if not n.left: return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "if not n.left: return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "if not n.left: return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "if not n.left: return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.left: return n.right",
+      "a_line": 62,
+      "b_code": "return n.right",
+      "b_line": 62,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "if not n.right: return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "if not n.right: return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "if not n.right: return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "if not n.right: return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.left: return n.right",
+      "a_line": 62,
+      "b_code": "if not n.right: return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.left: return n.right",
+      "a_line": 62,
+      "b_code": "return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.right: return n.left",
+      "a_line": 63,
+      "b_code": "return n.left",
+      "b_line": 63,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "succ = self._min_node(n.right)",
+      "b_line": 64,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "succ = self._min_node(n.right)",
+      "b_line": 64,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "succ = self._min_node(n.right)",
+      "b_line": 64,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "succ = self._min_node(n.right)",
+      "b_line": 64,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.left: return n.right",
+      "a_line": 62,
+      "b_code": "succ = self._min_node(n.right)",
+      "b_line": 64,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.right: return n.left",
+      "a_line": 63,
+      "b_code": "succ = self._min_node(n.right)",
+      "b_line": 64,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.left: return n.right",
+      "a_line": 62,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.right: return n.left",
+      "a_line": 63,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "succ = self._min_node(n.right)",
+      "a_line": 64,
+      "b_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "b_line": 65,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.left: return n.right",
+      "a_line": 62,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n.right: return n.left",
+      "a_line": 63,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "succ = self._min_node(n.right)",
+      "a_line": 64,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "n.lo, n.hi = succ.lo, succ.hi",
+      "a_line": 65,
+      "b_code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+      "b_line": 66,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 68,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 68,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 58,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 68,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 61,
+      "b_code": "n.right = self._remove(n.right, lo, hi)",
+      "b_line": 68,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "self._update(n)",
+      "b_line": 69,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "self._update(n)",
+      "b_line": 69,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if not n: return None",
+      "a_line": 55,
+      "b_code": "return n",
+      "b_line": 70,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo < n.lo: n.left = self._remove(n.left, lo, hi) elif lo > n.lo: n.right = self._remove(n.right, lo, hi) else: if n.hi == hi: if not n.left: return n.right if not n.right: return n.left succ = self._min_node(n.right) n.lo, n.hi = succ.lo, succ.hi n.right = self._remove(n.right, succ.lo, succ.hi) else: n.right = self._remove(n.right, lo, hi)",
+      "a_line": 56,
+      "b_code": "return n",
+      "b_line": 70,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "self._update(n)",
+      "a_line": 69,
+      "b_code": "return n",
+      "b_line": 70,
+      "function": "IntervalTree._remove"
+    },
+    {
+      "a_code": "if lo > hi: lo, hi = hi, lo",
+      "a_line": 73,
+      "b_code": "lo, hi = hi, lo",
+      "b_line": 73,
+      "function": "IntervalTree.remove"
+    },
+    {
+      "a_code": "if lo > hi: lo, hi = hi, lo",
+      "a_line": 73,
+      "b_code": "self.root = self._remove(self.root, lo, hi)",
+      "b_line": 74,
+      "function": "IntervalTree.remove"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "lo"
+      },
+      "from": {
+        "code": "self.lo = lo",
+        "line": 7,
+        "var": "self.lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.lo = lo",
+        "line": 7,
+        "var": "self.lo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.hi = hi",
+        "line": 7,
+        "var": "self.hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "lo"
+      },
+      "from": {
+        "code": "self.hi = hi",
+        "line": 7,
+        "var": "self.hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.max_hi = hi",
+        "line": 8,
+        "var": "self.max_hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "lo"
+      },
+      "from": {
+        "code": "self.max_hi = hi",
+        "line": 8,
+        "var": "self.max_hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.left: Optional[Node] = None",
+        "line": 9,
+        "var": "self.left"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lo:",
+        "line": 6,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.right: Optional[Node] = None",
+        "line": 10,
+        "var": "self.right"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self) -> None:",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root: Optional[Node] = None",
+        "line": 14,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n.max_hi = n.hi",
+        "line": 18,
+        "var": "n.hi"
+      },
+      "from": {
+        "code": "n.max_hi = n.hi",
+        "line": 18,
+        "var": "n.max_hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update(self, n:",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.max_hi = n.hi",
+        "line": 18,
+        "var": "n.max_hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n.max_hi = n.left.max_hi",
+        "line": 19,
+        "var": "n.left.max_hi"
+      },
+      "from": {
+        "code": "n.max_hi = n.left.max_hi",
+        "line": 19,
+        "var": "n.max_hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update(self, n:",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.max_hi = n.left.max_hi",
+        "line": 19,
+        "var": "n.max_hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n.max_hi = n.right.max_hi",
+        "line": 20,
+        "var": "n.right.max_hi"
+      },
+      "from": {
+        "code": "n.max_hi = n.right.max_hi",
+        "line": 20,
+        "var": "n.max_hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update(self, n:",
+        "line": 16,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.max_hi = n.right.max_hi",
+        "line": 20,
+        "var": "n.max_hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.left = self._insert(n.left, lo, hi)",
+        "line": 26,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "lo"
+      },
+      "from": {
+        "code": "n.left = self._insert(n.left, lo, hi)",
+        "line": 26,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.left = self._insert(n.left, lo, hi)",
+        "line": 26,
+        "var": "n.left"
+      },
+      "from": {
+        "code": "n.left = self._insert(n.left, lo, hi)",
+        "line": 26,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "self"
+      },
+      "from": {
+        "code": "n.left = self._insert(n.left, lo, hi)",
+        "line": 26,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.left = self._insert(n.left, lo, hi)",
+        "line": 26,
+        "var": "n.left"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.right = self._insert(n.right, lo, hi)",
+        "line": 28,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "lo"
+      },
+      "from": {
+        "code": "n.right = self._insert(n.right, lo, hi)",
+        "line": 28,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._insert(n.right, lo, hi)",
+        "line": 28,
+        "var": "n.right"
+      },
+      "from": {
+        "code": "n.right = self._insert(n.right, lo, hi)",
+        "line": 28,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "self"
+      },
+      "from": {
+        "code": "n.right = self._insert(n.right, lo, hi)",
+        "line": 28,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(self, n:",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.right = self._insert(n.right, lo, hi)",
+        "line": 28,
+        "var": "n.right"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, lo:",
+        "line": 32,
+        "var": "hi"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, lo:",
+        "line": 32,
+        "var": "lo"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, lo:",
+        "line": 32,
+        "var": "self"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "hi"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, lo:",
+        "line": 32,
+        "var": "lo"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, lo:",
+        "line": 32,
+        "var": "self"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "lo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.root = self._insert(self.root, lo, hi)",
+        "line": 34,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lo, hi = hi, lo",
+        "line": 33,
+        "var": "lo"
+      },
+      "from": {
+        "code": "self.root = self._insert(self.root, lo, hi)",
+        "line": 34,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, lo:",
+        "line": 32,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root = self._insert(self.root, lo, hi)",
+        "line": 34,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.root = self._insert(self.root, lo, hi)",
+        "line": 34,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "self.root = self._insert(self.root, lo, hi)",
+        "line": 34,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, lo:",
+        "line": 39,
+        "var": "hi"
+      },
+      "from": {
+        "code": "res: List[Tuple[int,int]] = []",
+        "line": 40,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n = n.left",
+        "line": 51,
+        "var": "n.left"
+      },
+      "from": {
+        "code": "n = n.left",
+        "line": 51,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _min_node(self, n:",
+        "line": 49,
+        "var": "self"
+      },
+      "from": {
+        "code": "n = n.left",
+        "line": 51,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.left = self._remove(n.left, lo, hi)",
+        "line": 57,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "lo"
+      },
+      "from": {
+        "code": "n.left = self._remove(n.left, lo, hi)",
+        "line": 57,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.left = self._remove(n.left, lo, hi)",
+        "line": 57,
+        "var": "n.left"
+      },
+      "from": {
+        "code": "n.left = self._remove(n.left, lo, hi)",
+        "line": 57,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "self"
+      },
+      "from": {
+        "code": "n.left = self._remove(n.left, lo, hi)",
+        "line": 57,
+        "var": "n.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.left = self._remove(n.left, lo, hi)",
+        "line": 57,
+        "var": "n.left"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "lo"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "self"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "succ = self._min_node(n.right)",
+        "line": 64,
+        "var": "succ"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "lo"
+      },
+      "from": {
+        "code": "succ = self._min_node(n.right)",
+        "line": 64,
+        "var": "succ"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "from": {
+        "code": "succ = self._min_node(n.right)",
+        "line": 64,
+        "var": "succ"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "self"
+      },
+      "from": {
+        "code": "succ = self._min_node(n.right)",
+        "line": 64,
+        "var": "succ"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "n"
+      },
+      "from": {
+        "code": "succ = self._min_node(n.right)",
+        "line": 64,
+        "var": "succ"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "succ.hi"
+      },
+      "from": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "n.hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "succ.lo"
+      },
+      "from": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "n.hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "n.hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "succ.hi"
+      },
+      "from": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "n.lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "succ.lo"
+      },
+      "from": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "n.lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.lo, n.hi = succ.lo, succ.hi",
+        "line": 65,
+        "var": "n.lo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "lo"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 59,
+        "var": "n.right"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "self"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "succ.hi"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "succ.lo"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "hi"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "lo"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, succ.lo, succ.hi)",
+        "line": 66,
+        "var": "n.right"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "self"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "succ.hi"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "succ.lo"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _remove(self, n:",
+        "line": 54,
+        "var": "n"
+      },
+      "from": {
+        "code": "n.right = self._remove(n.right, lo, hi)",
+        "line": 68,
+        "var": "n.right"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def remove(self, lo:",
+        "line": 72,
+        "var": "hi"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove(self, lo:",
+        "line": 72,
+        "var": "lo"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "hi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove(self, lo:",
+        "line": 72,
+        "var": "self"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "hi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "hi"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove(self, lo:",
+        "line": 72,
+        "var": "lo"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "lo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove(self, lo:",
+        "line": 72,
+        "var": "self"
+      },
+      "from": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "lo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "hi"
+      },
+      "from": {
+        "code": "self.root = self._remove(self.root, lo, hi)",
+        "line": 74,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lo, hi = hi, lo",
+        "line": 73,
+        "var": "lo"
+      },
+      "from": {
+        "code": "self.root = self._remove(self.root, lo, hi)",
+        "line": 74,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove(self, lo:",
+        "line": 72,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root = self._remove(self.root, lo, hi)",
+        "line": 74,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.root = self._remove(self.root, lo, hi)",
+        "line": 74,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "self.root = self._remove(self.root, lo, hi)",
+        "line": 74,
+        "var": "self.root"
+      },
+      "label": "must"
+    }
+  ]
+}

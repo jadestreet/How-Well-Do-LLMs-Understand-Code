@@ -1,0 +1,33 @@
+{
+  "data_dependency": [
+    "Does the value of variable history at line 28: <statement> as_, history = distribute(as_, history, x, y) </statement> depend on the value of variable a at line 1: <statement> __module__ </statement>?",
+    "Does the value of variable history at line 43: <statement> as_, history = distribute(as_, history, x, y) </statement> depend on the value of variable as_ at line 43: <statement> as_, history = distribute(as_, history, x, y) </statement>?",
+    "Does variable a at line 1: <statement> __module__ </statement> determine the value stored in variable as_ at line 49: <statement> as_, history = distribute(as_, history, x + 1, x) </statement>?",
+    "Does the value of variable as_ at line 28: <statement> as_, history = distribute(as_, history, x, y) </statement> depend on the value of variable history at line 17: <statement> history = [] </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement if a > 0: as_, history = distribute(as_, history, x, y) be reached during execution?",
+    "Can the statement list_[y] += list_[x] be considered dead code because it is never executed?",
+    "Can the statement print(len(history)) be considered dead code because it is never executed?",
+    "Is it possible for the statement if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x) to execute?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 21: <statement> if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x) </statement> is reached, the statement line 43: <statement> as_, history = distribute(as_, history, x, y) </statement> has already been reached?",
+    "Does the statement line 1: <statement> n = int(input()) </statement> dominate line 43: <statement> as_, history = distribute(as_, history, x, y) </statement>?",
+    "Does the statement line 12: <statement> list_[y] += list_[x] </statement> dominate line 14: <statement> return list_, hstr </statement>?",
+    "Does the statement line 27: <statement> if a < 0: as_, history = distribute(as_, history, x, y) </statement> dominate line 1: <statement> n = int(input()) </statement>?"
+  ],
+  "function_reachability": [
+    "Is it impossible for function output_history to eventually call function distribute?",
+    "Is there a call path from function distribute to function output_history?",
+    "Is there no call path from function distribute to function output_history?",
+    "Can function output_history eventually call function distribute?"
+  ],
+  "liveness": [
+    "Does variable list_ remain in use at the end of function distribute?",
+    "Does variable hstr remain in use at the end of function distribute?",
+    "Is variable x live at the end of function distribute?",
+    "Does variable history remain in use at the end of function __module__?"
+  ],
+  "loop_reachability": []
+}

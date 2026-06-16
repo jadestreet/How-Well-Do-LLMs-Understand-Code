@@ -1,0 +1,2025 @@
+{
+  "cfg_statements": [
+    {
+      "code": "self.children: Dict[str, TrieNode] = {}",
+      "dead": false,
+      "function": "TrieNode.__init__",
+      "kind": "AnnAssign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "self.end: bool = False",
+      "dead": false,
+      "function": "TrieNode.__init__",
+      "kind": "AnnAssign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "self.root = TrieNode()",
+      "dead": false,
+      "function": "Trie.__init__",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "node = self.root",
+      "dead": false,
+      "function": "Trie.insert",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "for ch in word: node = node.children.setdefault(ch, TrieNode())",
+      "dead": false,
+      "function": "Trie.insert",
+      "kind": "For",
+      "line": 16,
+      "node_id": 2
+    },
+    {
+      "code": "node = node.children.setdefault(ch, TrieNode())",
+      "dead": false,
+      "function": "Trie.insert",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 3
+    },
+    {
+      "code": "node.end = True",
+      "dead": false,
+      "function": "Trie.insert",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 4
+    },
+    {
+      "code": "node = self.root",
+      "dead": false,
+      "function": "Trie.search",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "dead": false,
+      "function": "Trie.search",
+      "kind": "For",
+      "line": 22,
+      "node_id": 2
+    },
+    {
+      "code": "if ch not in node.children: return False",
+      "dead": false,
+      "function": "Trie.search",
+      "kind": "If",
+      "line": 23,
+      "node_id": 3
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "Trie.search",
+      "kind": "Return",
+      "line": 24,
+      "node_id": 4
+    },
+    {
+      "code": "node = node.children[ch]",
+      "dead": false,
+      "function": "Trie.search",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 5
+    },
+    {
+      "code": "return node.end",
+      "dead": false,
+      "function": "Trie.search",
+      "kind": "Return",
+      "line": 26,
+      "node_id": 6
+    },
+    {
+      "code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "If",
+      "line": 29,
+      "node_id": 1
+    },
+    {
+      "code": "if not node.end: return False",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "If",
+      "line": 30,
+      "node_id": 2
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 3
+    },
+    {
+      "code": "node.end = False",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 4
+    },
+    {
+      "code": "return len(node.children) == 0",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Return",
+      "line": 33,
+      "node_id": 5
+    },
+    {
+      "code": "ch = word[i]",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 6
+    },
+    {
+      "code": "if ch not in node.children: return False",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "If",
+      "line": 35,
+      "node_id": 7
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 8
+    },
+    {
+      "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 9
+    },
+    {
+      "code": "if should_prune: del node.children[ch]",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "If",
+      "line": 38,
+      "node_id": 10
+    },
+    {
+      "code": "del node.children[ch]",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Delete",
+      "line": 39,
+      "node_id": 11
+    },
+    {
+      "code": "return not node.end and len(node.children) == 0",
+      "dead": false,
+      "function": "Trie._delete",
+      "kind": "Return",
+      "line": 40,
+      "node_id": 12
+    },
+    {
+      "code": "self._delete(self.root, word, 0)",
+      "dead": false,
+      "function": "Trie.delete",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 1
+    },
+    {
+      "code": "if node.end: out.append(prefix)",
+      "dead": false,
+      "function": "Trie._collect",
+      "kind": "If",
+      "line": 46,
+      "node_id": 1
+    },
+    {
+      "code": "out.append(prefix)",
+      "dead": false,
+      "function": "Trie._collect",
+      "kind": "Expr",
+      "line": 47,
+      "node_id": 2
+    },
+    {
+      "code": "for ch, nxt in node.children.items(): self._collect(nxt, prefix + ch, out)",
+      "dead": false,
+      "function": "Trie._collect",
+      "kind": "For",
+      "line": 48,
+      "node_id": 3
+    },
+    {
+      "code": "self._collect(nxt, prefix + ch, out)",
+      "dead": false,
+      "function": "Trie._collect",
+      "kind": "Expr",
+      "line": 49,
+      "node_id": 4
+    },
+    {
+      "code": "node = self.root",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 1
+    },
+    {
+      "code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "For",
+      "line": 53,
+      "node_id": 2
+    },
+    {
+      "code": "if ch not in node.children: return []",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "If",
+      "line": 54,
+      "node_id": 3
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "Return",
+      "line": 55,
+      "node_id": 4
+    },
+    {
+      "code": "node = node.children[ch]",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 5
+    },
+    {
+      "code": "out: List[str] = []",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "AnnAssign",
+      "line": 57,
+      "node_id": 6
+    },
+    {
+      "code": "self._collect(node, prefix, out)",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 7
+    },
+    {
+      "code": "return out",
+      "dead": false,
+      "function": "Trie.autocomplete",
+      "kind": "Return",
+      "line": 59,
+      "node_id": 8
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.children: Dict[str, TrieNode] = {}",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.end: bool = False",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.root = TrieNode()",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "node = self.root",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "for ch in word: node = node.children.setdefault(ch, TrieNode())",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "node = node.children.setdefault(ch, TrieNode())",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "node.end = True",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "node = self.root",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "if ch not in node.children: return False",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "node = node.children[ch]",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "return node.end",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if not node.end: return False",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "node.end = False",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "return len(node.children) == 0",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "ch = word[i]",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "if ch not in node.children: return False",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "if should_prune: del node.children[ch]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "del node.children[ch]",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "return not node.end and len(node.children) == 0",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "self._delete(self.root, word, 0)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "if node.end: out.append(prefix)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "out.append(prefix)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "for ch, nxt in node.children.items(): self._collect(nxt, prefix + ch, out)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "self._collect(nxt, prefix + ch, out)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "node = self.root",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "if ch not in node.children: return []",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "node = node.children[ch]",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "out: List[str] = []",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "self._collect(node, prefix, out)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "return out",
+      "dead": false,
+      "line": 59
+    }
+  ],
+  "file": "SemBench/data/python/code/27.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 6,
+      "name": "TrieNode.__init__",
+      "variables": [
+        "self",
+        "self.children",
+        "self.end"
+      ]
+    },
+    {
+      "calls": [
+        "TrieNode.__init__"
+      ],
+      "end_lineno": 12,
+      "lineno": 11,
+      "name": "Trie.__init__",
+      "variables": [
+        "self",
+        "self.root"
+      ]
+    },
+    {
+      "calls": [
+        "TrieNode.__init__"
+      ],
+      "end_lineno": 18,
+      "lineno": 14,
+      "name": "Trie.insert",
+      "variables": [
+        "ch",
+        "node",
+        "node.children",
+        "node.end",
+        "self",
+        "self.root",
+        "word"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 26,
+      "lineno": 20,
+      "name": "Trie.search",
+      "variables": [
+        "ch",
+        "node",
+        "node.children",
+        "node.end",
+        "self",
+        "self.root",
+        "word"
+      ]
+    },
+    {
+      "calls": [
+        "Trie._delete"
+      ],
+      "end_lineno": 40,
+      "lineno": 28,
+      "name": "Trie._delete",
+      "variables": [
+        "ch",
+        "i",
+        "node",
+        "node.children",
+        "node.end",
+        "self",
+        "should_prune",
+        "word"
+      ]
+    },
+    {
+      "calls": [
+        "Trie._delete"
+      ],
+      "end_lineno": 43,
+      "lineno": 42,
+      "name": "Trie.delete",
+      "variables": [
+        "self",
+        "self.root",
+        "word"
+      ]
+    },
+    {
+      "calls": [
+        "Trie._collect"
+      ],
+      "end_lineno": 49,
+      "lineno": 45,
+      "name": "Trie._collect",
+      "variables": [
+        "ch",
+        "node",
+        "node.children",
+        "node.end",
+        "nxt",
+        "out",
+        "prefix",
+        "self"
+      ]
+    },
+    {
+      "calls": [
+        "Trie._collect"
+      ],
+      "end_lineno": 59,
+      "lineno": 51,
+      "name": "Trie.autocomplete",
+      "variables": [
+        "ch",
+        "node",
+        "node.children",
+        "out",
+        "prefix",
+        "self",
+        "self.root"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "Trie.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.root = TrieNode()",
+            "line": 12,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.root": false
+        },
+        "return_vars": []
+      },
+      "Trie._collect": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if node.end: out.append(prefix)",
+            "line": 46,
+            "vars": [
+              "node.children",
+              "node.end",
+              "out",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "out.append(prefix)",
+            "line": 47,
+            "vars": [
+              "node.children",
+              "out",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "for ch, nxt in node.children.items(): self._collect(nxt, prefix + ch, out)",
+            "line": 48,
+            "vars": [
+              "node.children",
+              "out",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "self._collect(nxt, prefix + ch, out)",
+            "line": 49,
+            "vars": [
+              "ch",
+              "nxt",
+              "out",
+              "prefix",
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "node": false,
+          "node.children": false,
+          "node.end": false,
+          "nxt": false,
+          "out": false,
+          "prefix": false,
+          "self": false
+        },
+        "return_vars": []
+      },
+      "Trie._delete": {
+        "base_liveout": [
+          "node.children",
+          "node.end"
+        ],
+        "live_before": [
+          {
+            "code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+            "line": 29,
+            "vars": [
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "if not node.end: return False",
+            "line": 30,
+            "vars": [
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 31,
+            "vars": [
+              "i",
+              "node.children",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "node.end = False",
+            "line": 32,
+            "vars": [
+              "i",
+              "node.children",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "return len(node.children) == 0",
+            "line": 33,
+            "vars": [
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "ch = word[i]",
+            "line": 34,
+            "vars": [
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "if ch not in node.children: return False",
+            "line": 35,
+            "vars": [
+              "ch",
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 36,
+            "vars": [
+              "ch",
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+            "line": 37,
+            "vars": [
+              "ch",
+              "i",
+              "node.children",
+              "node.end",
+              "self",
+              "word"
+            ]
+          },
+          {
+            "code": "if should_prune: del node.children[ch]",
+            "line": 38,
+            "vars": [
+              "node.children",
+              "node.end",
+              "should_prune"
+            ]
+          },
+          {
+            "code": "del node.children[ch]",
+            "line": 39,
+            "vars": [
+              "node.children",
+              "node.end"
+            ]
+          },
+          {
+            "code": "return not node.end and len(node.children) == 0",
+            "line": 40,
+            "vars": [
+              "node.children",
+              "node.end"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "i": false,
+          "node": false,
+          "node.children": true,
+          "node.end": true,
+          "self": false,
+          "should_prune": false,
+          "word": false
+        },
+        "return_vars": [
+          "node.children",
+          "node.end"
+        ]
+      },
+      "Trie.autocomplete": {
+        "base_liveout": [
+          "out"
+        ],
+        "live_before": [
+          {
+            "code": "node = self.root",
+            "line": 52,
+            "vars": [
+              "node.children",
+              "prefix",
+              "self",
+              "self.root"
+            ]
+          },
+          {
+            "code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+            "line": 53,
+            "vars": [
+              "node.children",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "if ch not in node.children: return []",
+            "line": 54,
+            "vars": [
+              "ch",
+              "node.children",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "return []",
+            "line": 55,
+            "vars": [
+              "ch",
+              "node.children",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "node = node.children[ch]",
+            "line": 56,
+            "vars": [
+              "ch",
+              "node.children",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "out: List[str] = []",
+            "line": 57,
+            "vars": [
+              "node",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "self._collect(node, prefix, out)",
+            "line": 58,
+            "vars": [
+              "node",
+              "out",
+              "prefix",
+              "self"
+            ]
+          },
+          {
+            "code": "return out",
+            "line": 59,
+            "vars": [
+              "out"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "node": false,
+          "node.children": false,
+          "out": true,
+          "prefix": false,
+          "self": false,
+          "self.root": false
+        },
+        "return_vars": [
+          "out"
+        ]
+      },
+      "Trie.delete": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self._delete(self.root, word, 0)",
+            "line": 43,
+            "vars": [
+              "self",
+              "self.root",
+              "word"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.root": false,
+          "word": false
+        },
+        "return_vars": []
+      },
+      "Trie.insert": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "node = self.root",
+            "line": 15,
+            "vars": [
+              "node.children",
+              "self.root",
+              "word"
+            ]
+          },
+          {
+            "code": "for ch in word: node = node.children.setdefault(ch, TrieNode())",
+            "line": 16,
+            "vars": [
+              "node.children",
+              "word"
+            ]
+          },
+          {
+            "code": "node = node.children.setdefault(ch, TrieNode())",
+            "line": 17,
+            "vars": [
+              "ch",
+              "node.children"
+            ]
+          },
+          {
+            "code": "node.end = True",
+            "line": 18,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "node": false,
+          "node.children": false,
+          "node.end": false,
+          "self": false,
+          "self.root": false,
+          "word": false
+        },
+        "return_vars": []
+      },
+      "Trie.search": {
+        "base_liveout": [
+          "node.end"
+        ],
+        "live_before": [
+          {
+            "code": "node = self.root",
+            "line": 21,
+            "vars": [
+              "node.children",
+              "node.end",
+              "self.root",
+              "word"
+            ]
+          },
+          {
+            "code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+            "line": 22,
+            "vars": [
+              "node.children",
+              "node.end",
+              "word"
+            ]
+          },
+          {
+            "code": "if ch not in node.children: return False",
+            "line": 23,
+            "vars": [
+              "ch",
+              "node.children",
+              "node.end"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 24,
+            "vars": [
+              "ch",
+              "node.children",
+              "node.end"
+            ]
+          },
+          {
+            "code": "node = node.children[ch]",
+            "line": 25,
+            "vars": [
+              "ch",
+              "node.children",
+              "node.end"
+            ]
+          },
+          {
+            "code": "return node.end",
+            "line": 26,
+            "vars": [
+              "node.end"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "node": false,
+          "node.children": false,
+          "node.end": true,
+          "self": false,
+          "self.root": false,
+          "word": false
+        },
+        "return_vars": [
+          "node.end"
+        ]
+      },
+      "TrieNode.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.children: Dict[str, TrieNode] = {}",
+            "line": 7,
+            "vars": []
+          },
+          {
+            "code": "self.end: bool = False",
+            "line": 8,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.children": false,
+          "self.end": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for ch, nxt in node.children.items():",
+      "cond": "for ch, nxt in node.children.items()",
+      "function": "Trie._collect",
+      "header_id": 3,
+      "line": 48,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ch in prefix:",
+      "cond": "for ch in prefix",
+      "function": "Trie.autocomplete",
+      "header_id": 2,
+      "line": 53,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ch in word:",
+      "cond": "for ch in word",
+      "function": "Trie.insert",
+      "header_id": 2,
+      "line": 16,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ch in word:",
+      "cond": "for ch in word",
+      "function": "Trie.search",
+      "header_id": 2,
+      "line": 22,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "self.children: Dict[str, TrieNode] = {}",
+      "a_line": 7,
+      "b_code": "self.end: bool = False",
+      "b_line": 8,
+      "function": "TrieNode.__init__"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 15,
+      "b_code": "for ch in word: node = node.children.setdefault(ch, TrieNode())",
+      "b_line": 16,
+      "function": "Trie.insert"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 15,
+      "b_code": "node = node.children.setdefault(ch, TrieNode())",
+      "b_line": 17,
+      "function": "Trie.insert"
+    },
+    {
+      "a_code": "for ch in word: node = node.children.setdefault(ch, TrieNode())",
+      "a_line": 16,
+      "b_code": "node = node.children.setdefault(ch, TrieNode())",
+      "b_line": 17,
+      "function": "Trie.insert"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 15,
+      "b_code": "node.end = True",
+      "b_line": 18,
+      "function": "Trie.insert"
+    },
+    {
+      "a_code": "for ch in word: node = node.children.setdefault(ch, TrieNode())",
+      "a_line": 16,
+      "b_code": "node.end = True",
+      "b_line": 18,
+      "function": "Trie.insert"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 21,
+      "b_code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "b_line": 22,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 21,
+      "b_code": "if ch not in node.children: return False",
+      "b_line": 23,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "a_line": 22,
+      "b_code": "if ch not in node.children: return False",
+      "b_line": 23,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 21,
+      "b_code": "return False",
+      "b_line": 24,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "a_line": 22,
+      "b_code": "return False",
+      "b_line": 24,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 23,
+      "b_code": "return False",
+      "b_line": 24,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 21,
+      "b_code": "node = node.children[ch]",
+      "b_line": 25,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "a_line": 22,
+      "b_code": "node = node.children[ch]",
+      "b_line": 25,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 23,
+      "b_code": "node = node.children[ch]",
+      "b_line": 25,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 21,
+      "b_code": "return node.end",
+      "b_line": 26,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "for ch in word: if ch not in node.children: return False node = node.children[ch]",
+      "a_line": 22,
+      "b_code": "return node.end",
+      "b_line": 26,
+      "function": "Trie.search"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "if not node.end: return False",
+      "b_line": 30,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "return False",
+      "b_line": 31,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if not node.end: return False",
+      "a_line": 30,
+      "b_code": "return False",
+      "b_line": 31,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "node.end = False",
+      "b_line": 32,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if not node.end: return False",
+      "a_line": 30,
+      "b_code": "node.end = False",
+      "b_line": 32,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "return len(node.children) == 0",
+      "b_line": 33,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if not node.end: return False",
+      "a_line": 30,
+      "b_code": "return len(node.children) == 0",
+      "b_line": 33,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "node.end = False",
+      "a_line": 32,
+      "b_code": "return len(node.children) == 0",
+      "b_line": 33,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "ch = word[i]",
+      "b_line": 34,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "if ch not in node.children: return False",
+      "b_line": 35,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "ch = word[i]",
+      "a_line": 34,
+      "b_code": "if ch not in node.children: return False",
+      "b_line": 35,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "ch = word[i]",
+      "a_line": 34,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 35,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "b_line": 37,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "ch = word[i]",
+      "a_line": 34,
+      "b_code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "b_line": 37,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 35,
+      "b_code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "b_line": 37,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "if should_prune: del node.children[ch]",
+      "b_line": 38,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "ch = word[i]",
+      "a_line": 34,
+      "b_code": "if should_prune: del node.children[ch]",
+      "b_line": 38,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 35,
+      "b_code": "if should_prune: del node.children[ch]",
+      "b_line": 38,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "a_line": 37,
+      "b_code": "if should_prune: del node.children[ch]",
+      "b_line": 38,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "del node.children[ch]",
+      "b_line": 39,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "ch = word[i]",
+      "a_line": 34,
+      "b_code": "del node.children[ch]",
+      "b_line": 39,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 35,
+      "b_code": "del node.children[ch]",
+      "b_line": 39,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "a_line": 37,
+      "b_code": "del node.children[ch]",
+      "b_line": 39,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if should_prune: del node.children[ch]",
+      "a_line": 38,
+      "b_code": "del node.children[ch]",
+      "b_line": 39,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if i == len(word): if not node.end: return False node.end = False return len(node.children) == 0",
+      "a_line": 29,
+      "b_code": "return not node.end and len(node.children) == 0",
+      "b_line": 40,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "ch = word[i]",
+      "a_line": 34,
+      "b_code": "return not node.end and len(node.children) == 0",
+      "b_line": 40,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if ch not in node.children: return False",
+      "a_line": 35,
+      "b_code": "return not node.end and len(node.children) == 0",
+      "b_line": 40,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+      "a_line": 37,
+      "b_code": "return not node.end and len(node.children) == 0",
+      "b_line": 40,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if should_prune: del node.children[ch]",
+      "a_line": 38,
+      "b_code": "return not node.end and len(node.children) == 0",
+      "b_line": 40,
+      "function": "Trie._delete"
+    },
+    {
+      "a_code": "if node.end: out.append(prefix)",
+      "a_line": 46,
+      "b_code": "out.append(prefix)",
+      "b_line": 47,
+      "function": "Trie._collect"
+    },
+    {
+      "a_code": "if node.end: out.append(prefix)",
+      "a_line": 46,
+      "b_code": "for ch, nxt in node.children.items(): self._collect(nxt, prefix + ch, out)",
+      "b_line": 48,
+      "function": "Trie._collect"
+    },
+    {
+      "a_code": "if node.end: out.append(prefix)",
+      "a_line": 46,
+      "b_code": "self._collect(nxt, prefix + ch, out)",
+      "b_line": 49,
+      "function": "Trie._collect"
+    },
+    {
+      "a_code": "for ch, nxt in node.children.items(): self._collect(nxt, prefix + ch, out)",
+      "a_line": 48,
+      "b_code": "self._collect(nxt, prefix + ch, out)",
+      "b_line": 49,
+      "function": "Trie._collect"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "b_line": 53,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "if ch not in node.children: return []",
+      "b_line": 54,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "a_line": 53,
+      "b_code": "if ch not in node.children: return []",
+      "b_line": 54,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "return []",
+      "b_line": 55,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "a_line": 53,
+      "b_code": "return []",
+      "b_line": 55,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "if ch not in node.children: return []",
+      "a_line": 54,
+      "b_code": "return []",
+      "b_line": 55,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "node = node.children[ch]",
+      "b_line": 56,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "a_line": 53,
+      "b_code": "node = node.children[ch]",
+      "b_line": 56,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "if ch not in node.children: return []",
+      "a_line": 54,
+      "b_code": "node = node.children[ch]",
+      "b_line": 56,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "out: List[str] = []",
+      "b_line": 57,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "a_line": 53,
+      "b_code": "out: List[str] = []",
+      "b_line": 57,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "self._collect(node, prefix, out)",
+      "b_line": 58,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "a_line": 53,
+      "b_code": "self._collect(node, prefix, out)",
+      "b_line": 58,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "out: List[str] = []",
+      "a_line": 57,
+      "b_code": "self._collect(node, prefix, out)",
+      "b_line": 58,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "node = self.root",
+      "a_line": 52,
+      "b_code": "return out",
+      "b_line": 59,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "for ch in prefix: if ch not in node.children: return [] node = node.children[ch]",
+      "a_line": 53,
+      "b_code": "return out",
+      "b_line": 59,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "out: List[str] = []",
+      "a_line": 57,
+      "b_code": "return out",
+      "b_line": 59,
+      "function": "Trie.autocomplete"
+    },
+    {
+      "a_code": "self._collect(node, prefix, out)",
+      "a_line": 58,
+      "b_code": "return out",
+      "b_line": 59,
+      "function": "Trie.autocomplete"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self) -> None:",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.children: Dict[str, TrieNode] = {}",
+        "line": 7,
+        "var": "self.children"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self) -> None:",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.end: bool = False",
+        "line": 8,
+        "var": "self.end"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self) -> None:",
+        "line": 11,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root = TrieNode()",
+        "line": 12,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = self.root",
+        "line": 15,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "node = self.root",
+        "line": 15,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def insert(self, word:",
+        "line": 14,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node = self.root",
+        "line": 15,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.children.setdefault(ch, TrieNode())",
+        "line": 17,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node = node.children.setdefault(ch, TrieNode())",
+        "line": 17,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.children.setdefault(ch, TrieNode())",
+        "line": 17,
+        "var": "node.children"
+      },
+      "from": {
+        "code": "node = node.children.setdefault(ch, TrieNode())",
+        "line": 17,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def insert(self, word:",
+        "line": 14,
+        "var": "node.end"
+      },
+      "from": {
+        "code": "node = node.children.setdefault(ch, TrieNode())",
+        "line": 17,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def insert(self, word:",
+        "line": 14,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node.end = True",
+        "line": 18,
+        "var": "node.end"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = self.root",
+        "line": 21,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "node = self.root",
+        "line": 21,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def search(self, word:",
+        "line": 20,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node = self.root",
+        "line": 21,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.children[ch]",
+        "line": 25,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node = node.children[ch]",
+        "line": 25,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.children[ch]",
+        "line": 25,
+        "var": "node.children"
+      },
+      "from": {
+        "code": "node = node.children[ch]",
+        "line": 25,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def search(self, word:",
+        "line": 20,
+        "var": "node.end"
+      },
+      "from": {
+        "code": "node = node.children[ch]",
+        "line": 25,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node.end = False",
+        "line": 32,
+        "var": "node.end"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "i"
+      },
+      "from": {
+        "code": "ch = word[i]",
+        "line": 34,
+        "var": "ch"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "word"
+      },
+      "from": {
+        "code": "ch = word[i]",
+        "line": 34,
+        "var": "ch"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "node"
+      },
+      "from": {
+        "code": "ch = word[i]",
+        "line": 34,
+        "var": "ch"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ch = word[i]",
+        "line": 34,
+        "var": "ch"
+      },
+      "from": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "should_prune"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "i"
+      },
+      "from": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "should_prune"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "node.children"
+      },
+      "from": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "should_prune"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "self"
+      },
+      "from": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "should_prune"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "word"
+      },
+      "from": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "should_prune"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _delete(self, node:",
+        "line": 28,
+        "var": "node"
+      },
+      "from": {
+        "code": "should_prune = self._delete(node.children[ch], word, i + 1)",
+        "line": 37,
+        "var": "should_prune"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = self.root",
+        "line": 52,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "node = self.root",
+        "line": 52,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def autocomplete(self, prefix:",
+        "line": 51,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node = self.root",
+        "line": 52,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.children[ch]",
+        "line": 56,
+        "var": "ch"
+      },
+      "from": {
+        "code": "node = node.children[ch]",
+        "line": 56,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.children[ch]",
+        "line": 56,
+        "var": "node.children"
+      },
+      "from": {
+        "code": "node = node.children[ch]",
+        "line": 56,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def autocomplete(self, prefix:",
+        "line": 51,
+        "var": "out"
+      },
+      "from": {
+        "code": "node = node.children[ch]",
+        "line": 56,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def autocomplete(self, prefix:",
+        "line": 51,
+        "var": "ch"
+      },
+      "from": {
+        "code": "out: List[str] = []",
+        "line": 57,
+        "var": "out"
+      },
+      "label": "negative"
+    }
+  ]
+}

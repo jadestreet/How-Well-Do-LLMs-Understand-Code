@@ -1,0 +1,2646 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "N, M = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 2
+    },
+    {
+      "code": "graph = dict()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 3
+    },
+    {
+      "code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 24,
+      "node_id": 4
+    },
+    {
+      "code": "A, B = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 5
+    },
+    {
+      "code": "add_to_graph(A, B)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 6
+    },
+    {
+      "code": "add_to_graph(B, A)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 27,
+      "node_id": 7
+    },
+    {
+      "code": "is_finished = [False] * (N + 1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 8
+    },
+    {
+      "code": "groups = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 9
+    },
+    {
+      "code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 33,
+      "node_id": 10
+    },
+    {
+      "code": "que = deque()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 11
+    },
+    {
+      "code": "group = set()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 12
+    },
+    {
+      "code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 37,
+      "node_id": 13
+    },
+    {
+      "code": "add_to_group(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 38,
+      "node_id": 14
+    },
+    {
+      "code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 40,
+      "node_id": 15
+    },
+    {
+      "code": "p = que.popleft()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 16
+    },
+    {
+      "code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 43,
+      "node_id": 17
+    },
+    {
+      "code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 44,
+      "node_id": 18
+    },
+    {
+      "code": "if not is_finished[v]: add_to_group(v)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 45,
+      "node_id": 19
+    },
+    {
+      "code": "add_to_group(v)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 46,
+      "node_id": 20
+    },
+    {
+      "code": "groups.append(group)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 48,
+      "node_id": 21
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 22
+    },
+    {
+      "code": "for g in groups: ans = max(ans, len(g))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 52,
+      "node_id": 23
+    },
+    {
+      "code": "ans = max(ans, len(g))",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 24
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 55,
+      "node_id": 25
+    },
+    {
+      "code": "global graph",
+      "dead": false,
+      "function": "add_to_graph",
+      "kind": "Global",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "graph.setdefault(A, [])",
+      "dead": false,
+      "function": "add_to_graph",
+      "kind": "Expr",
+      "line": 5,
+      "node_id": 2
+    },
+    {
+      "code": "graph[A].append(B)",
+      "dead": false,
+      "function": "add_to_graph",
+      "kind": "Expr",
+      "line": 6,
+      "node_id": 3
+    },
+    {
+      "code": "global que",
+      "dead": false,
+      "function": "add_to_group",
+      "kind": "Global",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "global group",
+      "dead": false,
+      "function": "add_to_group",
+      "kind": "Global",
+      "line": 11,
+      "node_id": 2
+    },
+    {
+      "code": "global is_finished",
+      "dead": false,
+      "function": "add_to_group",
+      "kind": "Global",
+      "line": 12,
+      "node_id": 3
+    },
+    {
+      "code": "que.append(p)",
+      "dead": false,
+      "function": "add_to_group",
+      "kind": "Expr",
+      "line": 14,
+      "node_id": 4
+    },
+    {
+      "code": "group.add(p)",
+      "dead": false,
+      "function": "add_to_group",
+      "kind": "Expr",
+      "line": 15,
+      "node_id": 5
+    },
+    {
+      "code": "is_finished[p] = True",
+      "dead": false,
+      "function": "add_to_group",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 6
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "global graph",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "graph.setdefault(A, [])",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "graph[A].append(B)",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "global que",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "global group",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "global is_finished",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "que.append(p)",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "group.add(p)",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "is_finished[p] = True",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "N, M = map(int, input().split())",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "graph = dict()",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "A, B = map(int, input().split())",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "add_to_graph(A, B)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "add_to_graph(B, A)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "is_finished = [False] * (N + 1)",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "groups = []",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "que = deque()",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "group = set()",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "add_to_group(i)",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "p = que.popleft()",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "if not is_finished[v]: add_to_group(v)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "add_to_group(v)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "groups.append(group)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "for g in groups: ans = max(ans, len(g))",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "ans = max(ans, len(g))",
+      "dead": true,
+      "line": 53
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 55
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p02573_s798643861.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 6,
+      "lineno": 2,
+      "name": "add_to_graph",
+      "variables": [
+        "A",
+        "B",
+        "graph"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 9,
+      "name": "add_to_group",
+      "variables": [
+        "group",
+        "is_finished",
+        "p",
+        "que"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from collections import deque",
+            "line": 19,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "N, M = map(int, input().split())",
+            "line": 21,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "graph = dict()",
+            "line": 22,
+            "vars": [
+              "M",
+              "N",
+              "int"
+            ]
+          },
+          {
+            "code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+            "line": 24,
+            "vars": [
+              "M",
+              "N",
+              "graph",
+              "int"
+            ]
+          },
+          {
+            "code": "A, B = map(int, input().split())",
+            "line": 25,
+            "vars": [
+              "N",
+              "graph",
+              "int"
+            ]
+          },
+          {
+            "code": "add_to_graph(A, B)",
+            "line": 26,
+            "vars": [
+              "A",
+              "B",
+              "N",
+              "graph"
+            ]
+          },
+          {
+            "code": "add_to_graph(B, A)",
+            "line": 27,
+            "vars": [
+              "A",
+              "B",
+              "N",
+              "graph"
+            ]
+          },
+          {
+            "code": "is_finished = [False] * (N + 1)",
+            "line": 30,
+            "vars": [
+              "N",
+              "graph"
+            ]
+          },
+          {
+            "code": "groups = []",
+            "line": 31,
+            "vars": [
+              "N",
+              "graph",
+              "is_finished"
+            ]
+          },
+          {
+            "code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+            "line": 33,
+            "vars": [
+              "N",
+              "graph",
+              "groups",
+              "is_finished"
+            ]
+          },
+          {
+            "code": "que = deque()",
+            "line": 34,
+            "vars": [
+              "graph",
+              "groups",
+              "i",
+              "is_finished"
+            ]
+          },
+          {
+            "code": "group = set()",
+            "line": 35,
+            "vars": [
+              "graph",
+              "groups",
+              "i",
+              "is_finished",
+              "que"
+            ]
+          },
+          {
+            "code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+            "line": 37,
+            "vars": [
+              "graph",
+              "group",
+              "groups",
+              "i",
+              "is_finished",
+              "que"
+            ]
+          },
+          {
+            "code": "add_to_group(i)",
+            "line": 38,
+            "vars": [
+              "graph",
+              "group",
+              "groups",
+              "i",
+              "is_finished",
+              "que"
+            ]
+          },
+          {
+            "code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+            "line": 40,
+            "vars": [
+              "graph",
+              "group",
+              "groups",
+              "is_finished",
+              "que"
+            ]
+          },
+          {
+            "code": "p = que.popleft()",
+            "line": 41,
+            "vars": [
+              "graph",
+              "group",
+              "groups",
+              "is_finished",
+              "que"
+            ]
+          },
+          {
+            "code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+            "line": 43,
+            "vars": [
+              "graph",
+              "group",
+              "groups",
+              "is_finished",
+              "p"
+            ]
+          },
+          {
+            "code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+            "line": 44,
+            "vars": [
+              "graph",
+              "group",
+              "groups",
+              "is_finished",
+              "p"
+            ]
+          },
+          {
+            "code": "if not is_finished[v]: add_to_group(v)",
+            "line": 45,
+            "vars": [
+              "group",
+              "groups",
+              "is_finished",
+              "v"
+            ]
+          },
+          {
+            "code": "add_to_group(v)",
+            "line": 46,
+            "vars": [
+              "group",
+              "groups",
+              "v"
+            ]
+          },
+          {
+            "code": "groups.append(group)",
+            "line": 48,
+            "vars": [
+              "group",
+              "groups"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 50,
+            "vars": [
+              "groups"
+            ]
+          },
+          {
+            "code": "for g in groups: ans = max(ans, len(g))",
+            "line": 52,
+            "vars": [
+              "ans",
+              "groups"
+            ]
+          },
+          {
+            "code": "ans = max(ans, len(g))",
+            "line": 53,
+            "vars": [
+              "ans",
+              "g"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 55,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "A": false,
+          "B": false,
+          "M": false,
+          "N": false,
+          "ans": false,
+          "g": false,
+          "graph": false,
+          "group": false,
+          "groups": false,
+          "i": false,
+          "int": false,
+          "is_finished": false,
+          "p": false,
+          "que": false,
+          "v": false
+        },
+        "return_vars": []
+      },
+      "add_to_graph": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "global graph",
+            "line": 3,
+            "vars": [
+              "A",
+              "B",
+              "graph"
+            ]
+          },
+          {
+            "code": "graph.setdefault(A, [])",
+            "line": 5,
+            "vars": [
+              "A",
+              "B",
+              "graph"
+            ]
+          },
+          {
+            "code": "graph[A].append(B)",
+            "line": 6,
+            "vars": [
+              "B",
+              "graph"
+            ]
+          }
+        ],
+        "liveout": {
+          "A": false,
+          "B": false,
+          "graph": false
+        },
+        "return_vars": []
+      },
+      "add_to_group": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "global que",
+            "line": 10,
+            "vars": [
+              "group",
+              "p",
+              "que"
+            ]
+          },
+          {
+            "code": "global group",
+            "line": 11,
+            "vars": [
+              "group",
+              "p",
+              "que"
+            ]
+          },
+          {
+            "code": "global is_finished",
+            "line": 12,
+            "vars": [
+              "group",
+              "p",
+              "que"
+            ]
+          },
+          {
+            "code": "que.append(p)",
+            "line": 14,
+            "vars": [
+              "group",
+              "p",
+              "que"
+            ]
+          },
+          {
+            "code": "group.add(p)",
+            "line": 15,
+            "vars": [
+              "group",
+              "p"
+            ]
+          },
+          {
+            "code": "is_finished[p] = True",
+            "line": 16,
+            "vars": [
+              "p"
+            ]
+          }
+        ],
+        "liveout": {
+          "group": false,
+          "is_finished": false,
+          "p": false,
+          "que": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(M):",
+      "cond": "for i in range(M)",
+      "function": "__module__",
+      "header_id": 4,
+      "line": 24,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, N + 1):",
+      "cond": "for i in range(1, N + 1)",
+      "function": "__module__",
+      "header_id": 10,
+      "line": 33,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while len(que) > 0:",
+      "cond": "len(que) > 0",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for v in graph[p]:",
+      "cond": "for v in graph[p]",
+      "function": "__module__",
+      "header_id": 18,
+      "line": 44,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for g in groups:",
+      "cond": "for g in groups",
+      "function": "__module__",
+      "header_id": 23,
+      "line": 52,
+      "reachable": false
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "N, M = map(int, input().split())",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "graph = dict()",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "graph = dict()",
+      "b_line": 22,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "A, B = map(int, input().split())",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "A, B = map(int, input().split())",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "A, B = map(int, input().split())",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "A, B = map(int, input().split())",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "add_to_graph(A, B)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "add_to_graph(A, B)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "add_to_graph(A, B)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "add_to_graph(A, B)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A, B = map(int, input().split())",
+      "a_line": 25,
+      "b_code": "add_to_graph(A, B)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "add_to_graph(B, A)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "add_to_graph(B, A)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "add_to_graph(B, A)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "add_to_graph(B, A)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A, B = map(int, input().split())",
+      "a_line": 25,
+      "b_code": "add_to_graph(B, A)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_graph(A, B)",
+      "a_line": 26,
+      "b_code": "add_to_graph(B, A)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "is_finished = [False] * (N + 1)",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "is_finished = [False] * (N + 1)",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "is_finished = [False] * (N + 1)",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "is_finished = [False] * (N + 1)",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "groups = []",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "groups = []",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "groups = []",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "groups = []",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "groups = []",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "que = deque()",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "group = set()",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "add_to_group(i)",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 40,
+      "b_code": "p = que.popleft()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 40,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = que.popleft()",
+      "a_line": 41,
+      "b_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 40,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = que.popleft()",
+      "a_line": 41,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "a_line": 43,
+      "b_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 40,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = que.popleft()",
+      "a_line": 41,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "a_line": 43,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "a_line": 44,
+      "b_code": "if not is_finished[v]: add_to_group(v)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 40,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = que.popleft()",
+      "a_line": 41,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "a_line": 43,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "a_line": 44,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[v]: add_to_group(v)",
+      "a_line": 45,
+      "b_code": "add_to_group(v)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "que = deque()",
+      "a_line": 34,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = set()",
+      "a_line": 35,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 37,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "add_to_group(i)",
+      "a_line": 38,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 40,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "p = que.popleft()",
+      "a_line": 41,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v)",
+      "a_line": 43,
+      "b_code": "groups.append(group)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "ans = 0",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 50,
+      "b_code": "for g in groups: ans = max(ans, len(g))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 19,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N, M = map(int, input().split())",
+      "a_line": 21,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = dict()",
+      "a_line": 22,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(M): A, B = map(int, input().split()) add_to_graph(A, B) add_to_graph(B, A)",
+      "a_line": 24,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "is_finished = [False] * (N + 1)",
+      "a_line": 30,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "groups = []",
+      "a_line": 31,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, N + 1): que = deque() group = set() if not is_finished[i]: add_to_group(i) while len(que) > 0: p = que.popleft() if p in graph.keys(): for v in graph[p]: if not is_finished[v]: add_to_group(v) groups.append(group)",
+      "a_line": 33,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 50,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for g in groups: ans = max(ans, len(g))",
+      "a_line": 52,
+      "b_code": "print(ans)",
+      "b_line": 55,
+      "function": "__module__"
+    },
+    {
+      "a_code": "global graph",
+      "a_line": 3,
+      "b_code": "graph.setdefault(A, [])",
+      "b_line": 5,
+      "function": "add_to_graph"
+    },
+    {
+      "a_code": "global graph",
+      "a_line": 3,
+      "b_code": "graph[A].append(B)",
+      "b_line": 6,
+      "function": "add_to_graph"
+    },
+    {
+      "a_code": "graph.setdefault(A, [])",
+      "a_line": 5,
+      "b_code": "graph[A].append(B)",
+      "b_line": 6,
+      "function": "add_to_graph"
+    },
+    {
+      "a_code": "global que",
+      "a_line": 10,
+      "b_code": "global group",
+      "b_line": 11,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global que",
+      "a_line": 10,
+      "b_code": "global is_finished",
+      "b_line": 12,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global group",
+      "a_line": 11,
+      "b_code": "global is_finished",
+      "b_line": 12,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global que",
+      "a_line": 10,
+      "b_code": "que.append(p)",
+      "b_line": 14,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global group",
+      "a_line": 11,
+      "b_code": "que.append(p)",
+      "b_line": 14,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global is_finished",
+      "a_line": 12,
+      "b_code": "que.append(p)",
+      "b_line": 14,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global que",
+      "a_line": 10,
+      "b_code": "group.add(p)",
+      "b_line": 15,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global group",
+      "a_line": 11,
+      "b_code": "group.add(p)",
+      "b_line": 15,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global is_finished",
+      "a_line": 12,
+      "b_code": "group.add(p)",
+      "b_line": 15,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "que.append(p)",
+      "a_line": 14,
+      "b_code": "group.add(p)",
+      "b_line": 15,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global que",
+      "a_line": 10,
+      "b_code": "is_finished[p] = True",
+      "b_line": 16,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global group",
+      "a_line": 11,
+      "b_code": "is_finished[p] = True",
+      "b_line": 16,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "global is_finished",
+      "a_line": 12,
+      "b_code": "is_finished[p] = True",
+      "b_line": 16,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "que.append(p)",
+      "a_line": 14,
+      "b_code": "is_finished[p] = True",
+      "b_line": 16,
+      "function": "add_to_group"
+    },
+    {
+      "a_code": "group.add(p)",
+      "a_line": 15,
+      "b_code": "is_finished[p] = True",
+      "b_line": 16,
+      "function": "add_to_group"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 21",
+      "external call skipped input at line 25"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 21",
+    "external call skipped input at line 25"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "int"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "M"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "A"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "M"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "int"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "N"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "A"
+      },
+      "from": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "A"
+      },
+      "from": {
+        "code": "graph = dict()",
+        "line": 22,
+        "var": "graph"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "int"
+      },
+      "from": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "B"
+      },
+      "from": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "int"
+      },
+      "from": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "B"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "B"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N, M = map(int, input().split())",
+        "line": 21,
+        "var": "N"
+      },
+      "from": {
+        "code": "is_finished = [False] * (N + 1)",
+        "line": 30,
+        "var": "is_finished"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "is_finished = [False] * (N + 1)",
+        "line": 30,
+        "var": "int"
+      },
+      "from": {
+        "code": "is_finished = [False] * (N + 1)",
+        "line": 30,
+        "var": "is_finished"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "is_finished = [False] * (N + 1)",
+        "line": 30,
+        "var": "is_finished"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "groups = []",
+        "line": 31,
+        "var": "groups"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "que = deque()",
+        "line": 34,
+        "var": "que"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "group = set()",
+        "line": 35,
+        "var": "group"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "que = deque()",
+        "line": 34,
+        "var": "que"
+      },
+      "from": {
+        "code": "p = que.popleft()",
+        "line": 41,
+        "var": "p"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "p = que.popleft()",
+        "line": 41,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 50,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 50,
+        "var": "ans"
+      },
+      "from": {
+        "code": "ans = max(ans, len(g))",
+        "line": 53,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = max(ans, len(g))",
+        "line": 53,
+        "var": "g"
+      },
+      "from": {
+        "code": "ans = max(ans, len(g))",
+        "line": 53,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A, B = map(int, input().split())",
+        "line": 25,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = max(ans, len(g))",
+        "line": 53,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add_to_group(p):",
+        "line": 9,
+        "var": "p"
+      },
+      "from": {
+        "code": "is_finished[p] = True",
+        "line": 16,
+        "var": "is_finished"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add_to_group(p):",
+        "line": 9,
+        "var": "group"
+      },
+      "from": {
+        "code": "is_finished[p] = True",
+        "line": 16,
+        "var": "is_finished"
+      },
+      "label": "negative"
+    }
+  ]
+}

@@ -1,0 +1,623 @@
+{
+  "cfg_statements": [
+    {
+      "code": "key = arr[i]",
+      "dead": false,
+      "function": "_insert",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "j = i - 1",
+      "dead": false,
+      "function": "_insert",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "dead": false,
+      "function": "_insert",
+      "kind": "While",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "arr[j + 1] = arr[j]",
+      "dead": false,
+      "function": "_insert",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "j -= 1",
+      "dead": false,
+      "function": "_insert",
+      "kind": "AugAssign",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "arr[j + 1] = key",
+      "dead": false,
+      "function": "_insert",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "n = len(arr)",
+      "dead": false,
+      "function": "insertion_sort",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "for i in range(1, n): _insert(arr, i)",
+      "dead": false,
+      "function": "insertion_sort",
+      "kind": "For",
+      "line": 14,
+      "node_id": 2
+    },
+    {
+      "code": "_insert(arr, i)",
+      "dead": false,
+      "function": "insertion_sort",
+      "kind": "Expr",
+      "line": 15,
+      "node_id": 3
+    },
+    {
+      "code": "return arr",
+      "dead": false,
+      "function": "insertion_sort",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 4
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "key = arr[i]",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "j = i - 1",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "arr[j + 1] = arr[j]",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "j -= 1",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "arr[j + 1] = key",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "n = len(arr)",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "for i in range(1, n): _insert(arr, i)",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "_insert(arr, i)",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return arr",
+      "dead": false,
+      "line": 16
+    }
+  ],
+  "file": "SemBench/data/python/code/17.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 4,
+      "name": "_insert",
+      "variables": [
+        "arr",
+        "i",
+        "j",
+        "key"
+      ]
+    },
+    {
+      "calls": [
+        "_insert"
+      ],
+      "end_lineno": 16,
+      "lineno": 12,
+      "name": "insertion_sort",
+      "variables": [
+        "arr",
+        "i",
+        "n"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_insert": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "key = arr[i]",
+            "line": 5,
+            "vars": [
+              "arr",
+              "i"
+            ]
+          },
+          {
+            "code": "j = i - 1",
+            "line": 6,
+            "vars": [
+              "arr",
+              "i",
+              "key"
+            ]
+          },
+          {
+            "code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+            "line": 7,
+            "vars": [
+              "arr",
+              "j",
+              "key"
+            ]
+          },
+          {
+            "code": "arr[j + 1] = arr[j]",
+            "line": 8,
+            "vars": [
+              "arr",
+              "j",
+              "key"
+            ]
+          },
+          {
+            "code": "j -= 1",
+            "line": 9,
+            "vars": [
+              "key"
+            ]
+          },
+          {
+            "code": "arr[j + 1] = key",
+            "line": 10,
+            "vars": [
+              "j",
+              "key"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": false,
+          "i": false,
+          "j": false,
+          "key": false
+        },
+        "return_vars": []
+      },
+      "insertion_sort": {
+        "base_liveout": [
+          "arr"
+        ],
+        "live_before": [
+          {
+            "code": "n = len(arr)",
+            "line": 13,
+            "vars": [
+              "arr"
+            ]
+          },
+          {
+            "code": "for i in range(1, n): _insert(arr, i)",
+            "line": 14,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "_insert(arr, i)",
+            "line": 15,
+            "vars": [
+              "arr",
+              "i"
+            ]
+          },
+          {
+            "code": "return arr",
+            "line": 16,
+            "vars": [
+              "arr"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": true,
+          "i": false,
+          "n": false
+        },
+        "return_vars": [
+          "arr"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while j >= 0 and arr[j] > key:",
+      "cond": "j >= 0 and arr[j] > key",
+      "function": "_insert",
+      "header_id": 3,
+      "line": 7,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, n):",
+      "cond": "for i in range(1, n)",
+      "function": "insertion_sort",
+      "header_id": 2,
+      "line": 14,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "key = arr[i]",
+      "a_line": 5,
+      "b_code": "j = i - 1",
+      "b_line": 6,
+      "function": "_insert"
+    },
+    {
+      "a_code": "key = arr[i]",
+      "a_line": 5,
+      "b_code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "b_line": 7,
+      "function": "_insert"
+    },
+    {
+      "a_code": "j = i - 1",
+      "a_line": 6,
+      "b_code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "b_line": 7,
+      "function": "_insert"
+    },
+    {
+      "a_code": "key = arr[i]",
+      "a_line": 5,
+      "b_code": "arr[j + 1] = arr[j]",
+      "b_line": 8,
+      "function": "_insert"
+    },
+    {
+      "a_code": "j = i - 1",
+      "a_line": 6,
+      "b_code": "arr[j + 1] = arr[j]",
+      "b_line": 8,
+      "function": "_insert"
+    },
+    {
+      "a_code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "a_line": 7,
+      "b_code": "arr[j + 1] = arr[j]",
+      "b_line": 8,
+      "function": "_insert"
+    },
+    {
+      "a_code": "key = arr[i]",
+      "a_line": 5,
+      "b_code": "j -= 1",
+      "b_line": 9,
+      "function": "_insert"
+    },
+    {
+      "a_code": "j = i - 1",
+      "a_line": 6,
+      "b_code": "j -= 1",
+      "b_line": 9,
+      "function": "_insert"
+    },
+    {
+      "a_code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "a_line": 7,
+      "b_code": "j -= 1",
+      "b_line": 9,
+      "function": "_insert"
+    },
+    {
+      "a_code": "arr[j + 1] = arr[j]",
+      "a_line": 8,
+      "b_code": "j -= 1",
+      "b_line": 9,
+      "function": "_insert"
+    },
+    {
+      "a_code": "key = arr[i]",
+      "a_line": 5,
+      "b_code": "arr[j + 1] = key",
+      "b_line": 10,
+      "function": "_insert"
+    },
+    {
+      "a_code": "j = i - 1",
+      "a_line": 6,
+      "b_code": "arr[j + 1] = key",
+      "b_line": 10,
+      "function": "_insert"
+    },
+    {
+      "a_code": "while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1",
+      "a_line": 7,
+      "b_code": "arr[j + 1] = key",
+      "b_line": 10,
+      "function": "_insert"
+    },
+    {
+      "a_code": "n = len(arr)",
+      "a_line": 13,
+      "b_code": "for i in range(1, n): _insert(arr, i)",
+      "b_line": 14,
+      "function": "insertion_sort"
+    },
+    {
+      "a_code": "n = len(arr)",
+      "a_line": 13,
+      "b_code": "_insert(arr, i)",
+      "b_line": 15,
+      "function": "insertion_sort"
+    },
+    {
+      "a_code": "for i in range(1, n): _insert(arr, i)",
+      "a_line": 14,
+      "b_code": "_insert(arr, i)",
+      "b_line": 15,
+      "function": "insertion_sort"
+    },
+    {
+      "a_code": "n = len(arr)",
+      "a_line": 13,
+      "b_code": "return arr",
+      "b_line": 16,
+      "function": "insertion_sort"
+    },
+    {
+      "a_code": "for i in range(1, n): _insert(arr, i)",
+      "a_line": 14,
+      "b_code": "return arr",
+      "b_line": 16,
+      "function": "insertion_sort"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "key = arr[i]",
+        "line": 5,
+        "var": "key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "key = arr[i]",
+        "line": 5,
+        "var": "key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "j"
+      },
+      "from": {
+        "code": "key = arr[i]",
+        "line": 5,
+        "var": "key"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "j = i - 1",
+        "line": 6,
+        "var": "j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "j = i - 1",
+        "line": 6,
+        "var": "j"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "arr[j + 1] = arr[j]",
+        "line": 8,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "arr[j + 1] = arr[j]",
+        "line": 8,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "j = i - 1",
+        "line": 6,
+        "var": "j"
+      },
+      "from": {
+        "code": "arr[j + 1] = arr[j]",
+        "line": 8,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "key = arr[i]",
+        "line": 5,
+        "var": "key"
+      },
+      "from": {
+        "code": "arr[j + 1] = arr[j]",
+        "line": 8,
+        "var": "arr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr[j + 1] = arr[j]",
+        "line": 8,
+        "var": "arr"
+      },
+      "from": {
+        "code": "j -= 1",
+        "line": 9,
+        "var": "j"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _insert(arr:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "arr[j + 1] = key",
+        "line": 10,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "j -= 1",
+        "line": 9,
+        "var": "j"
+      },
+      "from": {
+        "code": "arr[j + 1] = key",
+        "line": 10,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "key = arr[i]",
+        "line": 5,
+        "var": "key"
+      },
+      "from": {
+        "code": "arr[j + 1] = key",
+        "line": 10,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def insertion_sort(arr:",
+        "line": 12,
+        "var": "arr"
+      },
+      "from": {
+        "code": "n = len(arr)",
+        "line": 13,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def insertion_sort(arr:",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "n = len(arr)",
+        "line": 13,
+        "var": "n"
+      },
+      "label": "negative"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "data_dependency": [
+    "Does variable C at line 73: <statement> def greedy(D, C, S): </statement> determine the value stored in variable max_score at line 77: <statement> max_score = -INF </statement>?",
+    "Does the value of variable new_score at line 39: <statement> new_score += (d - last[prei])*C[prei] </statement> depend on the value of variable D at line 26: <statement> def update_score(D, C, S, T, score, ct, ci): </statement>?",
+    "Does the value of variable new_score at line 48: <statement> new_score -= (d - last[ci])*C[ci] </statement> depend on the value of variable t at line 48: <statement> new_score -= (d - last[ci])*C[ci] </statement>?",
+    "Does variable D at line 94: <statement> def local_search(D, C, S, score, T): </statement> determine the value stored in variable T at line 115: <statement> T[ct] = ci </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement new_score = update_score(D, C, S, T, score, ct, ci) be reached during execution?",
+    "Can the statement from math import exp be reached during execution?",
+    "Is the statement Temp = T0 unreachable during execution?",
+    "Can the statement new_score += S[ct][ci] be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 108: <statement> if sel != 1: # ct \u65e5\u76ee\u306e\u30b3\u30f3\u30c6\u30b9\u30c8\u3092ci\u306b\u5909\u66f4 ct = randint(0, D-1) ci = randint(0, 25) new_score = update_score(D, C, S, T, score, ct, ci) if score < new_score or \\ (lim < exp((new_score - score)/Temp)): T[ct] = ci score = new_score else: # ct1 \u65e5\u76ee\u3068 ct2 \u65e5\u76ee\u306e\u30b3\u30f3\u30c6\u30b9\u30c8\u3092swap ct1 = randint(0, D-1) ct2 = randint(0, D-1) ci1 = T[ct1] ci2 = T[ct2] new_score = update_score(D, C, S, T, score, ct1, ci2) new_score = update_score(D, C, S, T, new_score, ct2, ci1) if score < new_score or \\ (lim < exp((new_score - score)/Temp)): score = new_score T[ct1] = ci2 T[ct2] = ci1 </statement> is reached, the statement line 124: <statement> new_score = update_score(D, C, S, T, new_score, ct2, ci1) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 132: <statement> best_T = T.copy() </statement> is reached, the statement line 103: <statement> if cnt % 100 == 0: t = cnt / (140000 - 1) Temp = pow(T0, 1-t) * pow(T1, t) </statement> has already been reached?",
+    "Does the statement line 5: <statement> INF = 9223372036854775808 </statement> dominate line 139: <statement> D = int(input()) </statement>?",
+    "Is it guaranteed that whenever line 78: <statement> for d in range(D): # d+k\u65e5\u76ee\u7d42\u4e86\u6642\u70b9\u3067\u6e80\u8db3\u5ea6\u304c\u4e00\u756a\u9ad8\u304f\u306a\u308b\u3088\u3046\u306a\u30b3\u30f3\u30c6\u30b9\u30c8i\u3092\u958b\u50ac\u3059\u308b max_score = -INF best_i = 0 for i in range(26): T.append(i) score = evaluate(D, C, S, T, k) if max_score < score: max_score = score best_i = i T.pop() T.append(best_i) </statement> is reached, the statement line 84: <statement> score = evaluate(D, C, S, T, k) </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Can function local_search eventually call function update_score?",
+    "Can function greedy eventually call function update_score?",
+    "Can function local_search eventually call function greedy?",
+    "Is there a call path from function greedy to function evaluate?"
+  ],
+  "liveness": [
+    "Is variable max_score live at the end of function greedy?",
+    "Does variable Ts remain in use at the end of function greedy?",
+    "Does variable score remain in use at the end of function evaluate?",
+    "Does variable score remain in use at the end of function greedy?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for cnt in range(70000) always executed?",
+    "Can the loop with condition for cnt in range(70000) be skipped entirely?",
+    "Can the loop with condition for i in range(26) be skipped entirely?",
+    "Is the loop with condition for k in range(5, 13) always executed?"
+  ]
+}

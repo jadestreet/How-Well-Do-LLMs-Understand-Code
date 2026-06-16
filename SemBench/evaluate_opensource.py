@@ -17,7 +17,9 @@ import torch.distributed as dist
 import transformers.modeling_utils as mu
 mu.caching_allocator_warmup = lambda *args, **kwargs: None
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteriaList, StoppingCriteria
-from script.util import parse_llm_response, construct_input_large
+from script.util import parse_llm_response, construct_input_large, construct_input_large_domdata
+
+DOM_DATA_CATEGORIES = {"data_dependency", "data dependency", "data-dependency", "dominators", "dominator"}
 
 # ---------------- Distributed Setup ----------------
 def setup_distributed():
@@ -51,6 +53,33 @@ def get_llm_agent_response(prompts, llm_agent, stops, max_tokens, temperature, n
     else:
         return {"generated_texts": outputs["generated_texts"]}
 
+
+def is_dom_data_category(category):
+    return category.strip().lower() in DOM_DATA_CATEGORIES
+
+
+def resolve_code_file(program_name, CONFIG):
+    code_dir = os.path.join(CONFIG.base_dir, CONFIG.type_kernels, "code")
+    language = CONFIG.language.lower()
+    candidates = []
+
+    if language == "c":
+        candidates = [("c", os.path.join(code_dir, program_name + ".c"))]
+    elif language == "python":
+        candidates = [("python", os.path.join(code_dir, program_name + ".py"))]
+    else:
+        candidates = [
+            ("c", os.path.join(code_dir, program_name + ".c")),
+            ("python", os.path.join(code_dir, program_name + ".py")),
+        ]
+
+    for candidate_language, code_file in candidates:
+        if os.path.exists(code_file):
+            return code_file, candidate_language
+
+    expected = ", ".join(path for _, path in candidates)
+    raise FileNotFoundError(f"Could not find code file for {program_name}. Expected one of: {expected}")
+
 # ------------------ Core Query Processing ------------------
 def process_query(program_name, category, prompt_text, ground_truth, llm_agent, stops, CONFIG):
     # Inform start of processing
@@ -65,8 +94,11 @@ def process_query(program_name, category, prompt_text, ground_truth, llm_agent, 
         "first_response_correct": None,
         "correct_after_followup": None
     }
-    code_file = os.path.join(CONFIG.base_dir, CONFIG.type_kernels, "code", program_name + ".c")
-    input_text = construct_input_large(code_file, prompt_text, category)
+    code_file, language = resolve_code_file(program_name, CONFIG)
+    if is_dom_data_category(category):
+        input_text = construct_input_large_domdata(code_file, prompt_text, category, language=language)
+    else:
+        input_text = construct_input_large(code_file, prompt_text, category, language=language)
 
     num_samples = CONFIG.num_samples if CONFIG.use_self_consistency else 1
     initial = get_llm_agent_response(
@@ -111,6 +143,8 @@ def main():
                     help="Enable dynamic temperature sampling.")   
     parser.add_argument("--base_dir", type=str, default= os.path.join(os.getcwd(), "data"))
     parser.add_argument("--type_kernels", type=str, default=CONFIG_JSON.get("type_kernels", "default_kernels"))
+    parser.add_argument("--language", choices=["auto", "c", "python"], default="auto",
+                    help="Source language to evaluate. In auto mode, use the existing .c or .py file.")
     CONFIG = parser.parse_args()
 
     def llm_agent(prompts, max_new_tokens, do_sample, temperature, num_return_sequences, stopping_criteria):
@@ -153,7 +187,7 @@ def main():
             queries = json.load(fq)
             truths = json.load(fg)
         for cat, prompts in queries.items():
-            if cat == "dead_code":
+            if cat != "dead_code":
                 continue
             else:
                 for pt, gt in zip(prompts, truths.get(cat, [])):
@@ -184,7 +218,7 @@ def main():
     model.to(device)
     model.eval()
     
-    RESULTS_DIR = os.path.join(CONFIG.base_dir, CONFIG.type_kernels, "llm_results", "ablation", CONFIG.model_name.replace("/", "_"))
+    RESULTS_DIR = os.path.join(CONFIG.base_dir, CONFIG.type_kernels, "llm_results", "deadcode", CONFIG.model_name.replace("/", "_"))
     os.makedirs(RESULTS_DIR, exist_ok=True)
     out_path = os.path.join(RESULTS_DIR, f"rank{local_rank}_results.jsonl")
 

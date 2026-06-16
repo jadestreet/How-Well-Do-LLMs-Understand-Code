@@ -1,0 +1,2831 @@
+{
+  "cfg_statements": [
+    {
+      "code": "board: Board = []",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "AnnAssign",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "For",
+      "line": 9,
+      "node_id": 2
+    },
+    {
+      "code": "row = []",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "For",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "If",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "row.append(0)",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "Expr",
+      "line": 13,
+      "node_id": 6
+    },
+    {
+      "code": "elif ch.isdigit(): row.append(int(ch))",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "If",
+      "line": 14,
+      "node_id": 7
+    },
+    {
+      "code": "row.append(int(ch))",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "Expr",
+      "line": 15,
+      "node_id": 8
+    },
+    {
+      "code": "if len(row) == 9: board.append(row)",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "If",
+      "line": 16,
+      "node_id": 9
+    },
+    {
+      "code": "board.append(row)",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "Expr",
+      "line": 17,
+      "node_id": 10
+    },
+    {
+      "code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "If",
+      "line": 18,
+      "node_id": 11
+    },
+    {
+      "code": "raise ValueError(\"invalid board\")",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "Raise",
+      "line": 19,
+      "node_id": 12
+    },
+    {
+      "code": "return board",
+      "dead": false,
+      "function": "parse_board",
+      "kind": "Return",
+      "line": 20,
+      "node_id": 13
+    },
+    {
+      "code": "for j in range(9): if board[r][j] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "For",
+      "line": 24,
+      "node_id": 1
+    },
+    {
+      "code": "if board[r][j] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "If",
+      "line": 25,
+      "node_id": 2
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "Return",
+      "line": 26,
+      "node_id": 3
+    },
+    {
+      "code": "for i in range(9): if board[i][c] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "For",
+      "line": 28,
+      "node_id": 4
+    },
+    {
+      "code": "if board[i][c] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "If",
+      "line": 29,
+      "node_id": 5
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "Return",
+      "line": 30,
+      "node_id": 6
+    },
+    {
+      "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "For",
+      "line": 33,
+      "node_id": 8
+    },
+    {
+      "code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "For",
+      "line": 34,
+      "node_id": 9
+    },
+    {
+      "code": "if board[i][j] == val: return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "If",
+      "line": 35,
+      "node_id": 10
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 11
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "is_valid",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 12
+    },
+    {
+      "code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+      "dead": false,
+      "function": "find_empty",
+      "kind": "For",
+      "line": 40,
+      "node_id": 1
+    },
+    {
+      "code": "for j in range(9): if board[i][j] == 0: return (i, j)",
+      "dead": false,
+      "function": "find_empty",
+      "kind": "For",
+      "line": 41,
+      "node_id": 2
+    },
+    {
+      "code": "if board[i][j] == 0: return (i, j)",
+      "dead": false,
+      "function": "find_empty",
+      "kind": "If",
+      "line": 42,
+      "node_id": 3
+    },
+    {
+      "code": "return (i, j)",
+      "dead": false,
+      "function": "find_empty",
+      "kind": "Return",
+      "line": 43,
+      "node_id": 4
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "find_empty",
+      "kind": "Return",
+      "line": 44,
+      "node_id": 5
+    },
+    {
+      "code": "pos = find_empty(board)",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 1
+    },
+    {
+      "code": "if pos is None: return True",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 48,
+      "node_id": 2
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "solve",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 3
+    },
+    {
+      "code": "r, c = pos",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 4
+    },
+    {
+      "code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "dead": false,
+      "function": "solve",
+      "kind": "For",
+      "line": 51,
+      "node_id": 5
+    },
+    {
+      "code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 52,
+      "node_id": 6
+    },
+    {
+      "code": "board[r][c] = val",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 7
+    },
+    {
+      "code": "if solve(board): return True",
+      "dead": false,
+      "function": "solve",
+      "kind": "If",
+      "line": 54,
+      "node_id": 8
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "solve",
+      "kind": "Return",
+      "line": 55,
+      "node_id": 9
+    },
+    {
+      "code": "board[r][c] = 0",
+      "dead": false,
+      "function": "solve",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 10
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "solve",
+      "kind": "Return",
+      "line": 57,
+      "node_id": 11
+    },
+    {
+      "code": "out = []",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 1
+    },
+    {
+      "code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "dead": false,
+      "function": "format_board",
+      "kind": "For",
+      "line": 61,
+      "node_id": 2
+    },
+    {
+      "code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "dead": false,
+      "function": "format_board",
+      "kind": "If",
+      "line": 62,
+      "node_id": 3
+    },
+    {
+      "code": "out.append(\"------+-------+------\")",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Expr",
+      "line": 63,
+      "node_id": 4
+    },
+    {
+      "code": "parts = []",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Assign",
+      "line": 64,
+      "node_id": 5
+    },
+    {
+      "code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "dead": false,
+      "function": "format_board",
+      "kind": "For",
+      "line": 65,
+      "node_id": 6
+    },
+    {
+      "code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "dead": false,
+      "function": "format_board",
+      "kind": "If",
+      "line": 66,
+      "node_id": 7
+    },
+    {
+      "code": "parts.append(\"|\")",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Expr",
+      "line": 67,
+      "node_id": 8
+    },
+    {
+      "code": "parts.append(str(v) if v != 0 else \".\")",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Expr",
+      "line": 68,
+      "node_id": 9
+    },
+    {
+      "code": "out.append(\" \".join(parts))",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Expr",
+      "line": 69,
+      "node_id": 10
+    },
+    {
+      "code": "return \"\\n\".join(out)",
+      "dead": false,
+      "function": "format_board",
+      "kind": "Return",
+      "line": 70,
+      "node_id": 11
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "board: Board = []",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "row = []",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "row.append(0)",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "elif ch.isdigit(): row.append(int(ch))",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "row.append(int(ch))",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "if len(row) == 9: board.append(row)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "board.append(row)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "raise ValueError(\"invalid board\")",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "return board",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "for j in range(9): if board[r][j] == val: return False",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if board[r][j] == val: return False",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "for i in range(9): if board[i][c] == val: return False",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "if board[i][c] == val: return False",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "if board[i][j] == val: return False",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "for j in range(9): if board[i][j] == 0: return (i, j)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if board[i][j] == 0: return (i, j)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "return (i, j)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "pos = find_empty(board)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if pos is None: return True",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "r, c = pos",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "board[r][c] = val",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "if solve(board): return True",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "board[r][c] = 0",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "out = []",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "out.append(\"------+-------+------\")",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "parts = []",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "parts.append(\"|\")",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "parts.append(str(v) if v != 0 else \".\")",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "out.append(\" \".join(parts))",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "return \"\\n\".join(out)",
+      "dead": false,
+      "line": 70
+    }
+  ],
+  "file": "SemBench/data/python/code/21.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 20,
+      "lineno": 7,
+      "name": "parse_board",
+      "variables": [
+        "board",
+        "ch",
+        "line",
+        "lines",
+        "row"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 37,
+      "lineno": 22,
+      "name": "is_valid",
+      "variables": [
+        "bc",
+        "board",
+        "br",
+        "c",
+        "i",
+        "j",
+        "r",
+        "val"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 44,
+      "lineno": 39,
+      "name": "find_empty",
+      "variables": [
+        "board",
+        "i",
+        "j"
+      ]
+    },
+    {
+      "calls": [
+        "find_empty",
+        "is_valid",
+        "solve"
+      ],
+      "end_lineno": 57,
+      "lineno": 46,
+      "name": "solve",
+      "variables": [
+        "board",
+        "c",
+        "pos",
+        "r",
+        "val"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 70,
+      "lineno": 59,
+      "name": "format_board",
+      "variables": [
+        "board",
+        "i",
+        "j",
+        "out",
+        "parts",
+        "row",
+        "v"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "find_empty": {
+        "base_liveout": [
+          "i",
+          "j"
+        ],
+        "live_before": [
+          {
+            "code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+            "line": 40,
+            "vars": [
+              "board"
+            ]
+          },
+          {
+            "code": "for j in range(9): if board[i][j] == 0: return (i, j)",
+            "line": 41,
+            "vars": [
+              "board",
+              "i"
+            ]
+          },
+          {
+            "code": "if board[i][j] == 0: return (i, j)",
+            "line": 42,
+            "vars": [
+              "board",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "return (i, j)",
+            "line": 43,
+            "vars": [
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 44,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "board": false,
+          "i": true,
+          "j": true
+        },
+        "return_vars": [
+          "i",
+          "j"
+        ]
+      },
+      "format_board": {
+        "base_liveout": [
+          "out"
+        ],
+        "live_before": [
+          {
+            "code": "out = []",
+            "line": 60,
+            "vars": [
+              "board"
+            ]
+          },
+          {
+            "code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+            "line": 61,
+            "vars": [
+              "board",
+              "out"
+            ]
+          },
+          {
+            "code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+            "line": 62,
+            "vars": [
+              "i",
+              "out",
+              "row"
+            ]
+          },
+          {
+            "code": "out.append(\"------+-------+------\")",
+            "line": 63,
+            "vars": [
+              "out",
+              "row"
+            ]
+          },
+          {
+            "code": "parts = []",
+            "line": 64,
+            "vars": [
+              "out",
+              "row"
+            ]
+          },
+          {
+            "code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+            "line": 65,
+            "vars": [
+              "out",
+              "parts",
+              "row"
+            ]
+          },
+          {
+            "code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+            "line": 66,
+            "vars": [
+              "j",
+              "out",
+              "parts",
+              "v"
+            ]
+          },
+          {
+            "code": "parts.append(\"|\")",
+            "line": 67,
+            "vars": [
+              "out",
+              "parts",
+              "v"
+            ]
+          },
+          {
+            "code": "parts.append(str(v) if v != 0 else \".\")",
+            "line": 68,
+            "vars": [
+              "out",
+              "parts",
+              "v"
+            ]
+          },
+          {
+            "code": "out.append(\" \".join(parts))",
+            "line": 69,
+            "vars": [
+              "out",
+              "parts"
+            ]
+          },
+          {
+            "code": "return \"\\n\".join(out)",
+            "line": 70,
+            "vars": [
+              "out"
+            ]
+          }
+        ],
+        "liveout": {
+          "board": false,
+          "i": false,
+          "j": false,
+          "out": true,
+          "parts": false,
+          "row": false,
+          "v": false
+        },
+        "return_vars": [
+          "out"
+        ]
+      },
+      "is_valid": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "for j in range(9): if board[r][j] == val: return False",
+            "line": 24,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "if board[r][j] == val: return False",
+            "line": 25,
+            "vars": [
+              "board",
+              "c",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 26,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "for i in range(9): if board[i][c] == val: return False",
+            "line": 28,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "if board[i][c] == val: return False",
+            "line": 29,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 30,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+            "line": 32,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+            "line": 33,
+            "vars": [
+              "bc",
+              "board",
+              "br",
+              "val"
+            ]
+          },
+          {
+            "code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+            "line": 34,
+            "vars": [
+              "bc",
+              "board",
+              "val"
+            ]
+          },
+          {
+            "code": "if board[i][j] == val: return False",
+            "line": 35,
+            "vars": [
+              "board",
+              "j",
+              "val"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 36,
+            "vars": []
+          },
+          {
+            "code": "return True",
+            "line": 37,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "bc": false,
+          "board": false,
+          "br": false,
+          "c": false,
+          "i": false,
+          "j": false,
+          "r": false,
+          "val": false
+        },
+        "return_vars": []
+      },
+      "parse_board": {
+        "base_liveout": [
+          "board"
+        ],
+        "live_before": [
+          {
+            "code": "board: Board = []",
+            "line": 8,
+            "vars": [
+              "lines"
+            ]
+          },
+          {
+            "code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+            "line": 9,
+            "vars": [
+              "board",
+              "lines"
+            ]
+          },
+          {
+            "code": "row = []",
+            "line": 10,
+            "vars": [
+              "board",
+              "line"
+            ]
+          },
+          {
+            "code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+            "line": 11,
+            "vars": [
+              "board",
+              "line",
+              "row"
+            ]
+          },
+          {
+            "code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+            "line": 12,
+            "vars": [
+              "board",
+              "ch",
+              "row"
+            ]
+          },
+          {
+            "code": "row.append(0)",
+            "line": 13,
+            "vars": [
+              "board",
+              "ch",
+              "row"
+            ]
+          },
+          {
+            "code": "elif ch.isdigit(): row.append(int(ch))",
+            "line": 14,
+            "vars": [
+              "board",
+              "ch",
+              "row"
+            ]
+          },
+          {
+            "code": "row.append(int(ch))",
+            "line": 15,
+            "vars": [
+              "board",
+              "ch",
+              "row"
+            ]
+          },
+          {
+            "code": "if len(row) == 9: board.append(row)",
+            "line": 16,
+            "vars": [
+              "board",
+              "row"
+            ]
+          },
+          {
+            "code": "board.append(row)",
+            "line": 17,
+            "vars": [
+              "board",
+              "row"
+            ]
+          },
+          {
+            "code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+            "line": 18,
+            "vars": [
+              "board"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"invalid board\")",
+            "line": 19,
+            "vars": [
+              "board"
+            ]
+          },
+          {
+            "code": "return board",
+            "line": 20,
+            "vars": [
+              "board"
+            ]
+          }
+        ],
+        "liveout": {
+          "board": true,
+          "ch": false,
+          "line": false,
+          "lines": false,
+          "row": false
+        },
+        "return_vars": [
+          "board"
+        ]
+      },
+      "solve": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "pos = find_empty(board)",
+            "line": 47,
+            "vars": [
+              "board"
+            ]
+          },
+          {
+            "code": "if pos is None: return True",
+            "line": 48,
+            "vars": [
+              "board",
+              "pos"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 49,
+            "vars": [
+              "board",
+              "pos"
+            ]
+          },
+          {
+            "code": "r, c = pos",
+            "line": 50,
+            "vars": [
+              "board",
+              "pos"
+            ]
+          },
+          {
+            "code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+            "line": 51,
+            "vars": [
+              "board",
+              "c",
+              "r"
+            ]
+          },
+          {
+            "code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+            "line": 52,
+            "vars": [
+              "board",
+              "c",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "board[r][c] = val",
+            "line": 53,
+            "vars": [
+              "c",
+              "val"
+            ]
+          },
+          {
+            "code": "if solve(board): return True",
+            "line": 54,
+            "vars": [
+              "board",
+              "c"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 55,
+            "vars": [
+              "c"
+            ]
+          },
+          {
+            "code": "board[r][c] = 0",
+            "line": 56,
+            "vars": [
+              "c"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 57,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "board": false,
+          "c": false,
+          "pos": false,
+          "r": false,
+          "val": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(9):",
+      "cond": "for i in range(9)",
+      "function": "find_empty",
+      "header_id": 1,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(9):",
+      "cond": "for j in range(9)",
+      "function": "find_empty",
+      "header_id": 2,
+      "line": 41,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i, row in enumerate(board):",
+      "cond": "for i, row in enumerate(board)",
+      "function": "format_board",
+      "header_id": 2,
+      "line": 61,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j, v in enumerate(row):",
+      "cond": "for j, v in enumerate(row)",
+      "function": "format_board",
+      "header_id": 6,
+      "line": 65,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(9):",
+      "cond": "for j in range(9)",
+      "function": "is_valid",
+      "header_id": 1,
+      "line": 24,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(9):",
+      "cond": "for i in range(9)",
+      "function": "is_valid",
+      "header_id": 4,
+      "line": 28,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(br, br + 3):",
+      "cond": "for i in range(br, br + 3)",
+      "function": "is_valid",
+      "header_id": 8,
+      "line": 33,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(bc, bc + 3):",
+      "cond": "for j in range(bc, bc + 3)",
+      "function": "is_valid",
+      "header_id": 9,
+      "line": 34,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for line in lines:",
+      "cond": "for line in lines",
+      "function": "parse_board",
+      "header_id": 2,
+      "line": 9,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ch in line.strip():",
+      "cond": "for ch in line.strip()",
+      "function": "parse_board",
+      "header_id": 4,
+      "line": 11,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for val in range(1, 10):",
+      "cond": "for val in range(1, 10)",
+      "function": "solve",
+      "header_id": 5,
+      "line": 51,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "b_line": 9,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "row = []",
+      "b_line": 10,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "row = []",
+      "b_line": 10,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 11,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 11,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 11,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 12,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 12,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 12,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 11,
+      "b_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 12,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "row.append(0)",
+      "b_line": 13,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "row.append(0)",
+      "b_line": 13,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "row.append(0)",
+      "b_line": 13,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 11,
+      "b_code": "row.append(0)",
+      "b_line": 13,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 12,
+      "b_code": "row.append(0)",
+      "b_line": 13,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 14,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 14,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 14,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 11,
+      "b_code": "elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 14,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 12,
+      "b_code": "elif ch.isdigit(): row.append(int(ch))",
+      "b_line": 14,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "row.append(int(ch))",
+      "b_line": 15,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "row.append(int(ch))",
+      "b_line": 15,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "row.append(int(ch))",
+      "b_line": 15,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 11,
+      "b_code": "row.append(int(ch))",
+      "b_line": 15,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 12,
+      "b_code": "row.append(int(ch))",
+      "b_line": 15,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 14,
+      "b_code": "row.append(int(ch))",
+      "b_line": 15,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "if len(row) == 9: board.append(row)",
+      "b_line": 16,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "if len(row) == 9: board.append(row)",
+      "b_line": 16,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "if len(row) == 9: board.append(row)",
+      "b_line": 16,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 11,
+      "b_code": "if len(row) == 9: board.append(row)",
+      "b_line": 16,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "board.append(row)",
+      "b_line": 17,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "board.append(row)",
+      "b_line": 17,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "row = []",
+      "a_line": 10,
+      "b_code": "board.append(row)",
+      "b_line": 17,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch))",
+      "a_line": 11,
+      "b_code": "board.append(row)",
+      "b_line": 17,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "if len(row) == 9: board.append(row)",
+      "a_line": 16,
+      "b_code": "board.append(row)",
+      "b_line": 17,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+      "b_line": 18,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+      "b_line": 18,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "raise ValueError(\"invalid board\")",
+      "b_line": 19,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "raise ValueError(\"invalid board\")",
+      "b_line": 19,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+      "a_line": 18,
+      "b_code": "raise ValueError(\"invalid board\")",
+      "b_line": 19,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "board: Board = []",
+      "a_line": 8,
+      "b_code": "return board",
+      "b_line": 20,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for line in lines: row = [] for ch in line.strip(): if ch == '.': row.append(0) elif ch.isdigit(): row.append(int(ch)) if len(row) == 9: board.append(row)",
+      "a_line": 9,
+      "b_code": "return board",
+      "b_line": 20,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "if len(board) != 9: raise ValueError(\"invalid board\")",
+      "a_line": 18,
+      "b_code": "return board",
+      "b_line": 20,
+      "function": "parse_board"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "if board[r][j] == val: return False",
+      "b_line": 25,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "return False",
+      "b_line": 26,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "if board[r][j] == val: return False",
+      "a_line": 25,
+      "b_code": "return False",
+      "b_line": 26,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "for i in range(9): if board[i][c] == val: return False",
+      "b_line": 28,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "if board[i][c] == val: return False",
+      "b_line": 29,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "if board[i][c] == val: return False",
+      "b_line": 29,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "return False",
+      "b_line": 30,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "return False",
+      "b_line": 30,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "if board[i][c] == val: return False",
+      "a_line": 29,
+      "b_code": "return False",
+      "b_line": 30,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "b_line": 32,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "b_line": 32,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 33,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 33,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "a_line": 32,
+      "b_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 33,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 34,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 34,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "a_line": 32,
+      "b_code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 34,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "a_line": 33,
+      "b_code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "b_line": 34,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "if board[i][j] == val: return False",
+      "b_line": 35,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "if board[i][j] == val: return False",
+      "b_line": 35,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "a_line": 32,
+      "b_code": "if board[i][j] == val: return False",
+      "b_line": 35,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "a_line": 33,
+      "b_code": "if board[i][j] == val: return False",
+      "b_line": 35,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "a_line": 34,
+      "b_code": "if board[i][j] == val: return False",
+      "b_line": 35,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "a_line": 32,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "a_line": 33,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "a_line": 34,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "if board[i][j] == val: return False",
+      "a_line": 35,
+      "b_code": "return False",
+      "b_line": 36,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for j in range(9): if board[r][j] == val: return False",
+      "a_line": 24,
+      "b_code": "return True",
+      "b_line": 37,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): if board[i][c] == val: return False",
+      "a_line": 28,
+      "b_code": "return True",
+      "b_line": 37,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+      "a_line": 32,
+      "b_code": "return True",
+      "b_line": 37,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(br, br + 3): for j in range(bc, bc + 3): if board[i][j] == val: return False",
+      "a_line": 33,
+      "b_code": "return True",
+      "b_line": 37,
+      "function": "is_valid"
+    },
+    {
+      "a_code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+      "a_line": 40,
+      "b_code": "for j in range(9): if board[i][j] == 0: return (i, j)",
+      "b_line": 41,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+      "a_line": 40,
+      "b_code": "if board[i][j] == 0: return (i, j)",
+      "b_line": 42,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "for j in range(9): if board[i][j] == 0: return (i, j)",
+      "a_line": 41,
+      "b_code": "if board[i][j] == 0: return (i, j)",
+      "b_line": 42,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+      "a_line": 40,
+      "b_code": "return (i, j)",
+      "b_line": 43,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "for j in range(9): if board[i][j] == 0: return (i, j)",
+      "a_line": 41,
+      "b_code": "return (i, j)",
+      "b_line": 43,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "if board[i][j] == 0: return (i, j)",
+      "a_line": 42,
+      "b_code": "return (i, j)",
+      "b_line": 43,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "for i in range(9): for j in range(9): if board[i][j] == 0: return (i, j)",
+      "a_line": 40,
+      "b_code": "return None",
+      "b_line": 44,
+      "function": "find_empty"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "if pos is None: return True",
+      "b_line": 48,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "return True",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "return True",
+      "b_line": 49,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "r, c = pos",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "r, c = pos",
+      "b_line": 50,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 51,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 51,
+      "b_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "b_line": 52,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "board[r][c] = val",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "board[r][c] = val",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "board[r][c] = val",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 51,
+      "b_code": "board[r][c] = val",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 52,
+      "b_code": "board[r][c] = val",
+      "b_line": 53,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "if solve(board): return True",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "if solve(board): return True",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "if solve(board): return True",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 51,
+      "b_code": "if solve(board): return True",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 52,
+      "b_code": "if solve(board): return True",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "board[r][c] = val",
+      "a_line": 53,
+      "b_code": "if solve(board): return True",
+      "b_line": 54,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 51,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 52,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "board[r][c] = val",
+      "a_line": 53,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "if solve(board): return True",
+      "a_line": 54,
+      "b_code": "return True",
+      "b_line": 55,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 51,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 52,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "board[r][c] = val",
+      "a_line": 53,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "if solve(board): return True",
+      "a_line": 54,
+      "b_code": "board[r][c] = 0",
+      "b_line": 56,
+      "function": "solve"
+    },
+    {
+      "a_code": "pos = find_empty(board)",
+      "a_line": 47,
+      "b_code": "return False",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "if pos is None: return True",
+      "a_line": 48,
+      "b_code": "return False",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "r, c = pos",
+      "a_line": 50,
+      "b_code": "return False",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "for val in range(1, 10): if is_valid(board, r, c, val): board[r][c] = val if solve(board): return True board[r][c] = 0",
+      "a_line": 51,
+      "b_code": "return False",
+      "b_line": 57,
+      "function": "solve"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "b_line": 61,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "b_line": 62,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "b_line": 62,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "out.append(\"------+-------+------\")",
+      "b_line": 63,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "out.append(\"------+-------+------\")",
+      "b_line": 63,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "out.append(\"------+-------+------\")",
+      "b_line": 63,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "parts = []",
+      "b_line": 64,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "parts = []",
+      "b_line": 64,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "parts = []",
+      "b_line": 64,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 65,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 65,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 65,
+      "function": "format_board"
+    },
+    {
+      "a_code": "parts = []",
+      "a_line": 64,
+      "b_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 65,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "b_line": 66,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "b_line": 66,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "b_line": 66,
+      "function": "format_board"
+    },
+    {
+      "a_code": "parts = []",
+      "a_line": 64,
+      "b_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "b_line": 66,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "a_line": 65,
+      "b_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "b_line": 66,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "parts.append(\"|\")",
+      "b_line": 67,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "parts.append(\"|\")",
+      "b_line": 67,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "parts.append(\"|\")",
+      "b_line": 67,
+      "function": "format_board"
+    },
+    {
+      "a_code": "parts = []",
+      "a_line": 64,
+      "b_code": "parts.append(\"|\")",
+      "b_line": 67,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "a_line": 65,
+      "b_code": "parts.append(\"|\")",
+      "b_line": 67,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "a_line": 66,
+      "b_code": "parts.append(\"|\")",
+      "b_line": 67,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 68,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 68,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 68,
+      "function": "format_board"
+    },
+    {
+      "a_code": "parts = []",
+      "a_line": 64,
+      "b_code": "parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 68,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "a_line": 65,
+      "b_code": "parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 68,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if j % 3 == 0 and j != 0: parts.append(\"|\")",
+      "a_line": 66,
+      "b_code": "parts.append(str(v) if v != 0 else \".\")",
+      "b_line": 68,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "out.append(\" \".join(parts))",
+      "b_line": 69,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "out.append(\" \".join(parts))",
+      "b_line": 69,
+      "function": "format_board"
+    },
+    {
+      "a_code": "if i % 3 == 0 and i != 0: out.append(\"------+-------+------\")",
+      "a_line": 62,
+      "b_code": "out.append(\" \".join(parts))",
+      "b_line": 69,
+      "function": "format_board"
+    },
+    {
+      "a_code": "parts = []",
+      "a_line": 64,
+      "b_code": "out.append(\" \".join(parts))",
+      "b_line": 69,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\")",
+      "a_line": 65,
+      "b_code": "out.append(\" \".join(parts))",
+      "b_line": 69,
+      "function": "format_board"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 60,
+      "b_code": "return \"\\n\".join(out)",
+      "b_line": 70,
+      "function": "format_board"
+    },
+    {
+      "a_code": "for i, row in enumerate(board): if i % 3 == 0 and i != 0: out.append(\"------+-------+------\") parts = [] for j, v in enumerate(row): if j % 3 == 0 and j != 0: parts.append(\"|\") parts.append(str(v) if v != 0 else \".\") out.append(\" \".join(parts))",
+      "a_line": 61,
+      "b_code": "return \"\\n\".join(out)",
+      "b_line": 70,
+      "function": "format_board"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def parse_board(lines:",
+        "line": 7,
+        "var": "ch"
+      },
+      "from": {
+        "code": "board: Board = []",
+        "line": 8,
+        "var": "board"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "board: Board = []",
+        "line": 8,
+        "var": "board"
+      },
+      "from": {
+        "code": "row = []",
+        "line": 10,
+        "var": "row"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def is_valid(board:",
+        "line": 22,
+        "var": "c"
+      },
+      "from": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "bc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_valid(board:",
+        "line": 22,
+        "var": "r"
+      },
+      "from": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "bc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_valid(board:",
+        "line": 22,
+        "var": "board"
+      },
+      "from": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "bc"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def is_valid(board:",
+        "line": 22,
+        "var": "c"
+      },
+      "from": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "br"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def is_valid(board:",
+        "line": 22,
+        "var": "r"
+      },
+      "from": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "br"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "bc"
+      },
+      "from": {
+        "code": "br, bc = (r // 3) * 3, (c // 3) * 3",
+        "line": 32,
+        "var": "br"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(board:",
+        "line": 46,
+        "var": "board"
+      },
+      "from": {
+        "code": "pos = find_empty(board)",
+        "line": 47,
+        "var": "pos"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(board:",
+        "line": 46,
+        "var": "c"
+      },
+      "from": {
+        "code": "pos = find_empty(board)",
+        "line": 47,
+        "var": "pos"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(board:",
+        "line": 46,
+        "var": "board"
+      },
+      "from": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pos = find_empty(board)",
+        "line": 47,
+        "var": "pos"
+      },
+      "from": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(board:",
+        "line": 46,
+        "var": "r"
+      },
+      "from": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def solve(board:",
+        "line": 46,
+        "var": "board"
+      },
+      "from": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pos = find_empty(board)",
+        "line": 47,
+        "var": "pos"
+      },
+      "from": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "c"
+      },
+      "from": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "c"
+      },
+      "from": {
+        "code": "board[r][c] = val",
+        "line": 53,
+        "var": "board"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pos = find_empty(board)",
+        "line": 47,
+        "var": "pos"
+      },
+      "from": {
+        "code": "board[r][c] = val",
+        "line": 53,
+        "var": "board"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "board[r][c] = val",
+        "line": 53,
+        "var": "val"
+      },
+      "from": {
+        "code": "board[r][c] = val",
+        "line": 53,
+        "var": "board"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "r"
+      },
+      "from": {
+        "code": "board[r][c] = val",
+        "line": 53,
+        "var": "board"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "c"
+      },
+      "from": {
+        "code": "board[r][c] = 0",
+        "line": 56,
+        "var": "board"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pos = find_empty(board)",
+        "line": 47,
+        "var": "pos"
+      },
+      "from": {
+        "code": "board[r][c] = 0",
+        "line": 56,
+        "var": "board"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r, c = pos",
+        "line": 50,
+        "var": "r"
+      },
+      "from": {
+        "code": "board[r][c] = 0",
+        "line": 56,
+        "var": "board"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def format_board(board:",
+        "line": 59,
+        "var": "board"
+      },
+      "from": {
+        "code": "out = []",
+        "line": 60,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def format_board(board:",
+        "line": 59,
+        "var": "board"
+      },
+      "from": {
+        "code": "parts = []",
+        "line": 64,
+        "var": "parts"
+      },
+      "label": "negative"
+    }
+  ]
+}

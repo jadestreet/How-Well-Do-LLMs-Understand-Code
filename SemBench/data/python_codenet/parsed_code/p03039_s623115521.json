@@ -1,0 +1,4109 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import re",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 2,
+      "node_id": 1
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 3,
+      "node_id": 2
+    },
+    {
+      "code": "import fractions",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "import random",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "import time",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 6,
+      "node_id": 5
+    },
+    {
+      "code": "mod=int(10**9+7)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 6
+    },
+    {
+      "code": "inf=int(10**20)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 7
+    },
+    {
+      "code": "fac=[1]*250000",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 8
+    },
+    {
+      "code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 11,
+      "node_id": 9
+    },
+    {
+      "code": "fac[a]=fac[a-1]*a%mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 10
+    },
+    {
+      "code": "N,M,K=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 71,
+      "node_id": 11
+    },
+    {
+      "code": "sum_=0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 72,
+      "node_id": 12
+    },
+    {
+      "code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 73,
+      "node_id": 13
+    },
+    {
+      "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 74,
+      "node_id": 14
+    },
+    {
+      "code": "sum_%=mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 75,
+      "node_id": 15
+    },
+    {
+      "code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 76,
+      "node_id": 16
+    },
+    {
+      "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 77,
+      "node_id": 17
+    },
+    {
+      "code": "sum_%=mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 78,
+      "node_id": 18
+    },
+    {
+      "code": "print(sum_)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 80,
+      "node_id": 19
+    },
+    {
+      "code": "self.n=n",
+      "dead": false,
+      "function": "union_find.__init__",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "self.P=[a for a in range(N)]",
+      "dead": false,
+      "function": "union_find.__init__",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 2
+    },
+    {
+      "code": "self.rank=[0]*n",
+      "dead": false,
+      "function": "union_find.__init__",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 3
+    },
+    {
+      "code": "if(x!=self.P[x]):self.P[x]=self.find(self.P[x])",
+      "dead": false,
+      "function": "union_find.find",
+      "kind": "If",
+      "line": 20,
+      "node_id": 1
+    },
+    {
+      "code": "self.P[x]=self.find(self.P[x])",
+      "dead": false,
+      "function": "union_find.find",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "return self.P[x]",
+      "dead": false,
+      "function": "union_find.find",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "return self.find(x)==self.find(y)",
+      "dead": false,
+      "function": "union_find.same",
+      "kind": "Return",
+      "line": 24,
+      "node_id": 1
+    },
+    {
+      "code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "dead": false,
+      "function": "union_find.link",
+      "kind": "If",
+      "line": 27,
+      "node_id": 1
+    },
+    {
+      "code": "self.P[x]=y",
+      "dead": false,
+      "function": "union_find.link",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 2
+    },
+    {
+      "code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "dead": false,
+      "function": "union_find.link",
+      "kind": "If",
+      "line": 29,
+      "node_id": 3
+    },
+    {
+      "code": "self.P[y]=x",
+      "dead": false,
+      "function": "union_find.link",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 4
+    },
+    {
+      "code": "self.P[x]=y",
+      "dead": false,
+      "function": "union_find.link",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 5
+    },
+    {
+      "code": "self.rank[y]+=1",
+      "dead": false,
+      "function": "union_find.link",
+      "kind": "AugAssign",
+      "line": 33,
+      "node_id": 6
+    },
+    {
+      "code": "self.link(self.find(x),self.find(y))",
+      "dead": false,
+      "function": "union_find.unite",
+      "kind": "Expr",
+      "line": 36,
+      "node_id": 1
+    },
+    {
+      "code": "S=set()",
+      "dead": false,
+      "function": "union_find.size",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 1
+    },
+    {
+      "code": "for a in range(self.n): S.add(self.find(a))",
+      "dead": false,
+      "function": "union_find.size",
+      "kind": "For",
+      "line": 40,
+      "node_id": 2
+    },
+    {
+      "code": "S.add(self.find(a))",
+      "dead": false,
+      "function": "union_find.size",
+      "kind": "Expr",
+      "line": 41,
+      "node_id": 3
+    },
+    {
+      "code": "return len(S)",
+      "dead": false,
+      "function": "union_find.size",
+      "kind": "Return",
+      "line": 42,
+      "node_id": 4
+    },
+    {
+      "code": "A=[0]*size",
+      "dead": false,
+      "function": "bin_",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 1
+    },
+    {
+      "code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "dead": false,
+      "function": "bin_",
+      "kind": "For",
+      "line": 45,
+      "node_id": 2
+    },
+    {
+      "code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "dead": false,
+      "function": "bin_",
+      "kind": "If",
+      "line": 46,
+      "node_id": 3
+    },
+    {
+      "code": "A[a]=1",
+      "dead": false,
+      "function": "bin_",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 4
+    },
+    {
+      "code": "A[a]=0",
+      "dead": false,
+      "function": "bin_",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 5
+    },
+    {
+      "code": "return A",
+      "dead": false,
+      "function": "bin_",
+      "kind": "Return",
+      "line": 50,
+      "node_id": 6
+    },
+    {
+      "code": "return math.factorial(n)//math.factorial(n-r)//math.factorial(r)",
+      "dead": false,
+      "function": "comb",
+      "kind": "Return",
+      "line": 51,
+      "node_id": 1
+    },
+    {
+      "code": "x=num&(-num)",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 1
+    },
+    {
+      "code": "y=num+x",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 2
+    },
+    {
+      "code": "z=num&(~y)",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 3
+    },
+    {
+      "code": "z//=x",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "AugAssign",
+      "line": 56,
+      "node_id": 4
+    },
+    {
+      "code": "z=z>>1",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 5
+    },
+    {
+      "code": "num=(y|z)",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Assign",
+      "line": 58,
+      "node_id": 6
+    },
+    {
+      "code": "if(num>=(1<<size)):return False else: return num",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "If",
+      "line": 59,
+      "node_id": 7
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Return",
+      "line": 59,
+      "node_id": 8
+    },
+    {
+      "code": "return num",
+      "dead": false,
+      "function": "next_comb",
+      "kind": "Return",
+      "line": 61,
+      "node_id": 9
+    },
+    {
+      "code": "return fac[n]*pow(fac[n-r],mod-2,mod)*pow(fac[r],mod-2,mod)",
+      "dead": false,
+      "function": "comb_",
+      "kind": "Return",
+      "line": 65,
+      "node_id": 1
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "solve",
+      "kind": "Return",
+      "line": 68,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import re",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "import fractions",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "import random",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "import time",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "mod=int(10**9+7)",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "inf=int(10**20)",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "fac=[1]*250000",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "fac[a]=fac[a-1]*a%mod",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "self.n=n",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "self.P=[a for a in range(N)]",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "self.rank=[0]*n",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "if(x!=self.P[x]):self.P[x]=self.find(self.P[x])",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "self.P[x]=self.find(self.P[x])",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return self.P[x]",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "return self.find(x)==self.find(y)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "self.P[x]=y",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "self.P[y]=x",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "self.P[x]=y",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "self.rank[y]+=1",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "self.link(self.find(x),self.find(y))",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "S=set()",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "for a in range(self.n): S.add(self.find(a))",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "S.add(self.find(a))",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "return len(S)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "A=[0]*size",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "A[a]=1",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "A[a]=0",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "return A",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "return math.factorial(n)//math.factorial(n-r)//math.factorial(r)",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "x=num&(-num)",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "y=num+x",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "z=num&(~y)",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "z//=x",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "z=z>>1",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "num=(y|z)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "if(num>=(1<<size)):return False else: return num",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "return num",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "return fac[n]*pow(fac[n-r],mod-2,mod)*pow(fac[r],mod-2,mod)",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "N,M,K=map(int,input().split())",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "sum_=0",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "sum_%=mod",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "sum_%=mod",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "print(sum_)",
+      "dead": false,
+      "line": 80
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03039_s623115521.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 14,
+      "name": "union_find.__init__",
+      "variables": [
+        "N",
+        "n",
+        "self",
+        "self.P",
+        "self.n",
+        "self.rank"
+      ]
+    },
+    {
+      "calls": [
+        "union_find.find"
+      ],
+      "end_lineno": 21,
+      "lineno": 19,
+      "name": "union_find.find",
+      "variables": [
+        "self",
+        "self.P",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "union_find.find"
+      ],
+      "end_lineno": 24,
+      "lineno": 23,
+      "name": "union_find.same",
+      "variables": [
+        "self",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 33,
+      "lineno": 26,
+      "name": "union_find.link",
+      "variables": [
+        "self",
+        "self.P",
+        "self.rank",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "union_find.find",
+        "union_find.link"
+      ],
+      "end_lineno": 36,
+      "lineno": 35,
+      "name": "union_find.unite",
+      "variables": [
+        "self",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "union_find.find"
+      ],
+      "end_lineno": 42,
+      "lineno": 38,
+      "name": "union_find.size",
+      "variables": [
+        "S",
+        "a",
+        "self",
+        "self.n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 50,
+      "lineno": 43,
+      "name": "bin_",
+      "variables": [
+        "A",
+        "a",
+        "num",
+        "size"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 51,
+      "lineno": 51,
+      "name": "comb",
+      "variables": [
+        "math",
+        "n",
+        "r"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 61,
+      "lineno": 52,
+      "name": "next_comb",
+      "variables": [
+        "num",
+        "size",
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 65,
+      "lineno": 65,
+      "name": "comb_",
+      "variables": [
+        "fac",
+        "mod",
+        "n",
+        "r"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 68,
+      "lineno": 67,
+      "name": "solve",
+      "variables": []
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import re",
+            "line": 2,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "import math",
+            "line": 3,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "import fractions",
+            "line": 4,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "import random",
+            "line": 5,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "import time",
+            "line": 6,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "mod=int(10**9+7)",
+            "line": 8,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "inf=int(10**20)",
+            "line": 9,
+            "vars": [
+              "int",
+              "mod"
+            ]
+          },
+          {
+            "code": "fac=[1]*250000",
+            "line": 10,
+            "vars": [
+              "int",
+              "mod"
+            ]
+          },
+          {
+            "code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+            "line": 11,
+            "vars": [
+              "fac",
+              "int",
+              "mod"
+            ]
+          },
+          {
+            "code": "fac[a]=fac[a-1]*a%mod",
+            "line": 12,
+            "vars": [
+              "a",
+              "fac",
+              "int",
+              "mod"
+            ]
+          },
+          {
+            "code": "N,M,K=map(int,input().split())",
+            "line": 71,
+            "vars": [
+              "int",
+              "mod"
+            ]
+          },
+          {
+            "code": "sum_=0",
+            "line": 72,
+            "vars": [
+              "K",
+              "M",
+              "N",
+              "mod"
+            ]
+          },
+          {
+            "code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+            "line": 73,
+            "vars": [
+              "K",
+              "M",
+              "N",
+              "mod"
+            ]
+          },
+          {
+            "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+            "line": 74,
+            "vars": [
+              "K",
+              "M",
+              "N",
+              "a",
+              "mod"
+            ]
+          },
+          {
+            "code": "sum_%=mod",
+            "line": 75,
+            "vars": [
+              "K",
+              "M",
+              "N",
+              "mod"
+            ]
+          },
+          {
+            "code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+            "line": 76,
+            "vars": [
+              "K",
+              "M",
+              "N",
+              "mod"
+            ]
+          },
+          {
+            "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+            "line": 77,
+            "vars": [
+              "K",
+              "M",
+              "N",
+              "a",
+              "mod"
+            ]
+          },
+          {
+            "code": "sum_%=mod",
+            "line": 78,
+            "vars": [
+              "mod"
+            ]
+          },
+          {
+            "code": "print(sum_)",
+            "line": 80,
+            "vars": [
+              "sum_"
+            ]
+          }
+        ],
+        "liveout": {
+          "K": false,
+          "M": false,
+          "N": false,
+          "a": false,
+          "fac": false,
+          "inf": false,
+          "int": false,
+          "mod": false,
+          "sum_": false
+        },
+        "return_vars": []
+      },
+      "bin_": {
+        "base_liveout": [
+          "A"
+        ],
+        "live_before": [
+          {
+            "code": "A=[0]*size",
+            "line": 44,
+            "vars": [
+              "num",
+              "size"
+            ]
+          },
+          {
+            "code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+            "line": 45,
+            "vars": [
+              "num",
+              "size"
+            ]
+          },
+          {
+            "code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+            "line": 46,
+            "vars": [
+              "a",
+              "num",
+              "size"
+            ]
+          },
+          {
+            "code": "A[a]=1",
+            "line": 47,
+            "vars": [
+              "a"
+            ]
+          },
+          {
+            "code": "A[a]=0",
+            "line": 49,
+            "vars": [
+              "a"
+            ]
+          },
+          {
+            "code": "return A",
+            "line": 50,
+            "vars": [
+              "A"
+            ]
+          }
+        ],
+        "liveout": {
+          "A": true,
+          "a": false,
+          "num": false,
+          "size": false
+        },
+        "return_vars": [
+          "A"
+        ]
+      },
+      "comb": {
+        "base_liveout": [
+          "math",
+          "n",
+          "r"
+        ],
+        "live_before": [
+          {
+            "code": "return math.factorial(n)//math.factorial(n-r)//math.factorial(r)",
+            "line": 51,
+            "vars": [
+              "math",
+              "n",
+              "r"
+            ]
+          }
+        ],
+        "liveout": {
+          "math": true,
+          "n": true,
+          "r": true
+        },
+        "return_vars": [
+          "math",
+          "n",
+          "r"
+        ]
+      },
+      "comb_": {
+        "base_liveout": [
+          "fac",
+          "mod",
+          "n",
+          "r"
+        ],
+        "live_before": [
+          {
+            "code": "return fac[n]*pow(fac[n-r],mod-2,mod)*pow(fac[r],mod-2,mod)",
+            "line": 65,
+            "vars": [
+              "fac",
+              "mod",
+              "n",
+              "r"
+            ]
+          }
+        ],
+        "liveout": {
+          "fac": true,
+          "mod": true,
+          "n": true,
+          "r": true
+        },
+        "return_vars": [
+          "fac",
+          "mod",
+          "n",
+          "r"
+        ]
+      },
+      "next_comb": {
+        "base_liveout": [
+          "num"
+        ],
+        "live_before": [
+          {
+            "code": "x=num&(-num)",
+            "line": 53,
+            "vars": [
+              "num",
+              "size"
+            ]
+          },
+          {
+            "code": "y=num+x",
+            "line": 54,
+            "vars": [
+              "num",
+              "size",
+              "x"
+            ]
+          },
+          {
+            "code": "z=num&(~y)",
+            "line": 55,
+            "vars": [
+              "num",
+              "size",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "z//=x",
+            "line": 56,
+            "vars": [
+              "size",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "z=z>>1",
+            "line": 57,
+            "vars": [
+              "size",
+              "y",
+              "z"
+            ]
+          },
+          {
+            "code": "num=(y|z)",
+            "line": 58,
+            "vars": [
+              "size",
+              "y",
+              "z"
+            ]
+          },
+          {
+            "code": "if(num>=(1<<size)):return False else: return num",
+            "line": 59,
+            "vars": [
+              "num",
+              "size"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 59,
+            "vars": [
+              "num"
+            ]
+          },
+          {
+            "code": "return num",
+            "line": 61,
+            "vars": [
+              "num"
+            ]
+          }
+        ],
+        "liveout": {
+          "num": true,
+          "size": false,
+          "x": false,
+          "y": false,
+          "z": false
+        },
+        "return_vars": [
+          "num"
+        ]
+      },
+      "solve": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return",
+            "line": 68,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "union_find.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.n=n",
+            "line": 15,
+            "vars": [
+              "N",
+              "n"
+            ]
+          },
+          {
+            "code": "self.P=[a for a in range(N)]",
+            "line": 16,
+            "vars": [
+              "N",
+              "n"
+            ]
+          },
+          {
+            "code": "self.rank=[0]*n",
+            "line": 17,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "N": false,
+          "n": false,
+          "self": false,
+          "self.P": false,
+          "self.n": false,
+          "self.rank": false
+        },
+        "return_vars": []
+      },
+      "union_find.find": {
+        "base_liveout": [
+          "self.P",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "if(x!=self.P[x]):self.P[x]=self.find(self.P[x])",
+            "line": 20,
+            "vars": [
+              "self",
+              "self.P",
+              "x"
+            ]
+          },
+          {
+            "code": "self.P[x]=self.find(self.P[x])",
+            "line": 20,
+            "vars": [
+              "self",
+              "self.P",
+              "x"
+            ]
+          },
+          {
+            "code": "return self.P[x]",
+            "line": 21,
+            "vars": [
+              "self.P",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.P": true,
+          "x": true
+        },
+        "return_vars": [
+          "self.P",
+          "x"
+        ]
+      },
+      "union_find.link": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+            "line": 27,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.P[x]=y",
+            "line": 28,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+            "line": 29,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.P[y]=x",
+            "line": 30,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.P[x]=y",
+            "line": 32,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.rank[y]+=1",
+            "line": 33,
+            "vars": [
+              "self.rank",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.P": false,
+          "self.rank": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "union_find.same": {
+        "base_liveout": [
+          "self",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return self.find(x)==self.find(y)",
+            "line": 24,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "self",
+          "x",
+          "y"
+        ]
+      },
+      "union_find.size": {
+        "base_liveout": [
+          "S"
+        ],
+        "live_before": [
+          {
+            "code": "S=set()",
+            "line": 39,
+            "vars": [
+              "self",
+              "self.n"
+            ]
+          },
+          {
+            "code": "for a in range(self.n): S.add(self.find(a))",
+            "line": 40,
+            "vars": [
+              "S",
+              "self",
+              "self.n"
+            ]
+          },
+          {
+            "code": "S.add(self.find(a))",
+            "line": 41,
+            "vars": [
+              "S",
+              "a",
+              "self"
+            ]
+          },
+          {
+            "code": "return len(S)",
+            "line": 42,
+            "vars": [
+              "S"
+            ]
+          }
+        ],
+        "liveout": {
+          "S": true,
+          "a": false,
+          "self": false,
+          "self.n": false
+        },
+        "return_vars": [
+          "S"
+        ]
+      },
+      "union_find.unite": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.link(self.find(x),self.find(y))",
+            "line": 36,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "always_runs",
+      "code": "for a in range(2,250000):",
+      "cond": "for a in range(2,250000)",
+      "function": "__module__",
+      "header_id": 9,
+      "line": 11,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for a in range(1,N):",
+      "cond": "for a in range(1,N)",
+      "function": "__module__",
+      "header_id": 13,
+      "line": 73,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for a in range(1,M):",
+      "cond": "for a in range(1,M)",
+      "function": "__module__",
+      "header_id": 16,
+      "line": 76,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for a in range(size):",
+      "cond": "for a in range(size)",
+      "function": "bin_",
+      "header_id": 2,
+      "line": 45,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for a in range(self.n):",
+      "cond": "for a in range(self.n)",
+      "function": "union_find.size",
+      "header_id": 2,
+      "line": 40,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "import math",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "import fractions",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "import fractions",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "import random",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "import random",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "import random",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "import time",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "import time",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "import time",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "import time",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "mod=int(10**9+7)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "mod=int(10**9+7)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "mod=int(10**9+7)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "mod=int(10**9+7)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "mod=int(10**9+7)",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "inf=int(10**20)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "inf=int(10**20)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "inf=int(10**20)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "inf=int(10**20)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "inf=int(10**20)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "inf=int(10**20)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "fac=[1]*250000",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "fac[a]=fac[a-1]*a%mod",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "N,M,K=map(int,input().split())",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "sum_=0",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 73,
+      "b_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 73,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+      "a_line": 74,
+      "b_code": "sum_%=mod",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 73,
+      "b_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 73,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 76,
+      "b_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 73,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 76,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+      "a_line": 77,
+      "b_code": "sum_%=mod",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import re",
+      "a_line": 2,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 3,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import fractions",
+      "a_line": 4,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 5,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time",
+      "a_line": 6,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod=int(10**9+7)",
+      "a_line": 8,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf=int(10**20)",
+      "a_line": 9,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fac=[1]*250000",
+      "a_line": 10,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(2,250000): fac[a]=fac[a-1]*a%mod",
+      "a_line": 11,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M,K=map(int,input().split())",
+      "a_line": 71,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sum_=0",
+      "a_line": 72,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,N): sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 73,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a in range(1,M): sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2) sum_%=mod",
+      "a_line": 76,
+      "b_code": "print(sum_)",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.n=n",
+      "a_line": 15,
+      "b_code": "self.P=[a for a in range(N)]",
+      "b_line": 16,
+      "function": "union_find.__init__"
+    },
+    {
+      "a_code": "self.n=n",
+      "a_line": 15,
+      "b_code": "self.rank=[0]*n",
+      "b_line": 17,
+      "function": "union_find.__init__"
+    },
+    {
+      "a_code": "self.P=[a for a in range(N)]",
+      "a_line": 16,
+      "b_code": "self.rank=[0]*n",
+      "b_line": 17,
+      "function": "union_find.__init__"
+    },
+    {
+      "a_code": "if(x!=self.P[x]):self.P[x]=self.find(self.P[x])",
+      "a_line": 20,
+      "b_code": "self.P[x]=self.find(self.P[x])",
+      "b_line": 20,
+      "function": "union_find.find"
+    },
+    {
+      "a_code": "if(x!=self.P[x]):self.P[x]=self.find(self.P[x])",
+      "a_line": 20,
+      "b_code": "return self.P[x]",
+      "b_line": 21,
+      "function": "union_find.find"
+    },
+    {
+      "a_code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 27,
+      "b_code": "self.P[x]=y",
+      "b_line": 28,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 27,
+      "b_code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "b_line": 29,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 27,
+      "b_code": "self.P[y]=x",
+      "b_line": 30,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 29,
+      "b_code": "self.P[y]=x",
+      "b_line": 30,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 27,
+      "b_code": "self.P[x]=y",
+      "b_line": 32,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 29,
+      "b_code": "self.P[x]=y",
+      "b_line": 32,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "if self.rank[x]<self.rank[y]: self.P[x]=y elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 27,
+      "b_code": "self.rank[y]+=1",
+      "b_line": 33,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "elif self.rank[y]<self.rank[x]: self.P[y]=x else: self.P[x]=y self.rank[y]+=1",
+      "a_line": 29,
+      "b_code": "self.rank[y]+=1",
+      "b_line": 33,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "self.P[x]=y",
+      "a_line": 32,
+      "b_code": "self.rank[y]+=1",
+      "b_line": 33,
+      "function": "union_find.link"
+    },
+    {
+      "a_code": "S=set()",
+      "a_line": 39,
+      "b_code": "for a in range(self.n): S.add(self.find(a))",
+      "b_line": 40,
+      "function": "union_find.size"
+    },
+    {
+      "a_code": "S=set()",
+      "a_line": 39,
+      "b_code": "S.add(self.find(a))",
+      "b_line": 41,
+      "function": "union_find.size"
+    },
+    {
+      "a_code": "for a in range(self.n): S.add(self.find(a))",
+      "a_line": 40,
+      "b_code": "S.add(self.find(a))",
+      "b_line": 41,
+      "function": "union_find.size"
+    },
+    {
+      "a_code": "S=set()",
+      "a_line": 39,
+      "b_code": "return len(S)",
+      "b_line": 42,
+      "function": "union_find.size"
+    },
+    {
+      "a_code": "for a in range(self.n): S.add(self.find(a))",
+      "a_line": 40,
+      "b_code": "return len(S)",
+      "b_line": 42,
+      "function": "union_find.size"
+    },
+    {
+      "a_code": "A=[0]*size",
+      "a_line": 44,
+      "b_code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "b_line": 45,
+      "function": "bin_"
+    },
+    {
+      "a_code": "A=[0]*size",
+      "a_line": 44,
+      "b_code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "b_line": 46,
+      "function": "bin_"
+    },
+    {
+      "a_code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "a_line": 45,
+      "b_code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "b_line": 46,
+      "function": "bin_"
+    },
+    {
+      "a_code": "A=[0]*size",
+      "a_line": 44,
+      "b_code": "A[a]=1",
+      "b_line": 47,
+      "function": "bin_"
+    },
+    {
+      "a_code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "a_line": 45,
+      "b_code": "A[a]=1",
+      "b_line": 47,
+      "function": "bin_"
+    },
+    {
+      "a_code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "a_line": 46,
+      "b_code": "A[a]=1",
+      "b_line": 47,
+      "function": "bin_"
+    },
+    {
+      "a_code": "A=[0]*size",
+      "a_line": 44,
+      "b_code": "A[a]=0",
+      "b_line": 49,
+      "function": "bin_"
+    },
+    {
+      "a_code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "a_line": 45,
+      "b_code": "A[a]=0",
+      "b_line": 49,
+      "function": "bin_"
+    },
+    {
+      "a_code": "if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "a_line": 46,
+      "b_code": "A[a]=0",
+      "b_line": 49,
+      "function": "bin_"
+    },
+    {
+      "a_code": "A=[0]*size",
+      "a_line": 44,
+      "b_code": "return A",
+      "b_line": 50,
+      "function": "bin_"
+    },
+    {
+      "a_code": "for a in range(size): if (num>>(size-a-1))&1==1: A[a]=1 else: A[a]=0",
+      "a_line": 45,
+      "b_code": "return A",
+      "b_line": 50,
+      "function": "bin_"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "y=num+x",
+      "b_line": 54,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "z=num&(~y)",
+      "b_line": 55,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "z=num&(~y)",
+      "b_line": 55,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "z//=x",
+      "b_line": 56,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "z//=x",
+      "b_line": 56,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=num&(~y)",
+      "a_line": 55,
+      "b_code": "z//=x",
+      "b_line": 56,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "z=z>>1",
+      "b_line": 57,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "z=z>>1",
+      "b_line": 57,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=num&(~y)",
+      "a_line": 55,
+      "b_code": "z=z>>1",
+      "b_line": 57,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z//=x",
+      "a_line": 56,
+      "b_code": "z=z>>1",
+      "b_line": 57,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "num=(y|z)",
+      "b_line": 58,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "num=(y|z)",
+      "b_line": 58,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=num&(~y)",
+      "a_line": 55,
+      "b_code": "num=(y|z)",
+      "b_line": 58,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z//=x",
+      "a_line": 56,
+      "b_code": "num=(y|z)",
+      "b_line": 58,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=z>>1",
+      "a_line": 57,
+      "b_code": "num=(y|z)",
+      "b_line": 58,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "if(num>=(1<<size)):return False else: return num",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "if(num>=(1<<size)):return False else: return num",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=num&(~y)",
+      "a_line": 55,
+      "b_code": "if(num>=(1<<size)):return False else: return num",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z//=x",
+      "a_line": 56,
+      "b_code": "if(num>=(1<<size)):return False else: return num",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=z>>1",
+      "a_line": 57,
+      "b_code": "if(num>=(1<<size)):return False else: return num",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "num=(y|z)",
+      "a_line": 58,
+      "b_code": "if(num>=(1<<size)):return False else: return num",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=num&(~y)",
+      "a_line": 55,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z//=x",
+      "a_line": 56,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=z>>1",
+      "a_line": 57,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "num=(y|z)",
+      "a_line": 58,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "if(num>=(1<<size)):return False else: return num",
+      "a_line": 59,
+      "b_code": "return False",
+      "b_line": 59,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "x=num&(-num)",
+      "a_line": 53,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "y=num+x",
+      "a_line": 54,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=num&(~y)",
+      "a_line": 55,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z//=x",
+      "a_line": 56,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "z=z>>1",
+      "a_line": 57,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "num=(y|z)",
+      "a_line": 58,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    },
+    {
+      "a_code": "if(num>=(1<<size)):return False else: return num",
+      "a_line": 59,
+      "b_code": "return num",
+      "b_line": 61,
+      "function": "next_comb"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped math.factorial at line 51",
+      "external call skipped input at line 71",
+      "external call skipped pow at line 65"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped math.factorial at line 51",
+    "external call skipped input at line 71",
+    "external call skipped pow at line 65"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "K"
+      },
+      "from": {
+        "code": "mod=int(10**9+7)",
+        "line": 8,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "K"
+      },
+      "from": {
+        "code": "inf=int(10**20)",
+        "line": 9,
+        "var": "inf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "K"
+      },
+      "from": {
+        "code": "fac=[1]*250000",
+        "line": 10,
+        "var": "fac"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "fac"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac=[1]*250000",
+        "line": 10,
+        "var": "fac"
+      },
+      "from": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "fac"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "mod=int(10**9+7)",
+        "line": 8,
+        "var": "mod"
+      },
+      "from": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "fac"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "K"
+      },
+      "from": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "fac"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "M"
+      },
+      "from": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "M"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "M"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "N"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "sum_=0",
+        "line": 72,
+        "var": "sum_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "M"
+      },
+      "from": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "N"
+      },
+      "from": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "a"
+      },
+      "from": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "int"
+      },
+      "from": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "fac"
+      },
+      "from": {
+        "code": "sum_+=M*M*abs(N-a)*a*comb_(N*M-2,K-2)",
+        "line": 74,
+        "var": "sum_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "mod=int(10**9+7)",
+        "line": 8,
+        "var": "mod"
+      },
+      "from": {
+        "code": "sum_%=mod",
+        "line": 75,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "sum_%=mod",
+        "line": 75,
+        "var": "sum_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "M"
+      },
+      "from": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "N"
+      },
+      "from": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "a"
+      },
+      "from": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "int"
+      },
+      "from": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac[a]=fac[a-1]*a%mod",
+        "line": 12,
+        "var": "fac"
+      },
+      "from": {
+        "code": "sum_+=N*N*abs(M-a)*a*comb_(N*M-2,K-2)",
+        "line": 77,
+        "var": "sum_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "mod=int(10**9+7)",
+        "line": 8,
+        "var": "mod"
+      },
+      "from": {
+        "code": "sum_%=mod",
+        "line": 78,
+        "var": "sum_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M,K=map(int,input().split())",
+        "line": 71,
+        "var": "K"
+      },
+      "from": {
+        "code": "sum_%=mod",
+        "line": 78,
+        "var": "sum_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,n):",
+        "line": 14,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.n=n",
+        "line": 15,
+        "var": "self.n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,n):",
+        "line": 14,
+        "var": "N"
+      },
+      "from": {
+        "code": "self.n=n",
+        "line": 15,
+        "var": "self.n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self.P=[a for a in range(N)]",
+        "line": 16,
+        "var": "N"
+      },
+      "from": {
+        "code": "self.P=[a for a in range(N)]",
+        "line": 16,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,n):",
+        "line": 14,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.P=[a for a in range(N)]",
+        "line": 16,
+        "var": "self.P"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,n):",
+        "line": 14,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.rank=[0]*n",
+        "line": 17,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,n):",
+        "line": 14,
+        "var": "N"
+      },
+      "from": {
+        "code": "self.rank=[0]*n",
+        "line": 17,
+        "var": "self.rank"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self,x):",
+        "line": 19,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.P[x]=self.find(self.P[x])",
+        "line": 20,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.P[x]=self.find(self.P[x])",
+        "line": 20,
+        "var": "self.P"
+      },
+      "from": {
+        "code": "self.P[x]=self.find(self.P[x])",
+        "line": 20,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self,x):",
+        "line": 19,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.P[x]=self.find(self.P[x])",
+        "line": 20,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.P[x]=y",
+        "line": 28,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.P[x]=y",
+        "line": 28,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.P[x]=y",
+        "line": 28,
+        "var": "self.P"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.P[y]=x",
+        "line": 30,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.P[y]=x",
+        "line": 30,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.P[y]=x",
+        "line": 30,
+        "var": "self.P"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.P[x]=y",
+        "line": 32,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.P[x]=y",
+        "line": 32,
+        "var": "self.P"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.P[x]=y",
+        "line": 32,
+        "var": "self.P"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self.rank[y]+=1",
+        "line": 33,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.rank[y]+=1",
+        "line": 33,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.rank[y]+=1",
+        "line": 33,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def link(self,x,y):",
+        "line": 26,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rank[y]+=1",
+        "line": 33,
+        "var": "self.rank"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def size(self):",
+        "line": 38,
+        "var": "a"
+      },
+      "from": {
+        "code": "S=set()",
+        "line": 39,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bin_(num,size):",
+        "line": 43,
+        "var": "size"
+      },
+      "from": {
+        "code": "A=[0]*size",
+        "line": 44,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bin_(num,size):",
+        "line": 43,
+        "var": "a"
+      },
+      "from": {
+        "code": "A=[0]*size",
+        "line": 44,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A[a]=1",
+        "line": 47,
+        "var": "a"
+      },
+      "from": {
+        "code": "A[a]=1",
+        "line": 47,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bin_(num,size):",
+        "line": 43,
+        "var": "num"
+      },
+      "from": {
+        "code": "A[a]=1",
+        "line": 47,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A[a]=0",
+        "line": 49,
+        "var": "a"
+      },
+      "from": {
+        "code": "A[a]=0",
+        "line": 49,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bin_(num,size):",
+        "line": 43,
+        "var": "num"
+      },
+      "from": {
+        "code": "A[a]=0",
+        "line": 49,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "num"
+      },
+      "from": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "size"
+      },
+      "from": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "num"
+      },
+      "from": {
+        "code": "y=num+x",
+        "line": 54,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "y=num+x",
+        "line": 54,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "size"
+      },
+      "from": {
+        "code": "y=num+x",
+        "line": 54,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "num"
+      },
+      "from": {
+        "code": "z=num&(~y)",
+        "line": 55,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "z=num&(~y)",
+        "line": 55,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y=num+x",
+        "line": 54,
+        "var": "y"
+      },
+      "from": {
+        "code": "z=num&(~y)",
+        "line": 55,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "size"
+      },
+      "from": {
+        "code": "z=num&(~y)",
+        "line": 55,
+        "var": "z"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "num"
+      },
+      "from": {
+        "code": "z//=x",
+        "line": 56,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "z//=x",
+        "line": 56,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "size"
+      },
+      "from": {
+        "code": "z//=x",
+        "line": 56,
+        "var": "z"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "num"
+      },
+      "from": {
+        "code": "z=z>>1",
+        "line": 57,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "z=z>>1",
+        "line": 57,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z//=x",
+        "line": 56,
+        "var": "z"
+      },
+      "from": {
+        "code": "z=z>>1",
+        "line": 57,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "size"
+      },
+      "from": {
+        "code": "z=z>>1",
+        "line": 57,
+        "var": "z"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x=num&(-num)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "num=(y|z)",
+        "line": 58,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y=num+x",
+        "line": 54,
+        "var": "y"
+      },
+      "from": {
+        "code": "num=(y|z)",
+        "line": 58,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z=z>>1",
+        "line": 57,
+        "var": "z"
+      },
+      "from": {
+        "code": "num=(y|z)",
+        "line": 58,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def next_comb(num,size):",
+        "line": 52,
+        "var": "size"
+      },
+      "from": {
+        "code": "num=(y|z)",
+        "line": 58,
+        "var": "num"
+      },
+      "label": "negative"
+    }
+  ]
+}

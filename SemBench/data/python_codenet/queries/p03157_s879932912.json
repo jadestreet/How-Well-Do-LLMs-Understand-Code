@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does variable y at line 24: <statement> y = self.Find_Root(y) </statement> determine the value stored in variable self.root at line 31: <statement> self.root[y] = x </statement>?",
+    "Does variable self at line 4: <statement> def __init__(self, n): </statement> determine the value stored in variable self.n at line 5: <statement> self.n = n </statement>?",
+    "Does the value of variable self.root at line 34: <statement> self.root[y] += self.root[x] </statement> depend on the value of variable self.root at line 31: <statement> self.root[y] = x </statement>?",
+    "Does variable H at line 49: <statement> H,W=map(int,input().split()) </statement> determine the value stored in variable W at line 49: <statement> H,W=map(int,input().split()) </statement>?"
+  ],
+  "dead_code": [
+    "Is the statement if(self.root[x] < 0): return x else: # \u3053\u3053\u3067\u4ee3\u5165\u3057\u3066\u304a\u304f\u3053\u3068\u3067\u3001\u5f8c\u306e\u7e70\u308a\u8fd4\u3057\u3092\u907f\u3051\u308b self.root[x] = self.Find_Root(self.root[x]) return self.root[x] unreachable during execution?",
+    "Can the statement ans+=dicw[i]*(n-dicw[i]) be considered dead code because it is never executed?",
+    "Is the statement tree.Unite(x,x+W) unreachable during execution?",
+    "Can the statement n=tree.Count(i) be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Does the statement line 56: <statement> tree.Unite(x,x-W) </statement> dominate line 53: <statement> for i in range(H): for j in range(W): x=i*W+j+1 if i>0 and s[i][j]!=s[i-1][j]: tree.Unite(x,x-W) if i<H-1 and s[i][j]!=s[i+1][j]: tree.Unite(x,x+W) if j>0 and s[i][j]!=s[i][j-1]: tree.Unite(x,x-1) if j<W-1 and s[i][j]!=s[i][j+1]: tree.Unite(x,x+1) </statement>?",
+    "Is it guaranteed that whenever line 37: <statement> if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1 </statement> is reached, the statement line 24: <statement> y = self.Find_Root(y) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 56: <statement> if i>0 and s[i][j]!=s[i-1][j]: tree.Unite(x,x-W) </statement> is reached, the statement line 49: <statement> H,W=map(int,input().split()) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 49: <statement> H,W=map(int,input().split()) </statement> is reached, the statement line 64: <statement> for i in range(H): for j in range(W): p=tree.Find_Root(i*W+j+1) if not p in dicw: dicw[p]=0 if s[i][j]==\".\": dicw[p]+=1 </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Can function UnionFind.Count eventually call function UnionFind.Find_Root?",
+    "Can function UnionFind.isSameGroup eventually call function UnionFind.Unite?",
+    "Can function UnionFind.Count eventually call function UnionFind.isSameGroup?",
+    "Is there a call path from function UnionFind.Unite to function UnionFind.Find_Root?"
+  ],
+  "liveness": [
+    "Is variable H live at the end of function __module__?",
+    "Is variable x live at the end of function UnionFind.Count?",
+    "Is variable self live at the end of function UnionFind.Count?",
+    "Does variable self.root remain in use at the end of function UnionFind.__init__?"
+  ],
+  "loop_reachability": [
+    "Is it possible that the loop with condition for i in dicw is never executed?",
+    "Is the loop with condition for i in dicw always executed?"
+  ]
+}

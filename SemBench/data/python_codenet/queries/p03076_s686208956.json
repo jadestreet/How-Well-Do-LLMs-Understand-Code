@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does variable FLAG_LOG at line 160: <statement> def get_mode(): </statement> determine the value stored in variable mode at line 165: <statement> mode = 0 </statement>?",
+    "Does variable value at line 122: <statement> amari = value % 10 </statement> determine the value stored in variable amari at line 122: <statement> amari = value % 10 </statement>?",
+    "Does the value of variable FLAG_LOG at line 95: <statement> FLAG_LOG = False </statement> depend on the value of variable __name__ at line 1: <statement> __module__ </statement>?",
+    "Does the value of variable lines_result at line 183: <statement> lines_result = calculation(lines_input) </statement> depend on the value of variable lines_input at line 181: <statement> lines_input, lines_export = get_testdata(mode) </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement return mode be considered dead code because it is never executed?",
+    "Can the statement if amari > 0: amaris.append(10-amari) be considered dead code because it is never executed?",
+    "Can the statement lines_input, lines_export = get_testdata(mode) be reached during execution?",
+    "Is it possible for the statement log(f'duration=[{duration}]') to execute?"
+  ],
+  "dominators": [
+    "Does the statement line 179: <statement> lines_input = get_input_lines(5) </statement> dominate line 178: <statement> if mode == 0: lines_input = get_input_lines(5) else: lines_input, lines_export = get_testdata(mode) </statement>?",
+    "Is it guaranteed that whenever line 112: <statement> for i in range(5): values.append(int(lines[i])) </statement> is reached, the statement line 111: <statement> values = list() </statement> has already been reached?",
+    "Does the statement line 169: <statement> FLAG_LOG = True </statement> dominate line 164: <statement> if len(args) == 1: mode = 0 FLAG_LOG = False else: mode = int(args[1]) FLAG_LOG = True </statement>?",
+    "Is it guaranteed that whenever line 151: <statement> lines_input = ['123', '123', '123', '123', '123'] </statement> is reached, the statement line 150: <statement> if pattern == 3: lines_input = ['123', '123', '123', '123', '123'] lines_export = [643] </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function main to function get_testdata?",
+    "Is there a call path from function get_mode to function log?",
+    "Is there a call path from function calculation to function get_input_lines?",
+    "Can function main eventually call function calculation?"
+  ],
+  "liveness": [
+    "Is variable mode live at the end of function main?",
+    "Does variable result remain in use at the end of function calculation?",
+    "Is variable lines_input live at the end of function get_testdata?",
+    "Is variable i live at the end of function calculation?"
+  ],
+  "loop_reachability": [
+    "Is it possible that the loop with condition for i in range(5) is never executed?",
+    "Is the loop with condition for i in range(5) always executed?"
+  ]
+}

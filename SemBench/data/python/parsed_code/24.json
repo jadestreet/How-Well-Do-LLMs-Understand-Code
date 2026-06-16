@@ -1,0 +1,911 @@
+{
+  "cfg_statements": [
+    {
+      "code": "self._q: List[Event] = []",
+      "dead": false,
+      "function": "Scheduler.__init__",
+      "kind": "AnnAssign",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "self._now = 0",
+      "dead": false,
+      "function": "Scheduler.__init__",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 2
+    },
+    {
+      "code": "evt = Event(self._now + delay, priority, action)",
+      "dead": false,
+      "function": "Scheduler.schedule",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "heapq.heappush(self._q, evt)",
+      "dead": false,
+      "function": "Scheduler.schedule",
+      "kind": "Expr",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "return evt",
+      "dead": false,
+      "function": "Scheduler.schedule",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "evt.cancelled = True",
+      "dead": false,
+      "function": "Scheduler.cancel",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 1
+    },
+    {
+      "code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "While",
+      "line": 27,
+      "node_id": 1
+    },
+    {
+      "code": "evt = heapq.heappop(self._q)",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 2
+    },
+    {
+      "code": "self._now = evt.time",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 3
+    },
+    {
+      "code": "if evt.cancelled: continue",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "If",
+      "line": 30,
+      "node_id": 4
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Continue",
+      "line": 31,
+      "node_id": 5
+    },
+    {
+      "code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Try",
+      "line": 32,
+      "node_id": 6
+    },
+    {
+      "code": "evt.action()",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Expr",
+      "line": 33,
+      "node_id": 7
+    },
+    {
+      "code": "pass",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Pass",
+      "line": 36,
+      "node_id": 8
+    },
+    {
+      "code": "self._now = end_time",
+      "dead": false,
+      "function": "Scheduler.run_until",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 9
+    },
+    {
+      "code": "return self._now",
+      "dead": false,
+      "function": "Scheduler.now",
+      "kind": "Return",
+      "line": 40,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self._q: List[Event] = []",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "self._now = 0",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "evt = Event(self._now + delay, priority, action)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "heapq.heappush(self._q, evt)",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return evt",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "evt.cancelled = True",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "evt = heapq.heappop(self._q)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "self._now = evt.time",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if evt.cancelled: continue",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "evt.action()",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "pass",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "self._now = end_time",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "return self._now",
+      "dead": false,
+      "line": 40
+    }
+  ],
+  "file": "SemBench/data/python/code/24.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 14,
+      "name": "Scheduler.__init__",
+      "variables": [
+        "self",
+        "self._now",
+        "self._q"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 21,
+      "lineno": 18,
+      "name": "Scheduler.schedule",
+      "variables": [
+        "action",
+        "delay",
+        "evt",
+        "heapq",
+        "priority",
+        "self",
+        "self._now",
+        "self._q"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 24,
+      "lineno": 23,
+      "name": "Scheduler.cancel",
+      "variables": [
+        "evt",
+        "evt.cancelled",
+        "self"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 37,
+      "lineno": 26,
+      "name": "Scheduler.run_until",
+      "variables": [
+        "end_time",
+        "evt",
+        "evt.cancelled",
+        "evt.time",
+        "heapq",
+        "self",
+        "self._now",
+        "self._q",
+        "self._q.time"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 40,
+      "lineno": 39,
+      "name": "Scheduler.now",
+      "variables": [
+        "self",
+        "self._now"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "Scheduler.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self._q: List[Event] = []",
+            "line": 15,
+            "vars": []
+          },
+          {
+            "code": "self._now = 0",
+            "line": 16,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._now": false,
+          "self._q": false
+        },
+        "return_vars": []
+      },
+      "Scheduler.cancel": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "evt.cancelled = True",
+            "line": 24,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "evt": false,
+          "evt.cancelled": false,
+          "self": false
+        },
+        "return_vars": []
+      },
+      "Scheduler.now": {
+        "base_liveout": [
+          "self._now"
+        ],
+        "live_before": [
+          {
+            "code": "return self._now",
+            "line": 40,
+            "vars": [
+              "self._now"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self._now": true
+        },
+        "return_vars": [
+          "self._now"
+        ]
+      },
+      "Scheduler.run_until": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+            "line": 27,
+            "vars": [
+              "end_time",
+              "evt.cancelled",
+              "evt.time",
+              "heapq",
+              "self._q",
+              "self._q.time"
+            ]
+          },
+          {
+            "code": "evt = heapq.heappop(self._q)",
+            "line": 28,
+            "vars": [
+              "end_time",
+              "evt.cancelled",
+              "evt.time",
+              "heapq",
+              "self._q"
+            ]
+          },
+          {
+            "code": "self._now = evt.time",
+            "line": 29,
+            "vars": [
+              "end_time",
+              "evt",
+              "evt.cancelled",
+              "evt.time"
+            ]
+          },
+          {
+            "code": "if evt.cancelled: continue",
+            "line": 30,
+            "vars": [
+              "end_time",
+              "evt",
+              "evt.cancelled"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 31,
+            "vars": [
+              "end_time",
+              "evt"
+            ]
+          },
+          {
+            "code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+            "line": 32,
+            "vars": [
+              "end_time",
+              "evt"
+            ]
+          },
+          {
+            "code": "evt.action()",
+            "line": 33,
+            "vars": [
+              "end_time",
+              "evt"
+            ]
+          },
+          {
+            "code": "pass",
+            "line": 36,
+            "vars": [
+              "end_time"
+            ]
+          },
+          {
+            "code": "self._now = end_time",
+            "line": 37,
+            "vars": [
+              "end_time"
+            ]
+          }
+        ],
+        "liveout": {
+          "end_time": false,
+          "evt": false,
+          "evt.cancelled": false,
+          "evt.time": false,
+          "heapq": false,
+          "self": false,
+          "self._now": false,
+          "self._q": false,
+          "self._q.time": false
+        },
+        "return_vars": []
+      },
+      "Scheduler.schedule": {
+        "base_liveout": [
+          "evt"
+        ],
+        "live_before": [
+          {
+            "code": "evt = Event(self._now + delay, priority, action)",
+            "line": 19,
+            "vars": [
+              "action",
+              "delay",
+              "heapq",
+              "priority",
+              "self._now",
+              "self._q"
+            ]
+          },
+          {
+            "code": "heapq.heappush(self._q, evt)",
+            "line": 20,
+            "vars": [
+              "evt",
+              "heapq",
+              "self._q"
+            ]
+          },
+          {
+            "code": "return evt",
+            "line": 21,
+            "vars": [
+              "evt"
+            ]
+          }
+        ],
+        "liveout": {
+          "action": false,
+          "delay": false,
+          "evt": true,
+          "heapq": false,
+          "priority": false,
+          "self": false,
+          "self._now": false,
+          "self._q": false
+        },
+        "return_vars": [
+          "evt"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while self._q and self._q[0].time <= end_time:",
+      "cond": "self._q and self._q[0].time <= end_time",
+      "function": "Scheduler.run_until",
+      "header_id": 1,
+      "line": 27,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "self._q: List[Event] = []",
+      "a_line": 15,
+      "b_code": "self._now = 0",
+      "b_line": 16,
+      "function": "Scheduler.__init__"
+    },
+    {
+      "a_code": "evt = Event(self._now + delay, priority, action)",
+      "a_line": 19,
+      "b_code": "heapq.heappush(self._q, evt)",
+      "b_line": 20,
+      "function": "Scheduler.schedule"
+    },
+    {
+      "a_code": "evt = Event(self._now + delay, priority, action)",
+      "a_line": 19,
+      "b_code": "return evt",
+      "b_line": 21,
+      "function": "Scheduler.schedule"
+    },
+    {
+      "a_code": "heapq.heappush(self._q, evt)",
+      "a_line": 20,
+      "b_code": "return evt",
+      "b_line": 21,
+      "function": "Scheduler.schedule"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "evt = heapq.heappop(self._q)",
+      "b_line": 28,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "self._now = evt.time",
+      "b_line": 29,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "evt = heapq.heappop(self._q)",
+      "a_line": 28,
+      "b_code": "self._now = evt.time",
+      "b_line": 29,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "if evt.cancelled: continue",
+      "b_line": 30,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "evt = heapq.heappop(self._q)",
+      "a_line": 28,
+      "b_code": "if evt.cancelled: continue",
+      "b_line": 30,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "self._now = evt.time",
+      "a_line": 29,
+      "b_code": "if evt.cancelled: continue",
+      "b_line": 30,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "continue",
+      "b_line": 31,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "evt = heapq.heappop(self._q)",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 31,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "self._now = evt.time",
+      "a_line": 29,
+      "b_code": "continue",
+      "b_line": 31,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "if evt.cancelled: continue",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 31,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "b_line": 32,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "evt = heapq.heappop(self._q)",
+      "a_line": 28,
+      "b_code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "b_line": 32,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "self._now = evt.time",
+      "a_line": 29,
+      "b_code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "b_line": 32,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "if evt.cancelled: continue",
+      "a_line": 30,
+      "b_code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "b_line": 32,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "evt.action()",
+      "b_line": 33,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "evt = heapq.heappop(self._q)",
+      "a_line": 28,
+      "b_code": "evt.action()",
+      "b_line": 33,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "self._now = evt.time",
+      "a_line": 29,
+      "b_code": "evt.action()",
+      "b_line": 33,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "if evt.cancelled: continue",
+      "a_line": 30,
+      "b_code": "evt.action()",
+      "b_line": 33,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 32,
+      "b_code": "evt.action()",
+      "b_line": 33,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "pass",
+      "b_line": 36,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "evt = heapq.heappop(self._q)",
+      "a_line": 28,
+      "b_code": "pass",
+      "b_line": 36,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "self._now = evt.time",
+      "a_line": 29,
+      "b_code": "pass",
+      "b_line": 36,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "if evt.cancelled: continue",
+      "a_line": 30,
+      "b_code": "pass",
+      "b_line": 36,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 32,
+      "b_code": "pass",
+      "b_line": 36,
+      "function": "Scheduler.run_until"
+    },
+    {
+      "a_code": "while self._q and self._q[0].time <= end_time: evt = heapq.heappop(self._q) self._now = evt.time if evt.cancelled: continue try: evt.action() except Exception: # swallow errors to keep loop running pass",
+      "a_line": 27,
+      "b_code": "self._now = end_time",
+      "b_line": 37,
+      "function": "Scheduler.run_until"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped evt.action at line 33"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped evt.action at line 33"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self) -> None:",
+        "line": 14,
+        "var": "self"
+      },
+      "from": {
+        "code": "self._q: List[Event] = []",
+        "line": 15,
+        "var": "self._q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self) -> None:",
+        "line": 14,
+        "var": "self"
+      },
+      "from": {
+        "code": "self._now = 0",
+        "line": 16,
+        "var": "self._now"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def schedule(self, delay:",
+        "line": 18,
+        "var": "action"
+      },
+      "from": {
+        "code": "evt = Event(self._now + delay, priority, action)",
+        "line": 19,
+        "var": "evt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def schedule(self, delay:",
+        "line": 18,
+        "var": "delay"
+      },
+      "from": {
+        "code": "evt = Event(self._now + delay, priority, action)",
+        "line": 19,
+        "var": "evt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def schedule(self, delay:",
+        "line": 18,
+        "var": "priority"
+      },
+      "from": {
+        "code": "evt = Event(self._now + delay, priority, action)",
+        "line": 19,
+        "var": "evt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evt = Event(self._now + delay, priority, action)",
+        "line": 19,
+        "var": "self._now"
+      },
+      "from": {
+        "code": "evt = Event(self._now + delay, priority, action)",
+        "line": 19,
+        "var": "evt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def schedule(self, delay:",
+        "line": 18,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "evt = Event(self._now + delay, priority, action)",
+        "line": 19,
+        "var": "evt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def cancel(self, evt:",
+        "line": 23,
+        "var": "evt"
+      },
+      "from": {
+        "code": "evt.cancelled = True",
+        "line": 24,
+        "var": "evt.cancelled"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "evt = heapq.heappop(self._q)",
+        "line": 28,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "evt = heapq.heappop(self._q)",
+        "line": 28,
+        "var": "evt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evt = heapq.heappop(self._q)",
+        "line": 28,
+        "var": "self._q"
+      },
+      "from": {
+        "code": "evt = heapq.heappop(self._q)",
+        "line": 28,
+        "var": "evt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def run_until(self, end_time:",
+        "line": 26,
+        "var": "end_time"
+      },
+      "from": {
+        "code": "evt = heapq.heappop(self._q)",
+        "line": 28,
+        "var": "evt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self._now = evt.time",
+        "line": 29,
+        "var": "evt.time"
+      },
+      "from": {
+        "code": "self._now = evt.time",
+        "line": 29,
+        "var": "self._now"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def run_until(self, end_time:",
+        "line": 26,
+        "var": "end_time"
+      },
+      "from": {
+        "code": "self._now = evt.time",
+        "line": 29,
+        "var": "self._now"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def run_until(self, end_time:",
+        "line": 26,
+        "var": "end_time"
+      },
+      "from": {
+        "code": "self._now = end_time",
+        "line": 37,
+        "var": "self._now"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evt = heapq.heappop(self._q)",
+        "line": 28,
+        "var": "evt"
+      },
+      "from": {
+        "code": "self._now = end_time",
+        "line": 37,
+        "var": "self._now"
+      },
+      "label": "negative"
+    }
+  ]
+}

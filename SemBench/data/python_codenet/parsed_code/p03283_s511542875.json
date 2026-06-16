@@ -1,0 +1,3244 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from sys import stdin",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 27,
+      "node_id": 1
+    },
+    {
+      "code": "input = stdin.buffer.readline",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 2
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 60,
+      "node_id": 3
+    },
+    {
+      "code": "self.size = n",
+      "dead": false,
+      "function": "BinaryIndexedTree.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "self.data = [0] * (n+1)",
+      "dead": false,
+      "function": "BinaryIndexedTree.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "BinaryIndexedTree.cumulative_sum",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "while i > 0: ans += self.data[i] i -= i & -i",
+      "dead": false,
+      "function": "BinaryIndexedTree.cumulative_sum",
+      "kind": "While",
+      "line": 14,
+      "node_id": 2
+    },
+    {
+      "code": "ans += self.data[i]",
+      "dead": false,
+      "function": "BinaryIndexedTree.cumulative_sum",
+      "kind": "AugAssign",
+      "line": 15,
+      "node_id": 3
+    },
+    {
+      "code": "i -= i & -i",
+      "dead": false,
+      "function": "BinaryIndexedTree.cumulative_sum",
+      "kind": "AugAssign",
+      "line": 16,
+      "node_id": 4
+    },
+    {
+      "code": "return ans",
+      "dead": false,
+      "function": "BinaryIndexedTree.cumulative_sum",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 5
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "BinaryIndexedTree.add",
+      "kind": "AugAssign",
+      "line": 22,
+      "node_id": 1
+    },
+    {
+      "code": "while i <= self.size: self.data[i] += x i += i & -i",
+      "dead": false,
+      "function": "BinaryIndexedTree.add",
+      "kind": "While",
+      "line": 23,
+      "node_id": 2
+    },
+    {
+      "code": "self.data[i] += x",
+      "dead": false,
+      "function": "BinaryIndexedTree.add",
+      "kind": "AugAssign",
+      "line": 24,
+      "node_id": 3
+    },
+    {
+      "code": "i += i & -i",
+      "dead": false,
+      "function": "BinaryIndexedTree.add",
+      "kind": "AugAssign",
+      "line": 25,
+      "node_id": 4
+    },
+    {
+      "code": "n, m, q = map(int, input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 1
+    },
+    {
+      "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 2
+    },
+    {
+      "code": "pq = [(0, 0, 0)] * q",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 3
+    },
+    {
+      "code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 34,
+      "node_id": 4
+    },
+    {
+      "code": "i, j = map(int, input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 5
+    },
+    {
+      "code": "pq[ind] = (i, j, ind)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 6
+    },
+    {
+      "code": "lr.sort(key=lambda x: x[0])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 38,
+      "node_id": 7
+    },
+    {
+      "code": "l = [i for i, j in lr]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 8
+    },
+    {
+      "code": "r = [j for i, j in lr]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 9
+    },
+    {
+      "code": "pq.sort(key=lambda x: x[0])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 41,
+      "node_id": 10
+    },
+    {
+      "code": "BIT = BinaryIndexedTree(n+1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 11
+    },
+    {
+      "code": "for i in r: BIT.add(i, 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 44,
+      "node_id": 12
+    },
+    {
+      "code": "BIT.add(i, 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 45,
+      "node_id": 13
+    },
+    {
+      "code": "lr_ind = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 14
+    },
+    {
+      "code": "ans = [0] * q",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 15
+    },
+    {
+      "code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 50,
+      "node_id": 16
+    },
+    {
+      "code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "dead": false,
+      "function": "main",
+      "kind": "While",
+      "line": 51,
+      "node_id": 17
+    },
+    {
+      "code": "BIT.add(r[lr_ind], -1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 52,
+      "node_id": 18
+    },
+    {
+      "code": "lr_ind += 1",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 53,
+      "node_id": 19
+    },
+    {
+      "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 55,
+      "node_id": 20
+    },
+    {
+      "code": "for i in ans: print(i)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 57,
+      "node_id": 21
+    },
+    {
+      "code": "print(i)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 22
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.size = n",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.data = [0] * (n+1)",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "while i > 0: ans += self.data[i] i -= i & -i",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "ans += self.data[i]",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "i -= i & -i",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return ans",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "while i <= self.size: self.data[i] += x i += i & -i",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.data[i] += x",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "i += i & -i",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "from sys import stdin",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "input = stdin.buffer.readline",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "n, m, q = map(int, input().split())",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "pq = [(0, 0, 0)] * q",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "i, j = map(int, input().split())",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "pq[ind] = (i, j, ind)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "lr.sort(key=lambda x: x[0])",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "l = [i for i, j in lr]",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "r = [j for i, j in lr]",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "pq.sort(key=lambda x: x[0])",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "BIT = BinaryIndexedTree(n+1)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "for i in r: BIT.add(i, 1)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "BIT.add(i, 1)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "lr_ind = 0",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "ans = [0] * q",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "BIT.add(r[lr_ind], -1)",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "lr_ind += 1",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "for i in ans: print(i)",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "print(i)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 60
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p03283_s511542875.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 6,
+      "name": "BinaryIndexedTree.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.data",
+        "self.size"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 12,
+      "name": "BinaryIndexedTree.cumulative_sum",
+      "variables": [
+        "ans",
+        "i",
+        "self",
+        "self.data"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 25,
+      "lineno": 21,
+      "name": "BinaryIndexedTree.add",
+      "variables": [
+        "i",
+        "self",
+        "self.data",
+        "self.size",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "BinaryIndexedTree.__init__"
+      ],
+      "end_lineno": 58,
+      "lineno": 30,
+      "name": "main",
+      "variables": [
+        "BIT",
+        "ans",
+        "i",
+        "ind",
+        "int",
+        "j",
+        "l",
+        "left",
+        "lr",
+        "lr_ind",
+        "m",
+        "n",
+        "pq",
+        "pq_ind",
+        "q",
+        "r",
+        "right",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "BinaryIndexedTree.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.size = n",
+            "line": 7,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.data = [0] * (n+1)",
+            "line": 8,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.data": false,
+          "self.size": false
+        },
+        "return_vars": []
+      },
+      "BinaryIndexedTree.add": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "i += 1",
+            "line": 22,
+            "vars": [
+              "self.data",
+              "self.size",
+              "x"
+            ]
+          },
+          {
+            "code": "while i <= self.size: self.data[i] += x i += i & -i",
+            "line": 23,
+            "vars": [
+              "i",
+              "self.data",
+              "self.size",
+              "x"
+            ]
+          },
+          {
+            "code": "self.data[i] += x",
+            "line": 24,
+            "vars": [
+              "i",
+              "self.data",
+              "x"
+            ]
+          },
+          {
+            "code": "i += i & -i",
+            "line": 25,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "self": false,
+          "self.data": false,
+          "self.size": false,
+          "x": false
+        },
+        "return_vars": []
+      },
+      "BinaryIndexedTree.cumulative_sum": {
+        "base_liveout": [
+          "ans"
+        ],
+        "live_before": [
+          {
+            "code": "ans = 0",
+            "line": 13,
+            "vars": [
+              "i",
+              "self.data"
+            ]
+          },
+          {
+            "code": "while i > 0: ans += self.data[i] i -= i & -i",
+            "line": 14,
+            "vars": [
+              "i",
+              "self.data"
+            ]
+          },
+          {
+            "code": "ans += self.data[i]",
+            "line": 15,
+            "vars": [
+              "i",
+              "self.data"
+            ]
+          },
+          {
+            "code": "i -= i & -i",
+            "line": 16,
+            "vars": [
+              "ans",
+              "i"
+            ]
+          },
+          {
+            "code": "return ans",
+            "line": 17,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "ans": true,
+          "i": false,
+          "self": false,
+          "self.data": false
+        },
+        "return_vars": [
+          "ans"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from sys import stdin",
+            "line": 27,
+            "vars": [
+              "stdin.buffer.readline"
+            ]
+          },
+          {
+            "code": "input = stdin.buffer.readline",
+            "line": 28,
+            "vars": [
+              "stdin.buffer.readline"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 60,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "input": false,
+          "stdin.buffer.readline": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n, m, q = map(int, input().split())",
+            "line": 31,
+            "vars": [
+              "int",
+              "x"
+            ]
+          },
+          {
+            "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+            "line": 32,
+            "vars": [
+              "int",
+              "m",
+              "n",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "pq = [(0, 0, 0)] * q",
+            "line": 33,
+            "vars": [
+              "int",
+              "lr",
+              "m",
+              "n",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+            "line": 34,
+            "vars": [
+              "int",
+              "lr",
+              "m",
+              "n",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "i, j = map(int, input().split())",
+            "line": 35,
+            "vars": [
+              "ind",
+              "int",
+              "lr",
+              "m",
+              "n",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "pq[ind] = (i, j, ind)",
+            "line": 36,
+            "vars": [
+              "i",
+              "ind",
+              "j",
+              "lr",
+              "m",
+              "n",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "lr.sort(key=lambda x: x[0])",
+            "line": 38,
+            "vars": [
+              "lr",
+              "m",
+              "n",
+              "pq",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "l = [i for i, j in lr]",
+            "line": 39,
+            "vars": [
+              "lr",
+              "m",
+              "n",
+              "pq",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "r = [j for i, j in lr]",
+            "line": 40,
+            "vars": [
+              "l",
+              "lr",
+              "m",
+              "n",
+              "pq",
+              "q",
+              "x"
+            ]
+          },
+          {
+            "code": "pq.sort(key=lambda x: x[0])",
+            "line": 41,
+            "vars": [
+              "l",
+              "m",
+              "n",
+              "pq",
+              "q",
+              "r",
+              "x"
+            ]
+          },
+          {
+            "code": "BIT = BinaryIndexedTree(n+1)",
+            "line": 43,
+            "vars": [
+              "l",
+              "m",
+              "n",
+              "pq",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "for i in r: BIT.add(i, 1)",
+            "line": 44,
+            "vars": [
+              "BIT",
+              "l",
+              "m",
+              "pq",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "BIT.add(i, 1)",
+            "line": 45,
+            "vars": [
+              "BIT",
+              "i",
+              "l",
+              "m",
+              "pq",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "lr_ind = 0",
+            "line": 48,
+            "vars": [
+              "BIT",
+              "l",
+              "m",
+              "pq",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "ans = [0] * q",
+            "line": 49,
+            "vars": [
+              "BIT",
+              "l",
+              "lr_ind",
+              "m",
+              "pq",
+              "q",
+              "r"
+            ]
+          },
+          {
+            "code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+            "line": 50,
+            "vars": [
+              "BIT",
+              "l",
+              "lr_ind",
+              "m",
+              "pq",
+              "r"
+            ]
+          },
+          {
+            "code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+            "line": 51,
+            "vars": [
+              "BIT",
+              "l",
+              "left",
+              "lr_ind",
+              "m",
+              "pq_ind",
+              "r",
+              "right"
+            ]
+          },
+          {
+            "code": "BIT.add(r[lr_ind], -1)",
+            "line": 52,
+            "vars": [
+              "BIT",
+              "lr_ind",
+              "pq_ind",
+              "r",
+              "right"
+            ]
+          },
+          {
+            "code": "lr_ind += 1",
+            "line": 53,
+            "vars": [
+              "BIT",
+              "pq_ind",
+              "right"
+            ]
+          },
+          {
+            "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+            "line": 55,
+            "vars": [
+              "BIT",
+              "pq_ind",
+              "right"
+            ]
+          },
+          {
+            "code": "for i in ans: print(i)",
+            "line": 57,
+            "vars": [
+              "ans"
+            ]
+          },
+          {
+            "code": "print(i)",
+            "line": 58,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "BIT": false,
+          "ans": false,
+          "i": false,
+          "ind": false,
+          "int": false,
+          "j": false,
+          "l": false,
+          "left": false,
+          "lr": false,
+          "lr_ind": false,
+          "m": false,
+          "n": false,
+          "pq": false,
+          "pq_ind": false,
+          "q": false,
+          "r": false,
+          "right": false,
+          "x": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while i <= self.size:",
+      "cond": "i <= self.size",
+      "function": "BinaryIndexedTree.add",
+      "header_id": 2,
+      "line": 23,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while i > 0:",
+      "cond": "i > 0",
+      "function": "BinaryIndexedTree.cumulative_sum",
+      "header_id": 2,
+      "line": 14,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ind in range(q):",
+      "cond": "for ind in range(q)",
+      "function": "main",
+      "header_id": 4,
+      "line": 34,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in r:",
+      "cond": "for i in r",
+      "function": "main",
+      "header_id": 12,
+      "line": 44,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for left, right, pq_ind in pq:",
+      "cond": "for left, right, pq_ind in pq",
+      "function": "main",
+      "header_id": 16,
+      "line": 50,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while lr_ind < m and l[lr_ind] < left:",
+      "cond": "lr_ind < m and l[lr_ind] < left",
+      "function": "main",
+      "header_id": 17,
+      "line": 51,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in ans:",
+      "cond": "for i in ans",
+      "function": "main",
+      "header_id": 21,
+      "line": 57,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from sys import stdin",
+      "a_line": 27,
+      "b_code": "input = stdin.buffer.readline",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from sys import stdin",
+      "a_line": 27,
+      "b_code": "main()",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = stdin.buffer.readline",
+      "a_line": 28,
+      "b_code": "main()",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.size = n",
+      "a_line": 7,
+      "b_code": "self.data = [0] * (n+1)",
+      "b_line": 8,
+      "function": "BinaryIndexedTree.__init__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 13,
+      "b_code": "while i > 0: ans += self.data[i] i -= i & -i",
+      "b_line": 14,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 13,
+      "b_code": "ans += self.data[i]",
+      "b_line": 15,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "while i > 0: ans += self.data[i] i -= i & -i",
+      "a_line": 14,
+      "b_code": "ans += self.data[i]",
+      "b_line": 15,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 13,
+      "b_code": "i -= i & -i",
+      "b_line": 16,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "while i > 0: ans += self.data[i] i -= i & -i",
+      "a_line": 14,
+      "b_code": "i -= i & -i",
+      "b_line": 16,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "ans += self.data[i]",
+      "a_line": 15,
+      "b_code": "i -= i & -i",
+      "b_line": 16,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 13,
+      "b_code": "return ans",
+      "b_line": 17,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "while i > 0: ans += self.data[i] i -= i & -i",
+      "a_line": 14,
+      "b_code": "return ans",
+      "b_line": 17,
+      "function": "BinaryIndexedTree.cumulative_sum"
+    },
+    {
+      "a_code": "i += 1",
+      "a_line": 22,
+      "b_code": "while i <= self.size: self.data[i] += x i += i & -i",
+      "b_line": 23,
+      "function": "BinaryIndexedTree.add"
+    },
+    {
+      "a_code": "i += 1",
+      "a_line": 22,
+      "b_code": "self.data[i] += x",
+      "b_line": 24,
+      "function": "BinaryIndexedTree.add"
+    },
+    {
+      "a_code": "while i <= self.size: self.data[i] += x i += i & -i",
+      "a_line": 23,
+      "b_code": "self.data[i] += x",
+      "b_line": 24,
+      "function": "BinaryIndexedTree.add"
+    },
+    {
+      "a_code": "i += 1",
+      "a_line": 22,
+      "b_code": "i += i & -i",
+      "b_line": 25,
+      "function": "BinaryIndexedTree.add"
+    },
+    {
+      "a_code": "while i <= self.size: self.data[i] += x i += i & -i",
+      "a_line": 23,
+      "b_code": "i += i & -i",
+      "b_line": 25,
+      "function": "BinaryIndexedTree.add"
+    },
+    {
+      "a_code": "self.data[i] += x",
+      "a_line": 24,
+      "b_code": "i += i & -i",
+      "b_line": 25,
+      "function": "BinaryIndexedTree.add"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "pq = [(0, 0, 0)] * q",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "pq = [(0, 0, 0)] * q",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "i, j = map(int, input().split())",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "i, j = map(int, input().split())",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "i, j = map(int, input().split())",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "i, j = map(int, input().split())",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "pq[ind] = (i, j, ind)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "pq[ind] = (i, j, ind)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "pq[ind] = (i, j, ind)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "pq[ind] = (i, j, ind)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "i, j = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "pq[ind] = (i, j, ind)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "lr.sort(key=lambda x: x[0])",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "lr.sort(key=lambda x: x[0])",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "lr.sort(key=lambda x: x[0])",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "lr.sort(key=lambda x: x[0])",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "l = [i for i, j in lr]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "l = [i for i, j in lr]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "l = [i for i, j in lr]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "l = [i for i, j in lr]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "l = [i for i, j in lr]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "r = [j for i, j in lr]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "r = [j for i, j in lr]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "r = [j for i, j in lr]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "r = [j for i, j in lr]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "r = [j for i, j in lr]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "r = [j for i, j in lr]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "pq.sort(key=lambda x: x[0])",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "BIT = BinaryIndexedTree(n+1)",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "for i in r: BIT.add(i, 1)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "BIT.add(i, 1)",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "lr_ind = 0",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "ans = [0] * q",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "a_line": 50,
+      "b_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "a_line": 50,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "a_line": 51,
+      "b_code": "BIT.add(r[lr_ind], -1)",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "a_line": 50,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "a_line": 51,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT.add(r[lr_ind], -1)",
+      "a_line": 52,
+      "b_code": "lr_ind += 1",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "a_line": 50,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1",
+      "a_line": 51,
+      "b_code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "a_line": 50,
+      "b_code": "for i in ans: print(i)",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "n, m, q = map(int, input().split())",
+      "a_line": 31,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+      "a_line": 32,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "pq = [(0, 0, 0)] * q",
+      "a_line": 33,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for ind in range(q): i, j = map(int, input().split()) pq[ind] = (i, j, ind)",
+      "a_line": 34,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "lr.sort(key=lambda x: x[0])",
+      "a_line": 38,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "l = [i for i, j in lr]",
+      "a_line": 39,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "r = [j for i, j in lr]",
+      "a_line": 40,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "pq.sort(key=lambda x: x[0])",
+      "a_line": 41,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "BIT = BinaryIndexedTree(n+1)",
+      "a_line": 43,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in r: BIT.add(i, 1)",
+      "a_line": 44,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "lr_ind = 0",
+      "a_line": 48,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = [0] * q",
+      "a_line": 49,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for left, right, pq_ind in pq: while lr_ind < m and l[lr_ind] < left: BIT.add(r[lr_ind], -1) lr_ind += 1 ans[pq_ind] = BIT.cumulative_sum(right+1)",
+      "a_line": 50,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in ans: print(i)",
+      "a_line": 57,
+      "b_code": "print(i)",
+      "b_line": 58,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped BIT.cumulative_sum at line 55",
+      "external call skipped input at line 31",
+      "external call skipped input at line 32",
+      "external call skipped input at line 35"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped BIT.cumulative_sum at line 55",
+    "external call skipped input at line 31",
+    "external call skipped input at line 32",
+    "external call skipped input at line 35"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "input = stdin.buffer.readline",
+        "line": 28,
+        "var": "stdin.buffer.readline"
+      },
+      "from": {
+        "code": "input = stdin.buffer.readline",
+        "line": 28,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.size = n",
+        "line": 7,
+        "var": "self.size"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.size = n",
+        "line": 7,
+        "var": "self.size"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.data = [0] * (n+1)",
+        "line": 8,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.data = [0] * (n+1)",
+        "line": 8,
+        "var": "self.data"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def cumulative_sum(self, i):",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 13,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def cumulative_sum(self, i):",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += self.data[i]",
+        "line": 15,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += self.data[i]",
+        "line": 15,
+        "var": "self.data"
+      },
+      "from": {
+        "code": "ans += self.data[i]",
+        "line": 15,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def cumulative_sum(self, i):",
+        "line": 12,
+        "var": "self"
+      },
+      "from": {
+        "code": "ans += self.data[i]",
+        "line": 15,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def cumulative_sum(self, i):",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "i -= i & -i",
+        "line": 16,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += self.data[i]",
+        "line": 15,
+        "var": "ans"
+      },
+      "from": {
+        "code": "i -= i & -i",
+        "line": 16,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, i, x):",
+        "line": 21,
+        "var": "self"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 22,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 22,
+        "var": "i"
+      },
+      "from": {
+        "code": "self.data[i] += x",
+        "line": 24,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.data[i] += x",
+        "line": 24,
+        "var": "self.data"
+      },
+      "from": {
+        "code": "self.data[i] += x",
+        "line": 24,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, i, x):",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.data[i] += x",
+        "line": 24,
+        "var": "self.data"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, i, x):",
+        "line": 21,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.data[i] += x",
+        "line": 24,
+        "var": "self.data"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 22,
+        "var": "i"
+      },
+      "from": {
+        "code": "i += i & -i",
+        "line": 25,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self, i, x):",
+        "line": 21,
+        "var": "self"
+      },
+      "from": {
+        "code": "i += i & -i",
+        "line": 25,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+        "line": 32,
+        "var": "int"
+      },
+      "from": {
+        "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+        "line": 32,
+        "var": "lr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "m"
+      },
+      "from": {
+        "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+        "line": 32,
+        "var": "lr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+        "line": 32,
+        "var": "lr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "pq = [(0, 0, 0)] * q",
+        "line": 33,
+        "var": "int"
+      },
+      "from": {
+        "code": "pq = [(0, 0, 0)] * q",
+        "line": 33,
+        "var": "pq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "q"
+      },
+      "from": {
+        "code": "pq = [(0, 0, 0)] * q",
+        "line": 33,
+        "var": "pq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "pq = [(0, 0, 0)] * q",
+        "line": 33,
+        "var": "pq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "j"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "j"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "i"
+      },
+      "from": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "pq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "ind"
+      },
+      "from": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "pq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "int"
+      },
+      "from": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "pq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "j"
+      },
+      "from": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "pq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "pq[ind] = (i, j, ind)",
+        "line": 36,
+        "var": "pq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "l = [i for i, j in lr]",
+        "line": 39,
+        "var": "int"
+      },
+      "from": {
+        "code": "l = [i for i, j in lr]",
+        "line": 39,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+        "line": 32,
+        "var": "lr"
+      },
+      "from": {
+        "code": "l = [i for i, j in lr]",
+        "line": 39,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "m"
+      },
+      "from": {
+        "code": "l = [i for i, j in lr]",
+        "line": 39,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "l = [i for i, j in lr]",
+        "line": 39,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r = [j for i, j in lr]",
+        "line": 40,
+        "var": "int"
+      },
+      "from": {
+        "code": "r = [j for i, j in lr]",
+        "line": 40,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "lr = [tuple(map(int, input().split())) for _ in range(m)]",
+        "line": 32,
+        "var": "lr"
+      },
+      "from": {
+        "code": "r = [j for i, j in lr]",
+        "line": 40,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "m"
+      },
+      "from": {
+        "code": "r = [j for i, j in lr]",
+        "line": 40,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "r = [j for i, j in lr]",
+        "line": 40,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "int"
+      },
+      "from": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "n"
+      },
+      "from": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 30,
+        "var": "ans"
+      },
+      "from": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "lr_ind = 0",
+        "line": 48,
+        "var": "lr_ind"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans = [0] * q",
+        "line": 49,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans = [0] * q",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "q"
+      },
+      "from": {
+        "code": "ans = [0] * q",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "ans = [0] * q",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "lr_ind += 1",
+        "line": 53,
+        "var": "lr_ind"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "BIT = BinaryIndexedTree(n+1)",
+        "line": 43,
+        "var": "BIT"
+      },
+      "from": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, q = map(int, input().split())",
+        "line": 31,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "pq_ind"
+      },
+      "from": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "right"
+      },
+      "from": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i, j = map(int, input().split())",
+        "line": 35,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans[pq_ind] = BIT.cumulative_sum(right+1)",
+        "line": 55,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

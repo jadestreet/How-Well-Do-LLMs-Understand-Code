@@ -14,6 +14,7 @@ BASE_DIR = os.path.join(os.getcwd(), "data")
 QUERY_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "queries")
 GROUND_TRUTH_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "ground_truth")
 PARSED_CODE_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "parsed_code")
+PARSED_DATADEPENDENCY_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "parsed_datadependency")
 PARSED_CODE_LIVENESS_DIR = os.path.join(BASE_DIR, TYPE_KERNELS, "CFG_liveness_parsed")
 os.makedirs(QUERY_DIR, exist_ok=True)
 os.makedirs(GROUND_TRUTH_DIR, exist_ok=True)
@@ -371,7 +372,7 @@ def generate_variable_dependency_pair_queries(parsed_code, file_name):
       variable {var} at line {line}: <statement> {code} </statement>
     """
     def load_parsed_code_self(file_name):
-        parsed_path = os.path.join("/home/jade/LLM_semantic/data/loop3_1000/parsed_datadependency", f"{file_name}.json")
+        parsed_path = os.path.join(PARSED_DATADEPENDENCY_DIR, f"{file_name}.json")
         if os.path.exists(parsed_path):
             with open(parsed_path, "r") as f:
                 return json.load(f)

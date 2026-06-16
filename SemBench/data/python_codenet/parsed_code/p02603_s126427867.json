@@ -1,0 +1,3265 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "import time,random",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "inf = 10**20",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "eps = 1.0 / 10**10",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 5
+    },
+    {
+      "code": "mod = 10**9+7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 6
+    },
+    {
+      "code": "mod2 = 998244353",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 7
+    },
+    {
+      "code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 8
+    },
+    {
+      "code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 9
+    },
+    {
+      "code": "print(main())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 59,
+      "node_id": 10
+    },
+    {
+      "code": "return list(map(int, sys.stdin.readline().split()))",
+      "dead": false,
+      "function": "LI",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return [list(map(int, l.split())) for l in sys.stdin.readlines()]",
+      "dead": false,
+      "function": "LLI",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "return [int(x)-1 for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "function": "LI_",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return [float(x) for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "function": "LF",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "return sys.stdin.readline().split()",
+      "dead": false,
+      "function": "LS",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "return int(sys.stdin.readline())",
+      "dead": false,
+      "function": "I",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "return float(sys.stdin.readline())",
+      "dead": false,
+      "function": "F",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 1
+    },
+    {
+      "code": "return input()",
+      "dead": false,
+      "function": "S",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "return print(s, flush=True)",
+      "dead": false,
+      "function": "pf",
+      "kind": "Return",
+      "line": 20,
+      "node_id": 1
+    },
+    {
+      "code": "return print(str(s), file=sys.stderr)",
+      "dead": false,
+      "function": "pe",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "return sep.join(map(str, a))",
+      "dead": false,
+      "function": "JA",
+      "kind": "Return",
+      "line": 22,
+      "node_id": 1
+    },
+    {
+      "code": "return s.join(t.join(map(str, b)) for b in a)",
+      "dead": false,
+      "function": "JAA",
+      "kind": "Return",
+      "line": 23,
+      "node_id": 1
+    },
+    {
+      "code": "n = I()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 1
+    },
+    {
+      "code": "a = LI()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 2
+    },
+    {
+      "code": "r = 1000",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 3
+    },
+    {
+      "code": "t = []",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 4
+    },
+    {
+      "code": "sf = True",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 33,
+      "node_id": 6
+    },
+    {
+      "code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 34,
+      "node_id": 7
+    },
+    {
+      "code": "if a[i] >= a[i+1]: continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 35,
+      "node_id": 8
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 36,
+      "node_id": 9
+    },
+    {
+      "code": "t.append(a[i])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 37,
+      "node_id": 10
+    },
+    {
+      "code": "sf = False",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 11
+    },
+    {
+      "code": "if a[i] <= a[i+1]: continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 40,
+      "node_id": 12
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 41,
+      "node_id": 13
+    },
+    {
+      "code": "t.append(a[i])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 42,
+      "node_id": 14
+    },
+    {
+      "code": "sf = True",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 15
+    },
+    {
+      "code": "if len(t) == 0: return r",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 45,
+      "node_id": 16
+    },
+    {
+      "code": "return r",
+      "dead": false,
+      "function": "main",
+      "kind": "Return",
+      "line": 46,
+      "node_id": 17
+    },
+    {
+      "code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 48,
+      "node_id": 18
+    },
+    {
+      "code": "t.append(a[-1])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 49,
+      "node_id": 19
+    },
+    {
+      "code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 51,
+      "node_id": 20
+    },
+    {
+      "code": "b = t[i*2]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 21
+    },
+    {
+      "code": "c = t[i*2 + 1]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 22
+    },
+    {
+      "code": "k = r // b",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 23
+    },
+    {
+      "code": "r += (c-b) * k",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 55,
+      "node_id": 24
+    },
+    {
+      "code": "return r",
+      "dead": false,
+      "function": "main",
+      "kind": "Return",
+      "line": 57,
+      "node_id": 25
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "import time,random",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "inf = 10**20",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "eps = 1.0 / 10**10",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "mod = 10**9+7",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "mod2 = 998244353",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return list(map(int, sys.stdin.readline().split()))",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return [list(map(int, l.split())) for l in sys.stdin.readlines()]",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return [int(x)-1 for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return [float(x) for x in sys.stdin.readline().split()]",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return sys.stdin.readline().split()",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return int(sys.stdin.readline())",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return float(sys.stdin.readline())",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "return input()",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "return print(s, flush=True)",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return print(str(s), file=sys.stderr)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "return sep.join(map(str, a))",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "return s.join(t.join(map(str, b)) for b in a)",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "n = I()",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "a = LI()",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "r = 1000",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "t = []",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "sf = True",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "if a[i] >= a[i+1]: continue",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "t.append(a[i])",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "sf = False",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "if a[i] <= a[i+1]: continue",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "t.append(a[i])",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "sf = True",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "if len(t) == 0: return r",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "return r",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "t.append(a[-1])",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "b = t[i*2]",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "c = t[i*2 + 1]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "k = r // b",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "r += (c-b) * k",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "return r",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "print(main())",
+      "dead": false,
+      "line": 59
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02603_s126427867.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 12,
+      "lineno": 12,
+      "name": "LI",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 13,
+      "lineno": 13,
+      "name": "LLI",
+      "variables": [
+        "int",
+        "sys.stdin"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 14,
+      "name": "LI_",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 15,
+      "lineno": 15,
+      "name": "LF",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 16,
+      "name": "LS",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 17,
+      "name": "I",
+      "variables": [
+        "sys.stdin"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 18,
+      "lineno": 18,
+      "name": "F",
+      "variables": [
+        "sys.stdin"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 19,
+      "lineno": 19,
+      "name": "S",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 20,
+      "lineno": 20,
+      "name": "pf",
+      "variables": [
+        "s"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 21,
+      "lineno": 21,
+      "name": "pe",
+      "variables": [
+        "s",
+        "sys.stderr"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 22,
+      "lineno": 22,
+      "name": "JA",
+      "variables": [
+        "a",
+        "sep",
+        "str"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 23,
+      "lineno": 23,
+      "name": "JAA",
+      "variables": [
+        "a",
+        "s",
+        "str",
+        "t"
+      ]
+    },
+    {
+      "calls": [
+        "I",
+        "LI"
+      ],
+      "end_lineno": 57,
+      "lineno": 26,
+      "name": "main",
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "i",
+        "k",
+        "n",
+        "r",
+        "sf",
+        "t"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "F": {
+        "base_liveout": [
+          "sys.stdin"
+        ],
+        "live_before": [
+          {
+            "code": "return float(sys.stdin.readline())",
+            "line": 18,
+            "vars": [
+              "sys.stdin"
+            ]
+          }
+        ],
+        "liveout": {
+          "sys.stdin": true
+        },
+        "return_vars": [
+          "sys.stdin"
+        ]
+      },
+      "I": {
+        "base_liveout": [
+          "sys.stdin"
+        ],
+        "live_before": [
+          {
+            "code": "return int(sys.stdin.readline())",
+            "line": 17,
+            "vars": [
+              "sys.stdin"
+            ]
+          }
+        ],
+        "liveout": {
+          "sys.stdin": true
+        },
+        "return_vars": [
+          "sys.stdin"
+        ]
+      },
+      "JA": {
+        "base_liveout": [
+          "a",
+          "sep",
+          "str"
+        ],
+        "live_before": [
+          {
+            "code": "return sep.join(map(str, a))",
+            "line": 22,
+            "vars": [
+              "a",
+              "sep",
+              "str"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "sep": true,
+          "str": true
+        },
+        "return_vars": [
+          "a",
+          "sep",
+          "str"
+        ]
+      },
+      "JAA": {
+        "base_liveout": [
+          "a",
+          "s",
+          "str",
+          "t"
+        ],
+        "live_before": [
+          {
+            "code": "return s.join(t.join(map(str, b)) for b in a)",
+            "line": 23,
+            "vars": [
+              "a",
+              "s",
+              "str",
+              "t"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "s": true,
+          "str": true,
+          "t": true
+        },
+        "return_vars": [
+          "a",
+          "s",
+          "str",
+          "t"
+        ]
+      },
+      "LF": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return [float(x) for x in sys.stdin.readline().split()]",
+            "line": 15,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LI": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int, sys.stdin.readline().split()))",
+            "line": 12,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "LI_": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return [int(x)-1 for x in sys.stdin.readline().split()]",
+            "line": 14,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LLI": {
+        "base_liveout": [
+          "int",
+          "sys.stdin"
+        ],
+        "live_before": [
+          {
+            "code": "return [list(map(int, l.split())) for l in sys.stdin.readlines()]",
+            "line": 13,
+            "vars": [
+              "int",
+              "sys.stdin"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true,
+          "sys.stdin": true
+        },
+        "return_vars": [
+          "int",
+          "sys.stdin"
+        ]
+      },
+      "LS": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().split()",
+            "line": 16,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "S": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return input()",
+            "line": 19,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+            "line": 1,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "import time,random",
+            "line": 2,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**7)",
+            "line": 4,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "inf = 10**20",
+            "line": 5,
+            "vars": []
+          },
+          {
+            "code": "eps = 1.0 / 10**10",
+            "line": 6,
+            "vars": []
+          },
+          {
+            "code": "mod = 10**9+7",
+            "line": 7,
+            "vars": []
+          },
+          {
+            "code": "mod2 = 998244353",
+            "line": 8,
+            "vars": []
+          },
+          {
+            "code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+            "line": 9,
+            "vars": []
+          },
+          {
+            "code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+            "line": 10,
+            "vars": []
+          },
+          {
+            "code": "print(main())",
+            "line": 59,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "dd": false,
+          "ddn": false,
+          "eps": false,
+          "inf": false,
+          "mod": false,
+          "mod2": false,
+          "sys": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [
+          "r"
+        ],
+        "live_before": [
+          {
+            "code": "n = I()",
+            "line": 27,
+            "vars": []
+          },
+          {
+            "code": "a = LI()",
+            "line": 28,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "r = 1000",
+            "line": 30,
+            "vars": [
+              "a",
+              "n"
+            ]
+          },
+          {
+            "code": "t = []",
+            "line": 31,
+            "vars": [
+              "a",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "sf = True",
+            "line": 32,
+            "vars": [
+              "a",
+              "n",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+            "line": 33,
+            "vars": [
+              "a",
+              "n",
+              "r",
+              "sf",
+              "t"
+            ]
+          },
+          {
+            "code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+            "line": 34,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "sf",
+              "t"
+            ]
+          },
+          {
+            "code": "if a[i] >= a[i+1]: continue",
+            "line": 35,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 36,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "t.append(a[i])",
+            "line": 37,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "sf = False",
+            "line": 38,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "if a[i] <= a[i+1]: continue",
+            "line": 40,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 41,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "t.append(a[i])",
+            "line": 42,
+            "vars": [
+              "a",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "sf = True",
+            "line": 43,
+            "vars": [
+              "a",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "if len(t) == 0: return r",
+            "line": 45,
+            "vars": [
+              "a",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "return r",
+            "line": 46,
+            "vars": [
+              "a",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "if t[-1] != a[-1]: t.append(a[-1])",
+            "line": 48,
+            "vars": [
+              "a",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "t.append(a[-1])",
+            "line": 49,
+            "vars": [
+              "a",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+            "line": 51,
+            "vars": [
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "b = t[i*2]",
+            "line": 52,
+            "vars": [
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "c = t[i*2 + 1]",
+            "line": 53,
+            "vars": [
+              "b",
+              "i",
+              "r",
+              "t"
+            ]
+          },
+          {
+            "code": "k = r // b",
+            "line": 54,
+            "vars": [
+              "b",
+              "c",
+              "r"
+            ]
+          },
+          {
+            "code": "r += (c-b) * k",
+            "line": 55,
+            "vars": [
+              "b",
+              "c",
+              "k"
+            ]
+          },
+          {
+            "code": "return r",
+            "line": 57,
+            "vars": [
+              "r"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "b": false,
+          "c": false,
+          "i": false,
+          "k": false,
+          "n": false,
+          "r": true,
+          "sf": false,
+          "t": false
+        },
+        "return_vars": [
+          "r"
+        ]
+      },
+      "pe": {
+        "base_liveout": [
+          "s",
+          "sys.stderr"
+        ],
+        "live_before": [
+          {
+            "code": "return print(str(s), file=sys.stderr)",
+            "line": 21,
+            "vars": [
+              "s",
+              "sys.stderr"
+            ]
+          }
+        ],
+        "liveout": {
+          "s": true,
+          "sys.stderr": true
+        },
+        "return_vars": [
+          "s",
+          "sys.stderr"
+        ]
+      },
+      "pf": {
+        "base_liveout": [
+          "s"
+        ],
+        "live_before": [
+          {
+            "code": "return print(s, flush=True)",
+            "line": 20,
+            "vars": [
+              "s"
+            ]
+          }
+        ],
+        "liveout": {
+          "s": true
+        },
+        "return_vars": [
+          "s"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n-1):",
+      "cond": "for i in range(n-1)",
+      "function": "main",
+      "header_id": 6,
+      "line": 33,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(len(t)//2):",
+      "cond": "for i in range(len(t)//2)",
+      "function": "main",
+      "header_id": 20,
+      "line": 51,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "import time,random",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10**7)",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "sys.setrecursionlimit(10**7)",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "inf = 10**20",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "inf = 10**20",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "inf = 10**20",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "eps = 1.0 / 10**10",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "eps = 1.0 / 10**10",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "eps = 1.0 / 10**10",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf = 10**20",
+      "a_line": 5,
+      "b_code": "eps = 1.0 / 10**10",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "mod = 10**9+7",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "mod = 10**9+7",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "mod = 10**9+7",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf = 10**20",
+      "a_line": 5,
+      "b_code": "mod = 10**9+7",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 1.0 / 10**10",
+      "a_line": 6,
+      "b_code": "mod = 10**9+7",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "mod2 = 998244353",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "mod2 = 998244353",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "mod2 = 998244353",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf = 10**20",
+      "a_line": 5,
+      "b_code": "mod2 = 998244353",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 1.0 / 10**10",
+      "a_line": 6,
+      "b_code": "mod2 = 998244353",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 7,
+      "b_code": "mod2 = 998244353",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf = 10**20",
+      "a_line": 5,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 1.0 / 10**10",
+      "a_line": 6,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 7,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod2 = 998244353",
+      "a_line": 8,
+      "b_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf = 10**20",
+      "a_line": 5,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 1.0 / 10**10",
+      "a_line": 6,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 7,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod2 = 998244353",
+      "a_line": 8,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "a_line": 9,
+      "b_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math,string,itertools,fractions,heapq,collections,re,array,bisect,sys,copy,functools",
+      "a_line": 1,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import time,random",
+      "a_line": 2,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 4,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inf = 10**20",
+      "a_line": 5,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "eps = 1.0 / 10**10",
+      "a_line": 6,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 7,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod2 = 998244353",
+      "a_line": 8,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+      "a_line": 9,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+      "a_line": 10,
+      "b_code": "print(main())",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "a = LI()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "r = 1000",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "r = 1000",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "t = []",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "t = []",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "t = []",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "sf = True",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "sf = True",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "sf = True",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "sf = True",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "if a[i] >= a[i+1]: continue",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if a[i] >= a[i+1]: continue",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if a[i] >= a[i+1]: continue",
+      "a_line": 35,
+      "b_code": "t.append(a[i])",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if a[i] >= a[i+1]: continue",
+      "a_line": 35,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "t.append(a[i])",
+      "a_line": 37,
+      "b_code": "sf = False",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "if a[i] <= a[i+1]: continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if a[i] <= a[i+1]: continue",
+      "a_line": 40,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if a[i] <= a[i+1]: continue",
+      "a_line": 40,
+      "b_code": "t.append(a[i])",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 34,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "if a[i] <= a[i+1]: continue",
+      "a_line": 40,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "t.append(a[i])",
+      "a_line": 42,
+      "b_code": "sf = True",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "if len(t) == 0: return r",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "if len(t) == 0: return r",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "if len(t) == 0: return r",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "if len(t) == 0: return r",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "if len(t) == 0: return r",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "if len(t) == 0: return r",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "return r",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "t.append(a[-1])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "a_line": 51,
+      "b_code": "b = t[i*2]",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "a_line": 51,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "b = t[i*2]",
+      "a_line": 52,
+      "b_code": "c = t[i*2 + 1]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "a_line": 51,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "b = t[i*2]",
+      "a_line": 52,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "c = t[i*2 + 1]",
+      "a_line": 53,
+      "b_code": "k = r // b",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "a_line": 51,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "b = t[i*2]",
+      "a_line": 52,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "c = t[i*2 + 1]",
+      "a_line": 53,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "k = r // b",
+      "a_line": 54,
+      "b_code": "r += (c-b) * k",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "n = I()",
+      "a_line": 27,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "a = LI()",
+      "a_line": 28,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "r = 1000",
+      "a_line": 30,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "t = []",
+      "a_line": 31,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "sf = True",
+      "a_line": 32,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n-1): if sf: if a[i] >= a[i+1]: continue t.append(a[i]) sf = False else: if a[i] <= a[i+1]: continue t.append(a[i]) sf = True",
+      "a_line": 33,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if len(t) == 0: return r",
+      "a_line": 45,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if t[-1] != a[-1]: t.append(a[-1])",
+      "a_line": 48,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(len(t)//2): b = t[i*2] c = t[i*2 + 1] k = r // b r += (c-b) * k",
+      "a_line": 51,
+      "b_code": "return r",
+      "b_line": 57,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 4",
+      "external attribute call skipped sys.stdin.readline at line 12",
+      "external attribute call skipped sys.stdin.readline at line 14",
+      "external attribute call skipped sys.stdin.readline at line 15",
+      "external attribute call skipped sys.stdin.readline at line 16",
+      "external attribute call skipped sys.stdin.readline at line 17",
+      "external attribute call skipped sys.stdin.readline at line 18",
+      "external attribute call skipped sys.stdin.readlines at line 13",
+      "external call skipped input at line 19"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 4",
+    "external attribute call skipped sys.stdin.readline at line 12",
+    "external attribute call skipped sys.stdin.readline at line 14",
+    "external attribute call skipped sys.stdin.readline at line 15",
+    "external attribute call skipped sys.stdin.readline at line 16",
+    "external attribute call skipped sys.stdin.readline at line 17",
+    "external attribute call skipped sys.stdin.readline at line 18",
+    "external attribute call skipped sys.stdin.readlines at line 13",
+    "external call skipped input at line 19"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "dd"
+      },
+      "from": {
+        "code": "inf = 10**20",
+        "line": 5,
+        "var": "inf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "dd"
+      },
+      "from": {
+        "code": "eps = 1.0 / 10**10",
+        "line": 6,
+        "var": "eps"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "dd"
+      },
+      "from": {
+        "code": "mod = 10**9+7",
+        "line": 7,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "dd"
+      },
+      "from": {
+        "code": "mod2 = 998244353",
+        "line": 8,
+        "var": "mod2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ddn"
+      },
+      "from": {
+        "code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+        "line": 9,
+        "var": "dd"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dd = [(-1,0),(0,1),(1,0),(0,-1)]",
+        "line": 9,
+        "var": "dd"
+      },
+      "from": {
+        "code": "ddn = [(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]",
+        "line": 10,
+        "var": "ddn"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 26,
+        "var": "a"
+      },
+      "from": {
+        "code": "n = I()",
+        "line": 27,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 26,
+        "var": "b"
+      },
+      "from": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "r = 1000",
+        "line": 30,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "t = []",
+        "line": 31,
+        "var": "t"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "sf = True",
+        "line": 32,
+        "var": "sf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "sf = False",
+        "line": 38,
+        "var": "sf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "sf = True",
+        "line": 43,
+        "var": "sf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = t[i*2]",
+        "line": 52,
+        "var": "i"
+      },
+      "from": {
+        "code": "b = t[i*2]",
+        "line": 52,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = []",
+        "line": 31,
+        "var": "t"
+      },
+      "from": {
+        "code": "b = t[i*2]",
+        "line": 52,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "b = t[i*2]",
+        "line": 52,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "c = t[i*2 + 1]",
+        "line": 53,
+        "var": "i"
+      },
+      "from": {
+        "code": "c = t[i*2 + 1]",
+        "line": 53,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = []",
+        "line": 31,
+        "var": "t"
+      },
+      "from": {
+        "code": "c = t[i*2 + 1]",
+        "line": 53,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "c = t[i*2 + 1]",
+        "line": 53,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = t[i*2]",
+        "line": 52,
+        "var": "b"
+      },
+      "from": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "i"
+      },
+      "from": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r = 1000",
+        "line": 30,
+        "var": "r"
+      },
+      "from": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = []",
+        "line": 31,
+        "var": "t"
+      },
+      "from": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = t[i*2]",
+        "line": 52,
+        "var": "b"
+      },
+      "from": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = t[i*2 + 1]",
+        "line": 53,
+        "var": "c"
+      },
+      "from": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "i"
+      },
+      "from": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = r // b",
+        "line": 54,
+        "var": "k"
+      },
+      "from": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "t = []",
+        "line": 31,
+        "var": "t"
+      },
+      "from": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = LI()",
+        "line": 28,
+        "var": "a"
+      },
+      "from": {
+        "code": "r += (c-b) * k",
+        "line": 55,
+        "var": "r"
+      },
+      "label": "negative"
+    }
+  ]
+}

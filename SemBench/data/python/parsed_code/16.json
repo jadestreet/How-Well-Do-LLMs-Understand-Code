@@ -1,0 +1,710 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "function": "LRUCache.__init__",
+      "kind": "If",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "function": "LRUCache.__init__",
+      "kind": "Raise",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "self.capacity = capacity",
+      "dead": false,
+      "function": "LRUCache.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "self.store = OrderedDict()",
+      "dead": false,
+      "function": "LRUCache.__init__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "while len(self.store) > self.capacity: self.store.popitem(last=False)",
+      "dead": false,
+      "function": "LRUCache._evict_if_needed",
+      "kind": "While",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "self.store.popitem(last=False)",
+      "dead": false,
+      "function": "LRUCache._evict_if_needed",
+      "kind": "Expr",
+      "line": 13,
+      "node_id": 2
+    },
+    {
+      "code": "if key not in self.store: return None",
+      "dead": false,
+      "function": "LRUCache.get",
+      "kind": "If",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "LRUCache.get",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 2
+    },
+    {
+      "code": "val = self.store.pop(key)",
+      "dead": false,
+      "function": "LRUCache.get",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 3
+    },
+    {
+      "code": "self.store[key] = val",
+      "dead": false,
+      "function": "LRUCache.get",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 4
+    },
+    {
+      "code": "return val",
+      "dead": false,
+      "function": "LRUCache.get",
+      "kind": "Return",
+      "line": 20,
+      "node_id": 5
+    },
+    {
+      "code": "if key in self.store: self.store.pop(key)",
+      "dead": false,
+      "function": "LRUCache.put",
+      "kind": "If",
+      "line": 23,
+      "node_id": 1
+    },
+    {
+      "code": "self.store.pop(key)",
+      "dead": false,
+      "function": "LRUCache.put",
+      "kind": "Expr",
+      "line": 24,
+      "node_id": 2
+    },
+    {
+      "code": "self.store[key] = value",
+      "dead": false,
+      "function": "LRUCache.put",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 3
+    },
+    {
+      "code": "self._evict_if_needed()",
+      "dead": false,
+      "function": "LRUCache.put",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 4
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.capacity = capacity",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.store = OrderedDict()",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "while len(self.store) > self.capacity: self.store.popitem(last=False)",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "self.store.popitem(last=False)",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "if key not in self.store: return None",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "val = self.store.pop(key)",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "self.store[key] = val",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "return val",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "if key in self.store: self.store.pop(key)",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.store.pop(key)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "self.store[key] = value",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "self._evict_if_needed()",
+      "dead": false,
+      "line": 26
+    }
+  ],
+  "file": "SemBench/data/python/code/16.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 9,
+      "lineno": 5,
+      "name": "LRUCache.__init__",
+      "variables": [
+        "capacity",
+        "self",
+        "self.capacity",
+        "self.store"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 13,
+      "lineno": 11,
+      "name": "LRUCache._evict_if_needed",
+      "variables": [
+        "self",
+        "self.capacity",
+        "self.store"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 20,
+      "lineno": 15,
+      "name": "LRUCache.get",
+      "variables": [
+        "key",
+        "self",
+        "self.store",
+        "val"
+      ]
+    },
+    {
+      "calls": [
+        "LRUCache._evict_if_needed"
+      ],
+      "end_lineno": 26,
+      "lineno": 22,
+      "name": "LRUCache.put",
+      "variables": [
+        "key",
+        "self",
+        "self.store",
+        "value"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "LRUCache.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+            "line": 6,
+            "vars": [
+              "capacity"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"capacity must be positive\")",
+            "line": 7,
+            "vars": [
+              "capacity"
+            ]
+          },
+          {
+            "code": "self.capacity = capacity",
+            "line": 8,
+            "vars": [
+              "capacity"
+            ]
+          },
+          {
+            "code": "self.store = OrderedDict()",
+            "line": 9,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "capacity": false,
+          "self": false,
+          "self.capacity": false,
+          "self.store": false
+        },
+        "return_vars": []
+      },
+      "LRUCache._evict_if_needed": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "while len(self.store) > self.capacity: self.store.popitem(last=False)",
+            "line": 12,
+            "vars": [
+              "self.capacity",
+              "self.store"
+            ]
+          },
+          {
+            "code": "self.store.popitem(last=False)",
+            "line": 13,
+            "vars": [
+              "self.store"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.capacity": false,
+          "self.store": false
+        },
+        "return_vars": []
+      },
+      "LRUCache.get": {
+        "base_liveout": [
+          "val"
+        ],
+        "live_before": [
+          {
+            "code": "if key not in self.store: return None",
+            "line": 16,
+            "vars": [
+              "key",
+              "self.store"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 17,
+            "vars": [
+              "key",
+              "self.store"
+            ]
+          },
+          {
+            "code": "val = self.store.pop(key)",
+            "line": 18,
+            "vars": [
+              "key",
+              "self.store"
+            ]
+          },
+          {
+            "code": "self.store[key] = val",
+            "line": 19,
+            "vars": [
+              "key",
+              "val"
+            ]
+          },
+          {
+            "code": "return val",
+            "line": 20,
+            "vars": [
+              "val"
+            ]
+          }
+        ],
+        "liveout": {
+          "key": false,
+          "self": false,
+          "self.store": false,
+          "val": true
+        },
+        "return_vars": [
+          "val"
+        ]
+      },
+      "LRUCache.put": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if key in self.store: self.store.pop(key)",
+            "line": 23,
+            "vars": [
+              "key",
+              "self",
+              "self.store",
+              "value"
+            ]
+          },
+          {
+            "code": "self.store.pop(key)",
+            "line": 24,
+            "vars": [
+              "key",
+              "self",
+              "self.store",
+              "value"
+            ]
+          },
+          {
+            "code": "self.store[key] = value",
+            "line": 25,
+            "vars": [
+              "key",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "self._evict_if_needed()",
+            "line": 26,
+            "vars": [
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "key": false,
+          "self": false,
+          "self.store": false,
+          "value": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while len(self.store) > self.capacity:",
+      "cond": "len(self.store) > self.capacity",
+      "function": "LRUCache._evict_if_needed",
+      "header_id": 1,
+      "line": 12,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 6,
+      "b_code": "raise ValueError(\"capacity must be positive\")",
+      "b_line": 7,
+      "function": "LRUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 6,
+      "b_code": "self.capacity = capacity",
+      "b_line": 8,
+      "function": "LRUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 6,
+      "b_code": "self.store = OrderedDict()",
+      "b_line": 9,
+      "function": "LRUCache.__init__"
+    },
+    {
+      "a_code": "self.capacity = capacity",
+      "a_line": 8,
+      "b_code": "self.store = OrderedDict()",
+      "b_line": 9,
+      "function": "LRUCache.__init__"
+    },
+    {
+      "a_code": "while len(self.store) > self.capacity: self.store.popitem(last=False)",
+      "a_line": 12,
+      "b_code": "self.store.popitem(last=False)",
+      "b_line": 13,
+      "function": "LRUCache._evict_if_needed"
+    },
+    {
+      "a_code": "if key not in self.store: return None",
+      "a_line": 16,
+      "b_code": "return None",
+      "b_line": 17,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "if key not in self.store: return None",
+      "a_line": 16,
+      "b_code": "val = self.store.pop(key)",
+      "b_line": 18,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "if key not in self.store: return None",
+      "a_line": 16,
+      "b_code": "self.store[key] = val",
+      "b_line": 19,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "val = self.store.pop(key)",
+      "a_line": 18,
+      "b_code": "self.store[key] = val",
+      "b_line": 19,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "if key not in self.store: return None",
+      "a_line": 16,
+      "b_code": "return val",
+      "b_line": 20,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "val = self.store.pop(key)",
+      "a_line": 18,
+      "b_code": "return val",
+      "b_line": 20,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "self.store[key] = val",
+      "a_line": 19,
+      "b_code": "return val",
+      "b_line": 20,
+      "function": "LRUCache.get"
+    },
+    {
+      "a_code": "if key in self.store: self.store.pop(key)",
+      "a_line": 23,
+      "b_code": "self.store.pop(key)",
+      "b_line": 24,
+      "function": "LRUCache.put"
+    },
+    {
+      "a_code": "if key in self.store: self.store.pop(key)",
+      "a_line": 23,
+      "b_code": "self.store[key] = value",
+      "b_line": 25,
+      "function": "LRUCache.put"
+    },
+    {
+      "a_code": "if key in self.store: self.store.pop(key)",
+      "a_line": 23,
+      "b_code": "self._evict_if_needed()",
+      "b_line": 26,
+      "function": "LRUCache.put"
+    },
+    {
+      "a_code": "self.store[key] = value",
+      "a_line": 25,
+      "b_code": "self._evict_if_needed()",
+      "b_line": 26,
+      "function": "LRUCache.put"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 5,
+        "var": "capacity"
+      },
+      "from": {
+        "code": "self.capacity = capacity",
+        "line": 8,
+        "var": "self.capacity"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 5,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.capacity = capacity",
+        "line": 8,
+        "var": "self.capacity"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 5,
+        "var": "capacity"
+      },
+      "from": {
+        "code": "self.store = OrderedDict()",
+        "line": 9,
+        "var": "self.store"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def get(self, key):",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "val = self.store.pop(key)",
+        "line": 18,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = self.store.pop(key)",
+        "line": 18,
+        "var": "self.store"
+      },
+      "from": {
+        "code": "val = self.store.pop(key)",
+        "line": 18,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def get(self, key):",
+        "line": 15,
+        "var": "self"
+      },
+      "from": {
+        "code": "val = self.store.pop(key)",
+        "line": 18,
+        "var": "val"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def get(self, key):",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.store[key] = val",
+        "line": 19,
+        "var": "self.store"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = self.store.pop(key)",
+        "line": 18,
+        "var": "val"
+      },
+      "from": {
+        "code": "self.store[key] = val",
+        "line": 19,
+        "var": "self.store"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def get(self, key):",
+        "line": 15,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.store[key] = val",
+        "line": 19,
+        "var": "self.store"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key, value) -> None:",
+        "line": 22,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.store[key] = value",
+        "line": 25,
+        "var": "self.store"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key, value) -> None:",
+        "line": 22,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.store[key] = value",
+        "line": 25,
+        "var": "self.store"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key, value) -> None:",
+        "line": 22,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.store[key] = value",
+        "line": 25,
+        "var": "self.store"
+      },
+      "label": "negative"
+    }
+  ]
+}

@@ -1,0 +1,4791 @@
+{
+  "cfg_statements": [
+    {
+      "code": "n, x, m = input_int_array()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 1
+    },
+    {
+      "code": "a = [0, 0]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 2
+    },
+    {
+      "code": "answer(n, x, m)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 50,
+      "node_id": 3
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "function": "input_int_array",
+      "kind": "Return",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "a1 = x",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "ai = a1",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 2
+    },
+    {
+      "code": "loop_start = -1",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "loop_end = n",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "a[1] = a1",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "ans = a1",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 6
+    },
+    {
+      "code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "dead": false,
+      "function": "answer",
+      "kind": "For",
+      "line": 14,
+      "node_id": 7
+    },
+    {
+      "code": "ai = ai*ai % m",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 8
+    },
+    {
+      "code": "a.append(ai)",
+      "dead": false,
+      "function": "answer",
+      "kind": "Expr",
+      "line": 16,
+      "node_id": 9
+    },
+    {
+      "code": "ans += ai",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 17,
+      "node_id": 10
+    },
+    {
+      "code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "dead": false,
+      "function": "answer",
+      "kind": "For",
+      "line": 18,
+      "node_id": 11
+    },
+    {
+      "code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "dead": false,
+      "function": "answer",
+      "kind": "If",
+      "line": 19,
+      "node_id": 12
+    },
+    {
+      "code": "loop_start = j",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 13
+    },
+    {
+      "code": "loop_end = i",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 14
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "answer",
+      "kind": "Break",
+      "line": 22,
+      "node_id": 15
+    },
+    {
+      "code": "if loop_start >= 0: break",
+      "dead": false,
+      "function": "answer",
+      "kind": "If",
+      "line": 23,
+      "node_id": 16
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "answer",
+      "kind": "Break",
+      "line": 24,
+      "node_id": 17
+    },
+    {
+      "code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "dead": false,
+      "function": "answer",
+      "kind": "If",
+      "line": 25,
+      "node_id": 18
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "answer",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 19
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "answer",
+      "kind": "Return",
+      "line": 27,
+      "node_id": 20
+    },
+    {
+      "code": "ans -= ai",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 28,
+      "node_id": 21
+    },
+    {
+      "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 22
+    },
+    {
+      "code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "dead": false,
+      "function": "answer",
+      "kind": "If",
+      "line": 30,
+      "node_id": 23
+    },
+    {
+      "code": "start_ans = 0",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 24
+    },
+    {
+      "code": "for i in range(1, loop_start): start_ans += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "For",
+      "line": 32,
+      "node_id": 25
+    },
+    {
+      "code": "start_ans += a[i]",
+      "dead": true,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 33,
+      "node_id": 26
+    },
+    {
+      "code": "loop_sum = ans - start_ans",
+      "dead": false,
+      "function": "answer",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 27
+    },
+    {
+      "code": "ans += loop_sum * (loop_count-1)",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 35,
+      "node_id": 28
+    },
+    {
+      "code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "For",
+      "line": 36,
+      "node_id": 29
+    },
+    {
+      "code": "ans += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 37,
+      "node_id": 30
+    },
+    {
+      "code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "For",
+      "line": 39,
+      "node_id": 31
+    },
+    {
+      "code": "if i < remaining: ans += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "If",
+      "line": 40,
+      "node_id": 32
+    },
+    {
+      "code": "ans += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 41,
+      "node_id": 33
+    },
+    {
+      "code": "loop_sum += a[i]",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 42,
+      "node_id": 34
+    },
+    {
+      "code": "ans += loop_sum * (loop_count-1)",
+      "dead": false,
+      "function": "answer",
+      "kind": "AugAssign",
+      "line": 43,
+      "node_id": 35
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "answer",
+      "kind": "Expr",
+      "line": 44,
+      "node_id": 36
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "a1 = x",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "ai = a1",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "loop_start = -1",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "loop_end = n",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "a[1] = a1",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "ans = a1",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "ai = ai*ai % m",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "a.append(ai)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "ans += ai",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "loop_start = j",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "loop_end = i",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "if loop_start >= 0: break",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "ans -= ai",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "start_ans = 0",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "for i in range(1, loop_start): start_ans += a[i]",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "start_ans += a[i]",
+      "dead": true,
+      "line": 33
+    },
+    {
+      "code": "loop_sum = ans - start_ans",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "ans += loop_sum * (loop_count-1)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "ans += a[i]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "if i < remaining: ans += a[i]",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "ans += a[i]",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "loop_sum += a[i]",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "ans += loop_sum * (loop_count-1)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "n, x, m = input_int_array()",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "a = [0, 0]",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "answer(n, x, m)",
+      "dead": false,
+      "line": 50
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02550_s165321081.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 4,
+      "lineno": 3,
+      "name": "input_int_array",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 44,
+      "lineno": 7,
+      "name": "answer",
+      "variables": [
+        "a",
+        "a1",
+        "ai",
+        "ans",
+        "i",
+        "j",
+        "loop_count",
+        "loop_end",
+        "loop_start",
+        "loop_sum",
+        "m",
+        "n",
+        "remaining",
+        "start_ans",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n, x, m = input_int_array()",
+            "line": 47,
+            "vars": []
+          },
+          {
+            "code": "a = [0, 0]",
+            "line": 48,
+            "vars": [
+              "m",
+              "n",
+              "x"
+            ]
+          },
+          {
+            "code": "answer(n, x, m)",
+            "line": 50,
+            "vars": [
+              "m",
+              "n",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "m": false,
+          "n": false,
+          "x": false
+        },
+        "return_vars": []
+      },
+      "answer": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "a1 = x",
+            "line": 8,
+            "vars": [
+              "m",
+              "n",
+              "x"
+            ]
+          },
+          {
+            "code": "ai = a1",
+            "line": 9,
+            "vars": [
+              "a1",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "loop_start = -1",
+            "line": 10,
+            "vars": [
+              "a1",
+              "ai",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "loop_end = n",
+            "line": 11,
+            "vars": [
+              "a1",
+              "ai",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "a[1] = a1",
+            "line": 12,
+            "vars": [
+              "a1",
+              "ai",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "ans = a1",
+            "line": 13,
+            "vars": [
+              "a",
+              "a1",
+              "ai",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+            "line": 14,
+            "vars": [
+              "a",
+              "ai",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "ai = ai*ai % m",
+            "line": 15,
+            "vars": [
+              "a",
+              "ai",
+              "i",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "a.append(ai)",
+            "line": 16,
+            "vars": [
+              "a",
+              "ai",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "ans += ai",
+            "line": 17,
+            "vars": [
+              "a",
+              "ai",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+            "line": 18,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "if a[j] == ai: loop_start = j loop_end = i break",
+            "line": 19,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "i",
+              "j",
+              "n"
+            ]
+          },
+          {
+            "code": "loop_start = j",
+            "line": 20,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "i",
+              "j",
+              "n"
+            ]
+          },
+          {
+            "code": "loop_end = i",
+            "line": 21,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "i",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 22,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "if loop_start >= 0: break",
+            "line": 23,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 24,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "if loop_start < 0 or ai == 0: print(ans) return",
+            "line": 25,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 26,
+            "vars": [
+              "a",
+              "ai",
+              "ans",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 27,
+            "vars": [
+              "a",
+              "ai",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "ans -= ai",
+            "line": 28,
+            "vars": [
+              "a",
+              "ai",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+            "line": 29,
+            "vars": [
+              "a",
+              "ans",
+              "loop_end",
+              "loop_start",
+              "n"
+            ]
+          },
+          {
+            "code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+            "line": 30,
+            "vars": [
+              "a",
+              "ans",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "start_ans = 0",
+            "line": 31,
+            "vars": [
+              "a",
+              "ans",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "for i in range(1, loop_start): start_ans += a[i]",
+            "line": 32,
+            "vars": [
+              "a",
+              "ans",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "start_ans += a[i]",
+            "line": 33,
+            "vars": [
+              "a",
+              "ans",
+              "i",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "loop_sum = ans - start_ans",
+            "line": 34,
+            "vars": [
+              "a",
+              "ans",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining",
+              "start_ans"
+            ]
+          },
+          {
+            "code": "ans += loop_sum * (loop_count-1)",
+            "line": 35,
+            "vars": [
+              "a",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "loop_sum",
+              "remaining"
+            ]
+          },
+          {
+            "code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+            "line": 36,
+            "vars": [
+              "a",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "ans += a[i]",
+            "line": 37,
+            "vars": [
+              "a",
+              "i",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+            "line": 39,
+            "vars": [
+              "a",
+              "loop_count",
+              "loop_end",
+              "loop_start",
+              "remaining"
+            ]
+          },
+          {
+            "code": "if i < remaining: ans += a[i]",
+            "line": 40,
+            "vars": [
+              "a",
+              "i",
+              "loop_count",
+              "remaining"
+            ]
+          },
+          {
+            "code": "ans += a[i]",
+            "line": 41,
+            "vars": [
+              "a",
+              "i",
+              "loop_count"
+            ]
+          },
+          {
+            "code": "loop_sum += a[i]",
+            "line": 42,
+            "vars": [
+              "a",
+              "i",
+              "loop_count"
+            ]
+          },
+          {
+            "code": "ans += loop_sum * (loop_count-1)",
+            "line": 43,
+            "vars": [
+              "loop_count",
+              "loop_sum"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 44,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "a1": false,
+          "ai": false,
+          "ans": false,
+          "i": false,
+          "j": false,
+          "loop_count": false,
+          "loop_end": false,
+          "loop_start": false,
+          "loop_sum": false,
+          "m": false,
+          "n": false,
+          "remaining": false,
+          "start_ans": false,
+          "x": false
+        },
+        "return_vars": []
+      },
+      "input_int_array": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return map(int, input().split())",
+            "line": 4,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(2, n + 1):",
+      "cond": "for i in range(2, n + 1)",
+      "function": "answer",
+      "header_id": 7,
+      "line": 14,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(1, i):",
+      "cond": "for j in range(1, i)",
+      "function": "answer",
+      "header_id": 11,
+      "line": 18,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for i in range(1, loop_start):",
+      "cond": "for i in range(1, loop_start)",
+      "function": "answer",
+      "header_id": 25,
+      "line": 32,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(loop_start, loop_start + remaining):",
+      "cond": "for i in range(loop_start, loop_start + remaining)",
+      "function": "answer",
+      "header_id": 29,
+      "line": 36,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(loop_start, loop_end):",
+      "cond": "for i in range(loop_start, loop_end)",
+      "function": "answer",
+      "header_id": 31,
+      "line": 39,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "n, x, m = input_int_array()",
+      "a_line": 47,
+      "b_code": "a = [0, 0]",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, x, m = input_int_array()",
+      "a_line": 47,
+      "b_code": "answer(n, x, m)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = [0, 0]",
+      "a_line": 48,
+      "b_code": "answer(n, x, m)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ai = a1",
+      "b_line": 9,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_start = -1",
+      "b_line": 10,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_start = -1",
+      "b_line": 10,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_end = n",
+      "b_line": 11,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_end = n",
+      "b_line": 11,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "loop_end = n",
+      "b_line": 11,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "a[1] = a1",
+      "b_line": 12,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "a[1] = a1",
+      "b_line": 12,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "a[1] = a1",
+      "b_line": 12,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "a[1] = a1",
+      "b_line": 12,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans = a1",
+      "b_line": 13,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans = a1",
+      "b_line": 13,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans = a1",
+      "b_line": 13,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans = a1",
+      "b_line": 13,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans = a1",
+      "b_line": 13,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "b_line": 14,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "b_line": 14,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "b_line": 14,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "b_line": 14,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "b_line": 14,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "b_line": 14,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ai = ai*ai % m",
+      "b_line": 15,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "a.append(ai)",
+      "b_line": 16,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "ans += ai",
+      "b_line": 17,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 18,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 18,
+      "b_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "b_line": 19,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 18,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 19,
+      "b_code": "loop_start = j",
+      "b_line": 20,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 18,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 19,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = j",
+      "a_line": 20,
+      "b_code": "loop_end = i",
+      "b_line": 21,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 18,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 19,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = j",
+      "a_line": 20,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = i",
+      "a_line": 21,
+      "b_code": "break",
+      "b_line": 22,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 18,
+      "b_code": "if loop_start >= 0: break",
+      "b_line": 23,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = ai*ai % m",
+      "a_line": 15,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "a.append(ai)",
+      "a_line": 16,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += ai",
+      "a_line": 17,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break",
+      "a_line": 18,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start >= 0: break",
+      "a_line": 23,
+      "b_code": "break",
+      "b_line": 24,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "b_line": 25,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "print(ans)",
+      "b_line": 26,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "print(ans)",
+      "a_line": 26,
+      "b_code": "return",
+      "b_line": 27,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "ans -= ai",
+      "b_line": 28,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "b_line": 29,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "b_line": 30,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "start_ans = 0",
+      "b_line": 31,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "start_ans = 0",
+      "a_line": 31,
+      "b_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "b_line": 32,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "start_ans = 0",
+      "a_line": 31,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "a_line": 32,
+      "b_code": "loop_sum = ans - start_ans",
+      "b_line": 34,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "start_ans = 0",
+      "a_line": 31,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "a_line": 32,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_sum = ans - start_ans",
+      "a_line": 34,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 35,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "start_ans = 0",
+      "a_line": 31,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "a_line": 32,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_sum = ans - start_ans",
+      "a_line": 34,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += loop_sum * (loop_count-1)",
+      "a_line": 35,
+      "b_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "b_line": 36,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "start_ans = 0",
+      "a_line": 31,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(1, loop_start): start_ans += a[i]",
+      "a_line": 32,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_sum = ans - start_ans",
+      "a_line": 34,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans += loop_sum * (loop_count-1)",
+      "a_line": 35,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(loop_start, loop_start + remaining): ans += a[i]",
+      "a_line": 36,
+      "b_code": "ans += a[i]",
+      "b_line": 37,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "b_line": 39,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "a_line": 39,
+      "b_code": "if i < remaining: ans += a[i]",
+      "b_line": 40,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "a_line": 39,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "if i < remaining: ans += a[i]",
+      "a_line": 40,
+      "b_code": "ans += a[i]",
+      "b_line": 41,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "a_line": 39,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "if i < remaining: ans += a[i]",
+      "a_line": 40,
+      "b_code": "loop_sum += a[i]",
+      "b_line": 42,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i]",
+      "a_line": 39,
+      "b_code": "ans += loop_sum * (loop_count-1)",
+      "b_line": 43,
+      "function": "answer"
+    },
+    {
+      "a_code": "a1 = x",
+      "a_line": 8,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "ai = a1",
+      "a_line": 9,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_start = -1",
+      "a_line": 10,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_end = n",
+      "a_line": 11,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "a[1] = a1",
+      "a_line": 12,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans = a1",
+      "a_line": 13,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "for i in range(2, n + 1): ai = ai*ai % m a.append(ai) ans += ai for j in range(1, i): if a[j] == ai: loop_start = j loop_end = i break if loop_start >= 0: break",
+      "a_line": 14,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_start < 0 or ai == 0: print(ans) return",
+      "a_line": 25,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "ans -= ai",
+      "a_line": 28,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+      "a_line": 29,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    },
+    {
+      "a_code": "if loop_count > loop_start: start_ans = 0 for i in range(1, loop_start): start_ans += a[i] loop_sum = ans - start_ans ans += loop_sum * (loop_count-1) for i in range(loop_start, loop_start + remaining): ans += a[i] else: for i in range(loop_start, loop_end): if i < remaining: ans += a[i] loop_sum += a[i] ans += loop_sum * (loop_count-1)",
+      "a_line": 30,
+      "b_code": "print(ans)",
+      "b_line": 44,
+      "function": "answer"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 4"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 4"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "n, x, m = input_int_array()",
+        "line": 47,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "n, x, m = input_int_array()",
+        "line": 47,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "n, x, m = input_int_array()",
+        "line": 47,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, x, m = input_int_array()",
+        "line": 47,
+        "var": "m"
+      },
+      "from": {
+        "code": "a = [0, 0]",
+        "line": 48,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "a"
+      },
+      "from": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ai = a1",
+        "line": 9,
+        "var": "ai"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ai = a1",
+        "line": 9,
+        "var": "ai"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "a"
+      },
+      "from": {
+        "code": "ai = a1",
+        "line": 9,
+        "var": "ai"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_start = -1",
+        "line": 10,
+        "var": "loop_start"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "n"
+      },
+      "from": {
+        "code": "loop_end = n",
+        "line": 11,
+        "var": "loop_end"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_end = n",
+        "line": 11,
+        "var": "loop_end"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = a1",
+        "line": 9,
+        "var": "ai"
+      },
+      "from": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans = a1",
+        "line": 13,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans = a1",
+        "line": 13,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans = a1",
+        "line": 13,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = a1",
+        "line": 9,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "m"
+      },
+      "from": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans += ai",
+        "line": 17,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ans += ai",
+        "line": 17,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "m"
+      },
+      "from": {
+        "code": "ans += ai",
+        "line": 17,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans += ai",
+        "line": 17,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans += ai",
+        "line": 17,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "j"
+      },
+      "from": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "loop_start"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "loop_start"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "i"
+      },
+      "from": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "loop_end"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "loop_end"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans -= ai",
+        "line": 28,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ans -= ai",
+        "line": 28,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "m"
+      },
+      "from": {
+        "code": "ans -= ai",
+        "line": 28,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans -= ai",
+        "line": 28,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans -= ai",
+        "line": 28,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "i"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "j"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "loop_end"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "loop_start"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "n"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "i"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "j"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "loop_end"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "loop_start"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "n"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "start_ans = 0",
+        "line": 31,
+        "var": "start_ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "i"
+      },
+      "from": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans -= ai",
+        "line": 28,
+        "var": "ans"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "i"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "m"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "j"
+      },
+      "from": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "j"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "loop_end"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "loop_start"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_sum = ans - start_ans",
+        "line": 34,
+        "var": "loop_sum"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "m"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "start_ans += a[i]",
+        "line": 33,
+        "var": "start_ans"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "remaining"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 35,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += a[i]",
+        "line": 37,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += a[i]",
+        "line": 41,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ans += a[i]",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "i"
+      },
+      "from": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "loop_sum"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "loop_sum"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a[1] = a1",
+        "line": 12,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a1 = x",
+        "line": 8,
+        "var": "a1"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "j"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_count, remaining = divmod(n - (loop_start - 1), loop_end - loop_start)",
+        "line": 29,
+        "var": "loop_count"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_end = i",
+        "line": 21,
+        "var": "loop_end"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_start = j",
+        "line": 20,
+        "var": "loop_start"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "loop_sum += a[i]",
+        "line": 42,
+        "var": "loop_sum"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def answer(n, x, m):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ai = ai*ai % m",
+        "line": 15,
+        "var": "ai"
+      },
+      "from": {
+        "code": "ans += loop_sum * (loop_count-1)",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

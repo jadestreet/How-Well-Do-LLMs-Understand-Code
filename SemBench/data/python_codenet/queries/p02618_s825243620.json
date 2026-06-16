@@ -1,0 +1,38 @@
+{
+  "data_dependency": [
+    "Does variable prei at line 35: <statement> prei = T[ct] </statement> determine the value stored in variable new_score at line 48: <statement> new_score -= S[ct][prei] </statement>?",
+    "Does the value of variable sel at line 108: <statement> sel = randint(1, 2) </statement> depend on the value of variable C at line 93: <statement> def local_search(D, C, S, score, T): </statement>?",
+    "Does variable ct at line 111: <statement> ct = randint(0, D-1) </statement> determine the value stored in variable ci1 at line 123: <statement> ci1 = T[ct1] </statement>?",
+    "Does the value of variable last at line 40: <statement> last = [0]*26 </statement> depend on the value of variable C at line 25: <statement> def update_score(D, C, S, T, score, ct, ci): </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement max_score = -INF be reached during execution?",
+    "Can the statement new_score -= S[ct][prei] be considered dead code because it is never executed?",
+    "Can the statement new_score = update_score(D, C, S, T, new_score, ct2, ci1) be considered dead code because it is never executed?",
+    "Can the statement sel = randint(1, 2) be reached during execution?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 21: <statement> score += S[d][t] </statement> is reached, the statement line 16: <statement> last = [0]*26 </statement> has already been reached?",
+    "Is it guaranteed that whenever line 77: <statement> for d in range(D): # d+k\u65e5\u76ee\u7d42\u4e86\u6642\u70b9\u3067\u6e80\u8db3\u5ea6\u304c\u4e00\u756a\u9ad8\u304f\u306a\u308b\u3088\u3046\u306a\u30b3\u30f3\u30c6\u30b9\u30c8i\u3092\u958b\u50ac\u3059\u308b max_score = -INF best_i = 0 for i in range(26): T.append(i) score = evaluate(D, C, S, T, k) if max_score < score: max_score = score best_i = i T.pop() T.append(best_i) </statement> is reached, the statement line 88: <statement> T.append(best_i) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 94: <statement> sTime = time() </statement> is reached, the statement line 115: <statement> if score < new_score or \\ (new_score > 7*10**6 and exp((score - new_score)/Temp) > lim): T[ct] = ci score = new_score </statement> has already been reached?",
+    "Is it guaranteed that whenever line 114: <statement> lim = random() </statement> is reached, the statement line 98: <statement> Temp = T0 </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function greedy to function evaluate?",
+    "Is there a call path from function local_search to function evaluate?",
+    "Is there a call path from function update_score to function calc_score?",
+    "Can function local_search eventually call function update_score?"
+  ],
+  "liveness": [
+    "Does variable t remain in use at the end of function local_search?",
+    "Is variable score live at the end of function calc_score?",
+    "Does variable pair remain in use at the end of function greedy?",
+    "Is variable C live at the end of function local_search?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for i in range(26) always executed?",
+    "Is the loop with condition for i in range(26) always executed?",
+    "Is it possible that the loop with condition for i in range(26) is never executed?",
+    "Is it possible that the loop with condition for i in range(26) is never executed?"
+  ]
+}

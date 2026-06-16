@@ -1,0 +1,3714 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "from collections import defaultdict, deque, Counter",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "from copy import deepcopy",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 4,
+      "node_id": 4
+    },
+    {
+      "code": "from bisect import bisect, bisect_right, bisect_left",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 5,
+      "node_id": 5
+    },
+    {
+      "code": "from heapq import heapify, heappop, heappush",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 6,
+      "node_id": 6
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 7
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 92,
+      "node_id": 8
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 93,
+      "node_id": 9
+    },
+    {
+      "code": "return input().rstrip()",
+      "dead": false,
+      "function": "RD",
+      "kind": "Return",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "return float(input().rstrip())",
+      "dead": false,
+      "function": "F",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "return int(input().rstrip())",
+      "dead": false,
+      "function": "I",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "function": "MI",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return map(float,input().split())",
+      "dead": false,
+      "function": "MF",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "function": "LI",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(float,input().split()))",
+      "dead": false,
+      "function": "LF",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "return [[num for i in range(W)] for j in range(H)]",
+      "dead": false,
+      "function": "Init",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "from math import sqrt",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "ImportFrom",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "res = [True] * (n+1)",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "res[0] = False",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "res[1] = False",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "For",
+      "line": 24,
+      "node_id": 5
+    },
+    {
+      "code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "If",
+      "line": 25,
+      "node_id": 6
+    },
+    {
+      "code": "for j in range(2*i,n+1,i): res[j] = False",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "For",
+      "line": 26,
+      "node_id": 7
+    },
+    {
+      "code": "res[j] = False",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 8
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "function": "Eratosthenes",
+      "kind": "Return",
+      "line": 28,
+      "node_id": 9
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "function": "BIT.__init__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 1
+    },
+    {
+      "code": "self.bit = [0] * (n+1)",
+      "dead": false,
+      "function": "BIT.__init__",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 2
+    },
+    {
+      "code": "while i <= self.n: self.bit[i] += x i += (i & -i)",
+      "dead": false,
+      "function": "BIT.add",
+      "kind": "While",
+      "line": 40,
+      "node_id": 1
+    },
+    {
+      "code": "self.bit[i] += x",
+      "dead": false,
+      "function": "BIT.add",
+      "kind": "AugAssign",
+      "line": 41,
+      "node_id": 2
+    },
+    {
+      "code": "i += (i & -i)",
+      "dead": false,
+      "function": "BIT.add",
+      "kind": "AugAssign",
+      "line": 42,
+      "node_id": 3
+    },
+    {
+      "code": "s = 0",
+      "dead": false,
+      "function": "BIT.sum",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 1
+    },
+    {
+      "code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+      "dead": false,
+      "function": "BIT.sum",
+      "kind": "While",
+      "line": 47,
+      "node_id": 2
+    },
+    {
+      "code": "s+=self.bit[i]",
+      "dead": false,
+      "function": "BIT.sum",
+      "kind": "AugAssign",
+      "line": 48,
+      "node_id": 3
+    },
+    {
+      "code": "i -= (i & -i)",
+      "dead": false,
+      "function": "BIT.sum",
+      "kind": "AugAssign",
+      "line": 49,
+      "node_id": 4
+    },
+    {
+      "code": "return s",
+      "dead": false,
+      "function": "BIT.sum",
+      "kind": "Return",
+      "line": 50,
+      "node_id": 5
+    },
+    {
+      "code": "return self.sum(k) - self.sum(i)",
+      "dead": false,
+      "function": "BIT.rangesum",
+      "kind": "Return",
+      "line": 53,
+      "node_id": 1
+    },
+    {
+      "code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "If",
+      "line": 57,
+      "node_id": 1
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Return",
+      "line": 58,
+      "node_id": 2
+    },
+    {
+      "code": "i = 0",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 3
+    },
+    {
+      "code": "r = 1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Assign",
+      "line": 61,
+      "node_id": 4
+    },
+    {
+      "code": "while(r<self.n): r=r<<1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "While",
+      "line": 64,
+      "node_id": 5
+    },
+    {
+      "code": "r=r<<1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Assign",
+      "line": 65,
+      "node_id": 6
+    },
+    {
+      "code": "len = r",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Assign",
+      "line": 66,
+      "node_id": 7
+    },
+    {
+      "code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "While",
+      "line": 67,
+      "node_id": 8
+    },
+    {
+      "code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "If",
+      "line": 68,
+      "node_id": 9
+    },
+    {
+      "code": "x-=self.bit[i+len]",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "AugAssign",
+      "line": 69,
+      "node_id": 10
+    },
+    {
+      "code": "i+=len",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "AugAssign",
+      "line": 70,
+      "node_id": 11
+    },
+    {
+      "code": "len = len >> 1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Assign",
+      "line": 71,
+      "node_id": 12
+    },
+    {
+      "code": "return i+1",
+      "dead": false,
+      "function": "BIT.lower_bound",
+      "kind": "Return",
+      "line": 72,
+      "node_id": 13
+    },
+    {
+      "code": "max_num = 100000",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 75,
+      "node_id": 1
+    },
+    {
+      "code": "Q = I()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 76,
+      "node_id": 2
+    },
+    {
+      "code": "S = Eratosthenes(max_num)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 77,
+      "node_id": 3
+    },
+    {
+      "code": "bit = BIT(max_num)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 78,
+      "node_id": 4
+    },
+    {
+      "code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 81,
+      "node_id": 5
+    },
+    {
+      "code": "b = (a+1) // 2",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 82,
+      "node_id": 6
+    },
+    {
+      "code": "if S[a] and S[b]: bit.add(a, 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 83,
+      "node_id": 7
+    },
+    {
+      "code": "bit.add(a, 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 84,
+      "node_id": 8
+    },
+    {
+      "code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 88,
+      "node_id": 9
+    },
+    {
+      "code": "l, r = MI()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 89,
+      "node_id": 10
+    },
+    {
+      "code": "print(bit.sum(r)-bit.sum(l-1))",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 90,
+      "node_id": 11
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "from collections import defaultdict, deque, Counter",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "from copy import deepcopy",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "from bisect import bisect, bisect_right, bisect_left",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "from heapq import heapify, heappop, heappush",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return input().rstrip()",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return float(input().rstrip())",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return int(input().rstrip())",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return map(int, input().split())",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return map(float,input().split())",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return list(map(int, input().split()))",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return list(map(float,input().split()))",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return [[num for i in range(W)] for j in range(H)]",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "from math import sqrt",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "res = [True] * (n+1)",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "res[0] = False",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "res[1] = False",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "for j in range(2*i,n+1,i): res[j] = False",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "res[j] = False",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "return res",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "self.bit = [0] * (n+1)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "while i <= self.n: self.bit[i] += x i += (i & -i)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "self.bit[i] += x",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "i += (i & -i)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "s = 0",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "s+=self.bit[i]",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "i -= (i & -i)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "return s",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "return self.sum(k) - self.sum(i)",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "i = 0",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "r = 1",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "while(r<self.n): r=r<<1",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "r=r<<1",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "len = r",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "x-=self.bit[i+len]",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "i+=len",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "len = len >> 1",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "return i+1",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "max_num = 100000",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "Q = I()",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "S = Eratosthenes(max_num)",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "bit = BIT(max_num)",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "b = (a+1) // 2",
+      "dead": false,
+      "line": 82
+    },
+    {
+      "code": "if S[a] and S[b]: bit.add(a, 1)",
+      "dead": false,
+      "line": 83
+    },
+    {
+      "code": "bit.add(a, 1)",
+      "dead": false,
+      "line": 84
+    },
+    {
+      "code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "dead": false,
+      "line": 88
+    },
+    {
+      "code": "l, r = MI()",
+      "dead": false,
+      "line": 89
+    },
+    {
+      "code": "print(bit.sum(r)-bit.sum(l-1))",
+      "dead": false,
+      "line": 90
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "line": 92
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 93
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03476_s675740467.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 9,
+      "lineno": 9,
+      "name": "RD",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 10,
+      "name": "F",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 11,
+      "lineno": 11,
+      "name": "I",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 12,
+      "lineno": 12,
+      "name": "MI",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 13,
+      "lineno": 13,
+      "name": "MF",
+      "variables": [
+        "float"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 14,
+      "name": "LI",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 15,
+      "lineno": 15,
+      "name": "LF",
+      "variables": [
+        "float"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 16,
+      "name": "Init",
+      "variables": [
+        "H",
+        "W",
+        "num"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 28,
+      "lineno": 18,
+      "name": "Eratosthenes",
+      "variables": [
+        "i",
+        "j",
+        "n",
+        "res",
+        "sqrt"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 35,
+      "lineno": 33,
+      "name": "BIT.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.bit",
+        "self.n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 42,
+      "lineno": 38,
+      "name": "BIT.add",
+      "variables": [
+        "i",
+        "self",
+        "self.bit",
+        "self.n",
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 50,
+      "lineno": 44,
+      "name": "BIT.sum",
+      "variables": [
+        "i",
+        "s",
+        "self",
+        "self.bit"
+      ]
+    },
+    {
+      "calls": [
+        "BIT.sum"
+      ],
+      "end_lineno": 53,
+      "lineno": 52,
+      "name": "BIT.rangesum",
+      "variables": [
+        "i",
+        "k",
+        "self"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 72,
+      "lineno": 56,
+      "name": "BIT.lower_bound",
+      "variables": [
+        "i",
+        "len",
+        "r",
+        "self",
+        "self.bit",
+        "self.n",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "BIT.__init__",
+        "Eratosthenes",
+        "I",
+        "MI"
+      ],
+      "end_lineno": 90,
+      "lineno": 74,
+      "name": "main",
+      "variables": [
+        "Q",
+        "S",
+        "a",
+        "b",
+        "bit",
+        "l",
+        "max_num",
+        "q",
+        "r"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "BIT.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.n = n",
+            "line": 34,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.bit = [0] * (n+1)",
+            "line": 35,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.bit": false,
+          "self.n": false
+        },
+        "return_vars": []
+      },
+      "BIT.add": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "while i <= self.n: self.bit[i] += x i += (i & -i)",
+            "line": 40,
+            "vars": [
+              "i",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "self.bit[i] += x",
+            "line": 41,
+            "vars": [
+              "i",
+              "self.bit",
+              "x"
+            ]
+          },
+          {
+            "code": "i += (i & -i)",
+            "line": 42,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "self": false,
+          "self.bit": false,
+          "self.n": false,
+          "x": false
+        },
+        "return_vars": []
+      },
+      "BIT.lower_bound": {
+        "base_liveout": [
+          "i"
+        ],
+        "live_before": [
+          {
+            "code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+            "line": 57,
+            "vars": [
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 58,
+            "vars": [
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "i = 0",
+            "line": 60,
+            "vars": [
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "r = 1",
+            "line": 61,
+            "vars": [
+              "i",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "while(r<self.n): r=r<<1",
+            "line": 64,
+            "vars": [
+              "i",
+              "r",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "r=r<<1",
+            "line": 65,
+            "vars": [
+              "i",
+              "r",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "len = r",
+            "line": 66,
+            "vars": [
+              "i",
+              "r",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+            "line": 67,
+            "vars": [
+              "i",
+              "len",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+            "line": 68,
+            "vars": [
+              "i",
+              "len",
+              "self.bit",
+              "self.n",
+              "x"
+            ]
+          },
+          {
+            "code": "x-=self.bit[i+len]",
+            "line": 69,
+            "vars": [
+              "i",
+              "len",
+              "self.bit"
+            ]
+          },
+          {
+            "code": "i+=len",
+            "line": 70,
+            "vars": [
+              "len"
+            ]
+          },
+          {
+            "code": "len = len >> 1",
+            "line": 71,
+            "vars": [
+              "i",
+              "len"
+            ]
+          },
+          {
+            "code": "return i+1",
+            "line": 72,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": true,
+          "len": false,
+          "r": false,
+          "self": false,
+          "self.bit": false,
+          "self.n": false,
+          "x": false
+        },
+        "return_vars": [
+          "i"
+        ]
+      },
+      "BIT.rangesum": {
+        "base_liveout": [
+          "i",
+          "k",
+          "self"
+        ],
+        "live_before": [
+          {
+            "code": "return self.sum(k) - self.sum(i)",
+            "line": 53,
+            "vars": [
+              "i",
+              "k",
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": true,
+          "k": true,
+          "self": true
+        },
+        "return_vars": [
+          "i",
+          "k",
+          "self"
+        ]
+      },
+      "BIT.sum": {
+        "base_liveout": [
+          "s"
+        ],
+        "live_before": [
+          {
+            "code": "s = 0",
+            "line": 45,
+            "vars": [
+              "i",
+              "self.bit"
+            ]
+          },
+          {
+            "code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+            "line": 47,
+            "vars": [
+              "i",
+              "self.bit"
+            ]
+          },
+          {
+            "code": "s+=self.bit[i]",
+            "line": 48,
+            "vars": [
+              "i",
+              "self.bit"
+            ]
+          },
+          {
+            "code": "i -= (i & -i)",
+            "line": 49,
+            "vars": [
+              "i",
+              "s"
+            ]
+          },
+          {
+            "code": "return s",
+            "line": 50,
+            "vars": [
+              "s"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "s": true,
+          "self": false,
+          "self.bit": false
+        },
+        "return_vars": [
+          "s"
+        ]
+      },
+      "Eratosthenes": {
+        "base_liveout": [
+          "res"
+        ],
+        "live_before": [
+          {
+            "code": "from math import sqrt",
+            "line": 19,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "res = [True] * (n+1)",
+            "line": 20,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "res[0] = False",
+            "line": 21,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "res[1] = False",
+            "line": 22,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+            "line": 24,
+            "vars": [
+              "n",
+              "res"
+            ]
+          },
+          {
+            "code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+            "line": 25,
+            "vars": [
+              "i",
+              "n",
+              "res"
+            ]
+          },
+          {
+            "code": "for j in range(2*i,n+1,i): res[j] = False",
+            "line": 26,
+            "vars": [
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "res[j] = False",
+            "line": 27,
+            "vars": [
+              "j"
+            ]
+          },
+          {
+            "code": "return res",
+            "line": 28,
+            "vars": [
+              "res"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "j": false,
+          "n": false,
+          "res": true,
+          "sqrt": false
+        },
+        "return_vars": [
+          "res"
+        ]
+      },
+      "F": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return float(input().rstrip())",
+            "line": 10,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "I": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return int(input().rstrip())",
+            "line": 11,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "Init": {
+        "base_liveout": [
+          "H",
+          "W",
+          "num"
+        ],
+        "live_before": [
+          {
+            "code": "return [[num for i in range(W)] for j in range(H)]",
+            "line": 16,
+            "vars": [
+              "H",
+              "W",
+              "num"
+            ]
+          }
+        ],
+        "liveout": {
+          "H": true,
+          "W": true,
+          "num": true
+        },
+        "return_vars": [
+          "H",
+          "W",
+          "num"
+        ]
+      },
+      "LF": {
+        "base_liveout": [
+          "float"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(float,input().split()))",
+            "line": 15,
+            "vars": [
+              "float"
+            ]
+          }
+        ],
+        "liveout": {
+          "float": true
+        },
+        "return_vars": [
+          "float"
+        ]
+      },
+      "LI": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int, input().split()))",
+            "line": 14,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "MF": {
+        "base_liveout": [
+          "float"
+        ],
+        "live_before": [
+          {
+            "code": "return map(float,input().split())",
+            "line": 13,
+            "vars": [
+              "float"
+            ]
+          }
+        ],
+        "liveout": {
+          "float": true
+        },
+        "return_vars": [
+          "float"
+        ]
+      },
+      "MI": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return map(int, input().split())",
+            "line": 12,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "RD": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return input().rstrip()",
+            "line": 9,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "import math",
+            "line": 2,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "from collections import defaultdict, deque, Counter",
+            "line": 3,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "from copy import deepcopy",
+            "line": 4,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "from bisect import bisect, bisect_right, bisect_left",
+            "line": 5,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "from heapq import heapify, heappop, heappush",
+            "line": 6,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "input = sys.stdin.readline",
+            "line": 8,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "if __name__ == \"__main__\": main()",
+            "line": 92,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 93,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "__name__": false,
+          "input": false,
+          "sys.stdin.readline": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "max_num = 100000",
+            "line": 75,
+            "vars": []
+          },
+          {
+            "code": "Q = I()",
+            "line": 76,
+            "vars": [
+              "max_num"
+            ]
+          },
+          {
+            "code": "S = Eratosthenes(max_num)",
+            "line": 77,
+            "vars": [
+              "Q",
+              "max_num"
+            ]
+          },
+          {
+            "code": "bit = BIT(max_num)",
+            "line": 78,
+            "vars": [
+              "Q",
+              "S",
+              "max_num"
+            ]
+          },
+          {
+            "code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+            "line": 81,
+            "vars": [
+              "Q",
+              "S",
+              "bit",
+              "max_num"
+            ]
+          },
+          {
+            "code": "b = (a+1) // 2",
+            "line": 82,
+            "vars": [
+              "Q",
+              "S",
+              "a",
+              "bit"
+            ]
+          },
+          {
+            "code": "if S[a] and S[b]: bit.add(a, 1)",
+            "line": 83,
+            "vars": [
+              "Q",
+              "S",
+              "a",
+              "b",
+              "bit"
+            ]
+          },
+          {
+            "code": "bit.add(a, 1)",
+            "line": 84,
+            "vars": [
+              "Q",
+              "a",
+              "bit"
+            ]
+          },
+          {
+            "code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+            "line": 88,
+            "vars": [
+              "Q",
+              "bit"
+            ]
+          },
+          {
+            "code": "l, r = MI()",
+            "line": 89,
+            "vars": [
+              "bit"
+            ]
+          },
+          {
+            "code": "print(bit.sum(r)-bit.sum(l-1))",
+            "line": 90,
+            "vars": [
+              "bit",
+              "l",
+              "r"
+            ]
+          }
+        ],
+        "liveout": {
+          "Q": false,
+          "S": false,
+          "a": false,
+          "b": false,
+          "bit": false,
+          "l": false,
+          "max_num": false,
+          "q": false,
+          "r": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while i <= self.n:",
+      "cond": "i <= self.n",
+      "function": "BIT.add",
+      "header_id": 1,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while(r<self.n):",
+      "cond": "r < self.n",
+      "function": "BIT.lower_bound",
+      "header_id": 5,
+      "line": 64,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while len > 0:",
+      "cond": "len > 0",
+      "function": "BIT.lower_bound",
+      "header_id": 8,
+      "line": 67,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while i > 0:",
+      "cond": "i > 0",
+      "function": "BIT.sum",
+      "header_id": 2,
+      "line": 47,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(2,int(sqrt(n))+1):",
+      "cond": "for i in range(2,int(sqrt(n))+1)",
+      "function": "Eratosthenes",
+      "header_id": 5,
+      "line": 24,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(2*i,n+1,i):",
+      "cond": "for j in range(2*i,n+1,i)",
+      "function": "Eratosthenes",
+      "header_id": 7,
+      "line": 26,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for a in range(1,max_num, 2):",
+      "cond": "for a in range(1,max_num, 2)",
+      "function": "main",
+      "header_id": 5,
+      "line": 81,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for q in range(Q):",
+      "cond": "for q in range(Q)",
+      "function": "main",
+      "header_id": 9,
+      "line": 88,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "import math",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from collections import defaultdict, deque, Counter",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "from collections import defaultdict, deque, Counter",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from copy import deepcopy",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "from copy import deepcopy",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict, deque, Counter",
+      "a_line": 3,
+      "b_code": "from copy import deepcopy",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from bisect import bisect, bisect_right, bisect_left",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "from bisect import bisect, bisect_right, bisect_left",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict, deque, Counter",
+      "a_line": 3,
+      "b_code": "from bisect import bisect, bisect_right, bisect_left",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 4,
+      "b_code": "from bisect import bisect, bisect_right, bisect_left",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from heapq import heapify, heappop, heappush",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "from heapq import heapify, heappop, heappush",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict, deque, Counter",
+      "a_line": 3,
+      "b_code": "from heapq import heapify, heappop, heappush",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 4,
+      "b_code": "from heapq import heapify, heappop, heappush",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_right, bisect_left",
+      "a_line": 5,
+      "b_code": "from heapq import heapify, heappop, heappush",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict, deque, Counter",
+      "a_line": 3,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 4,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_right, bisect_left",
+      "a_line": 5,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heapify, heappop, heappush",
+      "a_line": 6,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict, deque, Counter",
+      "a_line": 3,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 4,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_right, bisect_left",
+      "a_line": 5,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heapify, heappop, heappush",
+      "a_line": 6,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 92,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict, deque, Counter",
+      "a_line": 3,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 4,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from bisect import bisect, bisect_right, bisect_left",
+      "a_line": 5,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heapify, heappop, heappush",
+      "a_line": 6,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__ == \"__main__\": main()",
+      "a_line": 92,
+      "b_code": "main()",
+      "b_line": 93,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "res = [True] * (n+1)",
+      "b_line": 20,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "res[0] = False",
+      "b_line": 21,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "res[0] = False",
+      "b_line": 21,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "res[1] = False",
+      "b_line": 22,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "res[1] = False",
+      "b_line": 22,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[0] = False",
+      "a_line": 21,
+      "b_code": "res[1] = False",
+      "b_line": 22,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 24,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 24,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[0] = False",
+      "a_line": 21,
+      "b_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 24,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[1] = False",
+      "a_line": 22,
+      "b_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 24,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 25,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 25,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[0] = False",
+      "a_line": 21,
+      "b_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 25,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[1] = False",
+      "a_line": 22,
+      "b_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 25,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 24,
+      "b_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 25,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 26,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 26,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[0] = False",
+      "a_line": 21,
+      "b_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 26,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[1] = False",
+      "a_line": 22,
+      "b_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 26,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 24,
+      "b_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 26,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 25,
+      "b_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "b_line": 26,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[0] = False",
+      "a_line": 21,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[1] = False",
+      "a_line": 22,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 24,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 25,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 26,
+      "b_code": "res[j] = False",
+      "b_line": 27,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "from math import sqrt",
+      "a_line": 19,
+      "b_code": "return res",
+      "b_line": 28,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res = [True] * (n+1)",
+      "a_line": 20,
+      "b_code": "return res",
+      "b_line": 28,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[0] = False",
+      "a_line": 21,
+      "b_code": "return res",
+      "b_line": 28,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "res[1] = False",
+      "a_line": 22,
+      "b_code": "return res",
+      "b_line": 28,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "for i in range(2,int(sqrt(n))+1): if res[i]: for j in range(2*i,n+1,i): res[j] = False",
+      "a_line": 24,
+      "b_code": "return res",
+      "b_line": 28,
+      "function": "Eratosthenes"
+    },
+    {
+      "a_code": "self.n = n",
+      "a_line": 34,
+      "b_code": "self.bit = [0] * (n+1)",
+      "b_line": 35,
+      "function": "BIT.__init__"
+    },
+    {
+      "a_code": "while i <= self.n: self.bit[i] += x i += (i & -i)",
+      "a_line": 40,
+      "b_code": "self.bit[i] += x",
+      "b_line": 41,
+      "function": "BIT.add"
+    },
+    {
+      "a_code": "while i <= self.n: self.bit[i] += x i += (i & -i)",
+      "a_line": 40,
+      "b_code": "i += (i & -i)",
+      "b_line": 42,
+      "function": "BIT.add"
+    },
+    {
+      "a_code": "self.bit[i] += x",
+      "a_line": 41,
+      "b_code": "i += (i & -i)",
+      "b_line": 42,
+      "function": "BIT.add"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 45,
+      "b_code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+      "b_line": 47,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 45,
+      "b_code": "s+=self.bit[i]",
+      "b_line": 48,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+      "a_line": 47,
+      "b_code": "s+=self.bit[i]",
+      "b_line": 48,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 45,
+      "b_code": "i -= (i & -i)",
+      "b_line": 49,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+      "a_line": 47,
+      "b_code": "i -= (i & -i)",
+      "b_line": 49,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "s+=self.bit[i]",
+      "a_line": 48,
+      "b_code": "i -= (i & -i)",
+      "b_line": 49,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "s = 0",
+      "a_line": 45,
+      "b_code": "return s",
+      "b_line": 50,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "while i > 0: s+=self.bit[i] i -= (i & -i)",
+      "a_line": 47,
+      "b_code": "return s",
+      "b_line": 50,
+      "function": "BIT.sum"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "return 0",
+      "b_line": 58,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "i = 0",
+      "b_line": 60,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "r = 1",
+      "b_line": 61,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "r = 1",
+      "b_line": 61,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "while(r<self.n): r=r<<1",
+      "b_line": 64,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "while(r<self.n): r=r<<1",
+      "b_line": 64,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "while(r<self.n): r=r<<1",
+      "b_line": 64,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "r=r<<1",
+      "b_line": 65,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "r=r<<1",
+      "b_line": 65,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "r=r<<1",
+      "b_line": 65,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "r=r<<1",
+      "b_line": 65,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "len = r",
+      "b_line": 66,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "len = r",
+      "b_line": 66,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "len = r",
+      "b_line": 66,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "len = r",
+      "b_line": 66,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "b_line": 67,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "b_line": 67,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "b_line": 67,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "b_line": 67,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "len = r",
+      "a_line": 66,
+      "b_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "b_line": 67,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "b_line": 68,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "b_line": 68,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "b_line": 68,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "b_line": 68,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "len = r",
+      "a_line": 66,
+      "b_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "b_line": 68,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "a_line": 67,
+      "b_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "b_line": 68,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "len = r",
+      "a_line": 66,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "a_line": 67,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "a_line": 68,
+      "b_code": "x-=self.bit[i+len]",
+      "b_line": 69,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "len = r",
+      "a_line": 66,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "a_line": 67,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "a_line": 68,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "x-=self.bit[i+len]",
+      "a_line": 69,
+      "b_code": "i+=len",
+      "b_line": 70,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "len = r",
+      "a_line": 66,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "a_line": 67,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len",
+      "a_line": 68,
+      "b_code": "len = len >> 1",
+      "b_line": 71,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "if x <= 0: return 0 else: i = 0 r = 1 #\u6700\u5927\u3068\u3057\u3066\u3042\u308a\u3046\u308b\u533a\u9593\u306e\u9577\u3055\u3092\u53d6\u5f97\u3059\u308b #n\u4ee5\u4e0b\u306e\u6700\u5c0f\u306e\u4e8c\u4e57\u306e\u3079\u304d(BIT\u3067\u7ba1\u7406\u3059\u308b\u6570\u5217\u306e\u533a\u9593\u3067\u6700\u5927\u306e\u3082\u306e)\u3092\u6c42\u3081\u308b while(r<self.n): r=r<<1 len = r while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1 return i+1",
+      "a_line": 57,
+      "b_code": "return i+1",
+      "b_line": 72,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 60,
+      "b_code": "return i+1",
+      "b_line": 72,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 61,
+      "b_code": "return i+1",
+      "b_line": 72,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while(r<self.n): r=r<<1",
+      "a_line": 64,
+      "b_code": "return i+1",
+      "b_line": 72,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "len = r",
+      "a_line": 66,
+      "b_code": "return i+1",
+      "b_line": 72,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "while len > 0: if(i+len<self.n and self.bit[i+len]<x): x-=self.bit[i+len] i+=len len = len >> 1",
+      "a_line": 67,
+      "b_code": "return i+1",
+      "b_line": 72,
+      "function": "BIT.lower_bound"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "Q = I()",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "S = Eratosthenes(max_num)",
+      "b_line": 77,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "S = Eratosthenes(max_num)",
+      "b_line": 77,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "bit = BIT(max_num)",
+      "b_line": 78,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "bit = BIT(max_num)",
+      "b_line": 78,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "bit = BIT(max_num)",
+      "b_line": 78,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 81,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "b = (a+1) // 2",
+      "b_line": 82,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "b = (a+1) // 2",
+      "b_line": 82,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "b = (a+1) // 2",
+      "b_line": 82,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "b = (a+1) // 2",
+      "b_line": 82,
+      "function": "main"
+    },
+    {
+      "a_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 81,
+      "b_code": "b = (a+1) // 2",
+      "b_line": 82,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 83,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 83,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 83,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 83,
+      "function": "main"
+    },
+    {
+      "a_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 81,
+      "b_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 83,
+      "function": "main"
+    },
+    {
+      "a_code": "b = (a+1) // 2",
+      "a_line": 82,
+      "b_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "b_line": 83,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 81,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "b = (a+1) // 2",
+      "a_line": 82,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 83,
+      "b_code": "bit.add(a, 1)",
+      "b_line": 84,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 88,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 88,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 88,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 88,
+      "function": "main"
+    },
+    {
+      "a_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 81,
+      "b_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 88,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "l, r = MI()",
+      "b_line": 89,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "l, r = MI()",
+      "b_line": 89,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "l, r = MI()",
+      "b_line": 89,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "l, r = MI()",
+      "b_line": 89,
+      "function": "main"
+    },
+    {
+      "a_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 81,
+      "b_code": "l, r = MI()",
+      "b_line": 89,
+      "function": "main"
+    },
+    {
+      "a_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "a_line": 88,
+      "b_code": "l, r = MI()",
+      "b_line": 89,
+      "function": "main"
+    },
+    {
+      "a_code": "max_num = 100000",
+      "a_line": 75,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "Q = I()",
+      "a_line": 76,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "S = Eratosthenes(max_num)",
+      "a_line": 77,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "bit = BIT(max_num)",
+      "a_line": 78,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "for a in range(1,max_num, 2): b = (a+1) // 2 if S[a] and S[b]: bit.add(a, 1)",
+      "a_line": 81,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "for q in range(Q): l, r = MI() print(bit.sum(r)-bit.sum(l-1))",
+      "a_line": 88,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    },
+    {
+      "a_code": "l, r = MI()",
+      "a_line": 89,
+      "b_code": "print(bit.sum(r)-bit.sum(l-1))",
+      "b_line": 90,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped bit.sum at line 90",
+      "external call skipped input at line 10",
+      "external call skipped input at line 11",
+      "external call skipped input at line 12",
+      "external call skipped input at line 13",
+      "external call skipped input at line 14",
+      "external call skipped input at line 15",
+      "external call skipped input at line 9",
+      "external call skipped sqrt at line 24"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped bit.sum at line 90",
+    "external call skipped input at line 10",
+    "external call skipped input at line 11",
+    "external call skipped input at line 12",
+    "external call skipped input at line 13",
+    "external call skipped input at line 14",
+    "external call skipped input at line 15",
+    "external call skipped input at line 9",
+    "external call skipped sqrt at line 24"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "input = sys.stdin.readline",
+        "line": 8,
+        "var": "sys.stdin.readline"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 8,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "__name__"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 8,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Eratosthenes(n):",
+        "line": 18,
+        "var": "n"
+      },
+      "from": {
+        "code": "res = [True] * (n+1)",
+        "line": 20,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Eratosthenes(n):",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "res = [True] * (n+1)",
+        "line": 20,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Eratosthenes(n):",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "res[0] = False",
+        "line": 21,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Eratosthenes(n):",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "res[1] = False",
+        "line": 22,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "res[j] = False",
+        "line": 27,
+        "var": "j"
+      },
+      "from": {
+        "code": "res[j] = False",
+        "line": 27,
+        "var": "res"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Eratosthenes(n):",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "res[j] = False",
+        "line": 27,
+        "var": "res"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 33,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 34,
+        "var": "self.n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 33,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 34,
+        "var": "self.n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 33,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.bit = [0] * (n+1)",
+        "line": 35,
+        "var": "self.bit"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 33,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.bit = [0] * (n+1)",
+        "line": 35,
+        "var": "self.bit"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self,i,x):",
+        "line": 38,
+        "var": "i"
+      },
+      "from": {
+        "code": "self.bit[i] += x",
+        "line": 41,
+        "var": "self.bit"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.bit[i] += x",
+        "line": 41,
+        "var": "self.bit"
+      },
+      "from": {
+        "code": "self.bit[i] += x",
+        "line": 41,
+        "var": "self.bit"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self,i,x):",
+        "line": 38,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.bit[i] += x",
+        "line": 41,
+        "var": "self.bit"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self,i,x):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.bit[i] += x",
+        "line": 41,
+        "var": "self.bit"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self,i,x):",
+        "line": 38,
+        "var": "i"
+      },
+      "from": {
+        "code": "i += (i & -i)",
+        "line": 42,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add(self,i,x):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "i += (i & -i)",
+        "line": 42,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def sum(self,i):",
+        "line": 44,
+        "var": "i"
+      },
+      "from": {
+        "code": "s = 0",
+        "line": 45,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def sum(self,i):",
+        "line": 44,
+        "var": "i"
+      },
+      "from": {
+        "code": "s+=self.bit[i]",
+        "line": 48,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s+=self.bit[i]",
+        "line": 48,
+        "var": "self.bit"
+      },
+      "from": {
+        "code": "s+=self.bit[i]",
+        "line": 48,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def sum(self,i):",
+        "line": 44,
+        "var": "self"
+      },
+      "from": {
+        "code": "s+=self.bit[i]",
+        "line": 48,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def sum(self,i):",
+        "line": 44,
+        "var": "i"
+      },
+      "from": {
+        "code": "i -= (i & -i)",
+        "line": 49,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s+=self.bit[i]",
+        "line": 48,
+        "var": "s"
+      },
+      "from": {
+        "code": "i -= (i & -i)",
+        "line": 49,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def lower_bound(self,x):",
+        "line": 56,
+        "var": "len"
+      },
+      "from": {
+        "code": "i = 0",
+        "line": 60,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i = 0",
+        "line": 60,
+        "var": "i"
+      },
+      "from": {
+        "code": "r = 1",
+        "line": 61,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r = 1",
+        "line": 61,
+        "var": "r"
+      },
+      "from": {
+        "code": "r=r<<1",
+        "line": 65,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i = 0",
+        "line": 60,
+        "var": "i"
+      },
+      "from": {
+        "code": "r=r<<1",
+        "line": 65,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r=r<<1",
+        "line": 65,
+        "var": "r"
+      },
+      "from": {
+        "code": "len = r",
+        "line": 66,
+        "var": "len"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i = 0",
+        "line": 60,
+        "var": "i"
+      },
+      "from": {
+        "code": "len = r",
+        "line": 66,
+        "var": "len"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i = 0",
+        "line": 60,
+        "var": "i"
+      },
+      "from": {
+        "code": "x-=self.bit[i+len]",
+        "line": 69,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "len = r",
+        "line": 66,
+        "var": "len"
+      },
+      "from": {
+        "code": "x-=self.bit[i+len]",
+        "line": 69,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r=r<<1",
+        "line": 65,
+        "var": "r"
+      },
+      "from": {
+        "code": "x-=self.bit[i+len]",
+        "line": 69,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x-=self.bit[i+len]",
+        "line": 69,
+        "var": "self.bit"
+      },
+      "from": {
+        "code": "x-=self.bit[i+len]",
+        "line": 69,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def lower_bound(self,x):",
+        "line": 56,
+        "var": "self"
+      },
+      "from": {
+        "code": "x-=self.bit[i+len]",
+        "line": 69,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "len = r",
+        "line": 66,
+        "var": "len"
+      },
+      "from": {
+        "code": "i+=len",
+        "line": 70,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r=r<<1",
+        "line": 65,
+        "var": "r"
+      },
+      "from": {
+        "code": "i+=len",
+        "line": 70,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def lower_bound(self,x):",
+        "line": 56,
+        "var": "self"
+      },
+      "from": {
+        "code": "i+=len",
+        "line": 70,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "len = r",
+        "line": 66,
+        "var": "len"
+      },
+      "from": {
+        "code": "len = len >> 1",
+        "line": 71,
+        "var": "len"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r=r<<1",
+        "line": 65,
+        "var": "r"
+      },
+      "from": {
+        "code": "len = len >> 1",
+        "line": 71,
+        "var": "len"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i+=len",
+        "line": 70,
+        "var": "i"
+      },
+      "from": {
+        "code": "len = len >> 1",
+        "line": 71,
+        "var": "len"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 74,
+        "var": "Q"
+      },
+      "from": {
+        "code": "max_num = 100000",
+        "line": 75,
+        "var": "max_num"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 74,
+        "var": "S"
+      },
+      "from": {
+        "code": "Q = I()",
+        "line": 76,
+        "var": "Q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "max_num = 100000",
+        "line": 75,
+        "var": "max_num"
+      },
+      "from": {
+        "code": "S = Eratosthenes(max_num)",
+        "line": 77,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Q = I()",
+        "line": 76,
+        "var": "Q"
+      },
+      "from": {
+        "code": "S = Eratosthenes(max_num)",
+        "line": 77,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "max_num = 100000",
+        "line": 75,
+        "var": "max_num"
+      },
+      "from": {
+        "code": "bit = BIT(max_num)",
+        "line": 78,
+        "var": "bit"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Q = I()",
+        "line": 76,
+        "var": "Q"
+      },
+      "from": {
+        "code": "bit = BIT(max_num)",
+        "line": 78,
+        "var": "bit"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "b = (a+1) // 2",
+        "line": 82,
+        "var": "a"
+      },
+      "from": {
+        "code": "b = (a+1) // 2",
+        "line": 82,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Q = I()",
+        "line": 76,
+        "var": "Q"
+      },
+      "from": {
+        "code": "b = (a+1) // 2",
+        "line": 82,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q = I()",
+        "line": 76,
+        "var": "Q"
+      },
+      "from": {
+        "code": "l, r = MI()",
+        "line": 89,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q = I()",
+        "line": 76,
+        "var": "Q"
+      },
+      "from": {
+        "code": "l, r = MI()",
+        "line": 89,
+        "var": "r"
+      },
+      "label": "negative"
+    }
+  ]
+}

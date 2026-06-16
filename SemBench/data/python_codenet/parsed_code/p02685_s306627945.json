@@ -1,0 +1,1953 @@
+{
+  "cfg_statements": [
+    {
+      "code": "MOD = 998244353",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "MAX = int(2e5 + 5)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "fact = [0] * MAX",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "invFact = [0] * MAX",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "pre()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 39,
+      "node_id": 5
+    },
+    {
+      "code": "n, m, k = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 6
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 44,
+      "node_id": 8
+    },
+    {
+      "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 9
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 47,
+      "node_id": 10
+    },
+    {
+      "code": "if b == 0: return 1",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "If",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 2
+    },
+    {
+      "code": "ret = bigmod(a, b // 2)",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 3
+    },
+    {
+      "code": "ret = (ret * ret) % MOD",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 4
+    },
+    {
+      "code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "If",
+      "line": 13,
+      "node_id": 5
+    },
+    {
+      "code": "ret = (ret * a) % MOD",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 6
+    },
+    {
+      "code": "return ret",
+      "dead": false,
+      "function": "bigmod",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 7
+    },
+    {
+      "code": "return bigmod(a, MOD - 2)",
+      "dead": false,
+      "function": "mod_inverse",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "global fact, invFact",
+      "dead": false,
+      "function": "pre",
+      "kind": "Global",
+      "line": 23,
+      "node_id": 1
+    },
+    {
+      "code": "fact[0] = 1",
+      "dead": false,
+      "function": "pre",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "dead": false,
+      "function": "pre",
+      "kind": "For",
+      "line": 25,
+      "node_id": 3
+    },
+    {
+      "code": "fact[i] = (fact[i - 1] * i) % MOD",
+      "dead": false,
+      "function": "pre",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 4
+    },
+    {
+      "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "dead": false,
+      "function": "pre",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "dead": false,
+      "function": "pre",
+      "kind": "For",
+      "line": 28,
+      "node_id": 6
+    },
+    {
+      "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "dead": false,
+      "function": "pre",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 7
+    },
+    {
+      "code": "if nn < 0 or nn < rr or rr < 0: return 0",
+      "dead": false,
+      "function": "ncr",
+      "kind": "If",
+      "line": 33,
+      "node_id": 1
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "ncr",
+      "kind": "Return",
+      "line": 34,
+      "node_id": 2
+    },
+    {
+      "code": "return (fact[nn] * invFact[rr] * invFact[nn - rr]) % MOD",
+      "dead": false,
+      "function": "ncr",
+      "kind": "Return",
+      "line": 35,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "MOD = 998244353",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "MAX = int(2e5 + 5)",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "fact = [0] * MAX",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "invFact = [0] * MAX",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "if b == 0: return 1",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "ret = bigmod(a, b // 2)",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "ret = (ret * ret) % MOD",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "ret = (ret * a) % MOD",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return ret",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return bigmod(a, MOD - 2)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "global fact, invFact",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "fact[0] = 1",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "fact[i] = (fact[i - 1] * i) % MOD",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if nn < 0 or nn < rr or rr < 0: return 0",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "return (fact[nn] * invFact[rr] * invFact[nn - rr]) % MOD",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "pre()",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "n, m, k = map(int, input().split())",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 47
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02685_s306627945.py",
+  "functions": [
+    {
+      "calls": [
+        "bigmod"
+      ],
+      "end_lineno": 15,
+      "lineno": 8,
+      "name": "bigmod",
+      "variables": [
+        "MOD",
+        "a",
+        "b",
+        "ret"
+      ]
+    },
+    {
+      "calls": [
+        "bigmod"
+      ],
+      "end_lineno": 19,
+      "lineno": 18,
+      "name": "mod_inverse",
+      "variables": [
+        "MOD",
+        "a"
+      ]
+    },
+    {
+      "calls": [
+        "mod_inverse"
+      ],
+      "end_lineno": 29,
+      "lineno": 22,
+      "name": "pre",
+      "variables": [
+        "MAX",
+        "MOD",
+        "fact",
+        "i",
+        "invFact"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 35,
+      "lineno": 32,
+      "name": "ncr",
+      "variables": [
+        "MOD",
+        "fact",
+        "invFact",
+        "nn",
+        "rr"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "MOD = 998244353",
+            "line": 1,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "MAX = int(2e5 + 5)",
+            "line": 2,
+            "vars": [
+              "MOD",
+              "int"
+            ]
+          },
+          {
+            "code": "fact = [0] * MAX",
+            "line": 4,
+            "vars": [
+              "MAX",
+              "MOD",
+              "int"
+            ]
+          },
+          {
+            "code": "invFact = [0] * MAX",
+            "line": 5,
+            "vars": [
+              "MAX",
+              "MOD",
+              "int"
+            ]
+          },
+          {
+            "code": "pre()",
+            "line": 39,
+            "vars": [
+              "MOD",
+              "int"
+            ]
+          },
+          {
+            "code": "n, m, k = map(int, input().split())",
+            "line": 40,
+            "vars": [
+              "MOD",
+              "int"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 43,
+            "vars": [
+              "MOD",
+              "k",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+            "line": 44,
+            "vars": [
+              "MOD",
+              "ans",
+              "k",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+            "line": 45,
+            "vars": [
+              "MOD",
+              "ans",
+              "i",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 47,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "MAX": false,
+          "MOD": false,
+          "ans": false,
+          "fact": false,
+          "i": false,
+          "int": false,
+          "invFact": false,
+          "k": false,
+          "m": false,
+          "n": false
+        },
+        "return_vars": []
+      },
+      "bigmod": {
+        "base_liveout": [
+          "ret"
+        ],
+        "live_before": [
+          {
+            "code": "if b == 0: return 1",
+            "line": 9,
+            "vars": [
+              "MOD",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "return 1",
+            "line": 10,
+            "vars": [
+              "MOD",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "ret = bigmod(a, b // 2)",
+            "line": 11,
+            "vars": [
+              "MOD",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "ret = (ret * ret) % MOD",
+            "line": 12,
+            "vars": [
+              "MOD",
+              "a",
+              "b",
+              "ret"
+            ]
+          },
+          {
+            "code": "if b % 2 == 1: ret = (ret * a) % MOD",
+            "line": 13,
+            "vars": [
+              "MOD",
+              "a",
+              "b",
+              "ret"
+            ]
+          },
+          {
+            "code": "ret = (ret * a) % MOD",
+            "line": 14,
+            "vars": [
+              "MOD",
+              "a",
+              "ret"
+            ]
+          },
+          {
+            "code": "return ret",
+            "line": 15,
+            "vars": [
+              "ret"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": false,
+          "a": false,
+          "b": false,
+          "ret": true
+        },
+        "return_vars": [
+          "ret"
+        ]
+      },
+      "mod_inverse": {
+        "base_liveout": [
+          "MOD",
+          "a"
+        ],
+        "live_before": [
+          {
+            "code": "return bigmod(a, MOD - 2)",
+            "line": 19,
+            "vars": [
+              "MOD",
+              "a"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": true,
+          "a": true
+        },
+        "return_vars": [
+          "MOD",
+          "a"
+        ]
+      },
+      "ncr": {
+        "base_liveout": [
+          "MOD",
+          "fact",
+          "invFact",
+          "nn",
+          "rr"
+        ],
+        "live_before": [
+          {
+            "code": "if nn < 0 or nn < rr or rr < 0: return 0",
+            "line": 33,
+            "vars": [
+              "MOD",
+              "fact",
+              "invFact",
+              "nn",
+              "rr"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 34,
+            "vars": [
+              "MOD",
+              "fact",
+              "invFact",
+              "nn",
+              "rr"
+            ]
+          },
+          {
+            "code": "return (fact[nn] * invFact[rr] * invFact[nn - rr]) % MOD",
+            "line": 35,
+            "vars": [
+              "MOD",
+              "fact",
+              "invFact",
+              "nn",
+              "rr"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": true,
+          "fact": true,
+          "invFact": true,
+          "nn": true,
+          "rr": true
+        },
+        "return_vars": [
+          "MOD",
+          "fact",
+          "invFact",
+          "nn",
+          "rr"
+        ]
+      },
+      "pre": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "global fact, invFact",
+            "line": 23,
+            "vars": [
+              "MAX",
+              "MOD"
+            ]
+          },
+          {
+            "code": "fact[0] = 1",
+            "line": 24,
+            "vars": [
+              "MAX",
+              "MOD"
+            ]
+          },
+          {
+            "code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+            "line": 25,
+            "vars": [
+              "MAX",
+              "MOD",
+              "fact"
+            ]
+          },
+          {
+            "code": "fact[i] = (fact[i - 1] * i) % MOD",
+            "line": 26,
+            "vars": [
+              "MAX",
+              "MOD",
+              "fact",
+              "i"
+            ]
+          },
+          {
+            "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+            "line": 27,
+            "vars": [
+              "MAX",
+              "MOD",
+              "fact"
+            ]
+          },
+          {
+            "code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+            "line": 28,
+            "vars": [
+              "MAX",
+              "MOD",
+              "invFact"
+            ]
+          },
+          {
+            "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+            "line": 29,
+            "vars": [
+              "MOD",
+              "i",
+              "invFact"
+            ]
+          }
+        ],
+        "liveout": {
+          "MAX": false,
+          "MOD": false,
+          "fact": false,
+          "i": false,
+          "invFact": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(k + 1):",
+      "cond": "for i in range(k + 1)",
+      "function": "__module__",
+      "header_id": 8,
+      "line": 44,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, MAX):",
+      "cond": "for i in range(1, MAX)",
+      "function": "pre",
+      "header_id": 3,
+      "line": 25,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(MAX - 2, -1, -1):",
+      "cond": "for i in range(MAX - 2, -1, -1)",
+      "function": "pre",
+      "header_id": 6,
+      "line": 28,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "MAX = int(2e5 + 5)",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "fact = [0] * MAX",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "fact = [0] * MAX",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "invFact = [0] * MAX",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "invFact = [0] * MAX",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "invFact = [0] * MAX",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "pre()",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "pre()",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "pre()",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "invFact = [0] * MAX",
+      "a_line": 5,
+      "b_code": "pre()",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "n, m, k = map(int, input().split())",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "n, m, k = map(int, input().split())",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "n, m, k = map(int, input().split())",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "invFact = [0] * MAX",
+      "a_line": 5,
+      "b_code": "n, m, k = map(int, input().split())",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "pre()",
+      "a_line": 39,
+      "b_code": "n, m, k = map(int, input().split())",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "ans = 0",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "ans = 0",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "ans = 0",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "invFact = [0] * MAX",
+      "a_line": 5,
+      "b_code": "ans = 0",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "pre()",
+      "a_line": 39,
+      "b_code": "ans = 0",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m, k = map(int, input().split())",
+      "a_line": 40,
+      "b_code": "ans = 0",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "invFact = [0] * MAX",
+      "a_line": 5,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "pre()",
+      "a_line": 39,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m, k = map(int, input().split())",
+      "a_line": 40,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 43,
+      "b_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "invFact = [0] * MAX",
+      "a_line": 5,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "pre()",
+      "a_line": 39,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m, k = map(int, input().split())",
+      "a_line": 40,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 43,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "a_line": 44,
+      "b_code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 998244353",
+      "a_line": 1,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MAX = int(2e5 + 5)",
+      "a_line": 2,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [0] * MAX",
+      "a_line": 4,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "invFact = [0] * MAX",
+      "a_line": 5,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "pre()",
+      "a_line": 39,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m, k = map(int, input().split())",
+      "a_line": 40,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 43,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(k + 1): ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+      "a_line": 44,
+      "b_code": "print(ans)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if b == 0: return 1",
+      "a_line": 9,
+      "b_code": "return 1",
+      "b_line": 10,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b == 0: return 1",
+      "a_line": 9,
+      "b_code": "ret = bigmod(a, b // 2)",
+      "b_line": 11,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b == 0: return 1",
+      "a_line": 9,
+      "b_code": "ret = (ret * ret) % MOD",
+      "b_line": 12,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = bigmod(a, b // 2)",
+      "a_line": 11,
+      "b_code": "ret = (ret * ret) % MOD",
+      "b_line": 12,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b == 0: return 1",
+      "a_line": 9,
+      "b_code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "b_line": 13,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = bigmod(a, b // 2)",
+      "a_line": 11,
+      "b_code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "b_line": 13,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = (ret * ret) % MOD",
+      "a_line": 12,
+      "b_code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "b_line": 13,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b == 0: return 1",
+      "a_line": 9,
+      "b_code": "ret = (ret * a) % MOD",
+      "b_line": 14,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = bigmod(a, b // 2)",
+      "a_line": 11,
+      "b_code": "ret = (ret * a) % MOD",
+      "b_line": 14,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = (ret * ret) % MOD",
+      "a_line": 12,
+      "b_code": "ret = (ret * a) % MOD",
+      "b_line": 14,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "a_line": 13,
+      "b_code": "ret = (ret * a) % MOD",
+      "b_line": 14,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b == 0: return 1",
+      "a_line": 9,
+      "b_code": "return ret",
+      "b_line": 15,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = bigmod(a, b // 2)",
+      "a_line": 11,
+      "b_code": "return ret",
+      "b_line": 15,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "ret = (ret * ret) % MOD",
+      "a_line": 12,
+      "b_code": "return ret",
+      "b_line": 15,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "if b % 2 == 1: ret = (ret * a) % MOD",
+      "a_line": 13,
+      "b_code": "return ret",
+      "b_line": 15,
+      "function": "bigmod"
+    },
+    {
+      "a_code": "global fact, invFact",
+      "a_line": 23,
+      "b_code": "fact[0] = 1",
+      "b_line": 24,
+      "function": "pre"
+    },
+    {
+      "a_code": "global fact, invFact",
+      "a_line": 23,
+      "b_code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "b_line": 25,
+      "function": "pre"
+    },
+    {
+      "a_code": "fact[0] = 1",
+      "a_line": 24,
+      "b_code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "b_line": 25,
+      "function": "pre"
+    },
+    {
+      "a_code": "global fact, invFact",
+      "a_line": 23,
+      "b_code": "fact[i] = (fact[i - 1] * i) % MOD",
+      "b_line": 26,
+      "function": "pre"
+    },
+    {
+      "a_code": "fact[0] = 1",
+      "a_line": 24,
+      "b_code": "fact[i] = (fact[i - 1] * i) % MOD",
+      "b_line": 26,
+      "function": "pre"
+    },
+    {
+      "a_code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "a_line": 25,
+      "b_code": "fact[i] = (fact[i - 1] * i) % MOD",
+      "b_line": 26,
+      "function": "pre"
+    },
+    {
+      "a_code": "global fact, invFact",
+      "a_line": 23,
+      "b_code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "b_line": 27,
+      "function": "pre"
+    },
+    {
+      "a_code": "fact[0] = 1",
+      "a_line": 24,
+      "b_code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "b_line": 27,
+      "function": "pre"
+    },
+    {
+      "a_code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "a_line": 25,
+      "b_code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "b_line": 27,
+      "function": "pre"
+    },
+    {
+      "a_code": "global fact, invFact",
+      "a_line": 23,
+      "b_code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 28,
+      "function": "pre"
+    },
+    {
+      "a_code": "fact[0] = 1",
+      "a_line": 24,
+      "b_code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 28,
+      "function": "pre"
+    },
+    {
+      "a_code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "a_line": 25,
+      "b_code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 28,
+      "function": "pre"
+    },
+    {
+      "a_code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "a_line": 27,
+      "b_code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 28,
+      "function": "pre"
+    },
+    {
+      "a_code": "global fact, invFact",
+      "a_line": 23,
+      "b_code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 29,
+      "function": "pre"
+    },
+    {
+      "a_code": "fact[0] = 1",
+      "a_line": 24,
+      "b_code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 29,
+      "function": "pre"
+    },
+    {
+      "a_code": "for i in range(1, MAX): fact[i] = (fact[i - 1] * i) % MOD",
+      "a_line": 25,
+      "b_code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 29,
+      "function": "pre"
+    },
+    {
+      "a_code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+      "a_line": 27,
+      "b_code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 29,
+      "function": "pre"
+    },
+    {
+      "a_code": "for i in range(MAX - 2, -1, -1): invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "a_line": 28,
+      "b_code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+      "b_line": 29,
+      "function": "pre"
+    },
+    {
+      "a_code": "if nn < 0 or nn < rr or rr < 0: return 0",
+      "a_line": 33,
+      "b_code": "return 0",
+      "b_line": 34,
+      "function": "ncr"
+    },
+    {
+      "a_code": "if nn < 0 or nn < rr or rr < 0: return 0",
+      "a_line": 33,
+      "b_code": "return (fact[nn] * invFact[rr] * invFact[nn - rr]) % MOD",
+      "b_line": 35,
+      "function": "ncr"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 40"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 40"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "MOD = 998244353",
+        "line": 1,
+        "var": "MOD"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 998244353",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "fact = [0] * MAX",
+        "line": 4,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 998244353",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "fact = [0] * MAX",
+        "line": 4,
+        "var": "fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "invFact = [0] * MAX",
+        "line": 5,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 998244353",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "invFact = [0] * MAX",
+        "line": 5,
+        "var": "invFact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 43,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 998244353",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 43,
+        "var": "ans"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "m"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m, k = map(int, input().split())",
+        "line": 40,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MAX = int(2e5 + 5)",
+        "line": 2,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "ans = (ans + m * bigmod(m - 1, n - 1 - i) * ncr(n - 1, i) ) % MOD",
+        "line": 45,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "a"
+      },
+      "from": {
+        "code": "ret = bigmod(a, b // 2)",
+        "line": 11,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "b"
+      },
+      "from": {
+        "code": "ret = bigmod(a, b // 2)",
+        "line": 11,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = bigmod(a, b // 2)",
+        "line": 11,
+        "var": "ret"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ret = (ret * ret) % MOD",
+        "line": 12,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = (ret * ret) % MOD",
+        "line": 12,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "a"
+      },
+      "from": {
+        "code": "ret = (ret * ret) % MOD",
+        "line": 12,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "b"
+      },
+      "from": {
+        "code": "ret = (ret * ret) % MOD",
+        "line": 12,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = bigmod(a, b // 2)",
+        "line": 11,
+        "var": "ret"
+      },
+      "from": {
+        "code": "ret = (ret * ret) % MOD",
+        "line": 12,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = (ret * a) % MOD",
+        "line": 14,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = (ret * a) % MOD",
+        "line": 14,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "a"
+      },
+      "from": {
+        "code": "ret = (ret * a) % MOD",
+        "line": 14,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bigmod(a, b):",
+        "line": 8,
+        "var": "b"
+      },
+      "from": {
+        "code": "ret = (ret * a) % MOD",
+        "line": 14,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = (ret * ret) % MOD",
+        "line": 12,
+        "var": "ret"
+      },
+      "from": {
+        "code": "ret = (ret * a) % MOD",
+        "line": 14,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def pre():",
+        "line": 22,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "fact[0] = 1",
+        "line": 24,
+        "var": "fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fact[0] = 1",
+        "line": 24,
+        "var": "fact"
+      },
+      "from": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "i"
+      },
+      "from": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def pre():",
+        "line": 22,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "fact"
+      },
+      "from": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "i"
+      },
+      "from": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "MAX"
+      },
+      "from": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i] = (fact[i - 1] * i) % MOD",
+        "line": 26,
+        "var": "fact"
+      },
+      "from": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "i"
+      },
+      "from": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "invFact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invFact[MAX - 1] = mod_inverse(fact[MAX - 1])",
+        "line": 27,
+        "var": "invFact"
+      },
+      "from": {
+        "code": "invFact[i] = (invFact[i + 1] * (i + 1)) % MOD",
+        "line": 29,
+        "var": "invFact"
+      },
+      "label": "must"
+    }
+  ]
+}

@@ -1,0 +1,3832 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 64,
+      "node_id": 1
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 65,
+      "node_id": 2
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "self.parents = [-1 for _ in range(n)]",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 2
+    },
+    {
+      "code": "if self.parents[x] < 0: # \u81ea\u5206\u304c\u6839\u306e\u5834\u5408 return x else: self.parents[x] = self.root(self.parents[x]) return self.parents[x]",
+      "dead": false,
+      "function": "UnionFind.root",
+      "kind": "If",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "function": "UnionFind.root",
+      "kind": "Return",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "self.parents[x] = self.root(self.parents[x])",
+      "dead": false,
+      "function": "UnionFind.root",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "return self.parents[x]",
+      "dead": false,
+      "function": "UnionFind.root",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "x_root = self.root(x)",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "y_root = self.root(y)",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 2
+    },
+    {
+      "code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "If",
+      "line": 17,
+      "node_id": 3
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 4
+    },
+    {
+      "code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "If",
+      "line": 20,
+      "node_id": 5
+    },
+    {
+      "code": "x_root, y_root = y_root, x_root",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 6
+    },
+    {
+      "code": "self.parents[x_root] += self.parents[y_root]",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "AugAssign",
+      "line": 23,
+      "node_id": 7
+    },
+    {
+      "code": "self.parents[y_root] = x_root",
+      "dead": false,
+      "function": "UnionFind.merge",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 8
+    },
+    {
+      "code": "h, w = map(int, input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "grid = [list(input()) for _ in range(h)]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 2
+    },
+    {
+      "code": "black_list = []",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 3
+    },
+    {
+      "code": "uf = UnionFind(h * w)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 4
+    },
+    {
+      "code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 33,
+      "node_id": 5
+    },
+    {
+      "code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 34,
+      "node_id": 6
+    },
+    {
+      "code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 35,
+      "node_id": 7
+    },
+    {
+      "code": "black_list.append([r, c])",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 36,
+      "node_id": 8
+    },
+    {
+      "code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 37,
+      "node_id": 9
+    },
+    {
+      "code": "nr = r + dr",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 10
+    },
+    {
+      "code": "nc = c + dc",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 11
+    },
+    {
+      "code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 40,
+      "node_id": 12
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 41,
+      "node_id": 13
+    },
+    {
+      "code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 42,
+      "node_id": 14
+    },
+    {
+      "code": "uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 44,
+      "node_id": 15
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 16
+    },
+    {
+      "code": "black_dict = dict()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 17
+    },
+    {
+      "code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 48,
+      "node_id": 18
+    },
+    {
+      "code": "z = uf.root(r * w + c)",
+      "dead": true,
+      "function": "main",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 19
+    },
+    {
+      "code": "if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "dead": true,
+      "function": "main",
+      "kind": "If",
+      "line": 50,
+      "node_id": 20
+    },
+    {
+      "code": "black_dict[z] += 1",
+      "dead": true,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 51,
+      "node_id": 21
+    },
+    {
+      "code": "black_dict[z] = 1",
+      "dead": true,
+      "function": "main",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 22
+    },
+    {
+      "code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 55,
+      "node_id": 23
+    },
+    {
+      "code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 56,
+      "node_id": 24
+    },
+    {
+      "code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 57,
+      "node_id": 25
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 58,
+      "node_id": 26
+    },
+    {
+      "code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 59,
+      "node_id": 27
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 61,
+      "node_id": 28
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "self.parents = [-1 for _ in range(n)]",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "if self.parents[x] < 0: # \u81ea\u5206\u304c\u6839\u306e\u5834\u5408 return x else: self.parents[x] = self.root(self.parents[x]) return self.parents[x]",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.parents[x] = self.root(self.parents[x])",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return self.parents[x]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "x_root = self.root(x)",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "y_root = self.root(y)",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "x_root, y_root = y_root, x_root",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "self.parents[x_root] += self.parents[y_root]",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.parents[y_root] = x_root",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "h, w = map(int, input().split())",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "grid = [list(input()) for _ in range(h)]",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "black_list = []",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "uf = UnionFind(h * w)",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "black_list.append([r, c])",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "nr = r + dr",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "nc = c + dc",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "uf.merge(r * w + c, nr * w + nc)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "black_dict = dict()",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "z = uf.root(r * w + c)",
+      "dead": true,
+      "line": 49
+    },
+    {
+      "code": "if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "dead": true,
+      "line": 50
+    },
+    {
+      "code": "black_dict[z] += 1",
+      "dead": true,
+      "line": 51
+    },
+    {
+      "code": "black_dict[z] = 1",
+      "dead": true,
+      "line": 53
+    },
+    {
+      "code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 65
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03157_s844802629.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 4,
+      "lineno": 2,
+      "name": "UnionFind.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.n",
+        "self.parents"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.root"
+      ],
+      "end_lineno": 11,
+      "lineno": 6,
+      "name": "UnionFind.root",
+      "variables": [
+        "self",
+        "self.parents",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.root"
+      ],
+      "end_lineno": 24,
+      "lineno": 13,
+      "name": "UnionFind.merge",
+      "variables": [
+        "self",
+        "self.parents",
+        "x",
+        "x_root",
+        "y",
+        "y_root"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.__init__"
+      ],
+      "end_lineno": 61,
+      "lineno": 27,
+      "name": "main",
+      "variables": [
+        "ans",
+        "black_dict",
+        "black_list",
+        "c",
+        "dc",
+        "dr",
+        "grid",
+        "h",
+        "index",
+        "int",
+        "nc",
+        "nr",
+        "r",
+        "size",
+        "uf",
+        "uf.parents",
+        "w",
+        "z"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "UnionFind.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.n = n",
+            "line": 3,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.parents = [-1 for _ in range(n)]",
+            "line": 4,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.n": false,
+          "self.parents": false
+        },
+        "return_vars": []
+      },
+      "UnionFind.merge": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "x_root = self.root(x)",
+            "line": 14,
+            "vars": [
+              "self",
+              "self.parents",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "y_root = self.root(y)",
+            "line": 15,
+            "vars": [
+              "self",
+              "self.parents",
+              "x_root",
+              "y"
+            ]
+          },
+          {
+            "code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+            "line": 17,
+            "vars": [
+              "self.parents",
+              "x_root",
+              "y_root"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 18,
+            "vars": [
+              "self.parents",
+              "x_root",
+              "y_root"
+            ]
+          },
+          {
+            "code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+            "line": 20,
+            "vars": [
+              "self.parents",
+              "x_root",
+              "y_root"
+            ]
+          },
+          {
+            "code": "x_root, y_root = y_root, x_root",
+            "line": 21,
+            "vars": [
+              "self.parents",
+              "x_root",
+              "y_root"
+            ]
+          },
+          {
+            "code": "self.parents[x_root] += self.parents[y_root]",
+            "line": 23,
+            "vars": [
+              "self.parents",
+              "x_root",
+              "y_root"
+            ]
+          },
+          {
+            "code": "self.parents[y_root] = x_root",
+            "line": 24,
+            "vars": [
+              "x_root",
+              "y_root"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.parents": false,
+          "x": false,
+          "x_root": false,
+          "y": false,
+          "y_root": false
+        },
+        "return_vars": []
+      },
+      "UnionFind.root": {
+        "base_liveout": [
+          "self.parents",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "if self.parents[x] < 0: # \u81ea\u5206\u304c\u6839\u306e\u5834\u5408 return x else: self.parents[x] = self.root(self.parents[x]) return self.parents[x]",
+            "line": 7,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          },
+          {
+            "code": "return x",
+            "line": 8,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          },
+          {
+            "code": "self.parents[x] = self.root(self.parents[x])",
+            "line": 10,
+            "vars": [
+              "self",
+              "self.parents",
+              "x"
+            ]
+          },
+          {
+            "code": "return self.parents[x]",
+            "line": 11,
+            "vars": [
+              "self.parents",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.parents": true,
+          "x": true
+        },
+        "return_vars": [
+          "self.parents",
+          "x"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if __name__ == \"__main__\": main()",
+            "line": 64,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 65,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "__name__": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "h, w = map(int, input().split())",
+            "line": 28,
+            "vars": [
+              "int",
+              "uf.parents"
+            ]
+          },
+          {
+            "code": "grid = [list(input()) for _ in range(h)]",
+            "line": 29,
+            "vars": [
+              "h",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "black_list = []",
+            "line": 30,
+            "vars": [
+              "grid",
+              "h",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "uf = UnionFind(h * w)",
+            "line": 31,
+            "vars": [
+              "black_list",
+              "grid",
+              "h",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+            "line": 33,
+            "vars": [
+              "black_list",
+              "grid",
+              "h",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+            "line": 34,
+            "vars": [
+              "black_list",
+              "grid",
+              "h",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+            "line": 35,
+            "vars": [
+              "black_list",
+              "c",
+              "grid",
+              "h",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "black_list.append([r, c])",
+            "line": 36,
+            "vars": [
+              "black_list",
+              "c",
+              "grid",
+              "h",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+            "line": 37,
+            "vars": [
+              "black_list",
+              "c",
+              "grid",
+              "h",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "nr = r + dr",
+            "line": 38,
+            "vars": [
+              "black_list",
+              "c",
+              "dc",
+              "dr",
+              "grid",
+              "h",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "nc = c + dc",
+            "line": 39,
+            "vars": [
+              "black_list",
+              "c",
+              "dc",
+              "grid",
+              "h",
+              "nr",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+            "line": 40,
+            "vars": [
+              "black_list",
+              "c",
+              "grid",
+              "h",
+              "nc",
+              "nr",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 41,
+            "vars": [
+              "black_list",
+              "c",
+              "grid",
+              "nc",
+              "nr",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+            "line": 42,
+            "vars": [
+              "black_list",
+              "c",
+              "grid",
+              "nc",
+              "nr",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "uf.merge(r * w + c, nr * w + nc)",
+            "line": 44,
+            "vars": [
+              "black_list",
+              "c",
+              "nc",
+              "nr",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 46,
+            "vars": [
+              "black_list",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "black_dict = dict()",
+            "line": 47,
+            "vars": [
+              "black_list",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+            "line": 48,
+            "vars": [
+              "black_dict",
+              "black_list",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "z = uf.root(r * w + c)",
+            "line": 49,
+            "vars": [
+              "black_dict",
+              "c",
+              "r",
+              "uf",
+              "uf.parents",
+              "w"
+            ]
+          },
+          {
+            "code": "if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+            "line": 50,
+            "vars": [
+              "black_dict",
+              "uf.parents",
+              "z"
+            ]
+          },
+          {
+            "code": "black_dict[z] += 1",
+            "line": 51,
+            "vars": [
+              "black_dict",
+              "uf.parents",
+              "z"
+            ]
+          },
+          {
+            "code": "black_dict[z] = 1",
+            "line": 53,
+            "vars": [
+              "uf.parents",
+              "z"
+            ]
+          },
+          {
+            "code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+            "line": 55,
+            "vars": [
+              "black_dict",
+              "uf.parents"
+            ]
+          },
+          {
+            "code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+            "line": 56,
+            "vars": [
+              "black_dict",
+              "index",
+              "size"
+            ]
+          },
+          {
+            "code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+            "line": 57,
+            "vars": [
+              "black_dict",
+              "index",
+              "size"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 58,
+            "vars": [
+              "black_dict",
+              "index",
+              "size"
+            ]
+          },
+          {
+            "code": "ans += black_dict[index] * (- size - black_dict[index])",
+            "line": 59,
+            "vars": [
+              "black_dict",
+              "index",
+              "size"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 61,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "ans": false,
+          "black_dict": false,
+          "black_list": false,
+          "c": false,
+          "dc": false,
+          "dr": false,
+          "grid": false,
+          "h": false,
+          "index": false,
+          "int": false,
+          "nc": false,
+          "nr": false,
+          "r": false,
+          "size": false,
+          "uf": false,
+          "uf.parents": false,
+          "w": false,
+          "z": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for r in range(h):",
+      "cond": "for r in range(h)",
+      "function": "main",
+      "header_id": 5,
+      "line": 33,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for c in range(w):",
+      "cond": "for c in range(w)",
+      "function": "main",
+      "header_id": 6,
+      "line": 34,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for dr, dc in [[0, 1], [1, 0]]:",
+      "cond": "for dr, dc in [[0, 1], [1, 0]]",
+      "function": "main",
+      "header_id": 9,
+      "line": 37,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for r, c in black_list:",
+      "cond": "for r, c in black_list",
+      "function": "main",
+      "header_id": 18,
+      "line": 48,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for index, size in enumerate(uf.parents):",
+      "cond": "for index, size in enumerate(uf.parents)",
+      "function": "main",
+      "header_id": 23,
+      "line": 55,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if __name__ == \"__main__\": main()",
+      "a_line": 64,
+      "b_code": "main()",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.n = n",
+      "a_line": 3,
+      "b_code": "self.parents = [-1 for _ in range(n)]",
+      "b_line": 4,
+      "function": "UnionFind.__init__"
+    },
+    {
+      "a_code": "if self.parents[x] < 0: # \u81ea\u5206\u304c\u6839\u306e\u5834\u5408 return x else: self.parents[x] = self.root(self.parents[x]) return self.parents[x]",
+      "a_line": 7,
+      "b_code": "return x",
+      "b_line": 8,
+      "function": "UnionFind.root"
+    },
+    {
+      "a_code": "if self.parents[x] < 0: # \u81ea\u5206\u304c\u6839\u306e\u5834\u5408 return x else: self.parents[x] = self.root(self.parents[x]) return self.parents[x]",
+      "a_line": 7,
+      "b_code": "self.parents[x] = self.root(self.parents[x])",
+      "b_line": 10,
+      "function": "UnionFind.root"
+    },
+    {
+      "a_code": "if self.parents[x] < 0: # \u81ea\u5206\u304c\u6839\u306e\u5834\u5408 return x else: self.parents[x] = self.root(self.parents[x]) return self.parents[x]",
+      "a_line": 7,
+      "b_code": "return self.parents[x]",
+      "b_line": 11,
+      "function": "UnionFind.root"
+    },
+    {
+      "a_code": "self.parents[x] = self.root(self.parents[x])",
+      "a_line": 10,
+      "b_code": "return self.parents[x]",
+      "b_line": 11,
+      "function": "UnionFind.root"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "y_root = self.root(y)",
+      "b_line": 15,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "b_line": 17,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "y_root = self.root(y)",
+      "a_line": 15,
+      "b_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "b_line": 17,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "return",
+      "b_line": 18,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "y_root = self.root(y)",
+      "a_line": 15,
+      "b_code": "return",
+      "b_line": 18,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "a_line": 17,
+      "b_code": "return",
+      "b_line": 18,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "b_line": 20,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "y_root = self.root(y)",
+      "a_line": 15,
+      "b_code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "b_line": 20,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "a_line": 17,
+      "b_code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "b_line": 20,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "x_root, y_root = y_root, x_root",
+      "b_line": 21,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "y_root = self.root(y)",
+      "a_line": 15,
+      "b_code": "x_root, y_root = y_root, x_root",
+      "b_line": 21,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "a_line": 17,
+      "b_code": "x_root, y_root = y_root, x_root",
+      "b_line": 21,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "a_line": 20,
+      "b_code": "x_root, y_root = y_root, x_root",
+      "b_line": 21,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "self.parents[x_root] += self.parents[y_root]",
+      "b_line": 23,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "y_root = self.root(y)",
+      "a_line": 15,
+      "b_code": "self.parents[x_root] += self.parents[y_root]",
+      "b_line": 23,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "a_line": 17,
+      "b_code": "self.parents[x_root] += self.parents[y_root]",
+      "b_line": 23,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "a_line": 20,
+      "b_code": "self.parents[x_root] += self.parents[y_root]",
+      "b_line": 23,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "x_root = self.root(x)",
+      "a_line": 14,
+      "b_code": "self.parents[y_root] = x_root",
+      "b_line": 24,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "y_root = self.root(y)",
+      "a_line": 15,
+      "b_code": "self.parents[y_root] = x_root",
+      "b_line": 24,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if x_root == y_root: # \u540c\u3058\u6728\u306b\u5c5e\u3059\u308b return",
+      "a_line": 17,
+      "b_code": "self.parents[y_root] = x_root",
+      "b_line": 24,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "if self.parents[x_root] > self.parents[y_root]: # x_root\u306e\u8981\u7d20\u6570 > y_root\u306e\u8981\u7d20\u6570 \u306b\u3057\u305f\u3044 x_root, y_root = y_root, x_root",
+      "a_line": 20,
+      "b_code": "self.parents[y_root] = x_root",
+      "b_line": 24,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "self.parents[x_root] += self.parents[y_root]",
+      "a_line": 23,
+      "b_code": "self.parents[y_root] = x_root",
+      "b_line": 24,
+      "function": "UnionFind.merge"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "grid = [list(input()) for _ in range(h)]",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "black_list = []",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "black_list = []",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "uf = UnionFind(h * w)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "uf = UnionFind(h * w)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "uf = UnionFind(h * w)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "black_list.append([r, c])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 37,
+      "b_code": "nr = r + dr",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 37,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "nr = r + dr",
+      "a_line": 38,
+      "b_code": "nc = c + dc",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 37,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "nr = r + dr",
+      "a_line": 38,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "nc = c + dc",
+      "a_line": 39,
+      "b_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 37,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "nr = r + dr",
+      "a_line": 38,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "nc = c + dc",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "a_line": 40,
+      "b_code": "continue",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 37,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "nr = r + dr",
+      "a_line": 38,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "nc = c + dc",
+      "a_line": 39,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "a_line": 40,
+      "b_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 34,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] == \"#\": black_list.append([r, c])",
+      "a_line": 35,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 37,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "nr = r + dr",
+      "a_line": 38,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "nc = c + dc",
+      "a_line": 39,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "if not (0 <= nr < h and 0 <= nc < w): continue",
+      "a_line": 40,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 42,
+      "b_code": "uf.merge(r * w + c, nr * w + nc)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "ans = 0",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "ans = 0",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "ans = 0",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "ans = 0",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "ans = 0",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "black_dict = dict()",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "black_dict = dict()",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "black_dict = dict()",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "black_dict = dict()",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "black_dict = dict()",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "black_dict = dict()",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "a_line": 48,
+      "b_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 55,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "a_line": 48,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 55,
+      "b_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "a_line": 48,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 55,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 56,
+      "b_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "a_line": 48,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 55,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 56,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "a_line": 57,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "a_line": 48,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 55,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 56,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue",
+      "a_line": 57,
+      "b_code": "ans += black_dict[index] * (- size - black_dict[index])",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "h, w = map(int, input().split())",
+      "a_line": 28,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "grid = [list(input()) for _ in range(h)]",
+      "a_line": 29,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "black_list = []",
+      "a_line": 30,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "uf = UnionFind(h * w)",
+      "a_line": 31,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "for r in range(h): for c in range(w): if grid[r][c] == \"#\": black_list.append([r, c]) for dr, dc in [[0, 1], [1, 0]]: nr = r + dr nc = c + dc if not (0 <= nr < h and 0 <= nc < w): continue if grid[r][c] != grid[nr][nc]: # 0 to h*w-1 \u306b\u5909\u63db uf.merge(r * w + c, nr * w + nc)",
+      "a_line": 33,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 46,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "black_dict = dict()",
+      "a_line": 47,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "for r, c in black_list: # \u305d\u308c\u305e\u308c\u306e\u9ed2\u30de\u30b9\u306b\u5bfe\u3057\u3066 z = uf.root(r * w + c) # \u6839\u3092\u6c42\u3081\u308b if z in black_dict: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u4f55\u500b\u9ed2\u30de\u30b9\u304c\u3042\u308b\u304b black_dict[z] += 1 else: black_dict[z] = 1",
+      "a_line": 48,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "for index, size in enumerate(uf.parents): if size < 0: # \u305d\u308c\u305e\u308c\u306e\u6728\u306b\u5bfe\u3057\u3066 if index not in black_dict: # \u9ed2\u30de\u30b90\u30b3\u306f\u7121\u8996 continue ans += black_dict[index] * (- size - black_dict[index])",
+      "a_line": 55,
+      "b_code": "print(ans)",
+      "b_line": 61,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped uf.merge at line 44",
+      "external attribute call skipped uf.root at line 49",
+      "external call skipped input at line 28",
+      "external call skipped input at line 29"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped uf.merge at line 44",
+    "external attribute call skipped uf.root at line 49",
+    "external call skipped input at line 28",
+    "external call skipped input at line 29"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 3,
+        "var": "self.n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 3,
+        "var": "self.n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.parents = [-1 for _ in range(n)]",
+        "line": 4,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents = [-1 for _ in range(n)]",
+        "line": 4,
+        "var": "self.parents"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def root(self, x):",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents[x] = self.root(self.parents[x])",
+        "line": 10,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.parents[x] = self.root(self.parents[x])",
+        "line": 10,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "self.parents[x] = self.root(self.parents[x])",
+        "line": 10,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def root(self, x):",
+        "line": 6,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.parents[x] = self.root(self.parents[x])",
+        "line": 10,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "x_root = self.root(x)",
+        "line": 14,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "x_root = self.root(x)",
+        "line": 14,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "x_root = self.root(x)",
+        "line": 14,
+        "var": "x_root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "y_root = self.root(y)",
+        "line": 15,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "y_root = self.root(y)",
+        "line": 15,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "y_root = self.root(y)",
+        "line": 15,
+        "var": "y_root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x_root = self.root(x)",
+        "line": 14,
+        "var": "x_root"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y_root = self.root(y)",
+        "line": 15,
+        "var": "y_root"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y_root = self.root(y)",
+        "line": 15,
+        "var": "y_root"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "from": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "from": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "from": {
+        "code": "self.parents[x_root] += self.parents[y_root]",
+        "line": 23,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.parents[y_root] = x_root",
+        "line": 24,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.parents[y_root] = x_root",
+        "line": 24,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "x_root"
+      },
+      "from": {
+        "code": "self.parents[y_root] = x_root",
+        "line": 24,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def merge(self, x, y):",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.parents[y_root] = x_root",
+        "line": 24,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x_root, y_root = y_root, x_root",
+        "line": 21,
+        "var": "y_root"
+      },
+      "from": {
+        "code": "self.parents[y_root] = x_root",
+        "line": 24,
+        "var": "self.parents"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "from": {
+        "code": "grid = [list(input()) for _ in range(h)]",
+        "line": 29,
+        "var": "grid"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "grid = [list(input()) for _ in range(h)]",
+        "line": 29,
+        "var": "int"
+      },
+      "from": {
+        "code": "grid = [list(input()) for _ in range(h)]",
+        "line": 29,
+        "var": "grid"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "grid = [list(input()) for _ in range(h)]",
+        "line": 29,
+        "var": "grid"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "black_list = []",
+        "line": 30,
+        "var": "black_list"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "from": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "int"
+      },
+      "from": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "nr = r + dr",
+        "line": 38,
+        "var": "dr"
+      },
+      "from": {
+        "code": "nr = r + dr",
+        "line": 38,
+        "var": "nr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nr = r + dr",
+        "line": 38,
+        "var": "r"
+      },
+      "from": {
+        "code": "nr = r + dr",
+        "line": 38,
+        "var": "nr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "nr = r + dr",
+        "line": 38,
+        "var": "nr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "nc = c + dc",
+        "line": 39,
+        "var": "c"
+      },
+      "from": {
+        "code": "nc = c + dc",
+        "line": 39,
+        "var": "nc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nc = c + dc",
+        "line": 39,
+        "var": "dc"
+      },
+      "from": {
+        "code": "nc = c + dc",
+        "line": 39,
+        "var": "nc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "ans"
+      },
+      "from": {
+        "code": "nc = c + dc",
+        "line": 39,
+        "var": "nc"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 27,
+        "var": "black_dict"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 46,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 46,
+        "var": "ans"
+      },
+      "from": {
+        "code": "black_dict = dict()",
+        "line": 47,
+        "var": "black_dict"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "c"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "int"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "r"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 46,
+        "var": "ans"
+      },
+      "from": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict = dict()",
+        "line": 47,
+        "var": "black_dict"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "c"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "int"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "r"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 46,
+        "var": "ans"
+      },
+      "from": {
+        "code": "black_dict[z] += 1",
+        "line": 51,
+        "var": "black_dict"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "c"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "int"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "r"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 46,
+        "var": "ans"
+      },
+      "from": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_dict[z] = 1",
+        "line": 53,
+        "var": "black_dict"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "c"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "h"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "index"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "r"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "size"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "uf = UnionFind(h * w)",
+        "line": 31,
+        "var": "uf"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = map(int, input().split())",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "z = uf.root(r * w + c)",
+        "line": 49,
+        "var": "z"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_list = []",
+        "line": 30,
+        "var": "black_list"
+      },
+      "from": {
+        "code": "ans += black_dict[index] * (- size - black_dict[index])",
+        "line": 59,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

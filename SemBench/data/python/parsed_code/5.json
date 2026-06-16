@@ -1,0 +1,579 @@
+{
+  "cfg_statements": [
+    {
+      "code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "While",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "mid = (low + high) // 2",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "If",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "return mid",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "Return",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "If",
+      "line": 10,
+      "node_id": 5
+    },
+    {
+      "code": "low = mid + 1",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 6
+    },
+    {
+      "code": "high = mid - 1",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 7
+    },
+    {
+      "code": "return -1",
+      "dead": false,
+      "function": "_binary_search",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 8
+    },
+    {
+      "code": "if not arr: return -1",
+      "dead": false,
+      "function": "binary_search",
+      "kind": "If",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "return -1",
+      "dead": false,
+      "function": "binary_search",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 2
+    },
+    {
+      "code": "return _binary_search(arr, target, 0, len(arr) - 1)",
+      "dead": false,
+      "function": "binary_search",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "mid = (low + high) // 2",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return mid",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "low = mid + 1",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "high = mid - 1",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return -1",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if not arr: return -1",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return -1",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "return _binary_search(arr, target, 0, len(arr) - 1)",
+      "dead": false,
+      "line": 19
+    }
+  ],
+  "file": "SemBench/data/python/code/5.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 5,
+      "name": "_binary_search",
+      "variables": [
+        "arr",
+        "high",
+        "low",
+        "mid",
+        "target"
+      ]
+    },
+    {
+      "calls": [
+        "_binary_search"
+      ],
+      "end_lineno": 19,
+      "lineno": 16,
+      "name": "binary_search",
+      "variables": [
+        "arr",
+        "target"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_binary_search": {
+        "base_liveout": [
+          "mid"
+        ],
+        "live_before": [
+          {
+            "code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+            "line": 6,
+            "vars": [
+              "arr",
+              "high",
+              "low",
+              "target"
+            ]
+          },
+          {
+            "code": "mid = (low + high) // 2",
+            "line": 7,
+            "vars": [
+              "arr",
+              "high",
+              "low",
+              "target"
+            ]
+          },
+          {
+            "code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+            "line": 8,
+            "vars": [
+              "arr",
+              "mid",
+              "target"
+            ]
+          },
+          {
+            "code": "return mid",
+            "line": 9,
+            "vars": [
+              "arr",
+              "mid",
+              "target"
+            ]
+          },
+          {
+            "code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+            "line": 10,
+            "vars": [
+              "arr",
+              "mid",
+              "target"
+            ]
+          },
+          {
+            "code": "low = mid + 1",
+            "line": 11,
+            "vars": [
+              "mid"
+            ]
+          },
+          {
+            "code": "high = mid - 1",
+            "line": 13,
+            "vars": [
+              "mid"
+            ]
+          },
+          {
+            "code": "return -1",
+            "line": 14,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "arr": false,
+          "high": false,
+          "low": false,
+          "mid": true,
+          "target": false
+        },
+        "return_vars": [
+          "mid"
+        ]
+      },
+      "binary_search": {
+        "base_liveout": [
+          "arr",
+          "target"
+        ],
+        "live_before": [
+          {
+            "code": "if not arr: return -1",
+            "line": 17,
+            "vars": [
+              "arr",
+              "target"
+            ]
+          },
+          {
+            "code": "return -1",
+            "line": 18,
+            "vars": [
+              "arr",
+              "target"
+            ]
+          },
+          {
+            "code": "return _binary_search(arr, target, 0, len(arr) - 1)",
+            "line": 19,
+            "vars": [
+              "arr",
+              "target"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": true,
+          "target": true
+        },
+        "return_vars": [
+          "arr",
+          "target"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while low <= high:",
+      "cond": "low <= high",
+      "function": "_binary_search",
+      "header_id": 1,
+      "line": 6,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "mid = (low + high) // 2",
+      "b_line": 7,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "b_line": 8,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "mid = (low + high) // 2",
+      "a_line": 7,
+      "b_code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "b_line": 8,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "return mid",
+      "b_line": 9,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "mid = (low + high) // 2",
+      "a_line": 7,
+      "b_code": "return mid",
+      "b_line": 9,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 8,
+      "b_code": "return mid",
+      "b_line": 9,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "b_line": 10,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "mid = (low + high) // 2",
+      "a_line": 7,
+      "b_code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "b_line": 10,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 8,
+      "b_code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "b_line": 10,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "low = mid + 1",
+      "b_line": 11,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "mid = (low + high) // 2",
+      "a_line": 7,
+      "b_code": "low = mid + 1",
+      "b_line": 11,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 8,
+      "b_code": "low = mid + 1",
+      "b_line": 11,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 10,
+      "b_code": "low = mid + 1",
+      "b_line": 11,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "high = mid - 1",
+      "b_line": 13,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "mid = (low + high) // 2",
+      "a_line": 7,
+      "b_code": "high = mid - 1",
+      "b_line": 13,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 8,
+      "b_code": "high = mid - 1",
+      "b_line": 13,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 10,
+      "b_code": "high = mid - 1",
+      "b_line": 13,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1",
+      "a_line": 6,
+      "b_code": "return -1",
+      "b_line": 14,
+      "function": "_binary_search"
+    },
+    {
+      "a_code": "if not arr: return -1",
+      "a_line": 17,
+      "b_code": "return -1",
+      "b_line": 18,
+      "function": "binary_search"
+    },
+    {
+      "a_code": "if not arr: return -1",
+      "a_line": 17,
+      "b_code": "return _binary_search(arr, target, 0, len(arr) - 1)",
+      "b_line": 19,
+      "function": "binary_search"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def _binary_search(arr:",
+        "line": 5,
+        "var": "high"
+      },
+      "from": {
+        "code": "mid = (low + high) // 2",
+        "line": 7,
+        "var": "mid"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _binary_search(arr:",
+        "line": 5,
+        "var": "low"
+      },
+      "from": {
+        "code": "mid = (low + high) // 2",
+        "line": 7,
+        "var": "mid"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _binary_search(arr:",
+        "line": 5,
+        "var": "arr"
+      },
+      "from": {
+        "code": "mid = (low + high) // 2",
+        "line": 7,
+        "var": "mid"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _binary_search(arr:",
+        "line": 5,
+        "var": "high"
+      },
+      "from": {
+        "code": "low = mid + 1",
+        "line": 11,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "mid = (low + high) // 2",
+        "line": 7,
+        "var": "mid"
+      },
+      "from": {
+        "code": "low = mid + 1",
+        "line": 11,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _binary_search(arr:",
+        "line": 5,
+        "var": "arr"
+      },
+      "from": {
+        "code": "low = mid + 1",
+        "line": 11,
+        "var": "low"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "low = mid + 1",
+        "line": 11,
+        "var": "low"
+      },
+      "from": {
+        "code": "high = mid - 1",
+        "line": 13,
+        "var": "high"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "mid = (low + high) // 2",
+        "line": 7,
+        "var": "mid"
+      },
+      "from": {
+        "code": "high = mid - 1",
+        "line": 13,
+        "var": "high"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _binary_search(arr:",
+        "line": 5,
+        "var": "arr"
+      },
+      "from": {
+        "code": "high = mid - 1",
+        "line": 13,
+        "var": "high"
+      },
+      "label": "negative"
+    }
+  ]
+}

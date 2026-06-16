@@ -1,0 +1,3601 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import queue",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "h, w, k = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "s=[input() for i in range(h)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "ans = [[0]*w for i in range(h)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 4
+    },
+    {
+      "code": "count = 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 40,
+      "node_id": 6
+    },
+    {
+      "code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 41,
+      "node_id": 7
+    },
+    {
+      "code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 42,
+      "node_id": 8
+    },
+    {
+      "code": "BFS(i, j, count)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 9
+    },
+    {
+      "code": "count+=1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 44,
+      "node_id": 10
+    },
+    {
+      "code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 46,
+      "node_id": 11
+    },
+    {
+      "code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 47,
+      "node_id": 12
+    },
+    {
+      "code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 48,
+      "node_id": 13
+    },
+    {
+      "code": "ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 14
+    },
+    {
+      "code": "for i in range(h): print(\" \".join(ans[i]))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 51,
+      "node_id": 15
+    },
+    {
+      "code": "print(\" \".join(ans[i]))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 52,
+      "node_id": 16
+    },
+    {
+      "code": "ans[i][j]=str(count)",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "movex = [0, 0]",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "movey = [1, -1]",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 3
+    },
+    {
+      "code": "q = queue.Queue()",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 4
+    },
+    {
+      "code": "q.put([i, j])",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Expr",
+      "line": 11,
+      "node_id": 5
+    },
+    {
+      "code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "dead": false,
+      "function": "BFS",
+      "kind": "While",
+      "line": 12,
+      "node_id": 6
+    },
+    {
+      "code": "y, x = q.get()",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "dead": false,
+      "function": "BFS",
+      "kind": "For",
+      "line": 14,
+      "node_id": 8
+    },
+    {
+      "code": "nx = x+movex[i]",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 9
+    },
+    {
+      "code": "ny = y+movey[i]",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 10
+    },
+    {
+      "code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "dead": false,
+      "function": "BFS",
+      "kind": "If",
+      "line": 17,
+      "node_id": 11
+    },
+    {
+      "code": "ans[ny][nx]=str(count)",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 12
+    },
+    {
+      "code": "q.put([ny, nx])",
+      "dead": false,
+      "function": "BFS",
+      "kind": "Expr",
+      "line": 19,
+      "node_id": 13
+    },
+    {
+      "code": "movex = [1, -1]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 1
+    },
+    {
+      "code": "movey = [0, 0]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 2
+    },
+    {
+      "code": "x = j",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 3
+    },
+    {
+      "code": "y = i",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 4
+    },
+    {
+      "code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "While",
+      "line": 27,
+      "node_id": 5
+    },
+    {
+      "code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "If",
+      "line": 28,
+      "node_id": 6
+    },
+    {
+      "code": "x+=1",
+      "dead": false,
+      "function": "DFS",
+      "kind": "AugAssign",
+      "line": 29,
+      "node_id": 7
+    },
+    {
+      "code": "return ans[y][x]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 8
+    },
+    {
+      "code": "x=j",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 9
+    },
+    {
+      "code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "While",
+      "line": 33,
+      "node_id": 10
+    },
+    {
+      "code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "If",
+      "line": 34,
+      "node_id": 11
+    },
+    {
+      "code": "x-=1",
+      "dead": false,
+      "function": "DFS",
+      "kind": "AugAssign",
+      "line": 35,
+      "node_id": 12
+    },
+    {
+      "code": "return ans[y][x]",
+      "dead": false,
+      "function": "DFS",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 13
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import queue",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "h, w, k = map(int, input().split())",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "s=[input() for i in range(h)]",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "ans = [[0]*w for i in range(h)]",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "ans[i][j]=str(count)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "movex = [0, 0]",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "movey = [1, -1]",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "q = queue.Queue()",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "q.put([i, j])",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "y, x = q.get()",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "nx = x+movex[i]",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "ny = y+movey[i]",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "ans[ny][nx]=str(count)",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "q.put([ny, nx])",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "movex = [1, -1]",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "movey = [0, 0]",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "x = j",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "y = i",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "x+=1",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "return ans[y][x]",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "x=j",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "x-=1",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return ans[y][x]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "count = 1",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "BFS(i, j, count)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "count+=1",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "ans[i][j]=DFS(i, j)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "for i in range(h): print(\" \".join(ans[i]))",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "print(\" \".join(ans[i]))",
+      "dead": false,
+      "line": 52
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02855_s536566448.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 19,
+      "lineno": 6,
+      "name": "BFS",
+      "variables": [
+        "ans",
+        "count",
+        "h",
+        "i",
+        "j",
+        "movex",
+        "movey",
+        "nx",
+        "ny",
+        "q",
+        "queue",
+        "s",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 37,
+      "lineno": 21,
+      "name": "DFS",
+      "variables": [
+        "ans",
+        "i",
+        "j",
+        "movex",
+        "movey",
+        "w",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "BFS": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "ans[i][j]=str(count)",
+            "line": 7,
+            "vars": [
+              "count",
+              "h",
+              "i",
+              "j",
+              "queue",
+              "s"
+            ]
+          },
+          {
+            "code": "movex = [0, 0]",
+            "line": 8,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "j",
+              "queue",
+              "s"
+            ]
+          },
+          {
+            "code": "movey = [1, -1]",
+            "line": 9,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "j",
+              "movex",
+              "queue",
+              "s"
+            ]
+          },
+          {
+            "code": "q = queue.Queue()",
+            "line": 10,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "j",
+              "movex",
+              "movey",
+              "queue",
+              "s"
+            ]
+          },
+          {
+            "code": "q.put([i, j])",
+            "line": 11,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "j",
+              "movex",
+              "movey",
+              "q",
+              "s"
+            ]
+          },
+          {
+            "code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+            "line": 12,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "movex",
+              "movey",
+              "q",
+              "s"
+            ]
+          },
+          {
+            "code": "y, x = q.get()",
+            "line": 13,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "movex",
+              "movey",
+              "q",
+              "s"
+            ]
+          },
+          {
+            "code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+            "line": 14,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "movex",
+              "movey",
+              "q",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "nx = x+movex[i]",
+            "line": 15,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "movex",
+              "movey",
+              "q",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "ny = y+movey[i]",
+            "line": 16,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "movey",
+              "nx",
+              "q",
+              "s",
+              "y"
+            ]
+          },
+          {
+            "code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+            "line": 17,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "nx",
+              "ny",
+              "q",
+              "s"
+            ]
+          },
+          {
+            "code": "ans[ny][nx]=str(count)",
+            "line": 18,
+            "vars": [
+              "count",
+              "nx",
+              "ny",
+              "q"
+            ]
+          },
+          {
+            "code": "q.put([ny, nx])",
+            "line": 19,
+            "vars": [
+              "nx",
+              "ny",
+              "q"
+            ]
+          }
+        ],
+        "liveout": {
+          "ans": false,
+          "count": false,
+          "h": false,
+          "i": false,
+          "j": false,
+          "movex": false,
+          "movey": false,
+          "nx": false,
+          "ny": false,
+          "q": false,
+          "queue": false,
+          "s": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "DFS": {
+        "base_liveout": [
+          "ans",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "movex = [1, -1]",
+            "line": 22,
+            "vars": [
+              "ans",
+              "i",
+              "j",
+              "w"
+            ]
+          },
+          {
+            "code": "movey = [0, 0]",
+            "line": 23,
+            "vars": [
+              "ans",
+              "i",
+              "j",
+              "w"
+            ]
+          },
+          {
+            "code": "x = j",
+            "line": 24,
+            "vars": [
+              "ans",
+              "i",
+              "j",
+              "w"
+            ]
+          },
+          {
+            "code": "y = i",
+            "line": 25,
+            "vars": [
+              "ans",
+              "i",
+              "j",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+            "line": 27,
+            "vars": [
+              "ans",
+              "j",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+            "line": 28,
+            "vars": [
+              "ans",
+              "j",
+              "x"
+            ]
+          },
+          {
+            "code": "x+=1",
+            "line": 29,
+            "vars": [
+              "ans",
+              "j"
+            ]
+          },
+          {
+            "code": "return ans[y][x]",
+            "line": 31,
+            "vars": [
+              "ans",
+              "j",
+              "x"
+            ]
+          },
+          {
+            "code": "x=j",
+            "line": 32,
+            "vars": [
+              "ans",
+              "j"
+            ]
+          },
+          {
+            "code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+            "line": 33,
+            "vars": [
+              "ans",
+              "x"
+            ]
+          },
+          {
+            "code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+            "line": 34,
+            "vars": [
+              "ans",
+              "x"
+            ]
+          },
+          {
+            "code": "x-=1",
+            "line": 35,
+            "vars": [
+              "ans"
+            ]
+          },
+          {
+            "code": "return ans[y][x]",
+            "line": 37,
+            "vars": [
+              "ans",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "ans": true,
+          "i": false,
+          "j": false,
+          "movex": false,
+          "movey": false,
+          "w": false,
+          "x": true,
+          "y": false
+        },
+        "return_vars": [
+          "ans",
+          "x"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import queue",
+            "line": 1,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "h, w, k = map(int, input().split())",
+            "line": 2,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "s=[input() for i in range(h)]",
+            "line": 3,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "ans = [[0]*w for i in range(h)]",
+            "line": 4,
+            "vars": [
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "count = 1",
+            "line": 39,
+            "vars": [
+              "ans",
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+            "line": 40,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+            "line": 41,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+            "line": 42,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "j",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "BFS(i, j, count)",
+            "line": 43,
+            "vars": [
+              "ans",
+              "count",
+              "h",
+              "i",
+              "j",
+              "w"
+            ]
+          },
+          {
+            "code": "count+=1",
+            "line": 44,
+            "vars": [
+              "ans",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+            "line": 46,
+            "vars": [
+              "ans",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+            "line": 47,
+            "vars": [
+              "ans",
+              "h",
+              "i",
+              "w"
+            ]
+          },
+          {
+            "code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+            "line": 48,
+            "vars": [
+              "ans",
+              "h",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "ans[i][j]=DFS(i, j)",
+            "line": 49,
+            "vars": [
+              "h",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "for i in range(h): print(\" \".join(ans[i]))",
+            "line": 51,
+            "vars": [
+              "ans",
+              "h"
+            ]
+          },
+          {
+            "code": "print(\" \".join(ans[i]))",
+            "line": 52,
+            "vars": [
+              "ans",
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "ans": false,
+          "count": false,
+          "h": false,
+          "i": false,
+          "int": false,
+          "j": false,
+          "k": false,
+          "s": false,
+          "w": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while not q.empty():",
+      "cond": "not q.empty()",
+      "function": "BFS",
+      "header_id": 6,
+      "line": 12,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(2):",
+      "cond": "for i in range(2)",
+      "function": "BFS",
+      "header_id": 8,
+      "line": 14,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while x<=w-1:",
+      "cond": "x <= w - 1",
+      "function": "DFS",
+      "header_id": 5,
+      "line": 27,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while x>=0:",
+      "cond": "x >= 0",
+      "function": "DFS",
+      "header_id": 10,
+      "line": 33,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(w):",
+      "cond": "for j in range(w)",
+      "function": "__module__",
+      "header_id": 7,
+      "line": 41,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 11,
+      "line": 46,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(w):",
+      "cond": "for j in range(w)",
+      "function": "__module__",
+      "header_id": 12,
+      "line": 47,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 51,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "h, w, k = map(int, input().split())",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "s=[input() for i in range(h)]",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "s=[input() for i in range(h)]",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "ans = [[0]*w for i in range(h)]",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "ans = [[0]*w for i in range(h)]",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "ans = [[0]*w for i in range(h)]",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "count = 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "count = 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "count = 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "count = 1",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 41,
+      "b_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 41,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 42,
+      "b_code": "BFS(i, j, count)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 41,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 42,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "BFS(i, j, count)",
+      "a_line": 43,
+      "b_code": "count+=1",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 46,
+      "b_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 46,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 47,
+      "b_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 46,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 47,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 48,
+      "b_code": "ans[i][j]=DFS(i, j)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 46,
+      "b_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import queue",
+      "a_line": 1,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h, w, k = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s=[input() for i in range(h)]",
+      "a_line": 3,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = [[0]*w for i in range(h)]",
+      "a_line": 4,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "count = 1",
+      "a_line": 39,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j]== \"#\": BFS(i, j, count) count+=1",
+      "a_line": 40,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if ans[i][j]==0: ans[i][j]=DFS(i, j)",
+      "a_line": 46,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): print(\" \".join(ans[i]))",
+      "a_line": 51,
+      "b_code": "print(\" \".join(ans[i]))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "movex = [0, 0]",
+      "b_line": 8,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "movey = [1, -1]",
+      "b_line": 9,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "movey = [1, -1]",
+      "b_line": 9,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "q = queue.Queue()",
+      "b_line": 10,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "q = queue.Queue()",
+      "b_line": 10,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "q = queue.Queue()",
+      "b_line": 10,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "q.put([i, j])",
+      "b_line": 11,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "q.put([i, j])",
+      "b_line": 11,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "q.put([i, j])",
+      "b_line": 11,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "q.put([i, j])",
+      "b_line": 11,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 12,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 12,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 12,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 12,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 12,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "y, x = q.get()",
+      "b_line": 13,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "y, x = q.get()",
+      "b_line": 13,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "y, x = q.get()",
+      "b_line": 13,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "y, x = q.get()",
+      "b_line": 13,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "y, x = q.get()",
+      "b_line": 13,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "y, x = q.get()",
+      "b_line": 13,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "y, x = q.get()",
+      "a_line": 13,
+      "b_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 14,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "y, x = q.get()",
+      "a_line": 13,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 14,
+      "b_code": "nx = x+movex[i]",
+      "b_line": 15,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "y, x = q.get()",
+      "a_line": 13,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 14,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "nx = x+movex[i]",
+      "a_line": 15,
+      "b_code": "ny = y+movey[i]",
+      "b_line": 16,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "y, x = q.get()",
+      "a_line": 13,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 14,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "nx = x+movex[i]",
+      "a_line": 15,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ny = y+movey[i]",
+      "a_line": 16,
+      "b_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "b_line": 17,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "y, x = q.get()",
+      "a_line": 13,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 14,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "nx = x+movex[i]",
+      "a_line": 15,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ny = y+movey[i]",
+      "a_line": 16,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 17,
+      "b_code": "ans[ny][nx]=str(count)",
+      "b_line": 18,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[i][j]=str(count)",
+      "a_line": 7,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [0, 0]",
+      "a_line": 8,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movey = [1, -1]",
+      "a_line": 9,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q = queue.Queue()",
+      "a_line": 10,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "q.put([i, j])",
+      "a_line": 11,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "while not q.empty(): y, x = q.get() for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 12,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "y, x = q.get()",
+      "a_line": 13,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "for i in range(2): nx = x+movex[i] ny = y+movey[i] if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 14,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "nx = x+movex[i]",
+      "a_line": 15,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ny = y+movey[i]",
+      "a_line": 16,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "if 0<=ny<=h-1 and ans[ny][nx]==0 and s[ny][nx]==\".\": ans[ny][nx]=str(count) q.put([ny, nx])",
+      "a_line": 17,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "ans[ny][nx]=str(count)",
+      "a_line": 18,
+      "b_code": "q.put([ny, nx])",
+      "b_line": 19,
+      "function": "BFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "movey = [0, 0]",
+      "b_line": 23,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "x = j",
+      "b_line": 24,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "x = j",
+      "b_line": 24,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "y = i",
+      "b_line": 25,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "y = i",
+      "b_line": 25,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "y = i",
+      "b_line": 25,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 27,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 27,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 27,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 27,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 28,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 28,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 28,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 28,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "b_line": 28,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "x+=1",
+      "b_line": 29,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "x+=1",
+      "b_line": 29,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "x+=1",
+      "b_line": 29,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "x+=1",
+      "b_line": 29,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "x+=1",
+      "b_line": 29,
+      "function": "DFS"
+    },
+    {
+      "a_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 28,
+      "b_code": "x+=1",
+      "b_line": 29,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "return ans[y][x]",
+      "b_line": 31,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "return ans[y][x]",
+      "b_line": 31,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "return ans[y][x]",
+      "b_line": 31,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "return ans[y][x]",
+      "b_line": 31,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "return ans[y][x]",
+      "b_line": 31,
+      "function": "DFS"
+    },
+    {
+      "a_code": "if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 28,
+      "b_code": "return ans[y][x]",
+      "b_line": 31,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "x=j",
+      "b_line": 32,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "x=j",
+      "b_line": 32,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "x=j",
+      "b_line": 32,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "x=j",
+      "b_line": 32,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "x=j",
+      "b_line": 32,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 33,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 33,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 33,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 33,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 33,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x=j",
+      "a_line": 32,
+      "b_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 33,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x=j",
+      "a_line": 32,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "a_line": 33,
+      "b_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "b_line": 34,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x=j",
+      "a_line": 32,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "a_line": 33,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "a_line": 34,
+      "b_code": "x-=1",
+      "b_line": 35,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movex = [1, -1]",
+      "a_line": 22,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "movey = [0, 0]",
+      "a_line": 23,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x = j",
+      "a_line": 24,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "y = i",
+      "a_line": 25,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x<=w-1: if ans[y][x]==0: x+=1 else: return ans[y][x]",
+      "a_line": 27,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "x=j",
+      "a_line": 32,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "while x>=0: if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "a_line": 33,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    },
+    {
+      "a_code": "if ans[y][x]==0: x-=1 else: return ans[y][x]",
+      "a_line": 34,
+      "b_code": "return ans[y][x]",
+      "b_line": 37,
+      "function": "DFS"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped q.empty at line 12",
+      "external attribute call skipped q.put at line 11",
+      "external attribute call skipped q.put at line 19",
+      "external attribute call skipped queue.Queue at line 10",
+      "external call skipped input at line 2",
+      "external call skipped input at line 3"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped q.empty at line 12",
+    "external attribute call skipped q.put at line 11",
+    "external attribute call skipped q.put at line 19",
+    "external attribute call skipped queue.Queue at line 10",
+    "external call skipped input at line 2",
+    "external call skipped input at line 3"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "h"
+      },
+      "from": {
+        "code": "s=[input() for i in range(h)]",
+        "line": 3,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "s=[input() for i in range(h)]",
+        "line": 3,
+        "var": "int"
+      },
+      "from": {
+        "code": "s=[input() for i in range(h)]",
+        "line": 3,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "s=[input() for i in range(h)]",
+        "line": 3,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "h"
+      },
+      "from": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w, k = map(int, input().split())",
+        "line": 2,
+        "var": "w"
+      },
+      "from": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "count"
+      },
+      "from": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "ans"
+      },
+      "from": {
+        "code": "count = 1",
+        "line": 39,
+        "var": "count"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans = [[0]*w for i in range(h)]",
+        "line": 4,
+        "var": "ans"
+      },
+      "from": {
+        "code": "count+=1",
+        "line": 44,
+        "var": "count"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=DFS(i, j)",
+        "line": 49,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans[i][j]=DFS(i, j)",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=DFS(i, j)",
+        "line": 49,
+        "var": "j"
+      },
+      "from": {
+        "code": "ans[i][j]=DFS(i, j)",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "count+=1",
+        "line": 44,
+        "var": "count"
+      },
+      "from": {
+        "code": "ans[i][j]=DFS(i, j)",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "count"
+      },
+      "from": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "j"
+      },
+      "from": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "h"
+      },
+      "from": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "movex = [0, 0]",
+        "line": 8,
+        "var": "movex"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "movey = [1, -1]",
+        "line": 9,
+        "var": "movey"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "queue"
+      },
+      "from": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "from": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "queue"
+      },
+      "from": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "from": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "queue"
+      },
+      "from": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "i"
+      },
+      "from": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "movex = [0, 0]",
+        "line": 8,
+        "var": "movex"
+      },
+      "from": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "from": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "queue"
+      },
+      "from": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "i"
+      },
+      "from": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "movey = [1, -1]",
+        "line": 9,
+        "var": "movey"
+      },
+      "from": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "from": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "queue"
+      },
+      "from": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "y"
+      },
+      "from": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[i][j]=str(count)",
+        "line": 7,
+        "var": "ans"
+      },
+      "from": {
+        "code": "ny = y+movey[i]",
+        "line": 16,
+        "var": "ny"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "count"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "movex = [0, 0]",
+        "line": 8,
+        "var": "movex"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nx = x+movex[i]",
+        "line": 15,
+        "var": "nx"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = queue.Queue()",
+        "line": 10,
+        "var": "q"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "queue"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y, x = q.get()",
+        "line": 13,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def BFS(i, j, count):",
+        "line": 6,
+        "var": "h"
+      },
+      "from": {
+        "code": "ans[ny][nx]=str(count)",
+        "line": 18,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "movex = [1, -1]",
+        "line": 22,
+        "var": "movex"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "movey = [0, 0]",
+        "line": 23,
+        "var": "movey"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "j"
+      },
+      "from": {
+        "code": "x = j",
+        "line": 24,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "x = j",
+        "line": 24,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "i"
+      },
+      "from": {
+        "code": "y = i",
+        "line": 25,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "y = i",
+        "line": 25,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "x+=1",
+        "line": 29,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "j"
+      },
+      "from": {
+        "code": "x=j",
+        "line": 32,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "x=j",
+        "line": 32,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def DFS(i, j):",
+        "line": 21,
+        "var": "ans"
+      },
+      "from": {
+        "code": "x-=1",
+        "line": 35,
+        "var": "x"
+      },
+      "label": "negative"
+    }
+  ]
+}

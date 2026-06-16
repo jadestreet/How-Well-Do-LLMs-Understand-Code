@@ -1,0 +1,694 @@
+{
+  "cfg_statements": [
+    {
+      "code": "self.val = val",
+      "dead": false,
+      "function": "ListNode.__init__",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "self.next = next",
+      "dead": false,
+      "function": "ListNode.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "prev, curr = None, head",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "While",
+      "line": 11,
+      "node_id": 2
+    },
+    {
+      "code": "nxt = curr.next",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 3
+    },
+    {
+      "code": "curr.next = prev",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 4
+    },
+    {
+      "code": "prev = curr",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 5
+    },
+    {
+      "code": "curr = nxt",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 6
+    },
+    {
+      "code": "return prev",
+      "dead": false,
+      "function": "_reverse_iter",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 7
+    },
+    {
+      "code": "return _reverse_iter(head)",
+      "dead": false,
+      "function": "reverse_list",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.val = val",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "self.next = next",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "prev, curr = None, head",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "nxt = curr.next",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "curr.next = prev",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "prev = curr",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "curr = nxt",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return prev",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return _reverse_iter(head)",
+      "dead": false,
+      "line": 19
+    }
+  ],
+  "file": "SemBench/data/python/code/13.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 7,
+      "lineno": 5,
+      "name": "ListNode.__init__",
+      "variables": [
+        "next",
+        "self",
+        "self.next",
+        "self.val",
+        "val"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 9,
+      "name": "_reverse_iter",
+      "variables": [
+        "curr",
+        "curr.next",
+        "head",
+        "nxt",
+        "prev"
+      ]
+    },
+    {
+      "calls": [
+        "_reverse_iter"
+      ],
+      "end_lineno": 19,
+      "lineno": 18,
+      "name": "reverse_list",
+      "variables": [
+        "head"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "ListNode.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.val = val",
+            "line": 6,
+            "vars": [
+              "next",
+              "val"
+            ]
+          },
+          {
+            "code": "self.next = next",
+            "line": 7,
+            "vars": [
+              "next"
+            ]
+          }
+        ],
+        "liveout": {
+          "next": false,
+          "self": false,
+          "self.next": false,
+          "self.val": false,
+          "val": false
+        },
+        "return_vars": []
+      },
+      "_reverse_iter": {
+        "base_liveout": [
+          "prev"
+        ],
+        "live_before": [
+          {
+            "code": "prev, curr = None, head",
+            "line": 10,
+            "vars": [
+              "curr.next",
+              "head"
+            ]
+          },
+          {
+            "code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+            "line": 11,
+            "vars": [
+              "curr",
+              "curr.next",
+              "prev"
+            ]
+          },
+          {
+            "code": "nxt = curr.next",
+            "line": 12,
+            "vars": [
+              "curr",
+              "curr.next",
+              "prev"
+            ]
+          },
+          {
+            "code": "curr.next = prev",
+            "line": 13,
+            "vars": [
+              "curr",
+              "nxt",
+              "prev"
+            ]
+          },
+          {
+            "code": "prev = curr",
+            "line": 14,
+            "vars": [
+              "curr",
+              "nxt"
+            ]
+          },
+          {
+            "code": "curr = nxt",
+            "line": 15,
+            "vars": [
+              "nxt",
+              "prev"
+            ]
+          },
+          {
+            "code": "return prev",
+            "line": 16,
+            "vars": [
+              "prev"
+            ]
+          }
+        ],
+        "liveout": {
+          "curr": false,
+          "curr.next": false,
+          "head": false,
+          "nxt": false,
+          "prev": true
+        },
+        "return_vars": [
+          "prev"
+        ]
+      },
+      "reverse_list": {
+        "base_liveout": [
+          "head"
+        ],
+        "live_before": [
+          {
+            "code": "return _reverse_iter(head)",
+            "line": 19,
+            "vars": [
+              "head"
+            ]
+          }
+        ],
+        "liveout": {
+          "head": true
+        },
+        "return_vars": [
+          "head"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while curr is not None:",
+      "cond": "curr is not None",
+      "function": "_reverse_iter",
+      "header_id": 2,
+      "line": 11,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "self.val = val",
+      "a_line": 6,
+      "b_code": "self.next = next",
+      "b_line": 7,
+      "function": "ListNode.__init__"
+    },
+    {
+      "a_code": "prev, curr = None, head",
+      "a_line": 10,
+      "b_code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "b_line": 11,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "prev, curr = None, head",
+      "a_line": 10,
+      "b_code": "nxt = curr.next",
+      "b_line": 12,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "a_line": 11,
+      "b_code": "nxt = curr.next",
+      "b_line": 12,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "prev, curr = None, head",
+      "a_line": 10,
+      "b_code": "curr.next = prev",
+      "b_line": 13,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "a_line": 11,
+      "b_code": "curr.next = prev",
+      "b_line": 13,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "nxt = curr.next",
+      "a_line": 12,
+      "b_code": "curr.next = prev",
+      "b_line": 13,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "prev, curr = None, head",
+      "a_line": 10,
+      "b_code": "prev = curr",
+      "b_line": 14,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "a_line": 11,
+      "b_code": "prev = curr",
+      "b_line": 14,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "nxt = curr.next",
+      "a_line": 12,
+      "b_code": "prev = curr",
+      "b_line": 14,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "curr.next = prev",
+      "a_line": 13,
+      "b_code": "prev = curr",
+      "b_line": 14,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "prev, curr = None, head",
+      "a_line": 10,
+      "b_code": "curr = nxt",
+      "b_line": 15,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "a_line": 11,
+      "b_code": "curr = nxt",
+      "b_line": 15,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "nxt = curr.next",
+      "a_line": 12,
+      "b_code": "curr = nxt",
+      "b_line": 15,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "curr.next = prev",
+      "a_line": 13,
+      "b_code": "curr = nxt",
+      "b_line": 15,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "prev = curr",
+      "a_line": 14,
+      "b_code": "curr = nxt",
+      "b_line": 15,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "prev, curr = None, head",
+      "a_line": 10,
+      "b_code": "return prev",
+      "b_line": 16,
+      "function": "_reverse_iter"
+    },
+    {
+      "a_code": "while curr is not None: nxt = curr.next curr.next = prev prev = curr curr = nxt",
+      "a_line": 11,
+      "b_code": "return prev",
+      "b_line": 16,
+      "function": "_reverse_iter"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, val:",
+        "line": 5,
+        "var": "val"
+      },
+      "from": {
+        "code": "self.val = val",
+        "line": 6,
+        "var": "self.val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, val:",
+        "line": 5,
+        "var": "next"
+      },
+      "from": {
+        "code": "self.val = val",
+        "line": 6,
+        "var": "self.val"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, val:",
+        "line": 5,
+        "var": "next"
+      },
+      "from": {
+        "code": "self.next = next",
+        "line": 7,
+        "var": "self.next"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, val:",
+        "line": 5,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.next = next",
+        "line": 7,
+        "var": "self.next"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _reverse_iter(head:",
+        "line": 9,
+        "var": "head"
+      },
+      "from": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "curr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _reverse_iter(head:",
+        "line": 9,
+        "var": "curr.next"
+      },
+      "from": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "curr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _reverse_iter(head:",
+        "line": 9,
+        "var": "head"
+      },
+      "from": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "prev"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "curr"
+      },
+      "from": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "prev"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "nxt = curr.next",
+        "line": 12,
+        "var": "curr.next"
+      },
+      "from": {
+        "code": "nxt = curr.next",
+        "line": 12,
+        "var": "nxt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "curr"
+      },
+      "from": {
+        "code": "nxt = curr.next",
+        "line": 12,
+        "var": "nxt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _reverse_iter(head:",
+        "line": 9,
+        "var": "head"
+      },
+      "from": {
+        "code": "curr.next = prev",
+        "line": 13,
+        "var": "curr.next"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "prev"
+      },
+      "from": {
+        "code": "curr.next = prev",
+        "line": 13,
+        "var": "curr.next"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "curr"
+      },
+      "from": {
+        "code": "curr.next = prev",
+        "line": 13,
+        "var": "curr.next"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "prev, curr = None, head",
+        "line": 10,
+        "var": "curr"
+      },
+      "from": {
+        "code": "prev = curr",
+        "line": 14,
+        "var": "prev"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _reverse_iter(head:",
+        "line": 9,
+        "var": "head"
+      },
+      "from": {
+        "code": "prev = curr",
+        "line": 14,
+        "var": "prev"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "curr.next = prev",
+        "line": 13,
+        "var": "curr.next"
+      },
+      "from": {
+        "code": "prev = curr",
+        "line": 14,
+        "var": "prev"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "curr.next = prev",
+        "line": 13,
+        "var": "curr.next"
+      },
+      "from": {
+        "code": "curr = nxt",
+        "line": 15,
+        "var": "curr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nxt = curr.next",
+        "line": 12,
+        "var": "nxt"
+      },
+      "from": {
+        "code": "curr = nxt",
+        "line": 15,
+        "var": "curr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _reverse_iter(head:",
+        "line": 9,
+        "var": "head"
+      },
+      "from": {
+        "code": "curr = nxt",
+        "line": 15,
+        "var": "curr"
+      },
+      "label": "negative"
+    }
+  ]
+}

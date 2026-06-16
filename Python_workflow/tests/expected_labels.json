@@ -1,0 +1,49 @@
+{
+  "function_reachability": {
+    "file": "function_reachability.json",
+    "labels": {
+      "reachable": [["f", "h"]],
+      "not_reachable": [["h", "f"]]
+    }
+  },
+  "dead_code": {
+    "file": "dead_code.json",
+    "labels": {
+      "dead": ["never_after_return = 2", "never_in_false = 3"],
+      "reachable": ["keep = 1", "after = before + 1"]
+    }
+  },
+  "loop_reachability": {
+    "file": "loops.json",
+    "labels": {
+      "never_runs": ["for i in range(0)", "False"],
+      "always_runs": ["for j in range(3)"]
+    }
+  },
+  "dominators": {
+    "file": "dominators.json",
+    "labels": {
+      "dominates": [["start = 1", "middle = start + 1"], ["for i in range(3)", "body_value = i"]],
+      "does_not_dominate": [["branch_only = middle", "after_join = middle + 2"]]
+    }
+  },
+  "data_dependency": {
+    "file": "data_dependency.json",
+    "labels": {
+      "must": [["y", "x"], ["z", "y"]],
+      "negative": [["c", "x"]]
+    }
+  },
+  "liveness": {
+    "file": "liveness.json",
+    "labels": {
+      "liveout": {
+        "returns_x": {"x": true, "temp": false},
+        "later_use": {"y": true}
+      },
+      "live_before": [
+        {"function": "later_use", "code": "y = x + 1", "var": "x"}
+      ]
+    }
+  }
+}

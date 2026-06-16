@@ -1,0 +1,35 @@
+{
+  "data_dependency": [
+    "Does the value of variable processes at line 37: <statement> processes = deque() </statement> depend on the value of variable data_cnt at line 1: <statement> __module__ </statement>?",
+    "Does the value of variable this_process_time at line 16: <statement> this_process_time = in_time[0] - remain_time </statement> depend on the value of variable self.quantum at line 16: <statement> this_process_time = in_time[0] - remain_time </statement>?",
+    "Does variable int at line 40: <statement> data_cnt, quantum = list(map(int,input().split(\" \"))) </statement> determine the value stored in variable data_cnt at line 40: <statement> data_cnt, quantum = list(map(int,input().split(\" \"))) </statement>?",
+    "Does variable data_cnt at line 40: <statement> data_cnt, quantum = list(map(int,input().split(\" \"))) </statement> determine the value stored in variable processes at line 50: <statement> processes, times = objCPU.deal(processes, times) </statement>?"
+  ],
+  "dead_code": [
+    "Is the statement if len(processes) == 0: break unreachable during execution?",
+    "Can the statement break be reached during execution?",
+    "Is it possible for the statement processes = deque() to execute?",
+    "Can the statement processes, times = objCPU.deal(processes, times) be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Does the statement line 40: <statement> data_cnt, quantum = list(map(int,input().split(\" \"))) </statement> dominate line 49: <statement> while True: processes, times = objCPU.deal(processes, times) if len(processes) == 0: break </statement>?",
+    "Is it guaranteed that whenever line 18: <statement> in_process.append(in_process[0]) </statement> is reached, the statement line 19: <statement> in_time.append(remain_time) </statement> has already been reached?",
+    "Does the statement line 42: <statement> for i in range(data_cnt): tmp_process, tmp_time = input().split(\" \") processes.append(tmp_process) times.append(int(tmp_time)) </statement> dominate line 3: <statement> import sys </statement>?",
+    "Does the statement line 14: <statement> if in_time[0] > self.quantum: remain_time = in_time[0] - self.quantum this_process_time = in_time[0] - remain_time in_process.append(in_process[0]) in_time.append(remain_time) self.total_time += this_process_time else: this_process_time = in_time[0] self.total_time += this_process_time #make log self.makeLog(in_process[0]) </statement> dominate line 28: <statement> in_process.popleft() </statement>?"
+  ],
+  "function_reachability": [
+    "Can function CPU.deal eventually call function CPU.makeLog?",
+    "Is there a call path from function CPU.__init__ to function CPU.deal?",
+    "Is there a call path from function CPU.__init__ to function CPU.makeLog?"
+  ],
+  "liveness": [
+    "Is variable quantum live at the end of function __module__?",
+    "Is variable in_process live at the end of function CPU.deal?",
+    "Does variable objCPU remain in use at the end of function __module__?",
+    "Does variable in_time remain in use at the end of function CPU.deal?"
+  ],
+  "loop_reachability": [
+    "Can the loop with condition True be skipped entirely?",
+    "Is the loop with condition True always executed?"
+  ]
+}

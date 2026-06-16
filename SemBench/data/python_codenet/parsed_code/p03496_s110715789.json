@@ -1,0 +1,2252 @@
+{
+  "cfg_statements": [
+    {
+      "code": "n = int(input())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "as_ = list(int(i) for i in input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "history = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 3
+    },
+    {
+      "code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 21,
+      "node_id": 4
+    },
+    {
+      "code": "x = as_.index(max(as_))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 5
+    },
+    {
+      "code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 25,
+      "node_id": 6
+    },
+    {
+      "code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 26,
+      "node_id": 7
+    },
+    {
+      "code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 27,
+      "node_id": 8
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 9
+    },
+    {
+      "code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 31,
+      "node_id": 10
+    },
+    {
+      "code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 33,
+      "node_id": 11
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x, x + 1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 12
+    },
+    {
+      "code": "x = as_.index(min(as_))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 13
+    },
+    {
+      "code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 40,
+      "node_id": 14
+    },
+    {
+      "code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 41,
+      "node_id": 15
+    },
+    {
+      "code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 42,
+      "node_id": 16
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 17
+    },
+    {
+      "code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 46,
+      "node_id": 18
+    },
+    {
+      "code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 48,
+      "node_id": 19
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 20
+    },
+    {
+      "code": "output_history(history)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 51,
+      "node_id": 21
+    },
+    {
+      "code": "print(len(history))",
+      "dead": false,
+      "function": "output_history",
+      "kind": "Expr",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "for h in history: print('{0} {1}'.format(h[0], h[1]))",
+      "dead": false,
+      "function": "output_history",
+      "kind": "For",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "print('{0} {1}'.format(h[0], h[1]))",
+      "dead": false,
+      "function": "output_history",
+      "kind": "Expr",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "list_[y] += list_[x]",
+      "dead": false,
+      "function": "distribute",
+      "kind": "AugAssign",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "hstr.append((x + 1, y + 1))",
+      "dead": false,
+      "function": "distribute",
+      "kind": "Expr",
+      "line": 13,
+      "node_id": 2
+    },
+    {
+      "code": "return list_, hstr",
+      "dead": false,
+      "function": "distribute",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "n = int(input())",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "as_ = list(int(i) for i in input().split())",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "print(len(history))",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "for h in history: print('{0} {1}'.format(h[0], h[1]))",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "print('{0} {1}'.format(h[0], h[1]))",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "list_[y] += list_[x]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "hstr.append((x + 1, y + 1))",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return list_, hstr",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "history = []",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "x = as_.index(max(as_))",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x, x + 1)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "x = as_.index(min(as_))",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x, y)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "as_, history = distribute(as_, history, x + 1, x)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "output_history(history)",
+      "dead": false,
+      "line": 51
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p03496_s110715789.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 5,
+      "name": "output_history",
+      "variables": [
+        "h",
+        "history"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 11,
+      "name": "distribute",
+      "variables": [
+        "hstr",
+        "list_",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n = int(input())",
+            "line": 1,
+            "vars": []
+          },
+          {
+            "code": "as_ = list(int(i) for i in input().split())",
+            "line": 2,
+            "vars": []
+          },
+          {
+            "code": "history = []",
+            "line": 17,
+            "vars": [
+              "as_"
+            ]
+          },
+          {
+            "code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+            "line": 21,
+            "vars": [
+              "as_",
+              "history"
+            ]
+          },
+          {
+            "code": "x = as_.index(max(as_))",
+            "line": 24,
+            "vars": [
+              "as_",
+              "history"
+            ]
+          },
+          {
+            "code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+            "line": 25,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+            "line": 26,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+            "line": 27,
+            "vars": [
+              "a",
+              "as_",
+              "history",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "as_, history = distribute(as_, history, x, y)",
+            "line": 28,
+            "vars": [
+              "as_",
+              "history",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+            "line": 31,
+            "vars": [
+              "as_",
+              "history"
+            ]
+          },
+          {
+            "code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+            "line": 33,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "as_, history = distribute(as_, history, x, x + 1)",
+            "line": 34,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "x = as_.index(min(as_))",
+            "line": 39,
+            "vars": [
+              "as_",
+              "history"
+            ]
+          },
+          {
+            "code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+            "line": 40,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+            "line": 41,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+            "line": 42,
+            "vars": [
+              "a",
+              "as_",
+              "history",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "as_, history = distribute(as_, history, x, y)",
+            "line": 43,
+            "vars": [
+              "as_",
+              "history",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+            "line": 46,
+            "vars": [
+              "as_",
+              "history"
+            ]
+          },
+          {
+            "code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+            "line": 48,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "as_, history = distribute(as_, history, x + 1, x)",
+            "line": 49,
+            "vars": [
+              "as_",
+              "history",
+              "x"
+            ]
+          },
+          {
+            "code": "output_history(history)",
+            "line": 51,
+            "vars": [
+              "history"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "as_": false,
+          "history": false,
+          "n": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "distribute": {
+        "base_liveout": [
+          "hstr",
+          "list_"
+        ],
+        "live_before": [
+          {
+            "code": "list_[y] += list_[x]",
+            "line": 12,
+            "vars": [
+              "hstr",
+              "list_",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "hstr.append((x + 1, y + 1))",
+            "line": 13,
+            "vars": [
+              "hstr",
+              "list_",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "return list_, hstr",
+            "line": 14,
+            "vars": [
+              "hstr",
+              "list_"
+            ]
+          }
+        ],
+        "liveout": {
+          "hstr": true,
+          "list_": true,
+          "x": false,
+          "y": false
+        },
+        "return_vars": [
+          "hstr",
+          "list_"
+        ]
+      },
+      "output_history": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "print(len(history))",
+            "line": 6,
+            "vars": [
+              "history"
+            ]
+          },
+          {
+            "code": "for h in history: print('{0} {1}'.format(h[0], h[1]))",
+            "line": 7,
+            "vars": [
+              "history"
+            ]
+          },
+          {
+            "code": "print('{0} {1}'.format(h[0], h[1]))",
+            "line": 8,
+            "vars": [
+              "h"
+            ]
+          }
+        ],
+        "liveout": {
+          "h": false,
+          "history": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while not all([a >= 0 for a in as_]):",
+      "cond": "not all([a >= 0 for a in as_])",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 25,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for y, a in enumerate(as_):",
+      "cond": "for y, a in enumerate(as_)",
+      "function": "__module__",
+      "header_id": 7,
+      "line": 26,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for x in range(len(as_) - 1):",
+      "cond": "for x in range(len(as_) - 1)",
+      "function": "__module__",
+      "header_id": 10,
+      "line": 31,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while not all([a <= 0 for a in as_]):",
+      "cond": "not all([a <= 0 for a in as_])",
+      "function": "__module__",
+      "header_id": 14,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for y, a in enumerate(as_):",
+      "cond": "for y, a in enumerate(as_)",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 41,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for x in reversed(range(len(as_) - 1)):",
+      "cond": "for x in reversed(range(len(as_) - 1))",
+      "function": "__module__",
+      "header_id": 18,
+      "line": 46,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for h in history:",
+      "cond": "for h in history",
+      "function": "output_history",
+      "header_id": 2,
+      "line": 7,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "as_ = list(int(i) for i in input().split())",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "history = []",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "history = []",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "x = as_.index(max(as_))",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "x = as_.index(max(as_))",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "x = as_.index(max(as_))",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "x = as_.index(max(as_))",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 25,
+      "b_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 25,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 26,
+      "b_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 25,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 26,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 27,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 25,
+      "b_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 25,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "a_line": 31,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(max(as_))",
+      "a_line": 24,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 25,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "a_line": 31,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1)",
+      "a_line": 33,
+      "b_code": "as_, history = distribute(as_, history, x, x + 1)",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "x = as_.index(min(as_))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "x = as_.index(min(as_))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "x = as_.index(min(as_))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "x = as_.index(min(as_))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 40,
+      "b_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 40,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 41,
+      "b_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 40,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 41,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 42,
+      "b_code": "as_, history = distribute(as_, history, x, y)",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 40,
+      "b_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 40,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 46,
+      "b_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = as_.index(min(as_))",
+      "a_line": 39,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y)",
+      "a_line": 40,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 46,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 48,
+      "b_code": "as_, history = distribute(as_, history, x + 1, x)",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 1,
+      "b_code": "output_history(history)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "as_ = list(int(i) for i in input().split())",
+      "a_line": 2,
+      "b_code": "output_history(history)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "history = []",
+      "a_line": 17,
+      "b_code": "output_history(history)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(max(as_)) > abs(min(as_)): # \u6b63\u306b\u5bc4\u305b\u308b # \u6b63\u306eMax\u3092\u8ca0\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(max(as_)) while not all([a >= 0 for a in as_]): for y, a in enumerate(as_): if a < 0: as_, history = distribute(as_, history, x, y) # \u524d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u524d\u306e\u8981\u7d20\u3092\u5f8c\u308d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in range(len(as_) - 1): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x, x + 1) else: # \u8ca0\u306b\u5bc4\u305b\u308b # \u8ca0\u306eMax\u3092\u6b63\u306e\u8981\u7d20\u306b\u7e70\u308a\u8fd4\u3057\u5206\u914d x = as_.index(min(as_)) while not all([a <= 0 for a in as_]): for y, a in enumerate(as_): if a > 0: as_, history = distribute(as_, history, x, y) # \u5f8c\u308d\u304b\u3089\u9806\u306b\u8d70\u67fb\u3057\u53cd\u8ee2\u7b87\u6240\u3067\u5f8c\u308d\u306e\u8981\u7d20\u3092\u524d\u306e\u8981\u7d20\u306b\u8db3\u3057\u5408\u308f\u305b\u308b for x in reversed(range(len(as_) - 1)): # \u53cd\u8ee2\u7b87\u6240\u3067 if as_[x + 1] - as_[x] < 0: as_, history = distribute(as_, history, x + 1, x)",
+      "a_line": 21,
+      "b_code": "output_history(history)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print(len(history))",
+      "a_line": 6,
+      "b_code": "for h in history: print('{0} {1}'.format(h[0], h[1]))",
+      "b_line": 7,
+      "function": "output_history"
+    },
+    {
+      "a_code": "print(len(history))",
+      "a_line": 6,
+      "b_code": "print('{0} {1}'.format(h[0], h[1]))",
+      "b_line": 8,
+      "function": "output_history"
+    },
+    {
+      "a_code": "for h in history: print('{0} {1}'.format(h[0], h[1]))",
+      "a_line": 7,
+      "b_code": "print('{0} {1}'.format(h[0], h[1]))",
+      "b_line": 8,
+      "function": "output_history"
+    },
+    {
+      "a_code": "list_[y] += list_[x]",
+      "a_line": 12,
+      "b_code": "hstr.append((x + 1, y + 1))",
+      "b_line": 13,
+      "function": "distribute"
+    },
+    {
+      "a_code": "list_[y] += list_[x]",
+      "a_line": 12,
+      "b_code": "return list_, hstr",
+      "b_line": 14,
+      "function": "distribute"
+    },
+    {
+      "a_code": "hstr.append((x + 1, y + 1))",
+      "a_line": 13,
+      "b_code": "return list_, hstr",
+      "b_line": 14,
+      "function": "distribute"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped unknown.format at line 8",
+      "external call skipped input at line 1",
+      "external call skipped input at line 2"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped unknown.format at line 8",
+    "external call skipped input at line 1",
+    "external call skipped input at line 2"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "n = int(input())",
+        "line": 1,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_ = list(int(i) for i in input().split())",
+        "line": 2,
+        "var": "as_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "history = []",
+        "line": 17,
+        "var": "history"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_ = list(int(i) for i in input().split())",
+        "line": 2,
+        "var": "as_"
+      },
+      "from": {
+        "code": "x = as_.index(max(as_))",
+        "line": 24,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "x = as_.index(max(as_))",
+        "line": 24,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_ = list(int(i) for i in input().split())",
+        "line": 2,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "history = []",
+        "line": 17,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(max(as_))",
+        "line": 24,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "history = []",
+        "line": 17,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(max(as_))",
+        "line": 24,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(max(as_))",
+        "line": 24,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 28,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(max(as_))",
+        "line": 24,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "from": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "from": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "y"
+      },
+      "from": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, x + 1)",
+        "line": 34,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "as_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "as_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "as_"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x, y)",
+        "line": 43,
+        "var": "history"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = as_.index(min(as_))",
+        "line": 39,
+        "var": "x"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "y"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "history"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "as_, history = distribute(as_, history, x + 1, x)",
+        "line": 49,
+        "var": "history"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def distribute(list_, hstr, x, y):",
+        "line": 11,
+        "var": "list_"
+      },
+      "from": {
+        "code": "list_[y] += list_[x]",
+        "line": 12,
+        "var": "list_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distribute(list_, hstr, x, y):",
+        "line": 11,
+        "var": "x"
+      },
+      "from": {
+        "code": "list_[y] += list_[x]",
+        "line": 12,
+        "var": "list_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distribute(list_, hstr, x, y):",
+        "line": 11,
+        "var": "y"
+      },
+      "from": {
+        "code": "list_[y] += list_[x]",
+        "line": 12,
+        "var": "list_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distribute(list_, hstr, x, y):",
+        "line": 11,
+        "var": "hstr"
+      },
+      "from": {
+        "code": "list_[y] += list_[x]",
+        "line": 12,
+        "var": "list_"
+      },
+      "label": "negative"
+    }
+  ]
+}

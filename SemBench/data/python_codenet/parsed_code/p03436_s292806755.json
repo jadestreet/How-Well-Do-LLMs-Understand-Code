@@ -1,0 +1,7404 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 2,
+      "node_id": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 3,
+      "node_id": 2
+    },
+    {
+      "code": "import bisect",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "import heapq",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "import itertools",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 6,
+      "node_id": 5
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 7,
+      "node_id": 6
+    },
+    {
+      "code": "from collections import Counter, defaultdict, deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 8,
+      "node_id": 7
+    },
+    {
+      "code": "from copy import deepcopy",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 9,
+      "node_id": 8
+    },
+    {
+      "code": "from decimal import Decimal",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 10,
+      "node_id": 9
+    },
+    {
+      "code": "from math import gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 11,
+      "node_id": 10
+    },
+    {
+      "code": "from operator import add, itemgetter, mul, xor",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 12,
+      "node_id": 11
+    },
+    {
+      "code": "mod = 10**9+7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 12
+    },
+    {
+      "code": "h,w = MI()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 13
+    },
+    {
+      "code": "s = [list(input()) for _ in range(h)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 14
+    },
+    {
+      "code": "dist = [[-1]*(w) for _ in range(h)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 15
+    },
+    {
+      "code": "black_cnt = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 16
+    },
+    {
+      "code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 31,
+      "node_id": 17
+    },
+    {
+      "code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 32,
+      "node_id": 18
+    },
+    {
+      "code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 33,
+      "node_id": 19
+    },
+    {
+      "code": "dist[i][j] = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 20
+    },
+    {
+      "code": "black_cnt += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 35,
+      "node_id": 21
+    },
+    {
+      "code": "dist[0][0] = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 22
+    },
+    {
+      "code": "d = deque()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 23
+    },
+    {
+      "code": "d.append([0,0])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 38,
+      "node_id": 24
+    },
+    {
+      "code": "dx = [1,-1,0,0]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 25
+    },
+    {
+      "code": "dy = [0,0,1,-1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 26
+    },
+    {
+      "code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "While",
+      "line": 41,
+      "node_id": 27
+    },
+    {
+      "code": "v = d.popleft()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 28
+    },
+    {
+      "code": "x = v[0]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 29
+    },
+    {
+      "code": "y = v[1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 30
+    },
+    {
+      "code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 45,
+      "node_id": 31
+    },
+    {
+      "code": "nx = x+ dx[i]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 32
+    },
+    {
+      "code": "ny = y+ dy[i]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 33
+    },
+    {
+      "code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 48,
+      "node_id": 34
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Continue",
+      "line": 49,
+      "node_id": 35
+    },
+    {
+      "code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 50,
+      "node_id": 36
+    },
+    {
+      "code": "dist[nx][ny] = dist[x][y] + 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 37
+    },
+    {
+      "code": "d.append([nx,ny])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 52,
+      "node_id": 38
+    },
+    {
+      "code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 53,
+      "node_id": 39
+    },
+    {
+      "code": "print(-1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 54,
+      "node_id": 40
+    },
+    {
+      "code": "shortest = dist[-1][-1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 41
+    },
+    {
+      "code": "print(h*w - black_cnt -(shortest+1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 57,
+      "node_id": 42
+    },
+    {
+      "code": "bunshi=1",
+      "dead": false,
+      "function": "cmb",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "bunbo=1",
+      "dead": false,
+      "function": "cmb",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "dead": false,
+      "function": "cmb",
+      "kind": "For",
+      "line": 16,
+      "node_id": 3
+    },
+    {
+      "code": "bunbo = bunbo*(i+1)%mod",
+      "dead": false,
+      "function": "cmb",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 4
+    },
+    {
+      "code": "bunshi = bunshi*(n-i)%mod",
+      "dead": false,
+      "function": "cmb",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 5
+    },
+    {
+      "code": "return (bunshi*pow(bunbo,mod-2,mod))%mod",
+      "dead": false,
+      "function": "cmb",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 6
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "function": "I",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(int,input().split()))",
+      "dead": false,
+      "function": "LI",
+      "kind": "Return",
+      "line": 22,
+      "node_id": 1
+    },
+    {
+      "code": "return map(int,input().split())",
+      "dead": false,
+      "function": "MI",
+      "kind": "Return",
+      "line": 23,
+      "node_id": 1
+    },
+    {
+      "code": "return [list(map(int, input().split())) for _ in range(n)]",
+      "dead": false,
+      "function": "LLI",
+      "kind": "Return",
+      "line": 24,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "import bisect",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "import heapq",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "import itertools",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "from collections import Counter, defaultdict, deque",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "from copy import deepcopy",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "from decimal import Decimal",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "from math import gcd",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "from operator import add, itemgetter, mul, xor",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "bunshi=1",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "bunbo=1",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "bunbo = bunbo*(i+1)%mod",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "bunshi = bunshi*(n-i)%mod",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "return (bunshi*pow(bunbo,mod-2,mod))%mod",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "mod = 10**9+7",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return int(input())",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "return list(map(int,input().split()))",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "return map(int,input().split())",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "return [list(map(int, input().split())) for _ in range(n)]",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "h,w = MI()",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "s = [list(input()) for _ in range(h)]",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "dist = [[-1]*(w) for _ in range(h)]",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "black_cnt = 0",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "dist[i][j] = 0",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "black_cnt += 1",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "dist[0][0] = 0",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "d = deque()",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "d.append([0,0])",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "dx = [1,-1,0,0]",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "dy = [0,0,1,-1]",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "v = d.popleft()",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "x = v[0]",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "y = v[1]",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "nx = x+ dx[i]",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "ny = y+ dy[i]",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "dist[nx][ny] = dist[x][y] + 1",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "d.append([nx,ny])",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "print(-1)",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "shortest = dist[-1][-1]",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "print(h*w - black_cnt -(shortest+1))",
+      "dead": false,
+      "line": 57
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03436_s292806755.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 19,
+      "lineno": 13,
+      "name": "cmb",
+      "variables": [
+        "bunbo",
+        "bunshi",
+        "i",
+        "mod",
+        "n",
+        "r"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 21,
+      "lineno": 21,
+      "name": "I",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 22,
+      "lineno": 22,
+      "name": "LI",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 23,
+      "lineno": 23,
+      "name": "MI",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 24,
+      "lineno": 24,
+      "name": "LLI",
+      "variables": [
+        "int",
+        "n"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "I": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return int(input())",
+            "line": 21,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "LI": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int,input().split()))",
+            "line": 22,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "LLI": {
+        "base_liveout": [
+          "int",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return [list(map(int, input().split())) for _ in range(n)]",
+            "line": 24,
+            "vars": [
+              "int",
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true,
+          "n": true
+        },
+        "return_vars": [
+          "int",
+          "n"
+        ]
+      },
+      "MI": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return map(int,input().split())",
+            "line": 23,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 2,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**7)",
+            "line": 3,
+            "vars": [
+              "sys"
+            ]
+          },
+          {
+            "code": "import bisect",
+            "line": 4,
+            "vars": []
+          },
+          {
+            "code": "import heapq",
+            "line": 5,
+            "vars": []
+          },
+          {
+            "code": "import itertools",
+            "line": 6,
+            "vars": []
+          },
+          {
+            "code": "import math",
+            "line": 7,
+            "vars": []
+          },
+          {
+            "code": "from collections import Counter, defaultdict, deque",
+            "line": 8,
+            "vars": []
+          },
+          {
+            "code": "from copy import deepcopy",
+            "line": 9,
+            "vars": []
+          },
+          {
+            "code": "from decimal import Decimal",
+            "line": 10,
+            "vars": []
+          },
+          {
+            "code": "from math import gcd",
+            "line": 11,
+            "vars": []
+          },
+          {
+            "code": "from operator import add, itemgetter, mul, xor",
+            "line": 12,
+            "vars": []
+          },
+          {
+            "code": "mod = 10**9+7",
+            "line": 20,
+            "vars": []
+          },
+          {
+            "code": "h,w = MI()",
+            "line": 26,
+            "vars": []
+          },
+          {
+            "code": "s = [list(input()) for _ in range(h)]",
+            "line": 27,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "dist = [[-1]*(w) for _ in range(h)]",
+            "line": 28,
+            "vars": [
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "black_cnt = 0",
+            "line": 30,
+            "vars": [
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+            "line": 31,
+            "vars": [
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+            "line": 32,
+            "vars": [
+              "h",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+            "line": 33,
+            "vars": [
+              "h",
+              "j",
+              "s",
+              "w"
+            ]
+          },
+          {
+            "code": "dist[i][j] = 0",
+            "line": 34,
+            "vars": [
+              "h",
+              "j",
+              "w"
+            ]
+          },
+          {
+            "code": "black_cnt += 1",
+            "line": 35,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "dist[0][0] = 0",
+            "line": 36,
+            "vars": [
+              "black_cnt",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "d = deque()",
+            "line": 37,
+            "vars": [
+              "black_cnt",
+              "dist",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "d.append([0,0])",
+            "line": 38,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "dx = [1,-1,0,0]",
+            "line": 39,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "dy = [0,0,1,-1]",
+            "line": 40,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+            "line": 41,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "dy",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "v = d.popleft()",
+            "line": 42,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "dy",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "x = v[0]",
+            "line": 43,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "dy",
+              "h",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "y = v[1]",
+            "line": 44,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "dy",
+              "h",
+              "v",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+            "line": 45,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "dy",
+              "h",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "nx = x+ dx[i]",
+            "line": 46,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dx",
+              "dy",
+              "h",
+              "i",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "ny = y+ dy[i]",
+            "line": 47,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "dy",
+              "h",
+              "i",
+              "nx",
+              "w",
+              "y"
+            ]
+          },
+          {
+            "code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+            "line": 48,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "nx",
+              "ny",
+              "w",
+              "y"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 49,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "nx",
+              "ny",
+              "w",
+              "y"
+            ]
+          },
+          {
+            "code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+            "line": 50,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "nx",
+              "ny",
+              "w",
+              "y"
+            ]
+          },
+          {
+            "code": "dist[nx][ny] = dist[x][y] + 1",
+            "line": 51,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "nx",
+              "ny",
+              "w",
+              "y"
+            ]
+          },
+          {
+            "code": "d.append([nx,ny])",
+            "line": 52,
+            "vars": [
+              "black_cnt",
+              "d",
+              "dist",
+              "h",
+              "nx",
+              "ny",
+              "w"
+            ]
+          },
+          {
+            "code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+            "line": 53,
+            "vars": [
+              "black_cnt",
+              "dist",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "print(-1)",
+            "line": 54,
+            "vars": [
+              "black_cnt",
+              "dist",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "shortest = dist[-1][-1]",
+            "line": 56,
+            "vars": [
+              "black_cnt",
+              "dist",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "print(h*w - black_cnt -(shortest+1))",
+            "line": 57,
+            "vars": [
+              "black_cnt",
+              "h",
+              "shortest",
+              "w"
+            ]
+          }
+        ],
+        "liveout": {
+          "black_cnt": false,
+          "d": false,
+          "dist": false,
+          "dx": false,
+          "dy": false,
+          "h": false,
+          "i": false,
+          "j": false,
+          "mod": false,
+          "nx": false,
+          "ny": false,
+          "s": false,
+          "shortest": false,
+          "sys": false,
+          "v": false,
+          "w": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "cmb": {
+        "base_liveout": [
+          "bunbo",
+          "bunshi",
+          "mod"
+        ],
+        "live_before": [
+          {
+            "code": "bunshi=1",
+            "line": 14,
+            "vars": [
+              "mod",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "bunbo=1",
+            "line": 15,
+            "vars": [
+              "bunshi",
+              "mod",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+            "line": 16,
+            "vars": [
+              "bunbo",
+              "bunshi",
+              "mod",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "bunbo = bunbo*(i+1)%mod",
+            "line": 17,
+            "vars": [
+              "bunbo",
+              "bunshi",
+              "i",
+              "mod",
+              "n"
+            ]
+          },
+          {
+            "code": "bunshi = bunshi*(n-i)%mod",
+            "line": 18,
+            "vars": [
+              "bunbo",
+              "bunshi",
+              "i",
+              "mod",
+              "n"
+            ]
+          },
+          {
+            "code": "return (bunshi*pow(bunbo,mod-2,mod))%mod",
+            "line": 19,
+            "vars": [
+              "bunbo",
+              "bunshi",
+              "mod"
+            ]
+          }
+        ],
+        "liveout": {
+          "bunbo": true,
+          "bunshi": true,
+          "i": false,
+          "mod": true,
+          "n": false,
+          "r": false
+        },
+        "return_vars": [
+          "bunbo",
+          "bunshi",
+          "mod"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 17,
+      "line": 31,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(w):",
+      "cond": "for j in range(w)",
+      "function": "__module__",
+      "header_id": 18,
+      "line": 32,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while d:",
+      "cond": "d",
+      "function": "__module__",
+      "header_id": 27,
+      "line": 41,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(4):",
+      "cond": "for i in range(4)",
+      "function": "__module__",
+      "header_id": 31,
+      "line": 45,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(r):",
+      "cond": "for i in range(r)",
+      "function": "cmb",
+      "header_id": 3,
+      "line": 16,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "sys.setrecursionlimit(10**7)",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "import bisect",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "import bisect",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "import heapq",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "import heapq",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "import heapq",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "import itertools",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "import itertools",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "import itertools",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "import itertools",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "import math",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "import math",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "import math",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "import math",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "import math",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "from collections import Counter, defaultdict, deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "from collections import Counter, defaultdict, deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "from collections import Counter, defaultdict, deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "from collections import Counter, defaultdict, deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "from collections import Counter, defaultdict, deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "from collections import Counter, defaultdict, deque",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "from copy import deepcopy",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "from decimal import Decimal",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "from math import gcd",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "from operator import add, itemgetter, mul, xor",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "mod = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "h,w = MI()",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "s = [list(input()) for _ in range(h)]",
+      "b_line": 27,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "b_line": 28,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "black_cnt = 0",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 32,
+      "b_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 32,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 33,
+      "b_code": "dist[i][j] = 0",
+      "b_line": 34,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 32,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 33,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[i][j] = 0",
+      "a_line": 34,
+      "b_code": "black_cnt += 1",
+      "b_line": 35,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "dist[0][0] = 0",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "d = deque()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "d.append([0,0])",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "dx = [1,-1,0,0]",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "dy = [0,0,1,-1]",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "v = d.popleft()",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "x = v[0]",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "y = v[1]",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "nx = x+ dx[i]",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "nx = x+ dx[i]",
+      "a_line": 46,
+      "b_code": "ny = y+ dy[i]",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "nx = x+ dx[i]",
+      "a_line": 46,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ny = y+ dy[i]",
+      "a_line": 47,
+      "b_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "nx = x+ dx[i]",
+      "a_line": 46,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ny = y+ dy[i]",
+      "a_line": 47,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "a_line": 48,
+      "b_code": "continue",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "nx = x+ dx[i]",
+      "a_line": 46,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ny = y+ dy[i]",
+      "a_line": 47,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "a_line": 48,
+      "b_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "nx = x+ dx[i]",
+      "a_line": 46,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ny = y+ dy[i]",
+      "a_line": 47,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "a_line": 48,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 50,
+      "b_code": "dist[nx][ny] = dist[x][y] + 1",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = d.popleft()",
+      "a_line": 42,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = v[0]",
+      "a_line": 43,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "y = v[1]",
+      "a_line": 44,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 45,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "nx = x+ dx[i]",
+      "a_line": 46,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ny = y+ dy[i]",
+      "a_line": 47,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if nx < 0 or nx >= h or ny < 0 or ny >= w: continue",
+      "a_line": 48,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 50,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[nx][ny] = dist[x][y] + 1",
+      "a_line": 51,
+      "b_code": "d.append([nx,ny])",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "a_line": 53,
+      "b_code": "print(-1)",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "a_line": 53,
+      "b_code": "shortest = dist[-1][-1]",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 2,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 3,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 4,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import heapq",
+      "a_line": 5,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import itertools",
+      "a_line": 6,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 7,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import Counter, defaultdict, deque",
+      "a_line": 8,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from copy import deepcopy",
+      "a_line": 9,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from decimal import Decimal",
+      "a_line": 10,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from math import gcd",
+      "a_line": 11,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from operator import add, itemgetter, mul, xor",
+      "a_line": 12,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 10**9+7",
+      "a_line": 20,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = MI()",
+      "a_line": 26,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = [list(input()) for _ in range(h)]",
+      "a_line": 27,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist = [[-1]*(w) for _ in range(h)]",
+      "a_line": 28,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black_cnt = 0",
+      "a_line": 30,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): for j in range(w): if s[i][j] == \"#\": dist[i][j] = 0 black_cnt += 1",
+      "a_line": 31,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dist[0][0] = 0",
+      "a_line": 36,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d = deque()",
+      "a_line": 37,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "d.append([0,0])",
+      "a_line": 38,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dx = [1,-1,0,0]",
+      "a_line": 39,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dy = [0,0,1,-1]",
+      "a_line": 40,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "while d: v = d.popleft() x = v[0] y = v[1] for i in range(4): nx = x+ dx[i] ny = y+ dy[i] if nx < 0 or nx >= h or ny < 0 or ny >= w: continue if dist[nx][ny] == -1: dist[nx][ny] = dist[x][y] + 1 d.append([nx,ny])",
+      "a_line": 41,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if dist[-1][-1] == -1: print(-1) else: shortest = dist[-1][-1] print(h*w - black_cnt -(shortest+1))",
+      "a_line": 53,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "shortest = dist[-1][-1]",
+      "a_line": 56,
+      "b_code": "print(h*w - black_cnt -(shortest+1))",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "bunshi=1",
+      "a_line": 14,
+      "b_code": "bunbo=1",
+      "b_line": 15,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunshi=1",
+      "a_line": 14,
+      "b_code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "b_line": 16,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunbo=1",
+      "a_line": 15,
+      "b_code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "b_line": 16,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunshi=1",
+      "a_line": 14,
+      "b_code": "bunbo = bunbo*(i+1)%mod",
+      "b_line": 17,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunbo=1",
+      "a_line": 15,
+      "b_code": "bunbo = bunbo*(i+1)%mod",
+      "b_line": 17,
+      "function": "cmb"
+    },
+    {
+      "a_code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "a_line": 16,
+      "b_code": "bunbo = bunbo*(i+1)%mod",
+      "b_line": 17,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunshi=1",
+      "a_line": 14,
+      "b_code": "bunshi = bunshi*(n-i)%mod",
+      "b_line": 18,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunbo=1",
+      "a_line": 15,
+      "b_code": "bunshi = bunshi*(n-i)%mod",
+      "b_line": 18,
+      "function": "cmb"
+    },
+    {
+      "a_code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "a_line": 16,
+      "b_code": "bunshi = bunshi*(n-i)%mod",
+      "b_line": 18,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunbo = bunbo*(i+1)%mod",
+      "a_line": 17,
+      "b_code": "bunshi = bunshi*(n-i)%mod",
+      "b_line": 18,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunshi=1",
+      "a_line": 14,
+      "b_code": "return (bunshi*pow(bunbo,mod-2,mod))%mod",
+      "b_line": 19,
+      "function": "cmb"
+    },
+    {
+      "a_code": "bunbo=1",
+      "a_line": 15,
+      "b_code": "return (bunshi*pow(bunbo,mod-2,mod))%mod",
+      "b_line": 19,
+      "function": "cmb"
+    },
+    {
+      "a_code": "for i in range(r): bunbo = bunbo*(i+1)%mod bunshi = bunshi*(n-i)%mod",
+      "a_line": 16,
+      "b_code": "return (bunshi*pow(bunbo,mod-2,mod))%mod",
+      "b_line": 19,
+      "function": "cmb"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 3",
+      "external call skipped input at line 21",
+      "external call skipped input at line 22",
+      "external call skipped input at line 23",
+      "external call skipped input at line 24",
+      "external call skipped input at line 27",
+      "external call skipped pow at line 19"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 3",
+    "external call skipped input at line 21",
+    "external call skipped input at line 22",
+    "external call skipped input at line 23",
+    "external call skipped input at line 24",
+    "external call skipped input at line 27",
+    "external call skipped pow at line 19"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "mod = 10**9+7",
+        "line": 20,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "h,w = MI()",
+        "line": 26,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "h,w = MI()",
+        "line": 26,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = MI()",
+        "line": 26,
+        "var": "h"
+      },
+      "from": {
+        "code": "s = [list(input()) for _ in range(h)]",
+        "line": 27,
+        "var": "s"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "s = [list(input()) for _ in range(h)]",
+        "line": 27,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = MI()",
+        "line": 26,
+        "var": "h"
+      },
+      "from": {
+        "code": "dist = [[-1]*(w) for _ in range(h)]",
+        "line": 28,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = MI()",
+        "line": 26,
+        "var": "w"
+      },
+      "from": {
+        "code": "dist = [[-1]*(w) for _ in range(h)]",
+        "line": 28,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "dist = [[-1]*(w) for _ in range(h)]",
+        "line": 28,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "d"
+      },
+      "from": {
+        "code": "black_cnt = 0",
+        "line": 30,
+        "var": "black_cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dist[i][j] = 0",
+        "line": 34,
+        "var": "j"
+      },
+      "from": {
+        "code": "dist[i][j] = 0",
+        "line": 34,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt = 0",
+        "line": 30,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "dist[i][j] = 0",
+        "line": 34,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "d"
+      },
+      "from": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "dist[0][0] = 0",
+        "line": 36,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "dx = [1,-1,0,0]",
+        "line": 39,
+        "var": "dx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "dy = [0,0,1,-1]",
+        "line": 40,
+        "var": "dy"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "x = v[0]",
+        "line": 43,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "x = v[0]",
+        "line": 43,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "x = v[0]",
+        "line": 43,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "y = v[1]",
+        "line": 44,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "y = v[1]",
+        "line": 44,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "y = v[1]",
+        "line": 44,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dx = [1,-1,0,0]",
+        "line": 39,
+        "var": "dx"
+      },
+      "from": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "i"
+      },
+      "from": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = v[0]",
+        "line": 43,
+        "var": "x"
+      },
+      "from": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "nx = x+ dx[i]",
+        "line": 46,
+        "var": "nx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dy = [0,0,1,-1]",
+        "line": 40,
+        "var": "dy"
+      },
+      "from": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "i"
+      },
+      "from": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = v[1]",
+        "line": 44,
+        "var": "y"
+      },
+      "from": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[0][0] = 0",
+        "line": 36,
+        "var": "dist"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dy = [0,0,1,-1]",
+        "line": 40,
+        "var": "dy"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "i"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = v[1]",
+        "line": 44,
+        "var": "y"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "d = deque()",
+        "line": 37,
+        "var": "d"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dist[nx][ny] = dist[x][y] + 1",
+        "line": 51,
+        "var": "dist"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dy = [0,0,1,-1]",
+        "line": 40,
+        "var": "dy"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "i"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ny = y+ dy[i]",
+        "line": 47,
+        "var": "ny"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = d.popleft()",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = v[1]",
+        "line": 44,
+        "var": "y"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black_cnt += 1",
+        "line": 35,
+        "var": "black_cnt"
+      },
+      "from": {
+        "code": "shortest = dist[-1][-1]",
+        "line": 56,
+        "var": "shortest"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def cmb(n,r,mod):",
+        "line": 13,
+        "var": "bunbo"
+      },
+      "from": {
+        "code": "bunshi=1",
+        "line": 14,
+        "var": "bunshi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "bunshi=1",
+        "line": 14,
+        "var": "bunshi"
+      },
+      "from": {
+        "code": "bunbo=1",
+        "line": 15,
+        "var": "bunbo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "bunbo=1",
+        "line": 15,
+        "var": "bunbo"
+      },
+      "from": {
+        "code": "bunbo = bunbo*(i+1)%mod",
+        "line": 17,
+        "var": "bunbo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "bunbo = bunbo*(i+1)%mod",
+        "line": 17,
+        "var": "i"
+      },
+      "from": {
+        "code": "bunbo = bunbo*(i+1)%mod",
+        "line": 17,
+        "var": "bunbo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def cmb(n,r,mod):",
+        "line": 13,
+        "var": "mod"
+      },
+      "from": {
+        "code": "bunbo = bunbo*(i+1)%mod",
+        "line": 17,
+        "var": "bunbo"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "bunshi=1",
+        "line": 14,
+        "var": "bunshi"
+      },
+      "from": {
+        "code": "bunbo = bunbo*(i+1)%mod",
+        "line": 17,
+        "var": "bunbo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "bunshi=1",
+        "line": 14,
+        "var": "bunshi"
+      },
+      "from": {
+        "code": "bunshi = bunshi*(n-i)%mod",
+        "line": 18,
+        "var": "bunshi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "bunshi = bunshi*(n-i)%mod",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "bunshi = bunshi*(n-i)%mod",
+        "line": 18,
+        "var": "bunshi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def cmb(n,r,mod):",
+        "line": 13,
+        "var": "mod"
+      },
+      "from": {
+        "code": "bunshi = bunshi*(n-i)%mod",
+        "line": 18,
+        "var": "bunshi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def cmb(n,r,mod):",
+        "line": 13,
+        "var": "n"
+      },
+      "from": {
+        "code": "bunshi = bunshi*(n-i)%mod",
+        "line": 18,
+        "var": "bunshi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "bunbo = bunbo*(i+1)%mod",
+        "line": 17,
+        "var": "bunbo"
+      },
+      "from": {
+        "code": "bunshi = bunshi*(n-i)%mod",
+        "line": 18,
+        "var": "bunshi"
+      },
+      "label": "negative"
+    }
+  ]
+}

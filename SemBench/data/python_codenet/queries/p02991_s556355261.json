@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does variable work at line 61: <statement> arrived3[work] = 1 </statement> determine the value stored in variable arrived3 at line 61: <statement> arrived3[work] = 1 </statement>?",
+    "Does the value of variable arrived2 at line 31: <statement> arrived2 = {} </statement> depend on the value of variable aa at line 13: <statement> def resolve(test_def_name=\"\"): </statement>?",
+    "Does the value of variable sys.stdout at line 95: <statement> sys.stdout, sys.stdin = stdout, sat_in </statement> depend on the value of variable assert_input at line 89: <statement> def assertIO(self, assert_input, output): </statement>?",
+    "Does variable int at line 24: <statement> ans[s] = 0 </statement> determine the value stored in variable ans at line 24: <statement> ans[s] = 0 </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement while len(que) is not 0: now = que.pop() # \u30b1\u30f3\u30b1\u30f3\u30d1 work_s = point_s[now] ken = [] for work in work_s: if arrived1.get(work, 0) == 0: ken.append(work) arrived1[work] = 1 # list(itertools.chain.from_iterable(l_2d)) work_s = [point_s[k] for k in ken] work_s = list(itertools.chain.from_iterable(work_s)) kenken = [] for work in work_s: if arrived2.get(work, 0) == 0: kenken.append(work) arrived2[work] = 1 work_s = [point_s[k] for k in kenken] work_s = list(itertools.chain.from_iterable(work_s)) kenkenpa = [] for work in work_s: if arrived3.get(work, 0) == 0: kenkenpa.append(work) arrived3[work] = 1 for ken in kenkenpa: if ans[ken] == 999999999: ans[ken] = ans[now] + 1 bef[ken] = now # \u30ad\u30e5\u30fc\u306b\u8ffd\u52a0(\u5148\u982d\u306b\u8ffd\u52a0\u3059\u308b\u306e\u3067appendleft()) que.appendleft(ken) elif ans[ken] > ans[now] + 1: bef[ken] = now be considered dead code because it is never executed?",
+    "Can the statement if ans[ken] == 999999999: ans[ken] = ans[now] + 1 bef[ken] = now # \u30ad\u30e5\u30fc\u306b\u8ffd\u52a0(\u5148\u982d\u306b\u8ffd\u52a0\u3059\u308b\u306e\u3067appendleft()) que.appendleft(ken) elif ans[ken] > ans[now] + 1: bef[ken] = now be considered dead code because it is never executed?",
+    "Is the statement if arrived2.get(work, 0) == 0: kenken.append(work) arrived2[work] = 1 unreachable during execution?",
+    "Can the statement elif ans[ken] > ans[now] + 1: bef[ken] = now be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 44: <statement> arrived1[work] = 1 </statement> is reached, the statement line 40: <statement> ken = [] </statement> has already been reached?",
+    "Does the statement line 121: <statement> self.assertIO(test_input, output) </statement> dominate line 120: <statement> output = \"\"\"-1\"\"\" </statement>?",
+    "Does the statement line 51: <statement> if arrived2.get(work, 0) == 0: kenken.append(work) arrived2[work] = 1 </statement> dominate line 47: <statement> work_s = [point_s[k] for k in ken] </statement>?",
+    "Does the statement line 30: <statement> arrived1 = {} </statement> dominate line 44: <statement> arrived1[work] = 1 </statement>?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function TestClass.test_input_2 to function TestClass.test_input_1?",
+    "Can function TestClass.test_input_3 eventually call function TestClass.assertIO?",
+    "Can function TestClass.tes_t_1original_1 eventually call function resolve?",
+    "Can function resolve eventually call function TestClass.tes_t_1original_1?"
+  ],
+  "liveness": [
+    "Is variable test_input dead at the end of function TestClass.test_input_4?",
+    "Is variable kenken dead at the end of function resolve?",
+    "Does variable test_def_name remain in use at the end of function resolve?",
+    "Is variable bef live at the end of function resolve?"
+  ],
+  "loop_reachability": [
+    "Is it possible that the loop with condition for i in range(9999999) is never executed?",
+    "Can the loop with condition for ken in kenkenpa be skipped entirely?"
+  ]
+}

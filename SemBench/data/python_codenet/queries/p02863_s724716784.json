@@ -1,0 +1,38 @@
+{
+  "data_dependency": [
+    "Does the value of variable dp at line 89: <statement> dp[i][j + time] = val </statement> depend on the value of variable i at line 89: <statement> dp[i][j + time] = val </statement>?",
+    "Does the value of variable n at line 36: <statement> n, t = map(int, input().split()) </statement> depend on the value of variable ab_s at line 33: <statement> def resolve(test=\"\"): </statement>?",
+    "Does variable f at line 28: <statement> writer = csv.writer(f, delimiter=\"\\t\") </statement> determine the value stored in variable writer at line 28: <statement> writer = csv.writer(f, delimiter=\"\\t\") </statement>?",
+    "Does variable err at line 33: <statement> def resolve(test=\"\"): </statement> determine the value stored in variable dp at line 89: <statement> dp[i][j + time] = val </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement dp[0][0] = 0 be considered dead code because it is never executed?",
+    "Can the statement if __name__ == \"__main__\": if os.environ.get(\"USERNAME\") is None: # AtCoder\u63d0\u51fa\u6642\u306e\u5834\u5408 resolve() else: # \u81eaPC\u306e\u5834\u5408 unittest.main(verbosity=2) be reached during execution?",
+    "Is the statement test_input = \"\"\"3 60 30 10 30 20 30 30\"\"\" unreachable during execution?",
+    "Is it possible for the statement output = \"\"\"50\"\"\" to execute?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 3175: <statement> resolve() </statement> is reached, the statement line 3172: <statement> if __name__ == \"__main__\": if os.environ.get(\"USERNAME\") is None: # AtCoder\u63d0\u51fa\u6642\u306e\u5834\u5408 resolve() else: # \u81eaPC\u306e\u5834\u5408 unittest.main(verbosity=2) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 7: <statement> sys.setrecursionlimit(999999999) </statement> is reached, the statement line 3: <statement> import unittest </statement> has already been reached?",
+    "Does the statement line 86: <statement> val = max(dp[i][j + time], dp[i - 1][j] + delicious) </statement> dominate line 34: <statement> try: # \u5165\u529b\u306e\u53d6\u5f97 n, t = map(int, input().split()) ab_s = [list(map(int, input().split())) for i in range(n)] # ------------ # DP\u6e96\u5099 # ------------ # DP\u306e\u9244\u52471? \u300c\u30ab\u30b9\u30bf\u30e0\u6dfb\u3048\u5b57\u3068\u3057\u3066\u4f7f\u7528\u3059\u308b\u300d\u8981\u7d20\u3067\u30bd\u30fc\u30c8\u3002 # ->\u672c\u554f\u984c\u306e\u5834\u5408\u3001\u30ab\u30b9\u30bf\u30e0\u6dfb\u3048\u5b57\u306f\u300c\u4f7f\u7528\u3059\u308b\u6642\u9593\u300d\u3002\u3053\u306e\u6607\u9806\u3067\u30bd\u30fc\u30c8\u3002 ab_s.sort(key=lambda xx: [xx[0]]) # DP\u306e\u9244\u52472?\u300cDP\u5bfe\u8c61\u306e\u30ea\u30b9\u30c8[0]\u306b\u6dfb\u5b57\u8abf\u6574\u7528\u306e\u30c0\u30df\u30fc\u3092\u8ffd\u52a0\u3002 # ->\u5148\u982d\u304b\u30891\u3064\u9078\u3076=ab_s[1]\u3068\u3044\u3046\u98a8\u306b\u3001\u76f4\u89b3\u7684\u306b\u6271\u3048\u308b\u3088\u3046\u306b\u306a\u308b\u3002 ab_s = [[0, 0]] + ab_s # DP\u914d\u5217\u306e\u4f5c\u6210\u3002 # dp[0][\u4f7f\u7528\u3059\u308b\u6642\u9593(\u7d2f\u8a08):0~6000] = \u304a\u3044\u3057\u3055\u306e\u6700\u5927\u5024(-1=\u5b58\u5728\u3057\u306a\u3044\u30d1\u30bf\u30fc\u30f3) dp = [[-1 for j in range(6000 + 1)]] # DP\u914d\u5217\u306e\u521d\u671f\u5316\u3002(\u4f55\u3082\u9078\u3070\u306a\u3044\u5834\u5408\u306e\u5024\u3092\u30bb\u30c3\u30c8) \u203b\u3053\u3053\u306f\u554f\u984c\u306b\u3088\u308a\u56fa\u6709\u203b # \u4eca\u56de\u306f\u30fb\u30fb\u6599\u7406\u3092\u4f55\u3082\u98df\u3079\u306a\u3044=\u304a\u3044\u3057\u30550 dp[0][0] = 0 # ------------ # DP # ------------ # \u5148\u982d\u304b\u3089i\u500b\u9078\u3076\u30eb\u30fc\u30d7 for i in range(1, 999999999): # \u6b21\u306e\u884c\u3092\u8ffd\u52a0(\u524d\u306e\u884c\u3092\u8907\u5199\u3057\u3066\u8ffd\u52a0) \u203b\u9069\u6642append()\u3059\u308b\u3068\u898b\u3084\u3059\u3044\u3002 dp.append(dp[i - 1].copy()) # \u6700\u5f8c\u306e\u8981\u7d20\u307e\u3067\u691c\u8a3c\u3057\u305f\u306a\u3089DP\u7d42\u4e86 if len(ab_s) <= i: break # \u691c\u8a3c\u5bfe\u8c61\u306e\u60c5\u5831\u3092\u53d6\u308a\u51fa\u3057 \u203b\u3053\u3053\u306f\u554f\u984c\u306b\u3088\u308a\u56fa\u6709\u203b time, delicious = ab_s[i] # \u30ab\u30b9\u30bf\u30e0\u6dfb\u3048\u5b57\u30eb\u30fc\u30d7 for j in range(999999999): # \u5236\u9650\u6642\u9593\u3092\u8d85\u3048\u305f\u3089\u8981\u7d20\u306e\u691c\u8a3c\u3092\u7d42\u3048\u308b\u3002\u6b21\u306e\u8981\u7d20\u3078\u3002 \u203b\u3053\u3053\u306f\u554f\u984c\u3054\u3068\u306b\u8a2d\u5b9a\u203b if j > t - 1: break # \u5024\u304c0\u672a\u6e80\u306f\u300c\u5b58\u5728\u3057\u306a\u3044\u30d1\u30bf\u30fc\u30f3\u300d\u306a\u306e\u3067\u691c\u8a3c\u3057\u306a\u3044\u3002 if dp[i][j] < 0: continue # \u6700\u9069\u89e3\u3092\u53d6\u5f97 \u203b\u3053\u3053\u306f\u554f\u984c\u3054\u3068\u306b\u8a2d\u5b9a\u203b val = max(dp[i][j + time], dp[i - 1][j] + delicious) # \u6700\u9069\u89e3\u3092\u53cd\u6620 \u203b\u3053\u3053\u306f\u554f\u984c\u3054\u3068\u306b\u8a2d\u5b9a\u203b dp[i][j + time] = val # ------------ # \u7d50\u679c\u3092\u51fa\u529b # ------------ print(max(dp[i])) except IndexError as err: print(\"\u30a4\u30f3\u30c7\u30c3\u30af\u30b9\u30a8\u30e9\u30fc:\", err.args[0]) </statement>?",
+    "Is it guaranteed that whenever line 52: <statement> dp = [[-1 for j in range(6000 + 1)]] </statement> is reached, the statement line 78: <statement> if j > t - 1: break </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Can function TestClass.assertIO eventually call function TestClass.test_input_2?",
+    "Can function TestClass.test_original3 eventually call function TestClass.assertIO?",
+    "Can function TestClass.test_input_4 eventually call function resolve?",
+    "Can function TestClass.test_input_3 eventually call function TestClass.test_original3?"
+  ],
+  "liveness": [
+    "Does variable output remain in use at the end of function TestClass.test_original2?",
+    "Is variable ab_s dead at the end of function resolve?",
+    "Does variable sys.stdout remain in use at the end of function TestClass.assertIO?",
+    "Is variable target dead at the end of function list_to_tsv_string?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for i in range(1, 999999999) always executed?",
+    "Can the loop with condition for j in range(999999999) be skipped entirely?",
+    "Is it possible that the loop with condition for i in range(1, 999999999) is never executed?",
+    "Is the loop with condition for j in range(999999999) always executed?"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "data_dependency": [
+    "Does the value of variable lista_znakow at line 3: <statement> lista_znakow = wczytana_lista.split() </statement> depend on the value of variable wczytana_lista at line 2: <statement> wczytana_lista = input() </statement>?",
+    "Does the value of variable wczytana_lista at line 2: <statement> wczytana_lista = input() </statement> depend on the value of variable element at line 1: <statement> def wczytaj_liste(): </statement>?",
+    "Does variable N at line 18: <statement> N = wczytaj_liste()[0] </statement> determine the value stored in variable prawdopodopienstwa at line 19: <statement> prawdopodopienstwa = wczytaj_rzeczywiste() </statement>?",
+    "Does variable N at line 18: <statement> N = wczytaj_liste()[0] </statement> determine the value stored in variable odp at line 30: <statement> odp = sum(przed_rzutem[N//2+1:]) </statement>?"
+  ],
+  "dead_code": [
+    "Is it possible for the statement ostateczna_lista.append(int(element)) to execute?",
+    "Can the statement N = wczytaj_liste()[0] be reached during execution?",
+    "Is the statement rzuc_grosza_wiedzminowi_migusiem() unreachable during execution?",
+    "Can the statement if i > 0: po_rzucie.append(przed_rzutem[i]*(1-moneta)+przed_rzutem[i-1]*(moneta)) else: po_rzucie.append(przed_rzutem[0]*(1-moneta)) be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 28: <statement> po_rzucie.append(przed_rzutem[-1]*moneta) </statement> is reached, the statement line 21: <statement> for moneta in prawdopodopienstwa: po_rzucie = [] for i in range(len(przed_rzutem)): if i > 0: po_rzucie.append(przed_rzutem[i]*(1-moneta)+przed_rzutem[i-1]*(moneta)) else: po_rzucie.append(przed_rzutem[0]*(1-moneta)) po_rzucie.append(przed_rzutem[-1]*moneta) przed_rzutem = po_rzucie </statement> has already been reached?",
+    "Does the statement line 29: <statement> przed_rzutem = po_rzucie </statement> dominate line 18: <statement> N = wczytaj_liste()[0] </statement>?",
+    "Does the statement line 20: <statement> przed_rzutem = [1.0] </statement> dominate line 27: <statement> po_rzucie.append(przed_rzutem[0]*(1-moneta)) </statement>?",
+    "Does the statement line 25: <statement> po_rzucie.append(przed_rzutem[i]*(1-moneta)+przed_rzutem[i-1]*(moneta)) </statement> dominate line 18: <statement> N = wczytaj_liste()[0] </statement>?"
+  ],
+  "function_reachability": [
+    "Can function wczytaj_liste eventually call function wczytaj_rzeczywiste?",
+    "Is there a call path from function wczytaj_rzeczywiste to function wczytaj_liste?",
+    "Is there a call path from function rzuc_grosza_wiedzminowi_migusiem to function wczytaj_liste?",
+    "Can function rzuc_grosza_wiedzminowi_migusiem eventually call function wczytaj_rzeczywiste?"
+  ],
+  "liveness": [
+    "Is variable wczytana_lista live at the end of function wczytaj_liste?",
+    "Does variable ostateczna_lista remain in use at the end of function wczytaj_liste?",
+    "Does variable odp remain in use at the end of function rzuc_grosza_wiedzminowi_migusiem?",
+    "Does variable ostateczna_lista remain in use at the end of function wczytaj_rzeczywiste?"
+  ],
+  "loop_reachability": []
+}

@@ -77,6 +77,13 @@ Implements **distributed inference (NCCL)** for large models.
 ```bash
 torchrun --nproc_per_node=4 evaluate_opensource.py   --model_name mistralai/Mistral-7B-Instruct-v0.3   --type_kernels loop3_1000
 ```
+For the Python CodeNet subset, run from `SemBench`:
+```bash
+python evaluate_opensource.py \
+  --model_name mistralai/Mistral-7B-Instruct-v0.3 \
+  --type_kernels python_codenet \
+  --language python
+```
 We use ```sbatch job.sh``` to evaluate all models. 
 
 **Arguments**
@@ -91,6 +98,25 @@ We use ```sbatch job.sh``` to evaluate all models.
 | `--do_dynamic_temperature` | Enable dynamic temperature. | `True` |
 | `--base_dir` | Base dataset directory. | `/SemBench/data` |
 | `--type_kernels` | Dataset subset type. | From `config.json` |
+| `--language` | Source language to evaluate: `auto`, `c`, or `python`. | `auto` |
+
+## Python SemBench workflow
+The Python workflow lives in `Python_workflow/` and uses repo-relative defaults. The included `SemBench/data/python_codenet` subset contains the selected Python files, parsed records, generated questions, and ground truth labels.
+
+From the repository root:
+```bash
+python Python_workflow/python_parser.py \
+  --code-dir SemBench/data/python_codenet/code \
+  --output-dir SemBench/data/python_codenet/parsed_code
+
+python Python_workflow/python_query.py \
+  --parsed-dir SemBench/data/python_codenet/parsed_code \
+  --code-dir SemBench/data/python_codenet/code \
+  --query-dir SemBench/data/python_codenet/queries \
+  --ground-truth-dir SemBench/data/python_codenet/ground_truth
+
+python Python_workflow/run_self_check.py
+```
 
 ### result analysis script 1: SemBench\Figure1\Figure1.py
 Plots SemBench vs HumanEval correlation by model size.

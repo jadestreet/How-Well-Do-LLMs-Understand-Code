@@ -1,0 +1,33 @@
+{
+  "data_dependency": [
+    "Does the value of variable F at line 21: <statement> F = Factorial(K + S + 1, MOD) </statement> depend on the value of variable K at line 19: <statement> K = int(input()) </statement>?",
+    "Does the value of variable F at line 21: <statement> F = Factorial(K + S + 1, MOD) </statement> depend on the value of variable i at line 1: <statement> __module__ </statement>?",
+    "Does variable i at line 2: <statement> def __init__(self, n, mod): </statement> determine the value stored in variable self.fct at line 6: <statement> self.fct[0] = 1 </statement>?",
+    "Does variable mod at line 2: <statement> def __init__(self, n, mod): </statement> determine the value stored in variable self.inv at line 10: <statement> self.inv[n] = pow(self.fct[n], mod - 2, mod) </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement res %= MOD be reached during execution?",
+    "Is the statement K = int(input()) unreachable during execution?",
+    "Is the statement self.fct[i + 1] = self.fct[i] * (i + 1) % mod unreachable during execution?",
+    "Can the statement self.fct[i + 1] = self.fct[i] * (i + 1) % mod be reached during execution?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 11: <statement> for i in range(n)[::-1]: self.inv[i] = self.inv[i + 1] * (i + 1) % mod </statement> is reached, the statement line 4: <statement> self.fct = [0 for _ in range(n + 1)] </statement> has already been reached?",
+    "Is it guaranteed that whenever line 21: <statement> F = Factorial(K + S + 1, MOD) </statement> is reached, the statement line 19: <statement> K = int(input()) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 8: <statement> for i in range(n): self.fct[i + 1] = self.fct[i] * (i + 1) % mod </statement> is reached, the statement line 11: <statement> for i in range(n)[::-1]: self.inv[i] = self.inv[i + 1] * (i + 1) % mod </statement> has already been reached?",
+    "Does the statement line 11: <statement> for i in range(n)[::-1]: self.inv[i] = self.inv[i + 1] * (i + 1) % mod </statement> dominate line 4: <statement> self.fct = [0 for _ in range(n + 1)] </statement>?"
+  ],
+  "function_reachability": [
+    "Is it impossible for function Factorial.comb to eventually call function Factorial.__init__?",
+    "Is there a call path from function Factorial.comb to function Factorial.__init__?",
+    "Can function Factorial.__init__ eventually call function Factorial.comb?",
+    "Is it impossible for function Factorial.__init__ to eventually call function Factorial.comb?"
+  ],
+  "liveness": [
+    "Does variable m remain in use at the end of function Factorial.comb?",
+    "Is variable self.mod live at the end of function Factorial.comb?",
+    "Is variable MOD live at the end of function __module__?",
+    "Is variable self.fct live at the end of function Factorial.__init__?"
+  ],
+  "loop_reachability": []
+}

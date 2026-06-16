@@ -1,0 +1,3154 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if __name__ == '__main__': main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 44,
+      "node_id": 1
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 45,
+      "node_id": 2
+    },
+    {
+      "code": "f = 1",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "factorials = [1]",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 2
+    },
+    {
+      "code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "dead": false,
+      "function": "prepare",
+      "kind": "For",
+      "line": 5,
+      "node_id": 3
+    },
+    {
+      "code": "f *= m",
+      "dead": false,
+      "function": "prepare",
+      "kind": "AugAssign",
+      "line": 6,
+      "node_id": 4
+    },
+    {
+      "code": "f %= MOD",
+      "dead": false,
+      "function": "prepare",
+      "kind": "AugAssign",
+      "line": 7,
+      "node_id": 5
+    },
+    {
+      "code": "factorials.append(f)",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Expr",
+      "line": 8,
+      "node_id": 6
+    },
+    {
+      "code": "inv = pow(f, MOD - 2, MOD)",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 7
+    },
+    {
+      "code": "invs = [1] * (n + 1)",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 8
+    },
+    {
+      "code": "invs[n] = inv",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 9
+    },
+    {
+      "code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "dead": false,
+      "function": "prepare",
+      "kind": "For",
+      "line": 14,
+      "node_id": 10
+    },
+    {
+      "code": "inv *= m",
+      "dead": false,
+      "function": "prepare",
+      "kind": "AugAssign",
+      "line": 15,
+      "node_id": 11
+    },
+    {
+      "code": "inv %= MOD",
+      "dead": false,
+      "function": "prepare",
+      "kind": "AugAssign",
+      "line": 16,
+      "node_id": 12
+    },
+    {
+      "code": "invs[m - 1] = inv",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 13
+    },
+    {
+      "code": "return factorials, invs",
+      "dead": false,
+      "function": "prepare",
+      "kind": "Return",
+      "line": 19,
+      "node_id": 14
+    },
+    {
+      "code": "n,k=map(int, input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 1
+    },
+    {
+      "code": "A=[int(i) for i in input().split()]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 2
+    },
+    {
+      "code": "MOD = 10**9 + 7",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 3
+    },
+    {
+      "code": "fac, invs = prepare(n,MOD)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 4
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 5
+    },
+    {
+      "code": "A.sort()",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 27,
+      "node_id": 6
+    },
+    {
+      "code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 29,
+      "node_id": 7
+    },
+    {
+      "code": "tmp=0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 8
+    },
+    {
+      "code": "tmp2=0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 9
+    },
+    {
+      "code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 32,
+      "node_id": 10
+    },
+    {
+      "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 11
+    },
+    {
+      "code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 34,
+      "node_id": 12
+    },
+    {
+      "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 13
+    },
+    {
+      "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 14
+    },
+    {
+      "code": "ans%=MOD",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 38,
+      "node_id": 15
+    },
+    {
+      "code": "if k==1: ans = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 40,
+      "node_id": 16
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 17
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 42,
+      "node_id": 18
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "f = 1",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "factorials = [1]",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "f *= m",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "f %= MOD",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "factorials.append(f)",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "inv = pow(f, MOD - 2, MOD)",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "invs = [1] * (n + 1)",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "invs[n] = inv",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "inv *= m",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "inv %= MOD",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "invs[m - 1] = inv",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return factorials, invs",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "n,k=map(int, input().split())",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "A=[int(i) for i in input().split()]",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "MOD = 10**9 + 7",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "fac, invs = prepare(n,MOD)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "A.sort()",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "tmp=0",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "tmp2=0",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "ans%=MOD",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "if k==1: ans = 0",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "if __name__ == '__main__': main()",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 45
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02804_s038127654.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 19,
+      "lineno": 1,
+      "name": "prepare",
+      "variables": [
+        "MOD",
+        "f",
+        "factorials",
+        "inv",
+        "invs",
+        "m",
+        "n"
+      ]
+    },
+    {
+      "calls": [
+        "prepare"
+      ],
+      "end_lineno": 42,
+      "lineno": 21,
+      "name": "main",
+      "variables": [
+        "A",
+        "MOD",
+        "ans",
+        "fac",
+        "i",
+        "int",
+        "invs",
+        "k",
+        "n",
+        "tmp",
+        "tmp2"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if __name__ == '__main__': main()",
+            "line": 44,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 45,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "__name__": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n,k=map(int, input().split())",
+            "line": 22,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "A=[int(i) for i in input().split()]",
+            "line": 23,
+            "vars": [
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "MOD = 10**9 + 7",
+            "line": 24,
+            "vars": [
+              "A",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "fac, invs = prepare(n,MOD)",
+            "line": 25,
+            "vars": [
+              "A",
+              "MOD",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 26,
+            "vars": [
+              "A",
+              "MOD",
+              "fac",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "A.sort()",
+            "line": 27,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+            "line": 29,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "tmp=0",
+            "line": 30,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "i",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "tmp2=0",
+            "line": 31,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "i",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+            "line": 32,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "i",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+            "line": 33,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "i",
+              "invs",
+              "k",
+              "n"
+            ]
+          },
+          {
+            "code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+            "line": 34,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "i",
+              "invs",
+              "k",
+              "tmp"
+            ]
+          },
+          {
+            "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+            "line": 35,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "fac",
+              "i",
+              "invs",
+              "k",
+              "tmp"
+            ]
+          },
+          {
+            "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+            "line": 37,
+            "vars": [
+              "A",
+              "MOD",
+              "ans",
+              "i",
+              "k",
+              "tmp",
+              "tmp2"
+            ]
+          },
+          {
+            "code": "ans%=MOD",
+            "line": 38,
+            "vars": [
+              "MOD",
+              "k"
+            ]
+          },
+          {
+            "code": "if k==1: ans = 0",
+            "line": 40,
+            "vars": [
+              "k"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 41,
+            "vars": []
+          },
+          {
+            "code": "print(ans)",
+            "line": 42,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "A": false,
+          "MOD": false,
+          "ans": false,
+          "fac": false,
+          "i": false,
+          "int": false,
+          "invs": false,
+          "k": false,
+          "n": false,
+          "tmp": false,
+          "tmp2": false
+        },
+        "return_vars": []
+      },
+      "prepare": {
+        "base_liveout": [
+          "factorials",
+          "invs"
+        ],
+        "live_before": [
+          {
+            "code": "f = 1",
+            "line": 3,
+            "vars": [
+              "MOD",
+              "n"
+            ]
+          },
+          {
+            "code": "factorials = [1]",
+            "line": 4,
+            "vars": [
+              "MOD",
+              "n"
+            ]
+          },
+          {
+            "code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+            "line": 5,
+            "vars": [
+              "MOD",
+              "factorials",
+              "n"
+            ]
+          },
+          {
+            "code": "f *= m",
+            "line": 6,
+            "vars": [
+              "MOD",
+              "factorials",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "f %= MOD",
+            "line": 7,
+            "vars": [
+              "MOD",
+              "factorials",
+              "n"
+            ]
+          },
+          {
+            "code": "factorials.append(f)",
+            "line": 8,
+            "vars": [
+              "MOD",
+              "f",
+              "factorials",
+              "n"
+            ]
+          },
+          {
+            "code": "inv = pow(f, MOD - 2, MOD)",
+            "line": 10,
+            "vars": [
+              "MOD",
+              "f",
+              "factorials",
+              "n"
+            ]
+          },
+          {
+            "code": "invs = [1] * (n + 1)",
+            "line": 12,
+            "vars": [
+              "MOD",
+              "factorials",
+              "inv",
+              "n"
+            ]
+          },
+          {
+            "code": "invs[n] = inv",
+            "line": 13,
+            "vars": [
+              "MOD",
+              "factorials",
+              "inv",
+              "n"
+            ]
+          },
+          {
+            "code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+            "line": 14,
+            "vars": [
+              "MOD",
+              "factorials",
+              "n"
+            ]
+          },
+          {
+            "code": "inv *= m",
+            "line": 15,
+            "vars": [
+              "MOD",
+              "factorials",
+              "m"
+            ]
+          },
+          {
+            "code": "inv %= MOD",
+            "line": 16,
+            "vars": [
+              "MOD",
+              "factorials",
+              "m"
+            ]
+          },
+          {
+            "code": "invs[m - 1] = inv",
+            "line": 17,
+            "vars": [
+              "factorials",
+              "inv",
+              "m"
+            ]
+          },
+          {
+            "code": "return factorials, invs",
+            "line": 19,
+            "vars": [
+              "factorials",
+              "invs"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": false,
+          "f": false,
+          "factorials": true,
+          "inv": false,
+          "invs": true,
+          "m": false,
+          "n": false
+        },
+        "return_vars": [
+          "factorials",
+          "invs"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "main",
+      "header_id": 7,
+      "line": 29,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for m in range(1, n + 1):",
+      "cond": "for m in range(1, n + 1)",
+      "function": "prepare",
+      "header_id": 3,
+      "line": 5,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for m in range(n, 1, -1):",
+      "cond": "for m in range(n, 1, -1)",
+      "function": "prepare",
+      "header_id": 10,
+      "line": 14,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if __name__ == '__main__': main()",
+      "a_line": 44,
+      "b_code": "main()",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "factorials = [1]",
+      "b_line": 4,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "b_line": 5,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "b_line": 5,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "f *= m",
+      "b_line": 6,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "f *= m",
+      "b_line": 6,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "f *= m",
+      "b_line": 6,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "f %= MOD",
+      "b_line": 7,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "f %= MOD",
+      "b_line": 7,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "f %= MOD",
+      "b_line": 7,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f *= m",
+      "a_line": 6,
+      "b_code": "f %= MOD",
+      "b_line": 7,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "factorials.append(f)",
+      "b_line": 8,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "factorials.append(f)",
+      "b_line": 8,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "factorials.append(f)",
+      "b_line": 8,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f *= m",
+      "a_line": 6,
+      "b_code": "factorials.append(f)",
+      "b_line": 8,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f %= MOD",
+      "a_line": 7,
+      "b_code": "factorials.append(f)",
+      "b_line": 8,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "inv = pow(f, MOD - 2, MOD)",
+      "b_line": 10,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "inv = pow(f, MOD - 2, MOD)",
+      "b_line": 10,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "inv = pow(f, MOD - 2, MOD)",
+      "b_line": 10,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "invs = [1] * (n + 1)",
+      "b_line": 12,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "invs = [1] * (n + 1)",
+      "b_line": 12,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "invs = [1] * (n + 1)",
+      "b_line": 12,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "invs = [1] * (n + 1)",
+      "b_line": 12,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "invs[n] = inv",
+      "b_line": 13,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "invs[n] = inv",
+      "b_line": 13,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "invs[n] = inv",
+      "b_line": 13,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "invs[n] = inv",
+      "b_line": 13,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs = [1] * (n + 1)",
+      "a_line": 12,
+      "b_code": "invs[n] = inv",
+      "b_line": 13,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "b_line": 14,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "b_line": 14,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "b_line": 14,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "b_line": 14,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs = [1] * (n + 1)",
+      "a_line": 12,
+      "b_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "b_line": 14,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs[n] = inv",
+      "a_line": 13,
+      "b_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "b_line": 14,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs = [1] * (n + 1)",
+      "a_line": 12,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs[n] = inv",
+      "a_line": 13,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "a_line": 14,
+      "b_code": "inv *= m",
+      "b_line": 15,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs = [1] * (n + 1)",
+      "a_line": 12,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs[n] = inv",
+      "a_line": 13,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "a_line": 14,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv *= m",
+      "a_line": 15,
+      "b_code": "inv %= MOD",
+      "b_line": 16,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs = [1] * (n + 1)",
+      "a_line": 12,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs[n] = inv",
+      "a_line": 13,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "a_line": 14,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv *= m",
+      "a_line": 15,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv %= MOD",
+      "a_line": 16,
+      "b_code": "invs[m - 1] = inv",
+      "b_line": 17,
+      "function": "prepare"
+    },
+    {
+      "a_code": "f = 1",
+      "a_line": 3,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "factorials = [1]",
+      "a_line": 4,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(1, n + 1): f *= m f %= MOD factorials.append(f)",
+      "a_line": 5,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "inv = pow(f, MOD - 2, MOD)",
+      "a_line": 10,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs = [1] * (n + 1)",
+      "a_line": 12,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "invs[n] = inv",
+      "a_line": 13,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "for m in range(n, 1, -1): inv *= m inv %= MOD invs[m - 1] = inv",
+      "a_line": 14,
+      "b_code": "return factorials, invs",
+      "b_line": 19,
+      "function": "prepare"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "A=[int(i) for i in input().split()]",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "MOD = 10**9 + 7",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "MOD = 10**9 + 7",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "fac, invs = prepare(n,MOD)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "fac, invs = prepare(n,MOD)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "fac, invs = prepare(n,MOD)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "ans = 0",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "ans = 0",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "ans = 0",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "ans = 0",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "A.sort()",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "A.sort()",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "A.sort()",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "A.sort()",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "A.sort()",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "tmp=0",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "tmp2=0",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp2=0",
+      "a_line": 31,
+      "b_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp2=0",
+      "a_line": 31,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "a_line": 32,
+      "b_code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp2=0",
+      "a_line": 31,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "a_line": 32,
+      "b_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp2=0",
+      "a_line": 31,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "a_line": 32,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "a_line": 34,
+      "b_code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp2=0",
+      "a_line": 31,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "a_line": 32,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "a_line": 34,
+      "b_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp=0",
+      "a_line": 30,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "tmp2=0",
+      "a_line": 31,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+      "a_line": 32,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+      "a_line": 34,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+      "a_line": 37,
+      "b_code": "ans%=MOD",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "if k==1: ans = 0",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if k==1: ans = 0",
+      "a_line": 40,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "n,k=map(int, input().split())",
+      "a_line": 22,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "A=[int(i) for i in input().split()]",
+      "a_line": 23,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "MOD = 10**9 + 7",
+      "a_line": 24,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "fac, invs = prepare(n,MOD)",
+      "a_line": 25,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 26,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "A.sort()",
+      "a_line": 27,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(n): tmp=0 tmp2=0 if i<n-k+1: tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD if i>=k-1: tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD #print(\"\u6700\u5927\u306b\u306a\u308b\u56de\u6570\", tmp2, \" \u6700\u5c0f\u306b\u306a\u308b\u56de\u6570\", tmp, \"A[i]\", A[i]) ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD ans%=MOD",
+      "a_line": 29,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "if k==1: ans = 0",
+      "a_line": 40,
+      "b_code": "print(ans)",
+      "b_line": 42,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 22",
+      "external call skipped input at line 23",
+      "external call skipped pow at line 10"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 22",
+    "external call skipped input at line 23",
+    "external call skipped pow at line 10"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "f = 1",
+        "line": 3,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "factorials = [1]",
+        "line": 4,
+        "var": "factorials"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "f *= m",
+        "line": 6,
+        "var": "m"
+      },
+      "from": {
+        "code": "f *= m",
+        "line": 6,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "f *= m",
+        "line": 6,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "f %= MOD",
+        "line": 7,
+        "var": "f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "factorials = [1]",
+        "line": 4,
+        "var": "factorials"
+      },
+      "from": {
+        "code": "f %= MOD",
+        "line": 7,
+        "var": "f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "inv = pow(f, MOD - 2, MOD)",
+        "line": 10,
+        "var": "inv"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f %= MOD",
+        "line": 7,
+        "var": "f"
+      },
+      "from": {
+        "code": "inv = pow(f, MOD - 2, MOD)",
+        "line": 10,
+        "var": "inv"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "factorials = [1]",
+        "line": 4,
+        "var": "factorials"
+      },
+      "from": {
+        "code": "inv = pow(f, MOD - 2, MOD)",
+        "line": 10,
+        "var": "inv"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "n"
+      },
+      "from": {
+        "code": "invs = [1] * (n + 1)",
+        "line": 12,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "invs = [1] * (n + 1)",
+        "line": 12,
+        "var": "invs"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "invs[n] = inv",
+        "line": 13,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f %= MOD",
+        "line": 7,
+        "var": "f"
+      },
+      "from": {
+        "code": "invs[n] = inv",
+        "line": 13,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "inv = pow(f, MOD - 2, MOD)",
+        "line": 10,
+        "var": "inv"
+      },
+      "from": {
+        "code": "invs[n] = inv",
+        "line": 13,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "n"
+      },
+      "from": {
+        "code": "invs[n] = inv",
+        "line": 13,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "factorials = [1]",
+        "line": 4,
+        "var": "factorials"
+      },
+      "from": {
+        "code": "invs[n] = inv",
+        "line": 13,
+        "var": "invs"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "inv *= m",
+        "line": 15,
+        "var": "m"
+      },
+      "from": {
+        "code": "inv *= m",
+        "line": 15,
+        "var": "inv"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "inv *= m",
+        "line": 15,
+        "var": "inv"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "inv %= MOD",
+        "line": 16,
+        "var": "inv"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f %= MOD",
+        "line": 7,
+        "var": "f"
+      },
+      "from": {
+        "code": "inv %= MOD",
+        "line": 16,
+        "var": "inv"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def prepare(n, MOD):",
+        "line": 1,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "invs[m - 1] = inv",
+        "line": 17,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "inv %= MOD",
+        "line": 16,
+        "var": "inv"
+      },
+      "from": {
+        "code": "invs[m - 1] = inv",
+        "line": 17,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "invs[m - 1] = inv",
+        "line": 17,
+        "var": "m"
+      },
+      "from": {
+        "code": "invs[m - 1] = inv",
+        "line": 17,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f %= MOD",
+        "line": 7,
+        "var": "f"
+      },
+      "from": {
+        "code": "invs[m - 1] = inv",
+        "line": 17,
+        "var": "invs"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "int"
+      },
+      "from": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 21,
+        "var": "A"
+      },
+      "from": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "int"
+      },
+      "from": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 21,
+        "var": "A"
+      },
+      "from": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 21,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "int"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "int"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 26,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "tmp=0",
+        "line": 30,
+        "var": "tmp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "tmp2=0",
+        "line": 31,
+        "var": "tmp2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "i"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "int"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "k"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "i"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "k"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 26,
+        "var": "ans"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "fac"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fac, invs = prepare(n,MOD)",
+        "line": 25,
+        "var": "invs"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "k"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n,k=map(int, input().split())",
+        "line": 22,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp = (fac[n-(i+1)]%MOD * invs[k-1]%MOD * invs[n-(i+1) - (k-1)]%MOD)%MOD",
+        "line": 33,
+        "var": "tmp"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tmp2 = (fac[i]%MOD * invs[k-1]%MOD * invs[i-(k-1)]%MOD)%MOD",
+        "line": 35,
+        "var": "tmp2"
+      },
+      "from": {
+        "code": "ans = ans%MOD + (tmp2*A[i]%MOD - tmp*A[i]%MOD)%MOD",
+        "line": 37,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9 + 7",
+        "line": 24,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ans%=MOD",
+        "line": 38,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans%=MOD",
+        "line": 38,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A=[int(i) for i in input().split()]",
+        "line": 23,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

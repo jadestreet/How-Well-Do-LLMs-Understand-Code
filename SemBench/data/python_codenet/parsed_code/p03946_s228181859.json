@@ -1,0 +1,5020 @@
+{
+  "cfg_statements": [
+    {
+      "code": "n, t = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 1
+    },
+    {
+      "code": "a = list(map(int, input().split()))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 2
+    },
+    {
+      "code": "max_value = [[0, n] for i in range(n + 1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 3
+    },
+    {
+      "code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "num = a[-i]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "max_value[i][0] = num",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 7
+    },
+    {
+      "code": "max_value[i][1] = n + 1 - i",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 8
+    },
+    {
+      "code": "max_value[i] = max_value[i - 1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 9
+    },
+    {
+      "code": "min_value = [10**10 for i in range(n + 1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 10
+    },
+    {
+      "code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 19,
+      "node_id": 11
+    },
+    {
+      "code": "x = a[_]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 12
+    },
+    {
+      "code": "min_value[_ + 1] = min(min_value[_], x)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 13
+    },
+    {
+      "code": "max_dif = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 14
+    },
+    {
+      "code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 24,
+      "node_id": 15
+    },
+    {
+      "code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 25,
+      "node_id": 16
+    },
+    {
+      "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 17
+    },
+    {
+      "code": "disk = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 18
+    },
+    {
+      "code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 30,
+      "node_id": 19
+    },
+    {
+      "code": "base = a[i - 1]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 20
+    },
+    {
+      "code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 32,
+      "node_id": 21
+    },
+    {
+      "code": "disk.append((i, max_value[n - i][1]))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 33,
+      "node_id": 22
+    },
+    {
+      "code": "uni = UnionFind(n)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 67,
+      "node_id": 23
+    },
+    {
+      "code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 68,
+      "node_id": 24
+    },
+    {
+      "code": "a, b = some[0], some[1]",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 25
+    },
+    {
+      "code": "uni.union(a, b)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 70,
+      "node_id": 26
+    },
+    {
+      "code": "for i in range(n + 1): uni.find(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 71,
+      "node_id": 27
+    },
+    {
+      "code": "uni.find(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 72,
+      "node_id": 28
+    },
+    {
+      "code": "group = {i: [] for i in range(n + 1)}",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 76,
+      "node_id": 29
+    },
+    {
+      "code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 78,
+      "node_id": 30
+    },
+    {
+      "code": "group[uni.par[i]].append(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 79,
+      "node_id": 31
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 80,
+      "node_id": 32
+    },
+    {
+      "code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 81,
+      "node_id": 33
+    },
+    {
+      "code": "L = len(group[i])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 82,
+      "node_id": 34
+    },
+    {
+      "code": "ans += L * (L - 1) // 2",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 83,
+      "node_id": 35
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 84,
+      "node_id": 36
+    },
+    {
+      "code": "self.par = [i for i in range(n + 1)]",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 1
+    },
+    {
+      "code": "self.rank = [0] * (n + 1)",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 2
+    },
+    {
+      "code": "if self.par[x] == x: return x else: self.par[x] = self.find(self.par[x]) return self.par[x]",
+      "dead": false,
+      "function": "UnionFind.find",
+      "kind": "If",
+      "line": 45,
+      "node_id": 1
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "function": "UnionFind.find",
+      "kind": "Return",
+      "line": 46,
+      "node_id": 2
+    },
+    {
+      "code": "self.par[x] = self.find(self.par[x])",
+      "dead": false,
+      "function": "UnionFind.find",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 3
+    },
+    {
+      "code": "return self.par[x]",
+      "dead": false,
+      "function": "UnionFind.find",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 4
+    },
+    {
+      "code": "x = self.find(x)",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 1
+    },
+    {
+      "code": "y = self.find(y)",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 2
+    },
+    {
+      "code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "If",
+      "line": 55,
+      "node_id": 3
+    },
+    {
+      "code": "self.par[x] = y",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 4
+    },
+    {
+      "code": "self.par[y] = x",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "Assign",
+      "line": 58,
+      "node_id": 5
+    },
+    {
+      "code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "If",
+      "line": 59,
+      "node_id": 6
+    },
+    {
+      "code": "self.rank[x] += 1",
+      "dead": false,
+      "function": "UnionFind.union",
+      "kind": "AugAssign",
+      "line": 60,
+      "node_id": 7
+    },
+    {
+      "code": "return self.find(x) == self.find(y)",
+      "dead": false,
+      "function": "UnionFind.same_check",
+      "kind": "Return",
+      "line": 64,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "n, t = map(int, input().split())",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "a = list(map(int, input().split()))",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "max_value = [[0, n] for i in range(n + 1)]",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "num = a[-i]",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "max_value[i][0] = num",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "max_value[i][1] = n + 1 - i",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "max_value[i] = max_value[i - 1]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "min_value = [10**10 for i in range(n + 1)]",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "x = a[_]",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "min_value[_ + 1] = min(min_value[_], x)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "max_dif = 0",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "disk = []",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "base = a[i - 1]",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "disk.append((i, max_value[n - i][1]))",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "self.par = [i for i in range(n + 1)]",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "self.rank = [0] * (n + 1)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if self.par[x] == x: return x else: self.par[x] = self.find(self.par[x]) return self.par[x]",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "self.par[x] = self.find(self.par[x])",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "return self.par[x]",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "x = self.find(x)",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "y = self.find(y)",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "self.par[x] = y",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "self.par[y] = x",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "self.rank[x] += 1",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "return self.find(x) == self.find(y)",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "uni = UnionFind(n)",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "a, b = some[0], some[1]",
+      "dead": true,
+      "line": 69
+    },
+    {
+      "code": "uni.union(a, b)",
+      "dead": true,
+      "line": 70
+    },
+    {
+      "code": "for i in range(n + 1): uni.find(i)",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "uni.find(i)",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "group = {i: [] for i in range(n + 1)}",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "group[uni.par[i]].append(i)",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 80
+    },
+    {
+      "code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "L = len(group[i])",
+      "dead": false,
+      "line": 82
+    },
+    {
+      "code": "ans += L * (L - 1) // 2",
+      "dead": false,
+      "line": 83
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 84
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03946_s228181859.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 41,
+      "lineno": 39,
+      "name": "UnionFind.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.par",
+        "self.rank"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find"
+      ],
+      "end_lineno": 49,
+      "lineno": 44,
+      "name": "UnionFind.find",
+      "variables": [
+        "self",
+        "self.par",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find"
+      ],
+      "end_lineno": 60,
+      "lineno": 52,
+      "name": "UnionFind.union",
+      "variables": [
+        "self",
+        "self.par",
+        "self.rank",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find"
+      ],
+      "end_lineno": 64,
+      "lineno": 63,
+      "name": "UnionFind.same_check",
+      "variables": [
+        "self",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "UnionFind.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.par = [i for i in range(n + 1)]",
+            "line": 40,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.rank = [0] * (n + 1)",
+            "line": 41,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.par": false,
+          "self.rank": false
+        },
+        "return_vars": []
+      },
+      "UnionFind.find": {
+        "base_liveout": [
+          "self.par",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "if self.par[x] == x: return x else: self.par[x] = self.find(self.par[x]) return self.par[x]",
+            "line": 45,
+            "vars": [
+              "self",
+              "self.par",
+              "x"
+            ]
+          },
+          {
+            "code": "return x",
+            "line": 46,
+            "vars": [
+              "self",
+              "self.par",
+              "x"
+            ]
+          },
+          {
+            "code": "self.par[x] = self.find(self.par[x])",
+            "line": 48,
+            "vars": [
+              "self",
+              "self.par",
+              "x"
+            ]
+          },
+          {
+            "code": "return self.par[x]",
+            "line": 49,
+            "vars": [
+              "self.par",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.par": true,
+          "x": true
+        },
+        "return_vars": [
+          "self.par",
+          "x"
+        ]
+      },
+      "UnionFind.same_check": {
+        "base_liveout": [
+          "self",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return self.find(x) == self.find(y)",
+            "line": 64,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "self",
+          "x",
+          "y"
+        ]
+      },
+      "UnionFind.union": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "x = self.find(x)",
+            "line": 53,
+            "vars": [
+              "self",
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "y = self.find(y)",
+            "line": 54,
+            "vars": [
+              "self",
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+            "line": 55,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.par[x] = y",
+            "line": 56,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.par[y] = x",
+            "line": 58,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+            "line": 59,
+            "vars": [
+              "self.rank",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.rank[x] += 1",
+            "line": 60,
+            "vars": [
+              "self.rank",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.par": false,
+          "self.rank": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n, t = map(int, input().split())",
+            "line": 2,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "a = list(map(int, input().split()))",
+            "line": 3,
+            "vars": [
+              "int",
+              "n"
+            ]
+          },
+          {
+            "code": "max_value = [[0, n] for i in range(n + 1)]",
+            "line": 5,
+            "vars": [
+              "a",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+            "line": 8,
+            "vars": [
+              "a",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "num = a[-i]",
+            "line": 9,
+            "vars": [
+              "a",
+              "i",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+            "line": 10,
+            "vars": [
+              "a",
+              "i",
+              "max_value",
+              "n",
+              "num"
+            ]
+          },
+          {
+            "code": "max_value[i][0] = num",
+            "line": 11,
+            "vars": [
+              "a",
+              "i",
+              "n",
+              "num"
+            ]
+          },
+          {
+            "code": "max_value[i][1] = n + 1 - i",
+            "line": 12,
+            "vars": [
+              "a",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "max_value[i] = max_value[i - 1]",
+            "line": 14,
+            "vars": [
+              "a",
+              "i",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "min_value = [10**10 for i in range(n + 1)]",
+            "line": 17,
+            "vars": [
+              "a",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+            "line": 19,
+            "vars": [
+              "a",
+              "max_value",
+              "min_value",
+              "n"
+            ]
+          },
+          {
+            "code": "x = a[_]",
+            "line": 20,
+            "vars": [
+              "_",
+              "a",
+              "max_value",
+              "min_value",
+              "n"
+            ]
+          },
+          {
+            "code": "min_value[_ + 1] = min(min_value[_], x)",
+            "line": 21,
+            "vars": [
+              "_",
+              "a",
+              "max_value",
+              "min_value",
+              "n",
+              "x"
+            ]
+          },
+          {
+            "code": "max_dif = 0",
+            "line": 23,
+            "vars": [
+              "a",
+              "max_value",
+              "min_value",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+            "line": 24,
+            "vars": [
+              "a",
+              "max_dif",
+              "max_value",
+              "min_value",
+              "n"
+            ]
+          },
+          {
+            "code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+            "line": 25,
+            "vars": [
+              "a",
+              "i",
+              "max_dif",
+              "max_value",
+              "min_value",
+              "n"
+            ]
+          },
+          {
+            "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+            "line": 26,
+            "vars": [
+              "a",
+              "i",
+              "max_dif",
+              "max_value",
+              "min_value",
+              "n"
+            ]
+          },
+          {
+            "code": "disk = []",
+            "line": 29,
+            "vars": [
+              "a",
+              "max_dif",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+            "line": 30,
+            "vars": [
+              "a",
+              "disk",
+              "max_dif",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "base = a[i - 1]",
+            "line": 31,
+            "vars": [
+              "a",
+              "disk",
+              "i",
+              "max_dif",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+            "line": 32,
+            "vars": [
+              "base",
+              "disk",
+              "i",
+              "max_dif",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "disk.append((i, max_value[n - i][1]))",
+            "line": 33,
+            "vars": [
+              "disk",
+              "i",
+              "max_value",
+              "n"
+            ]
+          },
+          {
+            "code": "uni = UnionFind(n)",
+            "line": 67,
+            "vars": [
+              "disk",
+              "n"
+            ]
+          },
+          {
+            "code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+            "line": 68,
+            "vars": [
+              "disk",
+              "n",
+              "uni"
+            ]
+          },
+          {
+            "code": "a, b = some[0], some[1]",
+            "line": 69,
+            "vars": [
+              "n",
+              "some",
+              "uni"
+            ]
+          },
+          {
+            "code": "uni.union(a, b)",
+            "line": 70,
+            "vars": [
+              "a",
+              "b",
+              "n",
+              "uni"
+            ]
+          },
+          {
+            "code": "for i in range(n + 1): uni.find(i)",
+            "line": 71,
+            "vars": [
+              "n",
+              "uni"
+            ]
+          },
+          {
+            "code": "uni.find(i)",
+            "line": 72,
+            "vars": [
+              "i",
+              "n",
+              "uni"
+            ]
+          },
+          {
+            "code": "group = {i: [] for i in range(n + 1)}",
+            "line": 76,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+            "line": 78,
+            "vars": [
+              "group",
+              "n"
+            ]
+          },
+          {
+            "code": "group[uni.par[i]].append(i)",
+            "line": 79,
+            "vars": [
+              "group",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 80,
+            "vars": [
+              "group",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+            "line": 81,
+            "vars": [
+              "group",
+              "n"
+            ]
+          },
+          {
+            "code": "L = len(group[i])",
+            "line": 82,
+            "vars": [
+              "group",
+              "i"
+            ]
+          },
+          {
+            "code": "ans += L * (L - 1) // 2",
+            "line": 83,
+            "vars": [
+              "L"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 84,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "L": false,
+          "_": false,
+          "a": false,
+          "ans": false,
+          "b": false,
+          "base": false,
+          "disk": false,
+          "group": false,
+          "i": false,
+          "int": false,
+          "max_dif": false,
+          "max_value": false,
+          "min_value": false,
+          "n": false,
+          "num": false,
+          "some": false,
+          "t": false,
+          "uni": false,
+          "x": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, n + 1):",
+      "cond": "for i in range(1, n + 1)",
+      "function": "__module__",
+      "header_id": 4,
+      "line": 8,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(n):",
+      "cond": "for _ in range(n)",
+      "function": "__module__",
+      "header_id": 11,
+      "line": 19,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, n + 1):",
+      "cond": "for i in range(1, n + 1)",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 24,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1, n + 1):",
+      "cond": "for i in range(1, n + 1)",
+      "function": "__module__",
+      "header_id": 19,
+      "line": 30,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for some in disk:",
+      "cond": "for some in disk",
+      "function": "__module__",
+      "header_id": 24,
+      "line": 68,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n + 1):",
+      "cond": "for i in range(n + 1)",
+      "function": "__module__",
+      "header_id": 27,
+      "line": 71,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n + 1):",
+      "cond": "for i in range(n + 1)",
+      "function": "__module__",
+      "header_id": 30,
+      "line": 78,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n + 1):",
+      "cond": "for i in range(n + 1)",
+      "function": "__module__",
+      "header_id": 33,
+      "line": 81,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "a = list(map(int, input().split()))",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "num = a[-i]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "num = a[-i]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "num = a[-i]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "num = a[-i]",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "num = a[-i]",
+      "a_line": 9,
+      "b_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "max_value[i][0] = num",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "max_value[i][0] = num",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "max_value[i][0] = num",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "max_value[i][0] = num",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "num = a[-i]",
+      "a_line": 9,
+      "b_code": "max_value[i][0] = num",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 10,
+      "b_code": "max_value[i][0] = num",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "num = a[-i]",
+      "a_line": 9,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 10,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value[i][0] = num",
+      "a_line": 11,
+      "b_code": "max_value[i][1] = n + 1 - i",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "max_value[i] = max_value[i - 1]",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "max_value[i] = max_value[i - 1]",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "max_value[i] = max_value[i - 1]",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "max_value[i] = max_value[i - 1]",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "num = a[-i]",
+      "a_line": 9,
+      "b_code": "max_value[i] = max_value[i - 1]",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 10,
+      "b_code": "max_value[i] = max_value[i - 1]",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "min_value = [10**10 for i in range(n + 1)]",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "min_value = [10**10 for i in range(n + 1)]",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "min_value = [10**10 for i in range(n + 1)]",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "min_value = [10**10 for i in range(n + 1)]",
+      "b_line": 17,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 19,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "x = a[_]",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "x = a[_]",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "x = a[_]",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "x = a[_]",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "x = a[_]",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "x = a[_]",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "x = a[_]",
+      "a_line": 20,
+      "b_code": "min_value[_ + 1] = min(min_value[_], x)",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "max_dif = 0",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "max_dif = 0",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "max_dif = 0",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "max_dif = 0",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "max_dif = 0",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "max_dif = 0",
+      "b_line": 23,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 24,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 25,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 25,
+      "b_code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "b_line": 26,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "disk = []",
+      "b_line": 29,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 30,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "base = a[i - 1]",
+      "b_line": 31,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "base = a[i - 1]",
+      "a_line": 31,
+      "b_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "b_line": 32,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "base = a[i - 1]",
+      "a_line": 31,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 32,
+      "b_code": "disk.append((i, max_value[n - i][1]))",
+      "b_line": 33,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "uni = UnionFind(n)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "for i in range(n + 1): uni.find(i)",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "uni.find(i)",
+      "b_line": 72,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "group = {i: [] for i in range(n + 1)}",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "a_line": 78,
+      "b_code": "group[uni.par[i]].append(i)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "a_line": 78,
+      "b_code": "ans = 0",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "a_line": 78,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 80,
+      "b_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "b_line": 81,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "a_line": 78,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 80,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "a_line": 81,
+      "b_code": "L = len(group[i])",
+      "b_line": 82,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "a_line": 78,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 80,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "a_line": 81,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "L = len(group[i])",
+      "a_line": 82,
+      "b_code": "ans += L * (L - 1) // 2",
+      "b_line": 83,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, t = map(int, input().split())",
+      "a_line": 2,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a = list(map(int, input().split()))",
+      "a_line": 3,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_value = [[0, n] for i in range(n + 1)]",
+      "a_line": 5,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): num = a[-i] if max_value[i - 1][0] < num: max_value[i][0] = num max_value[i][1] = n + 1 - i else: max_value[i] = max_value[i - 1]",
+      "a_line": 8,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "min_value = [10**10 for i in range(n + 1)]",
+      "a_line": 17,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(n): x = a[_] min_value[_ + 1] = min(min_value[_], x)",
+      "a_line": 19,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "max_dif = 0",
+      "a_line": 23,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): if max_value[i][0] > min_value[n - i]: max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+      "a_line": 24,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "disk = []",
+      "a_line": 29,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1, n + 1): base = a[i - 1] if base + max_dif == max_value[n - i][0]: disk.append((i, max_value[n - i][1]))",
+      "a_line": 30,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "uni = UnionFind(n)",
+      "a_line": 67,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for some in disk: a, b = some[0], some[1] uni.union(a, b)",
+      "a_line": 68,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): uni.find(i)",
+      "a_line": 71,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "group = {i: [] for i in range(n + 1)}",
+      "a_line": 76,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): group[uni.par[i]].append(i)",
+      "a_line": 78,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 80,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(n + 1): L = len(group[i]) ans += L * (L - 1) // 2",
+      "a_line": 81,
+      "b_code": "print(ans)",
+      "b_line": 84,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.par = [i for i in range(n + 1)]",
+      "a_line": 40,
+      "b_code": "self.rank = [0] * (n + 1)",
+      "b_line": 41,
+      "function": "UnionFind.__init__"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: self.par[x] = self.find(self.par[x]) return self.par[x]",
+      "a_line": 45,
+      "b_code": "return x",
+      "b_line": 46,
+      "function": "UnionFind.find"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: self.par[x] = self.find(self.par[x]) return self.par[x]",
+      "a_line": 45,
+      "b_code": "self.par[x] = self.find(self.par[x])",
+      "b_line": 48,
+      "function": "UnionFind.find"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: self.par[x] = self.find(self.par[x]) return self.par[x]",
+      "a_line": 45,
+      "b_code": "return self.par[x]",
+      "b_line": 49,
+      "function": "UnionFind.find"
+    },
+    {
+      "a_code": "self.par[x] = self.find(self.par[x])",
+      "a_line": 48,
+      "b_code": "return self.par[x]",
+      "b_line": 49,
+      "function": "UnionFind.find"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 53,
+      "b_code": "y = self.find(y)",
+      "b_line": 54,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 53,
+      "b_code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "b_line": 55,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 54,
+      "b_code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "b_line": 55,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 53,
+      "b_code": "self.par[x] = y",
+      "b_line": 56,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 54,
+      "b_code": "self.par[x] = y",
+      "b_line": 56,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "a_line": 55,
+      "b_code": "self.par[x] = y",
+      "b_line": 56,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 53,
+      "b_code": "self.par[y] = x",
+      "b_line": 58,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 54,
+      "b_code": "self.par[y] = x",
+      "b_line": 58,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "a_line": 55,
+      "b_code": "self.par[y] = x",
+      "b_line": 58,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 53,
+      "b_code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "b_line": 59,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 54,
+      "b_code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "b_line": 59,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "a_line": 55,
+      "b_code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "b_line": 59,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "self.par[y] = x",
+      "a_line": 58,
+      "b_code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "b_line": 59,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "x = self.find(x)",
+      "a_line": 53,
+      "b_code": "self.rank[x] += 1",
+      "b_line": 60,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "y = self.find(y)",
+      "a_line": 54,
+      "b_code": "self.rank[x] += 1",
+      "b_line": 60,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[x] < self.rank[y]: self.par[x] = y else: self.par[y] = x if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "a_line": 55,
+      "b_code": "self.rank[x] += 1",
+      "b_line": 60,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "self.par[y] = x",
+      "a_line": 58,
+      "b_code": "self.rank[x] += 1",
+      "b_line": 60,
+      "function": "UnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[x] == self.rank[y]: self.rank[x] += 1",
+      "a_line": 59,
+      "b_code": "self.rank[x] += 1",
+      "b_line": 60,
+      "function": "UnionFind.union"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped uni.find at line 72",
+      "external attribute call skipped uni.union at line 70",
+      "external call skipped input at line 2",
+      "external call skipped input at line 3"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped uni.find at line 72",
+    "external attribute call skipped uni.union at line 70",
+    "external call skipped input at line 2",
+    "external call skipped input at line 3"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "t"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "t"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "int"
+      },
+      "from": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "max_value = [[0, n] for i in range(n + 1)]",
+        "line": 5,
+        "var": "int"
+      },
+      "from": {
+        "code": "max_value = [[0, n] for i in range(n + 1)]",
+        "line": 5,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "max_value = [[0, n] for i in range(n + 1)]",
+        "line": 5,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "max_value = [[0, n] for i in range(n + 1)]",
+        "line": 5,
+        "var": "max_value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "from": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "i"
+      },
+      "from": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "int"
+      },
+      "from": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "num"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "from": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "i"
+      },
+      "from": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "int"
+      },
+      "from": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "num = a[-i]",
+        "line": 9,
+        "var": "num"
+      },
+      "from": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "max_value[i][0] = num",
+        "line": 11,
+        "var": "max_value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "i"
+      },
+      "from": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "int"
+      },
+      "from": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "max_value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "i"
+      },
+      "from": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "int"
+      },
+      "from": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i][1] = n + 1 - i",
+        "line": 12,
+        "var": "max_value"
+      },
+      "from": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "max_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "max_value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "min_value = [10**10 for i in range(n + 1)]",
+        "line": 17,
+        "var": "int"
+      },
+      "from": {
+        "code": "min_value = [10**10 for i in range(n + 1)]",
+        "line": 17,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "min_value = [10**10 for i in range(n + 1)]",
+        "line": 17,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "min_value = [10**10 for i in range(n + 1)]",
+        "line": 17,
+        "var": "min_value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "_"
+      },
+      "from": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "from": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "int"
+      },
+      "from": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "_"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "int"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "min_value = [10**10 for i in range(n + 1)]",
+        "line": 17,
+        "var": "min_value"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "x"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "max_dif = 0",
+        "line": 23,
+        "var": "max_dif"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "_"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "i"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "int"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_dif = 0",
+        "line": 23,
+        "var": "max_dif"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "max_value[i] = max_value[i - 1]",
+        "line": 14,
+        "var": "max_value"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "min_value[_ + 1] = min(min_value[_], x)",
+        "line": 21,
+        "var": "min_value"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = a[_]",
+        "line": 20,
+        "var": "x"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "max_dif = max(max_dif, max_value[i][0] - min_value[n - i])",
+        "line": 26,
+        "var": "max_dif"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "disk = []",
+        "line": 29,
+        "var": "disk"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a = list(map(int, input().split()))",
+        "line": 3,
+        "var": "a"
+      },
+      "from": {
+        "code": "base = a[i - 1]",
+        "line": 31,
+        "var": "base"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "base = a[i - 1]",
+        "line": 31,
+        "var": "i"
+      },
+      "from": {
+        "code": "base = a[i - 1]",
+        "line": 31,
+        "var": "base"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "base = a[i - 1]",
+        "line": 31,
+        "var": "int"
+      },
+      "from": {
+        "code": "base = a[i - 1]",
+        "line": 31,
+        "var": "base"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "base = a[i - 1]",
+        "line": 31,
+        "var": "base"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "uni = UnionFind(n)",
+        "line": 67,
+        "var": "int"
+      },
+      "from": {
+        "code": "uni = UnionFind(n)",
+        "line": 67,
+        "var": "uni"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "uni = UnionFind(n)",
+        "line": 67,
+        "var": "uni"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "uni = UnionFind(n)",
+        "line": 67,
+        "var": "uni"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = some[0], some[1]",
+        "line": 69,
+        "var": "some"
+      },
+      "from": {
+        "code": "a, b = some[0], some[1]",
+        "line": 69,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "a, b = some[0], some[1]",
+        "line": 69,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = some[0], some[1]",
+        "line": 69,
+        "var": "some"
+      },
+      "from": {
+        "code": "a, b = some[0], some[1]",
+        "line": 69,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "a, b = some[0], some[1]",
+        "line": 69,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "group = {i: [] for i in range(n + 1)}",
+        "line": 76,
+        "var": "int"
+      },
+      "from": {
+        "code": "group = {i: [] for i in range(n + 1)}",
+        "line": 76,
+        "var": "group"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "group = {i: [] for i in range(n + 1)}",
+        "line": 76,
+        "var": "group"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "group = {i: [] for i in range(n + 1)}",
+        "line": 76,
+        "var": "group"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "L"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 80,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "group = {i: [] for i in range(n + 1)}",
+        "line": 76,
+        "var": "group"
+      },
+      "from": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "i"
+      },
+      "from": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "int"
+      },
+      "from": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L = len(group[i])",
+        "line": 82,
+        "var": "L"
+      },
+      "from": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "group = {i: [] for i in range(n + 1)}",
+        "line": 76,
+        "var": "group"
+      },
+      "from": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, t = map(int, input().split())",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "_"
+      },
+      "from": {
+        "code": "ans += L * (L - 1) // 2",
+        "line": 83,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 39,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.par = [i for i in range(n + 1)]",
+        "line": 40,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 39,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par = [i for i in range(n + 1)]",
+        "line": 40,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 39,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.rank = [0] * (n + 1)",
+        "line": 41,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 39,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rank = [0] * (n + 1)",
+        "line": 41,
+        "var": "self.rank"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 44,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par[x] = self.find(self.par[x])",
+        "line": 48,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.par[x] = self.find(self.par[x])",
+        "line": 48,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "self.par[x] = self.find(self.par[x])",
+        "line": 48,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 44,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.par[x] = self.find(self.par[x])",
+        "line": 48,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self"
+      },
+      "from": {
+        "code": "x = self.find(x)",
+        "line": 53,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "x = self.find(x)",
+        "line": 53,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "x = self.find(x)",
+        "line": 53,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self"
+      },
+      "from": {
+        "code": "y = self.find(y)",
+        "line": 54,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "y"
+      },
+      "from": {
+        "code": "y = self.find(y)",
+        "line": 54,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "y = self.find(y)",
+        "line": 54,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 56,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find(x)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 56,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find(y)",
+        "line": 54,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 56,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 56,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par[y] = x",
+        "line": 58,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find(x)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.par[y] = x",
+        "line": 58,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find(y)",
+        "line": 54,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.par[y] = x",
+        "line": 58,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.par[y] = x",
+        "line": 58,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y):",
+        "line": 52,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rank[x] += 1",
+        "line": 60,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.rank[x] += 1",
+        "line": 60,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.rank[x] += 1",
+        "line": 60,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find(x)",
+        "line": 53,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.rank[x] += 1",
+        "line": 60,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.par[y] = x",
+        "line": 58,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "self.rank[x] += 1",
+        "line": 60,
+        "var": "self.rank"
+      },
+      "label": "negative"
+    }
+  ]
+}

@@ -1,0 +1,4569 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "black = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "white = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 4
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 36,
+      "node_id": 5
+    },
+    {
+      "code": "h,w = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 6
+    },
+    {
+      "code": "grid = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(h): grid.append(list(input()))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 39,
+      "node_id": 8
+    },
+    {
+      "code": "grid.append(list(input()))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 40,
+      "node_id": 9
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 10
+    },
+    {
+      "code": "adjacent_list = [[] for i in range(h*w)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 11
+    },
+    {
+      "code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 12
+    },
+    {
+      "code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 48,
+      "node_id": 13
+    },
+    {
+      "code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 49,
+      "node_id": 14
+    },
+    {
+      "code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 50,
+      "node_id": 15
+    },
+    {
+      "code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 51,
+      "node_id": 16
+    },
+    {
+      "code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 52,
+      "node_id": 17
+    },
+    {
+      "code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 53,
+      "node_id": 18
+    },
+    {
+      "code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 54,
+      "node_id": 19
+    },
+    {
+      "code": "finished = set()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 20
+    },
+    {
+      "code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 57,
+      "node_id": 21
+    },
+    {
+      "code": "black = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 59,
+      "node_id": 22
+    },
+    {
+      "code": "white = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 23
+    },
+    {
+      "code": "if i not in finished: dfs(i) ans += black * white",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 61,
+      "node_id": 24
+    },
+    {
+      "code": "dfs(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 62,
+      "node_id": 25
+    },
+    {
+      "code": "ans += black * white",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 63,
+      "node_id": 26
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 64,
+      "node_id": 27
+    },
+    {
+      "code": "if (0 <= s <= h - 1) and (0 <= t <= w - 1): return True else: return False",
+      "dead": false,
+      "function": "check",
+      "kind": "If",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "check",
+      "kind": "Return",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "check",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "finished = set()",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "While",
+      "line": 13,
+      "node_id": 2
+    },
+    {
+      "code": "x , y, color = que.popleft()",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 3
+    },
+    {
+      "code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "If",
+      "line": 15,
+      "node_id": 4
+    },
+    {
+      "code": "finished.add(x+y*w)",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Expr",
+      "line": 16,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "For",
+      "line": 17,
+      "node_id": 6
+    },
+    {
+      "code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "For",
+      "line": 18,
+      "node_id": 7
+    },
+    {
+      "code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "If",
+      "line": 19,
+      "node_id": 8
+    },
+    {
+      "code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "dead": false,
+      "function": "bfs",
+      "kind": "If",
+      "line": 20,
+      "node_id": 9
+    },
+    {
+      "code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Expr",
+      "line": 21,
+      "node_id": 10
+    },
+    {
+      "code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "If",
+      "line": 22,
+      "node_id": 11
+    },
+    {
+      "code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Expr",
+      "line": 23,
+      "node_id": 12
+    },
+    {
+      "code": "global white",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Global",
+      "line": 25,
+      "node_id": 1
+    },
+    {
+      "code": "global black",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Global",
+      "line": 26,
+      "node_id": 2
+    },
+    {
+      "code": "finished.add(node)",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Expr",
+      "line": 27,
+      "node_id": 3
+    },
+    {
+      "code": "y,x = divmod(node,w)",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 4
+    },
+    {
+      "code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 29,
+      "node_id": 5
+    },
+    {
+      "code": "black += 1",
+      "dead": false,
+      "function": "dfs",
+      "kind": "AugAssign",
+      "line": 30,
+      "node_id": 6
+    },
+    {
+      "code": "white += 1",
+      "dead": false,
+      "function": "dfs",
+      "kind": "AugAssign",
+      "line": 32,
+      "node_id": 7
+    },
+    {
+      "code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "dead": false,
+      "function": "dfs",
+      "kind": "For",
+      "line": 33,
+      "node_id": 8
+    },
+    {
+      "code": "if i not in finished: dfs(i)",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 34,
+      "node_id": 9
+    },
+    {
+      "code": "dfs(i)",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Expr",
+      "line": 35,
+      "node_id": 10
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "sys.setrecursionlimit(10**7)",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "black = 0",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "white = 0",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "if (0 <= s <= h - 1) and (0 <= t <= w - 1): return True else: return False",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "finished = set()",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "x , y, color = que.popleft()",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "finished.add(x+y*w)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "global white",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "global black",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "finished.add(node)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "y,x = divmod(node,w)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "black += 1",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "white += 1",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "if i not in finished: dfs(i)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "dfs(i)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "h,w = map(int, input().split())",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "grid = []",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "for i in range(h): grid.append(list(input()))",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "grid.append(list(input()))",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "adjacent_list = [[] for i in range(h*w)]",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "finished = set()",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "black = 0",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "white = 0",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "if i not in finished: dfs(i) ans += black * white",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "dfs(i)",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "ans += black * white",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 64
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03157_s640142938.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 6,
+      "name": "check",
+      "variables": [
+        "h",
+        "s",
+        "t",
+        "w"
+      ]
+    },
+    {
+      "calls": [
+        "check"
+      ],
+      "end_lineno": 23,
+      "lineno": 11,
+      "name": "bfs",
+      "variables": [
+        "adjacent_list",
+        "color",
+        "finished",
+        "grid",
+        "i",
+        "j",
+        "que",
+        "w",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "dfs"
+      ],
+      "end_lineno": 35,
+      "lineno": 24,
+      "name": "dfs",
+      "variables": [
+        "adjacent_list",
+        "black",
+        "finished",
+        "grid",
+        "i",
+        "node",
+        "w",
+        "white",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "int",
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(10**7)",
+            "line": 2,
+            "vars": [
+              "int",
+              "sys"
+            ]
+          },
+          {
+            "code": "black = 0",
+            "line": 3,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "white = 0",
+            "line": 4,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "from collections import deque",
+            "line": 36,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "h,w = map(int, input().split())",
+            "line": 37,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "grid = []",
+            "line": 38,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h): grid.append(list(input()))",
+            "line": 39,
+            "vars": [
+              "grid",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "grid.append(list(input()))",
+            "line": 40,
+            "vars": [
+              "grid",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 41,
+            "vars": [
+              "grid",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "adjacent_list = [[] for i in range(h*w)]",
+            "line": 42,
+            "vars": [
+              "grid",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+            "line": 43,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 48,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 49,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "w",
+              "y"
+            ]
+          },
+          {
+            "code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 50,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 51,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "i",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 52,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "i",
+              "j",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 53,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "h",
+              "i",
+              "j",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 54,
+            "vars": [
+              "adjacent_list",
+              "h",
+              "i",
+              "j",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "finished = set()",
+            "line": 56,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+            "line": 57,
+            "vars": [
+              "finished",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "black = 0",
+            "line": 59,
+            "vars": [
+              "finished",
+              "i"
+            ]
+          },
+          {
+            "code": "white = 0",
+            "line": 60,
+            "vars": [
+              "black",
+              "finished",
+              "i"
+            ]
+          },
+          {
+            "code": "if i not in finished: dfs(i) ans += black * white",
+            "line": 61,
+            "vars": [
+              "black",
+              "finished",
+              "i",
+              "white"
+            ]
+          },
+          {
+            "code": "dfs(i)",
+            "line": 62,
+            "vars": [
+              "black",
+              "i",
+              "white"
+            ]
+          },
+          {
+            "code": "ans += black * white",
+            "line": 63,
+            "vars": [
+              "black",
+              "white"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 64,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "adjacent_list": false,
+          "ans": false,
+          "black": false,
+          "finished": false,
+          "grid": false,
+          "h": false,
+          "i": false,
+          "int": false,
+          "j": false,
+          "sys": false,
+          "w": false,
+          "white": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "bfs": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "finished = set()",
+            "line": 12,
+            "vars": [
+              "adjacent_list",
+              "grid",
+              "que",
+              "w"
+            ]
+          },
+          {
+            "code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 13,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "que",
+              "w"
+            ]
+          },
+          {
+            "code": "x , y, color = que.popleft()",
+            "line": 14,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "que",
+              "w"
+            ]
+          },
+          {
+            "code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 15,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "finished",
+              "grid",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "finished.add(x+y*w)",
+            "line": 16,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "finished",
+              "grid",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 17,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "finished",
+              "grid",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 18,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "finished",
+              "grid",
+              "i",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 19,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "finished",
+              "grid",
+              "i",
+              "j",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+            "line": 20,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "finished",
+              "grid",
+              "i",
+              "j",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+            "line": 21,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "grid",
+              "i",
+              "j",
+              "que",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 22,
+            "vars": [
+              "adjacent_list",
+              "color",
+              "grid",
+              "i",
+              "j",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+            "line": 23,
+            "vars": [
+              "adjacent_list",
+              "i",
+              "j",
+              "w",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "adjacent_list": false,
+          "color": false,
+          "finished": false,
+          "grid": false,
+          "i": false,
+          "j": false,
+          "que": false,
+          "w": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "check": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if (0 <= s <= h - 1) and (0 <= t <= w - 1): return True else: return False",
+            "line": 7,
+            "vars": [
+              "h",
+              "s",
+              "t",
+              "w"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 8,
+            "vars": []
+          },
+          {
+            "code": "return False",
+            "line": 10,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "h": false,
+          "s": false,
+          "t": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "dfs": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "global white",
+            "line": 25,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "node",
+              "w"
+            ]
+          },
+          {
+            "code": "global black",
+            "line": 26,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "node",
+              "w"
+            ]
+          },
+          {
+            "code": "finished.add(node)",
+            "line": 27,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "node",
+              "w"
+            ]
+          },
+          {
+            "code": "y,x = divmod(node,w)",
+            "line": 28,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "node",
+              "w"
+            ]
+          },
+          {
+            "code": "if grid[y][x] == '#': black += 1 else: white += 1",
+            "line": 29,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "grid",
+              "node",
+              "x"
+            ]
+          },
+          {
+            "code": "black += 1",
+            "line": 30,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "node"
+            ]
+          },
+          {
+            "code": "white += 1",
+            "line": 32,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "node"
+            ]
+          },
+          {
+            "code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+            "line": 33,
+            "vars": [
+              "adjacent_list",
+              "finished",
+              "node"
+            ]
+          },
+          {
+            "code": "if i not in finished: dfs(i)",
+            "line": 34,
+            "vars": [
+              "finished",
+              "i"
+            ]
+          },
+          {
+            "code": "dfs(i)",
+            "line": 35,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "adjacent_list": false,
+          "black": false,
+          "finished": false,
+          "grid": false,
+          "i": false,
+          "node": false,
+          "w": false,
+          "white": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h):",
+      "cond": "for i in range(h)",
+      "function": "__module__",
+      "header_id": 8,
+      "line": 39,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for y in range(h):",
+      "cond": "for y in range(h)",
+      "function": "__module__",
+      "header_id": 13,
+      "line": 48,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for x in range(w):",
+      "cond": "for x in range(w)",
+      "function": "__module__",
+      "header_id": 14,
+      "line": 49,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(-1,2,1):",
+      "cond": "for i in range(-1,2,1)",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 50,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(-1,2,1):",
+      "cond": "for j in range(-1,2,1)",
+      "function": "__module__",
+      "header_id": 16,
+      "line": 51,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h*w):",
+      "cond": "for i in range(h*w)",
+      "function": "__module__",
+      "header_id": 21,
+      "line": 57,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while que:",
+      "cond": "que",
+      "function": "bfs",
+      "header_id": 2,
+      "line": 13,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(-1,2,1):",
+      "cond": "for i in range(-1,2,1)",
+      "function": "bfs",
+      "header_id": 6,
+      "line": 17,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for j in range(-1,2,1):",
+      "cond": "for j in range(-1,2,1)",
+      "function": "bfs",
+      "header_id": 7,
+      "line": 18,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in adjacent_list[node]:",
+      "cond": "for i in adjacent_list[node]",
+      "function": "dfs",
+      "header_id": 8,
+      "line": 33,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(10**7)",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "black = 0",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "black = 0",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "white = 0",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "white = 0",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "white = 0",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from collections import deque",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "from collections import deque",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "from collections import deque",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "from collections import deque",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "h,w = map(int, input().split())",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "h,w = map(int, input().split())",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "h,w = map(int, input().split())",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "h,w = map(int, input().split())",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "h,w = map(int, input().split())",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "grid = []",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "grid = []",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "grid = []",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "grid = []",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "grid = []",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "grid = []",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "for i in range(h): grid.append(list(input()))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "grid.append(list(input()))",
+      "b_line": 40,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "ans = 0",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "adjacent_list = [[] for i in range(h*w)]",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 49,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 49,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 50,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 49,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 50,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 51,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 49,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 50,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 51,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 52,
+      "b_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 49,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 50,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 51,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 52,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 53,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 54,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "finished = set()",
+      "b_line": 56,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "b_line": 57,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "a_line": 57,
+      "b_code": "black = 0",
+      "b_line": 59,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "a_line": 57,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 59,
+      "b_code": "white = 0",
+      "b_line": 60,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "a_line": 57,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 59,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 60,
+      "b_code": "if i not in finished: dfs(i) ans += black * white",
+      "b_line": 61,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "a_line": 57,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 59,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 60,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if i not in finished: dfs(i) ans += black * white",
+      "a_line": 61,
+      "b_code": "dfs(i)",
+      "b_line": 62,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "a_line": 57,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 59,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 60,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if i not in finished: dfs(i) ans += black * white",
+      "a_line": 61,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "dfs(i)",
+      "a_line": 62,
+      "b_code": "ans += black * white",
+      "b_line": 63,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(10**7)",
+      "a_line": 2,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 3,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 4,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 36,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w = map(int, input().split())",
+      "a_line": 37,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "grid = []",
+      "a_line": 38,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h): grid.append(list(input()))",
+      "a_line": 39,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 41,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "adjacent_list = [[] for i in range(h*w)]",
+      "a_line": 42,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" que = deque() que.append([0,0,grid[0][0]]) bfs(que) \"\"\"",
+      "a_line": 43,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for y in range(h): for x in range(w): for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if grid[y][x] != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 48,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 56,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h*w): #\u9802\u70b9i\u304b\u3089dfs\u3092\u3059\u308b\u3002\u9ed2\u3068\u767d\u3092\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u304a\u3044\u3066\u6700\u5f8c\u306b\u304b\u3051\u308b black = 0 white = 0 if i not in finished: dfs(i) ans += black * white",
+      "a_line": 57,
+      "b_code": "print(ans)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if (0 <= s <= h - 1) and (0 <= t <= w - 1): return True else: return False",
+      "a_line": 7,
+      "b_code": "return True",
+      "b_line": 8,
+      "function": "check"
+    },
+    {
+      "a_code": "if (0 <= s <= h - 1) and (0 <= t <= w - 1): return True else: return False",
+      "a_line": 7,
+      "b_code": "return False",
+      "b_line": 10,
+      "function": "check"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 13,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "x , y, color = que.popleft()",
+      "b_line": 14,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "x , y, color = que.popleft()",
+      "b_line": 14,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 15,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 15,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 15,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "finished.add(x+y*w)",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "finished.add(x+y*w)",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "finished.add(x+y*w)",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "finished.add(x+y*w)",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 17,
+      "b_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 17,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 18,
+      "b_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 17,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 18,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 19,
+      "b_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 17,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 18,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 19,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "a_line": 20,
+      "b_code": "que.append([x+i,y+j,grid[y+j][x+i]])",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 17,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 18,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 19,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "a_line": 20,
+      "b_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 22,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished = set()",
+      "a_line": 12,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while que: x , y, color = que.popleft() if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 13,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "x , y, color = que.popleft()",
+      "a_line": 14,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if x+y*w not in finished: finished.add(x+y*w) for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 15,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "finished.add(x+y*w)",
+      "a_line": 16,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for i in range(-1,2,1): for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 17,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "for j in range(-1,2,1): if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 18,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if abs(i) + abs(j) < 2 and check(y+j,x+i): if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]]) if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 19,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if (x+i)+(y+j)*w not in finished: que.append([x+i,y+j,grid[y+j][x+i]])",
+      "a_line": 20,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if color != grid[y+j][x+i]: adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "a_line": 22,
+      "b_code": "adjacent_list[x+w*y].append((x + i)+w*(y + j))",
+      "b_line": 23,
+      "function": "bfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "global black",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "finished.add(node)",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "finished.add(node)",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "y,x = divmod(node,w)",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "y,x = divmod(node,w)",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "y,x = divmod(node,w)",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "y,x = divmod(node,w)",
+      "a_line": 28,
+      "b_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "black += 1",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "black += 1",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "black += 1",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "y,x = divmod(node,w)",
+      "a_line": 28,
+      "b_code": "black += 1",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "a_line": 29,
+      "b_code": "black += 1",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "white += 1",
+      "b_line": 32,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "white += 1",
+      "b_line": 32,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "white += 1",
+      "b_line": 32,
+      "function": "dfs"
+    },
+    {
+      "a_code": "y,x = divmod(node,w)",
+      "a_line": 28,
+      "b_code": "white += 1",
+      "b_line": 32,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "a_line": 29,
+      "b_code": "white += 1",
+      "b_line": 32,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "b_line": 33,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "b_line": 33,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "b_line": 33,
+      "function": "dfs"
+    },
+    {
+      "a_code": "y,x = divmod(node,w)",
+      "a_line": 28,
+      "b_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "b_line": 33,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "a_line": 29,
+      "b_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "b_line": 33,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "if i not in finished: dfs(i)",
+      "b_line": 34,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "if i not in finished: dfs(i)",
+      "b_line": 34,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "if i not in finished: dfs(i)",
+      "b_line": 34,
+      "function": "dfs"
+    },
+    {
+      "a_code": "y,x = divmod(node,w)",
+      "a_line": 28,
+      "b_code": "if i not in finished: dfs(i)",
+      "b_line": 34,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "a_line": 29,
+      "b_code": "if i not in finished: dfs(i)",
+      "b_line": 34,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "a_line": 33,
+      "b_code": "if i not in finished: dfs(i)",
+      "b_line": 34,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global white",
+      "a_line": 25,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    },
+    {
+      "a_code": "global black",
+      "a_line": 26,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    },
+    {
+      "a_code": "finished.add(node)",
+      "a_line": 27,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    },
+    {
+      "a_code": "y,x = divmod(node,w)",
+      "a_line": 28,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if grid[y][x] == '#': black += 1 else: white += 1",
+      "a_line": 29,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for i in adjacent_list[node]: if i not in finished: dfs(i)",
+      "a_line": 33,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if i not in finished: dfs(i)",
+      "a_line": 34,
+      "b_code": "dfs(i)",
+      "b_line": 35,
+      "function": "dfs"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 2",
+      "external call skipped input at line 37",
+      "external call skipped input at line 40"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 2",
+    "external call skipped input at line 37",
+    "external call skipped input at line 40"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "black = 0",
+        "line": 3,
+        "var": "black"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "white = 0",
+        "line": 4,
+        "var": "white"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "int"
+      },
+      "from": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "int"
+      },
+      "from": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "grid = []",
+        "line": 38,
+        "var": "grid"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 41,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "h"
+      },
+      "from": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "int"
+      },
+      "from": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w = map(int, input().split())",
+        "line": 37,
+        "var": "w"
+      },
+      "from": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 0",
+        "line": 41,
+        "var": "ans"
+      },
+      "from": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "finished = set()",
+        "line": 56,
+        "var": "finished"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "black = 0",
+        "line": 59,
+        "var": "black"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "white = 0",
+        "line": 60,
+        "var": "white"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black = 0",
+        "line": 59,
+        "var": "black"
+      },
+      "from": {
+        "code": "ans += black * white",
+        "line": 63,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "white = 0",
+        "line": 60,
+        "var": "white"
+      },
+      "from": {
+        "code": "ans += black * white",
+        "line": 63,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "adjacent_list = [[] for i in range(h*w)]",
+        "line": 42,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "ans += black * white",
+        "line": 63,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "finished = set()",
+        "line": 12,
+        "var": "finished"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "que"
+      },
+      "from": {
+        "code": "x , y, color = que.popleft()",
+        "line": 14,
+        "var": "color"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "x , y, color = que.popleft()",
+        "line": 14,
+        "var": "color"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "que"
+      },
+      "from": {
+        "code": "x , y, color = que.popleft()",
+        "line": 14,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "x , y, color = que.popleft()",
+        "line": 14,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "que"
+      },
+      "from": {
+        "code": "x , y, color = que.popleft()",
+        "line": 14,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(que):",
+        "line": 11,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "x , y, color = que.popleft()",
+        "line": 14,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(node):",
+        "line": 24,
+        "var": "node"
+      },
+      "from": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(node):",
+        "line": 24,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(node):",
+        "line": 24,
+        "var": "node"
+      },
+      "from": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "w"
+      },
+      "from": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(node):",
+        "line": 24,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "y,x = divmod(node,w)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(node):",
+        "line": 24,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "black += 1",
+        "line": 30,
+        "var": "black"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(node):",
+        "line": 24,
+        "var": "adjacent_list"
+      },
+      "from": {
+        "code": "white += 1",
+        "line": 32,
+        "var": "white"
+      },
+      "label": "negative"
+    }
+  ]
+}

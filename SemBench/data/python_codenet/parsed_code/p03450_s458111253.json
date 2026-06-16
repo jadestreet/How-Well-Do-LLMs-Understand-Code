@@ -1,0 +1,2329 @@
+{
+  "cfg_statements": [
+    {
+      "code": "n, m = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 1
+    },
+    {
+      "code": "lrd = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 37,
+      "node_id": 3
+    },
+    {
+      "code": "l, r, d = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 4
+    },
+    {
+      "code": "lrd.append((l - 1, r - 1, d))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 39,
+      "node_id": 5
+    },
+    {
+      "code": "wuf = WeightedUnionFind(n)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 6
+    },
+    {
+      "code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 43,
+      "node_id": 7
+    },
+    {
+      "code": "if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "dead": true,
+      "function": "__module__",
+      "kind": "If",
+      "line": 44,
+      "node_id": 8
+    },
+    {
+      "code": "if wuf.diff(item[0], item[1]) != item[2]: print('No') exit()",
+      "dead": true,
+      "function": "__module__",
+      "kind": "If",
+      "line": 45,
+      "node_id": 9
+    },
+    {
+      "code": "print('No')",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 46,
+      "node_id": 10
+    },
+    {
+      "code": "exit()",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 47,
+      "node_id": 11
+    },
+    {
+      "code": "wuf.union(item[0], item[1], item[2])",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 49,
+      "node_id": 12
+    },
+    {
+      "code": "print('Yes')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 51,
+      "node_id": 13
+    },
+    {
+      "code": "self.par = [i for i in range(n+1)]",
+      "dead": false,
+      "function": "WeightedUnionFind.__init__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "self.rank = [0] * (n+1)",
+      "dead": false,
+      "function": "WeightedUnionFind.__init__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 2
+    },
+    {
+      "code": "self.weight = [0] * (n+1)",
+      "dead": false,
+      "function": "WeightedUnionFind.__init__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 3
+    },
+    {
+      "code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "dead": false,
+      "function": "WeightedUnionFind.find",
+      "kind": "If",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "function": "WeightedUnionFind.find",
+      "kind": "Return",
+      "line": 9,
+      "node_id": 2
+    },
+    {
+      "code": "y = self.find(self.par[x])",
+      "dead": false,
+      "function": "WeightedUnionFind.find",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 3
+    },
+    {
+      "code": "self.weight[x] += self.weight[self.par[x]]",
+      "dead": false,
+      "function": "WeightedUnionFind.find",
+      "kind": "AugAssign",
+      "line": 12,
+      "node_id": 4
+    },
+    {
+      "code": "self.par[x] = y",
+      "dead": false,
+      "function": "WeightedUnionFind.find",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 5
+    },
+    {
+      "code": "return y",
+      "dead": false,
+      "function": "WeightedUnionFind.find",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 6
+    },
+    {
+      "code": "rx = self.find(x)",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "ry = self.find(y)",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 2
+    },
+    {
+      "code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "If",
+      "line": 19,
+      "node_id": 3
+    },
+    {
+      "code": "self.par[rx] = ry",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 4
+    },
+    {
+      "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 5
+    },
+    {
+      "code": "self.par[ry] = rx",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 6
+    },
+    {
+      "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 7
+    },
+    {
+      "code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "If",
+      "line": 25,
+      "node_id": 8
+    },
+    {
+      "code": "self.rank[rx] += 1",
+      "dead": false,
+      "function": "WeightedUnionFind.union",
+      "kind": "AugAssign",
+      "line": 26,
+      "node_id": 9
+    },
+    {
+      "code": "return self.find(x) == self.find(y)",
+      "dead": false,
+      "function": "WeightedUnionFind.same",
+      "kind": "Return",
+      "line": 29,
+      "node_id": 1
+    },
+    {
+      "code": "return self.weight[x] - self.weight[y]",
+      "dead": false,
+      "function": "WeightedUnionFind.diff",
+      "kind": "Return",
+      "line": 32,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.par = [i for i in range(n+1)]",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "self.rank = [0] * (n+1)",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "self.weight = [0] * (n+1)",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "y = self.find(self.par[x])",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "self.weight[x] += self.weight[self.par[x]]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "self.par[x] = y",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return y",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "rx = self.find(x)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "ry = self.find(y)",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "self.par[rx] = ry",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "self.par[ry] = rx",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "self.rank[rx] += 1",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "return self.find(x) == self.find(y)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "return self.weight[x] - self.weight[y]",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "n, m = map(int, input().split())",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "lrd = []",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "l, r, d = map(int, input().split())",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "lrd.append((l - 1, r - 1, d))",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "wuf = WeightedUnionFind(n)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "dead": true,
+      "line": 44
+    },
+    {
+      "code": "if wuf.diff(item[0], item[1]) != item[2]: print('No') exit()",
+      "dead": true,
+      "line": 45
+    },
+    {
+      "code": "print('No')",
+      "dead": true,
+      "line": 46
+    },
+    {
+      "code": "exit()",
+      "dead": true,
+      "line": 47
+    },
+    {
+      "code": "wuf.union(item[0], item[1], item[2])",
+      "dead": true,
+      "line": 49
+    },
+    {
+      "code": "print('Yes')",
+      "dead": false,
+      "line": 51
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03450_s458111253.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 5,
+      "lineno": 2,
+      "name": "WeightedUnionFind.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.par",
+        "self.rank",
+        "self.weight"
+      ]
+    },
+    {
+      "calls": [
+        "WeightedUnionFind.find"
+      ],
+      "end_lineno": 14,
+      "lineno": 7,
+      "name": "WeightedUnionFind.find",
+      "variables": [
+        "self",
+        "self.par",
+        "self.weight",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "WeightedUnionFind.find"
+      ],
+      "end_lineno": 26,
+      "lineno": 16,
+      "name": "WeightedUnionFind.union",
+      "variables": [
+        "rx",
+        "ry",
+        "self",
+        "self.par",
+        "self.rank",
+        "self.weight",
+        "w",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "WeightedUnionFind.find"
+      ],
+      "end_lineno": 29,
+      "lineno": 28,
+      "name": "WeightedUnionFind.same",
+      "variables": [
+        "self",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 32,
+      "lineno": 31,
+      "name": "WeightedUnionFind.diff",
+      "variables": [
+        "self",
+        "self.weight",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "WeightedUnionFind.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.par = [i for i in range(n+1)]",
+            "line": 3,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.rank = [0] * (n+1)",
+            "line": 4,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.weight = [0] * (n+1)",
+            "line": 5,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.par": false,
+          "self.rank": false,
+          "self.weight": false
+        },
+        "return_vars": []
+      },
+      "WeightedUnionFind.diff": {
+        "base_liveout": [
+          "self.weight",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return self.weight[x] - self.weight[y]",
+            "line": 32,
+            "vars": [
+              "self.weight",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.weight": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "self.weight",
+          "x",
+          "y"
+        ]
+      },
+      "WeightedUnionFind.find": {
+        "base_liveout": [
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+            "line": 8,
+            "vars": [
+              "self",
+              "self.par",
+              "self.weight",
+              "x"
+            ]
+          },
+          {
+            "code": "return x",
+            "line": 9,
+            "vars": [
+              "self",
+              "self.par",
+              "self.weight",
+              "x"
+            ]
+          },
+          {
+            "code": "y = self.find(self.par[x])",
+            "line": 11,
+            "vars": [
+              "self",
+              "self.par",
+              "self.weight",
+              "x"
+            ]
+          },
+          {
+            "code": "self.weight[x] += self.weight[self.par[x]]",
+            "line": 12,
+            "vars": [
+              "self.par",
+              "self.weight",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.par[x] = y",
+            "line": 13,
+            "vars": [
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "return y",
+            "line": 14,
+            "vars": [
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.par": false,
+          "self.weight": false,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "x",
+          "y"
+        ]
+      },
+      "WeightedUnionFind.same": {
+        "base_liveout": [
+          "self",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return self.find(x) == self.find(y)",
+            "line": 29,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "self",
+          "x",
+          "y"
+        ]
+      },
+      "WeightedUnionFind.union": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "rx = self.find(x)",
+            "line": 17,
+            "vars": [
+              "self",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "ry = self.find(y)",
+            "line": 18,
+            "vars": [
+              "rx",
+              "self",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+            "line": 19,
+            "vars": [
+              "rx",
+              "ry",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.par[rx] = ry",
+            "line": 20,
+            "vars": [
+              "rx",
+              "ry",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+            "line": 21,
+            "vars": [
+              "rx",
+              "ry",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.par[ry] = rx",
+            "line": 23,
+            "vars": [
+              "rx",
+              "ry",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+            "line": 24,
+            "vars": [
+              "rx",
+              "ry",
+              "self.rank",
+              "self.weight",
+              "w",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+            "line": 25,
+            "vars": [
+              "rx",
+              "ry",
+              "self.rank"
+            ]
+          },
+          {
+            "code": "self.rank[rx] += 1",
+            "line": 26,
+            "vars": [
+              "rx",
+              "self.rank"
+            ]
+          }
+        ],
+        "liveout": {
+          "rx": false,
+          "ry": false,
+          "self": false,
+          "self.par": false,
+          "self.rank": false,
+          "self.weight": false,
+          "w": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n, m = map(int, input().split())",
+            "line": 35,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "lrd = []",
+            "line": 36,
+            "vars": [
+              "int",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+            "line": 37,
+            "vars": [
+              "int",
+              "lrd",
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "l, r, d = map(int, input().split())",
+            "line": 38,
+            "vars": [
+              "int",
+              "lrd",
+              "n"
+            ]
+          },
+          {
+            "code": "lrd.append((l - 1, r - 1, d))",
+            "line": 39,
+            "vars": [
+              "d",
+              "l",
+              "lrd",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "wuf = WeightedUnionFind(n)",
+            "line": 41,
+            "vars": [
+              "lrd",
+              "n"
+            ]
+          },
+          {
+            "code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+            "line": 43,
+            "vars": [
+              "lrd",
+              "wuf"
+            ]
+          },
+          {
+            "code": "if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+            "line": 44,
+            "vars": [
+              "item",
+              "wuf"
+            ]
+          },
+          {
+            "code": "if wuf.diff(item[0], item[1]) != item[2]: print('No') exit()",
+            "line": 45,
+            "vars": [
+              "item",
+              "wuf"
+            ]
+          },
+          {
+            "code": "print('No')",
+            "line": 46,
+            "vars": [
+              "item",
+              "wuf"
+            ]
+          },
+          {
+            "code": "exit()",
+            "line": 47,
+            "vars": [
+              "item",
+              "wuf"
+            ]
+          },
+          {
+            "code": "wuf.union(item[0], item[1], item[2])",
+            "line": 49,
+            "vars": [
+              "item",
+              "wuf"
+            ]
+          },
+          {
+            "code": "print('Yes')",
+            "line": 51,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "d": false,
+          "i": false,
+          "int": false,
+          "item": false,
+          "l": false,
+          "lrd": false,
+          "m": false,
+          "n": false,
+          "r": false,
+          "wuf": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(m):",
+      "cond": "for i in range(m)",
+      "function": "__module__",
+      "header_id": 3,
+      "line": 37,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for item in lrd:",
+      "cond": "for item in lrd",
+      "function": "__module__",
+      "header_id": 7,
+      "line": 43,
+      "reachable": false
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "lrd = []",
+      "b_line": 36,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lrd = []",
+      "a_line": 36,
+      "b_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "l, r, d = map(int, input().split())",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lrd = []",
+      "a_line": 36,
+      "b_code": "l, r, d = map(int, input().split())",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "a_line": 37,
+      "b_code": "l, r, d = map(int, input().split())",
+      "b_line": 38,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "lrd.append((l - 1, r - 1, d))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lrd = []",
+      "a_line": 36,
+      "b_code": "lrd.append((l - 1, r - 1, d))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "a_line": 37,
+      "b_code": "lrd.append((l - 1, r - 1, d))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "l, r, d = map(int, input().split())",
+      "a_line": 38,
+      "b_code": "lrd.append((l - 1, r - 1, d))",
+      "b_line": 39,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "wuf = WeightedUnionFind(n)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lrd = []",
+      "a_line": 36,
+      "b_code": "wuf = WeightedUnionFind(n)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "a_line": 37,
+      "b_code": "wuf = WeightedUnionFind(n)",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lrd = []",
+      "a_line": 36,
+      "b_code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "a_line": 37,
+      "b_code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "wuf = WeightedUnionFind(n)",
+      "a_line": 41,
+      "b_code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "n, m = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "print('Yes')",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "lrd = []",
+      "a_line": 36,
+      "b_code": "print('Yes')",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(m): l, r, d = map(int, input().split()) lrd.append((l - 1, r - 1, d))",
+      "a_line": 37,
+      "b_code": "print('Yes')",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "wuf = WeightedUnionFind(n)",
+      "a_line": 41,
+      "b_code": "print('Yes')",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for item in lrd: if wuf.same(item[0], item[1]): if wuf.diff(item[0], item[1]) != item[2]: print('No') exit() else: wuf.union(item[0], item[1], item[2])",
+      "a_line": 43,
+      "b_code": "print('Yes')",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.par = [i for i in range(n+1)]",
+      "a_line": 3,
+      "b_code": "self.rank = [0] * (n+1)",
+      "b_line": 4,
+      "function": "WeightedUnionFind.__init__"
+    },
+    {
+      "a_code": "self.par = [i for i in range(n+1)]",
+      "a_line": 3,
+      "b_code": "self.weight = [0] * (n+1)",
+      "b_line": 5,
+      "function": "WeightedUnionFind.__init__"
+    },
+    {
+      "a_code": "self.rank = [0] * (n+1)",
+      "a_line": 4,
+      "b_code": "self.weight = [0] * (n+1)",
+      "b_line": 5,
+      "function": "WeightedUnionFind.__init__"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "a_line": 8,
+      "b_code": "return x",
+      "b_line": 9,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "a_line": 8,
+      "b_code": "y = self.find(self.par[x])",
+      "b_line": 11,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "a_line": 8,
+      "b_code": "self.weight[x] += self.weight[self.par[x]]",
+      "b_line": 12,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "y = self.find(self.par[x])",
+      "a_line": 11,
+      "b_code": "self.weight[x] += self.weight[self.par[x]]",
+      "b_line": 12,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "a_line": 8,
+      "b_code": "self.par[x] = y",
+      "b_line": 13,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "y = self.find(self.par[x])",
+      "a_line": 11,
+      "b_code": "self.par[x] = y",
+      "b_line": 13,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "self.weight[x] += self.weight[self.par[x]]",
+      "a_line": 12,
+      "b_code": "self.par[x] = y",
+      "b_line": 13,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "if self.par[x] == x: return x else: y = self.find(self.par[x]) self.weight[x] += self.weight[self.par[x]] self.par[x] = y return y",
+      "a_line": 8,
+      "b_code": "return y",
+      "b_line": 14,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "y = self.find(self.par[x])",
+      "a_line": 11,
+      "b_code": "return y",
+      "b_line": 14,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "self.weight[x] += self.weight[self.par[x]]",
+      "a_line": 12,
+      "b_code": "return y",
+      "b_line": 14,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "self.par[x] = y",
+      "a_line": 13,
+      "b_code": "return y",
+      "b_line": 14,
+      "function": "WeightedUnionFind.find"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "ry = self.find(y)",
+      "b_line": 18,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 19,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 19,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "self.par[rx] = ry",
+      "b_line": 20,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "self.par[rx] = ry",
+      "b_line": 20,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 19,
+      "b_code": "self.par[rx] = ry",
+      "b_line": 20,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+      "b_line": 21,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+      "b_line": 21,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 19,
+      "b_code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+      "b_line": 21,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "self.par[rx] = ry",
+      "a_line": 20,
+      "b_code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+      "b_line": 21,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "self.par[ry] = rx",
+      "b_line": 23,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "self.par[ry] = rx",
+      "b_line": 23,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 19,
+      "b_code": "self.par[ry] = rx",
+      "b_line": 23,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "b_line": 24,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "b_line": 24,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 19,
+      "b_code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "b_line": 24,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "self.par[ry] = rx",
+      "a_line": 23,
+      "b_code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "b_line": 24,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 25,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 25,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 19,
+      "b_code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 25,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "self.par[ry] = rx",
+      "a_line": 23,
+      "b_code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 25,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "a_line": 24,
+      "b_code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "b_line": 25,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "rx = self.find(x)",
+      "a_line": 17,
+      "b_code": "self.rank[rx] += 1",
+      "b_line": 26,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "ry = self.find(y)",
+      "a_line": 18,
+      "b_code": "self.rank[rx] += 1",
+      "b_line": 26,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] < self.rank[ry]: self.par[rx] = ry self.weight[rx] = w - self.weight[x] + self.weight[y] else: self.par[ry] = rx self.weight[ry] = -w - self.weight[y] + self.weight[x] if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 19,
+      "b_code": "self.rank[rx] += 1",
+      "b_line": 26,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "self.par[ry] = rx",
+      "a_line": 23,
+      "b_code": "self.rank[rx] += 1",
+      "b_line": 26,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+      "a_line": 24,
+      "b_code": "self.rank[rx] += 1",
+      "b_line": 26,
+      "function": "WeightedUnionFind.union"
+    },
+    {
+      "a_code": "if self.rank[rx] == self.rank[ry]: self.rank[rx] += 1",
+      "a_line": 25,
+      "b_code": "self.rank[rx] += 1",
+      "b_line": 26,
+      "function": "WeightedUnionFind.union"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped wuf.diff at line 45",
+      "external attribute call skipped wuf.same at line 44",
+      "external attribute call skipped wuf.union at line 49",
+      "external call skipped exit at line 47",
+      "external call skipped input at line 35",
+      "external call skipped input at line 38"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped wuf.diff at line 45",
+    "external attribute call skipped wuf.same at line 44",
+    "external attribute call skipped wuf.union at line 49",
+    "external call skipped exit at line 47",
+    "external call skipped input at line 35",
+    "external call skipped input at line 38"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "m"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "d"
+      },
+      "from": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "d"
+      },
+      "from": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "d"
+      },
+      "from": {
+        "code": "lrd = []",
+        "line": 36,
+        "var": "lrd"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "int"
+      },
+      "from": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "d"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "i"
+      },
+      "from": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "int"
+      },
+      "from": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "l"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "d"
+      },
+      "from": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "l"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "int"
+      },
+      "from": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "d"
+      },
+      "from": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "wuf = WeightedUnionFind(n)",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "wuf = WeightedUnionFind(n)",
+        "line": 41,
+        "var": "wuf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n, m = map(int, input().split())",
+        "line": 35,
+        "var": "n"
+      },
+      "from": {
+        "code": "wuf = WeightedUnionFind(n)",
+        "line": 41,
+        "var": "wuf"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "l, r, d = map(int, input().split())",
+        "line": 38,
+        "var": "d"
+      },
+      "from": {
+        "code": "wuf = WeightedUnionFind(n)",
+        "line": 41,
+        "var": "wuf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.par = [i for i in range(n+1)]",
+        "line": 3,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par = [i for i in range(n+1)]",
+        "line": 3,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.rank = [0] * (n+1)",
+        "line": 4,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rank = [0] * (n+1)",
+        "line": 4,
+        "var": "self.rank"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.weight = [0] * (n+1)",
+        "line": 5,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 2,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.weight = [0] * (n+1)",
+        "line": 5,
+        "var": "self.weight"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "self"
+      },
+      "from": {
+        "code": "y = self.find(self.par[x])",
+        "line": 11,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find(self.par[x])",
+        "line": 11,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "y = self.find(self.par[x])",
+        "line": 11,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "y = self.find(self.par[x])",
+        "line": 11,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "self.weight"
+      },
+      "from": {
+        "code": "y = self.find(self.par[x])",
+        "line": 11,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.weight"
+      },
+      "from": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.weight"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 13,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find(self, x):",
+        "line": 7,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 13,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find(self.par[x])",
+        "line": 11,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 13,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.weight[x] += self.weight[self.par[x]]",
+        "line": 12,
+        "var": "self.weight"
+      },
+      "from": {
+        "code": "self.par[x] = y",
+        "line": 13,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "x"
+      },
+      "from": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "ry"
+      },
+      "from": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "y"
+      },
+      "from": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "from": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "from": {
+        "code": "self.par[rx] = ry",
+        "line": 20,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "from": {
+        "code": "self.par[rx] = ry",
+        "line": 20,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par[rx] = ry",
+        "line": 20,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.par[rx] = ry",
+        "line": 20,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.par[rx] = ry",
+        "line": 20,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.par[rx] = ry",
+        "line": 20,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "w"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "from": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "from": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "from": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.weight[rx] = w - self.weight[x] + self.weight[y]",
+        "line": 21,
+        "var": "self.weight"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "w"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.par[ry] = rx",
+        "line": 23,
+        "var": "self.par"
+      },
+      "from": {
+        "code": "self.weight[ry] = -w - self.weight[y] + self.weight[x]",
+        "line": 24,
+        "var": "self.weight"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "rx = self.find(x)",
+        "line": 17,
+        "var": "rx"
+      },
+      "from": {
+        "code": "self.rank[rx] += 1",
+        "line": 26,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rank[rx] += 1",
+        "line": 26,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.rank[rx] += 1",
+        "line": 26,
+        "var": "self.rank"
+      },
+      "from": {
+        "code": "self.rank[rx] += 1",
+        "line": 26,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def union(self, x, y, w):",
+        "line": 16,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.rank[rx] += 1",
+        "line": 26,
+        "var": "self.rank"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ry = self.find(y)",
+        "line": 18,
+        "var": "ry"
+      },
+      "from": {
+        "code": "self.rank[rx] += 1",
+        "line": 26,
+        "var": "self.rank"
+      },
+      "label": "negative"
+    }
+  ]
+}

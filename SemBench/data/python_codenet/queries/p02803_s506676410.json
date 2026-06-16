@@ -1,0 +1,38 @@
+{
+  "data_dependency": [
+    "Does the value of variable P at line 134: <statement> P = [] </statement> depend on the value of variable A at line 133: <statement> A = [i for i in range(2, limit+1)] </statement>?",
+    "Does the value of variable visited at line 196: <statement> visited = [[0 for _ in range(w)] for _ in range(h)] </statement> depend on the value of variable INF at line 10: <statement> INF = 1 << 60 </statement>?",
+    "Does variable cnt at line 198: <statement> y, x, cnt = queue.popleft() </statement> determine the value stored in variable ans at line 201: <statement> ans = max(ans, cnt) </statement>?",
+    "Does the value of variable x2 at line 205: <statement> x2 = x + p[1] </statement> depend on the value of variable x at line 198: <statement> y, x, cnt = queue.popleft() </statement>?"
+  ],
+  "dead_code": [
+    "Is it possible for the statement return P to execute?",
+    "Can the statement for j in range(w): queue = deque([[i, j, 0]]) visited = [[0 for _ in range(w)] for _ in range(h)] while queue: y, x, cnt = queue.popleft() if not (0 <= y < h and 0 <= x < w) or visited[y][x] == 1 or s[y][x] == \"#\": continue ans = max(ans, cnt) visited[y][x] = 1 for p in [[1, 0], [-1, 0], [0, 1], [0, -1]]: y2 = y + p[0] x2 = x + p[1] queue.append([y2, x2, cnt + 1]) be considered dead code because it is never executed?",
+    "Is the statement queue.append([y2, x2, cnt + 1]) unreachable during execution?",
+    "Can the statement edgelist = [] be reached during execution?"
+  ],
+  "dominators": [
+    "Does the statement line 75: <statement> if not used[minedge%(10**6)]: continue </statement> dominate line 68: <statement> used[s] = False </statement>?",
+    "Is it guaranteed that whenever line 197: <statement> while queue: y, x, cnt = queue.popleft() if not (0 <= y < h and 0 <= x < w) or visited[y][x] == 1 or s[y][x] == \"#\": continue ans = max(ans, cnt) visited[y][x] = 1 for p in [[1, 0], [-1, 0], [0, 1], [0, -1]]: y2 = y + p[0] x2 = x + p[1] queue.append([y2, x2, cnt + 1]) </statement> is reached, the statement line 191: <statement> s = [[j for j in input()] for i in range(h)] </statement> has already been reached?",
+    "Does the statement line 185: <statement> upper_divisors.append(n//i) </statement> dominate line 183: <statement> lower_divisors.append(i) </statement>?",
+    "Does the statement line 1: <statement> import sys </statement> dominate line 190: <statement> h, w = map(int, input().split()) </statement>?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function UnionFind.members to function UnionFind.find?",
+    "Can function lcm_list eventually call function UnionFind.union?",
+    "Can function UnionFind.all_group_members eventually call function UnionFind.members?",
+    "Can function UnionFind.size eventually call function permutation_with_duplicates?"
+  ],
+  "liveness": [
+    "Does variable self.parents remain in use at the end of function UnionFind.size?",
+    "Does variable arr remain in use at the end of function factorization?",
+    "Is variable p live at the end of function is_prime?",
+    "Does variable s remain in use at the end of function __module__?"
+  ],
+  "loop_reachability": [
+    "Can the loop with condition for p in [[1, 0], [-1, 0], [0, 1], [0, -1]] be skipped entirely?",
+    "Is the loop with condition for p in [[1, 0], [-1, 0], [0, 1], [0, -1]] always executed?",
+    "Is it possible that the loop with condition True is never executed?",
+    "Is the loop with condition True always executed?"
+  ]
+}

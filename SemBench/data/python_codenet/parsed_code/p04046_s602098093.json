@@ -1,0 +1,2778 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from collections import defaultdict",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 1
+    },
+    {
+      "code": "from heapq import heappush, heappop",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 3,
+      "node_id": 2
+    },
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 4,
+      "node_id": 3
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 5,
+      "node_id": 4
+    },
+    {
+      "code": "import bisect",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 6,
+      "node_id": 5
+    },
+    {
+      "code": "import random",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 7,
+      "node_id": 6
+    },
+    {
+      "code": "mod = 1000000007",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 7
+    },
+    {
+      "code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 20,
+      "node_id": 8
+    },
+    {
+      "code": "h,w,a,b = LI()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 9
+    },
+    {
+      "code": "fact = [1]*(h+w+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 10
+    },
+    {
+      "code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 43,
+      "node_id": 11
+    },
+    {
+      "code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 12
+    },
+    {
+      "code": "inv_fact = [0]*(h+w+1)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 13
+    },
+    {
+      "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 14
+    },
+    {
+      "code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 47,
+      "node_id": 15
+    },
+    {
+      "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 16
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 17
+    },
+    {
+      "code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 50,
+      "node_id": 18
+    },
+    {
+      "code": "ans += f(b+i,a+i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 51,
+      "node_id": 19
+    },
+    {
+      "code": "ans %= mod",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 52,
+      "node_id": 20
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 53,
+      "node_id": 21
+    },
+    {
+      "code": "return list(map(int, sys.stdin.readline().split()))",
+      "dead": false,
+      "function": "LI",
+      "kind": "Return",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "return int(sys.stdin.readline())",
+      "dead": false,
+      "function": "I",
+      "kind": "Return",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(list, sys.stdin.readline().split()))",
+      "dead": false,
+      "function": "LS",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "return list(sys.stdin.readline())[:-1]",
+      "dead": false,
+      "function": "S",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "return [I() for i in range(n)]",
+      "dead": false,
+      "function": "IR",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return [LI() for i in range(n)]",
+      "dead": false,
+      "function": "LIR",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "return [S() for i in range(n)]",
+      "dead": false,
+      "function": "SR",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return [LS() for i in range(n)]",
+      "dead": false,
+      "function": "LSR",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "return fact[x-1+h-y]*fact[y-1+w-x]*inv_fact[x-1]*inv_fact[y-1]*inv_fact[w-x]*inv_fact[h-y]%mod",
+      "dead": false,
+      "function": "f",
+      "kind": "Return",
+      "line": 40,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "from collections import defaultdict",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "from heapq import heappush, heappop",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "import bisect",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "import random",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return list(map(int, sys.stdin.readline().split()))",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return int(sys.stdin.readline())",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return list(map(list, sys.stdin.readline().split()))",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return list(sys.stdin.readline())[:-1]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return [I() for i in range(n)]",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return [LI() for i in range(n)]",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "return [S() for i in range(n)]",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return [LS() for i in range(n)]",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "mod = 1000000007",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return fact[x-1+h-y]*fact[y-1+w-x]*inv_fact[x-1]*inv_fact[y-1]*inv_fact[w-x]*inv_fact[h-y]%mod",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "h,w,a,b = LI()",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "fact = [1]*(h+w+1)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "inv_fact = [0]*(h+w+1)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "ans += f(b+i,a+i)",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "ans %= mod",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 53
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p04046_s602098093.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 8,
+      "name": "LI",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 9,
+      "lineno": 9,
+      "name": "I",
+      "variables": [
+        "sys.stdin"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 10,
+      "name": "LS",
+      "variables": [
+        "list"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 11,
+      "lineno": 11,
+      "name": "S",
+      "variables": []
+    },
+    {
+      "calls": [
+        "I"
+      ],
+      "end_lineno": 12,
+      "lineno": 12,
+      "name": "IR",
+      "variables": [
+        "n"
+      ]
+    },
+    {
+      "calls": [
+        "LI"
+      ],
+      "end_lineno": 13,
+      "lineno": 13,
+      "name": "LIR",
+      "variables": [
+        "n"
+      ]
+    },
+    {
+      "calls": [
+        "S"
+      ],
+      "end_lineno": 14,
+      "lineno": 14,
+      "name": "SR",
+      "variables": [
+        "n"
+      ]
+    },
+    {
+      "calls": [
+        "LS"
+      ],
+      "end_lineno": 15,
+      "lineno": 15,
+      "name": "LSR",
+      "variables": [
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 40,
+      "lineno": 39,
+      "name": "f",
+      "variables": [
+        "fact",
+        "h",
+        "inv_fact",
+        "mod",
+        "w",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "I": {
+        "base_liveout": [
+          "sys.stdin"
+        ],
+        "live_before": [
+          {
+            "code": "return int(sys.stdin.readline())",
+            "line": 9,
+            "vars": [
+              "sys.stdin"
+            ]
+          }
+        ],
+        "liveout": {
+          "sys.stdin": true
+        },
+        "return_vars": [
+          "sys.stdin"
+        ]
+      },
+      "IR": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return [I() for i in range(n)]",
+            "line": 12,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "LI": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int, sys.stdin.readline().split()))",
+            "line": 8,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "LIR": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return [LI() for i in range(n)]",
+            "line": 13,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "LS": {
+        "base_liveout": [
+          "list"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(list, sys.stdin.readline().split()))",
+            "line": 10,
+            "vars": [
+              "list"
+            ]
+          }
+        ],
+        "liveout": {
+          "list": true
+        },
+        "return_vars": [
+          "list"
+        ]
+      },
+      "LSR": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return [LS() for i in range(n)]",
+            "line": 15,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "S": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return list(sys.stdin.readline())[:-1]",
+            "line": 11,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "SR": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return [S() for i in range(n)]",
+            "line": 14,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from collections import defaultdict",
+            "line": 2,
+            "vars": []
+          },
+          {
+            "code": "from heapq import heappush, heappop",
+            "line": 3,
+            "vars": []
+          },
+          {
+            "code": "import sys",
+            "line": 4,
+            "vars": []
+          },
+          {
+            "code": "import math",
+            "line": 5,
+            "vars": []
+          },
+          {
+            "code": "import bisect",
+            "line": 6,
+            "vars": []
+          },
+          {
+            "code": "import random",
+            "line": 7,
+            "vars": []
+          },
+          {
+            "code": "mod = 1000000007",
+            "line": 16,
+            "vars": []
+          },
+          {
+            "code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+            "line": 20,
+            "vars": [
+              "mod"
+            ]
+          },
+          {
+            "code": "h,w,a,b = LI()",
+            "line": 41,
+            "vars": [
+              "mod"
+            ]
+          },
+          {
+            "code": "fact = [1]*(h+w+1)",
+            "line": 42,
+            "vars": [
+              "a",
+              "b",
+              "h",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+            "line": 43,
+            "vars": [
+              "a",
+              "b",
+              "fact",
+              "h",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "fact[i+1] = fact[i]*(i+1)%mod",
+            "line": 44,
+            "vars": [
+              "a",
+              "b",
+              "fact",
+              "h",
+              "i",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "inv_fact = [0]*(h+w+1)",
+            "line": 45,
+            "vars": [
+              "a",
+              "b",
+              "fact",
+              "h",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+            "line": 46,
+            "vars": [
+              "a",
+              "b",
+              "fact",
+              "h",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+            "line": 47,
+            "vars": [
+              "a",
+              "b",
+              "h",
+              "inv_fact",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+            "line": 48,
+            "vars": [
+              "a",
+              "b",
+              "h",
+              "i",
+              "inv_fact",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 49,
+            "vars": [
+              "a",
+              "b",
+              "h",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+            "line": 50,
+            "vars": [
+              "a",
+              "b",
+              "h",
+              "mod",
+              "w"
+            ]
+          },
+          {
+            "code": "ans += f(b+i,a+i)",
+            "line": 51,
+            "vars": [
+              "a",
+              "b",
+              "i",
+              "mod"
+            ]
+          },
+          {
+            "code": "ans %= mod",
+            "line": 52,
+            "vars": [
+              "mod"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 53,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "ans": false,
+          "b": false,
+          "fact": false,
+          "h": false,
+          "i": false,
+          "inv_fact": false,
+          "mod": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "f": {
+        "base_liveout": [
+          "fact",
+          "h",
+          "inv_fact",
+          "mod",
+          "w",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "return fact[x-1+h-y]*fact[y-1+w-x]*inv_fact[x-1]*inv_fact[y-1]*inv_fact[w-x]*inv_fact[h-y]%mod",
+            "line": 40,
+            "vars": [
+              "fact",
+              "h",
+              "inv_fact",
+              "mod",
+              "w",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "fact": true,
+          "h": true,
+          "inv_fact": true,
+          "mod": true,
+          "w": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "fact",
+          "h",
+          "inv_fact",
+          "mod",
+          "w",
+          "x",
+          "y"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h+w):",
+      "cond": "for i in range(h+w)",
+      "function": "__module__",
+      "header_id": 11,
+      "line": 43,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(h+w)[:",
+      "cond": "for i in range(h+w)[",
+      "function": "__module__",
+      "header_id": 15,
+      "line": 47,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(1,min(w-b,h-a)+1):",
+      "cond": "for i in range(1,min(w-b,h-a)+1)",
+      "function": "__module__",
+      "header_id": 18,
+      "line": 50,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "from heapq import heappush, heappop",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "import sys",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "import sys",
+      "b_line": 4,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "import math",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "import math",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "import math",
+      "b_line": 5,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "import bisect",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "import bisect",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "import bisect",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "import bisect",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "import random",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "import random",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "import random",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "import random",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "import random",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "mod = 1000000007",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "mod = 1000000007",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "mod = 1000000007",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "mod = 1000000007",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "mod = 1000000007",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "mod = 1000000007",
+      "b_line": 16,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "h,w,a,b = LI()",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "fact = [1]*(h+w+1)",
+      "b_line": 42,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 43,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "fact[i+1] = fact[i]*(i+1)%mod",
+      "b_line": 44,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "inv_fact = [0]*(h+w+1)",
+      "b_line": 45,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "a_line": 47,
+      "b_code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "a_line": 47,
+      "b_code": "ans = 0",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "a_line": 47,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 49,
+      "b_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "a_line": 47,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 49,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "a_line": 50,
+      "b_code": "ans += f(b+i,a+i)",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "a_line": 47,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 49,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "a_line": 50,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans += f(b+i,a+i)",
+      "a_line": 51,
+      "b_code": "ans %= mod",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import defaultdict",
+      "a_line": 2,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from heapq import heappush, heappop",
+      "a_line": 3,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 4,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 5,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import bisect",
+      "a_line": 6,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import random",
+      "a_line": 7,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "mod = 1000000007",
+      "a_line": 16,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "\"\"\" def check(n): n = list(map(int,list(str(n)))) s = 0 for i in n: s += f[i] return s == 0 n,k = LI() d = LI() f = [0 for i in range(10)] for i in d: f[i] = 1 while 1: if check(n): print(n) quit() n += 1 \"\"\"",
+      "a_line": 20,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "h,w,a,b = LI()",
+      "a_line": 41,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "fact = [1]*(h+w+1)",
+      "a_line": 42,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w): fact[i+1] = fact[i]*(i+1)%mod",
+      "a_line": 43,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact = [0]*(h+w+1)",
+      "a_line": 45,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+      "a_line": 46,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(h+w)[::-1]: inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+      "a_line": 47,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 49,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(1,min(w-b,h-a)+1): ans += f(b+i,a+i) ans %= mod",
+      "a_line": 50,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.stdin.readline at line 10",
+      "external attribute call skipped sys.stdin.readline at line 11",
+      "external attribute call skipped sys.stdin.readline at line 8",
+      "external attribute call skipped sys.stdin.readline at line 9",
+      "external call skipped pow at line 46"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.stdin.readline at line 10",
+    "external attribute call skipped sys.stdin.readline at line 11",
+    "external attribute call skipped sys.stdin.readline at line 8",
+    "external attribute call skipped sys.stdin.readline at line 9",
+    "external call skipped pow at line 46"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "a"
+      },
+      "from": {
+        "code": "mod = 1000000007",
+        "line": 16,
+        "var": "mod"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "ans"
+      },
+      "from": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "h"
+      },
+      "from": {
+        "code": "fact = [1]*(h+w+1)",
+        "line": 42,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "w"
+      },
+      "from": {
+        "code": "fact = [1]*(h+w+1)",
+        "line": 42,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "fact = [1]*(h+w+1)",
+        "line": 42,
+        "var": "fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "fact = [1]*(h+w+1)",
+        "line": 42,
+        "var": "fact"
+      },
+      "from": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "h"
+      },
+      "from": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "i"
+      },
+      "from": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "mod = 1000000007",
+        "line": 16,
+        "var": "mod"
+      },
+      "from": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "w"
+      },
+      "from": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "h"
+      },
+      "from": {
+        "code": "inv_fact = [0]*(h+w+1)",
+        "line": 45,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "w"
+      },
+      "from": {
+        "code": "inv_fact = [0]*(h+w+1)",
+        "line": 45,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "inv_fact = [0]*(h+w+1)",
+        "line": 45,
+        "var": "inv_fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "from": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "h"
+      },
+      "from": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "i"
+      },
+      "from": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "mod = 1000000007",
+        "line": 16,
+        "var": "mod"
+      },
+      "from": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "w"
+      },
+      "from": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "h"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "i"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "inv_fact[h+w] = pow(fact[-1],mod-2,mod)",
+        "line": 46,
+        "var": "inv_fact"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "mod = 1000000007",
+        "line": 16,
+        "var": "mod"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "w"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "inv_fact[i] = inv_fact[i+1]*(i+1)%mod",
+        "line": 48,
+        "var": "inv_fact"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans += f(b+i,a+i)",
+        "line": 51,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "b"
+      },
+      "from": {
+        "code": "ans += f(b+i,a+i)",
+        "line": 51,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += f(b+i,a+i)",
+        "line": 51,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += f(b+i,a+i)",
+        "line": 51,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "fact[i+1] = fact[i]*(i+1)%mod",
+        "line": 44,
+        "var": "fact"
+      },
+      "from": {
+        "code": "ans += f(b+i,a+i)",
+        "line": 51,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "mod = 1000000007",
+        "line": 16,
+        "var": "mod"
+      },
+      "from": {
+        "code": "ans %= mod",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h,w,a,b = LI()",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans %= mod",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

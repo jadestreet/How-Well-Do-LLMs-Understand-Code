@@ -1,0 +1,3610 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from fractions import gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "N = int(input())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 2
+    },
+    {
+      "code": "A = list(map(int, input().split()))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 3
+    },
+    {
+      "code": "seg = SegTree(A, gcd, 0)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 4
+    },
+    {
+      "code": "ans = 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 5
+    },
+    {
+      "code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 50,
+      "node_id": 6
+    },
+    {
+      "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 7
+    },
+    {
+      "code": "ans = max(v, ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 8
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 53,
+      "node_id": 9
+    },
+    {
+      "code": "self.n = len(lists)",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "self.K = (self.n-1).bit_length()",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "self.f = function",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 3
+    },
+    {
+      "code": "self.b = basement",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 4
+    },
+    {
+      "code": "self.seg = [basement]*2**(self.K+1)",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 5
+    },
+    {
+      "code": "X = 2**self.K",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 6
+    },
+    {
+      "code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "For",
+      "line": 13,
+      "node_id": 7
+    },
+    {
+      "code": "self.seg[i+X] = v",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 8
+    },
+    {
+      "code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "For",
+      "line": 15,
+      "node_id": 9
+    },
+    {
+      "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "dead": false,
+      "function": "SegTree.__init__",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 10
+    },
+    {
+      "code": "X = 2**self.K",
+      "dead": false,
+      "function": "SegTree.update",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "k += X",
+      "dead": false,
+      "function": "SegTree.update",
+      "kind": "AugAssign",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "self.seg[k] = value",
+      "dead": false,
+      "function": "SegTree.update",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "dead": false,
+      "function": "SegTree.update",
+      "kind": "While",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "k = k >> 1",
+      "dead": false,
+      "function": "SegTree.update",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 5
+    },
+    {
+      "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "dead": false,
+      "function": "SegTree.update",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 6
+    },
+    {
+      "code": "num = 2**self.K",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 1
+    },
+    {
+      "code": "L += num",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "AugAssign",
+      "line": 28,
+      "node_id": 2
+    },
+    {
+      "code": "R += num",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "AugAssign",
+      "line": 29,
+      "node_id": 3
+    },
+    {
+      "code": "vL = self.b",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 4
+    },
+    {
+      "code": "vR = self.b",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 5
+    },
+    {
+      "code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "While",
+      "line": 32,
+      "node_id": 6
+    },
+    {
+      "code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "If",
+      "line": 33,
+      "node_id": 7
+    },
+    {
+      "code": "vL = self.f(vL, self.seg[L])",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 8
+    },
+    {
+      "code": "L += 1",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "AugAssign",
+      "line": 35,
+      "node_id": 9
+    },
+    {
+      "code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "If",
+      "line": 36,
+      "node_id": 10
+    },
+    {
+      "code": "R -= 1",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "AugAssign",
+      "line": 37,
+      "node_id": 11
+    },
+    {
+      "code": "vR = self.f(self.seg[R], vR)",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 12
+    },
+    {
+      "code": "L >>= 1",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "AugAssign",
+      "line": 39,
+      "node_id": 13
+    },
+    {
+      "code": "R >>= 1",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "AugAssign",
+      "line": 40,
+      "node_id": 14
+    },
+    {
+      "code": "return self.f(vL, vR)",
+      "dead": false,
+      "function": "SegTree.query",
+      "kind": "Return",
+      "line": 41,
+      "node_id": 15
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "from fractions import gcd",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "self.n = len(lists)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.K = (self.n-1).bit_length()",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.f = function",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "self.b = basement",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "self.seg = [basement]*2**(self.K+1)",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "X = 2**self.K",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "self.seg[i+X] = v",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "X = 2**self.K",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "k += X",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "self.seg[k] = value",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "k = k >> 1",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "num = 2**self.K",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "L += num",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "R += num",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "vL = self.b",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "vR = self.b",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "vL = self.f(vL, self.seg[L])",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "L += 1",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "R -= 1",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "vR = self.f(self.seg[R], vR)",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "L >>= 1",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "R >>= 1",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "return self.f(vL, vR)",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "N = int(input())",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "A = list(map(int, input().split()))",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "seg = SegTree(A, gcd, 0)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "ans = 1",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "ans = max(v, ans)",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 53
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p03061_s770380874.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 6,
+      "name": "SegTree.__init__",
+      "variables": [
+        "X",
+        "basement",
+        "function",
+        "i",
+        "lists",
+        "self",
+        "self.K",
+        "self.b",
+        "self.f",
+        "self.n",
+        "self.seg",
+        "v"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 24,
+      "lineno": 18,
+      "name": "SegTree.update",
+      "variables": [
+        "X",
+        "k",
+        "self",
+        "self.K",
+        "self.seg",
+        "value"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 41,
+      "lineno": 26,
+      "name": "SegTree.query",
+      "variables": [
+        "L",
+        "R",
+        "num",
+        "self",
+        "self.K",
+        "self.b",
+        "self.seg",
+        "vL",
+        "vR"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "SegTree.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.n = len(lists)",
+            "line": 7,
+            "vars": [
+              "basement",
+              "function",
+              "lists",
+              "self"
+            ]
+          },
+          {
+            "code": "self.K = (self.n-1).bit_length()",
+            "line": 8,
+            "vars": [
+              "basement",
+              "function",
+              "lists",
+              "self"
+            ]
+          },
+          {
+            "code": "self.f = function",
+            "line": 9,
+            "vars": [
+              "basement",
+              "function",
+              "lists",
+              "self",
+              "self.K"
+            ]
+          },
+          {
+            "code": "self.b = basement",
+            "line": 10,
+            "vars": [
+              "basement",
+              "lists",
+              "self",
+              "self.K"
+            ]
+          },
+          {
+            "code": "self.seg = [basement]*2**(self.K+1)",
+            "line": 11,
+            "vars": [
+              "basement",
+              "lists",
+              "self",
+              "self.K"
+            ]
+          },
+          {
+            "code": "X = 2**self.K",
+            "line": 12,
+            "vars": [
+              "lists",
+              "self",
+              "self.K"
+            ]
+          },
+          {
+            "code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+            "line": 13,
+            "vars": [
+              "X",
+              "lists",
+              "self"
+            ]
+          },
+          {
+            "code": "self.seg[i+X] = v",
+            "line": 14,
+            "vars": [
+              "X",
+              "i",
+              "self",
+              "v"
+            ]
+          },
+          {
+            "code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+            "line": 15,
+            "vars": [
+              "X",
+              "self",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+            "line": 16,
+            "vars": [
+              "i",
+              "self",
+              "self.seg"
+            ]
+          }
+        ],
+        "liveout": {
+          "X": false,
+          "basement": false,
+          "function": false,
+          "i": false,
+          "lists": false,
+          "self": false,
+          "self.K": false,
+          "self.b": false,
+          "self.f": false,
+          "self.n": false,
+          "self.seg": false,
+          "v": false
+        },
+        "return_vars": []
+      },
+      "SegTree.query": {
+        "base_liveout": [
+          "self",
+          "vL",
+          "vR"
+        ],
+        "live_before": [
+          {
+            "code": "num = 2**self.K",
+            "line": 27,
+            "vars": [
+              "self",
+              "self.K",
+              "self.b",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "L += num",
+            "line": 28,
+            "vars": [
+              "num",
+              "self",
+              "self.b",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "R += num",
+            "line": 29,
+            "vars": [
+              "L",
+              "num",
+              "self",
+              "self.b",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "vL = self.b",
+            "line": 30,
+            "vars": [
+              "L",
+              "R",
+              "self",
+              "self.b",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "vR = self.b",
+            "line": 31,
+            "vars": [
+              "L",
+              "R",
+              "self",
+              "self.b",
+              "self.seg",
+              "vL"
+            ]
+          },
+          {
+            "code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+            "line": 32,
+            "vars": [
+              "L",
+              "R",
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+            "line": 33,
+            "vars": [
+              "L",
+              "R",
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "vL = self.f(vL, self.seg[L])",
+            "line": 34,
+            "vars": [
+              "L",
+              "R",
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "L += 1",
+            "line": 35,
+            "vars": [
+              "R",
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+            "line": 36,
+            "vars": [
+              "R",
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "R -= 1",
+            "line": 37,
+            "vars": [
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "vR = self.f(self.seg[R], vR)",
+            "line": 38,
+            "vars": [
+              "R",
+              "self",
+              "self.seg",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "L >>= 1",
+            "line": 39,
+            "vars": [
+              "self",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "R >>= 1",
+            "line": 40,
+            "vars": [
+              "self",
+              "vL",
+              "vR"
+            ]
+          },
+          {
+            "code": "return self.f(vL, vR)",
+            "line": 41,
+            "vars": [
+              "self",
+              "vL",
+              "vR"
+            ]
+          }
+        ],
+        "liveout": {
+          "L": false,
+          "R": false,
+          "num": false,
+          "self": true,
+          "self.K": false,
+          "self.b": false,
+          "self.seg": false,
+          "vL": true,
+          "vR": true
+        },
+        "return_vars": [
+          "self",
+          "vL",
+          "vR"
+        ]
+      },
+      "SegTree.update": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "X = 2**self.K",
+            "line": 19,
+            "vars": [
+              "self",
+              "self.K",
+              "value"
+            ]
+          },
+          {
+            "code": "k += X",
+            "line": 20,
+            "vars": [
+              "X",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "self.seg[k] = value",
+            "line": 21,
+            "vars": [
+              "k",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+            "line": 22,
+            "vars": [
+              "k",
+              "self",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "k = k >> 1",
+            "line": 23,
+            "vars": [
+              "k",
+              "self",
+              "self.seg"
+            ]
+          },
+          {
+            "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+            "line": 24,
+            "vars": [
+              "k",
+              "self",
+              "self.seg"
+            ]
+          }
+        ],
+        "liveout": {
+          "X": false,
+          "k": false,
+          "self": false,
+          "self.K": false,
+          "self.seg": false,
+          "value": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from fractions import gcd",
+            "line": 1,
+            "vars": [
+              "gcd",
+              "int"
+            ]
+          },
+          {
+            "code": "N = int(input())",
+            "line": 46,
+            "vars": [
+              "gcd",
+              "int"
+            ]
+          },
+          {
+            "code": "A = list(map(int, input().split()))",
+            "line": 47,
+            "vars": [
+              "N",
+              "gcd",
+              "int"
+            ]
+          },
+          {
+            "code": "seg = SegTree(A, gcd, 0)",
+            "line": 48,
+            "vars": [
+              "A",
+              "N",
+              "gcd"
+            ]
+          },
+          {
+            "code": "ans = 1",
+            "line": 49,
+            "vars": [
+              "N",
+              "seg"
+            ]
+          },
+          {
+            "code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+            "line": 50,
+            "vars": [
+              "N",
+              "ans",
+              "seg"
+            ]
+          },
+          {
+            "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+            "line": 51,
+            "vars": [
+              "N",
+              "ans",
+              "i",
+              "seg"
+            ]
+          },
+          {
+            "code": "ans = max(v, ans)",
+            "line": 52,
+            "vars": [
+              "ans",
+              "v"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 53,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "A": false,
+          "N": false,
+          "ans": false,
+          "gcd": false,
+          "i": false,
+          "int": false,
+          "seg": false,
+          "v": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i, v in enumerate(lists):",
+      "cond": "for i, v in enumerate(lists)",
+      "function": "SegTree.__init__",
+      "header_id": 7,
+      "line": 13,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(X-1, 0, -1):",
+      "cond": "for i in range(X-1, 0, -1)",
+      "function": "SegTree.__init__",
+      "header_id": 9,
+      "line": 15,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while L < R:",
+      "cond": "L < R",
+      "function": "SegTree.query",
+      "header_id": 6,
+      "line": 32,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while k:",
+      "cond": "k",
+      "function": "SegTree.update",
+      "header_id": 4,
+      "line": 22,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(-1, N):",
+      "cond": "for i in range(-1, N)",
+      "function": "__module__",
+      "header_id": 6,
+      "line": 50,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "N = int(input())",
+      "b_line": 46,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "A = list(map(int, input().split()))",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "A = list(map(int, input().split()))",
+      "b_line": 47,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "seg = SegTree(A, gcd, 0)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "seg = SegTree(A, gcd, 0)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = list(map(int, input().split()))",
+      "a_line": 47,
+      "b_code": "seg = SegTree(A, gcd, 0)",
+      "b_line": 48,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "ans = 1",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "ans = 1",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = list(map(int, input().split()))",
+      "a_line": 47,
+      "b_code": "ans = 1",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "seg = SegTree(A, gcd, 0)",
+      "a_line": 48,
+      "b_code": "ans = 1",
+      "b_line": 49,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = list(map(int, input().split()))",
+      "a_line": 47,
+      "b_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "seg = SegTree(A, gcd, 0)",
+      "a_line": 48,
+      "b_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 1",
+      "a_line": 49,
+      "b_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "b_line": 50,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = list(map(int, input().split()))",
+      "a_line": 47,
+      "b_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "seg = SegTree(A, gcd, 0)",
+      "a_line": 48,
+      "b_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 1",
+      "a_line": 49,
+      "b_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "a_line": 50,
+      "b_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = list(map(int, input().split()))",
+      "a_line": 47,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "seg = SegTree(A, gcd, 0)",
+      "a_line": 48,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 1",
+      "a_line": 49,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "a_line": 50,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+      "a_line": 51,
+      "b_code": "ans = max(v, ans)",
+      "b_line": 52,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 1,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = int(input())",
+      "a_line": 46,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "A = list(map(int, input().split()))",
+      "a_line": 47,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "seg = SegTree(A, gcd, 0)",
+      "a_line": 48,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 1",
+      "a_line": 49,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(-1, N): v = gcd(seg.query(0, i), seg.query(i+1, N)) ans = max(v, ans)",
+      "a_line": 50,
+      "b_code": "print(ans)",
+      "b_line": 53,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "self.K = (self.n-1).bit_length()",
+      "b_line": 8,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "self.f = function",
+      "b_line": 9,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "self.f = function",
+      "b_line": 9,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "self.b = basement",
+      "b_line": 10,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "self.b = basement",
+      "b_line": 10,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "self.b = basement",
+      "b_line": 10,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "self.seg = [basement]*2**(self.K+1)",
+      "b_line": 11,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "self.seg = [basement]*2**(self.K+1)",
+      "b_line": 11,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "self.seg = [basement]*2**(self.K+1)",
+      "b_line": 11,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.b = basement",
+      "a_line": 10,
+      "b_code": "self.seg = [basement]*2**(self.K+1)",
+      "b_line": 11,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "X = 2**self.K",
+      "b_line": 12,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "X = 2**self.K",
+      "b_line": 12,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "X = 2**self.K",
+      "b_line": 12,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.b = basement",
+      "a_line": 10,
+      "b_code": "X = 2**self.K",
+      "b_line": 12,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.seg = [basement]*2**(self.K+1)",
+      "a_line": 11,
+      "b_code": "X = 2**self.K",
+      "b_line": 12,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "b_line": 13,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "b_line": 13,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "b_line": 13,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.b = basement",
+      "a_line": 10,
+      "b_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "b_line": 13,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.seg = [basement]*2**(self.K+1)",
+      "a_line": 11,
+      "b_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "b_line": 13,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 12,
+      "b_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "b_line": 13,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.b = basement",
+      "a_line": 10,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.seg = [basement]*2**(self.K+1)",
+      "a_line": 11,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 12,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "a_line": 13,
+      "b_code": "self.seg[i+X] = v",
+      "b_line": 14,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.b = basement",
+      "a_line": 10,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.seg = [basement]*2**(self.K+1)",
+      "a_line": 11,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 12,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "a_line": 13,
+      "b_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 15,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.n = len(lists)",
+      "a_line": 7,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.K = (self.n-1).bit_length()",
+      "a_line": 8,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.f = function",
+      "a_line": 9,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.b = basement",
+      "a_line": 10,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "self.seg = [basement]*2**(self.K+1)",
+      "a_line": 11,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 12,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "for i, v in enumerate(lists): self.seg[i+X] = v",
+      "a_line": 13,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "for i in range(X-1, 0, -1): self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "a_line": 15,
+      "b_code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+      "b_line": 16,
+      "function": "SegTree.__init__"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 19,
+      "b_code": "k += X",
+      "b_line": 20,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 19,
+      "b_code": "self.seg[k] = value",
+      "b_line": 21,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "k += X",
+      "a_line": 20,
+      "b_code": "self.seg[k] = value",
+      "b_line": 21,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 19,
+      "b_code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 22,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "k += X",
+      "a_line": 20,
+      "b_code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 22,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "self.seg[k] = value",
+      "a_line": 21,
+      "b_code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 22,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 19,
+      "b_code": "k = k >> 1",
+      "b_line": 23,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "k += X",
+      "a_line": 20,
+      "b_code": "k = k >> 1",
+      "b_line": 23,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "self.seg[k] = value",
+      "a_line": 21,
+      "b_code": "k = k >> 1",
+      "b_line": 23,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "a_line": 22,
+      "b_code": "k = k >> 1",
+      "b_line": 23,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "X = 2**self.K",
+      "a_line": 19,
+      "b_code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 24,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "k += X",
+      "a_line": 20,
+      "b_code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 24,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "self.seg[k] = value",
+      "a_line": 21,
+      "b_code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 24,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "while k: k = k >> 1 self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "a_line": 22,
+      "b_code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 24,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "k = k >> 1",
+      "a_line": 23,
+      "b_code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+      "b_line": 24,
+      "function": "SegTree.update"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "L += num",
+      "b_line": 28,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "R += num",
+      "b_line": 29,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "R += num",
+      "b_line": 29,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "vL = self.b",
+      "b_line": 30,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "vL = self.b",
+      "b_line": 30,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "vL = self.b",
+      "b_line": 30,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "vR = self.b",
+      "b_line": 31,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "vR = self.b",
+      "b_line": 31,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "vR = self.b",
+      "b_line": 31,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "vR = self.b",
+      "b_line": 31,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "b_line": 32,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "b_line": 32,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "b_line": 32,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "b_line": 32,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "b_line": 32,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "b_line": 33,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "b_line": 33,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "b_line": 33,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "b_line": 33,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "b_line": 33,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "b_line": 33,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "vL = self.f(vL, self.seg[L])",
+      "b_line": 34,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.f(vL, self.seg[L])",
+      "a_line": 34,
+      "b_code": "L += 1",
+      "b_line": 35,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "b_line": 36,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "a_line": 36,
+      "b_code": "R -= 1",
+      "b_line": 37,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "a_line": 36,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R -= 1",
+      "a_line": 37,
+      "b_code": "vR = self.f(self.seg[R], vR)",
+      "b_line": 38,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "a_line": 36,
+      "b_code": "L >>= 1",
+      "b_line": 39,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if L & 1: vL = self.f(vL, self.seg[L]) L += 1",
+      "a_line": 33,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "if R & 1: R -= 1 vR = self.f(self.seg[R], vR)",
+      "a_line": 36,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L >>= 1",
+      "a_line": 39,
+      "b_code": "R >>= 1",
+      "b_line": 40,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "num = 2**self.K",
+      "a_line": 27,
+      "b_code": "return self.f(vL, vR)",
+      "b_line": 41,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "L += num",
+      "a_line": 28,
+      "b_code": "return self.f(vL, vR)",
+      "b_line": 41,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "R += num",
+      "a_line": 29,
+      "b_code": "return self.f(vL, vR)",
+      "b_line": 41,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vL = self.b",
+      "a_line": 30,
+      "b_code": "return self.f(vL, vR)",
+      "b_line": 41,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "vR = self.b",
+      "a_line": 31,
+      "b_code": "return self.f(vL, vR)",
+      "b_line": 41,
+      "function": "SegTree.query"
+    },
+    {
+      "a_code": "while L < R: if L & 1: vL = self.f(vL, self.seg[L]) L += 1 if R & 1: R -= 1 vR = self.f(self.seg[R], vR) L >>= 1 R >>= 1",
+      "a_line": 32,
+      "b_code": "return self.f(vL, vR)",
+      "b_line": 41,
+      "function": "SegTree.query"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped seg.query at line 51",
+      "external attribute call skipped self.f at line 16",
+      "external attribute call skipped self.f at line 24",
+      "external attribute call skipped self.f at line 34",
+      "external attribute call skipped self.f at line 38",
+      "external attribute call skipped self.f at line 41",
+      "external attribute call skipped unknown.bit_length at line 8",
+      "external call skipped gcd at line 51",
+      "external call skipped input at line 46",
+      "external call skipped input at line 47"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped seg.query at line 51",
+    "external attribute call skipped self.f at line 16",
+    "external attribute call skipped self.f at line 24",
+    "external attribute call skipped self.f at line 34",
+    "external attribute call skipped self.f at line 38",
+    "external attribute call skipped self.f at line 41",
+    "external attribute call skipped unknown.bit_length at line 8",
+    "external call skipped gcd at line 51",
+    "external call skipped input at line 46",
+    "external call skipped input at line 47"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "A"
+      },
+      "from": {
+        "code": "N = int(input())",
+        "line": 46,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "int"
+      },
+      "from": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "A"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 46,
+        "var": "N"
+      },
+      "from": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "A"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "A"
+      },
+      "from": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "gcd"
+      },
+      "from": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "int"
+      },
+      "from": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 46,
+        "var": "N"
+      },
+      "from": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "seg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = 1",
+        "line": 49,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "A"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 46,
+        "var": "N"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "gcd"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "i"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "int"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "seg"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 1",
+        "line": 49,
+        "var": "ans"
+      },
+      "from": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "A = list(map(int, input().split()))",
+        "line": 47,
+        "var": "A"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N = int(input())",
+        "line": 46,
+        "var": "N"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = 1",
+        "line": 49,
+        "var": "ans"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "gcd"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "seg = SegTree(A, gcd, 0)",
+        "line": 48,
+        "var": "seg"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = gcd(seg.query(0, i), seg.query(i+1, N))",
+        "line": 51,
+        "var": "v"
+      },
+      "from": {
+        "code": "ans = max(v, ans)",
+        "line": 52,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "lists"
+      },
+      "from": {
+        "code": "self.n = len(lists)",
+        "line": 7,
+        "var": "self.n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.n = len(lists)",
+        "line": 7,
+        "var": "self.n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.K = (self.n-1).bit_length()",
+        "line": 8,
+        "var": "self.K"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "function"
+      },
+      "from": {
+        "code": "self.f = function",
+        "line": 9,
+        "var": "self.f"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.f = function",
+        "line": 9,
+        "var": "self.f"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "basement"
+      },
+      "from": {
+        "code": "self.b = basement",
+        "line": 10,
+        "var": "self.b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.b = basement",
+        "line": 10,
+        "var": "self.b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "basement"
+      },
+      "from": {
+        "code": "self.seg = [basement]*2**(self.K+1)",
+        "line": 11,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.K = (self.n-1).bit_length()",
+        "line": 8,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "self.seg = [basement]*2**(self.K+1)",
+        "line": 11,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.seg = [basement]*2**(self.K+1)",
+        "line": 11,
+        "var": "self.seg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self.K = (self.n-1).bit_length()",
+        "line": 8,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "X = 2**self.K",
+        "line": 12,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "basement"
+      },
+      "from": {
+        "code": "X = 2**self.K",
+        "line": 12,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 12,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "i"
+      },
+      "from": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.K = (self.n-1).bit_length()",
+        "line": 8,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "v"
+      },
+      "from": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "basement"
+      },
+      "from": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "self.seg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 12,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.K = (self.n-1).bit_length()",
+        "line": 8,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[i+X] = v",
+        "line": 14,
+        "var": "self.seg"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "v"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, lists, function, basement):",
+        "line": 6,
+        "var": "basement"
+      },
+      "from": {
+        "code": "self.seg[i] = self.f(self.seg[i << 1], self.seg[i << 1 | 1])",
+        "line": 16,
+        "var": "self.seg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "k"
+      },
+      "from": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "X"
+      },
+      "from": {
+        "code": "k += X",
+        "line": 20,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k += X",
+        "line": 20,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "k += X",
+        "line": 20,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "self"
+      },
+      "from": {
+        "code": "k += X",
+        "line": 20,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k += X",
+        "line": 20,
+        "var": "k"
+      },
+      "from": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.seg"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "X"
+      },
+      "from": {
+        "code": "k = k >> 1",
+        "line": 23,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k += X",
+        "line": 20,
+        "var": "k"
+      },
+      "from": {
+        "code": "k = k >> 1",
+        "line": 23,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = k >> 1",
+        "line": 23,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "k = k >> 1",
+        "line": 23,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "self"
+      },
+      "from": {
+        "code": "k = k >> 1",
+        "line": 23,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = 2**self.K",
+        "line": 19,
+        "var": "X"
+      },
+      "from": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = k >> 1",
+        "line": 23,
+        "var": "k"
+      },
+      "from": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.seg[k] = value",
+        "line": 21,
+        "var": "self.seg"
+      },
+      "from": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def update(self, k, value):",
+        "line": 18,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.seg[k] = self.f(self.seg[k << 1], self.seg[(k << 1) | 1])",
+        "line": 24,
+        "var": "self.seg"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "num = 2**self.K",
+        "line": 27,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "num = 2**self.K",
+        "line": 27,
+        "var": "num"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, L, R):",
+        "line": 26,
+        "var": "L"
+      },
+      "from": {
+        "code": "num = 2**self.K",
+        "line": 27,
+        "var": "num"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "num = 2**self.K",
+        "line": 27,
+        "var": "num"
+      },
+      "from": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L += num",
+        "line": 28,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, L, R):",
+        "line": 26,
+        "var": "R"
+      },
+      "from": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "num = 2**self.K",
+        "line": 27,
+        "var": "num"
+      },
+      "from": {
+        "code": "R += num",
+        "line": 29,
+        "var": "R"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "R += num",
+        "line": 29,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "R += num",
+        "line": 29,
+        "var": "R"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "from": {
+        "code": "R += num",
+        "line": 29,
+        "var": "R"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "vL = self.b",
+        "line": 30,
+        "var": "self.b"
+      },
+      "from": {
+        "code": "vL = self.b",
+        "line": 30,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "from": {
+        "code": "vL = self.b",
+        "line": 30,
+        "var": "vL"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "vR = self.b",
+        "line": 31,
+        "var": "self.b"
+      },
+      "from": {
+        "code": "vR = self.b",
+        "line": 31,
+        "var": "vR"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "from": {
+        "code": "vR = self.b",
+        "line": 31,
+        "var": "vR"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L += num",
+        "line": 28,
+        "var": "L"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "num = 2**self.K",
+        "line": 27,
+        "var": "num"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, L, R):",
+        "line": 26,
+        "var": "self"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "self.K"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "self.b"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "self.seg"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vL = self.b",
+        "line": 30,
+        "var": "vL"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "R += num",
+        "line": 29,
+        "var": "R"
+      },
+      "from": {
+        "code": "vL = self.f(vL, self.seg[L])",
+        "line": 34,
+        "var": "vL"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "R += num",
+        "line": 29,
+        "var": "R"
+      },
+      "from": {
+        "code": "L += 1",
+        "line": 35,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L += 1",
+        "line": 35,
+        "var": "L"
+      },
+      "from": {
+        "code": "R -= 1",
+        "line": 37,
+        "var": "R"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "R -= 1",
+        "line": 37,
+        "var": "R"
+      },
+      "from": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "vR"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def query(self, L, R):",
+        "line": 26,
+        "var": "self"
+      },
+      "from": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "vR"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "self.b"
+      },
+      "from": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "vR"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "self.seg"
+      },
+      "from": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "vR"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "vR = self.b",
+        "line": 31,
+        "var": "vR"
+      },
+      "from": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "vR"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "L += 1",
+        "line": 35,
+        "var": "L"
+      },
+      "from": {
+        "code": "vR = self.f(self.seg[R], vR)",
+        "line": 38,
+        "var": "vR"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "R -= 1",
+        "line": 37,
+        "var": "R"
+      },
+      "from": {
+        "code": "L >>= 1",
+        "line": 39,
+        "var": "L"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "L >>= 1",
+        "line": 39,
+        "var": "L"
+      },
+      "from": {
+        "code": "R >>= 1",
+        "line": 40,
+        "var": "R"
+      },
+      "label": "negative"
+    }
+  ]
+}

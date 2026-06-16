@@ -1,0 +1,6003 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "input=sys.stdin.readline",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "if __name__==\"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 70,
+      "node_id": 3
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 71,
+      "node_id": 4
+    },
+    {
+      "code": "self.__H = H",
+      "dead": false,
+      "function": "list2D.__init__",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "self.__W = W",
+      "dead": false,
+      "function": "list2D.__init__",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "self.__dat = [num] * (H * W)",
+      "dead": false,
+      "function": "list2D.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "return self.__dat[a[0]*self.__W+a[1]]",
+      "dead": false,
+      "function": "list2D.__getitem__",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 1
+    },
+    {
+      "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+      "dead": false,
+      "function": "list2D.__setitem__",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "print(self.__dat)",
+      "dead": false,
+      "function": "list2D.debug",
+      "kind": "Expr",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "self.__H = H",
+      "dead": false,
+      "function": "list3D.__init__",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "self.__W = W",
+      "dead": false,
+      "function": "list3D.__init__",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 2
+    },
+    {
+      "code": "self.__D = D",
+      "dead": false,
+      "function": "list3D.__init__",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 3
+    },
+    {
+      "code": "self.__X = W * D",
+      "dead": false,
+      "function": "list3D.__init__",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 4
+    },
+    {
+      "code": "self.__dat = [num] * (H * W * D)",
+      "dead": false,
+      "function": "list3D.__init__",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 5
+    },
+    {
+      "code": "return self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]]",
+      "dead": false,
+      "function": "list3D.__getitem__",
+      "kind": "Return",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+      "dead": false,
+      "function": "list3D.__setitem__",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 1
+    },
+    {
+      "code": "print(self.__dat)",
+      "dead": false,
+      "function": "list3D.debug",
+      "kind": "Expr",
+      "line": 34,
+      "node_id": 1
+    },
+    {
+      "code": "r,c,k=map(int,input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 1
+    },
+    {
+      "code": "v = list2D(r, c, 0)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 2
+    },
+    {
+      "code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 40,
+      "node_id": 3
+    },
+    {
+      "code": "ri,ci,a=map(int,input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 4
+    },
+    {
+      "code": "v[ri-1, ci-1] = a",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 5
+    },
+    {
+      "code": "dp = list3D(r, c, 4, 0)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 6
+    },
+    {
+      "code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 46,
+      "node_id": 7
+    },
+    {
+      "code": "dp[0, 0, 1]=v[0, 0]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 8
+    },
+    {
+      "code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 48,
+      "node_id": 9
+    },
+    {
+      "code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 49,
+      "node_id": 10
+    },
+    {
+      "code": "val = v[i, j]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 11
+    },
+    {
+      "code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 51,
+      "node_id": 12
+    },
+    {
+      "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 13
+    },
+    {
+      "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 14
+    },
+    {
+      "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 15
+    },
+    {
+      "code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 56,
+      "node_id": 16
+    },
+    {
+      "code": "X = dp[i, j-1, 0]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 17
+    },
+    {
+      "code": "Y = dp[i, j-1, 1]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 58,
+      "node_id": 18
+    },
+    {
+      "code": "V = dp[i, j-1, 2]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 59,
+      "node_id": 19
+    },
+    {
+      "code": "Z = dp[i, j-1, 3]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 60,
+      "node_id": 20
+    },
+    {
+      "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 61,
+      "node_id": 21
+    },
+    {
+      "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 62,
+      "node_id": 22
+    },
+    {
+      "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 63,
+      "node_id": 23
+    },
+    {
+      "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 64,
+      "node_id": 24
+    },
+    {
+      "code": "ans=0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 67,
+      "node_id": 25
+    },
+    {
+      "code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 68,
+      "node_id": 26
+    },
+    {
+      "code": "ans=max(dp[r-1, c-1, i],ans)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 68,
+      "node_id": 27
+    },
+    {
+      "code": "return print(ans)",
+      "dead": false,
+      "function": "main",
+      "kind": "Return",
+      "line": 69,
+      "node_id": 28
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "input=sys.stdin.readline",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "self.__H = H",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "self.__W = W",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "self.__dat = [num] * (H * W)",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return self.__dat[a[0]*self.__W+a[1]]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "print(self.__dat)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "self.__H = H",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "self.__W = W",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "self.__D = D",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.__X = W * D",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "self.__dat = [num] * (H * W * D)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "return self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]]",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "print(self.__dat)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "r,c,k=map(int,input().split())",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "v = list2D(r, c, 0)",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "ri,ci,a=map(int,input().split())",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "v[ri-1, ci-1] = a",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "dp = list3D(r, c, 4, 0)",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "dp[0, 0, 1]=v[0, 0]",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "val = v[i, j]",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "X = dp[i, j-1, 0]",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "Y = dp[i, j-1, 1]",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "V = dp[i, j-1, 2]",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "Z = dp[i, j-1, 3]",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "ans=0",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "ans=max(dp[r-1, c-1, i],ans)",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "return print(ans)",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "if __name__==\"__main__\": main()",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 71
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p02586_s463371996.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 5,
+      "name": "list2D.__init__",
+      "variables": [
+        "H",
+        "W",
+        "num",
+        "self",
+        "self.__H",
+        "self.__W",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 11,
+      "lineno": 10,
+      "name": "list2D.__getitem__",
+      "variables": [
+        "a",
+        "self",
+        "self.__W",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 13,
+      "name": "list2D.__setitem__",
+      "variables": [
+        "a",
+        "b",
+        "self",
+        "self.__W",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 16,
+      "name": "list2D.debug",
+      "variables": [
+        "self",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 25,
+      "lineno": 20,
+      "name": "list3D.__init__",
+      "variables": [
+        "D",
+        "H",
+        "W",
+        "num",
+        "self",
+        "self.__D",
+        "self.__H",
+        "self.__W",
+        "self.__X",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 28,
+      "lineno": 27,
+      "name": "list3D.__getitem__",
+      "variables": [
+        "a",
+        "self",
+        "self.__D",
+        "self.__X",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 31,
+      "lineno": 30,
+      "name": "list3D.__setitem__",
+      "variables": [
+        "a",
+        "b",
+        "self",
+        "self.__D",
+        "self.__X",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 34,
+      "lineno": 33,
+      "name": "list3D.debug",
+      "variables": [
+        "self",
+        "self.__dat"
+      ]
+    },
+    {
+      "calls": [
+        "list2D.__init__",
+        "list3D.__init__"
+      ],
+      "end_lineno": 69,
+      "lineno": 36,
+      "name": "main",
+      "variables": [
+        "V",
+        "X",
+        "Y",
+        "Z",
+        "_",
+        "a",
+        "ans",
+        "c",
+        "ci",
+        "dp",
+        "i",
+        "int",
+        "j",
+        "k",
+        "r",
+        "ri",
+        "v",
+        "val",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "input=sys.stdin.readline",
+            "line": 2,
+            "vars": [
+              "__name__",
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "if __name__==\"__main__\": main()",
+            "line": 70,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 71,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "__name__": false,
+          "input": false,
+          "sys.stdin.readline": false
+        },
+        "return_vars": []
+      },
+      "list2D.__getitem__": {
+        "base_liveout": [
+          "a",
+          "self.__W",
+          "self.__dat"
+        ],
+        "live_before": [
+          {
+            "code": "return self.__dat[a[0]*self.__W+a[1]]",
+            "line": 11,
+            "vars": [
+              "a",
+              "self.__W",
+              "self.__dat"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "self": false,
+          "self.__W": true,
+          "self.__dat": true
+        },
+        "return_vars": [
+          "a",
+          "self.__W",
+          "self.__dat"
+        ]
+      },
+      "list2D.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.__H = H",
+            "line": 6,
+            "vars": [
+              "H",
+              "W",
+              "num"
+            ]
+          },
+          {
+            "code": "self.__W = W",
+            "line": 7,
+            "vars": [
+              "H",
+              "W",
+              "num"
+            ]
+          },
+          {
+            "code": "self.__dat = [num] * (H * W)",
+            "line": 8,
+            "vars": [
+              "H",
+              "W",
+              "num"
+            ]
+          }
+        ],
+        "liveout": {
+          "H": false,
+          "W": false,
+          "num": false,
+          "self": false,
+          "self.__H": false,
+          "self.__W": false,
+          "self.__dat": false
+        },
+        "return_vars": []
+      },
+      "list2D.__setitem__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+            "line": 14,
+            "vars": [
+              "a",
+              "b",
+              "self.__W"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "b": false,
+          "self": false,
+          "self.__W": false,
+          "self.__dat": false
+        },
+        "return_vars": []
+      },
+      "list2D.debug": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "print(self.__dat)",
+            "line": 17,
+            "vars": [
+              "self.__dat"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.__dat": false
+        },
+        "return_vars": []
+      },
+      "list3D.__getitem__": {
+        "base_liveout": [
+          "a",
+          "self.__D",
+          "self.__X",
+          "self.__dat"
+        ],
+        "live_before": [
+          {
+            "code": "return self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]]",
+            "line": 28,
+            "vars": [
+              "a",
+              "self.__D",
+              "self.__X",
+              "self.__dat"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "self": false,
+          "self.__D": true,
+          "self.__X": true,
+          "self.__dat": true
+        },
+        "return_vars": [
+          "a",
+          "self.__D",
+          "self.__X",
+          "self.__dat"
+        ]
+      },
+      "list3D.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.__H = H",
+            "line": 21,
+            "vars": [
+              "D",
+              "H",
+              "W",
+              "num"
+            ]
+          },
+          {
+            "code": "self.__W = W",
+            "line": 22,
+            "vars": [
+              "D",
+              "H",
+              "W",
+              "num"
+            ]
+          },
+          {
+            "code": "self.__D = D",
+            "line": 23,
+            "vars": [
+              "D",
+              "H",
+              "W",
+              "num"
+            ]
+          },
+          {
+            "code": "self.__X = W * D",
+            "line": 24,
+            "vars": [
+              "D",
+              "H",
+              "W",
+              "num"
+            ]
+          },
+          {
+            "code": "self.__dat = [num] * (H * W * D)",
+            "line": 25,
+            "vars": [
+              "D",
+              "H",
+              "W",
+              "num"
+            ]
+          }
+        ],
+        "liveout": {
+          "D": false,
+          "H": false,
+          "W": false,
+          "num": false,
+          "self": false,
+          "self.__D": false,
+          "self.__H": false,
+          "self.__W": false,
+          "self.__X": false,
+          "self.__dat": false
+        },
+        "return_vars": []
+      },
+      "list3D.__setitem__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+            "line": 31,
+            "vars": [
+              "a",
+              "b",
+              "self.__D",
+              "self.__X"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "b": false,
+          "self": false,
+          "self.__D": false,
+          "self.__X": false,
+          "self.__dat": false
+        },
+        "return_vars": []
+      },
+      "list3D.debug": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "print(self.__dat)",
+            "line": 34,
+            "vars": [
+              "self.__dat"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.__dat": false
+        },
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [
+          "ans"
+        ],
+        "live_before": [
+          {
+            "code": "r,c,k=map(int,input().split())",
+            "line": 37,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "v = list2D(r, c, 0)",
+            "line": 38,
+            "vars": [
+              "c",
+              "int",
+              "k",
+              "r"
+            ]
+          },
+          {
+            "code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+            "line": 40,
+            "vars": [
+              "c",
+              "int",
+              "k",
+              "r"
+            ]
+          },
+          {
+            "code": "ri,ci,a=map(int,input().split())",
+            "line": 41,
+            "vars": [
+              "c",
+              "int",
+              "r"
+            ]
+          },
+          {
+            "code": "v[ri-1, ci-1] = a",
+            "line": 42,
+            "vars": [
+              "a",
+              "c",
+              "ci",
+              "r",
+              "ri"
+            ]
+          },
+          {
+            "code": "dp = list3D(r, c, 4, 0)",
+            "line": 44,
+            "vars": [
+              "c",
+              "r",
+              "v"
+            ]
+          },
+          {
+            "code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+            "line": 46,
+            "vars": [
+              "c",
+              "r",
+              "v"
+            ]
+          },
+          {
+            "code": "dp[0, 0, 1]=v[0, 0]",
+            "line": 46,
+            "vars": [
+              "c",
+              "r",
+              "v"
+            ]
+          },
+          {
+            "code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+            "line": 48,
+            "vars": [
+              "c",
+              "dp",
+              "r",
+              "v"
+            ]
+          },
+          {
+            "code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+            "line": 49,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "r",
+              "v"
+            ]
+          },
+          {
+            "code": "val = v[i, j]",
+            "line": 50,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "v"
+            ]
+          },
+          {
+            "code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+            "line": 51,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+            "line": 52,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+            "line": 53,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val",
+              "x"
+            ]
+          },
+          {
+            "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+            "line": 54,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val",
+              "x"
+            ]
+          },
+          {
+            "code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+            "line": 56,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "X = dp[i, j-1, 0]",
+            "line": 57,
+            "vars": [
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "Y = dp[i, j-1, 1]",
+            "line": 58,
+            "vars": [
+              "X",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "V = dp[i, j-1, 2]",
+            "line": 59,
+            "vars": [
+              "X",
+              "Y",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "Z = dp[i, j-1, 3]",
+            "line": 60,
+            "vars": [
+              "V",
+              "X",
+              "Y",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+            "line": 61,
+            "vars": [
+              "V",
+              "X",
+              "Y",
+              "Z",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+            "line": 62,
+            "vars": [
+              "V",
+              "X",
+              "Y",
+              "Z",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+            "line": 63,
+            "vars": [
+              "V",
+              "Y",
+              "Z",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+            "line": 64,
+            "vars": [
+              "V",
+              "Z",
+              "c",
+              "dp",
+              "i",
+              "j",
+              "r",
+              "val"
+            ]
+          },
+          {
+            "code": "ans=0",
+            "line": 67,
+            "vars": [
+              "c",
+              "dp",
+              "r"
+            ]
+          },
+          {
+            "code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+            "line": 68,
+            "vars": [
+              "ans",
+              "c",
+              "dp",
+              "r"
+            ]
+          },
+          {
+            "code": "ans=max(dp[r-1, c-1, i],ans)",
+            "line": 68,
+            "vars": [
+              "ans",
+              "c",
+              "dp",
+              "i",
+              "r"
+            ]
+          },
+          {
+            "code": "return print(ans)",
+            "line": 69,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "V": false,
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "_": false,
+          "a": false,
+          "ans": true,
+          "c": false,
+          "ci": false,
+          "dp": false,
+          "i": false,
+          "int": false,
+          "j": false,
+          "k": false,
+          "r": false,
+          "ri": false,
+          "v": false,
+          "val": false,
+          "x": false
+        },
+        "return_vars": [
+          "ans"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(k):",
+      "cond": "for _ in range(k)",
+      "function": "main",
+      "header_id": 3,
+      "line": 40,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(r):",
+      "cond": "for i in range(r)",
+      "function": "main",
+      "header_id": 9,
+      "line": 48,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(c):",
+      "cond": "for j in range(c)",
+      "function": "main",
+      "header_id": 10,
+      "line": 49,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(4):",
+      "cond": "for i in range(4)",
+      "function": "main",
+      "header_id": 26,
+      "line": 68,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "input=sys.stdin.readline",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input=sys.stdin.readline",
+      "a_line": 2,
+      "b_code": "if __name__==\"__main__\": main()",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input=sys.stdin.readline",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__==\"__main__\": main()",
+      "a_line": 70,
+      "b_code": "main()",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.__H = H",
+      "a_line": 6,
+      "b_code": "self.__W = W",
+      "b_line": 7,
+      "function": "list2D.__init__"
+    },
+    {
+      "a_code": "self.__H = H",
+      "a_line": 6,
+      "b_code": "self.__dat = [num] * (H * W)",
+      "b_line": 8,
+      "function": "list2D.__init__"
+    },
+    {
+      "a_code": "self.__W = W",
+      "a_line": 7,
+      "b_code": "self.__dat = [num] * (H * W)",
+      "b_line": 8,
+      "function": "list2D.__init__"
+    },
+    {
+      "a_code": "self.__H = H",
+      "a_line": 21,
+      "b_code": "self.__W = W",
+      "b_line": 22,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__H = H",
+      "a_line": 21,
+      "b_code": "self.__D = D",
+      "b_line": 23,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__W = W",
+      "a_line": 22,
+      "b_code": "self.__D = D",
+      "b_line": 23,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__H = H",
+      "a_line": 21,
+      "b_code": "self.__X = W * D",
+      "b_line": 24,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__W = W",
+      "a_line": 22,
+      "b_code": "self.__X = W * D",
+      "b_line": 24,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__D = D",
+      "a_line": 23,
+      "b_code": "self.__X = W * D",
+      "b_line": 24,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__H = H",
+      "a_line": 21,
+      "b_code": "self.__dat = [num] * (H * W * D)",
+      "b_line": 25,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__W = W",
+      "a_line": 22,
+      "b_code": "self.__dat = [num] * (H * W * D)",
+      "b_line": 25,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__D = D",
+      "a_line": 23,
+      "b_code": "self.__dat = [num] * (H * W * D)",
+      "b_line": 25,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "self.__X = W * D",
+      "a_line": 24,
+      "b_code": "self.__dat = [num] * (H * W * D)",
+      "b_line": 25,
+      "function": "list3D.__init__"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "v = list2D(r, c, 0)",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "ri,ci,a=map(int,input().split())",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "ri,ci,a=map(int,input().split())",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "ri,ci,a=map(int,input().split())",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "v[ri-1, ci-1] = a",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "v[ri-1, ci-1] = a",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "v[ri-1, ci-1] = a",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "ri,ci,a=map(int,input().split())",
+      "a_line": 41,
+      "b_code": "v[ri-1, ci-1] = a",
+      "b_line": 42,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp = list3D(r, c, 4, 0)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp = list3D(r, c, 4, 0)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp = list3D(r, c, 4, 0)",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[0, 0, 1]=v[0, 0]",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "val = v[i, j]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "b_line": 52,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "a_line": 52,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+      "a_line": 52,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+      "a_line": 53,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "X = dp[i, j-1, 0]",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "Y = dp[i, j-1, 1]",
+      "b_line": 58,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = dp[i, j-1, 1]",
+      "a_line": 58,
+      "b_code": "V = dp[i, j-1, 2]",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = dp[i, j-1, 1]",
+      "a_line": 58,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "V = dp[i, j-1, 2]",
+      "a_line": 59,
+      "b_code": "Z = dp[i, j-1, 3]",
+      "b_line": 60,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = dp[i, j-1, 1]",
+      "a_line": 58,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "V = dp[i, j-1, 2]",
+      "a_line": 59,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "Z = dp[i, j-1, 3]",
+      "a_line": 60,
+      "b_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "b_line": 61,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = dp[i, j-1, 1]",
+      "a_line": 58,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "V = dp[i, j-1, 2]",
+      "a_line": 59,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "Z = dp[i, j-1, 3]",
+      "a_line": 60,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "a_line": 61,
+      "b_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "b_line": 62,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = dp[i, j-1, 1]",
+      "a_line": 58,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "V = dp[i, j-1, 2]",
+      "a_line": 59,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "Z = dp[i, j-1, 3]",
+      "a_line": 60,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "a_line": 61,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "a_line": 62,
+      "b_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "b_line": 63,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 49,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "val = v[i, j]",
+      "a_line": 50,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x)",
+      "a_line": 51,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 56,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "X = dp[i, j-1, 0]",
+      "a_line": 57,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = dp[i, j-1, 1]",
+      "a_line": 58,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "V = dp[i, j-1, 2]",
+      "a_line": 59,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "Z = dp[i, j-1, 3]",
+      "a_line": 60,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+      "a_line": 61,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+      "a_line": 62,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+      "a_line": 63,
+      "b_code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "ans=0",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "ans=0",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "ans=0",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "ans=0",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "ans=0",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "ans=0",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "ans=0",
+      "a_line": 67,
+      "b_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "ans=0",
+      "a_line": 67,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "a_line": 68,
+      "b_code": "ans=max(dp[r-1, c-1, i],ans)",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "r,c,k=map(int,input().split())",
+      "a_line": 37,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "v = list2D(r, c, 0)",
+      "a_line": 38,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "for _ in range(k): ri,ci,a=map(int,input().split()) v[ri-1, ci-1] = a",
+      "a_line": 40,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "dp = list3D(r, c, 4, 0)",
+      "a_line": 44,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "if v[0, 0]>0: dp[0, 0, 1]=v[0, 0]",
+      "a_line": 46,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(r): for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=max(dp[i, j, 1],x+val) dp[i, j, 0]=max(dp[i, j, 0],x) if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(dp[i, j, 2],Y+val,V) dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+      "a_line": 48,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "ans=0",
+      "a_line": 67,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(4): ans=max(dp[r-1, c-1, i],ans)",
+      "a_line": 68,
+      "b_code": "return print(ans)",
+      "b_line": 69,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped input at line 37",
+      "external call skipped input at line 41"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped input at line 37",
+    "external call skipped input at line 41"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "input=sys.stdin.readline",
+        "line": 2,
+        "var": "sys.stdin.readline"
+      },
+      "from": {
+        "code": "input=sys.stdin.readline",
+        "line": 2,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "__name__"
+      },
+      "from": {
+        "code": "input=sys.stdin.readline",
+        "line": 2,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__H = H",
+        "line": 6,
+        "var": "self.__H"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "W"
+      },
+      "from": {
+        "code": "self.__H = H",
+        "line": 6,
+        "var": "self.__H"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "W"
+      },
+      "from": {
+        "code": "self.__W = W",
+        "line": 7,
+        "var": "self.__W"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__W = W",
+        "line": 7,
+        "var": "self.__W"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W)",
+        "line": 8,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "W"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W)",
+        "line": 8,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "num"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W)",
+        "line": 8,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, num):",
+        "line": 5,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W)",
+        "line": 8,
+        "var": "self.__dat"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __setitem__(self, a, b):",
+        "line": 13,
+        "var": "a"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+        "line": 14,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __setitem__(self, a, b):",
+        "line": 13,
+        "var": "b"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+        "line": 14,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+        "line": 14,
+        "var": "self.__W"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+        "line": 14,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __setitem__(self, a, b):",
+        "line": 13,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__W+a[1]] = b",
+        "line": 14,
+        "var": "self.__dat"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__H = H",
+        "line": 21,
+        "var": "self.__H"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "self.__H = H",
+        "line": 21,
+        "var": "self.__H"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "W"
+      },
+      "from": {
+        "code": "self.__W = W",
+        "line": 22,
+        "var": "self.__W"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "self.__W = W",
+        "line": 22,
+        "var": "self.__W"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "self.__D = D",
+        "line": 23,
+        "var": "self.__D"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__D = D",
+        "line": 23,
+        "var": "self.__D"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "self.__X = W * D",
+        "line": 24,
+        "var": "self.__X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "W"
+      },
+      "from": {
+        "code": "self.__X = W * D",
+        "line": 24,
+        "var": "self.__X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__X = W * D",
+        "line": 24,
+        "var": "self.__X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "D"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W * D)",
+        "line": 25,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "H"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W * D)",
+        "line": 25,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "W"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W * D)",
+        "line": 25,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "num"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W * D)",
+        "line": 25,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, H, W, D, num):",
+        "line": 20,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.__dat = [num] * (H * W * D)",
+        "line": 25,
+        "var": "self.__dat"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __setitem__(self, a, b):",
+        "line": 30,
+        "var": "a"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __setitem__(self, a, b):",
+        "line": 30,
+        "var": "b"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__D"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__X"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__dat"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __setitem__(self, a, b):",
+        "line": 30,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b",
+        "line": 31,
+        "var": "self.__dat"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "int"
+      },
+      "from": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "int"
+      },
+      "from": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "int"
+      },
+      "from": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "c"
+      },
+      "from": {
+        "code": "v = list2D(r, c, 0)",
+        "line": 38,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v = list2D(r, c, 0)",
+        "line": 38,
+        "var": "int"
+      },
+      "from": {
+        "code": "v = list2D(r, c, 0)",
+        "line": 38,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "r"
+      },
+      "from": {
+        "code": "v = list2D(r, c, 0)",
+        "line": 38,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "v = list2D(r, c, 0)",
+        "line": 38,
+        "var": "v"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "int"
+      },
+      "from": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "int"
+      },
+      "from": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "c"
+      },
+      "from": {
+        "code": "dp = list3D(r, c, 4, 0)",
+        "line": 44,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp = list3D(r, c, 4, 0)",
+        "line": 44,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp = list3D(r, c, 4, 0)",
+        "line": 44,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "r"
+      },
+      "from": {
+        "code": "dp = list3D(r, c, 4, 0)",
+        "line": 44,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp = list3D(r, c, 4, 0)",
+        "line": 44,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "i"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "int"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "j"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "i"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "int"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "j"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[0, 0, 1]=v[0, 0]",
+        "line": 46,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],x+val)",
+        "line": 53,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "i"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "int"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "j"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "i"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "int"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "j"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "V"
+      },
+      "from": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "i"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "int"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "j"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "from": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "i"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "int"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "j"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],x)",
+        "line": 54,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 0]=max(dp[i, j, 0],X)",
+        "line": 61,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 1]=max(dp[i, j, 1],X+val,Y)",
+        "line": 62,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "from": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 2]=max(dp[i, j, 2],Y+val,V)",
+        "line": 63,
+        "var": "dp"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "i"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "int"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "j"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "ans=0",
+        "line": 67,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "V = dp[i, j-1, 2]",
+        "line": 59,
+        "var": "V"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = dp[i, j-1, 0]",
+        "line": 57,
+        "var": "X"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = dp[i, j-1, 1]",
+        "line": 58,
+        "var": "Y"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Z = dp[i, j-1, 3]",
+        "line": 60,
+        "var": "Z"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "a"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans=0",
+        "line": 67,
+        "var": "ans"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "c"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ci"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "dp[i, j, 3]=max(dp[i, j, 3],V+val,Z)",
+        "line": 64,
+        "var": "dp"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "j"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r,c,k=map(int,input().split())",
+        "line": 37,
+        "var": "r"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ri,ci,a=map(int,input().split())",
+        "line": 41,
+        "var": "ri"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "v[ri-1, ci-1] = a",
+        "line": 42,
+        "var": "v"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = v[i, j]",
+        "line": 50,
+        "var": "val"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3])",
+        "line": 52,
+        "var": "x"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 36,
+        "var": "_"
+      },
+      "from": {
+        "code": "ans=max(dp[r-1, c-1, i],ans)",
+        "line": 68,
+        "var": "ans"
+      },
+      "label": "negative"
+    }
+  ]
+}

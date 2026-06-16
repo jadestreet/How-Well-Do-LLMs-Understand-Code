@@ -1,0 +1,1522 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if x > 0: return inner(x - 1)",
+      "dead": false,
+      "function": "helper",
+      "kind": "If",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "return inner(x - 1)",
+      "dead": false,
+      "function": "helper",
+      "kind": "Return",
+      "line": 5,
+      "node_id": 2
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "helper",
+      "kind": "Return",
+      "line": 6,
+      "node_id": 3
+    },
+    {
+      "code": "if y == 0: return leaf()",
+      "dead": false,
+      "function": "inner",
+      "kind": "If",
+      "line": 9,
+      "node_id": 1
+    },
+    {
+      "code": "return leaf()",
+      "dead": false,
+      "function": "inner",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 2
+    },
+    {
+      "code": "return y",
+      "dead": false,
+      "function": "inner",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 3
+    },
+    {
+      "code": "return 42",
+      "dead": false,
+      "function": "leaf",
+      "kind": "Return",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return z * z",
+      "dead": false,
+      "function": "unrelated",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 1
+    },
+    {
+      "code": "total = 0",
+      "dead": false,
+      "function": "has_loops",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 1
+    },
+    {
+      "code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "dead": false,
+      "function": "has_loops",
+      "kind": "For",
+      "line": 21,
+      "node_id": 2
+    },
+    {
+      "code": "total += i",
+      "dead": false,
+      "function": "has_loops",
+      "kind": "AugAssign",
+      "line": 22,
+      "node_id": 3
+    },
+    {
+      "code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+      "dead": false,
+      "function": "has_loops",
+      "kind": "While",
+      "line": 23,
+      "node_id": 4
+    },
+    {
+      "code": "m -= 1",
+      "dead": false,
+      "function": "has_loops",
+      "kind": "AugAssign",
+      "line": 24,
+      "node_id": 5
+    },
+    {
+      "code": "return total + m",
+      "dead": false,
+      "function": "has_loops",
+      "kind": "Return",
+      "line": 25,
+      "node_id": 6
+    },
+    {
+      "code": "temp = a + 1",
+      "dead": false,
+      "function": "data_flow",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "b = b * 2",
+      "dead": false,
+      "function": "data_flow",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 2
+    },
+    {
+      "code": "c = temp + b",
+      "dead": false,
+      "function": "data_flow",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 3
+    },
+    {
+      "code": "temp = 0",
+      "dead": false,
+      "function": "data_flow",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 4
+    },
+    {
+      "code": "d = 5",
+      "dead": false,
+      "function": "data_flow",
+      "kind": "Assign",
+      "line": 32,
+      "node_id": 5
+    },
+    {
+      "code": "return c",
+      "dead": false,
+      "function": "data_flow",
+      "kind": "Return",
+      "line": 33,
+      "node_id": 6
+    },
+    {
+      "code": "x = 0",
+      "dead": false,
+      "function": "liveness_func",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 1
+    },
+    {
+      "code": "if flag: x = 3",
+      "dead": false,
+      "function": "liveness_func",
+      "kind": "If",
+      "line": 37,
+      "node_id": 2
+    },
+    {
+      "code": "x = 3",
+      "dead": false,
+      "function": "liveness_func",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 3
+    },
+    {
+      "code": "y = x + 1",
+      "dead": false,
+      "function": "liveness_func",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 4
+    },
+    {
+      "code": "return y",
+      "dead": false,
+      "function": "liveness_func",
+      "kind": "Return",
+      "line": 40,
+      "node_id": 5
+    },
+    {
+      "code": "p = 10",
+      "dead": false,
+      "function": "liveness2",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 1
+    },
+    {
+      "code": "q = 20",
+      "dead": false,
+      "function": "liveness2",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 2
+    },
+    {
+      "code": "p = 30",
+      "dead": false,
+      "function": "liveness2",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 3
+    },
+    {
+      "code": "return q",
+      "dead": false,
+      "function": "liveness2",
+      "kind": "Return",
+      "line": 46,
+      "node_id": 4
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "function": "dead_code_demo",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 1
+    },
+    {
+      "code": "print(\"never\")",
+      "dead": true,
+      "function": "dead_code_demo",
+      "kind": "Expr",
+      "line": 50,
+      "node_id": 2
+    },
+    {
+      "code": "if False: x = 1",
+      "dead": false,
+      "function": "dead_code_demo_2",
+      "kind": "If",
+      "line": 53,
+      "node_id": 1
+    },
+    {
+      "code": "x = 1",
+      "dead": true,
+      "function": "dead_code_demo_2",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 2
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "dead_code_demo_2",
+      "kind": "Return",
+      "line": 55,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "if x > 0: return inner(x - 1)",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "return inner(x - 1)",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "if y == 0: return leaf()",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return leaf()",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "return y",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return 42",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return z * z",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "total = 0",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "total += i",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "m -= 1",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "return total + m",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "temp = a + 1",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "b = b * 2",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "c = temp + b",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "temp = 0",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "d = 5",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "return c",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "x = 0",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "if flag: x = 3",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "x = 3",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "y = x + 1",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "return y",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "p = 10",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "q = 20",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "p = 30",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "return q",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "print(\"never\")",
+      "dead": true,
+      "line": 50
+    },
+    {
+      "code": "if False: x = 1",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "x = 1",
+      "dead": true,
+      "line": 54
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 55
+    }
+  ],
+  "file": "SemBench/data/python/code/1.py",
+  "functions": [
+    {
+      "calls": [
+        "inner"
+      ],
+      "end_lineno": 6,
+      "lineno": 3,
+      "name": "helper",
+      "variables": [
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "leaf"
+      ],
+      "end_lineno": 11,
+      "lineno": 8,
+      "name": "inner",
+      "variables": [
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 14,
+      "lineno": 13,
+      "name": "leaf",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 17,
+      "lineno": 16,
+      "name": "unrelated",
+      "variables": [
+        "z"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 25,
+      "lineno": 19,
+      "name": "has_loops",
+      "variables": [
+        "i",
+        "m",
+        "n",
+        "total"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 33,
+      "lineno": 27,
+      "name": "data_flow",
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "temp"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 40,
+      "lineno": 35,
+      "name": "liveness_func",
+      "variables": [
+        "flag",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 46,
+      "lineno": 42,
+      "name": "liveness2",
+      "variables": [
+        "p",
+        "q"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 50,
+      "lineno": 48,
+      "name": "dead_code_demo",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 55,
+      "lineno": 52,
+      "name": "dead_code_demo_2",
+      "variables": [
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "data_flow": {
+        "base_liveout": [
+          "c"
+        ],
+        "live_before": [
+          {
+            "code": "temp = a + 1",
+            "line": 28,
+            "vars": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "b = b * 2",
+            "line": 29,
+            "vars": [
+              "b",
+              "temp"
+            ]
+          },
+          {
+            "code": "c = temp + b",
+            "line": 30,
+            "vars": [
+              "b",
+              "temp"
+            ]
+          },
+          {
+            "code": "temp = 0",
+            "line": 31,
+            "vars": [
+              "c"
+            ]
+          },
+          {
+            "code": "d = 5",
+            "line": 32,
+            "vars": [
+              "c"
+            ]
+          },
+          {
+            "code": "return c",
+            "line": 33,
+            "vars": [
+              "c"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": false,
+          "b": false,
+          "c": true,
+          "d": false,
+          "temp": false
+        },
+        "return_vars": [
+          "c"
+        ]
+      },
+      "dead_code_demo": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return 1",
+            "line": 49,
+            "vars": []
+          },
+          {
+            "code": "print(\"never\")",
+            "line": 50,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "dead_code_demo_2": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if False: x = 1",
+            "line": 53,
+            "vars": []
+          },
+          {
+            "code": "x = 1",
+            "line": 54,
+            "vars": []
+          },
+          {
+            "code": "return 0",
+            "line": 55,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "x": false
+        },
+        "return_vars": []
+      },
+      "has_loops": {
+        "base_liveout": [
+          "m",
+          "total"
+        ],
+        "live_before": [
+          {
+            "code": "total = 0",
+            "line": 20,
+            "vars": [
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+            "line": 21,
+            "vars": [
+              "m",
+              "n"
+            ]
+          },
+          {
+            "code": "total += i",
+            "line": 22,
+            "vars": [
+              "i",
+              "m"
+            ]
+          },
+          {
+            "code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+            "line": 23,
+            "vars": [
+              "m",
+              "total"
+            ]
+          },
+          {
+            "code": "m -= 1",
+            "line": 24,
+            "vars": [
+              "total"
+            ]
+          },
+          {
+            "code": "return total + m",
+            "line": 25,
+            "vars": [
+              "m",
+              "total"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "m": true,
+          "n": false,
+          "total": true
+        },
+        "return_vars": [
+          "m",
+          "total"
+        ]
+      },
+      "helper": {
+        "base_liveout": [
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "if x > 0: return inner(x - 1)",
+            "line": 4,
+            "vars": [
+              "x"
+            ]
+          },
+          {
+            "code": "return inner(x - 1)",
+            "line": 5,
+            "vars": [
+              "x"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 6,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "x": true
+        },
+        "return_vars": [
+          "x"
+        ]
+      },
+      "inner": {
+        "base_liveout": [
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "if y == 0: return leaf()",
+            "line": 9,
+            "vars": [
+              "y"
+            ]
+          },
+          {
+            "code": "return leaf()",
+            "line": 10,
+            "vars": [
+              "y"
+            ]
+          },
+          {
+            "code": "return y",
+            "line": 11,
+            "vars": [
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "y": true
+        },
+        "return_vars": [
+          "y"
+        ]
+      },
+      "leaf": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return 42",
+            "line": 14,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "liveness2": {
+        "base_liveout": [
+          "q"
+        ],
+        "live_before": [
+          {
+            "code": "p = 10",
+            "line": 43,
+            "vars": []
+          },
+          {
+            "code": "q = 20",
+            "line": 44,
+            "vars": []
+          },
+          {
+            "code": "p = 30",
+            "line": 45,
+            "vars": [
+              "q"
+            ]
+          },
+          {
+            "code": "return q",
+            "line": 46,
+            "vars": [
+              "q"
+            ]
+          }
+        ],
+        "liveout": {
+          "p": false,
+          "q": true
+        },
+        "return_vars": [
+          "q"
+        ]
+      },
+      "liveness_func": {
+        "base_liveout": [
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "x = 0",
+            "line": 36,
+            "vars": [
+              "flag"
+            ]
+          },
+          {
+            "code": "if flag: x = 3",
+            "line": 37,
+            "vars": [
+              "flag"
+            ]
+          },
+          {
+            "code": "x = 3",
+            "line": 38,
+            "vars": []
+          },
+          {
+            "code": "y = x + 1",
+            "line": 39,
+            "vars": [
+              "x"
+            ]
+          },
+          {
+            "code": "return y",
+            "line": 40,
+            "vars": [
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "flag": false,
+          "x": false,
+          "y": true
+        },
+        "return_vars": [
+          "y"
+        ]
+      },
+      "unrelated": {
+        "base_liveout": [
+          "z"
+        ],
+        "live_before": [
+          {
+            "code": "return z * z",
+            "line": 17,
+            "vars": [
+              "z"
+            ]
+          }
+        ],
+        "liveout": {
+          "z": true
+        },
+        "return_vars": [
+          "z"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n):",
+      "cond": "for i in range(n)",
+      "function": "has_loops",
+      "header_id": 2,
+      "line": 21,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while m > 0:",
+      "cond": "m > 0",
+      "function": "has_loops",
+      "header_id": 4,
+      "line": 23,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "if x > 0: return inner(x - 1)",
+      "a_line": 4,
+      "b_code": "return inner(x - 1)",
+      "b_line": 5,
+      "function": "helper"
+    },
+    {
+      "a_code": "if x > 0: return inner(x - 1)",
+      "a_line": 4,
+      "b_code": "return 0",
+      "b_line": 6,
+      "function": "helper"
+    },
+    {
+      "a_code": "if y == 0: return leaf()",
+      "a_line": 9,
+      "b_code": "return leaf()",
+      "b_line": 10,
+      "function": "inner"
+    },
+    {
+      "a_code": "if y == 0: return leaf()",
+      "a_line": 9,
+      "b_code": "return y",
+      "b_line": 11,
+      "function": "inner"
+    },
+    {
+      "a_code": "total = 0",
+      "a_line": 20,
+      "b_code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "b_line": 21,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "total = 0",
+      "a_line": 20,
+      "b_code": "total += i",
+      "b_line": 22,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "a_line": 21,
+      "b_code": "total += i",
+      "b_line": 22,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "total = 0",
+      "a_line": 20,
+      "b_code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+      "b_line": 23,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "a_line": 21,
+      "b_code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+      "b_line": 23,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "total = 0",
+      "a_line": 20,
+      "b_code": "m -= 1",
+      "b_line": 24,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "a_line": 21,
+      "b_code": "m -= 1",
+      "b_line": 24,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+      "a_line": 23,
+      "b_code": "m -= 1",
+      "b_line": 24,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "total = 0",
+      "a_line": 20,
+      "b_code": "return total + m",
+      "b_line": 25,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "for i in range(n): # loop header A: \"for i in range(n):\" total += i",
+      "a_line": 21,
+      "b_code": "return total + m",
+      "b_line": 25,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "while m > 0: # loop header B: \"while m > 0:\" m -= 1",
+      "a_line": 23,
+      "b_code": "return total + m",
+      "b_line": 25,
+      "function": "has_loops"
+    },
+    {
+      "a_code": "temp = a + 1",
+      "a_line": 28,
+      "b_code": "b = b * 2",
+      "b_line": 29,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "temp = a + 1",
+      "a_line": 28,
+      "b_code": "c = temp + b",
+      "b_line": 30,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "b = b * 2",
+      "a_line": 29,
+      "b_code": "c = temp + b",
+      "b_line": 30,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "temp = a + 1",
+      "a_line": 28,
+      "b_code": "temp = 0",
+      "b_line": 31,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "b = b * 2",
+      "a_line": 29,
+      "b_code": "temp = 0",
+      "b_line": 31,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "c = temp + b",
+      "a_line": 30,
+      "b_code": "temp = 0",
+      "b_line": 31,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "temp = a + 1",
+      "a_line": 28,
+      "b_code": "d = 5",
+      "b_line": 32,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "b = b * 2",
+      "a_line": 29,
+      "b_code": "d = 5",
+      "b_line": 32,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "c = temp + b",
+      "a_line": 30,
+      "b_code": "d = 5",
+      "b_line": 32,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "temp = 0",
+      "a_line": 31,
+      "b_code": "d = 5",
+      "b_line": 32,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "temp = a + 1",
+      "a_line": 28,
+      "b_code": "return c",
+      "b_line": 33,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "b = b * 2",
+      "a_line": 29,
+      "b_code": "return c",
+      "b_line": 33,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "c = temp + b",
+      "a_line": 30,
+      "b_code": "return c",
+      "b_line": 33,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "temp = 0",
+      "a_line": 31,
+      "b_code": "return c",
+      "b_line": 33,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "d = 5",
+      "a_line": 32,
+      "b_code": "return c",
+      "b_line": 33,
+      "function": "data_flow"
+    },
+    {
+      "a_code": "x = 0",
+      "a_line": 36,
+      "b_code": "if flag: x = 3",
+      "b_line": 37,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "x = 0",
+      "a_line": 36,
+      "b_code": "x = 3",
+      "b_line": 38,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "if flag: x = 3",
+      "a_line": 37,
+      "b_code": "x = 3",
+      "b_line": 38,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "x = 0",
+      "a_line": 36,
+      "b_code": "y = x + 1",
+      "b_line": 39,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "if flag: x = 3",
+      "a_line": 37,
+      "b_code": "y = x + 1",
+      "b_line": 39,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "x = 0",
+      "a_line": 36,
+      "b_code": "return y",
+      "b_line": 40,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "if flag: x = 3",
+      "a_line": 37,
+      "b_code": "return y",
+      "b_line": 40,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "y = x + 1",
+      "a_line": 39,
+      "b_code": "return y",
+      "b_line": 40,
+      "function": "liveness_func"
+    },
+    {
+      "a_code": "p = 10",
+      "a_line": 43,
+      "b_code": "q = 20",
+      "b_line": 44,
+      "function": "liveness2"
+    },
+    {
+      "a_code": "p = 10",
+      "a_line": 43,
+      "b_code": "p = 30",
+      "b_line": 45,
+      "function": "liveness2"
+    },
+    {
+      "a_code": "q = 20",
+      "a_line": 44,
+      "b_code": "p = 30",
+      "b_line": 45,
+      "function": "liveness2"
+    },
+    {
+      "a_code": "p = 10",
+      "a_line": 43,
+      "b_code": "return q",
+      "b_line": 46,
+      "function": "liveness2"
+    },
+    {
+      "a_code": "q = 20",
+      "a_line": 44,
+      "b_code": "return q",
+      "b_line": 46,
+      "function": "liveness2"
+    },
+    {
+      "a_code": "p = 30",
+      "a_line": 45,
+      "b_code": "return q",
+      "b_line": 46,
+      "function": "liveness2"
+    },
+    {
+      "a_code": "if False: x = 1",
+      "a_line": 53,
+      "b_code": "return 0",
+      "b_line": 55,
+      "function": "dead_code_demo_2"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def has_loops(n, m):",
+        "line": 19,
+        "var": "i"
+      },
+      "from": {
+        "code": "total = 0",
+        "line": 20,
+        "var": "total"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "total += i",
+        "line": 22,
+        "var": "i"
+      },
+      "from": {
+        "code": "total += i",
+        "line": 22,
+        "var": "total"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def has_loops(n, m):",
+        "line": 19,
+        "var": "m"
+      },
+      "from": {
+        "code": "total += i",
+        "line": 22,
+        "var": "total"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def has_loops(n, m):",
+        "line": 19,
+        "var": "i"
+      },
+      "from": {
+        "code": "m -= 1",
+        "line": 24,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "a"
+      },
+      "from": {
+        "code": "temp = a + 1",
+        "line": 28,
+        "var": "temp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "b"
+      },
+      "from": {
+        "code": "temp = a + 1",
+        "line": 28,
+        "var": "temp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "b"
+      },
+      "from": {
+        "code": "b = b * 2",
+        "line": 29,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "a"
+      },
+      "from": {
+        "code": "b = b * 2",
+        "line": 29,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "a"
+      },
+      "from": {
+        "code": "c = temp + b",
+        "line": 30,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "b = b * 2",
+        "line": 29,
+        "var": "b"
+      },
+      "from": {
+        "code": "c = temp + b",
+        "line": 30,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "temp = a + 1",
+        "line": 28,
+        "var": "temp"
+      },
+      "from": {
+        "code": "c = temp + b",
+        "line": 30,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "d"
+      },
+      "from": {
+        "code": "c = temp + b",
+        "line": 30,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "a"
+      },
+      "from": {
+        "code": "temp = 0",
+        "line": 31,
+        "var": "temp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def data_flow(a, b):",
+        "line": 27,
+        "var": "a"
+      },
+      "from": {
+        "code": "d = 5",
+        "line": 32,
+        "var": "d"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def liveness_func(flag):",
+        "line": 35,
+        "var": "flag"
+      },
+      "from": {
+        "code": "x = 0",
+        "line": 36,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def liveness_func(flag):",
+        "line": 35,
+        "var": "flag"
+      },
+      "from": {
+        "code": "x = 3",
+        "line": 38,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = 3",
+        "line": 38,
+        "var": "x"
+      },
+      "from": {
+        "code": "y = x + 1",
+        "line": 39,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def liveness_func(flag):",
+        "line": 35,
+        "var": "flag"
+      },
+      "from": {
+        "code": "y = x + 1",
+        "line": 39,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def liveness2():",
+        "line": 42,
+        "var": "q"
+      },
+      "from": {
+        "code": "p = 10",
+        "line": 43,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "p = 10",
+        "line": 43,
+        "var": "p"
+      },
+      "from": {
+        "code": "q = 20",
+        "line": 44,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = 20",
+        "line": 44,
+        "var": "q"
+      },
+      "from": {
+        "code": "p = 30",
+        "line": 45,
+        "var": "p"
+      },
+      "label": "negative"
+    }
+  ]
+}

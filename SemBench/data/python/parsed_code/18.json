@@ -1,0 +1,1216 @@
+{
+  "cfg_statements": [
+    {
+      "code": "pivot = arr[high]",
+      "dead": false,
+      "function": "_partition",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "i = low",
+      "dead": false,
+      "function": "_partition",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "dead": false,
+      "function": "_partition",
+      "kind": "For",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "dead": false,
+      "function": "_partition",
+      "kind": "If",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "arr[i], arr[j] = arr[j], arr[i]",
+      "dead": false,
+      "function": "_partition",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "_partition",
+      "kind": "AugAssign",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "arr[i], arr[high] = arr[high], arr[i]",
+      "dead": false,
+      "function": "_partition",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 7
+    },
+    {
+      "code": "return i",
+      "dead": false,
+      "function": "_partition",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 8
+    },
+    {
+      "code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "While",
+      "line": 15,
+      "node_id": 1
+    },
+    {
+      "code": "pi = _partition(arr, low, high)",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 2
+    },
+    {
+      "code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "If",
+      "line": 17,
+      "node_id": 3
+    },
+    {
+      "code": "return arr[pi]",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "Return",
+      "line": 18,
+      "node_id": 4
+    },
+    {
+      "code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "If",
+      "line": 19,
+      "node_id": 5
+    },
+    {
+      "code": "low = pi + 1",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 6
+    },
+    {
+      "code": "high = pi - 1",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 7
+    },
+    {
+      "code": "raise IndexError(\"k out of bounds\")",
+      "dead": false,
+      "function": "_quickselect",
+      "kind": "Raise",
+      "line": 23,
+      "node_id": 8
+    },
+    {
+      "code": "if k < 0 or k >= len(arr): raise IndexError(\"k out of bounds\")",
+      "dead": false,
+      "function": "kth_smallest",
+      "kind": "If",
+      "line": 26,
+      "node_id": 1
+    },
+    {
+      "code": "raise IndexError(\"k out of bounds\")",
+      "dead": false,
+      "function": "kth_smallest",
+      "kind": "Raise",
+      "line": 27,
+      "node_id": 2
+    },
+    {
+      "code": "return _quickselect(arr, 0, len(arr) - 1, k)",
+      "dead": false,
+      "function": "kth_smallest",
+      "kind": "Return",
+      "line": 28,
+      "node_id": 3
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "pivot = arr[high]",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "i = low",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "arr[i], arr[j] = arr[j], arr[i]",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "arr[i], arr[high] = arr[high], arr[i]",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return i",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "pi = _partition(arr, low, high)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "return arr[pi]",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "low = pi + 1",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "high = pi - 1",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "raise IndexError(\"k out of bounds\")",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "if k < 0 or k >= len(arr): raise IndexError(\"k out of bounds\")",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "raise IndexError(\"k out of bounds\")",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "return _quickselect(arr, 0, len(arr) - 1, k)",
+      "dead": false,
+      "line": 28
+    }
+  ],
+  "file": "SemBench/data/python/code/18.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 12,
+      "lineno": 4,
+      "name": "_partition",
+      "variables": [
+        "arr",
+        "high",
+        "i",
+        "j",
+        "low",
+        "pivot"
+      ]
+    },
+    {
+      "calls": [
+        "_partition"
+      ],
+      "end_lineno": 23,
+      "lineno": 14,
+      "name": "_quickselect",
+      "variables": [
+        "arr",
+        "high",
+        "k",
+        "low",
+        "pi"
+      ]
+    },
+    {
+      "calls": [
+        "_quickselect"
+      ],
+      "end_lineno": 28,
+      "lineno": 25,
+      "name": "kth_smallest",
+      "variables": [
+        "arr",
+        "k"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_partition": {
+        "base_liveout": [
+          "i"
+        ],
+        "live_before": [
+          {
+            "code": "pivot = arr[high]",
+            "line": 5,
+            "vars": [
+              "arr",
+              "high",
+              "low"
+            ]
+          },
+          {
+            "code": "i = low",
+            "line": 6,
+            "vars": [
+              "arr",
+              "high",
+              "low",
+              "pivot"
+            ]
+          },
+          {
+            "code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+            "line": 7,
+            "vars": [
+              "arr",
+              "high",
+              "i",
+              "low",
+              "pivot"
+            ]
+          },
+          {
+            "code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+            "line": 8,
+            "vars": [
+              "arr",
+              "high",
+              "i",
+              "j",
+              "pivot"
+            ]
+          },
+          {
+            "code": "arr[i], arr[j] = arr[j], arr[i]",
+            "line": 9,
+            "vars": [
+              "arr",
+              "high",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "i += 1",
+            "line": 10,
+            "vars": [
+              "arr",
+              "high"
+            ]
+          },
+          {
+            "code": "arr[i], arr[high] = arr[high], arr[i]",
+            "line": 11,
+            "vars": [
+              "arr",
+              "high",
+              "i"
+            ]
+          },
+          {
+            "code": "return i",
+            "line": 12,
+            "vars": [
+              "i"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": false,
+          "high": false,
+          "i": true,
+          "j": false,
+          "low": false,
+          "pivot": false
+        },
+        "return_vars": [
+          "i"
+        ]
+      },
+      "_quickselect": {
+        "base_liveout": [
+          "arr",
+          "pi"
+        ],
+        "live_before": [
+          {
+            "code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+            "line": 15,
+            "vars": [
+              "arr",
+              "high",
+              "k",
+              "low"
+            ]
+          },
+          {
+            "code": "pi = _partition(arr, low, high)",
+            "line": 16,
+            "vars": [
+              "arr",
+              "high",
+              "k",
+              "low"
+            ]
+          },
+          {
+            "code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+            "line": 17,
+            "vars": [
+              "arr",
+              "k",
+              "pi"
+            ]
+          },
+          {
+            "code": "return arr[pi]",
+            "line": 18,
+            "vars": [
+              "arr",
+              "k",
+              "pi"
+            ]
+          },
+          {
+            "code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+            "line": 19,
+            "vars": [
+              "k",
+              "pi"
+            ]
+          },
+          {
+            "code": "low = pi + 1",
+            "line": 20,
+            "vars": [
+              "pi"
+            ]
+          },
+          {
+            "code": "high = pi - 1",
+            "line": 22,
+            "vars": [
+              "pi"
+            ]
+          },
+          {
+            "code": "raise IndexError(\"k out of bounds\")",
+            "line": 23,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "arr": true,
+          "high": false,
+          "k": false,
+          "low": false,
+          "pi": true
+        },
+        "return_vars": [
+          "arr",
+          "pi"
+        ]
+      },
+      "kth_smallest": {
+        "base_liveout": [
+          "arr",
+          "k"
+        ],
+        "live_before": [
+          {
+            "code": "if k < 0 or k >= len(arr): raise IndexError(\"k out of bounds\")",
+            "line": 26,
+            "vars": [
+              "arr",
+              "k"
+            ]
+          },
+          {
+            "code": "raise IndexError(\"k out of bounds\")",
+            "line": 27,
+            "vars": [
+              "arr",
+              "k"
+            ]
+          },
+          {
+            "code": "return _quickselect(arr, 0, len(arr) - 1, k)",
+            "line": 28,
+            "vars": [
+              "arr",
+              "k"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": true,
+          "k": true
+        },
+        "return_vars": [
+          "arr",
+          "k"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for j in range(low, high):",
+      "cond": "for j in range(low, high)",
+      "function": "_partition",
+      "header_id": 3,
+      "line": 7,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while low <= high:",
+      "cond": "low <= high",
+      "function": "_quickselect",
+      "header_id": 1,
+      "line": 15,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "i = low",
+      "b_line": 6,
+      "function": "_partition"
+    },
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "b_line": 7,
+      "function": "_partition"
+    },
+    {
+      "a_code": "i = low",
+      "a_line": 6,
+      "b_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "b_line": 7,
+      "function": "_partition"
+    },
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "b_line": 8,
+      "function": "_partition"
+    },
+    {
+      "a_code": "i = low",
+      "a_line": 6,
+      "b_code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "b_line": 8,
+      "function": "_partition"
+    },
+    {
+      "a_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 7,
+      "b_code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "b_line": 8,
+      "function": "_partition"
+    },
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "arr[i], arr[j] = arr[j], arr[i]",
+      "b_line": 9,
+      "function": "_partition"
+    },
+    {
+      "a_code": "i = low",
+      "a_line": 6,
+      "b_code": "arr[i], arr[j] = arr[j], arr[i]",
+      "b_line": 9,
+      "function": "_partition"
+    },
+    {
+      "a_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 7,
+      "b_code": "arr[i], arr[j] = arr[j], arr[i]",
+      "b_line": 9,
+      "function": "_partition"
+    },
+    {
+      "a_code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 8,
+      "b_code": "arr[i], arr[j] = arr[j], arr[i]",
+      "b_line": 9,
+      "function": "_partition"
+    },
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "i += 1",
+      "b_line": 10,
+      "function": "_partition"
+    },
+    {
+      "a_code": "i = low",
+      "a_line": 6,
+      "b_code": "i += 1",
+      "b_line": 10,
+      "function": "_partition"
+    },
+    {
+      "a_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 7,
+      "b_code": "i += 1",
+      "b_line": 10,
+      "function": "_partition"
+    },
+    {
+      "a_code": "if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 8,
+      "b_code": "i += 1",
+      "b_line": 10,
+      "function": "_partition"
+    },
+    {
+      "a_code": "arr[i], arr[j] = arr[j], arr[i]",
+      "a_line": 9,
+      "b_code": "i += 1",
+      "b_line": 10,
+      "function": "_partition"
+    },
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "arr[i], arr[high] = arr[high], arr[i]",
+      "b_line": 11,
+      "function": "_partition"
+    },
+    {
+      "a_code": "i = low",
+      "a_line": 6,
+      "b_code": "arr[i], arr[high] = arr[high], arr[i]",
+      "b_line": 11,
+      "function": "_partition"
+    },
+    {
+      "a_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 7,
+      "b_code": "arr[i], arr[high] = arr[high], arr[i]",
+      "b_line": 11,
+      "function": "_partition"
+    },
+    {
+      "a_code": "pivot = arr[high]",
+      "a_line": 5,
+      "b_code": "return i",
+      "b_line": 12,
+      "function": "_partition"
+    },
+    {
+      "a_code": "i = low",
+      "a_line": 6,
+      "b_code": "return i",
+      "b_line": 12,
+      "function": "_partition"
+    },
+    {
+      "a_code": "for j in range(low, high): if arr[j] < pivot: arr[i], arr[j] = arr[j], arr[i] i += 1",
+      "a_line": 7,
+      "b_code": "return i",
+      "b_line": 12,
+      "function": "_partition"
+    },
+    {
+      "a_code": "arr[i], arr[high] = arr[high], arr[i]",
+      "a_line": 11,
+      "b_code": "return i",
+      "b_line": 12,
+      "function": "_partition"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "pi = _partition(arr, low, high)",
+      "b_line": 16,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "b_line": 17,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "pi = _partition(arr, low, high)",
+      "a_line": 16,
+      "b_code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "b_line": 17,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "return arr[pi]",
+      "b_line": 18,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "pi = _partition(arr, low, high)",
+      "a_line": 16,
+      "b_code": "return arr[pi]",
+      "b_line": 18,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 17,
+      "b_code": "return arr[pi]",
+      "b_line": 18,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "b_line": 19,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "pi = _partition(arr, low, high)",
+      "a_line": 16,
+      "b_code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "b_line": 19,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 17,
+      "b_code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "b_line": 19,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "low = pi + 1",
+      "b_line": 20,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "pi = _partition(arr, low, high)",
+      "a_line": 16,
+      "b_code": "low = pi + 1",
+      "b_line": 20,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 17,
+      "b_code": "low = pi + 1",
+      "b_line": 20,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 19,
+      "b_code": "low = pi + 1",
+      "b_line": 20,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "high = pi - 1",
+      "b_line": 22,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "pi = _partition(arr, low, high)",
+      "a_line": 16,
+      "b_code": "high = pi - 1",
+      "b_line": 22,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 17,
+      "b_code": "high = pi - 1",
+      "b_line": 22,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 19,
+      "b_code": "high = pi - 1",
+      "b_line": 22,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "while low <= high: pi = _partition(arr, low, high) if pi == k: return arr[pi] elif pi < k: low = pi + 1 else: high = pi - 1",
+      "a_line": 15,
+      "b_code": "raise IndexError(\"k out of bounds\")",
+      "b_line": 23,
+      "function": "_quickselect"
+    },
+    {
+      "a_code": "if k < 0 or k >= len(arr): raise IndexError(\"k out of bounds\")",
+      "a_line": 26,
+      "b_code": "raise IndexError(\"k out of bounds\")",
+      "b_line": 27,
+      "function": "kth_smallest"
+    },
+    {
+      "a_code": "if k < 0 or k >= len(arr): raise IndexError(\"k out of bounds\")",
+      "a_line": 26,
+      "b_code": "return _quickselect(arr, 0, len(arr) - 1, k)",
+      "b_line": 28,
+      "function": "kth_smallest"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "pivot = arr[high]",
+        "line": 5,
+        "var": "pivot"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "high"
+      },
+      "from": {
+        "code": "pivot = arr[high]",
+        "line": 5,
+        "var": "pivot"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "pivot = arr[high]",
+        "line": 5,
+        "var": "pivot"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "low"
+      },
+      "from": {
+        "code": "i = low",
+        "line": 6,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "i = low",
+        "line": 6,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "arr"
+      },
+      "from": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i = low",
+        "line": 6,
+        "var": "i"
+      },
+      "from": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "j"
+      },
+      "from": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "low"
+      },
+      "from": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "high"
+      },
+      "from": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 10,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr[i], arr[j] = arr[j], arr[i]",
+        "line": 9,
+        "var": "arr"
+      },
+      "from": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "high"
+      },
+      "from": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 10,
+        "var": "i"
+      },
+      "from": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "j"
+      },
+      "from": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _partition(arr:",
+        "line": 4,
+        "var": "low"
+      },
+      "from": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "arr"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pivot = arr[high]",
+        "line": 5,
+        "var": "pivot"
+      },
+      "from": {
+        "code": "arr[i], arr[high] = arr[high], arr[i]",
+        "line": 11,
+        "var": "arr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "arr"
+      },
+      "from": {
+        "code": "pi = _partition(arr, low, high)",
+        "line": 16,
+        "var": "pi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "high"
+      },
+      "from": {
+        "code": "pi = _partition(arr, low, high)",
+        "line": 16,
+        "var": "pi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "low"
+      },
+      "from": {
+        "code": "pi = _partition(arr, low, high)",
+        "line": 16,
+        "var": "pi"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "k"
+      },
+      "from": {
+        "code": "pi = _partition(arr, low, high)",
+        "line": 16,
+        "var": "pi"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "arr"
+      },
+      "from": {
+        "code": "low = pi + 1",
+        "line": 20,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "high"
+      },
+      "from": {
+        "code": "low = pi + 1",
+        "line": 20,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pi = _partition(arr, low, high)",
+        "line": 16,
+        "var": "pi"
+      },
+      "from": {
+        "code": "low = pi + 1",
+        "line": 20,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "k"
+      },
+      "from": {
+        "code": "low = pi + 1",
+        "line": 20,
+        "var": "low"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "arr"
+      },
+      "from": {
+        "code": "high = pi - 1",
+        "line": 22,
+        "var": "high"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "low = pi + 1",
+        "line": 20,
+        "var": "low"
+      },
+      "from": {
+        "code": "high = pi - 1",
+        "line": 22,
+        "var": "high"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "pi = _partition(arr, low, high)",
+        "line": 16,
+        "var": "pi"
+      },
+      "from": {
+        "code": "high = pi - 1",
+        "line": 22,
+        "var": "high"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _quickselect(arr:",
+        "line": 14,
+        "var": "k"
+      },
+      "from": {
+        "code": "high = pi - 1",
+        "line": 22,
+        "var": "high"
+      },
+      "label": "negative"
+    }
+  ]
+}

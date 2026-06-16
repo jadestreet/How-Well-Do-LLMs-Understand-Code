@@ -1,0 +1,794 @@
+{
+  "cfg_statements": [
+    {
+      "code": "for nbr in graph.get(node, []): if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "dead": false,
+      "function": "_enqueue_unvisited",
+      "kind": "For",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "dead": false,
+      "function": "_enqueue_unvisited",
+      "kind": "If",
+      "line": 7,
+      "node_id": 2
+    },
+    {
+      "code": "visited.add(nbr)",
+      "dead": false,
+      "function": "_enqueue_unvisited",
+      "kind": "Expr",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "dq.append(nbr)",
+      "dead": false,
+      "function": "_enqueue_unvisited",
+      "kind": "Expr",
+      "line": 9,
+      "node_id": 4
+    },
+    {
+      "code": "if start is None: return []",
+      "dead": false,
+      "function": "bfs",
+      "kind": "If",
+      "line": 12,
+      "node_id": 1
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Return",
+      "line": 13,
+      "node_id": 2
+    },
+    {
+      "code": "visited = set([start])",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 3
+    },
+    {
+      "code": "order: List[Hashable] = []",
+      "dead": false,
+      "function": "bfs",
+      "kind": "AnnAssign",
+      "line": 15,
+      "node_id": 4
+    },
+    {
+      "code": "dq = deque([start])",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 5
+    },
+    {
+      "code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "dead": false,
+      "function": "bfs",
+      "kind": "While",
+      "line": 17,
+      "node_id": 6
+    },
+    {
+      "code": "node = dq.popleft()",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 7
+    },
+    {
+      "code": "order.append(node)",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Expr",
+      "line": 19,
+      "node_id": 8
+    },
+    {
+      "code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Expr",
+      "line": 20,
+      "node_id": 9
+    },
+    {
+      "code": "return order",
+      "dead": false,
+      "function": "bfs",
+      "kind": "Return",
+      "line": 21,
+      "node_id": 10
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "for nbr in graph.get(node, []): if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "visited.add(nbr)",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "dq.append(nbr)",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "if start is None: return []",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "visited = set([start])",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "order: List[Hashable] = []",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "dq = deque([start])",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "node = dq.popleft()",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "order.append(node)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "return order",
+      "dead": false,
+      "line": 21
+    }
+  ],
+  "file": "SemBench/data/python/code/6.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 9,
+      "lineno": 5,
+      "name": "_enqueue_unvisited",
+      "variables": [
+        "dq",
+        "graph",
+        "nbr",
+        "node",
+        "visited"
+      ]
+    },
+    {
+      "calls": [
+        "_enqueue_unvisited"
+      ],
+      "end_lineno": 21,
+      "lineno": 11,
+      "name": "bfs",
+      "variables": [
+        "dq",
+        "graph",
+        "node",
+        "order",
+        "start",
+        "visited"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_enqueue_unvisited": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "for nbr in graph.get(node, []): if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+            "line": 6,
+            "vars": [
+              "dq",
+              "graph",
+              "node",
+              "visited"
+            ]
+          },
+          {
+            "code": "if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+            "line": 7,
+            "vars": [
+              "dq",
+              "nbr",
+              "visited"
+            ]
+          },
+          {
+            "code": "visited.add(nbr)",
+            "line": 8,
+            "vars": [
+              "dq",
+              "nbr",
+              "visited"
+            ]
+          },
+          {
+            "code": "dq.append(nbr)",
+            "line": 9,
+            "vars": [
+              "dq",
+              "nbr"
+            ]
+          }
+        ],
+        "liveout": {
+          "dq": false,
+          "graph": false,
+          "nbr": false,
+          "node": false,
+          "visited": false
+        },
+        "return_vars": []
+      },
+      "bfs": {
+        "base_liveout": [
+          "order"
+        ],
+        "live_before": [
+          {
+            "code": "if start is None: return []",
+            "line": 12,
+            "vars": [
+              "graph",
+              "start"
+            ]
+          },
+          {
+            "code": "return []",
+            "line": 13,
+            "vars": [
+              "graph",
+              "start"
+            ]
+          },
+          {
+            "code": "visited = set([start])",
+            "line": 14,
+            "vars": [
+              "graph",
+              "start"
+            ]
+          },
+          {
+            "code": "order: List[Hashable] = []",
+            "line": 15,
+            "vars": [
+              "graph",
+              "start",
+              "visited"
+            ]
+          },
+          {
+            "code": "dq = deque([start])",
+            "line": 16,
+            "vars": [
+              "graph",
+              "order",
+              "start",
+              "visited"
+            ]
+          },
+          {
+            "code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+            "line": 17,
+            "vars": [
+              "dq",
+              "graph",
+              "order",
+              "visited"
+            ]
+          },
+          {
+            "code": "node = dq.popleft()",
+            "line": 18,
+            "vars": [
+              "dq",
+              "graph",
+              "order",
+              "visited"
+            ]
+          },
+          {
+            "code": "order.append(node)",
+            "line": 19,
+            "vars": [
+              "dq",
+              "graph",
+              "node",
+              "order",
+              "visited"
+            ]
+          },
+          {
+            "code": "_enqueue_unvisited(graph, node, visited, dq)",
+            "line": 20,
+            "vars": [
+              "dq",
+              "graph",
+              "node",
+              "order",
+              "visited"
+            ]
+          },
+          {
+            "code": "return order",
+            "line": 21,
+            "vars": [
+              "order"
+            ]
+          }
+        ],
+        "liveout": {
+          "dq": false,
+          "graph": false,
+          "node": false,
+          "order": true,
+          "start": false,
+          "visited": false
+        },
+        "return_vars": [
+          "order"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for nbr in graph.get(node, []):",
+      "cond": "for nbr in graph.get(node, [])",
+      "function": "_enqueue_unvisited",
+      "header_id": 1,
+      "line": 6,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while dq:",
+      "cond": "dq",
+      "function": "bfs",
+      "header_id": 6,
+      "line": 17,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "for nbr in graph.get(node, []): if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "a_line": 6,
+      "b_code": "if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "b_line": 7,
+      "function": "_enqueue_unvisited"
+    },
+    {
+      "a_code": "for nbr in graph.get(node, []): if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "a_line": 6,
+      "b_code": "visited.add(nbr)",
+      "b_line": 8,
+      "function": "_enqueue_unvisited"
+    },
+    {
+      "a_code": "if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "a_line": 7,
+      "b_code": "visited.add(nbr)",
+      "b_line": 8,
+      "function": "_enqueue_unvisited"
+    },
+    {
+      "a_code": "for nbr in graph.get(node, []): if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "a_line": 6,
+      "b_code": "dq.append(nbr)",
+      "b_line": 9,
+      "function": "_enqueue_unvisited"
+    },
+    {
+      "a_code": "if nbr not in visited: visited.add(nbr) dq.append(nbr)",
+      "a_line": 7,
+      "b_code": "dq.append(nbr)",
+      "b_line": 9,
+      "function": "_enqueue_unvisited"
+    },
+    {
+      "a_code": "visited.add(nbr)",
+      "a_line": 8,
+      "b_code": "dq.append(nbr)",
+      "b_line": 9,
+      "function": "_enqueue_unvisited"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "return []",
+      "b_line": 13,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "visited = set([start])",
+      "b_line": 14,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "order: List[Hashable] = []",
+      "b_line": 15,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "order: List[Hashable] = []",
+      "b_line": 15,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "dq = deque([start])",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "dq = deque([start])",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 15,
+      "b_code": "dq = deque([start])",
+      "b_line": 16,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 15,
+      "b_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "dq = deque([start])",
+      "a_line": 16,
+      "b_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 17,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "node = dq.popleft()",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "node = dq.popleft()",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 15,
+      "b_code": "node = dq.popleft()",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "dq = deque([start])",
+      "a_line": 16,
+      "b_code": "node = dq.popleft()",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "a_line": 17,
+      "b_code": "node = dq.popleft()",
+      "b_line": 18,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "order.append(node)",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "order.append(node)",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 15,
+      "b_code": "order.append(node)",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "dq = deque([start])",
+      "a_line": 16,
+      "b_code": "order.append(node)",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "a_line": 17,
+      "b_code": "order.append(node)",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "node = dq.popleft()",
+      "a_line": 18,
+      "b_code": "order.append(node)",
+      "b_line": 19,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 15,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "dq = deque([start])",
+      "a_line": 16,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "a_line": 17,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "node = dq.popleft()",
+      "a_line": 18,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order.append(node)",
+      "a_line": 19,
+      "b_code": "_enqueue_unvisited(graph, node, visited, dq)",
+      "b_line": 20,
+      "function": "bfs"
+    },
+    {
+      "a_code": "if start is None: return []",
+      "a_line": 12,
+      "b_code": "return order",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "visited = set([start])",
+      "a_line": 14,
+      "b_code": "return order",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "order: List[Hashable] = []",
+      "a_line": 15,
+      "b_code": "return order",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "dq = deque([start])",
+      "a_line": 16,
+      "b_code": "return order",
+      "b_line": 21,
+      "function": "bfs"
+    },
+    {
+      "a_code": "while dq: node = dq.popleft() order.append(node) _enqueue_unvisited(graph, node, visited, dq)",
+      "a_line": 17,
+      "b_code": "return order",
+      "b_line": 21,
+      "function": "bfs"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "start"
+      },
+      "from": {
+        "code": "visited = set([start])",
+        "line": 14,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "dq"
+      },
+      "from": {
+        "code": "visited = set([start])",
+        "line": 14,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "dq"
+      },
+      "from": {
+        "code": "order: List[Hashable] = []",
+        "line": 15,
+        "var": "order"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "start"
+      },
+      "from": {
+        "code": "dq = deque([start])",
+        "line": 16,
+        "var": "dq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "graph"
+      },
+      "from": {
+        "code": "dq = deque([start])",
+        "line": 16,
+        "var": "dq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "dq = deque([start])",
+        "line": 16,
+        "var": "dq"
+      },
+      "from": {
+        "code": "node = dq.popleft()",
+        "line": 18,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "start"
+      },
+      "from": {
+        "code": "node = dq.popleft()",
+        "line": 18,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def bfs(graph:",
+        "line": 11,
+        "var": "graph"
+      },
+      "from": {
+        "code": "node = dq.popleft()",
+        "line": 18,
+        "var": "node"
+      },
+      "label": "negative"
+    }
+  ]
+}

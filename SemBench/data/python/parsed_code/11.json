@@ -1,0 +1,232 @@
+{
+  "cfg_statements": [
+    {
+      "code": "while b != 0: a, b = b, a % b",
+      "dead": false,
+      "function": "_gcd_iter",
+      "kind": "While",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "a, b = b, a % b",
+      "dead": false,
+      "function": "_gcd_iter",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "return abs(a)",
+      "dead": false,
+      "function": "_gcd_iter",
+      "kind": "Return",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "return _gcd_iter(abs(a), abs(b))",
+      "dead": false,
+      "function": "gcd",
+      "kind": "Return",
+      "line": 11,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "while b != 0: a, b = b, a % b",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "a, b = b, a % b",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "return abs(a)",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "return _gcd_iter(abs(a), abs(b))",
+      "dead": false,
+      "line": 11
+    }
+  ],
+  "file": "SemBench/data/python/code/11.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 7,
+      "lineno": 4,
+      "name": "_gcd_iter",
+      "variables": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "calls": [
+        "_gcd_iter"
+      ],
+      "end_lineno": 11,
+      "lineno": 9,
+      "name": "gcd",
+      "variables": [
+        "a",
+        "b"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_gcd_iter": {
+        "base_liveout": [
+          "a"
+        ],
+        "live_before": [
+          {
+            "code": "while b != 0: a, b = b, a % b",
+            "line": 5,
+            "vars": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "a, b = b, a % b",
+            "line": 6,
+            "vars": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "return abs(a)",
+            "line": 7,
+            "vars": [
+              "a"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": false
+        },
+        "return_vars": [
+          "a"
+        ]
+      },
+      "gcd": {
+        "base_liveout": [
+          "a",
+          "b"
+        ],
+        "live_before": [
+          {
+            "code": "return _gcd_iter(abs(a), abs(b))",
+            "line": 11,
+            "vars": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": true
+        },
+        "return_vars": [
+          "a",
+          "b"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while b != 0:",
+      "cond": "b != 0",
+      "function": "_gcd_iter",
+      "header_id": 1,
+      "line": 5,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "while b != 0: a, b = b, a % b",
+      "a_line": 5,
+      "b_code": "a, b = b, a % b",
+      "b_line": 6,
+      "function": "_gcd_iter"
+    },
+    {
+      "a_code": "while b != 0: a, b = b, a % b",
+      "a_line": 5,
+      "b_code": "return abs(a)",
+      "b_line": 7,
+      "function": "_gcd_iter"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def _gcd_iter(a:",
+        "line": 4,
+        "var": "a"
+      },
+      "from": {
+        "code": "a, b = b, a % b",
+        "line": 6,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _gcd_iter(a:",
+        "line": 4,
+        "var": "b"
+      },
+      "from": {
+        "code": "a, b = b, a % b",
+        "line": 6,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "a, b = b, a % b",
+        "line": 6,
+        "var": "a"
+      },
+      "from": {
+        "code": "a, b = b, a % b",
+        "line": 6,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _gcd_iter(a:",
+        "line": 4,
+        "var": "b"
+      },
+      "from": {
+        "code": "a, b = b, a % b",
+        "line": 6,
+        "var": "b"
+      },
+      "label": "must"
+    }
+  ]
+}

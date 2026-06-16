@@ -1,0 +1,2569 @@
+{
+  "cfg_statements": [
+    {
+      "code": "from sys import stdin",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 37,
+      "node_id": 2
+    },
+    {
+      "code": "if mod == 0: return 0",
+      "dead": false,
+      "function": "mpow",
+      "kind": "If",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "mpow",
+      "kind": "Return",
+      "line": 5,
+      "node_id": 2
+    },
+    {
+      "code": "r = 1",
+      "dead": false,
+      "function": "mpow",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 3
+    },
+    {
+      "code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "dead": false,
+      "function": "mpow",
+      "kind": "While",
+      "line": 7,
+      "node_id": 4
+    },
+    {
+      "code": "if p & 1 == 1: r = r * n % mod",
+      "dead": false,
+      "function": "mpow",
+      "kind": "If",
+      "line": 8,
+      "node_id": 5
+    },
+    {
+      "code": "r = r * n % mod",
+      "dead": false,
+      "function": "mpow",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 6
+    },
+    {
+      "code": "n = n * n % mod",
+      "dead": false,
+      "function": "mpow",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 7
+    },
+    {
+      "code": "p >>= 1",
+      "dead": false,
+      "function": "mpow",
+      "kind": "AugAssign",
+      "line": 11,
+      "node_id": 8
+    },
+    {
+      "code": "return r",
+      "dead": false,
+      "function": "mpow",
+      "kind": "Return",
+      "line": 12,
+      "node_id": 9
+    },
+    {
+      "code": "if u == 0: return 0",
+      "dead": false,
+      "function": "popcount",
+      "kind": "If",
+      "line": 14,
+      "node_id": 1
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "popcount",
+      "kind": "Return",
+      "line": 15,
+      "node_id": 2
+    },
+    {
+      "code": "a = u % bin(u).count('1')",
+      "dead": false,
+      "function": "popcount",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 3
+    },
+    {
+      "code": "return 1 + popcount(a)",
+      "dead": false,
+      "function": "popcount",
+      "kind": "Return",
+      "line": 17,
+      "node_id": 4
+    },
+    {
+      "code": "input = stdin.readline",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "n = int(input())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "x = '0b' + input()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "xs = int(x, 0)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "xc = x.count('1')",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 5
+    },
+    {
+      "code": "xsp = mpow(xs, 1, xc + 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 6
+    },
+    {
+      "code": "xsm = mpow(xs, 1, xc - 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 26,
+      "node_id": 8
+    },
+    {
+      "code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 27,
+      "node_id": 9
+    },
+    {
+      "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 10
+    },
+    {
+      "code": "y = mpow(y, 1, xc + 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 11
+    },
+    {
+      "code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 30,
+      "node_id": 12
+    },
+    {
+      "code": "print(0)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 31,
+      "node_id": 13
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 32,
+      "node_id": 14
+    },
+    {
+      "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 34,
+      "node_id": 15
+    },
+    {
+      "code": "y = mpow(y, 1, xc - 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 16
+    },
+    {
+      "code": "print(popcount(y) + 1)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 36,
+      "node_id": 17
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "from sys import stdin",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "if mod == 0: return 0",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "r = 1",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "if p & 1 == 1: r = r * n % mod",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "r = r * n % mod",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "n = n * n % mod",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "p >>= 1",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "return r",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "if u == 0: return 0",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "a = u % bin(u).count('1')",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "return 1 + popcount(a)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "input = stdin.readline",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "n = int(input())",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "x = '0b' + input()",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "xs = int(x, 0)",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "xc = x.count('1')",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "xsp = mpow(xs, 1, xc + 1)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "xsm = mpow(xs, 1, xc - 1)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "y = mpow(y, 1, xc + 1)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "print(0)",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "y = mpow(y, 1, xc - 1)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "print(popcount(y) + 1)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 37
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02609_s550861482.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 12,
+      "lineno": 3,
+      "name": "mpow",
+      "variables": [
+        "mod",
+        "n",
+        "p",
+        "r"
+      ]
+    },
+    {
+      "calls": [
+        "popcount"
+      ],
+      "end_lineno": 17,
+      "lineno": 13,
+      "name": "popcount",
+      "variables": [
+        "a",
+        "u"
+      ]
+    },
+    {
+      "calls": [
+        "mpow",
+        "popcount"
+      ],
+      "end_lineno": 36,
+      "lineno": 18,
+      "name": "main",
+      "variables": [
+        "i",
+        "input",
+        "n",
+        "stdin.readline",
+        "x",
+        "xc",
+        "xs",
+        "xsm",
+        "xsp",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "from sys import stdin",
+            "line": 1,
+            "vars": []
+          },
+          {
+            "code": "main()",
+            "line": 37,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "input = stdin.readline",
+            "line": 19,
+            "vars": [
+              "stdin.readline"
+            ]
+          },
+          {
+            "code": "n = int(input())",
+            "line": 20,
+            "vars": []
+          },
+          {
+            "code": "x = '0b' + input()",
+            "line": 21,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "xs = int(x, 0)",
+            "line": 22,
+            "vars": [
+              "n",
+              "x"
+            ]
+          },
+          {
+            "code": "xc = x.count('1')",
+            "line": 23,
+            "vars": [
+              "n",
+              "x",
+              "xs"
+            ]
+          },
+          {
+            "code": "xsp = mpow(xs, 1, xc + 1)",
+            "line": 24,
+            "vars": [
+              "n",
+              "x",
+              "xc",
+              "xs"
+            ]
+          },
+          {
+            "code": "xsm = mpow(xs, 1, xc - 1)",
+            "line": 25,
+            "vars": [
+              "n",
+              "x",
+              "xc",
+              "xs",
+              "xsp"
+            ]
+          },
+          {
+            "code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+            "line": 26,
+            "vars": [
+              "n",
+              "x",
+              "xc",
+              "xsm",
+              "xsp"
+            ]
+          },
+          {
+            "code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+            "line": 27,
+            "vars": [
+              "i",
+              "n",
+              "x",
+              "xc",
+              "xsm",
+              "xsp"
+            ]
+          },
+          {
+            "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+            "line": 28,
+            "vars": [
+              "i",
+              "n",
+              "xc",
+              "xsm",
+              "xsp"
+            ]
+          },
+          {
+            "code": "y = mpow(y, 1, xc + 1)",
+            "line": 29,
+            "vars": [
+              "i",
+              "n",
+              "xc",
+              "xsm",
+              "y"
+            ]
+          },
+          {
+            "code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+            "line": 30,
+            "vars": [
+              "i",
+              "n",
+              "xc",
+              "xsm"
+            ]
+          },
+          {
+            "code": "print(0)",
+            "line": 31,
+            "vars": [
+              "i",
+              "n",
+              "xc",
+              "xsm"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 32,
+            "vars": [
+              "i",
+              "n",
+              "xc",
+              "xsm"
+            ]
+          },
+          {
+            "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+            "line": 34,
+            "vars": [
+              "i",
+              "n",
+              "xc",
+              "xsm"
+            ]
+          },
+          {
+            "code": "y = mpow(y, 1, xc - 1)",
+            "line": 35,
+            "vars": [
+              "xc",
+              "y"
+            ]
+          },
+          {
+            "code": "print(popcount(y) + 1)",
+            "line": 36,
+            "vars": [
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "input": false,
+          "n": false,
+          "stdin.readline": false,
+          "x": false,
+          "xc": false,
+          "xs": false,
+          "xsm": false,
+          "xsp": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "mpow": {
+        "base_liveout": [
+          "r"
+        ],
+        "live_before": [
+          {
+            "code": "if mod == 0: return 0",
+            "line": 4,
+            "vars": [
+              "mod",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 5,
+            "vars": [
+              "mod",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "r = 1",
+            "line": 6,
+            "vars": [
+              "mod",
+              "n",
+              "p"
+            ]
+          },
+          {
+            "code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+            "line": 7,
+            "vars": [
+              "mod",
+              "n",
+              "p",
+              "r"
+            ]
+          },
+          {
+            "code": "if p & 1 == 1: r = r * n % mod",
+            "line": 8,
+            "vars": [
+              "mod",
+              "n",
+              "p",
+              "r"
+            ]
+          },
+          {
+            "code": "r = r * n % mod",
+            "line": 9,
+            "vars": [
+              "mod",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "n = n * n % mod",
+            "line": 10,
+            "vars": [
+              "mod",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "p >>= 1",
+            "line": 11,
+            "vars": [
+              "r"
+            ]
+          },
+          {
+            "code": "return r",
+            "line": 12,
+            "vars": [
+              "r"
+            ]
+          }
+        ],
+        "liveout": {
+          "mod": false,
+          "n": false,
+          "p": false,
+          "r": true
+        },
+        "return_vars": [
+          "r"
+        ]
+      },
+      "popcount": {
+        "base_liveout": [
+          "a"
+        ],
+        "live_before": [
+          {
+            "code": "if u == 0: return 0",
+            "line": 14,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 15,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "a = u % bin(u).count('1')",
+            "line": 16,
+            "vars": [
+              "u"
+            ]
+          },
+          {
+            "code": "return 1 + popcount(a)",
+            "line": 17,
+            "vars": [
+              "a"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "u": false
+        },
+        "return_vars": [
+          "a"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(2, n + 2):",
+      "cond": "for i in range(2, n + 2)",
+      "function": "main",
+      "header_id": 8,
+      "line": 26,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while p > 0:",
+      "cond": "p > 0",
+      "function": "mpow",
+      "header_id": 4,
+      "line": 7,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "from sys import stdin",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 37,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "return 0",
+      "b_line": 5,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "r = 1",
+      "b_line": 6,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "b_line": 7,
+      "function": "mpow"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 6,
+      "b_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "b_line": 7,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "if p & 1 == 1: r = r * n % mod",
+      "b_line": 8,
+      "function": "mpow"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 6,
+      "b_code": "if p & 1 == 1: r = r * n % mod",
+      "b_line": 8,
+      "function": "mpow"
+    },
+    {
+      "a_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "a_line": 7,
+      "b_code": "if p & 1 == 1: r = r * n % mod",
+      "b_line": 8,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "r = r * n % mod",
+      "b_line": 9,
+      "function": "mpow"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 6,
+      "b_code": "r = r * n % mod",
+      "b_line": 9,
+      "function": "mpow"
+    },
+    {
+      "a_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "a_line": 7,
+      "b_code": "r = r * n % mod",
+      "b_line": 9,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if p & 1 == 1: r = r * n % mod",
+      "a_line": 8,
+      "b_code": "r = r * n % mod",
+      "b_line": 9,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "n = n * n % mod",
+      "b_line": 10,
+      "function": "mpow"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 6,
+      "b_code": "n = n * n % mod",
+      "b_line": 10,
+      "function": "mpow"
+    },
+    {
+      "a_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "a_line": 7,
+      "b_code": "n = n * n % mod",
+      "b_line": 10,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if p & 1 == 1: r = r * n % mod",
+      "a_line": 8,
+      "b_code": "n = n * n % mod",
+      "b_line": 10,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "p >>= 1",
+      "b_line": 11,
+      "function": "mpow"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 6,
+      "b_code": "p >>= 1",
+      "b_line": 11,
+      "function": "mpow"
+    },
+    {
+      "a_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "a_line": 7,
+      "b_code": "p >>= 1",
+      "b_line": 11,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if p & 1 == 1: r = r * n % mod",
+      "a_line": 8,
+      "b_code": "p >>= 1",
+      "b_line": 11,
+      "function": "mpow"
+    },
+    {
+      "a_code": "n = n * n % mod",
+      "a_line": 10,
+      "b_code": "p >>= 1",
+      "b_line": 11,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if mod == 0: return 0",
+      "a_line": 4,
+      "b_code": "return r",
+      "b_line": 12,
+      "function": "mpow"
+    },
+    {
+      "a_code": "r = 1",
+      "a_line": 6,
+      "b_code": "return r",
+      "b_line": 12,
+      "function": "mpow"
+    },
+    {
+      "a_code": "while p > 0: if p & 1 == 1: r = r * n % mod n = n * n % mod p >>= 1",
+      "a_line": 7,
+      "b_code": "return r",
+      "b_line": 12,
+      "function": "mpow"
+    },
+    {
+      "a_code": "if u == 0: return 0",
+      "a_line": 14,
+      "b_code": "return 0",
+      "b_line": 15,
+      "function": "popcount"
+    },
+    {
+      "a_code": "if u == 0: return 0",
+      "a_line": 14,
+      "b_code": "a = u % bin(u).count('1')",
+      "b_line": 16,
+      "function": "popcount"
+    },
+    {
+      "a_code": "if u == 0: return 0",
+      "a_line": 14,
+      "b_code": "return 1 + popcount(a)",
+      "b_line": 17,
+      "function": "popcount"
+    },
+    {
+      "a_code": "a = u % bin(u).count('1')",
+      "a_line": 16,
+      "b_code": "return 1 + popcount(a)",
+      "b_line": 17,
+      "function": "popcount"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "n = int(input())",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "x = '0b' + input()",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "x = '0b' + input()",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "xs = int(x, 0)",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "xs = int(x, 0)",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "xs = int(x, 0)",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "xc = x.count('1')",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "xc = x.count('1')",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "xc = x.count('1')",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "xc = x.count('1')",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "xsp = mpow(xs, 1, xc + 1)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "xsp = mpow(xs, 1, xc + 1)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "xsp = mpow(xs, 1, xc + 1)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "xsp = mpow(xs, 1, xc + 1)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "xsp = mpow(xs, 1, xc + 1)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "xsm = mpow(xs, 1, xc - 1)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "xsm = mpow(xs, 1, xc - 1)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "xsm = mpow(xs, 1, xc - 1)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "xsm = mpow(xs, 1, xc - 1)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "xsm = mpow(xs, 1, xc - 1)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "xsm = mpow(xs, 1, xc - 1)",
+      "b_line": 25,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+      "a_line": 28,
+      "b_code": "y = mpow(y, 1, xc + 1)",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "b_line": 30,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 30,
+      "b_code": "print(0)",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 30,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "print(0)",
+      "a_line": 31,
+      "b_code": "continue",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 30,
+      "b_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 30,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+      "a_line": 34,
+      "b_code": "y = mpow(y, 1, xc - 1)",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "input = stdin.readline",
+      "a_line": 19,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "n = int(input())",
+      "a_line": 20,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "x = '0b' + input()",
+      "a_line": 21,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "xs = int(x, 0)",
+      "a_line": 22,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "xc = x.count('1')",
+      "a_line": 23,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "xsp = mpow(xs, 1, xc + 1)",
+      "a_line": 24,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "xsm = mpow(xs, 1, xc - 1)",
+      "a_line": 25,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(2, n + 2): if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1) print(popcount(y) + 1)",
+      "a_line": 26,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if x[i] == '0': y = xsp + mpow(2, n - i + 1, xc + 1) y = mpow(y, 1, xc + 1) elif xc == 1: print(0) continue else: y = xsm - mpow(2, n - i + 1, xc - 1) y = mpow(y, 1, xc - 1)",
+      "a_line": 27,
+      "b_code": "print(popcount(y) + 1)",
+      "b_line": 36,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped bin at line 16",
+      "external call skipped input at line 20",
+      "external call skipped input at line 21"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped bin at line 16",
+    "external call skipped input at line 20",
+    "external call skipped input at line 21"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "mod"
+      },
+      "from": {
+        "code": "r = 1",
+        "line": 6,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "mod"
+      },
+      "from": {
+        "code": "r = r * n % mod",
+        "line": 9,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "n"
+      },
+      "from": {
+        "code": "r = r * n % mod",
+        "line": 9,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r = 1",
+        "line": 6,
+        "var": "r"
+      },
+      "from": {
+        "code": "r = r * n % mod",
+        "line": 9,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "p"
+      },
+      "from": {
+        "code": "r = r * n % mod",
+        "line": 9,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "mod"
+      },
+      "from": {
+        "code": "n = n * n % mod",
+        "line": 10,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "n"
+      },
+      "from": {
+        "code": "n = n * n % mod",
+        "line": 10,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "p"
+      },
+      "from": {
+        "code": "n = n * n % mod",
+        "line": 10,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def mpow(n, p, mod):",
+        "line": 3,
+        "var": "mod"
+      },
+      "from": {
+        "code": "p >>= 1",
+        "line": 11,
+        "var": "p"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def popcount(u):",
+        "line": 13,
+        "var": "u"
+      },
+      "from": {
+        "code": "a = u % bin(u).count('1')",
+        "line": 16,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "stdin.readline"
+      },
+      "from": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "n = int(input())",
+        "line": 20,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "xsp = mpow(xs, 1, xc + 1)",
+        "line": 24,
+        "var": "xsp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "from": {
+        "code": "xsp = mpow(xs, 1, xc + 1)",
+        "line": 24,
+        "var": "xsp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "from": {
+        "code": "xsp = mpow(xs, 1, xc + 1)",
+        "line": 24,
+        "var": "xsp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "xsp = mpow(xs, 1, xc + 1)",
+        "line": 24,
+        "var": "xsp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "xsm = mpow(xs, 1, xc - 1)",
+        "line": 25,
+        "var": "xsm"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "from": {
+        "code": "xsm = mpow(xs, 1, xc - 1)",
+        "line": 25,
+        "var": "xsm"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "from": {
+        "code": "xsm = mpow(xs, 1, xc - 1)",
+        "line": 25,
+        "var": "xsm"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 18,
+        "var": "i"
+      },
+      "from": {
+        "code": "xsm = mpow(xs, 1, xc - 1)",
+        "line": 25,
+        "var": "xsm"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "i"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = int(input())",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xsp = mpow(xs, 1, xc + 1)",
+        "line": 24,
+        "var": "xsp"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "input"
+      },
+      "from": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "i"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = int(input())",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xsp = mpow(xs, 1, xc + 1)",
+        "line": 24,
+        "var": "xsp"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = xsp + mpow(2, n - i + 1, xc + 1)",
+        "line": 28,
+        "var": "y"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "input"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc + 1)",
+        "line": 29,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "i"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = int(input())",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xsm = mpow(xs, 1, xc - 1)",
+        "line": 25,
+        "var": "xsm"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "input"
+      },
+      "from": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "i"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "n = int(input())",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = '0b' + input()",
+        "line": 21,
+        "var": "x"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xc = x.count('1')",
+        "line": 23,
+        "var": "xc"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xs = int(x, 0)",
+        "line": 22,
+        "var": "xs"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "xsm = mpow(xs, 1, xc - 1)",
+        "line": 25,
+        "var": "xsm"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = xsm - mpow(2, n - i + 1, xc - 1)",
+        "line": 34,
+        "var": "y"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "input = stdin.readline",
+        "line": 19,
+        "var": "input"
+      },
+      "from": {
+        "code": "y = mpow(y, 1, xc - 1)",
+        "line": 35,
+        "var": "y"
+      },
+      "label": "negative"
+    }
+  ]
+}

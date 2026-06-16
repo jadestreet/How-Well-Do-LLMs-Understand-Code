@@ -1,0 +1,37 @@
+{
+  "data_dependency": [
+    "Does variable i at line 47: <statement> i = choice(range(365)) </statement> determine the value stored in variable self.X at line 55: <statement> self.X[i0], self.X[i1] = self.X[i1], self.X[i0] </statement>?",
+    "Does variable X at line 10: <statement> X = [] </statement> determine the value stored in variable max_diff at line 21: <statement> max_diff = diff </statement>?",
+    "Does the value of variable i0 at line 53: <statement> i0 = choice(range(365 - a)) </statement> depend on the value of variable a at line 52: <statement> a = choice(range(interval)) </statement>?",
+    "Does the value of variable self.X at line 55: <statement> self.X[i0], self.X[i1] = self.X[i1], self.X[i0] </statement> depend on the value of variable lim at line 42: <statement> def optimize(self, temp, threp, interval, start_time, lim=1.8): </statement>?"
+  ],
+  "dead_code": [
+    "Is the statement a = choice(range(interval)) unreachable during execution?",
+    "Is it possible for the statement L = [-1] * 26 to execute?",
+    "Can the statement self.C = C be reached during execution?",
+    "Can the statement i1 = i0 + a be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 60: <statement> max_score = new_score </statement> is reached, the statement line 45: <statement> t = (time() - start_time) / 2 </statement> has already been reached?",
+    "Does the statement line 39: <statement> score -= self.C[j] * A[j] </statement> dominate line 31: <statement> A = [0 for j in range(26)] </statement>?",
+    "Does the statement line 44: <statement> while True: t = (time() - start_time) / 2 if random() < threp: i = choice(range(365)) j = choice(range(26)) memo = self.X[i] self.X[i] = j else: a = choice(range(interval)) i0 = choice(range(365 - a)) i1 = i0 + a self.X[i0], self.X[i1] = self.X[i1], self.X[i0] new_score = self.calc_score() if new_score > max_score: max_score = new_score elif random() < pow(2.7, (new_score - max_score) / pow(2000, 1 - t)): max_score = new_score else: try: self.X[i0], self.X[i1] = self.X[i1], self.X[i0] except BaseException: self.X[i] = memo if time() - start_time > lim: break </statement> dominate line 54: <statement> i1 = i0 + a </statement>?",
+    "Is it guaranteed that whenever line 45: <statement> t = (time() - start_time) / 2 </statement> is reached, the statement line 60: <statement> max_score = new_score </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function Optimizer.__init__ to function Optimizer.calc_score?",
+    "Can function Optimizer.optimize eventually call function Optimizer.__init__?",
+    "Can function Optimizer.optimize eventually call function Optimizer.calc_score?"
+  ],
+  "liveness": [
+    "Is variable self live at the end of function Optimizer.optimize?",
+    "Is variable score live at the end of function Optimizer.calc_score?",
+    "Does variable memo remain in use at the end of function Optimizer.optimize?",
+    "Is variable max_score live at the end of function Optimizer.optimize?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for j in range(26) always executed?",
+    "Is the loop with condition for i in range(365) always executed?",
+    "Is it possible that the loop with condition True is never executed?",
+    "Can the loop with condition for j in range(26) be skipped entirely?"
+  ]
+}

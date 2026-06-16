@@ -1,0 +1,3095 @@
+{
+  "cfg_statements": [
+    {
+      "code": "self.ch = ch",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 1
+    },
+    {
+      "code": "self.freq = freq",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "self.left = left",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 3
+    },
+    {
+      "code": "self.right = right",
+      "dead": false,
+      "function": "Node.__init__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "return self.freq < other.freq",
+      "dead": false,
+      "function": "Node.__lt__",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "tbl: Dict[str, int] = {}",
+      "dead": false,
+      "function": "freq_table",
+      "kind": "AnnAssign",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "for ch in s: tbl[ch] = tbl.get(ch, 0) + 1",
+      "dead": false,
+      "function": "freq_table",
+      "kind": "For",
+      "line": 14,
+      "node_id": 2
+    },
+    {
+      "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+      "dead": false,
+      "function": "freq_table",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 3
+    },
+    {
+      "code": "return tbl",
+      "dead": false,
+      "function": "freq_table",
+      "kind": "Return",
+      "line": 16,
+      "node_id": 4
+    },
+    {
+      "code": "heap: List[Tuple[int, int, Node]] = []",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "AnnAssign",
+      "line": 19,
+      "node_id": 1
+    },
+    {
+      "code": "uid = 0",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 2
+    },
+    {
+      "code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "For",
+      "line": 21,
+      "node_id": 3
+    },
+    {
+      "code": "heap.append((f, uid, Node(ch, f)))",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Expr",
+      "line": 22,
+      "node_id": 4
+    },
+    {
+      "code": "uid += 1",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "AugAssign",
+      "line": 23,
+      "node_id": 5
+    },
+    {
+      "code": "if not heap: return None",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "If",
+      "line": 24,
+      "node_id": 6
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Return",
+      "line": 25,
+      "node_id": 7
+    },
+    {
+      "code": "heapq.heapify(heap)",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 8
+    },
+    {
+      "code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "While",
+      "line": 27,
+      "node_id": 9
+    },
+    {
+      "code": "f1, _, n1 = heapq.heappop(heap)",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 10
+    },
+    {
+      "code": "f2, _, n2 = heapq.heappop(heap)",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 11
+    },
+    {
+      "code": "parent = Node(None, f1 + f2, n1, n2)",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Assign",
+      "line": 30,
+      "node_id": 12
+    },
+    {
+      "code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Expr",
+      "line": 31,
+      "node_id": 13
+    },
+    {
+      "code": "uid += 1",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "AugAssign",
+      "line": 31,
+      "node_id": 14
+    },
+    {
+      "code": "return heapq.heappop(heap)[2]",
+      "dead": false,
+      "function": "build_tree",
+      "kind": "Return",
+      "line": 32,
+      "node_id": 15
+    },
+    {
+      "code": "codes: Dict[str, str] = {}",
+      "dead": false,
+      "function": "build_code_map",
+      "kind": "AnnAssign",
+      "line": 35,
+      "node_id": 1
+    },
+    {
+      "code": "if root is None: return codes",
+      "dead": false,
+      "function": "build_code_map",
+      "kind": "If",
+      "line": 36,
+      "node_id": 2
+    },
+    {
+      "code": "return codes",
+      "dead": false,
+      "function": "build_code_map",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 3
+    },
+    {
+      "code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+      "dead": false,
+      "function": "build_code_map",
+      "kind": "FunctionDef",
+      "line": 38,
+      "node_id": 4
+    },
+    {
+      "code": "dfs(root, \"\")",
+      "dead": false,
+      "function": "build_code_map",
+      "kind": "Expr",
+      "line": 44,
+      "node_id": 5
+    },
+    {
+      "code": "return codes",
+      "dead": false,
+      "function": "build_code_map",
+      "kind": "Return",
+      "line": 45,
+      "node_id": 6
+    },
+    {
+      "code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+      "dead": false,
+      "function": "build_code_map.dfs",
+      "kind": "If",
+      "line": 39,
+      "node_id": 1
+    },
+    {
+      "code": "codes[n.ch] = path or \"0\"",
+      "dead": false,
+      "function": "build_code_map.dfs",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 2
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "build_code_map.dfs",
+      "kind": "Return",
+      "line": 41,
+      "node_id": 3
+    },
+    {
+      "code": "dfs(n.left, path + \"0\")",
+      "dead": false,
+      "function": "build_code_map.dfs",
+      "kind": "Expr",
+      "line": 42,
+      "node_id": 4
+    },
+    {
+      "code": "dfs(n.right, path + \"1\")",
+      "dead": false,
+      "function": "build_code_map.dfs",
+      "kind": "Expr",
+      "line": 43,
+      "node_id": 5
+    },
+    {
+      "code": "out = []",
+      "dead": false,
+      "function": "encode",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 1
+    },
+    {
+      "code": "for ch in s: out.append(codes[ch])",
+      "dead": false,
+      "function": "encode",
+      "kind": "For",
+      "line": 49,
+      "node_id": 2
+    },
+    {
+      "code": "out.append(codes[ch])",
+      "dead": false,
+      "function": "encode",
+      "kind": "Expr",
+      "line": 50,
+      "node_id": 3
+    },
+    {
+      "code": "return \"\".join(out)",
+      "dead": false,
+      "function": "encode",
+      "kind": "Return",
+      "line": 51,
+      "node_id": 4
+    },
+    {
+      "code": "if root is None: return \"\"",
+      "dead": false,
+      "function": "decode",
+      "kind": "If",
+      "line": 54,
+      "node_id": 1
+    },
+    {
+      "code": "return \"\"",
+      "dead": false,
+      "function": "decode",
+      "kind": "Return",
+      "line": 55,
+      "node_id": 2
+    },
+    {
+      "code": "out = []",
+      "dead": false,
+      "function": "decode",
+      "kind": "Assign",
+      "line": 56,
+      "node_id": 3
+    },
+    {
+      "code": "node = root",
+      "dead": false,
+      "function": "decode",
+      "kind": "Assign",
+      "line": 57,
+      "node_id": 4
+    },
+    {
+      "code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "dead": false,
+      "function": "decode",
+      "kind": "For",
+      "line": 58,
+      "node_id": 5
+    },
+    {
+      "code": "node = node.left if b == \"0\" else node.right",
+      "dead": false,
+      "function": "decode",
+      "kind": "Assign",
+      "line": 59,
+      "node_id": 6
+    },
+    {
+      "code": "if node.ch is not None: out.append(node.ch) node = root",
+      "dead": false,
+      "function": "decode",
+      "kind": "If",
+      "line": 60,
+      "node_id": 7
+    },
+    {
+      "code": "out.append(node.ch)",
+      "dead": false,
+      "function": "decode",
+      "kind": "Expr",
+      "line": 61,
+      "node_id": 8
+    },
+    {
+      "code": "node = root",
+      "dead": false,
+      "function": "decode",
+      "kind": "Assign",
+      "line": 62,
+      "node_id": 9
+    },
+    {
+      "code": "return \"\".join(out)",
+      "dead": false,
+      "function": "decode",
+      "kind": "Return",
+      "line": 63,
+      "node_id": 10
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.ch = ch",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.freq = freq",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.left = left",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.right = right",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "return self.freq < other.freq",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "tbl: Dict[str, int] = {}",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "for ch in s: tbl[ch] = tbl.get(ch, 0) + 1",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "return tbl",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "heap: List[Tuple[int, int, Node]] = []",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "uid = 0",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "heap.append((f, uid, Node(ch, f)))",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "uid += 1",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "if not heap: return None",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "heapq.heapify(heap)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "f1, _, n1 = heapq.heappop(heap)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "f2, _, n2 = heapq.heappop(heap)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "parent = Node(None, f1 + f2, n1, n2)",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "uid += 1",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "return heapq.heappop(heap)[2]",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "codes: Dict[str, str] = {}",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "if root is None: return codes",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "return codes",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "codes[n.ch] = path or \"0\"",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "dfs(n.left, path + \"0\")",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "dfs(n.right, path + \"1\")",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "dfs(root, \"\")",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "return codes",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "out = []",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "for ch in s: out.append(codes[ch])",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "out.append(codes[ch])",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "return \"\".join(out)",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "if root is None: return \"\"",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "return \"\"",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "out = []",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "node = root",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "node = node.left if b == \"0\" else node.right",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "if node.ch is not None: out.append(node.ch) node = root",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "out.append(node.ch)",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "node = root",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "return \"\".join(out)",
+      "dead": false,
+      "line": 63
+    }
+  ],
+  "file": "SemBench/data/python/code/29.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 8,
+      "lineno": 7,
+      "name": "Node.__init__",
+      "variables": [
+        "ch",
+        "freq",
+        "left",
+        "right",
+        "self",
+        "self.ch",
+        "self.freq",
+        "self.left",
+        "self.right"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 9,
+      "name": "Node.__lt__",
+      "variables": [
+        "other",
+        "other.freq",
+        "self",
+        "self.freq"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 12,
+      "name": "freq_table",
+      "variables": [
+        "ch",
+        "s",
+        "tbl"
+      ]
+    },
+    {
+      "calls": [
+        "Node.__init__"
+      ],
+      "end_lineno": 32,
+      "lineno": 18,
+      "name": "build_tree",
+      "variables": [
+        "_",
+        "ch",
+        "f",
+        "f1",
+        "f2",
+        "heap",
+        "heapq",
+        "n1",
+        "n2",
+        "parent",
+        "parent.freq",
+        "tbl",
+        "uid"
+      ]
+    },
+    {
+      "calls": [
+        "build_code_map.dfs"
+      ],
+      "end_lineno": 45,
+      "lineno": 34,
+      "name": "build_code_map",
+      "variables": [
+        "codes",
+        "dfs",
+        "root"
+      ]
+    },
+    {
+      "calls": [
+        "build_code_map.dfs"
+      ],
+      "end_lineno": 43,
+      "lineno": 38,
+      "name": "build_code_map.dfs",
+      "variables": [
+        "codes",
+        "n",
+        "n.ch",
+        "n.left",
+        "n.right",
+        "path"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 51,
+      "lineno": 47,
+      "name": "encode",
+      "variables": [
+        "ch",
+        "codes",
+        "out",
+        "s"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 63,
+      "lineno": 53,
+      "name": "decode",
+      "variables": [
+        "b",
+        "bits",
+        "node",
+        "node.ch",
+        "node.left",
+        "node.right",
+        "out",
+        "root"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "Node.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.ch = ch",
+            "line": 8,
+            "vars": [
+              "ch",
+              "freq",
+              "left",
+              "right"
+            ]
+          },
+          {
+            "code": "self.freq = freq",
+            "line": 8,
+            "vars": [
+              "freq",
+              "left",
+              "right"
+            ]
+          },
+          {
+            "code": "self.left = left",
+            "line": 8,
+            "vars": [
+              "left",
+              "right"
+            ]
+          },
+          {
+            "code": "self.right = right",
+            "line": 8,
+            "vars": [
+              "right"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "freq": false,
+          "left": false,
+          "right": false,
+          "self": false,
+          "self.ch": false,
+          "self.freq": false,
+          "self.left": false,
+          "self.right": false
+        },
+        "return_vars": []
+      },
+      "Node.__lt__": {
+        "base_liveout": [
+          "other.freq",
+          "self.freq"
+        ],
+        "live_before": [
+          {
+            "code": "return self.freq < other.freq",
+            "line": 10,
+            "vars": [
+              "other.freq",
+              "self.freq"
+            ]
+          }
+        ],
+        "liveout": {
+          "other": false,
+          "other.freq": true,
+          "self": false,
+          "self.freq": true
+        },
+        "return_vars": [
+          "other.freq",
+          "self.freq"
+        ]
+      },
+      "build_code_map": {
+        "base_liveout": [
+          "codes"
+        ],
+        "live_before": [
+          {
+            "code": "codes: Dict[str, str] = {}",
+            "line": 35,
+            "vars": [
+              "root"
+            ]
+          },
+          {
+            "code": "if root is None: return codes",
+            "line": 36,
+            "vars": [
+              "codes",
+              "root"
+            ]
+          },
+          {
+            "code": "return codes",
+            "line": 37,
+            "vars": [
+              "codes",
+              "root"
+            ]
+          },
+          {
+            "code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+            "line": 38,
+            "vars": [
+              "codes",
+              "root"
+            ]
+          },
+          {
+            "code": "dfs(root, \"\")",
+            "line": 44,
+            "vars": [
+              "codes",
+              "root"
+            ]
+          },
+          {
+            "code": "return codes",
+            "line": 45,
+            "vars": [
+              "codes"
+            ]
+          }
+        ],
+        "liveout": {
+          "codes": true,
+          "dfs": false,
+          "root": false
+        },
+        "return_vars": [
+          "codes"
+        ]
+      },
+      "build_code_map.dfs": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+            "line": 39,
+            "vars": [
+              "n.ch",
+              "n.left",
+              "n.right",
+              "path"
+            ]
+          },
+          {
+            "code": "codes[n.ch] = path or \"0\"",
+            "line": 40,
+            "vars": [
+              "n.ch",
+              "n.left",
+              "n.right",
+              "path"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 41,
+            "vars": [
+              "n.left",
+              "n.right",
+              "path"
+            ]
+          },
+          {
+            "code": "dfs(n.left, path + \"0\")",
+            "line": 42,
+            "vars": [
+              "n.left",
+              "n.right",
+              "path"
+            ]
+          },
+          {
+            "code": "dfs(n.right, path + \"1\")",
+            "line": 43,
+            "vars": [
+              "n.right",
+              "path"
+            ]
+          }
+        ],
+        "liveout": {
+          "codes": false,
+          "n": false,
+          "n.ch": false,
+          "n.left": false,
+          "n.right": false,
+          "path": false
+        },
+        "return_vars": []
+      },
+      "build_tree": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "heap: List[Tuple[int, int, Node]] = []",
+            "line": 19,
+            "vars": [
+              "heapq",
+              "parent.freq",
+              "tbl"
+            ]
+          },
+          {
+            "code": "uid = 0",
+            "line": 20,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "tbl"
+            ]
+          },
+          {
+            "code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+            "line": 21,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "tbl",
+              "uid"
+            ]
+          },
+          {
+            "code": "heap.append((f, uid, Node(ch, f)))",
+            "line": 22,
+            "vars": [
+              "ch",
+              "f",
+              "heap",
+              "heapq",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "uid += 1",
+            "line": 23,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq"
+            ]
+          },
+          {
+            "code": "if not heap: return None",
+            "line": 24,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 25,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "heapq.heapify(heap)",
+            "line": 26,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+            "line": 27,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "f1, _, n1 = heapq.heappop(heap)",
+            "line": 28,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "f2, _, n2 = heapq.heappop(heap)",
+            "line": 29,
+            "vars": [
+              "f1",
+              "heap",
+              "heapq",
+              "n1",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "parent = Node(None, f1 + f2, n1, n2)",
+            "line": 30,
+            "vars": [
+              "f1",
+              "f2",
+              "heap",
+              "heapq",
+              "n1",
+              "n2",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+            "line": 31,
+            "vars": [
+              "heap",
+              "heapq",
+              "parent",
+              "parent.freq",
+              "uid"
+            ]
+          },
+          {
+            "code": "uid += 1",
+            "line": 31,
+            "vars": []
+          },
+          {
+            "code": "return heapq.heappop(heap)[2]",
+            "line": 32,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "_": false,
+          "ch": false,
+          "f": false,
+          "f1": false,
+          "f2": false,
+          "heap": false,
+          "heapq": false,
+          "n1": false,
+          "n2": false,
+          "parent": false,
+          "parent.freq": false,
+          "tbl": false,
+          "uid": false
+        },
+        "return_vars": []
+      },
+      "decode": {
+        "base_liveout": [
+          "out"
+        ],
+        "live_before": [
+          {
+            "code": "if root is None: return \"\"",
+            "line": 54,
+            "vars": [
+              "bits",
+              "node.ch",
+              "node.left",
+              "node.right",
+              "root"
+            ]
+          },
+          {
+            "code": "return \"\"",
+            "line": 55,
+            "vars": [
+              "bits",
+              "node.ch",
+              "node.left",
+              "node.right",
+              "root"
+            ]
+          },
+          {
+            "code": "out = []",
+            "line": 56,
+            "vars": [
+              "bits",
+              "node.ch",
+              "node.left",
+              "node.right",
+              "root"
+            ]
+          },
+          {
+            "code": "node = root",
+            "line": 57,
+            "vars": [
+              "bits",
+              "node.ch",
+              "node.left",
+              "node.right",
+              "out",
+              "root"
+            ]
+          },
+          {
+            "code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+            "line": 58,
+            "vars": [
+              "bits",
+              "node.ch",
+              "node.left",
+              "node.right",
+              "out",
+              "root"
+            ]
+          },
+          {
+            "code": "node = node.left if b == \"0\" else node.right",
+            "line": 59,
+            "vars": [
+              "b",
+              "node.ch",
+              "node.left",
+              "node.right",
+              "out",
+              "root"
+            ]
+          },
+          {
+            "code": "if node.ch is not None: out.append(node.ch) node = root",
+            "line": 60,
+            "vars": [
+              "node.ch",
+              "out",
+              "root"
+            ]
+          },
+          {
+            "code": "out.append(node.ch)",
+            "line": 61,
+            "vars": [
+              "node.ch",
+              "out",
+              "root"
+            ]
+          },
+          {
+            "code": "node = root",
+            "line": 62,
+            "vars": [
+              "out",
+              "root"
+            ]
+          },
+          {
+            "code": "return \"\".join(out)",
+            "line": 63,
+            "vars": [
+              "out"
+            ]
+          }
+        ],
+        "liveout": {
+          "b": false,
+          "bits": false,
+          "node": false,
+          "node.ch": false,
+          "node.left": false,
+          "node.right": false,
+          "out": true,
+          "root": false
+        },
+        "return_vars": [
+          "out"
+        ]
+      },
+      "encode": {
+        "base_liveout": [
+          "out"
+        ],
+        "live_before": [
+          {
+            "code": "out = []",
+            "line": 48,
+            "vars": [
+              "codes",
+              "s"
+            ]
+          },
+          {
+            "code": "for ch in s: out.append(codes[ch])",
+            "line": 49,
+            "vars": [
+              "codes",
+              "out",
+              "s"
+            ]
+          },
+          {
+            "code": "out.append(codes[ch])",
+            "line": 50,
+            "vars": [
+              "ch",
+              "codes",
+              "out"
+            ]
+          },
+          {
+            "code": "return \"\".join(out)",
+            "line": 51,
+            "vars": [
+              "out"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "codes": false,
+          "out": true,
+          "s": false
+        },
+        "return_vars": [
+          "out"
+        ]
+      },
+      "freq_table": {
+        "base_liveout": [
+          "tbl"
+        ],
+        "live_before": [
+          {
+            "code": "tbl: Dict[str, int] = {}",
+            "line": 13,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "for ch in s: tbl[ch] = tbl.get(ch, 0) + 1",
+            "line": 14,
+            "vars": [
+              "s",
+              "tbl"
+            ]
+          },
+          {
+            "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+            "line": 15,
+            "vars": [
+              "ch",
+              "tbl"
+            ]
+          },
+          {
+            "code": "return tbl",
+            "line": 16,
+            "vars": [
+              "tbl"
+            ]
+          }
+        ],
+        "liveout": {
+          "ch": false,
+          "s": false,
+          "tbl": true
+        },
+        "return_vars": [
+          "tbl"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for ch, f in tbl.items():",
+      "cond": "for ch, f in tbl.items()",
+      "function": "build_tree",
+      "header_id": 3,
+      "line": 21,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while len(heap) > 1:",
+      "cond": "len(heap) > 1",
+      "function": "build_tree",
+      "header_id": 9,
+      "line": 27,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for b in bits:",
+      "cond": "for b in bits",
+      "function": "decode",
+      "header_id": 5,
+      "line": 58,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ch in s:",
+      "cond": "for ch in s",
+      "function": "encode",
+      "header_id": 2,
+      "line": 49,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for ch in s:",
+      "cond": "for ch in s",
+      "function": "freq_table",
+      "header_id": 2,
+      "line": 14,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "self.ch = ch",
+      "a_line": 8,
+      "b_code": "self.freq = freq",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.ch = ch",
+      "a_line": 8,
+      "b_code": "self.left = left",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.freq = freq",
+      "a_line": 8,
+      "b_code": "self.left = left",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.ch = ch",
+      "a_line": 8,
+      "b_code": "self.right = right",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.freq = freq",
+      "a_line": 8,
+      "b_code": "self.right = right",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "self.left = left",
+      "a_line": 8,
+      "b_code": "self.right = right",
+      "b_line": 8,
+      "function": "Node.__init__"
+    },
+    {
+      "a_code": "tbl: Dict[str, int] = {}",
+      "a_line": 13,
+      "b_code": "for ch in s: tbl[ch] = tbl.get(ch, 0) + 1",
+      "b_line": 14,
+      "function": "freq_table"
+    },
+    {
+      "a_code": "tbl: Dict[str, int] = {}",
+      "a_line": 13,
+      "b_code": "tbl[ch] = tbl.get(ch, 0) + 1",
+      "b_line": 15,
+      "function": "freq_table"
+    },
+    {
+      "a_code": "for ch in s: tbl[ch] = tbl.get(ch, 0) + 1",
+      "a_line": 14,
+      "b_code": "tbl[ch] = tbl.get(ch, 0) + 1",
+      "b_line": 15,
+      "function": "freq_table"
+    },
+    {
+      "a_code": "tbl: Dict[str, int] = {}",
+      "a_line": 13,
+      "b_code": "return tbl",
+      "b_line": 16,
+      "function": "freq_table"
+    },
+    {
+      "a_code": "for ch in s: tbl[ch] = tbl.get(ch, 0) + 1",
+      "a_line": 14,
+      "b_code": "return tbl",
+      "b_line": 16,
+      "function": "freq_table"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "uid = 0",
+      "b_line": 20,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "b_line": 21,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "b_line": 21,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "heap.append((f, uid, Node(ch, f)))",
+      "b_line": 22,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "heap.append((f, uid, Node(ch, f)))",
+      "b_line": 22,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "heap.append((f, uid, Node(ch, f)))",
+      "b_line": 22,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "uid += 1",
+      "b_line": 23,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "uid += 1",
+      "b_line": 23,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "uid += 1",
+      "b_line": 23,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap.append((f, uid, Node(ch, f)))",
+      "a_line": 22,
+      "b_code": "uid += 1",
+      "b_line": 23,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "if not heap: return None",
+      "b_line": 24,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "if not heap: return None",
+      "b_line": 24,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "if not heap: return None",
+      "b_line": 24,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "return None",
+      "b_line": 25,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "return None",
+      "b_line": 25,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "return None",
+      "b_line": 25,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "return None",
+      "b_line": 25,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "heapq.heapify(heap)",
+      "b_line": 26,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "heapq.heapify(heap)",
+      "b_line": 26,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "heapq.heapify(heap)",
+      "b_line": 26,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "heapq.heapify(heap)",
+      "b_line": 26,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "b_line": 27,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "b_line": 27,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "b_line": 27,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "b_line": 27,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "b_line": 27,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "f1, _, n1 = heapq.heappop(heap)",
+      "b_line": 28,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "f1, _, n1 = heapq.heappop(heap)",
+      "b_line": 28,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "f1, _, n1 = heapq.heappop(heap)",
+      "b_line": 28,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "f1, _, n1 = heapq.heappop(heap)",
+      "b_line": 28,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "f1, _, n1 = heapq.heappop(heap)",
+      "b_line": 28,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "a_line": 27,
+      "b_code": "f1, _, n1 = heapq.heappop(heap)",
+      "b_line": 28,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "a_line": 27,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f1, _, n1 = heapq.heappop(heap)",
+      "a_line": 28,
+      "b_code": "f2, _, n2 = heapq.heappop(heap)",
+      "b_line": 29,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "a_line": 27,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f1, _, n1 = heapq.heappop(heap)",
+      "a_line": 28,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f2, _, n2 = heapq.heappop(heap)",
+      "a_line": 29,
+      "b_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "b_line": 30,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "a_line": 27,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f1, _, n1 = heapq.heappop(heap)",
+      "a_line": 28,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f2, _, n2 = heapq.heappop(heap)",
+      "a_line": 29,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "a_line": 30,
+      "b_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "a_line": 27,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f1, _, n1 = heapq.heappop(heap)",
+      "a_line": 28,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "f2, _, n2 = heapq.heappop(heap)",
+      "a_line": 29,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "parent = Node(None, f1 + f2, n1, n2)",
+      "a_line": 30,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heappush(heap, (parent.freq, uid, parent))",
+      "a_line": 31,
+      "b_code": "uid += 1",
+      "b_line": 31,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heap: List[Tuple[int, int, Node]] = []",
+      "a_line": 19,
+      "b_code": "return heapq.heappop(heap)[2]",
+      "b_line": 32,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "uid = 0",
+      "a_line": 20,
+      "b_code": "return heapq.heappop(heap)[2]",
+      "b_line": 32,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "for ch, f in tbl.items(): heap.append((f, uid, Node(ch, f))) uid += 1",
+      "a_line": 21,
+      "b_code": "return heapq.heappop(heap)[2]",
+      "b_line": 32,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "if not heap: return None",
+      "a_line": 24,
+      "b_code": "return heapq.heappop(heap)[2]",
+      "b_line": 32,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "heapq.heapify(heap)",
+      "a_line": 26,
+      "b_code": "return heapq.heappop(heap)[2]",
+      "b_line": 32,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "while len(heap) > 1: f1, _, n1 = heapq.heappop(heap) f2, _, n2 = heapq.heappop(heap) parent = Node(None, f1 + f2, n1, n2) heapq.heappush(heap, (parent.freq, uid, parent)); uid += 1",
+      "a_line": 27,
+      "b_code": "return heapq.heappop(heap)[2]",
+      "b_line": 32,
+      "function": "build_tree"
+    },
+    {
+      "a_code": "codes: Dict[str, str] = {}",
+      "a_line": 35,
+      "b_code": "if root is None: return codes",
+      "b_line": 36,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "codes: Dict[str, str] = {}",
+      "a_line": 35,
+      "b_code": "return codes",
+      "b_line": 37,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "if root is None: return codes",
+      "a_line": 36,
+      "b_code": "return codes",
+      "b_line": 37,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "codes: Dict[str, str] = {}",
+      "a_line": 35,
+      "b_code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+      "b_line": 38,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "if root is None: return codes",
+      "a_line": 36,
+      "b_code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+      "b_line": 38,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "codes: Dict[str, str] = {}",
+      "a_line": 35,
+      "b_code": "dfs(root, \"\")",
+      "b_line": 44,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "if root is None: return codes",
+      "a_line": 36,
+      "b_code": "dfs(root, \"\")",
+      "b_line": 44,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+      "a_line": 38,
+      "b_code": "dfs(root, \"\")",
+      "b_line": 44,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "codes: Dict[str, str] = {}",
+      "a_line": 35,
+      "b_code": "return codes",
+      "b_line": 45,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "if root is None: return codes",
+      "a_line": 36,
+      "b_code": "return codes",
+      "b_line": 45,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "def dfs(n: Node, path: str): if n.ch is not None: codes[n.ch] = path or \"0\" return dfs(n.left, path + \"0\") dfs(n.right, path + \"1\")",
+      "a_line": 38,
+      "b_code": "return codes",
+      "b_line": 45,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "dfs(root, \"\")",
+      "a_line": 44,
+      "b_code": "return codes",
+      "b_line": 45,
+      "function": "build_code_map"
+    },
+    {
+      "a_code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+      "a_line": 39,
+      "b_code": "codes[n.ch] = path or \"0\"",
+      "b_line": 40,
+      "function": "build_code_map.dfs"
+    },
+    {
+      "a_code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+      "a_line": 39,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "build_code_map.dfs"
+    },
+    {
+      "a_code": "codes[n.ch] = path or \"0\"",
+      "a_line": 40,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "build_code_map.dfs"
+    },
+    {
+      "a_code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+      "a_line": 39,
+      "b_code": "dfs(n.left, path + \"0\")",
+      "b_line": 42,
+      "function": "build_code_map.dfs"
+    },
+    {
+      "a_code": "if n.ch is not None: codes[n.ch] = path or \"0\" return",
+      "a_line": 39,
+      "b_code": "dfs(n.right, path + \"1\")",
+      "b_line": 43,
+      "function": "build_code_map.dfs"
+    },
+    {
+      "a_code": "dfs(n.left, path + \"0\")",
+      "a_line": 42,
+      "b_code": "dfs(n.right, path + \"1\")",
+      "b_line": 43,
+      "function": "build_code_map.dfs"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 48,
+      "b_code": "for ch in s: out.append(codes[ch])",
+      "b_line": 49,
+      "function": "encode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 48,
+      "b_code": "out.append(codes[ch])",
+      "b_line": 50,
+      "function": "encode"
+    },
+    {
+      "a_code": "for ch in s: out.append(codes[ch])",
+      "a_line": 49,
+      "b_code": "out.append(codes[ch])",
+      "b_line": 50,
+      "function": "encode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 48,
+      "b_code": "return \"\".join(out)",
+      "b_line": 51,
+      "function": "encode"
+    },
+    {
+      "a_code": "for ch in s: out.append(codes[ch])",
+      "a_line": 49,
+      "b_code": "return \"\".join(out)",
+      "b_line": 51,
+      "function": "encode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "return \"\"",
+      "b_line": 55,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "out = []",
+      "b_line": 56,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "node = root",
+      "b_line": 57,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "node = root",
+      "b_line": 57,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 58,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 58,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = root",
+      "a_line": 57,
+      "b_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 58,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "node = node.left if b == \"0\" else node.right",
+      "b_line": 59,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "node = node.left if b == \"0\" else node.right",
+      "b_line": 59,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = root",
+      "a_line": 57,
+      "b_code": "node = node.left if b == \"0\" else node.right",
+      "b_line": 59,
+      "function": "decode"
+    },
+    {
+      "a_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 58,
+      "b_code": "node = node.left if b == \"0\" else node.right",
+      "b_line": 59,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 60,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 60,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = root",
+      "a_line": 57,
+      "b_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 60,
+      "function": "decode"
+    },
+    {
+      "a_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 58,
+      "b_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 60,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = node.left if b == \"0\" else node.right",
+      "a_line": 59,
+      "b_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "b_line": 60,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "out.append(node.ch)",
+      "b_line": 61,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "out.append(node.ch)",
+      "b_line": 61,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = root",
+      "a_line": 57,
+      "b_code": "out.append(node.ch)",
+      "b_line": 61,
+      "function": "decode"
+    },
+    {
+      "a_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 58,
+      "b_code": "out.append(node.ch)",
+      "b_line": 61,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = node.left if b == \"0\" else node.right",
+      "a_line": 59,
+      "b_code": "out.append(node.ch)",
+      "b_line": 61,
+      "function": "decode"
+    },
+    {
+      "a_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 60,
+      "b_code": "out.append(node.ch)",
+      "b_line": 61,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = root",
+      "a_line": 57,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 58,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = node.left if b == \"0\" else node.right",
+      "a_line": 59,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 60,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "out.append(node.ch)",
+      "a_line": 61,
+      "b_code": "node = root",
+      "b_line": 62,
+      "function": "decode"
+    },
+    {
+      "a_code": "if root is None: return \"\"",
+      "a_line": 54,
+      "b_code": "return \"\".join(out)",
+      "b_line": 63,
+      "function": "decode"
+    },
+    {
+      "a_code": "out = []",
+      "a_line": 56,
+      "b_code": "return \"\".join(out)",
+      "b_line": 63,
+      "function": "decode"
+    },
+    {
+      "a_code": "node = root",
+      "a_line": 57,
+      "b_code": "return \"\".join(out)",
+      "b_line": 63,
+      "function": "decode"
+    },
+    {
+      "a_code": "for b in bits: node = node.left if b == \"0\" else node.right if node.ch is not None: out.append(node.ch) node = root",
+      "a_line": 58,
+      "b_code": "return \"\".join(out)",
+      "b_line": 63,
+      "function": "decode"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "ch"
+      },
+      "from": {
+        "code": "self.ch = ch",
+        "line": 8,
+        "var": "self.ch"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "freq"
+      },
+      "from": {
+        "code": "self.ch = ch",
+        "line": 8,
+        "var": "self.ch"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "freq"
+      },
+      "from": {
+        "code": "self.freq = freq",
+        "line": 8,
+        "var": "self.freq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "ch"
+      },
+      "from": {
+        "code": "self.freq = freq",
+        "line": 8,
+        "var": "self.freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "left"
+      },
+      "from": {
+        "code": "self.left = left",
+        "line": 8,
+        "var": "self.left"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "ch"
+      },
+      "from": {
+        "code": "self.left = left",
+        "line": 8,
+        "var": "self.left"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "right"
+      },
+      "from": {
+        "code": "self.right = right",
+        "line": 8,
+        "var": "self.right"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, ch:",
+        "line": 7,
+        "var": "ch"
+      },
+      "from": {
+        "code": "self.right = right",
+        "line": 8,
+        "var": "self.right"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def freq_table(s:",
+        "line": 12,
+        "var": "ch"
+      },
+      "from": {
+        "code": "tbl: Dict[str, int] = {}",
+        "line": 13,
+        "var": "tbl"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+        "line": 15,
+        "var": "ch"
+      },
+      "from": {
+        "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+        "line": 15,
+        "var": "tbl"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "tbl: Dict[str, int] = {}",
+        "line": 13,
+        "var": "tbl"
+      },
+      "from": {
+        "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+        "line": 15,
+        "var": "tbl"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def freq_table(s:",
+        "line": 12,
+        "var": "s"
+      },
+      "from": {
+        "code": "tbl[ch] = tbl.get(ch, 0) + 1",
+        "line": 15,
+        "var": "tbl"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def build_tree(tbl:",
+        "line": 18,
+        "var": "_"
+      },
+      "from": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def build_tree(tbl:",
+        "line": 18,
+        "var": "_"
+      },
+      "from": {
+        "code": "uid = 0",
+        "line": 20,
+        "var": "uid"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def build_tree(tbl:",
+        "line": 18,
+        "var": "_"
+      },
+      "from": {
+        "code": "uid += 1",
+        "line": 23,
+        "var": "uid"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def build_tree(tbl:",
+        "line": 18,
+        "var": "ch"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "f1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "f1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "_"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "f1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "n1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "n1"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "_"
+      },
+      "from": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "n1"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def build_tree(tbl:",
+        "line": 18,
+        "var": "ch"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "f2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "f2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "f2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "n2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "n2"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "from": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "n2"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "f1"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "f2"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "heap: List[Tuple[int, int, Node]] = []",
+        "line": 19,
+        "var": "heap"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "heapq"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f1, _, n1 = heapq.heappop(heap)",
+        "line": 28,
+        "var": "n1"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "n2"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "from": {
+        "code": "parent = Node(None, f1 + f2, n1, n2)",
+        "line": 30,
+        "var": "parent"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "f2, _, n2 = heapq.heappop(heap)",
+        "line": 29,
+        "var": "_"
+      },
+      "from": {
+        "code": "uid += 1",
+        "line": 31,
+        "var": "uid"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def build_code_map(root:",
+        "line": 34,
+        "var": "dfs"
+      },
+      "from": {
+        "code": "codes: Dict[str, str] = {}",
+        "line": 35,
+        "var": "codes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "codes[n.ch] = path or \"0\"",
+        "line": 40,
+        "var": "n.ch"
+      },
+      "from": {
+        "code": "codes[n.ch] = path or \"0\"",
+        "line": 40,
+        "var": "codes"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(n:",
+        "line": 38,
+        "var": "path"
+      },
+      "from": {
+        "code": "codes[n.ch] = path or \"0\"",
+        "line": 40,
+        "var": "codes"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(n:",
+        "line": 38,
+        "var": "n"
+      },
+      "from": {
+        "code": "codes[n.ch] = path or \"0\"",
+        "line": 40,
+        "var": "codes"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def encode(s:",
+        "line": 47,
+        "var": "ch"
+      },
+      "from": {
+        "code": "out = []",
+        "line": 48,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def decode(bits:",
+        "line": 53,
+        "var": "b"
+      },
+      "from": {
+        "code": "out = []",
+        "line": 56,
+        "var": "out"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def decode(bits:",
+        "line": 53,
+        "var": "root"
+      },
+      "from": {
+        "code": "node = root",
+        "line": 57,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def decode(bits:",
+        "line": 53,
+        "var": "b"
+      },
+      "from": {
+        "code": "node = root",
+        "line": 57,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "b"
+      },
+      "from": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "node.left"
+      },
+      "from": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "node.right"
+      },
+      "from": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def decode(bits:",
+        "line": 53,
+        "var": "bits"
+      },
+      "from": {
+        "code": "node = node.left if b == \"0\" else node.right",
+        "line": 59,
+        "var": "node"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def decode(bits:",
+        "line": 53,
+        "var": "root"
+      },
+      "from": {
+        "code": "node = root",
+        "line": 62,
+        "var": "node"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def decode(bits:",
+        "line": 53,
+        "var": "b"
+      },
+      "from": {
+        "code": "node = root",
+        "line": 62,
+        "var": "node"
+      },
+      "label": "negative"
+    }
+  ]
+}

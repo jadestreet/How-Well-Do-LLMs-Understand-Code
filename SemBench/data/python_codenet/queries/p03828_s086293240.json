@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does the value of variable self.__n at line 86: <statement> self.__n //= d </statement> depend on the value of variable d at line 82: <statement> def __divide_with(self, d): </statement>?",
+    "Does the value of variable self.__n at line 5: <statement> self.__n = 0 </statement> depend on the value of variable self at line 2: <statement> def __init__(self): </statement>?",
+    "Does the value of variable count at line 87: <statement> count += 1 </statement> depend on the value of variable d at line 82: <statement> def __divide_with(self, d): </statement>?",
+    "Does variable n at line 8: <statement> def get_factors(self, n): </statement> determine the value stored in variable self.__n at line 11: <statement> self.__n = n </statement>?"
+  ],
+  "dead_code": [
+    "Is it possible for the statement self.__n = 0 to execute?",
+    "Can the statement self.__factors.setdefault(self.__n, 1) be reached during execution?",
+    "Can the statement return { n:1 } be considered dead code because it is never executed?",
+    "Is the statement for p in primes: if p + i <= sqrt_: self.__divide_with(p + i) else: # \u8a66\u3057\u5272\u308a\u3059\u308b\u6570\u304c\u5e73\u65b9\u6839\u3092\u8d85\u3048\u305f\u3089\u3001\u30eb\u30fc\u30d7\u3092\u629c\u3051\u308b is_break = True # 1\u304c\u7d20\u56e0\u6570\u306b\u8ffd\u52a0\u3055\u308c\u308b\u3053\u3068\u3092\u9632\u6b62 if self.__n > 1: self.__factors.setdefault(self.__n, 1) unreachable during execution?"
+  ],
+  "dominators": [
+    "Does the statement line 64: <statement> while self.__n > 1: for p in primes: if p + i <= sqrt_: self.__divide_with(p + i) else: # \u8a66\u3057\u5272\u308a\u3059\u308b\u6570\u304c\u5e73\u65b9\u6839\u3092\u8d85\u3048\u305f\u3089\u3001\u30eb\u30fc\u30d7\u3092\u629c\u3051\u308b is_break = True # 1\u304c\u7d20\u56e0\u6570\u306b\u8ffd\u52a0\u3055\u308c\u308b\u3053\u3068\u3092\u9632\u6b62 if self.__n > 1: self.__factors.setdefault(self.__n, 1) if is_break: break else: i += 30 </statement> dominate line 61: <statement> i = 0 </statement>?",
+    "Does the statement line 13: <statement> if n < 2: # 2\u3088\u308a\u5c0f\u3055\u3044\u6570\u306e\u5834\u5408\u3001\u7d20\u56e0\u6570\u5206\u89e3\u3067\u304d\u306a\u3044 return { n:1 } else: self.__factorization() return self.__factors </statement> dominate line 11: <statement> self.__n = n </statement>?",
+    "Is it guaranteed that whenever line 64: <statement> while self.__n > 1: for p in primes: if p + i <= sqrt_: self.__divide_with(p + i) else: # \u8a66\u3057\u5272\u308a\u3059\u308b\u6570\u304c\u5e73\u65b9\u6839\u3092\u8d85\u3048\u305f\u3089\u3001\u30eb\u30fc\u30d7\u3092\u629c\u3051\u308b is_break = True # 1\u304c\u7d20\u56e0\u6570\u306b\u8ffd\u52a0\u3055\u308c\u308b\u3053\u3068\u3092\u9632\u6b62 if self.__n > 1: self.__factors.setdefault(self.__n, 1) if is_break: break else: i += 30 </statement> is reached, the statement line 52: <statement> self.__divide_with(3) </statement> has already been reached?",
+    "Does the statement line 30: <statement> self.__factors.clear() </statement> dominate line 42: <statement> return count </statement>?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function Factorization.count_divisors to function Factorization.__divide_with?",
+    "Is there a call path from function Factorization.get_factors to function Factorization.__divide_with?",
+    "Is there a call path from function Factorization.get_divisors to function Factorization.__divide_with?",
+    "Can function Factorization.__divide_with eventually call function Factorization.get_divisors?"
+  ],
+  "liveness": [
+    "Is variable self.__n live at the end of function Factorization.__init__?",
+    "Does variable self.__n remain in use at the end of function Factorization.get_factors?",
+    "Is variable self.__factors live at the end of function Factorization.get_factors?",
+    "Is variable count live at the end of function Factorization.count_divisors?"
+  ],
+  "loop_reachability": [
+    "Can the loop with condition for p in primes be skipped entirely?",
+    "Is the loop with condition for p in primes always executed?"
+  ]
+}

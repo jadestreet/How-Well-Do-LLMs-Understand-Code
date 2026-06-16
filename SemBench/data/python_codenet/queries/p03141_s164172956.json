@@ -1,0 +1,33 @@
+{
+  "data_dependency": [
+    "Does the value of variable sorted_A at line 32: <statement> sorted_A = [a[1] for a in A_sort] </statement> depend on the value of variable index at line 31: <statement> index = [a[0] for a in A_sort] </statement>?",
+    "Does variable A_sort at line 30: <statement> A_sort = sorted(enumerate(A),key=itemgetter(1)) </statement> determine the value stored in variable index at line 31: <statement> index = [a[0] for a in A_sort] </statement>?",
+    "Does the value of variable ans at line 42: <statement> ans -= B[index[i]] </statement> depend on the value of variable N at line 25: <statement> N = I() </statement>?",
+    "Does the value of variable ans at line 40: <statement> ans += A[index[i]] </statement> depend on the value of variable _ at line 36: <statement> index,_ = index_sort(C) </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement return [[] for _ in range(col)] be reached during execution?",
+    "Can the statement return [I() for _ in range(row)] be considered dead code because it is never executed?",
+    "Can the statement C = [A[i]+B[i] for i in range(N)] be considered dead code because it is never executed?",
+    "Is it possible for the statement for i in range(N)[::-1]: if i%2 == (N-1)%2: ans += A[index[i]] else: ans -= B[index[i]] to execute?"
+  ],
+  "dominators": [
+    "Does the statement line 44: <statement> print(ans) </statement> dominate line 28: <statement> from operator import itemgetter </statement>?",
+    "Is it guaranteed that whenever line 42: <statement> ans -= B[index[i]] </statement> is reached, the statement line 1: <statement> import sys </statement> has already been reached?",
+    "Does the statement line 30: <statement> A_sort = sorted(enumerate(A),key=itemgetter(1)) </statement> dominate line 33: <statement> return index, sorted_A </statement>?",
+    "Is it guaranteed that whenever line 25: <statement> N = I() </statement> is reached, the statement line 40: <statement> ans += A[index[i]] </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Can function LIR eventually call function input?",
+    "Can function input eventually call function LI?",
+    "Is there a call path from function I to function input?",
+    "Can function I eventually call function index_sort?"
+  ],
+  "liveness": [
+    "Does variable index remain in use at the end of function index_sort?",
+    "Does variable ans remain in use at the end of function __module__?",
+    "Is variable A live at the end of function index_sort?",
+    "Does variable sorted_A remain in use at the end of function index_sort?"
+  ],
+  "loop_reachability": []
+}

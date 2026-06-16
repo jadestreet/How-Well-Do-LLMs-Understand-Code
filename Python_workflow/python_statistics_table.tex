@@ -1,0 +1,28 @@
+\begin{table}[h]
+  \centering
+  \small
+  \caption{Overview of the SemBench-Python}
+  \label{ap:sembench_py_overview}
+  \begin{tabular}{@{}l r l@{}}
+    \toprule
+    \multicolumn{3}{@{}l}{\textbf{Problem counts by category}} \\
+    \midrule
+    Dead code - statement        & \multicolumn{2}{r}{780}          \\
+    Data dependency              & \multicolumn{2}{r}{796}          \\
+    Function reachability        & \multicolumn{2}{r}{734}          \\
+    Dominators                   & \multicolumn{2}{r}{800}          \\
+    Dead code - loop             & \multicolumn{2}{r}{390}          \\
+    Liveness                     & \multicolumn{2}{r}{780}          \\
+    \multicolumn{3}{@{}l}{\textbf{Feature statistics}} \\
+    \midrule
+    File size (bytes)            & 2\,148 & (min: 312, max: 17\,133)   \\
+    Lines of code                &     83 & (min: 12, max: 3\,105)   \\
+    Function count               &      7 & (min: 2, max: 29)   \\
+    Max nesting depth            &      4 & (min: 1, max: 13)   \\
+    Avg dependency distance      &     10 & (min: 2, max: 41)   \\
+    Max dependency distance      &     73 & (min: 2, max: 3\,002)   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{ap:sembench_py_overview} summarizes the current SemBench-Python subset derived from CodeNet programs. The benchmark contains 200 Python files with generated semantic questions across dead-code, data-dependency, function-reachability, dominator, loop-reachability, and liveness categories. File-level statistics are computed directly from the source programs. Dependency distance is measured as the absolute source-line distance between the queried variable definition and dependency source in the extracted dependency records.

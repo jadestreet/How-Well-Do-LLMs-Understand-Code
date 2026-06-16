@@ -1,0 +1,5270 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 64,
+      "node_id": 3
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 65,
+      "node_id": 4
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "function": "input",
+      "kind": "Return",
+      "line": 3,
+      "node_id": 1
+    },
+    {
+      "code": "s = input()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "x, y = map(int, input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 9,
+      "node_id": 3
+    },
+    {
+      "code": "C = [deque([]), []]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 4
+    },
+    {
+      "code": "direction = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 5
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 6
+    },
+    {
+      "code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 16,
+      "node_id": 7
+    },
+    {
+      "code": "if c == 'F': cnt += 1 continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 17,
+      "node_id": 8
+    },
+    {
+      "code": "cnt += 1",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 18,
+      "node_id": 9
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 19,
+      "node_id": 10
+    },
+    {
+      "code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 20,
+      "node_id": 11
+    },
+    {
+      "code": "C[direction].append(cnt)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 21,
+      "node_id": 12
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 13
+    },
+    {
+      "code": "direction = 1 - direction",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 14
+    },
+    {
+      "code": "C[direction].append(cnt)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 24,
+      "node_id": 15
+    },
+    {
+      "code": "X = [0] * 16001",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 26,
+      "node_id": 16
+    },
+    {
+      "code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 27,
+      "node_id": 17
+    },
+    {
+      "code": "start = C[0].popleft()",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 28,
+      "node_id": 18
+    },
+    {
+      "code": "X[8000 + start] = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 19
+    },
+    {
+      "code": "X[8000] = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 31,
+      "node_id": 20
+    },
+    {
+      "code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 32,
+      "node_id": 21
+    },
+    {
+      "code": "X_new = [0] * 16001",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 33,
+      "node_id": 22
+    },
+    {
+      "code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 34,
+      "node_id": 23
+    },
+    {
+      "code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 35,
+      "node_id": 24
+    },
+    {
+      "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 25
+    },
+    {
+      "code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 37,
+      "node_id": 26
+    },
+    {
+      "code": "X_new[i] = X[i - cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 27
+    },
+    {
+      "code": "X_new[i] = X[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 40,
+      "node_id": 28
+    },
+    {
+      "code": "X = X_new",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 29
+    },
+    {
+      "code": "Y = [0] * 16001",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 30
+    },
+    {
+      "code": "Y[8000] = 1",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 31
+    },
+    {
+      "code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 45,
+      "node_id": 32
+    },
+    {
+      "code": "Y_new = [0] * 16001",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 46,
+      "node_id": 33
+    },
+    {
+      "code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 47,
+      "node_id": 34
+    },
+    {
+      "code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 48,
+      "node_id": 35
+    },
+    {
+      "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 36
+    },
+    {
+      "code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 50,
+      "node_id": 37
+    },
+    {
+      "code": "Y_new[i] = Y[i - cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 38
+    },
+    {
+      "code": "Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 39
+    },
+    {
+      "code": "Y = Y_new",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 40
+    },
+    {
+      "code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 56,
+      "node_id": 41
+    },
+    {
+      "code": "print(\"Yes\")",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 57,
+      "node_id": 42
+    },
+    {
+      "code": "print(\"No\")",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 59,
+      "node_id": 43
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "s = input()",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "x, y = map(int, input().split())",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "C = [deque([]), []]",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "direction = 0",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "if c == 'F': cnt += 1 continue",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "cnt += 1",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "C[direction].append(cnt)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "cnt = 0",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "direction = 1 - direction",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "C[direction].append(cnt)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "X = [0] * 16001",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "start = C[0].popleft()",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "X[8000 + start] = 1",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "X[8000] = 1",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "X_new = [0] * 16001",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "X_new[i] = X[i - cnt]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "X_new[i] = X[i + cnt]",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "X = X_new",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "Y = [0] * 16001",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "Y[8000] = 1",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "Y_new = [0] * 16001",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "Y_new[i] = Y[i - cnt]",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "Y_new[i] = Y[i + cnt]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "Y = Y_new",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "print(\"Yes\")",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "print(\"No\")",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 65
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03488_s975743243.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 3,
+      "lineno": 3,
+      "name": "input",
+      "variables": []
+    },
+    {
+      "calls": [
+        "input"
+      ],
+      "end_lineno": 59,
+      "lineno": 6,
+      "name": "main",
+      "variables": [
+        "C",
+        "X",
+        "X_new",
+        "Y",
+        "Y_new",
+        "c",
+        "cnt",
+        "direction",
+        "i",
+        "int",
+        "s",
+        "start",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "from collections import deque",
+            "line": 2,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "if __name__ == \"__main__\": main()",
+            "line": 64,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 65,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "__name__": false
+        },
+        "return_vars": []
+      },
+      "input": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().strip()",
+            "line": 3,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "s = input()",
+            "line": 7,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "x, y = map(int, input().split())",
+            "line": 8,
+            "vars": [
+              "int",
+              "s"
+            ]
+          },
+          {
+            "code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+            "line": 9,
+            "vars": [
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "C = [deque([]), []]",
+            "line": 13,
+            "vars": [
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "direction = 0",
+            "line": 14,
+            "vars": [
+              "C",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "cnt = 0",
+            "line": 15,
+            "vars": [
+              "C",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+            "line": 16,
+            "vars": [
+              "C",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if c == 'F': cnt += 1 continue",
+            "line": 17,
+            "vars": [
+              "C",
+              "c",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "cnt += 1",
+            "line": 18,
+            "vars": [
+              "C",
+              "c",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 19,
+            "vars": [
+              "C",
+              "c",
+              "cnt",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+            "line": 20,
+            "vars": [
+              "C",
+              "c",
+              "cnt",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "C[direction].append(cnt)",
+            "line": 21,
+            "vars": [
+              "C",
+              "cnt",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "cnt = 0",
+            "line": 22,
+            "vars": [
+              "C",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "direction = 1 - direction",
+            "line": 23,
+            "vars": [
+              "C",
+              "cnt",
+              "direction",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "C[direction].append(cnt)",
+            "line": 24,
+            "vars": [
+              "C",
+              "cnt",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X = [0] * 16001",
+            "line": 26,
+            "vars": [
+              "C",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+            "line": 27,
+            "vars": [
+              "C",
+              "s",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "start = C[0].popleft()",
+            "line": 28,
+            "vars": [
+              "C",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X[8000 + start] = 1",
+            "line": 29,
+            "vars": [
+              "C",
+              "start",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X[8000] = 1",
+            "line": 31,
+            "vars": [
+              "C",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+            "line": 32,
+            "vars": [
+              "C",
+              "X",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X_new = [0] * 16001",
+            "line": 33,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+            "line": 34,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+            "line": 35,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+            "line": 36,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+            "line": 37,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X_new[i] = X[i - cnt]",
+            "line": 38,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X_new[i] = X[i + cnt]",
+            "line": 40,
+            "vars": [
+              "C",
+              "X",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "X = X_new",
+            "line": 41,
+            "vars": [
+              "C",
+              "X_new",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y = [0] * 16001",
+            "line": 43,
+            "vars": [
+              "C",
+              "X",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y[8000] = 1",
+            "line": 44,
+            "vars": [
+              "C",
+              "X",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+            "line": 45,
+            "vars": [
+              "C",
+              "X",
+              "Y",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y_new = [0] * 16001",
+            "line": 46,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+            "line": 47,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+            "line": 48,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+            "line": 49,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+            "line": 50,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y_new[i] = Y[i - cnt]",
+            "line": 51,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y_new[i] = Y[i + cnt]",
+            "line": 53,
+            "vars": [
+              "X",
+              "Y",
+              "cnt",
+              "i",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "Y = Y_new",
+            "line": 54,
+            "vars": [
+              "X",
+              "Y_new",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+            "line": 56,
+            "vars": [
+              "X",
+              "Y",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "print(\"Yes\")",
+            "line": 57,
+            "vars": []
+          },
+          {
+            "code": "print(\"No\")",
+            "line": 59,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "C": false,
+          "X": false,
+          "X_new": false,
+          "Y": false,
+          "Y_new": false,
+          "c": false,
+          "cnt": false,
+          "direction": false,
+          "i": false,
+          "int": false,
+          "s": false,
+          "start": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for c in s:",
+      "cond": "for c in s",
+      "function": "main",
+      "header_id": 7,
+      "line": 16,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for cnt in C[0]:",
+      "cond": "for cnt in C[0]",
+      "function": "main",
+      "header_id": 21,
+      "line": 32,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(16001):",
+      "cond": "for i in range(16001)",
+      "function": "main",
+      "header_id": 23,
+      "line": 34,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for cnt in C[1]:",
+      "cond": "for cnt in C[1]",
+      "function": "main",
+      "header_id": 32,
+      "line": 45,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(16001):",
+      "cond": "for i in range(16001)",
+      "function": "main",
+      "header_id": 34,
+      "line": 47,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from collections import deque",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__ == \"__main__\": main()",
+      "a_line": 64,
+      "b_code": "main()",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "x, y = map(int, input().split())",
+      "b_line": 8,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "b_line": 9,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "b_line": 9,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "C = [deque([]), []]",
+      "b_line": 13,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "C = [deque([]), []]",
+      "b_line": 13,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "C = [deque([]), []]",
+      "b_line": 13,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "direction = 0",
+      "b_line": 14,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "direction = 0",
+      "b_line": 14,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "direction = 0",
+      "b_line": 14,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "direction = 0",
+      "b_line": 14,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "cnt = 0",
+      "b_line": 15,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "cnt = 0",
+      "b_line": 15,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "cnt = 0",
+      "b_line": 15,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "cnt = 0",
+      "b_line": 15,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "cnt = 0",
+      "b_line": 15,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 16,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 16,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 16,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 16,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 16,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 16,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "if c == 'F': cnt += 1 continue",
+      "b_line": 17,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'F': cnt += 1 continue",
+      "a_line": 17,
+      "b_code": "cnt += 1",
+      "b_line": 18,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'F': cnt += 1 continue",
+      "a_line": 17,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt += 1",
+      "a_line": 18,
+      "b_code": "continue",
+      "b_line": 19,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'F': cnt += 1 continue",
+      "a_line": 17,
+      "b_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "b_line": 20,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'F': cnt += 1 continue",
+      "a_line": 17,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 20,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 21,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'F': cnt += 1 continue",
+      "a_line": 17,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 20,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 21,
+      "b_code": "cnt = 0",
+      "b_line": 22,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'F': cnt += 1 continue",
+      "a_line": 17,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 20,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 21,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 22,
+      "b_code": "direction = 1 - direction",
+      "b_line": 23,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "C[direction].append(cnt)",
+      "b_line": 24,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X = [0] * 16001",
+      "b_line": 26,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "b_line": 27,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "start = C[0].popleft()",
+      "b_line": 28,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "start = C[0].popleft()",
+      "a_line": 28,
+      "b_code": "X[8000 + start] = 1",
+      "b_line": 29,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X[8000] = 1",
+      "b_line": 31,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "b_line": 32,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "X_new = [0] * 16001",
+      "b_line": 33,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 34,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 34,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 35,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 34,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 35,
+      "b_code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 34,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 35,
+      "b_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 34,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 35,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 37,
+      "b_code": "X_new[i] = X[i - cnt]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 34,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 35,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 37,
+      "b_code": "X_new[i] = X[i + cnt]",
+      "b_line": 40,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "X_new = [0] * 16001",
+      "a_line": 33,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt]",
+      "a_line": 34,
+      "b_code": "X = X_new",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y = [0] * 16001",
+      "b_line": 43,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "Y[8000] = 1",
+      "b_line": 44,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "b_line": 45,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "Y_new = [0] * 16001",
+      "b_line": 46,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 47,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 47,
+      "b_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 48,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 47,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 48,
+      "b_code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+      "b_line": 49,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 47,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 48,
+      "b_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "b_line": 50,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 47,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 48,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 50,
+      "b_code": "Y_new[i] = Y[i - cnt]",
+      "b_line": 51,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 47,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 48,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 50,
+      "b_code": "Y_new[i] = Y[i + cnt]",
+      "b_line": 53,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "Y_new = [0] * 16001",
+      "a_line": 46,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt]",
+      "a_line": 47,
+      "b_code": "Y = Y_new",
+      "b_line": 54,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "b_line": 56,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "a_line": 56,
+      "b_code": "print(\"Yes\")",
+      "b_line": 57,
+      "function": "main"
+    },
+    {
+      "a_code": "s = input()",
+      "a_line": 7,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "x, y = map(int, input().split())",
+      "a_line": 8,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "\"\"\" x, y\u65b9\u5411\u72ec\u7acb\u306b\u8003\u3048\u3089\u308c\u308b\u3053\u3068\u306b\u306f\u6c17\u3065\u3044\u305f\u3051\u3069\u3001\u305d\u306e\u5f8c\u306e\u9077\u79fb\u304c2^N\u901a\u308a\u3067\u7121\u7406\u3060\u3068\u601d\u3044\u8fbc\u3093\u3067\u305f\u3002\u3002\u3002 \u3082\u3089\u3046dp\u3067\u8003\u3048\u308c\u3070\u78ba\u304b\u306bO(N^2)\u3067\u7247\u4ed8\u304f\u3002 \"\"\"",
+      "a_line": 9,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "C = [deque([]), []]",
+      "a_line": 13,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "direction = 0",
+      "a_line": 14,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "cnt = 0",
+      "a_line": 15,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for c in s: if c == 'F': cnt += 1 continue if c == 'T': C[direction].append(cnt) cnt = 0 direction = 1 - direction",
+      "a_line": 16,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "C[direction].append(cnt)",
+      "a_line": 24,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "X = [0] * 16001",
+      "a_line": 26,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if s[0] == 'F': start = C[0].popleft() X[8000 + start] = 1 else: X[8000] = 1",
+      "a_line": 27,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[0]: X_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt]) elif 0 <= i - cnt: X_new[i] = X[i - cnt] else: X_new[i] = X[i + cnt] X = X_new",
+      "a_line": 32,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "Y = [0] * 16001",
+      "a_line": 43,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "Y[8000] = 1",
+      "a_line": 44,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "for cnt in C[1]: Y_new = [0] * 16001 for i in range(16001): if 0 <= i - cnt and i + cnt <= 16000: Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt]) elif 0 <= i - cnt: Y_new[i] = Y[i - cnt] else: Y_new[i] = Y[i + cnt] Y = Y_new",
+      "a_line": 45,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    },
+    {
+      "a_code": "if X[8000 + x] == 1 and Y[8000 + y] == 1: print(\"Yes\") else: print(\"No\")",
+      "a_line": 56,
+      "b_code": "print(\"No\")",
+      "b_line": 59,
+      "function": "main"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.stdin.readline at line 3"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.stdin.readline at line 3"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 6,
+        "var": "C"
+      },
+      "from": {
+        "code": "s = input()",
+        "line": 7,
+        "var": "s"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = map(int, input().split())",
+        "line": 8,
+        "var": "int"
+      },
+      "from": {
+        "code": "x, y = map(int, input().split())",
+        "line": 8,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 6,
+        "var": "C"
+      },
+      "from": {
+        "code": "x, y = map(int, input().split())",
+        "line": 8,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "x, y = map(int, input().split())",
+        "line": 8,
+        "var": "int"
+      },
+      "from": {
+        "code": "x, y = map(int, input().split())",
+        "line": 8,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 6,
+        "var": "C"
+      },
+      "from": {
+        "code": "x, y = map(int, input().split())",
+        "line": 8,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 6,
+        "var": "X"
+      },
+      "from": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "direction = 0",
+        "line": 14,
+        "var": "direction"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "cnt = 0",
+        "line": 15,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "cnt += 1",
+        "line": 18,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "direction = 0",
+        "line": 14,
+        "var": "direction"
+      },
+      "from": {
+        "code": "direction = 1 - direction",
+        "line": 23,
+        "var": "direction"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "direction = 1 - direction",
+        "line": 23,
+        "var": "direction"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X = [0] * 16001",
+        "line": 26,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "start = C[0].popleft()",
+        "line": 28,
+        "var": "start"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = [0] * 16001",
+        "line": 26,
+        "var": "X"
+      },
+      "from": {
+        "code": "start = C[0].popleft()",
+        "line": 28,
+        "var": "start"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X[8000 + start] = 1",
+        "line": 29,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "start = C[0].popleft()",
+        "line": 28,
+        "var": "start"
+      },
+      "from": {
+        "code": "X[8000 + start] = 1",
+        "line": 29,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 6,
+        "var": "X_new"
+      },
+      "from": {
+        "code": "X[8000 + start] = 1",
+        "line": 29,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X[8000] = 1",
+        "line": 31,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X_new = [0] * 16001",
+        "line": 33,
+        "var": "X_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X[8000] = 1",
+        "line": 31,
+        "var": "X"
+      },
+      "from": {
+        "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+        "line": 36,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+        "line": 36,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+        "line": 36,
+        "var": "i"
+      },
+      "from": {
+        "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+        "line": 36,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X_new[i] = 1 - (1 - X[i - cnt]) * (1 - X[i + cnt])",
+        "line": 36,
+        "var": "X_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X[8000] = 1",
+        "line": 31,
+        "var": "X"
+      },
+      "from": {
+        "code": "X_new[i] = X[i - cnt]",
+        "line": 38,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "X_new[i] = X[i - cnt]",
+        "line": 38,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X_new[i] = X[i - cnt]",
+        "line": 38,
+        "var": "i"
+      },
+      "from": {
+        "code": "X_new[i] = X[i - cnt]",
+        "line": 38,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X_new[i] = X[i - cnt]",
+        "line": 38,
+        "var": "X_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X[8000] = 1",
+        "line": 31,
+        "var": "X"
+      },
+      "from": {
+        "code": "X_new[i] = X[i + cnt]",
+        "line": 40,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "X_new[i] = X[i + cnt]",
+        "line": 40,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X_new[i] = X[i + cnt]",
+        "line": 40,
+        "var": "i"
+      },
+      "from": {
+        "code": "X_new[i] = X[i + cnt]",
+        "line": 40,
+        "var": "X_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X_new[i] = X[i + cnt]",
+        "line": 40,
+        "var": "X_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X_new[i] = X[i + cnt]",
+        "line": 40,
+        "var": "X_new"
+      },
+      "from": {
+        "code": "X = X_new",
+        "line": 41,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "X = X_new",
+        "line": 41,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X = X_new",
+        "line": 41,
+        "var": "i"
+      },
+      "from": {
+        "code": "X = X_new",
+        "line": 41,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "X = X_new",
+        "line": 41,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y = [0] * 16001",
+        "line": 43,
+        "var": "Y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y[8000] = 1",
+        "line": 44,
+        "var": "Y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y_new = [0] * 16001",
+        "line": 46,
+        "var": "Y_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Y[8000] = 1",
+        "line": 44,
+        "var": "Y"
+      },
+      "from": {
+        "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+        "line": 49,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+        "line": 49,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+        "line": 49,
+        "var": "i"
+      },
+      "from": {
+        "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+        "line": 49,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y_new[i] = 1 - (1 - Y[i - cnt]) * (1 - Y[i + cnt])",
+        "line": 49,
+        "var": "Y_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Y[8000] = 1",
+        "line": 44,
+        "var": "Y"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i - cnt]",
+        "line": 51,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i - cnt]",
+        "line": 51,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y_new[i] = Y[i - cnt]",
+        "line": 51,
+        "var": "i"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i - cnt]",
+        "line": 51,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i - cnt]",
+        "line": 51,
+        "var": "Y_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Y[8000] = 1",
+        "line": 44,
+        "var": "Y"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i + cnt]",
+        "line": 53,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i + cnt]",
+        "line": 53,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y_new[i] = Y[i + cnt]",
+        "line": 53,
+        "var": "i"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i + cnt]",
+        "line": 53,
+        "var": "Y_new"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y_new[i] = Y[i + cnt]",
+        "line": 53,
+        "var": "Y_new"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Y_new[i] = Y[i + cnt]",
+        "line": 53,
+        "var": "Y_new"
+      },
+      "from": {
+        "code": "Y = Y_new",
+        "line": 54,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = 0",
+        "line": 22,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "Y = Y_new",
+        "line": 54,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "Y = Y_new",
+        "line": 54,
+        "var": "i"
+      },
+      "from": {
+        "code": "Y = Y_new",
+        "line": 54,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C = [deque([]), []]",
+        "line": 13,
+        "var": "C"
+      },
+      "from": {
+        "code": "Y = Y_new",
+        "line": 54,
+        "var": "Y"
+      },
+      "label": "negative"
+    }
+  ]
+}

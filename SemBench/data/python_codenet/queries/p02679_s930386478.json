@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does variable cc at line 54: <statement> cc=d[a*shift+b]+d[-a*shift-b] </statement> determine the value stored in variable res at line 58: <statement> res*=mpow2(c) </statement>?",
+    "Does the value of variable a at line 18: <statement> a,b=b,a </statement> depend on the value of variable a at line 14: <statement> a*=-1 </statement>?",
+    "Does the value of variable res at line 61: <statement> res*=mpow2(c)+mpow2(cc)-1 </statement> depend on the value of variable a at line 52: <statement> a=-p[1] </statement>?",
+    "Does the value of variable d at line 51: <statement> d[-a*shift-b]=0 </statement> depend on the value of variable c at line 47: <statement> c=d[a*shift+b]+d[-a*shift-b] </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement for i in range(n): a,b=map(int,input().split()) if a==b==0: cnt0+=1 continue elif a==0: b=1 elif b==0: a=1 else: g=gcd(a,b) a//=g b//=g l.append((a,b)) d[a*shift+b]+=1 be considered dead code because it is never executed?",
+    "Is the statement if c==0: continue unreachable during execution?",
+    "Can the statement a//=g be considered dead code because it is never executed?",
+    "Is the statement c=d[a*shift+b]+d[-a*shift-b] unreachable during execution?"
+  ],
+  "dominators": [
+    "Does the statement line 40: <statement> b//=g </statement> dominate line 30: <statement> if a==b==0: cnt0+=1 continue elif a==0: b=1 elif b==0: a=1 else: g=gcd(a,b) a//=g b//=g </statement>?",
+    "Does the statement line 26: <statement> l=[] </statement> dominate line 24: <statement> d=defaultdict(int) </statement>?",
+    "Does the statement line 13: <statement> if a<0: a*=-1 </statement> dominate line 19: <statement> if a%b: return gcd(b,a%b) </statement>?",
+    "Does the statement line 23: <statement> shift=2**64 </statement> dominate line 63: <statement> print((res+cnt0+mod-1)%mod) </statement>?"
+  ],
+  "function_reachability": [
+    "Is it impossible for function mpow2 to eventually call function gcd?",
+    "Is it impossible for function gcd to eventually call function mpow2?",
+    "Can function mpow2 eventually call function gcd?",
+    "Can function gcd eventually call function mpow2?"
+  ],
+  "liveness": [
+    "Is variable cc live at the end of function __module__?",
+    "Is variable b live at the end of function gcd?",
+    "Does variable l remain in use at the end of function __module__?",
+    "Does variable a remain in use at the end of function gcd?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for p in l always executed?",
+    "Can the loop with condition for p in l be skipped entirely?"
+  ]
+}

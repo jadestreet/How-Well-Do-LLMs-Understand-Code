@@ -1,0 +1,5767 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "sys.setrecursionlimit(20000000)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 9,
+      "node_id": 3
+    },
+    {
+      "code": "MOD = 10 ** 9 + 7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "INF = float(\"inf\")",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 79,
+      "node_id": 6
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 80,
+      "node_id": 7
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "function": "input",
+      "kind": "Return",
+      "line": 6,
+      "node_id": 1
+    },
+    {
+      "code": "visited = [[False] * W for _ in range(H)]",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "visited[sh][sw] = True",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 2
+    },
+    {
+      "code": "q = deque([(sh, sw)])",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 3
+    },
+    {
+      "code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "function": "dfs",
+      "kind": "While",
+      "line": 19,
+      "node_id": 4
+    },
+    {
+      "code": "h, w = q.pop()",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 5
+    },
+    {
+      "code": "if h == gh and w == gw: return True",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 21,
+      "node_id": 6
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Return",
+      "line": 22,
+      "node_id": 7
+    },
+    {
+      "code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "function": "dfs",
+      "kind": "For",
+      "line": 23,
+      "node_id": 8
+    },
+    {
+      "code": "nh = h + dh",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 9
+    },
+    {
+      "code": "nw = w + dw",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 10
+    },
+    {
+      "code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 26,
+      "node_id": 11
+    },
+    {
+      "code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 27,
+      "node_id": 12
+    },
+    {
+      "code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "function": "dfs",
+      "kind": "If",
+      "line": 28,
+      "node_id": 13
+    },
+    {
+      "code": "visited[nh][nw] = True",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Assign",
+      "line": 29,
+      "node_id": 14
+    },
+    {
+      "code": "q.append((nh, nw))",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Expr",
+      "line": 30,
+      "node_id": 15
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "dfs",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 16
+    },
+    {
+      "code": "H, W = map(int, input().split())",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 1
+    },
+    {
+      "code": "S = [list(input()) for _ in range(H)]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 36,
+      "node_id": 2
+    },
+    {
+      "code": "dx = [1, 0, -1, 0]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 37,
+      "node_id": 3
+    },
+    {
+      "code": "dy = [0, 1, 0, -1]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 4
+    },
+    {
+      "code": "seen = [[False] * W for _ in range(H)]",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 5
+    },
+    {
+      "code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "dead": false,
+      "function": "main",
+      "kind": "FunctionDef",
+      "line": 41,
+      "node_id": 6
+    },
+    {
+      "code": "answer = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 64,
+      "node_id": 7
+    },
+    {
+      "code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 65,
+      "node_id": 8
+    },
+    {
+      "code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "dead": false,
+      "function": "main",
+      "kind": "For",
+      "line": 66,
+      "node_id": 9
+    },
+    {
+      "code": "if S[h][w] == \".\": continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 67,
+      "node_id": 10
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 68,
+      "node_id": 11
+    },
+    {
+      "code": "if seen[h][w]: continue",
+      "dead": false,
+      "function": "main",
+      "kind": "If",
+      "line": 69,
+      "node_id": 12
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main",
+      "kind": "Continue",
+      "line": 70,
+      "node_id": 13
+    },
+    {
+      "code": "black = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 71,
+      "node_id": 14
+    },
+    {
+      "code": "white = 0",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 72,
+      "node_id": 15
+    },
+    {
+      "code": "black, white = dfs(h, w, black, white)",
+      "dead": false,
+      "function": "main",
+      "kind": "Assign",
+      "line": 73,
+      "node_id": 16
+    },
+    {
+      "code": "answer += black * white",
+      "dead": false,
+      "function": "main",
+      "kind": "AugAssign",
+      "line": 74,
+      "node_id": 17
+    },
+    {
+      "code": "print(answer)",
+      "dead": false,
+      "function": "main",
+      "kind": "Expr",
+      "line": 76,
+      "node_id": 18
+    },
+    {
+      "code": "q = deque([(x, y)])",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 1
+    },
+    {
+      "code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "While",
+      "line": 43,
+      "node_id": 2
+    },
+    {
+      "code": "X, Y = q.pop()",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 3
+    },
+    {
+      "code": "if seen[X][Y]: continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "If",
+      "line": 45,
+      "node_id": 4
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Continue",
+      "line": 46,
+      "node_id": 5
+    },
+    {
+      "code": "seen[X][Y] = True",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Assign",
+      "line": 47,
+      "node_id": 6
+    },
+    {
+      "code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "If",
+      "line": 48,
+      "node_id": 7
+    },
+    {
+      "code": "black += 1",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "AugAssign",
+      "line": 49,
+      "node_id": 8
+    },
+    {
+      "code": "white += 1",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "AugAssign",
+      "line": 51,
+      "node_id": 9
+    },
+    {
+      "code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "For",
+      "line": 52,
+      "node_id": 10
+    },
+    {
+      "code": "nx = X + dx[i]",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Assign",
+      "line": 53,
+      "node_id": 11
+    },
+    {
+      "code": "ny = Y + dy[i]",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Assign",
+      "line": 54,
+      "node_id": 12
+    },
+    {
+      "code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "If",
+      "line": 55,
+      "node_id": 13
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Continue",
+      "line": 56,
+      "node_id": 14
+    },
+    {
+      "code": "if S[X][Y] == S[nx][ny]: continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "If",
+      "line": 57,
+      "node_id": 15
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Continue",
+      "line": 58,
+      "node_id": 16
+    },
+    {
+      "code": "if seen[nx][ny]: continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "If",
+      "line": 59,
+      "node_id": 17
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Continue",
+      "line": 60,
+      "node_id": 18
+    },
+    {
+      "code": "q.append((nx, ny))",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Expr",
+      "line": 61,
+      "node_id": 19
+    },
+    {
+      "code": "return black, white",
+      "dead": false,
+      "function": "main.dfs",
+      "kind": "Return",
+      "line": 62,
+      "node_id": 20
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "return sys.stdin.readline().strip()",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "sys.setrecursionlimit(20000000)",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "MOD = 10 ** 9 + 7",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "INF = float(\"inf\")",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "visited = [[False] * W for _ in range(H)]",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "visited[sh][sw] = True",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "q = deque([(sh, sw)])",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "h, w = q.pop()",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "if h == gh and w == gw: return True",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "return True",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "nh = h + dh",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "nw = w + dw",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "visited[nh][nw] = True",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "q.append((nh, nw))",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "H, W = map(int, input().split())",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "S = [list(input()) for _ in range(H)]",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "dx = [1, 0, -1, 0]",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "dy = [0, 1, 0, -1]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "seen = [[False] * W for _ in range(H)]",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "q = deque([(x, y)])",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "X, Y = q.pop()",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "if seen[X][Y]: continue",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "seen[X][Y] = True",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "black += 1",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "white += 1",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "nx = X + dx[i]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "ny = Y + dy[i]",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "if S[X][Y] == S[nx][ny]: continue",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "if seen[nx][ny]: continue",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 60
+    },
+    {
+      "code": "q.append((nx, ny))",
+      "dead": false,
+      "line": 61
+    },
+    {
+      "code": "return black, white",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "answer = 0",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "if S[h][w] == \".\": continue",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "if seen[h][w]: continue",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "black = 0",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "white = 0",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "black, white = dfs(h, w, black, white)",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "answer += black * white",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "print(answer)",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "if __name__ == \"__main__\": main()",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "main()",
+      "dead": false,
+      "line": 80
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03157_s201056188.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 6,
+      "lineno": 5,
+      "name": "input",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 31,
+      "lineno": 15,
+      "name": "dfs",
+      "variables": [
+        "H",
+        "W",
+        "dh",
+        "dw",
+        "gh",
+        "gw",
+        "h",
+        "maze",
+        "nh",
+        "nw",
+        "q",
+        "sh",
+        "sw",
+        "visited",
+        "w"
+      ]
+    },
+    {
+      "calls": [
+        "input",
+        "main.dfs"
+      ],
+      "end_lineno": 76,
+      "lineno": 34,
+      "name": "main",
+      "variables": [
+        "H",
+        "S",
+        "W",
+        "answer",
+        "black",
+        "dfs",
+        "dx",
+        "dy",
+        "h",
+        "int",
+        "seen",
+        "w",
+        "white"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 62,
+      "lineno": 41,
+      "name": "main.dfs",
+      "variables": [
+        "H",
+        "S",
+        "W",
+        "X",
+        "Y",
+        "black",
+        "dh",
+        "dw",
+        "dx",
+        "dy",
+        "gh",
+        "gw",
+        "h",
+        "i",
+        "maze",
+        "nh",
+        "nw",
+        "nx",
+        "ny",
+        "q",
+        "seen",
+        "sh",
+        "sw",
+        "visited",
+        "w",
+        "white",
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 1,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "from collections import deque",
+            "line": 2,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "sys.setrecursionlimit(20000000)",
+            "line": 9,
+            "vars": [
+              "__name__",
+              "sys"
+            ]
+          },
+          {
+            "code": "MOD = 10 ** 9 + 7",
+            "line": 11,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "INF = float(\"inf\")",
+            "line": 12,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "if __name__ == \"__main__\": main()",
+            "line": 79,
+            "vars": [
+              "__name__"
+            ]
+          },
+          {
+            "code": "main()",
+            "line": 80,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "MOD": false,
+          "__name__": false,
+          "sys": false
+        },
+        "return_vars": []
+      },
+      "dfs": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "visited = [[False] * W for _ in range(H)]",
+            "line": 16,
+            "vars": [
+              "H",
+              "W",
+              "gh",
+              "gw",
+              "maze",
+              "sh",
+              "sw"
+            ]
+          },
+          {
+            "code": "visited[sh][sw] = True",
+            "line": 17,
+            "vars": [
+              "H",
+              "W",
+              "gh",
+              "gw",
+              "maze",
+              "sh",
+              "sw"
+            ]
+          },
+          {
+            "code": "q = deque([(sh, sw)])",
+            "line": 18,
+            "vars": [
+              "H",
+              "W",
+              "gh",
+              "gw",
+              "maze",
+              "sh",
+              "sw",
+              "visited"
+            ]
+          },
+          {
+            "code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+            "line": 19,
+            "vars": [
+              "H",
+              "W",
+              "gh",
+              "gw",
+              "maze",
+              "q",
+              "visited"
+            ]
+          },
+          {
+            "code": "h, w = q.pop()",
+            "line": 20,
+            "vars": [
+              "H",
+              "W",
+              "gh",
+              "gw",
+              "maze",
+              "q",
+              "visited"
+            ]
+          },
+          {
+            "code": "if h == gh and w == gw: return True",
+            "line": 21,
+            "vars": [
+              "H",
+              "W",
+              "gh",
+              "gw",
+              "h",
+              "maze",
+              "q",
+              "visited",
+              "w"
+            ]
+          },
+          {
+            "code": "return True",
+            "line": 22,
+            "vars": [
+              "H",
+              "W",
+              "h",
+              "maze",
+              "q",
+              "visited",
+              "w"
+            ]
+          },
+          {
+            "code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+            "line": 23,
+            "vars": [
+              "H",
+              "W",
+              "h",
+              "maze",
+              "q",
+              "visited",
+              "w"
+            ]
+          },
+          {
+            "code": "nh = h + dh",
+            "line": 24,
+            "vars": [
+              "H",
+              "W",
+              "dh",
+              "dw",
+              "h",
+              "maze",
+              "q",
+              "visited",
+              "w"
+            ]
+          },
+          {
+            "code": "nw = w + dw",
+            "line": 25,
+            "vars": [
+              "H",
+              "W",
+              "dw",
+              "maze",
+              "nh",
+              "q",
+              "visited",
+              "w"
+            ]
+          },
+          {
+            "code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+            "line": 26,
+            "vars": [
+              "H",
+              "W",
+              "maze",
+              "nh",
+              "nw",
+              "q",
+              "visited"
+            ]
+          },
+          {
+            "code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+            "line": 27,
+            "vars": [
+              "maze",
+              "nh",
+              "nw",
+              "q",
+              "visited"
+            ]
+          },
+          {
+            "code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+            "line": 28,
+            "vars": [
+              "maze",
+              "nh",
+              "nw",
+              "q"
+            ]
+          },
+          {
+            "code": "visited[nh][nw] = True",
+            "line": 29,
+            "vars": [
+              "nh",
+              "nw",
+              "q"
+            ]
+          },
+          {
+            "code": "q.append((nh, nw))",
+            "line": 30,
+            "vars": [
+              "nh",
+              "nw",
+              "q"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 31,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "H": false,
+          "W": false,
+          "dh": false,
+          "dw": false,
+          "gh": false,
+          "gw": false,
+          "h": false,
+          "maze": false,
+          "nh": false,
+          "nw": false,
+          "q": false,
+          "sh": false,
+          "sw": false,
+          "visited": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "input": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return sys.stdin.readline().strip()",
+            "line": 6,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "main": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "H, W = map(int, input().split())",
+            "line": 35,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "S = [list(input()) for _ in range(H)]",
+            "line": 36,
+            "vars": [
+              "H",
+              "W"
+            ]
+          },
+          {
+            "code": "dx = [1, 0, -1, 0]",
+            "line": 37,
+            "vars": [
+              "H",
+              "S",
+              "W"
+            ]
+          },
+          {
+            "code": "dy = [0, 1, 0, -1]",
+            "line": 38,
+            "vars": [
+              "H",
+              "S",
+              "W"
+            ]
+          },
+          {
+            "code": "seen = [[False] * W for _ in range(H)]",
+            "line": 39,
+            "vars": [
+              "H",
+              "S",
+              "W"
+            ]
+          },
+          {
+            "code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+            "line": 41,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "seen"
+            ]
+          },
+          {
+            "code": "answer = 0",
+            "line": 64,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "seen"
+            ]
+          },
+          {
+            "code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+            "line": 65,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "seen"
+            ]
+          },
+          {
+            "code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+            "line": 66,
+            "vars": [
+              "S",
+              "W",
+              "h",
+              "seen"
+            ]
+          },
+          {
+            "code": "if S[h][w] == \".\": continue",
+            "line": 67,
+            "vars": [
+              "S",
+              "h",
+              "seen",
+              "w"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 68,
+            "vars": [
+              "h",
+              "seen",
+              "w"
+            ]
+          },
+          {
+            "code": "if seen[h][w]: continue",
+            "line": 69,
+            "vars": [
+              "h",
+              "seen",
+              "w"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 70,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "black = 0",
+            "line": 71,
+            "vars": [
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "white = 0",
+            "line": 72,
+            "vars": [
+              "black",
+              "h",
+              "w"
+            ]
+          },
+          {
+            "code": "black, white = dfs(h, w, black, white)",
+            "line": 73,
+            "vars": [
+              "black",
+              "h",
+              "w",
+              "white"
+            ]
+          },
+          {
+            "code": "answer += black * white",
+            "line": 74,
+            "vars": [
+              "black",
+              "white"
+            ]
+          },
+          {
+            "code": "print(answer)",
+            "line": 76,
+            "vars": [
+              "answer"
+            ]
+          }
+        ],
+        "liveout": {
+          "H": false,
+          "S": false,
+          "W": false,
+          "answer": false,
+          "black": false,
+          "dfs": false,
+          "dx": false,
+          "dy": false,
+          "h": false,
+          "int": false,
+          "seen": false,
+          "w": false,
+          "white": false
+        },
+        "return_vars": []
+      },
+      "main.dfs": {
+        "base_liveout": [
+          "black",
+          "white"
+        ],
+        "live_before": [
+          {
+            "code": "q = deque([(x, y)])",
+            "line": 42,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "dx",
+              "dy",
+              "seen",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+            "line": 43,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "dx",
+              "dy",
+              "q",
+              "seen"
+            ]
+          },
+          {
+            "code": "X, Y = q.pop()",
+            "line": 44,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "dx",
+              "dy",
+              "q",
+              "seen"
+            ]
+          },
+          {
+            "code": "if seen[X][Y]: continue",
+            "line": 45,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "dx",
+              "dy",
+              "q",
+              "seen"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 46,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "dx",
+              "dy",
+              "q"
+            ]
+          },
+          {
+            "code": "seen[X][Y] = True",
+            "line": 47,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "dx",
+              "dy",
+              "q"
+            ]
+          },
+          {
+            "code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+            "line": 48,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "dx",
+              "dy",
+              "q",
+              "seen"
+            ]
+          },
+          {
+            "code": "black += 1",
+            "line": 49,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "dx",
+              "dy",
+              "q",
+              "seen"
+            ]
+          },
+          {
+            "code": "white += 1",
+            "line": 51,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "black",
+              "dx",
+              "dy",
+              "q",
+              "seen"
+            ]
+          },
+          {
+            "code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+            "line": 52,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "black",
+              "dx",
+              "dy",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "nx = X + dx[i]",
+            "line": 53,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "X",
+              "Y",
+              "black",
+              "dx",
+              "dy",
+              "i",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "ny = Y + dy[i]",
+            "line": 54,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "Y",
+              "black",
+              "dy",
+              "i",
+              "nx",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+            "line": 55,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "Y",
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 56,
+            "vars": [
+              "S",
+              "Y",
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "if S[X][Y] == S[nx][ny]: continue",
+            "line": 57,
+            "vars": [
+              "S",
+              "Y",
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 58,
+            "vars": [
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "if seen[nx][ny]: continue",
+            "line": 59,
+            "vars": [
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "seen",
+              "white"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 60,
+            "vars": [
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "white"
+            ]
+          },
+          {
+            "code": "q.append((nx, ny))",
+            "line": 61,
+            "vars": [
+              "black",
+              "nx",
+              "ny",
+              "q",
+              "white"
+            ]
+          },
+          {
+            "code": "return black, white",
+            "line": 62,
+            "vars": [
+              "black",
+              "white"
+            ]
+          }
+        ],
+        "liveout": {
+          "H": false,
+          "S": false,
+          "W": false,
+          "X": false,
+          "Y": false,
+          "black": true,
+          "dh": false,
+          "dw": false,
+          "dx": false,
+          "dy": false,
+          "gh": false,
+          "gw": false,
+          "h": false,
+          "i": false,
+          "maze": false,
+          "nh": false,
+          "nw": false,
+          "nx": false,
+          "ny": false,
+          "q": false,
+          "seen": false,
+          "sh": false,
+          "sw": false,
+          "visited": false,
+          "w": false,
+          "white": true,
+          "x": false,
+          "y": false
+        },
+        "return_vars": [
+          "black",
+          "white"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while q:",
+      "cond": "q",
+      "function": "dfs",
+      "header_id": 4,
+      "line": 19,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]:",
+      "cond": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]",
+      "function": "dfs",
+      "header_id": 8,
+      "line": 23,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for h in range(H):",
+      "cond": "for h in range(H)",
+      "function": "main",
+      "header_id": 8,
+      "line": 65,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for w in range(W):",
+      "cond": "for w in range(W)",
+      "function": "main",
+      "header_id": 9,
+      "line": 66,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while q:",
+      "cond": "q",
+      "function": "main.dfs",
+      "header_id": 2,
+      "line": 43,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for i in range(4):",
+      "cond": "for i in range(4)",
+      "function": "main.dfs",
+      "header_id": 10,
+      "line": 52,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "from collections import deque",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "sys.setrecursionlimit(20000000)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "sys.setrecursionlimit(20000000)",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(20000000)",
+      "a_line": 9,
+      "b_code": "MOD = 10 ** 9 + 7",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "INF = float(\"inf\")",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "INF = float(\"inf\")",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(20000000)",
+      "a_line": 9,
+      "b_code": "INF = float(\"inf\")",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 11,
+      "b_code": "INF = float(\"inf\")",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(20000000)",
+      "a_line": 9,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 11,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 12,
+      "b_code": "if __name__ == \"__main__\": main()",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 1,
+      "b_code": "main()",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 2,
+      "b_code": "main()",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "sys.setrecursionlimit(20000000)",
+      "a_line": 9,
+      "b_code": "main()",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10 ** 9 + 7",
+      "a_line": 11,
+      "b_code": "main()",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float(\"inf\")",
+      "a_line": 12,
+      "b_code": "main()",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if __name__ == \"__main__\": main()",
+      "a_line": 79,
+      "b_code": "main()",
+      "b_line": 80,
+      "function": "__module__"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "visited[sh][sw] = True",
+      "b_line": 17,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "q = deque([(sh, sw)])",
+      "b_line": 18,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "q = deque([(sh, sw)])",
+      "b_line": 18,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 19,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "h, w = q.pop()",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "h, w = q.pop()",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "h, w = q.pop()",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "h, w = q.pop()",
+      "b_line": 20,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "if h == gh and w == gw: return True",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "if h == gh and w == gw: return True",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "if h == gh and w == gw: return True",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "if h == gh and w == gw: return True",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "if h == gh and w == gw: return True",
+      "b_line": 21,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "return True",
+      "b_line": 22,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "return True",
+      "b_line": 22,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "return True",
+      "b_line": 22,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "return True",
+      "b_line": 22,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "return True",
+      "b_line": 22,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "return True",
+      "b_line": 22,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 23,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 23,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 23,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 23,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 23,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 23,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "nh = h + dh",
+      "b_line": 24,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nh = h + dh",
+      "a_line": 24,
+      "b_code": "nw = w + dw",
+      "b_line": 25,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nh = h + dh",
+      "a_line": 24,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nw = w + dw",
+      "a_line": 25,
+      "b_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 26,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nh = h + dh",
+      "a_line": 24,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nw = w + dw",
+      "a_line": 25,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 26,
+      "b_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 27,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nh = h + dh",
+      "a_line": 24,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nw = w + dw",
+      "a_line": 25,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 26,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 27,
+      "b_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "b_line": 28,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nh = h + dh",
+      "a_line": 24,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nw = w + dw",
+      "a_line": 25,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 26,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 27,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 28,
+      "b_code": "visited[nh][nw] = True",
+      "b_line": 29,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "h, w = q.pop()",
+      "a_line": 20,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if h == gh and w == gw: return True",
+      "a_line": 21,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 23,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nh = h + dh",
+      "a_line": 24,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "nw = w + dw",
+      "a_line": 25,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 26,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 27,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 28,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[nh][nw] = True",
+      "a_line": 29,
+      "b_code": "q.append((nh, nw))",
+      "b_line": 30,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited = [[False] * W for _ in range(H)]",
+      "a_line": 16,
+      "b_code": "return False",
+      "b_line": 31,
+      "function": "dfs"
+    },
+    {
+      "a_code": "visited[sh][sw] = True",
+      "a_line": 17,
+      "b_code": "return False",
+      "b_line": 31,
+      "function": "dfs"
+    },
+    {
+      "a_code": "q = deque([(sh, sw)])",
+      "a_line": 18,
+      "b_code": "return False",
+      "b_line": 31,
+      "function": "dfs"
+    },
+    {
+      "a_code": "while q: h, w = q.pop() if h == gh and w == gw: return True for dh, dw in [(1, 0), (-1, 0), (0, -1), (0, 1)]: nh = h + dh nw = w + dw if 0 <= nh < H and 0 <= nw < W: if not visited[nh][nw]: if maze[nh][nw] == \".\": visited[nh][nw] = True q.append((nh, nw))",
+      "a_line": 19,
+      "b_code": "return False",
+      "b_line": 31,
+      "function": "dfs"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "S = [list(input()) for _ in range(H)]",
+      "b_line": 36,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "dx = [1, 0, -1, 0]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "dx = [1, 0, -1, 0]",
+      "b_line": 37,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "dy = [0, 1, 0, -1]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "dy = [0, 1, 0, -1]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "dy = [0, 1, 0, -1]",
+      "b_line": 38,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "seen = [[False] * W for _ in range(H)]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "seen = [[False] * W for _ in range(H)]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "seen = [[False] * W for _ in range(H)]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "seen = [[False] * W for _ in range(H)]",
+      "b_line": 39,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "b_line": 41,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "answer = 0",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "answer = 0",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "answer = 0",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "answer = 0",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "answer = 0",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "answer = 0",
+      "b_line": 64,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 65,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "b_line": 66,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "if S[h][w] == \".\": continue",
+      "b_line": 67,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "continue",
+      "b_line": 68,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "if seen[h][w]: continue",
+      "b_line": 69,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "if seen[h][w]: continue",
+      "a_line": 69,
+      "b_code": "continue",
+      "b_line": 70,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "if seen[h][w]: continue",
+      "a_line": 69,
+      "b_code": "black = 0",
+      "b_line": 71,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "if seen[h][w]: continue",
+      "a_line": 69,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 71,
+      "b_code": "white = 0",
+      "b_line": 72,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "if seen[h][w]: continue",
+      "a_line": 69,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 71,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 72,
+      "b_code": "black, white = dfs(h, w, black, white)",
+      "b_line": 73,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 66,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "if S[h][w] == \".\": continue",
+      "a_line": 67,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "if seen[h][w]: continue",
+      "a_line": 69,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "black = 0",
+      "a_line": 71,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "white = 0",
+      "a_line": 72,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "black, white = dfs(h, w, black, white)",
+      "a_line": 73,
+      "b_code": "answer += black * white",
+      "b_line": 74,
+      "function": "main"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 35,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 36,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "dx = [1, 0, -1, 0]",
+      "a_line": 37,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "dy = [0, 1, 0, -1]",
+      "a_line": 38,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "seen = [[False] * W for _ in range(H)]",
+      "a_line": 39,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "def dfs(x, y, black, white): q = deque([(x, y)]) while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny)) return black, white",
+      "a_line": 41,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "answer = 0",
+      "a_line": 64,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "for h in range(H): for w in range(W): if S[h][w] == \".\": continue if seen[h][w]: continue black = 0 white = 0 black, white = dfs(h, w, black, white) answer += black * white",
+      "a_line": 65,
+      "b_code": "print(answer)",
+      "b_line": 76,
+      "function": "main"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 43,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "X, Y = q.pop()",
+      "b_line": 44,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "X, Y = q.pop()",
+      "b_line": 44,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "if seen[X][Y]: continue",
+      "b_line": 45,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "if seen[X][Y]: continue",
+      "b_line": 45,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "if seen[X][Y]: continue",
+      "b_line": 45,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 46,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 46,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 46,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "continue",
+      "b_line": 46,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "seen[X][Y] = True",
+      "b_line": 47,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "seen[X][Y] = True",
+      "b_line": 47,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "seen[X][Y] = True",
+      "b_line": 47,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "seen[X][Y] = True",
+      "b_line": 47,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "b_line": 48,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "b_line": 48,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "b_line": 48,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "b_line": 48,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "b_line": 48,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "black += 1",
+      "b_line": 49,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "black += 1",
+      "b_line": 49,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "black += 1",
+      "b_line": 49,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "black += 1",
+      "b_line": 49,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "black += 1",
+      "b_line": 49,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "black += 1",
+      "b_line": 49,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "white += 1",
+      "b_line": 51,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "white += 1",
+      "b_line": 51,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "white += 1",
+      "b_line": 51,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "white += 1",
+      "b_line": 51,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "white += 1",
+      "b_line": 51,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "white += 1",
+      "b_line": 51,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 52,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 52,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 52,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 52,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 52,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "b_line": 52,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "nx = X + dx[i]",
+      "b_line": 53,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "ny = Y + dy[i]",
+      "b_line": 54,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "b_line": 55,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "a_line": 55,
+      "b_code": "continue",
+      "b_line": 56,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "a_line": 55,
+      "b_code": "if S[X][Y] == S[nx][ny]: continue",
+      "b_line": 57,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "a_line": 55,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == S[nx][ny]: continue",
+      "a_line": 57,
+      "b_code": "continue",
+      "b_line": 58,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "a_line": 55,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == S[nx][ny]: continue",
+      "a_line": 57,
+      "b_code": "if seen[nx][ny]: continue",
+      "b_line": 59,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "a_line": 55,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == S[nx][ny]: continue",
+      "a_line": 57,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[nx][ny]: continue",
+      "a_line": 59,
+      "b_code": "continue",
+      "b_line": 60,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "X, Y = q.pop()",
+      "a_line": 44,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[X][Y]: continue",
+      "a_line": 45,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "seen[X][Y] = True",
+      "a_line": 47,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == \"#\": black += 1 else: white += 1",
+      "a_line": 48,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 52,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "nx = X + dx[i]",
+      "a_line": 53,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "ny = Y + dy[i]",
+      "a_line": 54,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if not (0 <= nx < H and 0 <= ny < W): continue",
+      "a_line": 55,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if S[X][Y] == S[nx][ny]: continue",
+      "a_line": 57,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "if seen[nx][ny]: continue",
+      "a_line": 59,
+      "b_code": "q.append((nx, ny))",
+      "b_line": 61,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "q = deque([(x, y)])",
+      "a_line": 42,
+      "b_code": "return black, white",
+      "b_line": 62,
+      "function": "main.dfs"
+    },
+    {
+      "a_code": "while q: X, Y = q.pop() if seen[X][Y]: continue seen[X][Y] = True if S[X][Y] == \"#\": black += 1 else: white += 1 for i in range(4): nx = X + dx[i] ny = Y + dy[i] if not (0 <= nx < H and 0 <= ny < W): continue if S[X][Y] == S[nx][ny]: continue if seen[nx][ny]: continue q.append((nx, ny))",
+      "a_line": 43,
+      "b_code": "return black, white",
+      "b_line": 62,
+      "function": "main.dfs"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped sys.setrecursionlimit at line 9",
+      "external attribute call skipped sys.stdin.readline at line 6"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped sys.setrecursionlimit at line 9",
+    "external attribute call skipped sys.stdin.readline at line 6"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "INF"
+      },
+      "from": {
+        "code": "MOD = 10 ** 9 + 7",
+        "line": 11,
+        "var": "MOD"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10 ** 9 + 7",
+        "line": 11,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "INF = float(\"inf\")",
+        "line": 12,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "visited = [[False] * W for _ in range(H)]",
+        "line": 16,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "W"
+      },
+      "from": {
+        "code": "visited = [[False] * W for _ in range(H)]",
+        "line": 16,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "dh"
+      },
+      "from": {
+        "code": "visited = [[False] * W for _ in range(H)]",
+        "line": 16,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "visited[sh][sw] = True",
+        "line": 17,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "visited[sh][sw] = True",
+        "line": 17,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sh"
+      },
+      "from": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sh"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "h"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "h"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sh"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "dh"
+      },
+      "from": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "nh"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "h"
+      },
+      "from": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "nh"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "from": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "nh"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sh"
+      },
+      "from": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "nh"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "nh"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "nh = h + dh",
+        "line": 24,
+        "var": "nh"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "dw"
+      },
+      "from": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "from": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sh"
+      },
+      "from": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "w"
+      },
+      "from": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "dw"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nw = w + dw",
+        "line": 25,
+        "var": "nw"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(sh, sw)])",
+        "line": 18,
+        "var": "q"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sh"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "sw"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "h, w = q.pop()",
+        "line": 20,
+        "var": "w"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(maze, H, W, sh, sw, gh, gw):",
+        "line": 15,
+        "var": "H"
+      },
+      "from": {
+        "code": "visited[nh][nw] = True",
+        "line": 29,
+        "var": "visited"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def main():",
+        "line": 34,
+        "var": "S"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "int"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "W"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "W"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 36,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 36,
+        "var": "int"
+      },
+      "from": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 36,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "W"
+      },
+      "from": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 36,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "dx = [1, 0, -1, 0]",
+        "line": 37,
+        "var": "dx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "dy = [0, 1, 0, -1]",
+        "line": 38,
+        "var": "dy"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "seen = [[False] * W for _ in range(H)]",
+        "line": 39,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "W"
+      },
+      "from": {
+        "code": "seen = [[False] * W for _ in range(H)]",
+        "line": 39,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "seen = [[False] * W for _ in range(H)]",
+        "line": 39,
+        "var": "int"
+      },
+      "from": {
+        "code": "seen = [[False] * W for _ in range(H)]",
+        "line": 39,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 36,
+        "var": "S"
+      },
+      "from": {
+        "code": "seen = [[False] * W for _ in range(H)]",
+        "line": 39,
+        "var": "seen"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "answer = 0",
+        "line": 64,
+        "var": "answer"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "black = 0",
+        "line": 71,
+        "var": "black"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "white = 0",
+        "line": 72,
+        "var": "white"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black = 0",
+        "line": 71,
+        "var": "black"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "h"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "w"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "white = 0",
+        "line": 72,
+        "var": "white"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "white"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "h"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "white"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "w"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "white"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "white = 0",
+        "line": 72,
+        "var": "white"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "white"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "white"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "black"
+      },
+      "from": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "answer"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "h"
+      },
+      "from": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "answer"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "w"
+      },
+      "from": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "answer"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "black, white = dfs(h, w, black, white)",
+        "line": 73,
+        "var": "white"
+      },
+      "from": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "answer"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 35,
+        "var": "H"
+      },
+      "from": {
+        "code": "answer += black * white",
+        "line": 74,
+        "var": "answer"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "x"
+      },
+      "from": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "y"
+      },
+      "from": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "x"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "y"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "x"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "y"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "Y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "Y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "Y"
+      },
+      "from": {
+        "code": "seen[X][Y] = True",
+        "line": 47,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "from": {
+        "code": "seen[X][Y] = True",
+        "line": 47,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "x"
+      },
+      "from": {
+        "code": "seen[X][Y] = True",
+        "line": 47,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "y"
+      },
+      "from": {
+        "code": "seen[X][Y] = True",
+        "line": 47,
+        "var": "seen"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "seen[X][Y] = True",
+        "line": 47,
+        "var": "seen"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "black += 1",
+        "line": 49,
+        "var": "black"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "white += 1",
+        "line": 51,
+        "var": "white"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "X"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "dx"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "i"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "x"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "y"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "nx = X + dx[i]",
+        "line": 53,
+        "var": "nx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "X, Y = q.pop()",
+        "line": 44,
+        "var": "Y"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "dy"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "i"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "q = deque([(x, y)])",
+        "line": 42,
+        "var": "q"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "x"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "y"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def dfs(x, y, black, white):",
+        "line": 41,
+        "var": "H"
+      },
+      "from": {
+        "code": "ny = Y + dy[i]",
+        "line": 54,
+        "var": "ny"
+      },
+      "label": "negative"
+    }
+  ]
+}

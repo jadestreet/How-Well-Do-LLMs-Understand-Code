@@ -1,0 +1,34 @@
+{
+  "data_dependency": [
+    "Does the value of variable L at line 3: <statement> L = len(str(N)) </statement> depend on the value of variable N at line 2: <statement> N = int(input()) </statement>?",
+    "Does the value of variable ans at line 19: <statement> ans += 1 </statement> depend on the value of variable L at line 3: <statement> L = len(str(N)) </statement>?",
+    "Does the value of variable L at line 3: <statement> L = len(str(N)) </statement> depend on the value of variable ans at line 1: <statement> def main(): </statement>?",
+    "Does the value of variable tmp at line 10: <statement> tmp = s + i </statement> depend on the value of variable s at line 5: <statement> def dfs(s,N,cand): </statement>?"
+  ],
+  "dead_code": [
+    "Is the statement if c.count('3') >= 1 and c.count('5') >= 1 and c.count('7') >= 1: ans += 1 unreachable during execution?",
+    "Is the statement ans += 1 unreachable during execution?",
+    "Is the statement def dfs(s,N,cand): if s != '' and int(s) > N: return for i in ['3','5','7']: tmp = s + i if int(tmp) <= N: cand.append(tmp) dfs(tmp,N,cand) unreachable during execution?",
+    "Is the statement if int(tmp) <= N: cand.append(tmp) unreachable during execution?"
+  ],
+  "dominators": [
+    "Does the statement line 20: <statement> print(ans) </statement> dominate line 17: <statement> for c in cand: if c.count('3') >= 1 and c.count('5') >= 1 and c.count('7') >= 1: ans += 1 </statement>?",
+    "Does the statement line 6: <statement> if s != '' and int(s) > N: return </statement> dominate line 12: <statement> cand.append(tmp) </statement>?",
+    "Is it guaranteed that whenever line 6: <statement> if s != '' and int(s) > N: return </statement> is reached, the statement line 13: <statement> dfs(tmp,N,cand) </statement> has already been reached?",
+    "Does the statement line 4: <statement> cand = [] </statement> dominate line 17: <statement> for c in cand: if c.count('3') >= 1 and c.count('5') >= 1 and c.count('7') >= 1: ans += 1 </statement>?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function main.dfs to function main?",
+    "Is there a call path from function main to function main.dfs?"
+  ],
+  "liveness": [
+    "Is variable dfs dead at the end of function main?",
+    "Is variable ans live at the end of function main?",
+    "Is variable cand dead at the end of function main?",
+    "Does variable s remain in use at the end of function main.dfs?"
+  ],
+  "loop_reachability": [
+    "Is it possible that the loop with condition for c in cand is never executed?",
+    "Can the loop with condition for i in ['3','5','7'] be skipped entirely?"
+  ]
+}

@@ -1,0 +1,7327 @@
+{
+  "cfg_statements": [
+    {
+      "code": "N,M=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 169,
+      "node_id": 1
+    },
+    {
+      "code": "G=Graph(list(range(1,N+1)))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 170,
+      "node_id": 2
+    },
+    {
+      "code": "E=[]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 171,
+      "node_id": 3
+    },
+    {
+      "code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 172,
+      "node_id": 4
+    },
+    {
+      "code": "a,b=map(int,input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 173,
+      "node_id": 5
+    },
+    {
+      "code": "G.add_edge(a,b)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 174,
+      "node_id": 6
+    },
+    {
+      "code": "E.append((a,b))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 175,
+      "node_id": 7
+    },
+    {
+      "code": "K=Connected_Component_Number(G)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 177,
+      "node_id": 8
+    },
+    {
+      "code": "X=0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 178,
+      "node_id": 9
+    },
+    {
+      "code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 179,
+      "node_id": 10
+    },
+    {
+      "code": "G.remove_edge(a,b)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 180,
+      "node_id": 11
+    },
+    {
+      "code": "if Connected_Component_Number(G)!=K: X+=1",
+      "dead": true,
+      "function": "__module__",
+      "kind": "If",
+      "line": 181,
+      "node_id": 12
+    },
+    {
+      "code": "X+=1",
+      "dead": true,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 182,
+      "node_id": 13
+    },
+    {
+      "code": "G.add_edge(a,b)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 183,
+      "node_id": 14
+    },
+    {
+      "code": "print(X)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 184,
+      "node_id": 15
+    },
+    {
+      "code": "self.vertex=list(vertex)",
+      "dead": false,
+      "function": "Graph.__init__",
+      "kind": "Assign",
+      "line": 4,
+      "node_id": 1
+    },
+    {
+      "code": "self.edge_number=0",
+      "dead": false,
+      "function": "Graph.__init__",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 2
+    },
+    {
+      "code": "self.adjacent={v:set() for v in vertex}",
+      "dead": false,
+      "function": "Graph.__init__",
+      "kind": "Assign",
+      "line": 6,
+      "node_id": 3
+    },
+    {
+      "code": "k=len(self.vertex)",
+      "dead": false,
+      "function": "Graph.add_vertex",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 1
+    },
+    {
+      "code": "m=0",
+      "dead": false,
+      "function": "Graph.add_vertex",
+      "kind": "Assign",
+      "line": 11,
+      "node_id": 2
+    },
+    {
+      "code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "dead": false,
+      "function": "Graph.add_vertex",
+      "kind": "For",
+      "line": 13,
+      "node_id": 3
+    },
+    {
+      "code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "dead": false,
+      "function": "Graph.add_vertex",
+      "kind": "If",
+      "line": 14,
+      "node_id": 4
+    },
+    {
+      "code": "self.adjacent[u]=set()",
+      "dead": false,
+      "function": "Graph.add_vertex",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 5
+    },
+    {
+      "code": "self.vertex.append(u)",
+      "dead": false,
+      "function": "Graph.add_vertex",
+      "kind": "Expr",
+      "line": 16,
+      "node_id": 6
+    },
+    {
+      "code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "For",
+      "line": 20,
+      "node_id": 1
+    },
+    {
+      "code": "if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "If",
+      "line": 21,
+      "node_id": 2
+    },
+    {
+      "code": "self.add_vertex(w)",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "Expr",
+      "line": 22,
+      "node_id": 3
+    },
+    {
+      "code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "If",
+      "line": 24,
+      "node_id": 4
+    },
+    {
+      "code": "self.adjacent[From].add(To)",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "Expr",
+      "line": 25,
+      "node_id": 5
+    },
+    {
+      "code": "self.adjacent[To].add(From)",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "Expr",
+      "line": 26,
+      "node_id": 6
+    },
+    {
+      "code": "self.edge_number+=1",
+      "dead": false,
+      "function": "Graph.add_edge",
+      "kind": "AugAssign",
+      "line": 27,
+      "node_id": 7
+    },
+    {
+      "code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "For",
+      "line": 31,
+      "node_id": 1
+    },
+    {
+      "code": "if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "If",
+      "line": 32,
+      "node_id": 2
+    },
+    {
+      "code": "self.add_vertex(w)",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "Expr",
+      "line": 33,
+      "node_id": 3
+    },
+    {
+      "code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "If",
+      "line": 35,
+      "node_id": 4
+    },
+    {
+      "code": "self.adjacent[u].remove(v)",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "Expr",
+      "line": 36,
+      "node_id": 5
+    },
+    {
+      "code": "self.adjacent[v].remove(u)",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "Expr",
+      "line": 37,
+      "node_id": 6
+    },
+    {
+      "code": "self.edge_number-=1",
+      "dead": false,
+      "function": "Graph.remove_edge",
+      "kind": "AugAssign",
+      "line": 38,
+      "node_id": 7
+    },
+    {
+      "code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "dead": false,
+      "function": "Graph.remove_vertex",
+      "kind": "For",
+      "line": 42,
+      "node_id": 1
+    },
+    {
+      "code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "dead": false,
+      "function": "Graph.remove_vertex",
+      "kind": "If",
+      "line": 43,
+      "node_id": 2
+    },
+    {
+      "code": "self.edge_number-=len(self.adjacent[w])",
+      "dead": false,
+      "function": "Graph.remove_vertex",
+      "kind": "AugAssign",
+      "line": 44,
+      "node_id": 3
+    },
+    {
+      "code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "dead": false,
+      "function": "Graph.remove_vertex",
+      "kind": "For",
+      "line": 45,
+      "node_id": 4
+    },
+    {
+      "code": "self.adjacent[u].remove(w)",
+      "dead": false,
+      "function": "Graph.remove_vertex",
+      "kind": "Expr",
+      "line": 46,
+      "node_id": 5
+    },
+    {
+      "code": "del self.adjacent[w]",
+      "dead": false,
+      "function": "Graph.remove_vertex",
+      "kind": "Delete",
+      "line": 47,
+      "node_id": 6
+    },
+    {
+      "code": "n=len(walk)",
+      "dead": false,
+      "function": "Graph.add_walk",
+      "kind": "Assign",
+      "line": 52,
+      "node_id": 1
+    },
+    {
+      "code": "for i in range(n-1): self.add_edge(walk[i],walk[i+1])",
+      "dead": false,
+      "function": "Graph.add_walk",
+      "kind": "For",
+      "line": 53,
+      "node_id": 2
+    },
+    {
+      "code": "self.add_edge(walk[i],walk[i+1])",
+      "dead": false,
+      "function": "Graph.add_walk",
+      "kind": "Expr",
+      "line": 54,
+      "node_id": 3
+    },
+    {
+      "code": "self.add_walk(*cycle)",
+      "dead": false,
+      "function": "Graph.add_cycle",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 1
+    },
+    {
+      "code": "self.add_edge(cycle[-1],cycle[0])",
+      "dead": false,
+      "function": "Graph.add_cycle",
+      "kind": "Expr",
+      "line": 59,
+      "node_id": 2
+    },
+    {
+      "code": "self.vertex.sort()",
+      "dead": false,
+      "function": "Graph.__vertex_swap",
+      "kind": "Expr",
+      "line": 63,
+      "node_id": 1
+    },
+    {
+      "code": "return v in self.adjacent",
+      "dead": false,
+      "function": "Graph.vertex_exist",
+      "kind": "Return",
+      "line": 67,
+      "node_id": 1
+    },
+    {
+      "code": "if not(self.vertex_exist(u) and self.vertex_exist(v)): return False",
+      "dead": false,
+      "function": "Graph.edge_exist",
+      "kind": "If",
+      "line": 71,
+      "node_id": 1
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "function": "Graph.edge_exist",
+      "kind": "Return",
+      "line": 72,
+      "node_id": 2
+    },
+    {
+      "code": "return u in self.adjacent[v]",
+      "dead": false,
+      "function": "Graph.edge_exist",
+      "kind": "Return",
+      "line": 73,
+      "node_id": 3
+    },
+    {
+      "code": "if not self.vertex_exist(v): return []",
+      "dead": false,
+      "function": "Graph.neighbohood",
+      "kind": "If",
+      "line": 77,
+      "node_id": 1
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "function": "Graph.neighbohood",
+      "kind": "Return",
+      "line": 78,
+      "node_id": 2
+    },
+    {
+      "code": "return list(self.adjacent[v])",
+      "dead": false,
+      "function": "Graph.neighbohood",
+      "kind": "Return",
+      "line": 79,
+      "node_id": 3
+    },
+    {
+      "code": "if not self.vertex_exist(v): return 0",
+      "dead": false,
+      "function": "Graph.degree",
+      "kind": "If",
+      "line": 83,
+      "node_id": 1
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "Graph.degree",
+      "kind": "Return",
+      "line": 84,
+      "node_id": 2
+    },
+    {
+      "code": "return len(self.adjacent[v])",
+      "dead": false,
+      "function": "Graph.degree",
+      "kind": "Return",
+      "line": 86,
+      "node_id": 3
+    },
+    {
+      "code": "return len(self.vertex)",
+      "dead": false,
+      "function": "Graph.vertex_count",
+      "kind": "Return",
+      "line": 90,
+      "node_id": 1
+    },
+    {
+      "code": "return self.edge_number",
+      "dead": false,
+      "function": "Graph.edge_count",
+      "kind": "Return",
+      "line": 94,
+      "node_id": 1
+    },
+    {
+      "code": "if v not in self.adjacent: return []",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "If",
+      "line": 98,
+      "node_id": 1
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Return",
+      "line": 99,
+      "node_id": 2
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "ImportFrom",
+      "line": 101,
+      "node_id": 3
+    },
+    {
+      "code": "T={u:False for u in self.adjacent}",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Assign",
+      "line": 102,
+      "node_id": 4
+    },
+    {
+      "code": "T[v]=True",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Assign",
+      "line": 103,
+      "node_id": 5
+    },
+    {
+      "code": "S=deque([v])",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Assign",
+      "line": 104,
+      "node_id": 6
+    },
+    {
+      "code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "While",
+      "line": 106,
+      "node_id": 7
+    },
+    {
+      "code": "u=S.popleft()",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Assign",
+      "line": 107,
+      "node_id": 8
+    },
+    {
+      "code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "For",
+      "line": 108,
+      "node_id": 9
+    },
+    {
+      "code": "if not T[w]: T[w]=True S.append(w)",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "If",
+      "line": 109,
+      "node_id": 10
+    },
+    {
+      "code": "T[w]=True",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Assign",
+      "line": 110,
+      "node_id": 11
+    },
+    {
+      "code": "S.append(w)",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Expr",
+      "line": 111,
+      "node_id": 12
+    },
+    {
+      "code": "return [x for x in self.adjacent if T[x]]",
+      "dead": false,
+      "function": "Graph.connected_component",
+      "kind": "Return",
+      "line": 113,
+      "node_id": 13
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "ImportFrom",
+      "line": 117,
+      "node_id": 1
+    },
+    {
+      "code": "inf=float(\"inf\")",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Assign",
+      "line": 118,
+      "node_id": 2
+    },
+    {
+      "code": "T={v:inf for v in G.vertex}",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Assign",
+      "line": 119,
+      "node_id": 3
+    },
+    {
+      "code": "if u==v: return 0",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "If",
+      "line": 121,
+      "node_id": 4
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Return",
+      "line": 122,
+      "node_id": 5
+    },
+    {
+      "code": "Q=deque([u])",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Assign",
+      "line": 124,
+      "node_id": 6
+    },
+    {
+      "code": "T[u]=0",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Assign",
+      "line": 125,
+      "node_id": 7
+    },
+    {
+      "code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "While",
+      "line": 126,
+      "node_id": 8
+    },
+    {
+      "code": "w=Q.popleft()",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Assign",
+      "line": 127,
+      "node_id": 9
+    },
+    {
+      "code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "For",
+      "line": 128,
+      "node_id": 10
+    },
+    {
+      "code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "If",
+      "line": 129,
+      "node_id": 11
+    },
+    {
+      "code": "T[x]=T[w]+1",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Assign",
+      "line": 130,
+      "node_id": 12
+    },
+    {
+      "code": "Q.append(x)",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Expr",
+      "line": 131,
+      "node_id": 13
+    },
+    {
+      "code": "if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "If",
+      "line": 132,
+      "node_id": 14
+    },
+    {
+      "code": "return T[x]",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Return",
+      "line": 133,
+      "node_id": 15
+    },
+    {
+      "code": "return inf",
+      "dead": false,
+      "function": "Graph.distance",
+      "kind": "Return",
+      "line": 134,
+      "node_id": 16
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "ImportFrom",
+      "line": 138,
+      "node_id": 1
+    },
+    {
+      "code": "inf=float(\"inf\")",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Assign",
+      "line": 139,
+      "node_id": 2
+    },
+    {
+      "code": "T={v:[] for v in G.vertex}",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Assign",
+      "line": 140,
+      "node_id": 3
+    },
+    {
+      "code": "if u==v: return 0",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "If",
+      "line": 142,
+      "node_id": 4
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Return",
+      "line": 143,
+      "node_id": 5
+    },
+    {
+      "code": "Q=deque([u])",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Assign",
+      "line": 145,
+      "node_id": 6
+    },
+    {
+      "code": "T[u]=[u]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Assign",
+      "line": 146,
+      "node_id": 7
+    },
+    {
+      "code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "While",
+      "line": 147,
+      "node_id": 8
+    },
+    {
+      "code": "w=Q.popleft()",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Assign",
+      "line": 148,
+      "node_id": 9
+    },
+    {
+      "code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "For",
+      "line": 149,
+      "node_id": 10
+    },
+    {
+      "code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "If",
+      "line": 150,
+      "node_id": 11
+    },
+    {
+      "code": "T[x]=T[w]+[x]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Assign",
+      "line": 151,
+      "node_id": 12
+    },
+    {
+      "code": "Q.append(x)",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Expr",
+      "line": 152,
+      "node_id": 13
+    },
+    {
+      "code": "if x==v: return T[x]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "If",
+      "line": 153,
+      "node_id": 14
+    },
+    {
+      "code": "return T[x]",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Return",
+      "line": 154,
+      "node_id": 15
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "Graph.shortest_path",
+      "kind": "Return",
+      "line": 155,
+      "node_id": 16
+    },
+    {
+      "code": "T={v:False for v in G.vertex}",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "Assign",
+      "line": 159,
+      "node_id": 1
+    },
+    {
+      "code": "C=0",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "Assign",
+      "line": 160,
+      "node_id": 2
+    },
+    {
+      "code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "For",
+      "line": 161,
+      "node_id": 3
+    },
+    {
+      "code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "If",
+      "line": 162,
+      "node_id": 4
+    },
+    {
+      "code": "X=G.connected_component(v)",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "Assign",
+      "line": 163,
+      "node_id": 5
+    },
+    {
+      "code": "for x in X: T[x]=True",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "For",
+      "line": 164,
+      "node_id": 6
+    },
+    {
+      "code": "T[x]=True",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "Assign",
+      "line": 165,
+      "node_id": 7
+    },
+    {
+      "code": "C+=1",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "AugAssign",
+      "line": 166,
+      "node_id": 8
+    },
+    {
+      "code": "return C",
+      "dead": false,
+      "function": "Connected_Component_Number",
+      "kind": "Return",
+      "line": 167,
+      "node_id": 9
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "self.vertex=list(vertex)",
+      "dead": false,
+      "line": 4
+    },
+    {
+      "code": "self.edge_number=0",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "self.adjacent={v:set() for v in vertex}",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "k=len(self.vertex)",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "m=0",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "self.adjacent[u]=set()",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "self.vertex.append(u)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "self.add_vertex(w)",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "self.adjacent[From].add(To)",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "self.adjacent[To].add(From)",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "self.edge_number+=1",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if w not in self.adjacent: self.add_vertex(w)",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "self.add_vertex(w)",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "self.adjacent[u].remove(v)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "self.adjacent[v].remove(u)",
+      "dead": false,
+      "line": 37
+    },
+    {
+      "code": "self.edge_number-=1",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "self.edge_number-=len(self.adjacent[w])",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "self.adjacent[u].remove(w)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "del self.adjacent[w]",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "n=len(walk)",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "for i in range(n-1): self.add_edge(walk[i],walk[i+1])",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "self.add_edge(walk[i],walk[i+1])",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "self.add_walk(*cycle)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "self.add_edge(cycle[-1],cycle[0])",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "self.vertex.sort()",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "return v in self.adjacent",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "if not(self.vertex_exist(u) and self.vertex_exist(v)): return False",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "return False",
+      "dead": false,
+      "line": 72
+    },
+    {
+      "code": "return u in self.adjacent[v]",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "if not self.vertex_exist(v): return []",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "return list(self.adjacent[v])",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "if not self.vertex_exist(v): return 0",
+      "dead": false,
+      "line": 83
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 84
+    },
+    {
+      "code": "return len(self.adjacent[v])",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "return len(self.vertex)",
+      "dead": false,
+      "line": 90
+    },
+    {
+      "code": "return self.edge_number",
+      "dead": false,
+      "line": 94
+    },
+    {
+      "code": "if v not in self.adjacent: return []",
+      "dead": false,
+      "line": 98
+    },
+    {
+      "code": "return []",
+      "dead": false,
+      "line": 99
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 101
+    },
+    {
+      "code": "T={u:False for u in self.adjacent}",
+      "dead": false,
+      "line": 102
+    },
+    {
+      "code": "T[v]=True",
+      "dead": false,
+      "line": 103
+    },
+    {
+      "code": "S=deque([v])",
+      "dead": false,
+      "line": 104
+    },
+    {
+      "code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "dead": false,
+      "line": 106
+    },
+    {
+      "code": "u=S.popleft()",
+      "dead": false,
+      "line": 107
+    },
+    {
+      "code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "dead": false,
+      "line": 108
+    },
+    {
+      "code": "if not T[w]: T[w]=True S.append(w)",
+      "dead": false,
+      "line": 109
+    },
+    {
+      "code": "T[w]=True",
+      "dead": false,
+      "line": 110
+    },
+    {
+      "code": "S.append(w)",
+      "dead": false,
+      "line": 111
+    },
+    {
+      "code": "return [x for x in self.adjacent if T[x]]",
+      "dead": false,
+      "line": 113
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 117
+    },
+    {
+      "code": "inf=float(\"inf\")",
+      "dead": false,
+      "line": 118
+    },
+    {
+      "code": "T={v:inf for v in G.vertex}",
+      "dead": false,
+      "line": 119
+    },
+    {
+      "code": "if u==v: return 0",
+      "dead": false,
+      "line": 121
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 122
+    },
+    {
+      "code": "Q=deque([u])",
+      "dead": false,
+      "line": 124
+    },
+    {
+      "code": "T[u]=0",
+      "dead": false,
+      "line": 125
+    },
+    {
+      "code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "line": 126
+    },
+    {
+      "code": "w=Q.popleft()",
+      "dead": false,
+      "line": 127
+    },
+    {
+      "code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "line": 128
+    },
+    {
+      "code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "line": 129
+    },
+    {
+      "code": "T[x]=T[w]+1",
+      "dead": false,
+      "line": 130
+    },
+    {
+      "code": "Q.append(x)",
+      "dead": false,
+      "line": 131
+    },
+    {
+      "code": "if x==v: return T[x]",
+      "dead": false,
+      "line": 132
+    },
+    {
+      "code": "return T[x]",
+      "dead": false,
+      "line": 133
+    },
+    {
+      "code": "return inf",
+      "dead": false,
+      "line": 134
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 138
+    },
+    {
+      "code": "inf=float(\"inf\")",
+      "dead": false,
+      "line": 139
+    },
+    {
+      "code": "T={v:[] for v in G.vertex}",
+      "dead": false,
+      "line": 140
+    },
+    {
+      "code": "if u==v: return 0",
+      "dead": false,
+      "line": 142
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 143
+    },
+    {
+      "code": "Q=deque([u])",
+      "dead": false,
+      "line": 145
+    },
+    {
+      "code": "T[u]=[u]",
+      "dead": false,
+      "line": 146
+    },
+    {
+      "code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "line": 147
+    },
+    {
+      "code": "w=Q.popleft()",
+      "dead": false,
+      "line": 148
+    },
+    {
+      "code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "line": 149
+    },
+    {
+      "code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "dead": false,
+      "line": 150
+    },
+    {
+      "code": "T[x]=T[w]+[x]",
+      "dead": false,
+      "line": 151
+    },
+    {
+      "code": "Q.append(x)",
+      "dead": false,
+      "line": 152
+    },
+    {
+      "code": "if x==v: return T[x]",
+      "dead": false,
+      "line": 153
+    },
+    {
+      "code": "return T[x]",
+      "dead": false,
+      "line": 154
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 155
+    },
+    {
+      "code": "T={v:False for v in G.vertex}",
+      "dead": false,
+      "line": 159
+    },
+    {
+      "code": "C=0",
+      "dead": false,
+      "line": 160
+    },
+    {
+      "code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "dead": false,
+      "line": 161
+    },
+    {
+      "code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "dead": false,
+      "line": 162
+    },
+    {
+      "code": "X=G.connected_component(v)",
+      "dead": false,
+      "line": 163
+    },
+    {
+      "code": "for x in X: T[x]=True",
+      "dead": false,
+      "line": 164
+    },
+    {
+      "code": "T[x]=True",
+      "dead": false,
+      "line": 165
+    },
+    {
+      "code": "C+=1",
+      "dead": false,
+      "line": 166
+    },
+    {
+      "code": "return C",
+      "dead": false,
+      "line": 167
+    },
+    {
+      "code": "N,M=map(int,input().split())",
+      "dead": false,
+      "line": 169
+    },
+    {
+      "code": "G=Graph(list(range(1,N+1)))",
+      "dead": false,
+      "line": 170
+    },
+    {
+      "code": "E=[]",
+      "dead": false,
+      "line": 171
+    },
+    {
+      "code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "dead": false,
+      "line": 172
+    },
+    {
+      "code": "a,b=map(int,input().split())",
+      "dead": false,
+      "line": 173
+    },
+    {
+      "code": "G.add_edge(a,b)",
+      "dead": false,
+      "line": 174
+    },
+    {
+      "code": "E.append((a,b))",
+      "dead": false,
+      "line": 175
+    },
+    {
+      "code": "K=Connected_Component_Number(G)",
+      "dead": false,
+      "line": 177
+    },
+    {
+      "code": "X=0",
+      "dead": false,
+      "line": 178
+    },
+    {
+      "code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "dead": false,
+      "line": 179
+    },
+    {
+      "code": "G.remove_edge(a,b)",
+      "dead": true,
+      "line": 180
+    },
+    {
+      "code": "if Connected_Component_Number(G)!=K: X+=1",
+      "dead": true,
+      "line": 181
+    },
+    {
+      "code": "X+=1",
+      "dead": true,
+      "line": 182
+    },
+    {
+      "code": "G.add_edge(a,b)",
+      "dead": true,
+      "line": 183
+    },
+    {
+      "code": "print(X)",
+      "dead": false,
+      "line": 184
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03575_s439507730.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 6,
+      "lineno": 3,
+      "name": "Graph.__init__",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "self.edge_number",
+        "self.vertex",
+        "vertex"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 16,
+      "lineno": 9,
+      "name": "Graph.add_vertex",
+      "variables": [
+        "adder",
+        "k",
+        "m",
+        "self",
+        "self.adjacent",
+        "self.vertex",
+        "u"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.add_vertex"
+      ],
+      "end_lineno": 27,
+      "lineno": 19,
+      "name": "Graph.add_edge",
+      "variables": [
+        "From",
+        "To",
+        "self",
+        "self.adjacent",
+        "self.edge_number",
+        "w"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.add_vertex"
+      ],
+      "end_lineno": 38,
+      "lineno": 30,
+      "name": "Graph.remove_edge",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "self.edge_number",
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 47,
+      "lineno": 41,
+      "name": "Graph.remove_vertex",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "self.edge_number",
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.add_edge"
+      ],
+      "end_lineno": 54,
+      "lineno": 51,
+      "name": "Graph.add_walk",
+      "variables": [
+        "i",
+        "n",
+        "self",
+        "walk"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.add_edge",
+        "Graph.add_walk"
+      ],
+      "end_lineno": 59,
+      "lineno": 57,
+      "name": "Graph.add_cycle",
+      "variables": [
+        "cycle",
+        "self"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 63,
+      "lineno": 62,
+      "name": "Graph.__vertex_swap",
+      "variables": [
+        "p",
+        "q",
+        "self",
+        "self.vertex"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 67,
+      "lineno": 66,
+      "name": "Graph.vertex_exist",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "v"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.vertex_exist"
+      ],
+      "end_lineno": 73,
+      "lineno": 70,
+      "name": "Graph.edge_exist",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "u",
+        "v"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.vertex_exist"
+      ],
+      "end_lineno": 79,
+      "lineno": 76,
+      "name": "Graph.neighbohood",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "v"
+      ]
+    },
+    {
+      "calls": [
+        "Graph.vertex_exist"
+      ],
+      "end_lineno": 86,
+      "lineno": 82,
+      "name": "Graph.degree",
+      "variables": [
+        "self",
+        "self.adjacent",
+        "v"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 90,
+      "lineno": 89,
+      "name": "Graph.vertex_count",
+      "variables": [
+        "self",
+        "self.vertex"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 94,
+      "lineno": 93,
+      "name": "Graph.edge_count",
+      "variables": [
+        "self",
+        "self.edge_number"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 113,
+      "lineno": 97,
+      "name": "Graph.connected_component",
+      "variables": [
+        "S",
+        "T",
+        "self",
+        "self.adjacent",
+        "u",
+        "v",
+        "w"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 134,
+      "lineno": 116,
+      "name": "Graph.distance",
+      "variables": [
+        "G.adjacent",
+        "G.vertex",
+        "Q",
+        "T",
+        "inf",
+        "self",
+        "u",
+        "v",
+        "w",
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 155,
+      "lineno": 137,
+      "name": "Graph.shortest_path",
+      "variables": [
+        "G.adjacent",
+        "G.vertex",
+        "Q",
+        "T",
+        "inf",
+        "self",
+        "u",
+        "v",
+        "w",
+        "x"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 167,
+      "lineno": 158,
+      "name": "Connected_Component_Number",
+      "variables": [
+        "C",
+        "G",
+        "G.vertex",
+        "T",
+        "X",
+        "v",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "Connected_Component_Number": {
+        "base_liveout": [
+          "C"
+        ],
+        "live_before": [
+          {
+            "code": "T={v:False for v in G.vertex}",
+            "line": 159,
+            "vars": [
+              "G",
+              "G.vertex"
+            ]
+          },
+          {
+            "code": "C=0",
+            "line": 160,
+            "vars": [
+              "G",
+              "G.vertex",
+              "T"
+            ]
+          },
+          {
+            "code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+            "line": 161,
+            "vars": [
+              "G",
+              "G.vertex",
+              "T"
+            ]
+          },
+          {
+            "code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+            "line": 162,
+            "vars": [
+              "G",
+              "T",
+              "v"
+            ]
+          },
+          {
+            "code": "X=G.connected_component(v)",
+            "line": 163,
+            "vars": [
+              "G",
+              "v"
+            ]
+          },
+          {
+            "code": "for x in X: T[x]=True",
+            "line": 164,
+            "vars": [
+              "X"
+            ]
+          },
+          {
+            "code": "T[x]=True",
+            "line": 165,
+            "vars": [
+              "x"
+            ]
+          },
+          {
+            "code": "C+=1",
+            "line": 166,
+            "vars": []
+          },
+          {
+            "code": "return C",
+            "line": 167,
+            "vars": [
+              "C"
+            ]
+          }
+        ],
+        "liveout": {
+          "C": true,
+          "G": false,
+          "G.vertex": false,
+          "T": false,
+          "X": false,
+          "v": false,
+          "x": false
+        },
+        "return_vars": [
+          "C"
+        ]
+      },
+      "Graph.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.vertex=list(vertex)",
+            "line": 4,
+            "vars": [
+              "vertex"
+            ]
+          },
+          {
+            "code": "self.edge_number=0",
+            "line": 5,
+            "vars": [
+              "vertex"
+            ]
+          },
+          {
+            "code": "self.adjacent={v:set() for v in vertex}",
+            "line": 6,
+            "vars": [
+              "vertex"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": false,
+          "self.edge_number": false,
+          "self.vertex": false,
+          "vertex": false
+        },
+        "return_vars": []
+      },
+      "Graph.__vertex_swap": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.vertex.sort()",
+            "line": 63,
+            "vars": [
+              "self.vertex"
+            ]
+          }
+        ],
+        "liveout": {
+          "p": false,
+          "q": false,
+          "self": false,
+          "self.vertex": false
+        },
+        "return_vars": []
+      },
+      "Graph.add_cycle": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.add_walk(*cycle)",
+            "line": 58,
+            "vars": [
+              "cycle",
+              "self"
+            ]
+          },
+          {
+            "code": "self.add_edge(cycle[-1],cycle[0])",
+            "line": 59,
+            "vars": [
+              "cycle",
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "cycle": false,
+          "self": false
+        },
+        "return_vars": []
+      },
+      "Graph.add_edge": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+            "line": 20,
+            "vars": [
+              "From",
+              "To",
+              "self",
+              "self.adjacent"
+            ]
+          },
+          {
+            "code": "if w not in self.adjacent: self.add_vertex(w)",
+            "line": 21,
+            "vars": [
+              "From",
+              "To",
+              "self",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "self.add_vertex(w)",
+            "line": 22,
+            "vars": [
+              "From",
+              "To",
+              "self",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+            "line": 24,
+            "vars": [
+              "From",
+              "To",
+              "self",
+              "self.adjacent"
+            ]
+          },
+          {
+            "code": "self.adjacent[From].add(To)",
+            "line": 25,
+            "vars": [
+              "From",
+              "To",
+              "self",
+              "self.adjacent"
+            ]
+          },
+          {
+            "code": "self.adjacent[To].add(From)",
+            "line": 26,
+            "vars": [
+              "From",
+              "self",
+              "self.adjacent"
+            ]
+          },
+          {
+            "code": "self.edge_number+=1",
+            "line": 27,
+            "vars": [
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "From": false,
+          "To": false,
+          "self": false,
+          "self.adjacent": false,
+          "self.edge_number": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "Graph.add_vertex": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "k=len(self.vertex)",
+            "line": 10,
+            "vars": [
+              "adder",
+              "self.adjacent",
+              "self.vertex"
+            ]
+          },
+          {
+            "code": "m=0",
+            "line": 11,
+            "vars": [
+              "adder",
+              "self.adjacent",
+              "self.vertex"
+            ]
+          },
+          {
+            "code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+            "line": 13,
+            "vars": [
+              "adder",
+              "self.adjacent",
+              "self.vertex"
+            ]
+          },
+          {
+            "code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+            "line": 14,
+            "vars": [
+              "self.adjacent",
+              "self.vertex",
+              "u"
+            ]
+          },
+          {
+            "code": "self.adjacent[u]=set()",
+            "line": 15,
+            "vars": [
+              "self.vertex",
+              "u"
+            ]
+          },
+          {
+            "code": "self.vertex.append(u)",
+            "line": 16,
+            "vars": [
+              "self.vertex",
+              "u"
+            ]
+          }
+        ],
+        "liveout": {
+          "adder": false,
+          "k": false,
+          "m": false,
+          "self": false,
+          "self.adjacent": false,
+          "self.vertex": false,
+          "u": false
+        },
+        "return_vars": []
+      },
+      "Graph.add_walk": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "n=len(walk)",
+            "line": 52,
+            "vars": [
+              "self",
+              "walk"
+            ]
+          },
+          {
+            "code": "for i in range(n-1): self.add_edge(walk[i],walk[i+1])",
+            "line": 53,
+            "vars": [
+              "n",
+              "self",
+              "walk"
+            ]
+          },
+          {
+            "code": "self.add_edge(walk[i],walk[i+1])",
+            "line": 54,
+            "vars": [
+              "i",
+              "self",
+              "walk"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": false,
+          "n": false,
+          "self": false,
+          "walk": false
+        },
+        "return_vars": []
+      },
+      "Graph.connected_component": {
+        "base_liveout": [
+          "T",
+          "self.adjacent"
+        ],
+        "live_before": [
+          {
+            "code": "if v not in self.adjacent: return []",
+            "line": 98,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "return []",
+            "line": 99,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "from collections import deque",
+            "line": 101,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "T={u:False for u in self.adjacent}",
+            "line": 102,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "T[v]=True",
+            "line": 103,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "S=deque([v])",
+            "line": 104,
+            "vars": [
+              "T",
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+            "line": 106,
+            "vars": [
+              "S",
+              "T",
+              "self.adjacent"
+            ]
+          },
+          {
+            "code": "u=S.popleft()",
+            "line": 107,
+            "vars": [
+              "S",
+              "T",
+              "self.adjacent"
+            ]
+          },
+          {
+            "code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+            "line": 108,
+            "vars": [
+              "S",
+              "T",
+              "self.adjacent",
+              "u"
+            ]
+          },
+          {
+            "code": "if not T[w]: T[w]=True S.append(w)",
+            "line": 109,
+            "vars": [
+              "S",
+              "T",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "T[w]=True",
+            "line": 110,
+            "vars": [
+              "S",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "S.append(w)",
+            "line": 111,
+            "vars": [
+              "S",
+              "T",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "return [x for x in self.adjacent if T[x]]",
+            "line": 113,
+            "vars": [
+              "T",
+              "self.adjacent"
+            ]
+          }
+        ],
+        "liveout": {
+          "S": false,
+          "T": true,
+          "self": false,
+          "self.adjacent": true,
+          "u": false,
+          "v": false,
+          "w": false
+        },
+        "return_vars": [
+          "T",
+          "self.adjacent"
+        ]
+      },
+      "Graph.degree": {
+        "base_liveout": [
+          "self.adjacent",
+          "v"
+        ],
+        "live_before": [
+          {
+            "code": "if not self.vertex_exist(v): return 0",
+            "line": 83,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 84,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "return len(self.adjacent[v])",
+            "line": 86,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": true,
+          "v": true
+        },
+        "return_vars": [
+          "self.adjacent",
+          "v"
+        ]
+      },
+      "Graph.distance": {
+        "base_liveout": [
+          "T",
+          "inf",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "from collections import deque",
+            "line": 117,
+            "vars": [
+              "G.adjacent",
+              "G.vertex",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "inf=float(\"inf\")",
+            "line": 118,
+            "vars": [
+              "G.adjacent",
+              "G.vertex",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "T={v:inf for v in G.vertex}",
+            "line": 119,
+            "vars": [
+              "G.adjacent",
+              "G.vertex",
+              "inf",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "if u==v: return 0",
+            "line": 121,
+            "vars": [
+              "G.adjacent",
+              "inf",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 122,
+            "vars": [
+              "G.adjacent",
+              "inf",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "Q=deque([u])",
+            "line": 124,
+            "vars": [
+              "G.adjacent",
+              "inf",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "T[u]=0",
+            "line": 125,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "inf",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+            "line": 126,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "T",
+              "inf",
+              "v"
+            ]
+          },
+          {
+            "code": "w=Q.popleft()",
+            "line": 127,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "T",
+              "inf",
+              "v"
+            ]
+          },
+          {
+            "code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+            "line": 128,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "T",
+              "inf",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+            "line": 129,
+            "vars": [
+              "Q",
+              "T",
+              "inf",
+              "v",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "T[x]=T[w]+1",
+            "line": 130,
+            "vars": [
+              "Q",
+              "T",
+              "inf",
+              "v",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "Q.append(x)",
+            "line": 131,
+            "vars": [
+              "Q",
+              "T",
+              "inf",
+              "v",
+              "x"
+            ]
+          },
+          {
+            "code": "if x==v: return T[x]",
+            "line": 132,
+            "vars": [
+              "T",
+              "inf",
+              "v",
+              "x"
+            ]
+          },
+          {
+            "code": "return T[x]",
+            "line": 133,
+            "vars": [
+              "T",
+              "inf",
+              "x"
+            ]
+          },
+          {
+            "code": "return inf",
+            "line": 134,
+            "vars": [
+              "inf"
+            ]
+          }
+        ],
+        "liveout": {
+          "G.adjacent": false,
+          "G.vertex": false,
+          "Q": false,
+          "T": true,
+          "inf": true,
+          "self": false,
+          "u": false,
+          "v": false,
+          "w": false,
+          "x": true
+        },
+        "return_vars": [
+          "T",
+          "inf",
+          "x"
+        ]
+      },
+      "Graph.edge_count": {
+        "base_liveout": [
+          "self.edge_number"
+        ],
+        "live_before": [
+          {
+            "code": "return self.edge_number",
+            "line": 94,
+            "vars": [
+              "self.edge_number"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.edge_number": true
+        },
+        "return_vars": [
+          "self.edge_number"
+        ]
+      },
+      "Graph.edge_exist": {
+        "base_liveout": [
+          "self.adjacent",
+          "u",
+          "v"
+        ],
+        "live_before": [
+          {
+            "code": "if not(self.vertex_exist(u) and self.vertex_exist(v)): return False",
+            "line": 71,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "return False",
+            "line": 72,
+            "vars": [
+              "self.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "return u in self.adjacent[v]",
+            "line": 73,
+            "vars": [
+              "self.adjacent",
+              "u",
+              "v"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": true,
+          "u": true,
+          "v": true
+        },
+        "return_vars": [
+          "self.adjacent",
+          "u",
+          "v"
+        ]
+      },
+      "Graph.neighbohood": {
+        "base_liveout": [
+          "self.adjacent",
+          "v"
+        ],
+        "live_before": [
+          {
+            "code": "if not self.vertex_exist(v): return []",
+            "line": 77,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "return []",
+            "line": 78,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "return list(self.adjacent[v])",
+            "line": 79,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": true,
+          "v": true
+        },
+        "return_vars": [
+          "self.adjacent",
+          "v"
+        ]
+      },
+      "Graph.remove_edge": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+            "line": 31,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "if w not in self.adjacent: self.add_vertex(w)",
+            "line": 32,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "self.add_vertex(w)",
+            "line": 33,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+            "line": 35,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "self.adjacent[u].remove(v)",
+            "line": 36,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "self.adjacent[v].remove(u)",
+            "line": 37,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "u"
+            ]
+          },
+          {
+            "code": "self.edge_number-=1",
+            "line": 38,
+            "vars": [
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": false,
+          "self.edge_number": false,
+          "u": false,
+          "v": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "Graph.remove_vertex": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+            "line": 42,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "v"
+            ]
+          },
+          {
+            "code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+            "line": 43,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "self.edge_number-=len(self.adjacent[w])",
+            "line": 44,
+            "vars": [
+              "self",
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+            "line": 45,
+            "vars": [
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "self.adjacent[u].remove(w)",
+            "line": 46,
+            "vars": [
+              "self.adjacent",
+              "w"
+            ]
+          },
+          {
+            "code": "del self.adjacent[w]",
+            "line": 47,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": false,
+          "self.edge_number": false,
+          "u": false,
+          "v": false,
+          "w": false
+        },
+        "return_vars": []
+      },
+      "Graph.shortest_path": {
+        "base_liveout": [
+          "T",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "from collections import deque",
+            "line": 138,
+            "vars": [
+              "G.adjacent",
+              "G.vertex",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "inf=float(\"inf\")",
+            "line": 139,
+            "vars": [
+              "G.adjacent",
+              "G.vertex",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "T={v:[] for v in G.vertex}",
+            "line": 140,
+            "vars": [
+              "G.adjacent",
+              "G.vertex",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "if u==v: return 0",
+            "line": 142,
+            "vars": [
+              "G.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 143,
+            "vars": [
+              "G.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "Q=deque([u])",
+            "line": 145,
+            "vars": [
+              "G.adjacent",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "T[u]=[u]",
+            "line": 146,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+            "line": 147,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "T",
+              "v"
+            ]
+          },
+          {
+            "code": "w=Q.popleft()",
+            "line": 148,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "T",
+              "v"
+            ]
+          },
+          {
+            "code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+            "line": 149,
+            "vars": [
+              "G.adjacent",
+              "Q",
+              "T",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+            "line": 150,
+            "vars": [
+              "Q",
+              "T",
+              "v",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "T[x]=T[w]+[x]",
+            "line": 151,
+            "vars": [
+              "Q",
+              "T",
+              "v",
+              "w",
+              "x"
+            ]
+          },
+          {
+            "code": "Q.append(x)",
+            "line": 152,
+            "vars": [
+              "Q",
+              "T",
+              "v",
+              "x"
+            ]
+          },
+          {
+            "code": "if x==v: return T[x]",
+            "line": 153,
+            "vars": [
+              "T",
+              "v",
+              "x"
+            ]
+          },
+          {
+            "code": "return T[x]",
+            "line": 154,
+            "vars": [
+              "T",
+              "x"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 155,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "G.adjacent": false,
+          "G.vertex": false,
+          "Q": false,
+          "T": true,
+          "inf": false,
+          "self": false,
+          "u": false,
+          "v": false,
+          "w": false,
+          "x": true
+        },
+        "return_vars": [
+          "T",
+          "x"
+        ]
+      },
+      "Graph.vertex_count": {
+        "base_liveout": [
+          "self.vertex"
+        ],
+        "live_before": [
+          {
+            "code": "return len(self.vertex)",
+            "line": 90,
+            "vars": [
+              "self.vertex"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.vertex": true
+        },
+        "return_vars": [
+          "self.vertex"
+        ]
+      },
+      "Graph.vertex_exist": {
+        "base_liveout": [
+          "self.adjacent",
+          "v"
+        ],
+        "live_before": [
+          {
+            "code": "return v in self.adjacent",
+            "line": 67,
+            "vars": [
+              "self.adjacent",
+              "v"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.adjacent": true,
+          "v": true
+        },
+        "return_vars": [
+          "self.adjacent",
+          "v"
+        ]
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "N,M=map(int,input().split())",
+            "line": 169,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "G=Graph(list(range(1,N+1)))",
+            "line": 170,
+            "vars": [
+              "M",
+              "N",
+              "int"
+            ]
+          },
+          {
+            "code": "E=[]",
+            "line": 171,
+            "vars": [
+              "G",
+              "M",
+              "int"
+            ]
+          },
+          {
+            "code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+            "line": 172,
+            "vars": [
+              "E",
+              "G",
+              "M",
+              "int"
+            ]
+          },
+          {
+            "code": "a,b=map(int,input().split())",
+            "line": 173,
+            "vars": [
+              "E",
+              "G",
+              "int"
+            ]
+          },
+          {
+            "code": "G.add_edge(a,b)",
+            "line": 174,
+            "vars": [
+              "E",
+              "G",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "E.append((a,b))",
+            "line": 175,
+            "vars": [
+              "E",
+              "G",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "K=Connected_Component_Number(G)",
+            "line": 177,
+            "vars": [
+              "E",
+              "G"
+            ]
+          },
+          {
+            "code": "X=0",
+            "line": 178,
+            "vars": [
+              "E",
+              "G",
+              "K"
+            ]
+          },
+          {
+            "code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+            "line": 179,
+            "vars": [
+              "E",
+              "G",
+              "K"
+            ]
+          },
+          {
+            "code": "G.remove_edge(a,b)",
+            "line": 180,
+            "vars": [
+              "G",
+              "K",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "if Connected_Component_Number(G)!=K: X+=1",
+            "line": 181,
+            "vars": [
+              "G",
+              "K",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "X+=1",
+            "line": 182,
+            "vars": [
+              "G",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "G.add_edge(a,b)",
+            "line": 183,
+            "vars": [
+              "G",
+              "X",
+              "a",
+              "b"
+            ]
+          },
+          {
+            "code": "print(X)",
+            "line": 184,
+            "vars": [
+              "X"
+            ]
+          }
+        ],
+        "liveout": {
+          "E": false,
+          "G": false,
+          "K": false,
+          "M": false,
+          "N": false,
+          "X": false,
+          "_": false,
+          "a": false,
+          "b": false,
+          "int": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for v in G.vertex:",
+      "cond": "for v in G.vertex",
+      "function": "Connected_Component_Number",
+      "header_id": 3,
+      "line": 161,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for x in X:",
+      "cond": "for x in X",
+      "function": "Connected_Component_Number",
+      "header_id": 6,
+      "line": 164,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for w in [From,To]:",
+      "cond": "for w in [From,To]",
+      "function": "Graph.add_edge",
+      "header_id": 1,
+      "line": 20,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for u in adder:",
+      "cond": "for u in adder",
+      "function": "Graph.add_vertex",
+      "header_id": 3,
+      "line": 13,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(n-1):",
+      "cond": "for i in range(n-1)",
+      "function": "Graph.add_walk",
+      "header_id": 2,
+      "line": 53,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while S:",
+      "cond": "S",
+      "function": "Graph.connected_component",
+      "header_id": 7,
+      "line": 106,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for w in self.adjacent[u]:",
+      "cond": "for w in self.adjacent[u]",
+      "function": "Graph.connected_component",
+      "header_id": 9,
+      "line": 108,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while Q:",
+      "cond": "Q",
+      "function": "Graph.distance",
+      "header_id": 8,
+      "line": 126,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for x in G.adjacent[w]:",
+      "cond": "for x in G.adjacent[w]",
+      "function": "Graph.distance",
+      "header_id": 10,
+      "line": 128,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "for w in [u,v]:",
+      "cond": "for w in [u,v]",
+      "function": "Graph.remove_edge",
+      "header_id": 1,
+      "line": 31,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for w in v:",
+      "cond": "for w in v",
+      "function": "Graph.remove_vertex",
+      "header_id": 1,
+      "line": 42,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for u in self.adjacent[w]:",
+      "cond": "for u in self.adjacent[w]",
+      "function": "Graph.remove_vertex",
+      "header_id": 4,
+      "line": 45,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while Q:",
+      "cond": "Q",
+      "function": "Graph.shortest_path",
+      "header_id": 8,
+      "line": 147,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for x in G.adjacent[w]:",
+      "cond": "for x in G.adjacent[w]",
+      "function": "Graph.shortest_path",
+      "header_id": 10,
+      "line": 149,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(M):",
+      "cond": "for _ in range(M)",
+      "function": "__module__",
+      "header_id": 4,
+      "line": 172,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for a,b in E:",
+      "cond": "for a,b in E",
+      "function": "__module__",
+      "header_id": 10,
+      "line": 179,
+      "reachable": false
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "G=Graph(list(range(1,N+1)))",
+      "b_line": 170,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "E=[]",
+      "b_line": 171,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "E=[]",
+      "b_line": 171,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "b_line": 172,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "b_line": 172,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "b_line": 172,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "a,b=map(int,input().split())",
+      "b_line": 173,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "a,b=map(int,input().split())",
+      "b_line": 173,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "a,b=map(int,input().split())",
+      "b_line": 173,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "a,b=map(int,input().split())",
+      "b_line": 173,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "G.add_edge(a,b)",
+      "b_line": 174,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "G.add_edge(a,b)",
+      "b_line": 174,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "G.add_edge(a,b)",
+      "b_line": 174,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "G.add_edge(a,b)",
+      "b_line": 174,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b=map(int,input().split())",
+      "a_line": 173,
+      "b_code": "G.add_edge(a,b)",
+      "b_line": 174,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "E.append((a,b))",
+      "b_line": 175,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "E.append((a,b))",
+      "b_line": 175,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "E.append((a,b))",
+      "b_line": 175,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "E.append((a,b))",
+      "b_line": 175,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a,b=map(int,input().split())",
+      "a_line": 173,
+      "b_code": "E.append((a,b))",
+      "b_line": 175,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G.add_edge(a,b)",
+      "a_line": 174,
+      "b_code": "E.append((a,b))",
+      "b_line": 175,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "K=Connected_Component_Number(G)",
+      "b_line": 177,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "K=Connected_Component_Number(G)",
+      "b_line": 177,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "K=Connected_Component_Number(G)",
+      "b_line": 177,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "K=Connected_Component_Number(G)",
+      "b_line": 177,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "X=0",
+      "b_line": 178,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "X=0",
+      "b_line": 178,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "X=0",
+      "b_line": 178,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "X=0",
+      "b_line": 178,
+      "function": "__module__"
+    },
+    {
+      "a_code": "K=Connected_Component_Number(G)",
+      "a_line": 177,
+      "b_code": "X=0",
+      "b_line": 178,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "b_line": 179,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "b_line": 179,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "b_line": 179,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "b_line": 179,
+      "function": "__module__"
+    },
+    {
+      "a_code": "K=Connected_Component_Number(G)",
+      "a_line": 177,
+      "b_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "b_line": 179,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X=0",
+      "a_line": 178,
+      "b_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "b_line": 179,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N,M=map(int,input().split())",
+      "a_line": 169,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "G=Graph(list(range(1,N+1)))",
+      "a_line": 170,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "E=[]",
+      "a_line": 171,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(M): a,b=map(int,input().split()) G.add_edge(a,b) E.append((a,b))",
+      "a_line": 172,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "K=Connected_Component_Number(G)",
+      "a_line": 177,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "X=0",
+      "a_line": 178,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a,b in E: G.remove_edge(a,b) if Connected_Component_Number(G)!=K: X+=1 G.add_edge(a,b)",
+      "a_line": 179,
+      "b_code": "print(X)",
+      "b_line": 184,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.vertex=list(vertex)",
+      "a_line": 4,
+      "b_code": "self.edge_number=0",
+      "b_line": 5,
+      "function": "Graph.__init__"
+    },
+    {
+      "a_code": "self.vertex=list(vertex)",
+      "a_line": 4,
+      "b_code": "self.adjacent={v:set() for v in vertex}",
+      "b_line": 6,
+      "function": "Graph.__init__"
+    },
+    {
+      "a_code": "self.edge_number=0",
+      "a_line": 5,
+      "b_code": "self.adjacent={v:set() for v in vertex}",
+      "b_line": 6,
+      "function": "Graph.__init__"
+    },
+    {
+      "a_code": "k=len(self.vertex)",
+      "a_line": 10,
+      "b_code": "m=0",
+      "b_line": 11,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "k=len(self.vertex)",
+      "a_line": 10,
+      "b_code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "b_line": 13,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "m=0",
+      "a_line": 11,
+      "b_code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "b_line": 13,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "k=len(self.vertex)",
+      "a_line": 10,
+      "b_code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "b_line": 14,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "m=0",
+      "a_line": 11,
+      "b_code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "b_line": 14,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "a_line": 13,
+      "b_code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "b_line": 14,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "k=len(self.vertex)",
+      "a_line": 10,
+      "b_code": "self.adjacent[u]=set()",
+      "b_line": 15,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "m=0",
+      "a_line": 11,
+      "b_code": "self.adjacent[u]=set()",
+      "b_line": 15,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "a_line": 13,
+      "b_code": "self.adjacent[u]=set()",
+      "b_line": 15,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "a_line": 14,
+      "b_code": "self.adjacent[u]=set()",
+      "b_line": 15,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "k=len(self.vertex)",
+      "a_line": 10,
+      "b_code": "self.vertex.append(u)",
+      "b_line": 16,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "m=0",
+      "a_line": 11,
+      "b_code": "self.vertex.append(u)",
+      "b_line": 16,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "for u in adder: if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "a_line": 13,
+      "b_code": "self.vertex.append(u)",
+      "b_line": 16,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "if u not in self.adjacent: self.adjacent[u]=set() self.vertex.append(u)",
+      "a_line": 14,
+      "b_code": "self.vertex.append(u)",
+      "b_line": 16,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "self.adjacent[u]=set()",
+      "a_line": 15,
+      "b_code": "self.vertex.append(u)",
+      "b_line": 16,
+      "function": "Graph.add_vertex"
+    },
+    {
+      "a_code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 20,
+      "b_code": "if w not in self.adjacent: self.add_vertex(w)",
+      "b_line": 21,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 20,
+      "b_code": "self.add_vertex(w)",
+      "b_line": 22,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 21,
+      "b_code": "self.add_vertex(w)",
+      "b_line": 22,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 20,
+      "b_code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+      "b_line": 24,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 20,
+      "b_code": "self.adjacent[From].add(To)",
+      "b_line": 25,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+      "a_line": 24,
+      "b_code": "self.adjacent[From].add(To)",
+      "b_line": 25,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 20,
+      "b_code": "self.adjacent[To].add(From)",
+      "b_line": 26,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+      "a_line": 24,
+      "b_code": "self.adjacent[To].add(From)",
+      "b_line": 26,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "self.adjacent[From].add(To)",
+      "a_line": 25,
+      "b_code": "self.adjacent[To].add(From)",
+      "b_line": 26,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "for w in [From,To]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 20,
+      "b_code": "self.edge_number+=1",
+      "b_line": 27,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "if To not in self.adjacent[From]: self.adjacent[From].add(To) self.adjacent[To].add(From) self.edge_number+=1",
+      "a_line": 24,
+      "b_code": "self.edge_number+=1",
+      "b_line": 27,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "self.adjacent[From].add(To)",
+      "a_line": 25,
+      "b_code": "self.edge_number+=1",
+      "b_line": 27,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "self.adjacent[To].add(From)",
+      "a_line": 26,
+      "b_code": "self.edge_number+=1",
+      "b_line": 27,
+      "function": "Graph.add_edge"
+    },
+    {
+      "a_code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 31,
+      "b_code": "if w not in self.adjacent: self.add_vertex(w)",
+      "b_line": 32,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 31,
+      "b_code": "self.add_vertex(w)",
+      "b_line": 33,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 32,
+      "b_code": "self.add_vertex(w)",
+      "b_line": 33,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 31,
+      "b_code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+      "b_line": 35,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 31,
+      "b_code": "self.adjacent[u].remove(v)",
+      "b_line": 36,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+      "a_line": 35,
+      "b_code": "self.adjacent[u].remove(v)",
+      "b_line": 36,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 31,
+      "b_code": "self.adjacent[v].remove(u)",
+      "b_line": 37,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+      "a_line": 35,
+      "b_code": "self.adjacent[v].remove(u)",
+      "b_line": 37,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "self.adjacent[u].remove(v)",
+      "a_line": 36,
+      "b_code": "self.adjacent[v].remove(u)",
+      "b_line": 37,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "for w in [u,v]: if w not in self.adjacent: self.add_vertex(w)",
+      "a_line": 31,
+      "b_code": "self.edge_number-=1",
+      "b_line": 38,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "if u in self.adjacent[v]: self.adjacent[u].remove(v) self.adjacent[v].remove(u) self.edge_number-=1",
+      "a_line": 35,
+      "b_code": "self.edge_number-=1",
+      "b_line": 38,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "self.adjacent[u].remove(v)",
+      "a_line": 36,
+      "b_code": "self.edge_number-=1",
+      "b_line": 38,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "self.adjacent[v].remove(u)",
+      "a_line": 37,
+      "b_code": "self.edge_number-=1",
+      "b_line": 38,
+      "function": "Graph.remove_edge"
+    },
+    {
+      "a_code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 42,
+      "b_code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "b_line": 43,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 42,
+      "b_code": "self.edge_number-=len(self.adjacent[w])",
+      "b_line": 44,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 43,
+      "b_code": "self.edge_number-=len(self.adjacent[w])",
+      "b_line": 44,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 42,
+      "b_code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "b_line": 45,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 43,
+      "b_code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "b_line": 45,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "self.edge_number-=len(self.adjacent[w])",
+      "a_line": 44,
+      "b_code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "b_line": 45,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 42,
+      "b_code": "self.adjacent[u].remove(w)",
+      "b_line": 46,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 43,
+      "b_code": "self.adjacent[u].remove(w)",
+      "b_line": 46,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "self.edge_number-=len(self.adjacent[w])",
+      "a_line": 44,
+      "b_code": "self.adjacent[u].remove(w)",
+      "b_line": 46,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "a_line": 45,
+      "b_code": "self.adjacent[u].remove(w)",
+      "b_line": 46,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "for w in v: if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 42,
+      "b_code": "del self.adjacent[w]",
+      "b_line": 47,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "if w in self.adjacent: self.edge_number-=len(self.adjacent[w]) for u in self.adjacent[w]: self.adjacent[u].remove(w) del self.adjacent[w]",
+      "a_line": 43,
+      "b_code": "del self.adjacent[w]",
+      "b_line": 47,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "self.edge_number-=len(self.adjacent[w])",
+      "a_line": 44,
+      "b_code": "del self.adjacent[w]",
+      "b_line": 47,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "for u in self.adjacent[w]: self.adjacent[u].remove(w)",
+      "a_line": 45,
+      "b_code": "del self.adjacent[w]",
+      "b_line": 47,
+      "function": "Graph.remove_vertex"
+    },
+    {
+      "a_code": "n=len(walk)",
+      "a_line": 52,
+      "b_code": "for i in range(n-1): self.add_edge(walk[i],walk[i+1])",
+      "b_line": 53,
+      "function": "Graph.add_walk"
+    },
+    {
+      "a_code": "n=len(walk)",
+      "a_line": 52,
+      "b_code": "self.add_edge(walk[i],walk[i+1])",
+      "b_line": 54,
+      "function": "Graph.add_walk"
+    },
+    {
+      "a_code": "for i in range(n-1): self.add_edge(walk[i],walk[i+1])",
+      "a_line": 53,
+      "b_code": "self.add_edge(walk[i],walk[i+1])",
+      "b_line": 54,
+      "function": "Graph.add_walk"
+    },
+    {
+      "a_code": "self.add_walk(*cycle)",
+      "a_line": 58,
+      "b_code": "self.add_edge(cycle[-1],cycle[0])",
+      "b_line": 59,
+      "function": "Graph.add_cycle"
+    },
+    {
+      "a_code": "if not(self.vertex_exist(u) and self.vertex_exist(v)): return False",
+      "a_line": 71,
+      "b_code": "return False",
+      "b_line": 72,
+      "function": "Graph.edge_exist"
+    },
+    {
+      "a_code": "if not(self.vertex_exist(u) and self.vertex_exist(v)): return False",
+      "a_line": 71,
+      "b_code": "return u in self.adjacent[v]",
+      "b_line": 73,
+      "function": "Graph.edge_exist"
+    },
+    {
+      "a_code": "if not self.vertex_exist(v): return []",
+      "a_line": 77,
+      "b_code": "return []",
+      "b_line": 78,
+      "function": "Graph.neighbohood"
+    },
+    {
+      "a_code": "if not self.vertex_exist(v): return []",
+      "a_line": 77,
+      "b_code": "return list(self.adjacent[v])",
+      "b_line": 79,
+      "function": "Graph.neighbohood"
+    },
+    {
+      "a_code": "if not self.vertex_exist(v): return 0",
+      "a_line": 83,
+      "b_code": "return 0",
+      "b_line": 84,
+      "function": "Graph.degree"
+    },
+    {
+      "a_code": "if not self.vertex_exist(v): return 0",
+      "a_line": 83,
+      "b_code": "return len(self.adjacent[v])",
+      "b_line": 86,
+      "function": "Graph.degree"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "return []",
+      "b_line": 99,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "from collections import deque",
+      "b_line": 101,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "T={u:False for u in self.adjacent}",
+      "b_line": 102,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "T={u:False for u in self.adjacent}",
+      "b_line": 102,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "T[v]=True",
+      "b_line": 103,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "T[v]=True",
+      "b_line": 103,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "T[v]=True",
+      "b_line": 103,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "S=deque([v])",
+      "b_line": 104,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "S=deque([v])",
+      "b_line": 104,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "S=deque([v])",
+      "b_line": 104,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "S=deque([v])",
+      "b_line": 104,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 106,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 106,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 106,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 106,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 106,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "u=S.popleft()",
+      "b_line": 107,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "u=S.popleft()",
+      "b_line": 107,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "u=S.popleft()",
+      "b_line": 107,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "u=S.popleft()",
+      "b_line": 107,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "u=S.popleft()",
+      "b_line": 107,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 106,
+      "b_code": "u=S.popleft()",
+      "b_line": 107,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 106,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "u=S.popleft()",
+      "a_line": 107,
+      "b_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "b_line": 108,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 106,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "u=S.popleft()",
+      "a_line": 107,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 108,
+      "b_code": "if not T[w]: T[w]=True S.append(w)",
+      "b_line": 109,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 106,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "u=S.popleft()",
+      "a_line": 107,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 108,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if not T[w]: T[w]=True S.append(w)",
+      "a_line": 109,
+      "b_code": "T[w]=True",
+      "b_line": 110,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 106,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "u=S.popleft()",
+      "a_line": 107,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 108,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if not T[w]: T[w]=True S.append(w)",
+      "a_line": 109,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[w]=True",
+      "a_line": 110,
+      "b_code": "S.append(w)",
+      "b_line": 111,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "if v not in self.adjacent: return []",
+      "a_line": 98,
+      "b_code": "return [x for x in self.adjacent if T[x]]",
+      "b_line": 113,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 101,
+      "b_code": "return [x for x in self.adjacent if T[x]]",
+      "b_line": 113,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T={u:False for u in self.adjacent}",
+      "a_line": 102,
+      "b_code": "return [x for x in self.adjacent if T[x]]",
+      "b_line": 113,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "T[v]=True",
+      "a_line": 103,
+      "b_code": "return [x for x in self.adjacent if T[x]]",
+      "b_line": 113,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "S=deque([v])",
+      "a_line": 104,
+      "b_code": "return [x for x in self.adjacent if T[x]]",
+      "b_line": 113,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "while S: u=S.popleft() for w in self.adjacent[u]: if not T[w]: T[w]=True S.append(w)",
+      "a_line": 106,
+      "b_code": "return [x for x in self.adjacent if T[x]]",
+      "b_line": 113,
+      "function": "Graph.connected_component"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "inf=float(\"inf\")",
+      "b_line": 118,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "T={v:inf for v in G.vertex}",
+      "b_line": 119,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "T={v:inf for v in G.vertex}",
+      "b_line": 119,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "if u==v: return 0",
+      "b_line": 121,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "if u==v: return 0",
+      "b_line": 121,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "if u==v: return 0",
+      "b_line": 121,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "return 0",
+      "b_line": 122,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "return 0",
+      "b_line": 122,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "return 0",
+      "b_line": 122,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "return 0",
+      "b_line": 122,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "Q=deque([u])",
+      "b_line": 124,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "Q=deque([u])",
+      "b_line": 124,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "Q=deque([u])",
+      "b_line": 124,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "Q=deque([u])",
+      "b_line": 124,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "T[u]=0",
+      "b_line": 125,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "T[u]=0",
+      "b_line": 125,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "T[u]=0",
+      "b_line": 125,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "T[u]=0",
+      "b_line": 125,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "T[u]=0",
+      "b_line": 125,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 126,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 126,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 126,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 126,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 126,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 126,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "w=Q.popleft()",
+      "b_line": 127,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 127,
+      "b_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 128,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 127,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 128,
+      "b_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "b_line": 129,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 127,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 128,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 129,
+      "b_code": "T[x]=T[w]+1",
+      "b_line": 130,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 127,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 128,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 129,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[x]=T[w]+1",
+      "a_line": 130,
+      "b_code": "Q.append(x)",
+      "b_line": 131,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 127,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 128,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 129,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[x]=T[w]+1",
+      "a_line": 130,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q.append(x)",
+      "a_line": 131,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 132,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 127,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 128,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 129,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[x]=T[w]+1",
+      "a_line": 130,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q.append(x)",
+      "a_line": 131,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if x==v: return T[x]",
+      "a_line": 132,
+      "b_code": "return T[x]",
+      "b_line": 133,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 117,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 118,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T={v:inf for v in G.vertex}",
+      "a_line": 119,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 121,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 124,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "T[u]=0",
+      "a_line": 125,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if T[x]==inf: T[x]=T[w]+1 Q.append(x) if x==v: return T[x]",
+      "a_line": 126,
+      "b_code": "return inf",
+      "b_line": 134,
+      "function": "Graph.distance"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "inf=float(\"inf\")",
+      "b_line": 139,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "T={v:[] for v in G.vertex}",
+      "b_line": 140,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "T={v:[] for v in G.vertex}",
+      "b_line": 140,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "if u==v: return 0",
+      "b_line": 142,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "if u==v: return 0",
+      "b_line": 142,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "if u==v: return 0",
+      "b_line": 142,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "return 0",
+      "b_line": 143,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "return 0",
+      "b_line": 143,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "return 0",
+      "b_line": 143,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "return 0",
+      "b_line": 143,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "Q=deque([u])",
+      "b_line": 145,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "Q=deque([u])",
+      "b_line": 145,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "Q=deque([u])",
+      "b_line": 145,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "Q=deque([u])",
+      "b_line": 145,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "T[u]=[u]",
+      "b_line": 146,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "T[u]=[u]",
+      "b_line": 146,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "T[u]=[u]",
+      "b_line": 146,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "T[u]=[u]",
+      "b_line": 146,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "T[u]=[u]",
+      "b_line": 146,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 147,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 147,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 147,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 147,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 147,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 147,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "w=Q.popleft()",
+      "b_line": 148,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 148,
+      "b_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 149,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 148,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 149,
+      "b_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "b_line": 150,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 148,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 149,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 150,
+      "b_code": "T[x]=T[w]+[x]",
+      "b_line": 151,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 148,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 149,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 150,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[x]=T[w]+[x]",
+      "a_line": 151,
+      "b_code": "Q.append(x)",
+      "b_line": 152,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 148,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 149,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 150,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[x]=T[w]+[x]",
+      "a_line": 151,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q.append(x)",
+      "a_line": 152,
+      "b_code": "if x==v: return T[x]",
+      "b_line": 153,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "w=Q.popleft()",
+      "a_line": 148,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 149,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 150,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[x]=T[w]+[x]",
+      "a_line": 151,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q.append(x)",
+      "a_line": 152,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if x==v: return T[x]",
+      "a_line": 153,
+      "b_code": "return T[x]",
+      "b_line": 154,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 138,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "inf=float(\"inf\")",
+      "a_line": 139,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:[] for v in G.vertex}",
+      "a_line": 140,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "if u==v: return 0",
+      "a_line": 142,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "Q=deque([u])",
+      "a_line": 145,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T[u]=[u]",
+      "a_line": 146,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "while Q: w=Q.popleft() for x in G.adjacent[w]: if not T[x]: T[x]=T[w]+[x] Q.append(x) if x==v: return T[x]",
+      "a_line": 147,
+      "b_code": "return None",
+      "b_line": 155,
+      "function": "Graph.shortest_path"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "C=0",
+      "b_line": 160,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "b_line": 161,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "b_line": 161,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "b_line": 162,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "b_line": 162,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 161,
+      "b_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "b_line": 162,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "X=G.connected_component(v)",
+      "b_line": 163,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "X=G.connected_component(v)",
+      "b_line": 163,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 161,
+      "b_code": "X=G.connected_component(v)",
+      "b_line": 163,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 162,
+      "b_code": "X=G.connected_component(v)",
+      "b_line": 163,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "for x in X: T[x]=True",
+      "b_line": 164,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "for x in X: T[x]=True",
+      "b_line": 164,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 161,
+      "b_code": "for x in X: T[x]=True",
+      "b_line": 164,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 162,
+      "b_code": "for x in X: T[x]=True",
+      "b_line": 164,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "X=G.connected_component(v)",
+      "a_line": 163,
+      "b_code": "for x in X: T[x]=True",
+      "b_line": 164,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "T[x]=True",
+      "b_line": 165,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "T[x]=True",
+      "b_line": 165,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 161,
+      "b_code": "T[x]=True",
+      "b_line": 165,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 162,
+      "b_code": "T[x]=True",
+      "b_line": 165,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "X=G.connected_component(v)",
+      "a_line": 163,
+      "b_code": "T[x]=True",
+      "b_line": 165,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for x in X: T[x]=True",
+      "a_line": 164,
+      "b_code": "T[x]=True",
+      "b_line": 165,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "C+=1",
+      "b_line": 166,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "C+=1",
+      "b_line": 166,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 161,
+      "b_code": "C+=1",
+      "b_line": 166,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 162,
+      "b_code": "C+=1",
+      "b_line": 166,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "X=G.connected_component(v)",
+      "a_line": 163,
+      "b_code": "C+=1",
+      "b_line": 166,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for x in X: T[x]=True",
+      "a_line": 164,
+      "b_code": "C+=1",
+      "b_line": 166,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "T={v:False for v in G.vertex}",
+      "a_line": 159,
+      "b_code": "return C",
+      "b_line": 167,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "C=0",
+      "a_line": 160,
+      "b_code": "return C",
+      "b_line": 167,
+      "function": "Connected_Component_Number"
+    },
+    {
+      "a_code": "for v in G.vertex: if not T[v]: X=G.connected_component(v) for x in X: T[x]=True C+=1",
+      "a_line": 161,
+      "b_code": "return C",
+      "b_line": 167,
+      "function": "Connected_Component_Number"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped G.add_edge at line 174",
+      "external attribute call skipped G.add_edge at line 183",
+      "external attribute call skipped G.connected_component at line 163",
+      "external attribute call skipped G.remove_edge at line 180",
+      "external call skipped input at line 169",
+      "external call skipped input at line 173"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped G.add_edge at line 174",
+    "external attribute call skipped G.add_edge at line 183",
+    "external attribute call skipped G.connected_component at line 163",
+    "external attribute call skipped G.remove_edge at line 180",
+    "external call skipped input at line 169",
+    "external call skipped input at line 173"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "M"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "E"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "M"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "int"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "N"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "E"
+      },
+      "from": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "N"
+      },
+      "from": {
+        "code": "G=Graph(list(range(1,N+1)))",
+        "line": 170,
+        "var": "G"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "G=Graph(list(range(1,N+1)))",
+        "line": 170,
+        "var": "int"
+      },
+      "from": {
+        "code": "G=Graph(list(range(1,N+1)))",
+        "line": 170,
+        "var": "G"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "E"
+      },
+      "from": {
+        "code": "G=Graph(list(range(1,N+1)))",
+        "line": 170,
+        "var": "G"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "G=Graph(list(range(1,N+1)))",
+        "line": 170,
+        "var": "G"
+      },
+      "from": {
+        "code": "E=[]",
+        "line": 171,
+        "var": "E"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b=map(int,input().split())",
+        "line": 173,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b=map(int,input().split())",
+        "line": 173,
+        "var": "a"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "E=[]",
+        "line": 171,
+        "var": "E"
+      },
+      "from": {
+        "code": "a,b=map(int,input().split())",
+        "line": 173,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "a,b=map(int,input().split())",
+        "line": 173,
+        "var": "int"
+      },
+      "from": {
+        "code": "a,b=map(int,input().split())",
+        "line": 173,
+        "var": "b"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "E=[]",
+        "line": 171,
+        "var": "E"
+      },
+      "from": {
+        "code": "a,b=map(int,input().split())",
+        "line": 173,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "G=Graph(list(range(1,N+1)))",
+        "line": 170,
+        "var": "G"
+      },
+      "from": {
+        "code": "K=Connected_Component_Number(G)",
+        "line": 177,
+        "var": "K"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "N,M=map(int,input().split())",
+        "line": 169,
+        "var": "N"
+      },
+      "from": {
+        "code": "K=Connected_Component_Number(G)",
+        "line": 177,
+        "var": "K"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "K=Connected_Component_Number(G)",
+        "line": 177,
+        "var": "int"
+      },
+      "from": {
+        "code": "K=Connected_Component_Number(G)",
+        "line": 177,
+        "var": "K"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "E=[]",
+        "line": 171,
+        "var": "E"
+      },
+      "from": {
+        "code": "K=Connected_Component_Number(G)",
+        "line": 177,
+        "var": "K"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "E=[]",
+        "line": 171,
+        "var": "E"
+      },
+      "from": {
+        "code": "X=0",
+        "line": 178,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "E=[]",
+        "line": 171,
+        "var": "E"
+      },
+      "from": {
+        "code": "X+=1",
+        "line": 182,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,vertex=[]):",
+        "line": 3,
+        "var": "vertex"
+      },
+      "from": {
+        "code": "self.vertex=list(vertex)",
+        "line": 4,
+        "var": "self.vertex"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,vertex=[]):",
+        "line": 3,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.vertex=list(vertex)",
+        "line": 4,
+        "var": "self.vertex"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,vertex=[]):",
+        "line": 3,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.edge_number=0",
+        "line": 5,
+        "var": "self.edge_number"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,vertex=[]):",
+        "line": 3,
+        "var": "vertex"
+      },
+      "from": {
+        "code": "self.adjacent={v:set() for v in vertex}",
+        "line": 6,
+        "var": "self.adjacent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self,vertex=[]):",
+        "line": 3,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.adjacent={v:set() for v in vertex}",
+        "line": 6,
+        "var": "self.adjacent"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "k=len(self.vertex)",
+        "line": 10,
+        "var": "self.vertex"
+      },
+      "from": {
+        "code": "k=len(self.vertex)",
+        "line": 10,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add_vertex(self,*adder):",
+        "line": 9,
+        "var": "adder"
+      },
+      "from": {
+        "code": "k=len(self.vertex)",
+        "line": 10,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add_vertex(self,*adder):",
+        "line": 9,
+        "var": "adder"
+      },
+      "from": {
+        "code": "m=0",
+        "line": 11,
+        "var": "m"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self.adjacent[u]=set()",
+        "line": 15,
+        "var": "u"
+      },
+      "from": {
+        "code": "self.adjacent[u]=set()",
+        "line": 15,
+        "var": "self.adjacent"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add_vertex(self,*adder):",
+        "line": 9,
+        "var": "adder"
+      },
+      "from": {
+        "code": "self.adjacent[u]=set()",
+        "line": 15,
+        "var": "self.adjacent"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def add_edge(self,From,To):",
+        "line": 19,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.edge_number+=1",
+        "line": 27,
+        "var": "self.edge_number"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add_edge(self,From,To):",
+        "line": 19,
+        "var": "From"
+      },
+      "from": {
+        "code": "self.edge_number+=1",
+        "line": 27,
+        "var": "self.edge_number"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def remove_edge(self,u,v):",
+        "line": 30,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.edge_number-=1",
+        "line": 38,
+        "var": "self.edge_number"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove_edge(self,u,v):",
+        "line": 30,
+        "var": "self.adjacent"
+      },
+      "from": {
+        "code": "self.edge_number-=1",
+        "line": 38,
+        "var": "self.edge_number"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def remove_vertex(self,*v):",
+        "line": 41,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.edge_number-=len(self.adjacent[w])",
+        "line": 44,
+        "var": "self.edge_number"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.edge_number-=len(self.adjacent[w])",
+        "line": 44,
+        "var": "self.adjacent"
+      },
+      "from": {
+        "code": "self.edge_number-=len(self.adjacent[w])",
+        "line": 44,
+        "var": "self.edge_number"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.edge_number-=len(self.adjacent[w])",
+        "line": 44,
+        "var": "w"
+      },
+      "from": {
+        "code": "self.edge_number-=len(self.adjacent[w])",
+        "line": 44,
+        "var": "self.edge_number"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def remove_vertex(self,*v):",
+        "line": 41,
+        "var": "u"
+      },
+      "from": {
+        "code": "self.edge_number-=len(self.adjacent[w])",
+        "line": 44,
+        "var": "self.edge_number"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "n=len(walk)",
+        "line": 52,
+        "var": "walk"
+      },
+      "from": {
+        "code": "n=len(walk)",
+        "line": 52,
+        "var": "n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def add_walk(self,*walk):",
+        "line": 51,
+        "var": "i"
+      },
+      "from": {
+        "code": "n=len(walk)",
+        "line": 52,
+        "var": "n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T={u:False for u in self.adjacent}",
+        "line": 102,
+        "var": "self.adjacent"
+      },
+      "from": {
+        "code": "T={u:False for u in self.adjacent}",
+        "line": 102,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def connected_component(self,v):",
+        "line": 97,
+        "var": "S"
+      },
+      "from": {
+        "code": "T={u:False for u in self.adjacent}",
+        "line": 102,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def connected_component(self,v):",
+        "line": 97,
+        "var": "v"
+      },
+      "from": {
+        "code": "T[v]=True",
+        "line": 103,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def connected_component(self,v):",
+        "line": 97,
+        "var": "S"
+      },
+      "from": {
+        "code": "T[v]=True",
+        "line": 103,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def connected_component(self,v):",
+        "line": 97,
+        "var": "v"
+      },
+      "from": {
+        "code": "S=deque([v])",
+        "line": 104,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T[v]=True",
+        "line": 103,
+        "var": "T"
+      },
+      "from": {
+        "code": "S=deque([v])",
+        "line": 104,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "S=deque([v])",
+        "line": 104,
+        "var": "S"
+      },
+      "from": {
+        "code": "u=S.popleft()",
+        "line": 107,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def connected_component(self,v):",
+        "line": 97,
+        "var": "v"
+      },
+      "from": {
+        "code": "u=S.popleft()",
+        "line": 107,
+        "var": "u"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T[v]=True",
+        "line": 103,
+        "var": "T"
+      },
+      "from": {
+        "code": "u=S.popleft()",
+        "line": 107,
+        "var": "u"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T[w]=True",
+        "line": 110,
+        "var": "w"
+      },
+      "from": {
+        "code": "T[w]=True",
+        "line": 110,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S=deque([v])",
+        "line": 104,
+        "var": "S"
+      },
+      "from": {
+        "code": "T[w]=True",
+        "line": 110,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "inf=float(\"inf\")",
+        "line": 118,
+        "var": "inf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T={v:inf for v in G.vertex}",
+        "line": 119,
+        "var": "G.vertex"
+      },
+      "from": {
+        "code": "T={v:inf for v in G.vertex}",
+        "line": 119,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "inf=float(\"inf\")",
+        "line": 118,
+        "var": "inf"
+      },
+      "from": {
+        "code": "T={v:inf for v in G.vertex}",
+        "line": 119,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "T={v:inf for v in G.vertex}",
+        "line": 119,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "u"
+      },
+      "from": {
+        "code": "Q=deque([u])",
+        "line": 124,
+        "var": "Q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "Q=deque([u])",
+        "line": 124,
+        "var": "Q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "u"
+      },
+      "from": {
+        "code": "T[u]=0",
+        "line": 125,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "T[u]=0",
+        "line": 125,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q=deque([u])",
+        "line": 124,
+        "var": "Q"
+      },
+      "from": {
+        "code": "w=Q.popleft()",
+        "line": 127,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "u"
+      },
+      "from": {
+        "code": "w=Q.popleft()",
+        "line": 127,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "w=Q.popleft()",
+        "line": 127,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q=deque([u])",
+        "line": 124,
+        "var": "Q"
+      },
+      "from": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T[u]=0",
+        "line": 125,
+        "var": "T"
+      },
+      "from": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "u"
+      },
+      "from": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "w=Q.popleft()",
+        "line": 127,
+        "var": "w"
+      },
+      "from": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "x"
+      },
+      "from": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def distance(self,u,v):",
+        "line": 116,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "T[x]=T[w]+1",
+        "line": 130,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "inf=float(\"inf\")",
+        "line": 139,
+        "var": "inf"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T={v:[] for v in G.vertex}",
+        "line": 140,
+        "var": "G.vertex"
+      },
+      "from": {
+        "code": "T={v:[] for v in G.vertex}",
+        "line": 140,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "T={v:[] for v in G.vertex}",
+        "line": 140,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "u"
+      },
+      "from": {
+        "code": "Q=deque([u])",
+        "line": 145,
+        "var": "Q"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "Q=deque([u])",
+        "line": 145,
+        "var": "Q"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "u"
+      },
+      "from": {
+        "code": "T[u]=[u]",
+        "line": 146,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "T[u]=[u]",
+        "line": 146,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q=deque([u])",
+        "line": 145,
+        "var": "Q"
+      },
+      "from": {
+        "code": "w=Q.popleft()",
+        "line": 148,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "u"
+      },
+      "from": {
+        "code": "w=Q.popleft()",
+        "line": 148,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "w=Q.popleft()",
+        "line": 148,
+        "var": "w"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "Q=deque([u])",
+        "line": 145,
+        "var": "Q"
+      },
+      "from": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T[u]=[u]",
+        "line": 146,
+        "var": "T"
+      },
+      "from": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "u"
+      },
+      "from": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "w=Q.popleft()",
+        "line": 148,
+        "var": "w"
+      },
+      "from": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "x"
+      },
+      "from": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def shortest_path(self,u,v):",
+        "line": 137,
+        "var": "G.adjacent"
+      },
+      "from": {
+        "code": "T[x]=T[w]+[x]",
+        "line": 151,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T={v:False for v in G.vertex}",
+        "line": 159,
+        "var": "G.vertex"
+      },
+      "from": {
+        "code": "T={v:False for v in G.vertex}",
+        "line": 159,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def Connected_Component_Number(G):",
+        "line": 158,
+        "var": "C"
+      },
+      "from": {
+        "code": "T={v:False for v in G.vertex}",
+        "line": 159,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Connected_Component_Number(G):",
+        "line": 158,
+        "var": "G"
+      },
+      "from": {
+        "code": "C=0",
+        "line": 160,
+        "var": "C"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Connected_Component_Number(G):",
+        "line": 158,
+        "var": "G"
+      },
+      "from": {
+        "code": "X=G.connected_component(v)",
+        "line": 163,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "X=G.connected_component(v)",
+        "line": 163,
+        "var": "v"
+      },
+      "from": {
+        "code": "X=G.connected_component(v)",
+        "line": 163,
+        "var": "X"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C=0",
+        "line": 160,
+        "var": "C"
+      },
+      "from": {
+        "code": "X=G.connected_component(v)",
+        "line": 163,
+        "var": "X"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "T[x]=True",
+        "line": 165,
+        "var": "x"
+      },
+      "from": {
+        "code": "T[x]=True",
+        "line": 165,
+        "var": "T"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "C=0",
+        "line": 160,
+        "var": "C"
+      },
+      "from": {
+        "code": "T[x]=True",
+        "line": 165,
+        "var": "T"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def Connected_Component_Number(G):",
+        "line": 158,
+        "var": "G"
+      },
+      "from": {
+        "code": "C+=1",
+        "line": 166,
+        "var": "C"
+      },
+      "label": "negative"
+    }
+  ]
+}

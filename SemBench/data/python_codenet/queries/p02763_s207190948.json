@@ -1,0 +1,35 @@
+{
+  "data_dependency": [
+    "Does variable INF at line 8: <statement> INF = float('inf') </statement> determine the value stored in variable eps at line 10: <statement> eps = 10**-7 </statement>?",
+    "Does variable N at line 23: <statement> def __init__(self, init_val, N): </statement> determine the value stored in variable self.init_val at line 32: <statement> self.init_val=init_val </statement>?",
+    "Does the value of variable s at line 78: <statement> s = self._segfunc(s,self.data[L-1]) </statement> depend on the value of variable self.init_val at line 78: <statement> s = self._segfunc(s,self.data[L-1]) </statement>?",
+    "Does variable self.init_val at line 32: <statement> self.init_val=init_val </statement> determine the value stored in variable self.data at line 36: <statement> self.data = [self.init_val] * (2 * self.N0) </statement>?"
+  ],
+  "dead_code": [
+    "Is the statement ans = [] unreachable during execution?",
+    "Is the statement print(i) unreachable during execution?",
+    "Can the statement s = self._segfunc(s, self.data[R-1]) be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Does the statement line 72: <statement> while L < R: if R & 1: R -= 1 s = self._segfunc(s, self.data[R-1]) if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 L >>= 1; R >>= 1 </statement> dominate line 77: <statement> if L & 1: s = self._segfunc(s,self.data[L-1]) L += 1 </statement>?",
+    "Does the statement line 20: <statement> return list(map(int, input().split())) </statement> dominate line 17: <statement> ''' \u4e00\u884c\u306b\u8907\u6570\u306e\u6574\u6570 ''' </statement>?",
+    "Is it guaranteed that whenever line 10: <statement> eps = 10**-7 </statement> is reached, the statement line 6: <statement> sys.setrecursionlimit(10**8) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 6: <statement> sys.setrecursionlimit(10**8) </statement> is reached, the statement line 93: <statement> st.update(int(first)-1,1<<(int.from_bytes(second.encode(),'little')-int.from_bytes('a'.encode(),'little'))) </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Can function SegmentTree.query eventually call function SegmentTree._segfunc?",
+    "Is there a call path from function SegmentTree.update to function SegmentTree._segfunc?",
+    "Can function SegmentTree.query eventually call function inpl?",
+    "Can function SegmentTree.update eventually call function inp?"
+  ],
+  "liveness": [
+    "Does variable self.N0 remain in use at the end of function SegmentTree.__init__?",
+    "Does variable int remain in use at the end of function inpl?",
+    "Does variable res remain in use at the end of function SegmentTree._segfunc?",
+    "Does variable st remain in use at the end of function __module__?"
+  ],
+  "loop_reachability": [
+    "Is it possible that the loop with condition for i in ans is never executed?",
+    "Is the loop with condition for i in ans always executed?"
+  ]
+}

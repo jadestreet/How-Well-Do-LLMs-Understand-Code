@@ -1,0 +1,1237 @@
+{
+  "cfg_statements": [
+    {
+      "code": "sign = 1",
+      "dead": false,
+      "function": "_consume_sign",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "dead": false,
+      "function": "_consume_sign",
+      "kind": "If",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "if s[i] == '-': sign = -1",
+      "dead": false,
+      "function": "_consume_sign",
+      "kind": "If",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "sign = -1",
+      "dead": false,
+      "function": "_consume_sign",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "_consume_sign",
+      "kind": "AugAssign",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "return sign, i",
+      "dead": false,
+      "function": "_consume_sign",
+      "kind": "Return",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "i = 0",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "while i < len(s) and s[i].isspace(): i += 1",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "While",
+      "line": 14,
+      "node_id": 2
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "AugAssign",
+      "line": 15,
+      "node_id": 3
+    },
+    {
+      "code": "sign, i = _consume_sign(s, i)",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 4
+    },
+    {
+      "code": "val = 0",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Assign",
+      "line": 17,
+      "node_id": 5
+    },
+    {
+      "code": "any_digit = False",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 6
+    },
+    {
+      "code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "While",
+      "line": 19,
+      "node_id": 7
+    },
+    {
+      "code": "any_digit = True",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 8
+    },
+    {
+      "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 9
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "AugAssign",
+      "line": 22,
+      "node_id": 10
+    },
+    {
+      "code": "if not any_digit: raise ValueError(\"no digits\")",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "If",
+      "line": 23,
+      "node_id": 11
+    },
+    {
+      "code": "raise ValueError(\"no digits\")",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Raise",
+      "line": 24,
+      "node_id": 12
+    },
+    {
+      "code": "return sign * val",
+      "dead": false,
+      "function": "parse_int",
+      "kind": "Return",
+      "line": 25,
+      "node_id": 13
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "sign = 1",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "if s[i] == '-': sign = -1",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "sign = -1",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "return sign, i",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "i = 0",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "while i < len(s) and s[i].isspace(): i += 1",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "sign, i = _consume_sign(s, i)",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "val = 0",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "any_digit = False",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "any_digit = True",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "i += 1",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "if not any_digit: raise ValueError(\"no digits\")",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "raise ValueError(\"no digits\")",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "return sign * val",
+      "dead": false,
+      "line": 25
+    }
+  ],
+  "file": "SemBench/data/python/code/19.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 10,
+      "lineno": 4,
+      "name": "_consume_sign",
+      "variables": [
+        "i",
+        "s",
+        "sign"
+      ]
+    },
+    {
+      "calls": [
+        "_consume_sign"
+      ],
+      "end_lineno": 25,
+      "lineno": 12,
+      "name": "parse_int",
+      "variables": [
+        "any_digit",
+        "i",
+        "s",
+        "sign",
+        "val"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "_consume_sign": {
+        "base_liveout": [
+          "i",
+          "sign"
+        ],
+        "live_before": [
+          {
+            "code": "sign = 1",
+            "line": 5,
+            "vars": [
+              "i",
+              "s"
+            ]
+          },
+          {
+            "code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+            "line": 6,
+            "vars": [
+              "i",
+              "s"
+            ]
+          },
+          {
+            "code": "if s[i] == '-': sign = -1",
+            "line": 7,
+            "vars": [
+              "i",
+              "s"
+            ]
+          },
+          {
+            "code": "sign = -1",
+            "line": 8,
+            "vars": []
+          },
+          {
+            "code": "i += 1",
+            "line": 9,
+            "vars": [
+              "sign"
+            ]
+          },
+          {
+            "code": "return sign, i",
+            "line": 10,
+            "vars": [
+              "i",
+              "sign"
+            ]
+          }
+        ],
+        "liveout": {
+          "i": true,
+          "s": false,
+          "sign": true
+        },
+        "return_vars": [
+          "i",
+          "sign"
+        ]
+      },
+      "parse_int": {
+        "base_liveout": [
+          "sign",
+          "val"
+        ],
+        "live_before": [
+          {
+            "code": "i = 0",
+            "line": 13,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "while i < len(s) and s[i].isspace(): i += 1",
+            "line": 14,
+            "vars": [
+              "i",
+              "s"
+            ]
+          },
+          {
+            "code": "i += 1",
+            "line": 15,
+            "vars": [
+              "s"
+            ]
+          },
+          {
+            "code": "sign, i = _consume_sign(s, i)",
+            "line": 16,
+            "vars": [
+              "i",
+              "s"
+            ]
+          },
+          {
+            "code": "val = 0",
+            "line": 17,
+            "vars": [
+              "i",
+              "s",
+              "sign"
+            ]
+          },
+          {
+            "code": "any_digit = False",
+            "line": 18,
+            "vars": [
+              "i",
+              "s",
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+            "line": 19,
+            "vars": [
+              "i",
+              "s",
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "any_digit = True",
+            "line": 20,
+            "vars": [
+              "i",
+              "s",
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+            "line": 21,
+            "vars": [
+              "any_digit",
+              "i",
+              "s",
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "i += 1",
+            "line": 22,
+            "vars": [
+              "any_digit",
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "if not any_digit: raise ValueError(\"no digits\")",
+            "line": 23,
+            "vars": [
+              "any_digit",
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"no digits\")",
+            "line": 24,
+            "vars": [
+              "sign",
+              "val"
+            ]
+          },
+          {
+            "code": "return sign * val",
+            "line": 25,
+            "vars": [
+              "sign",
+              "val"
+            ]
+          }
+        ],
+        "liveout": {
+          "any_digit": false,
+          "i": false,
+          "s": false,
+          "sign": true,
+          "val": true
+        },
+        "return_vars": [
+          "sign",
+          "val"
+        ]
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "while i < len(s) and s[i].isspace():",
+      "cond": "i < len(s) and s[i].isspace()",
+      "function": "parse_int",
+      "header_id": 2,
+      "line": 14,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while i < len(s) and s[i].isdigit():",
+      "cond": "i < len(s) and s[i].isdigit()",
+      "function": "parse_int",
+      "header_id": 7,
+      "line": 19,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "sign = 1",
+      "a_line": 5,
+      "b_code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "b_line": 6,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "sign = 1",
+      "a_line": 5,
+      "b_code": "if s[i] == '-': sign = -1",
+      "b_line": 7,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "a_line": 6,
+      "b_code": "if s[i] == '-': sign = -1",
+      "b_line": 7,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "sign = 1",
+      "a_line": 5,
+      "b_code": "sign = -1",
+      "b_line": 8,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "a_line": 6,
+      "b_code": "sign = -1",
+      "b_line": 8,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "if s[i] == '-': sign = -1",
+      "a_line": 7,
+      "b_code": "sign = -1",
+      "b_line": 8,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "sign = 1",
+      "a_line": 5,
+      "b_code": "i += 1",
+      "b_line": 9,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "a_line": 6,
+      "b_code": "i += 1",
+      "b_line": 9,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "if s[i] == '-': sign = -1",
+      "a_line": 7,
+      "b_code": "i += 1",
+      "b_line": 9,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "sign = 1",
+      "a_line": 5,
+      "b_code": "return sign, i",
+      "b_line": 10,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "if i < len(s) and s[i] in '+-': if s[i] == '-': sign = -1 i += 1",
+      "a_line": 6,
+      "b_code": "return sign, i",
+      "b_line": 10,
+      "function": "_consume_sign"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "b_line": 14,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "i += 1",
+      "b_line": 15,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "i += 1",
+      "b_line": 15,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "sign, i = _consume_sign(s, i)",
+      "b_line": 16,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "sign, i = _consume_sign(s, i)",
+      "b_line": 16,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "val = 0",
+      "b_line": 17,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "val = 0",
+      "b_line": 17,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "val = 0",
+      "b_line": 17,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "any_digit = False",
+      "b_line": 18,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "any_digit = False",
+      "b_line": 18,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "any_digit = False",
+      "b_line": 18,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "any_digit = False",
+      "b_line": 18,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "b_line": 19,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "b_line": 19,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "b_line": 19,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "b_line": 19,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "b_line": 19,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "any_digit = True",
+      "b_line": 20,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "any_digit = True",
+      "b_line": 20,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "any_digit = True",
+      "b_line": 20,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "any_digit = True",
+      "b_line": 20,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "any_digit = True",
+      "b_line": 20,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "a_line": 19,
+      "b_code": "any_digit = True",
+      "b_line": 20,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "a_line": 19,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = True",
+      "a_line": 20,
+      "b_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "b_line": 21,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "a_line": 19,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = True",
+      "a_line": 20,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+      "a_line": 21,
+      "b_code": "i += 1",
+      "b_line": 22,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "b_line": 23,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "b_line": 23,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "b_line": 23,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "b_line": 23,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "b_line": 23,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "a_line": 19,
+      "b_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "b_line": 23,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "a_line": 19,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "a_line": 23,
+      "b_code": "raise ValueError(\"no digits\")",
+      "b_line": 24,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "i = 0",
+      "a_line": 13,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isspace(): i += 1",
+      "a_line": 14,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "sign, i = _consume_sign(s, i)",
+      "a_line": 16,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "val = 0",
+      "a_line": 17,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "any_digit = False",
+      "a_line": 18,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "while i < len(s) and s[i].isdigit(): any_digit = True val = val * 10 + (ord(s[i]) - ord('0')) i += 1",
+      "a_line": 19,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    },
+    {
+      "a_code": "if not any_digit: raise ValueError(\"no digits\")",
+      "a_line": 23,
+      "b_code": "return sign * val",
+      "b_line": 25,
+      "function": "parse_int"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def _consume_sign(s:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "sign = 1",
+        "line": 5,
+        "var": "sign"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _consume_sign(s:",
+        "line": 4,
+        "var": "i"
+      },
+      "from": {
+        "code": "sign = -1",
+        "line": 8,
+        "var": "sign"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _consume_sign(s:",
+        "line": 4,
+        "var": "s"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 9,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "i = 0",
+        "line": 13,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 15,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "i += 1",
+        "line": 15,
+        "var": "i"
+      },
+      "from": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "s"
+      },
+      "from": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "sign"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "s"
+      },
+      "from": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "sign"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "sign"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "val = 0",
+        "line": 17,
+        "var": "val"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "any_digit = False",
+        "line": 18,
+        "var": "any_digit"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "any_digit = True",
+        "line": 20,
+        "var": "any_digit"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "sign, i = _consume_sign(s, i)",
+        "line": 16,
+        "var": "i"
+      },
+      "from": {
+        "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+        "line": 21,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def parse_int(s:",
+        "line": 12,
+        "var": "s"
+      },
+      "from": {
+        "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+        "line": 21,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "val = 0",
+        "line": 17,
+        "var": "val"
+      },
+      "from": {
+        "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+        "line": 21,
+        "var": "val"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "any_digit = True",
+        "line": 20,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "val = val * 10 + (ord(s[i]) - ord('0'))",
+        "line": 21,
+        "var": "val"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "any_digit = True",
+        "line": 20,
+        "var": "any_digit"
+      },
+      "from": {
+        "code": "i += 1",
+        "line": 22,
+        "var": "i"
+      },
+      "label": "negative"
+    }
+  ]
+}

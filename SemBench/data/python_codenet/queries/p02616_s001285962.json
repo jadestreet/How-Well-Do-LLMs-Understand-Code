@@ -1,0 +1,38 @@
+{
+  "data_dependency": [
+    "Does the value of variable m_out at line 42: <statement> m_out = M[len(ma)] </statement> depend on the value of variable P at line 19: <statement> def mix(): </statement>?",
+    "Does variable pa at line 27: <statement> pa, ma = [], [] </statement> determine the value stored in variable p_out at line 51: <statement> p_out = P[len(pa)] </statement>?",
+    "Does variable M at line 19: <statement> def mix(): </statement> determine the value stored in variable p_out at line 51: <statement> p_out = P[len(pa)] </statement>?",
+    "Does the value of variable exist_ma at line 35: <statement> exist_ma = len(ma) > 0 </statement> depend on the value of variable ma at line 27: <statement> pa, ma = [], [] </statement>?"
+  ],
+  "dead_code": [
+    "Is the statement for a in mix(): ans = mmul(ans, a) unreachable during execution?",
+    "Is it possible for the statement P.append(-1) to execute?",
+    "Is it possible for the statement if abs(p_in*p_out) < abs(m_in*m_out): pa.pop(); ma.append(m_out) else: ma.pop(); pa.append(p_out) to execute?",
+    "Is the statement debug('remain_p {}'.format(remain_p)) unreachable during execution?"
+  ],
+  "dominators": [
+    "Does the statement line 94: <statement> if exist_ma & remain_p: m_in = ma[-1]; p_out = P[len(pa)] ma.pop(); pa.append(p_out) debug('pa {}'.format(pa));debug('ma {}'.format(ma)) return pa + ma </statement> dominate line 69: <statement> debug('---') </statement>?",
+    "Does the statement line 38: <statement> debug('remain_p {}'.format(remain_p)) </statement> dominate line 88: <statement> if abs(p_in*p_out) >= abs(m_in*m_out): pa.pop(); ma.append(m_out) else: ma.pop(); pa.append(p_out) </statement>?",
+    "Does the statement line 75: <statement> pa.append(P[len(pa)]) </statement> dominate line 22: <statement> M.sort() </statement>?",
+    "Is it guaranteed that whenever line 61: <statement> debug('ma {}'.format(ma)) </statement> is reached, the statement line 20: <statement> len_p = len(P) </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Can function mmul eventually call function mix?",
+    "Is it impossible for function mix to eventually call function mmul?",
+    "Is it impossible for function mmul to eventually call function mix?",
+    "Is there a call path from function mix to function mmul?"
+  ],
+  "liveness": [
+    "Does variable pa remain in use at the end of function mix?",
+    "Does variable b remain in use at the end of function mmul?",
+    "Is variable MOD live at the end of function __module__?",
+    "Is variable m_out live at the end of function mix?"
+  ],
+  "loop_reachability": [
+    "Can the loop with condition for a in A be skipped entirely?",
+    "Can the loop with condition for a in A be skipped entirely?",
+    "Is the loop with condition for a in A always executed?",
+    "Is the loop with condition for a in A always executed?"
+  ]
+}

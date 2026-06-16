@@ -1,0 +1,32 @@
+{
+  "data_dependency": [
+    "Does the value of variable fl at line 32: <statement> fl |= false(s,t,j) </statement> depend on the value of variable t at line 24: <statement> t = set() </statement>?",
+    "Does variable N at line 1: <statement> N=int(input()) </statement> determine the value stored in variable cnt at line 41: <statement> cnt += 1 </statement>?",
+    "Does variable j at line 28: <statement> fl |= true(s,t,j) </statement> determine the value stored in variable fl at line 28: <statement> fl |= true(s,t,j) </statement>?",
+    "Does the value of variable xy at line 2: <statement> xy = [[] for _ in range(N)] </statement> depend on the value of variable _ at line 1: <statement> __module__ </statement>?"
+  ],
+  "dead_code": [
+    "Is it possible for the statement x -= 1 to execute?",
+    "Can the statement fl = False be considered dead code because it is never executed?",
+    "Is it possible for the statement for j in range(N): if (i>>j)&1: fl |= true(s,t,j) for x,y in xy[j]: fl |= true(s,t,x) if y == 1 else false(s,t,x) else: fl |= false(s,t,j) to execute?",
+    "Can the statement s = set() be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Does the statement line 10: <statement> s = set() </statement> dominate line 40: <statement> if (i>>j)&1: cnt += 1 </statement>?",
+    "Does the statement line 29: <statement> for x,y in xy[j]: fl |= true(s,t,x) if y == 1 else false(s,t,x) </statement> dominate line 28: <statement> fl |= true(s,t,j) </statement>?",
+    "Does the statement line 35: <statement> for i in range(2**N): if chk(i): continue cnt = 0 for j in range(N): if (i>>j)&1: cnt += 1 ans = max(ans, cnt) </statement> dominate line 3: <statement> for i in range(N): a = int(input()) for _ in range(a): x,y = map(int,input().split()) x -= 1 xy[i].append((x,y)) </statement>?",
+    "Is it guaranteed that whenever line 11: <statement> t = set() </statement> is reached, the statement line 9: <statement> ans = 0 </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function true to function chk?",
+    "Is there a call path from function chk to function true?",
+    "Can function chk eventually call function false?",
+    "Is there a call path from function false to function true?"
+  ],
+  "liveness": [
+    "Is variable fl live at the end of function chk?",
+    "Is variable s live at the end of function false?",
+    "Is variable j live at the end of function true?"
+  ],
+  "loop_reachability": []
+}

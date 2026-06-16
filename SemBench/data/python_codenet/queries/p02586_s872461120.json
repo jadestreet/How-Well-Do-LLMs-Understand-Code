@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does variable self at line 13: <statement> def __setitem__(self, a, b): </statement> determine the value stored in variable self.__dat at line 14: <statement> self.__dat[a[0]*self.__W+a[1]] = b </statement>?",
+    "Does variable V at line 36: <statement> def main(): </statement> determine the value stored in variable val at line 50: <statement> val = v[i, j] </statement>?",
+    "Does variable self.__D at line 31: <statement> self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b </statement> determine the value stored in variable self.__dat at line 31: <statement> self.__dat[a[0]*self.__X+a[1]*self.__D + a[2]] = b </statement>?",
+    "Does variable ci at line 41: <statement> ri,ci,a=map(int,input().split()) </statement> determine the value stored in variable dp at line 61: <statement> dp[i, j, 0]=max(dp[i, j, 0],X) </statement>?"
+  ],
+  "dead_code": [
+    "Is it possible for the statement ans=0 to execute?",
+    "Is the statement V = dp[i, j-1, 2] unreachable during execution?",
+    "Can the statement self.__dat = [num] * (H * W * D) be reached during execution?",
+    "Is the statement if __name__==\"__main__\": main() unreachable during execution?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 59: <statement> V = dp[i, j-1, 2] </statement> is reached, the statement line 38: <statement> v = list2D(r, c, 0) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 62: <statement> dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) </statement> is reached, the statement line 63: <statement> dp[i, j, 2]=max(Y+val,V) </statement> has already been reached?",
+    "Does the statement line 38: <statement> v = list2D(r, c, 0) </statement> dominate line 37: <statement> r,c,k=map(int,input().split()) </statement>?",
+    "Does the statement line 49: <statement> for j in range(c): val = v[i, j] if i>0: x = max(dp[i-1, j, 0], dp[i-1, j, 1], dp[i-1, j, 2], dp[i-1, j, 3]) dp[i, j, 1]=x+val dp[i, j, 0]=x if j>0: X = dp[i, j-1, 0] Y = dp[i, j-1, 1] V = dp[i, j-1, 2] Z = dp[i, j-1, 3] dp[i, j, 0]=max(dp[i, j, 0],X) dp[i, j, 1]=max(dp[i, j, 1],X+val,Y) dp[i, j, 2]=max(Y+val,V) dp[i, j, 3]=max(V+val,Z) </statement> dominate line 50: <statement> val = v[i, j] </statement>?"
+  ],
+  "function_reachability": [
+    "Can function list3D.__setitem__ eventually call function list2D.debug?",
+    "Is there a call path from function main to function list3D.__init__?",
+    "Can function list3D.__getitem__ eventually call function list3D.__setitem__?",
+    "Can function main eventually call function list2D.__init__?"
+  ],
+  "liveness": [
+    "Is variable self.__D live at the end of function list3D.__init__?",
+    "Is variable ans live at the end of function main?",
+    "Does variable self.__dat remain in use at the end of function list3D.__getitem__?",
+    "Is variable self live at the end of function list2D.__init__?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for i in range(4) always executed?",
+    "Can the loop with condition for i in range(4) be skipped entirely?"
+  ]
+}

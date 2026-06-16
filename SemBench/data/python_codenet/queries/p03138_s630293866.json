@@ -1,0 +1,38 @@
+{
+  "data_dependency": [
+    "Does the value of variable f at line 30: <statement> e, f = b[i], N-b[i] </statement> depend on the value of variable b at line 30: <statement> e, f = b[i], N-b[i] </statement>?",
+    "Does the value of variable k_list at line 6: <statement> k_list = [] </statement> depend on the value of variable K at line 4: <statement> def get_k_bits(): </statement>?",
+    "Does variable c at line 28: <statement> c = [0]*50 </statement> determine the value stored in variable e at line 30: <statement> e, f = b[i], N-b[i] </statement>?",
+    "Does the value of variable ans at line 58: <statement> ans = max(ans, v) </statement> depend on the value of variable ans at line 50: <statement> ans = 0 </statement>?"
+  ],
+  "dead_code": [
+    "Is it possible for the statement return candidates to execute?",
+    "Can the statement for i in A: p = 0 while i: b[p] += i%2 i //=2 p += 1 be reached during execution?",
+    "Is the statement print(ans) unreachable during execution?",
+    "Can the statement k_list.append(K%2) be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Does the statement line 7: <statement> while K: k_list.append(K%2) K//=2 </statement> dominate line 12: <statement> return k_list </statement>?",
+    "Is it guaranteed that whenever line 10: <statement> k_list.extend([0]*(50-len(k_list))) </statement> is reached, the statement line 12: <statement> return k_list </statement> has already been reached?",
+    "Does the statement line 51: <statement> for bits in output_candidates(): v = 0 for j in range(50): if bits[j]: v += (2**(50-j-1))*(N-b[j]) else: v += (2**(50-j-1))*b[j] ans = max(ans, v) </statement> dominate line 2: <statement> *A, = map(int, input().split()) </statement>?",
+    "Does the statement line 1: <statement> N, K = map(int, input().split()) </statement> dominate line 53: <statement> for j in range(50): if bits[j]: v += (2**(50-j-1))*(N-b[j]) else: v += (2**(50-j-1))*b[j] </statement>?"
+  ],
+  "function_reachability": [
+    "Can function get_bits_count eventually call function get_k_bits?",
+    "Can function get_bits_count eventually call function output_candidates?",
+    "Can function output_candidates eventually call function get_appropriate_bits?",
+    "Can function output_candidates eventually call function get_k_bits?"
+  ],
+  "liveness": [
+    "Does variable b remain in use at the end of function get_bits_count?",
+    "Is variable k_list live at the end of function output_candidates?",
+    "Does variable k_list remain in use at the end of function get_k_bits?",
+    "Does variable o remain in use at the end of function output_candidates?"
+  ],
+  "loop_reachability": [
+    "Is the loop with condition for j in range(50) always executed?",
+    "Is the loop with condition for i in range(50) always executed?",
+    "Is it possible that the loop with condition for i in range(50) is never executed?",
+    "Is it possible that the loop with condition for j in range(50) is never executed?"
+  ]
+}

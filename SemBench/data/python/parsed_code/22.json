@@ -1,0 +1,2446 @@
+{
+  "cfg_statements": [
+    {
+      "code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "If",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "Raise",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "self.capacity = capacity",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 3
+    },
+    {
+      "code": "self.size = 0",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "Assign",
+      "line": 10,
+      "node_id": 4
+    },
+    {
+      "code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "AnnAssign",
+      "line": 11,
+      "node_id": 5
+    },
+    {
+      "code": "self.key_map: Dict[Any, Any] = {}",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "AnnAssign",
+      "line": 12,
+      "node_id": 6
+    },
+    {
+      "code": "self.min_freq = 0",
+      "dead": false,
+      "function": "LFUCache.__init__",
+      "kind": "Assign",
+      "line": 13,
+      "node_id": 7
+    },
+    {
+      "code": "value, freq = self.key_map[key]",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "Assign",
+      "line": 16,
+      "node_id": 1
+    },
+    {
+      "code": "od = self.freq_map[freq]",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "Assign",
+      "line": 18,
+      "node_id": 2
+    },
+    {
+      "code": "od.pop(key)",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "Expr",
+      "line": 19,
+      "node_id": 3
+    },
+    {
+      "code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "If",
+      "line": 20,
+      "node_id": 4
+    },
+    {
+      "code": "self.min_freq += 1",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "AugAssign",
+      "line": 21,
+      "node_id": 5
+    },
+    {
+      "code": "freq += 1",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "AugAssign",
+      "line": 23,
+      "node_id": 6
+    },
+    {
+      "code": "self.key_map[key] = (value, freq)",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "Assign",
+      "line": 24,
+      "node_id": 7
+    },
+    {
+      "code": "self.freq_map[freq][key] = value",
+      "dead": false,
+      "function": "LFUCache._update_freq",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 8
+    },
+    {
+      "code": "if key not in self.key_map: return None",
+      "dead": false,
+      "function": "LFUCache.get",
+      "kind": "If",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "function": "LFUCache.get",
+      "kind": "Return",
+      "line": 29,
+      "node_id": 2
+    },
+    {
+      "code": "self._update_freq(key)",
+      "dead": false,
+      "function": "LFUCache.get",
+      "kind": "Expr",
+      "line": 30,
+      "node_id": 3
+    },
+    {
+      "code": "return self.key_map[key][0]",
+      "dead": false,
+      "function": "LFUCache.get",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 4
+    },
+    {
+      "code": "if self.capacity == 0: return",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "If",
+      "line": 34,
+      "node_id": 1
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Return",
+      "line": 35,
+      "node_id": 2
+    },
+    {
+      "code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "If",
+      "line": 36,
+      "node_id": 3
+    },
+    {
+      "code": "_, freq = self.key_map[key]",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 38,
+      "node_id": 4
+    },
+    {
+      "code": "self.key_map[key] = (value, freq)",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 39,
+      "node_id": 5
+    },
+    {
+      "code": "self._update_freq(key)",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Expr",
+      "line": 40,
+      "node_id": 6
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Return",
+      "line": 41,
+      "node_id": 7
+    },
+    {
+      "code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "If",
+      "line": 42,
+      "node_id": 8
+    },
+    {
+      "code": "od = self.freq_map[self.min_freq]",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 44,
+      "node_id": 9
+    },
+    {
+      "code": "evict_key, _ = od.popitem(last=False)",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 45,
+      "node_id": 10
+    },
+    {
+      "code": "self.key_map.pop(evict_key)",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Expr",
+      "line": 46,
+      "node_id": 11
+    },
+    {
+      "code": "self.size -= 1",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "AugAssign",
+      "line": 47,
+      "node_id": 12
+    },
+    {
+      "code": "self.key_map[key] = (value, 1)",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 49,
+      "node_id": 13
+    },
+    {
+      "code": "self.freq_map[1][key] = value",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 50,
+      "node_id": 14
+    },
+    {
+      "code": "self.min_freq = 1",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 15
+    },
+    {
+      "code": "self.size += 1",
+      "dead": false,
+      "function": "LFUCache.put",
+      "kind": "AugAssign",
+      "line": 52,
+      "node_id": 16
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "raise ValueError(\"capacity must be positive\")",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "self.capacity = capacity",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "self.size = 0",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "self.key_map: Dict[Any, Any] = {}",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "self.min_freq = 0",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "value, freq = self.key_map[key]",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "od = self.freq_map[freq]",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "od.pop(key)",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "self.min_freq += 1",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "freq += 1",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "self.key_map[key] = (value, freq)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "self.freq_map[freq][key] = value",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "if key not in self.key_map: return None",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "return None",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "self._update_freq(key)",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "return self.key_map[key][0]",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "if self.capacity == 0: return",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "_, freq = self.key_map[key]",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "self.key_map[key] = (value, freq)",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "self._update_freq(key)",
+      "dead": false,
+      "line": 40
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "od = self.freq_map[self.min_freq]",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "evict_key, _ = od.popitem(last=False)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "self.key_map.pop(evict_key)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "self.size -= 1",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "self.key_map[key] = (value, 1)",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "self.freq_map[1][key] = value",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "self.min_freq = 1",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "self.size += 1",
+      "dead": false,
+      "line": 52
+    }
+  ],
+  "file": "SemBench/data/python/code/22.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 13,
+      "lineno": 6,
+      "name": "LFUCache.__init__",
+      "variables": [
+        "OrderedDict",
+        "capacity",
+        "self",
+        "self.capacity",
+        "self.freq_map",
+        "self.key_map",
+        "self.min_freq",
+        "self.size"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 25,
+      "lineno": 15,
+      "name": "LFUCache._update_freq",
+      "variables": [
+        "freq",
+        "key",
+        "od",
+        "self",
+        "self.freq_map",
+        "self.key_map",
+        "self.min_freq",
+        "value"
+      ]
+    },
+    {
+      "calls": [
+        "LFUCache._update_freq"
+      ],
+      "end_lineno": 31,
+      "lineno": 27,
+      "name": "LFUCache.get",
+      "variables": [
+        "key",
+        "self",
+        "self.key_map"
+      ]
+    },
+    {
+      "calls": [
+        "LFUCache._update_freq"
+      ],
+      "end_lineno": 52,
+      "lineno": 33,
+      "name": "LFUCache.put",
+      "variables": [
+        "_",
+        "evict_key",
+        "freq",
+        "key",
+        "od",
+        "self",
+        "self.capacity",
+        "self.freq_map",
+        "self.key_map",
+        "self.min_freq",
+        "self.size",
+        "value"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "LFUCache.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+            "line": 7,
+            "vars": [
+              "OrderedDict",
+              "capacity"
+            ]
+          },
+          {
+            "code": "raise ValueError(\"capacity must be positive\")",
+            "line": 8,
+            "vars": [
+              "OrderedDict",
+              "capacity"
+            ]
+          },
+          {
+            "code": "self.capacity = capacity",
+            "line": 9,
+            "vars": [
+              "OrderedDict",
+              "capacity"
+            ]
+          },
+          {
+            "code": "self.size = 0",
+            "line": 10,
+            "vars": [
+              "OrderedDict"
+            ]
+          },
+          {
+            "code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+            "line": 11,
+            "vars": [
+              "OrderedDict"
+            ]
+          },
+          {
+            "code": "self.key_map: Dict[Any, Any] = {}",
+            "line": 12,
+            "vars": []
+          },
+          {
+            "code": "self.min_freq = 0",
+            "line": 13,
+            "vars": []
+          }
+        ],
+        "liveout": {
+          "OrderedDict": false,
+          "capacity": false,
+          "self": false,
+          "self.capacity": false,
+          "self.freq_map": false,
+          "self.key_map": false,
+          "self.min_freq": false,
+          "self.size": false
+        },
+        "return_vars": []
+      },
+      "LFUCache._update_freq": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "value, freq = self.key_map[key]",
+            "line": 16,
+            "vars": [
+              "key",
+              "self",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq"
+            ]
+          },
+          {
+            "code": "od = self.freq_map[freq]",
+            "line": 18,
+            "vars": [
+              "freq",
+              "key",
+              "self",
+              "self.freq_map",
+              "self.min_freq",
+              "value"
+            ]
+          },
+          {
+            "code": "od.pop(key)",
+            "line": 19,
+            "vars": [
+              "freq",
+              "key",
+              "od",
+              "self",
+              "self.min_freq",
+              "value"
+            ]
+          },
+          {
+            "code": "if not od and self.min_freq == freq: self.min_freq += 1",
+            "line": 20,
+            "vars": [
+              "freq",
+              "key",
+              "od",
+              "self",
+              "self.min_freq",
+              "value"
+            ]
+          },
+          {
+            "code": "self.min_freq += 1",
+            "line": 21,
+            "vars": [
+              "key",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "freq += 1",
+            "line": 23,
+            "vars": [
+              "key",
+              "value"
+            ]
+          },
+          {
+            "code": "self.key_map[key] = (value, freq)",
+            "line": 24,
+            "vars": [
+              "freq",
+              "key",
+              "value"
+            ]
+          },
+          {
+            "code": "self.freq_map[freq][key] = value",
+            "line": 25,
+            "vars": [
+              "key",
+              "value"
+            ]
+          }
+        ],
+        "liveout": {
+          "freq": false,
+          "key": false,
+          "od": false,
+          "self": false,
+          "self.freq_map": false,
+          "self.key_map": false,
+          "self.min_freq": false,
+          "value": false
+        },
+        "return_vars": []
+      },
+      "LFUCache.get": {
+        "base_liveout": [
+          "self.key_map"
+        ],
+        "live_before": [
+          {
+            "code": "if key not in self.key_map: return None",
+            "line": 28,
+            "vars": [
+              "key",
+              "self",
+              "self.key_map"
+            ]
+          },
+          {
+            "code": "return None",
+            "line": 29,
+            "vars": [
+              "key",
+              "self",
+              "self.key_map"
+            ]
+          },
+          {
+            "code": "self._update_freq(key)",
+            "line": 30,
+            "vars": [
+              "key",
+              "self",
+              "self.key_map"
+            ]
+          },
+          {
+            "code": "return self.key_map[key][0]",
+            "line": 31,
+            "vars": [
+              "self.key_map"
+            ]
+          }
+        ],
+        "liveout": {
+          "key": false,
+          "self": false,
+          "self.key_map": true
+        },
+        "return_vars": [
+          "self.key_map"
+        ]
+      },
+      "LFUCache.put": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "if self.capacity == 0: return",
+            "line": 34,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 35,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+            "line": 36,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "_, freq = self.key_map[key]",
+            "line": 38,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "self.key_map[key] = (value, freq)",
+            "line": 39,
+            "vars": [
+              "freq",
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "self._update_freq(key)",
+            "line": 40,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 41,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+            "line": 42,
+            "vars": [
+              "key",
+              "self",
+              "self.capacity",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "self.size",
+              "value"
+            ]
+          },
+          {
+            "code": "od = self.freq_map[self.min_freq]",
+            "line": 44,
+            "vars": [
+              "key",
+              "self",
+              "self.freq_map",
+              "self.key_map",
+              "self.min_freq",
+              "value"
+            ]
+          },
+          {
+            "code": "evict_key, _ = od.popitem(last=False)",
+            "line": 45,
+            "vars": [
+              "key",
+              "od",
+              "self",
+              "self.key_map",
+              "value"
+            ]
+          },
+          {
+            "code": "self.key_map.pop(evict_key)",
+            "line": 46,
+            "vars": [
+              "evict_key",
+              "key",
+              "self",
+              "self.key_map",
+              "value"
+            ]
+          },
+          {
+            "code": "self.size -= 1",
+            "line": 47,
+            "vars": [
+              "key",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "self.key_map[key] = (value, 1)",
+            "line": 49,
+            "vars": [
+              "key",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "self.freq_map[1][key] = value",
+            "line": 50,
+            "vars": [
+              "key",
+              "self",
+              "value"
+            ]
+          },
+          {
+            "code": "self.min_freq = 1",
+            "line": 51,
+            "vars": [
+              "self"
+            ]
+          },
+          {
+            "code": "self.size += 1",
+            "line": 52,
+            "vars": [
+              "self"
+            ]
+          }
+        ],
+        "liveout": {
+          "_": false,
+          "evict_key": false,
+          "freq": false,
+          "key": false,
+          "od": false,
+          "self": false,
+          "self.capacity": false,
+          "self.freq_map": false,
+          "self.key_map": false,
+          "self.min_freq": false,
+          "self.size": false,
+          "value": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [],
+  "strict_dominators": [
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 7,
+      "b_code": "raise ValueError(\"capacity must be positive\")",
+      "b_line": 8,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 7,
+      "b_code": "self.capacity = capacity",
+      "b_line": 9,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 7,
+      "b_code": "self.size = 0",
+      "b_line": 10,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.capacity = capacity",
+      "a_line": 9,
+      "b_code": "self.size = 0",
+      "b_line": 10,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 7,
+      "b_code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "b_line": 11,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.capacity = capacity",
+      "a_line": 9,
+      "b_code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "b_line": 11,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.size = 0",
+      "a_line": 10,
+      "b_code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "b_line": 11,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 7,
+      "b_code": "self.key_map: Dict[Any, Any] = {}",
+      "b_line": 12,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.capacity = capacity",
+      "a_line": 9,
+      "b_code": "self.key_map: Dict[Any, Any] = {}",
+      "b_line": 12,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.size = 0",
+      "a_line": 10,
+      "b_code": "self.key_map: Dict[Any, Any] = {}",
+      "b_line": 12,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "a_line": 11,
+      "b_code": "self.key_map: Dict[Any, Any] = {}",
+      "b_line": 12,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "if capacity <= 0: raise ValueError(\"capacity must be positive\")",
+      "a_line": 7,
+      "b_code": "self.min_freq = 0",
+      "b_line": 13,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.capacity = capacity",
+      "a_line": 9,
+      "b_code": "self.min_freq = 0",
+      "b_line": 13,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.size = 0",
+      "a_line": 10,
+      "b_code": "self.min_freq = 0",
+      "b_line": 13,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+      "a_line": 11,
+      "b_code": "self.min_freq = 0",
+      "b_line": 13,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "self.key_map: Dict[Any, Any] = {}",
+      "a_line": 12,
+      "b_code": "self.min_freq = 0",
+      "b_line": 13,
+      "function": "LFUCache.__init__"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "od = self.freq_map[freq]",
+      "b_line": 18,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "od.pop(key)",
+      "b_line": 19,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od = self.freq_map[freq]",
+      "a_line": 18,
+      "b_code": "od.pop(key)",
+      "b_line": 19,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "b_line": 20,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od = self.freq_map[freq]",
+      "a_line": 18,
+      "b_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "b_line": 20,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od.pop(key)",
+      "a_line": 19,
+      "b_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "b_line": 20,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "self.min_freq += 1",
+      "b_line": 21,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od = self.freq_map[freq]",
+      "a_line": 18,
+      "b_code": "self.min_freq += 1",
+      "b_line": 21,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od.pop(key)",
+      "a_line": 19,
+      "b_code": "self.min_freq += 1",
+      "b_line": 21,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "a_line": 20,
+      "b_code": "self.min_freq += 1",
+      "b_line": 21,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "freq += 1",
+      "b_line": 23,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od = self.freq_map[freq]",
+      "a_line": 18,
+      "b_code": "freq += 1",
+      "b_line": 23,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od.pop(key)",
+      "a_line": 19,
+      "b_code": "freq += 1",
+      "b_line": 23,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "a_line": 20,
+      "b_code": "freq += 1",
+      "b_line": 23,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 24,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od = self.freq_map[freq]",
+      "a_line": 18,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 24,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od.pop(key)",
+      "a_line": 19,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 24,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "a_line": 20,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 24,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "freq += 1",
+      "a_line": 23,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 24,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "value, freq = self.key_map[key]",
+      "a_line": 16,
+      "b_code": "self.freq_map[freq][key] = value",
+      "b_line": 25,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od = self.freq_map[freq]",
+      "a_line": 18,
+      "b_code": "self.freq_map[freq][key] = value",
+      "b_line": 25,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "od.pop(key)",
+      "a_line": 19,
+      "b_code": "self.freq_map[freq][key] = value",
+      "b_line": 25,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "if not od and self.min_freq == freq: self.min_freq += 1",
+      "a_line": 20,
+      "b_code": "self.freq_map[freq][key] = value",
+      "b_line": 25,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "freq += 1",
+      "a_line": 23,
+      "b_code": "self.freq_map[freq][key] = value",
+      "b_line": 25,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "self.key_map[key] = (value, freq)",
+      "a_line": 24,
+      "b_code": "self.freq_map[freq][key] = value",
+      "b_line": 25,
+      "function": "LFUCache._update_freq"
+    },
+    {
+      "a_code": "if key not in self.key_map: return None",
+      "a_line": 28,
+      "b_code": "return None",
+      "b_line": 29,
+      "function": "LFUCache.get"
+    },
+    {
+      "a_code": "if key not in self.key_map: return None",
+      "a_line": 28,
+      "b_code": "self._update_freq(key)",
+      "b_line": 30,
+      "function": "LFUCache.get"
+    },
+    {
+      "a_code": "if key not in self.key_map: return None",
+      "a_line": 28,
+      "b_code": "return self.key_map[key][0]",
+      "b_line": 31,
+      "function": "LFUCache.get"
+    },
+    {
+      "a_code": "self._update_freq(key)",
+      "a_line": 30,
+      "b_code": "return self.key_map[key][0]",
+      "b_line": 31,
+      "function": "LFUCache.get"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "return",
+      "b_line": 35,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "b_line": 36,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "_, freq = self.key_map[key]",
+      "b_line": 38,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "_, freq = self.key_map[key]",
+      "b_line": 38,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 39,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 39,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "_, freq = self.key_map[key]",
+      "a_line": 38,
+      "b_code": "self.key_map[key] = (value, freq)",
+      "b_line": 39,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self._update_freq(key)",
+      "b_line": 40,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self._update_freq(key)",
+      "b_line": 40,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "_, freq = self.key_map[key]",
+      "a_line": 38,
+      "b_code": "self._update_freq(key)",
+      "b_line": 40,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.key_map[key] = (value, freq)",
+      "a_line": 39,
+      "b_code": "self._update_freq(key)",
+      "b_line": 40,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "_, freq = self.key_map[key]",
+      "a_line": 38,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.key_map[key] = (value, freq)",
+      "a_line": 39,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self._update_freq(key)",
+      "a_line": 40,
+      "b_code": "return",
+      "b_line": 41,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "b_line": 42,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "b_line": 42,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "od = self.freq_map[self.min_freq]",
+      "b_line": 44,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "od = self.freq_map[self.min_freq]",
+      "b_line": 44,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "od = self.freq_map[self.min_freq]",
+      "b_line": 44,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "evict_key, _ = od.popitem(last=False)",
+      "b_line": 45,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "evict_key, _ = od.popitem(last=False)",
+      "b_line": 45,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "evict_key, _ = od.popitem(last=False)",
+      "b_line": 45,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "od = self.freq_map[self.min_freq]",
+      "a_line": 44,
+      "b_code": "evict_key, _ = od.popitem(last=False)",
+      "b_line": 45,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.key_map.pop(evict_key)",
+      "b_line": 46,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.key_map.pop(evict_key)",
+      "b_line": 46,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "self.key_map.pop(evict_key)",
+      "b_line": 46,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "od = self.freq_map[self.min_freq]",
+      "a_line": 44,
+      "b_code": "self.key_map.pop(evict_key)",
+      "b_line": 46,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "evict_key, _ = od.popitem(last=False)",
+      "a_line": 45,
+      "b_code": "self.key_map.pop(evict_key)",
+      "b_line": 46,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.size -= 1",
+      "b_line": 47,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.size -= 1",
+      "b_line": 47,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "self.size -= 1",
+      "b_line": 47,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "od = self.freq_map[self.min_freq]",
+      "a_line": 44,
+      "b_code": "self.size -= 1",
+      "b_line": 47,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "evict_key, _ = od.popitem(last=False)",
+      "a_line": 45,
+      "b_code": "self.size -= 1",
+      "b_line": 47,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.key_map.pop(evict_key)",
+      "a_line": 46,
+      "b_code": "self.size -= 1",
+      "b_line": 47,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.key_map[key] = (value, 1)",
+      "b_line": 49,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.key_map[key] = (value, 1)",
+      "b_line": 49,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "self.key_map[key] = (value, 1)",
+      "b_line": 49,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.freq_map[1][key] = value",
+      "b_line": 50,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.freq_map[1][key] = value",
+      "b_line": 50,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "self.freq_map[1][key] = value",
+      "b_line": 50,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.key_map[key] = (value, 1)",
+      "a_line": 49,
+      "b_code": "self.freq_map[1][key] = value",
+      "b_line": 50,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.min_freq = 1",
+      "b_line": 51,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.min_freq = 1",
+      "b_line": 51,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "self.min_freq = 1",
+      "b_line": 51,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.key_map[key] = (value, 1)",
+      "a_line": 49,
+      "b_code": "self.min_freq = 1",
+      "b_line": 51,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.freq_map[1][key] = value",
+      "a_line": 50,
+      "b_code": "self.min_freq = 1",
+      "b_line": 51,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.capacity == 0: return",
+      "a_line": 34,
+      "b_code": "self.size += 1",
+      "b_line": 52,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if key in self.key_map: # update value and freq _, freq = self.key_map[key] self.key_map[key] = (value, freq) self._update_freq(key) return",
+      "a_line": 36,
+      "b_code": "self.size += 1",
+      "b_line": 52,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "if self.size >= self.capacity: # evict least frequently used, then least recently used among them od = self.freq_map[self.min_freq] evict_key, _ = od.popitem(last=False) self.key_map.pop(evict_key) self.size -= 1",
+      "a_line": 42,
+      "b_code": "self.size += 1",
+      "b_line": 52,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.key_map[key] = (value, 1)",
+      "a_line": 49,
+      "b_code": "self.size += 1",
+      "b_line": 52,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.freq_map[1][key] = value",
+      "a_line": 50,
+      "b_code": "self.size += 1",
+      "b_line": 52,
+      "function": "LFUCache.put"
+    },
+    {
+      "a_code": "self.min_freq = 1",
+      "a_line": 51,
+      "b_code": "self.size += 1",
+      "b_line": 52,
+      "function": "LFUCache.put"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 6,
+        "var": "capacity"
+      },
+      "from": {
+        "code": "self.capacity = capacity",
+        "line": 9,
+        "var": "self.capacity"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 6,
+        "var": "OrderedDict"
+      },
+      "from": {
+        "code": "self.capacity = capacity",
+        "line": 9,
+        "var": "self.capacity"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 6,
+        "var": "OrderedDict"
+      },
+      "from": {
+        "code": "self.size = 0",
+        "line": 10,
+        "var": "self.size"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+        "line": 11,
+        "var": "OrderedDict"
+      },
+      "from": {
+        "code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+        "line": 11,
+        "var": "self.freq_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 6,
+        "var": "capacity"
+      },
+      "from": {
+        "code": "self.freq_map: Dict[int, OrderedDict] = defaultdict(OrderedDict)",
+        "line": 11,
+        "var": "self.freq_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 6,
+        "var": "OrderedDict"
+      },
+      "from": {
+        "code": "self.key_map: Dict[Any, Any] = {}",
+        "line": 12,
+        "var": "self.key_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, capacity:",
+        "line": 6,
+        "var": "OrderedDict"
+      },
+      "from": {
+        "code": "self.min_freq = 0",
+        "line": 13,
+        "var": "self.min_freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "freq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "self.key_map"
+      },
+      "from": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "freq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "od"
+      },
+      "from": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "self.key_map"
+      },
+      "from": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "value"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "freq"
+      },
+      "from": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "value"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "freq"
+      },
+      "from": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "od"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "od"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "self.freq_map"
+      },
+      "from": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "od"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "self.key_map"
+      },
+      "from": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "od"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "self"
+      },
+      "from": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "od"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.min_freq += 1",
+        "line": 21,
+        "var": "self.min_freq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "freq"
+      },
+      "from": {
+        "code": "self.min_freq += 1",
+        "line": 21,
+        "var": "self.min_freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "freq += 1",
+        "line": 23,
+        "var": "freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "freq += 1",
+        "line": 23,
+        "var": "freq"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 24,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 24,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 24,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[freq]",
+        "line": 18,
+        "var": "od"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 24,
+        "var": "self.key_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def _update_freq(self, key:",
+        "line": 15,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.freq_map[freq][key] = value",
+        "line": 25,
+        "var": "self.freq_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 24,
+        "var": "self.key_map"
+      },
+      "from": {
+        "code": "self.freq_map[freq][key] = value",
+        "line": 25,
+        "var": "self.freq_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "value, freq = self.key_map[key]",
+        "line": 16,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.freq_map[freq][key] = value",
+        "line": 25,
+        "var": "self.freq_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "freq += 1",
+        "line": 23,
+        "var": "freq"
+      },
+      "from": {
+        "code": "self.freq_map[freq][key] = value",
+        "line": 25,
+        "var": "self.freq_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "key"
+      },
+      "from": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "self.key_map"
+      },
+      "from": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "evict_key"
+      },
+      "from": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "key"
+      },
+      "from": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "freq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "self.key_map"
+      },
+      "from": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "freq"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "_"
+      },
+      "from": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "freq"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 39,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 39,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 39,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "_"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, freq)",
+        "line": 39,
+        "var": "self.key_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "self.freq_map"
+      },
+      "from": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "od"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "self.min_freq"
+      },
+      "from": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "od"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "_, freq = self.key_map[key]",
+        "line": 38,
+        "var": "_"
+      },
+      "from": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "od"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "od"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "self.freq_map"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "self.min_freq"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "evict_key"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "od = self.freq_map[self.min_freq]",
+        "line": 44,
+        "var": "od"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "evict_key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "self.freq_map"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "evict_key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "self.min_freq"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "evict_key"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "from": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "evict_key"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.size -= 1",
+        "line": 47,
+        "var": "self.size"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "from": {
+        "code": "self.size -= 1",
+        "line": 47,
+        "var": "self.size"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, 1)",
+        "line": 49,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, 1)",
+        "line": 49,
+        "var": "self.key_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "from": {
+        "code": "self.key_map[key] = (value, 1)",
+        "line": 49,
+        "var": "self.key_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "key"
+      },
+      "from": {
+        "code": "self.freq_map[1][key] = value",
+        "line": 50,
+        "var": "self.freq_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "value"
+      },
+      "from": {
+        "code": "self.freq_map[1][key] = value",
+        "line": 50,
+        "var": "self.freq_map"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "from": {
+        "code": "self.freq_map[1][key] = value",
+        "line": 50,
+        "var": "self.freq_map"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "from": {
+        "code": "self.min_freq = 1",
+        "line": 51,
+        "var": "self.min_freq"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def put(self, key:",
+        "line": 33,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.size += 1",
+        "line": 52,
+        "var": "self.size"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "evict_key, _ = od.popitem(last=False)",
+        "line": 45,
+        "var": "_"
+      },
+      "from": {
+        "code": "self.size += 1",
+        "line": 52,
+        "var": "self.size"
+      },
+      "label": "negative"
+    }
+  ]
+}

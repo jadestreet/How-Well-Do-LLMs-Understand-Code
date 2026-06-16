@@ -1,0 +1,2688 @@
+{
+  "cfg_statements": [
+    {
+      "code": "index = 0",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "Assign",
+      "line": 5,
+      "node_id": 1
+    },
+    {
+      "code": "stack: List[Hashable] = []",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "AnnAssign",
+      "line": 6,
+      "node_id": 2
+    },
+    {
+      "code": "onstack = set()",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "Assign",
+      "line": 7,
+      "node_id": 3
+    },
+    {
+      "code": "idx = {}",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 4
+    },
+    {
+      "code": "low = {}",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "Assign",
+      "line": 9,
+      "node_id": 5
+    },
+    {
+      "code": "sccs: List[List[Hashable]] = []",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "AnnAssign",
+      "line": 10,
+      "node_id": 6
+    },
+    {
+      "code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "FunctionDef",
+      "line": 12,
+      "node_id": 7
+    },
+    {
+      "code": "for v in graph: if v not in idx: strongconnect(v)",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "For",
+      "line": 34,
+      "node_id": 8
+    },
+    {
+      "code": "if v not in idx: strongconnect(v)",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "If",
+      "line": 35,
+      "node_id": 9
+    },
+    {
+      "code": "strongconnect(v)",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "Expr",
+      "line": 36,
+      "node_id": 10
+    },
+    {
+      "code": "return sccs",
+      "dead": false,
+      "function": "tarjan_scc",
+      "kind": "Return",
+      "line": 37,
+      "node_id": 11
+    },
+    {
+      "code": "nonlocal index",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Nonlocal",
+      "line": 13,
+      "node_id": 1
+    },
+    {
+      "code": "idx[v] = index",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Assign",
+      "line": 14,
+      "node_id": 2
+    },
+    {
+      "code": "low[v] = index",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Assign",
+      "line": 15,
+      "node_id": 3
+    },
+    {
+      "code": "index += 1",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "AugAssign",
+      "line": 16,
+      "node_id": 4
+    },
+    {
+      "code": "stack.append(v)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Expr",
+      "line": 17,
+      "node_id": 5
+    },
+    {
+      "code": "onstack.add(v)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Expr",
+      "line": 17,
+      "node_id": 6
+    },
+    {
+      "code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "For",
+      "line": 18,
+      "node_id": 7
+    },
+    {
+      "code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "If",
+      "line": 19,
+      "node_id": 8
+    },
+    {
+      "code": "strongconnect(w)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Expr",
+      "line": 20,
+      "node_id": 9
+    },
+    {
+      "code": "low[v] = min(low[v], low[w])",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 10
+    },
+    {
+      "code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "If",
+      "line": 22,
+      "node_id": 11
+    },
+    {
+      "code": "low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 12
+    },
+    {
+      "code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "If",
+      "line": 24,
+      "node_id": 13
+    },
+    {
+      "code": "comp = []",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Assign",
+      "line": 25,
+      "node_id": 14
+    },
+    {
+      "code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "While",
+      "line": 26,
+      "node_id": 15
+    },
+    {
+      "code": "w = stack.pop()",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Assign",
+      "line": 27,
+      "node_id": 16
+    },
+    {
+      "code": "onstack.remove(w)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Expr",
+      "line": 28,
+      "node_id": 17
+    },
+    {
+      "code": "comp.append(w)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Expr",
+      "line": 29,
+      "node_id": 18
+    },
+    {
+      "code": "if w == v: break",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "If",
+      "line": 30,
+      "node_id": 19
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Break",
+      "line": 31,
+      "node_id": 20
+    },
+    {
+      "code": "sccs.append(comp)",
+      "dead": false,
+      "function": "tarjan_scc.strongconnect",
+      "kind": "Expr",
+      "line": 32,
+      "node_id": 21
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "index = 0",
+      "dead": false,
+      "line": 5
+    },
+    {
+      "code": "stack: List[Hashable] = []",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "onstack = set()",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "idx = {}",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "low = {}",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "sccs: List[List[Hashable]] = []",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "nonlocal index",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "idx[v] = index",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "low[v] = index",
+      "dead": false,
+      "line": 15
+    },
+    {
+      "code": "index += 1",
+      "dead": false,
+      "line": 16
+    },
+    {
+      "code": "onstack.add(v)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "stack.append(v)",
+      "dead": false,
+      "line": 17
+    },
+    {
+      "code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "line": 18
+    },
+    {
+      "code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "line": 19
+    },
+    {
+      "code": "strongconnect(w)",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "low[v] = min(low[v], low[w])",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "low[v] = min(low[v], idx[w])",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "dead": false,
+      "line": 24
+    },
+    {
+      "code": "comp = []",
+      "dead": false,
+      "line": 25
+    },
+    {
+      "code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "w = stack.pop()",
+      "dead": false,
+      "line": 27
+    },
+    {
+      "code": "onstack.remove(w)",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "comp.append(w)",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if w == v: break",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "break",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "sccs.append(comp)",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "for v in graph: if v not in idx: strongconnect(v)",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "if v not in idx: strongconnect(v)",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "strongconnect(v)",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "return sccs",
+      "dead": false,
+      "line": 37
+    }
+  ],
+  "file": "SemBench/data/python/code/25.py",
+  "functions": [
+    {
+      "calls": [
+        "tarjan_scc.strongconnect"
+      ],
+      "end_lineno": 37,
+      "lineno": 4,
+      "name": "tarjan_scc",
+      "variables": [
+        "graph",
+        "idx",
+        "index",
+        "low",
+        "onstack",
+        "sccs",
+        "stack",
+        "strongconnect",
+        "v"
+      ]
+    },
+    {
+      "calls": [
+        "tarjan_scc.strongconnect"
+      ],
+      "end_lineno": 32,
+      "lineno": 12,
+      "name": "tarjan_scc.strongconnect",
+      "variables": [
+        "comp",
+        "graph",
+        "idx",
+        "index",
+        "low",
+        "onstack",
+        "sccs",
+        "stack",
+        "v",
+        "w"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "tarjan_scc": {
+        "base_liveout": [
+          "sccs"
+        ],
+        "live_before": [
+          {
+            "code": "index = 0",
+            "line": 5,
+            "vars": [
+              "graph"
+            ]
+          },
+          {
+            "code": "stack: List[Hashable] = []",
+            "line": 6,
+            "vars": [
+              "graph"
+            ]
+          },
+          {
+            "code": "onstack = set()",
+            "line": 7,
+            "vars": [
+              "graph"
+            ]
+          },
+          {
+            "code": "idx = {}",
+            "line": 8,
+            "vars": [
+              "graph"
+            ]
+          },
+          {
+            "code": "low = {}",
+            "line": 9,
+            "vars": [
+              "graph",
+              "idx"
+            ]
+          },
+          {
+            "code": "sccs: List[List[Hashable]] = []",
+            "line": 10,
+            "vars": [
+              "graph",
+              "idx"
+            ]
+          },
+          {
+            "code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+            "line": 12,
+            "vars": [
+              "graph",
+              "idx",
+              "sccs"
+            ]
+          },
+          {
+            "code": "for v in graph: if v not in idx: strongconnect(v)",
+            "line": 34,
+            "vars": [
+              "graph",
+              "idx",
+              "sccs"
+            ]
+          },
+          {
+            "code": "if v not in idx: strongconnect(v)",
+            "line": 35,
+            "vars": [
+              "idx",
+              "sccs",
+              "v"
+            ]
+          },
+          {
+            "code": "strongconnect(v)",
+            "line": 36,
+            "vars": [
+              "sccs",
+              "v"
+            ]
+          },
+          {
+            "code": "return sccs",
+            "line": 37,
+            "vars": [
+              "sccs"
+            ]
+          }
+        ],
+        "liveout": {
+          "graph": false,
+          "idx": false,
+          "index": false,
+          "low": false,
+          "onstack": false,
+          "sccs": true,
+          "stack": false,
+          "strongconnect": false,
+          "v": false
+        },
+        "return_vars": [
+          "sccs"
+        ]
+      },
+      "tarjan_scc.strongconnect": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "nonlocal index",
+            "line": 13,
+            "vars": [
+              "graph",
+              "index",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "idx[v] = index",
+            "line": 14,
+            "vars": [
+              "graph",
+              "index",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "low[v] = index",
+            "line": 15,
+            "vars": [
+              "graph",
+              "idx",
+              "index",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "index += 1",
+            "line": 16,
+            "vars": [
+              "graph",
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "stack.append(v)",
+            "line": 17,
+            "vars": [
+              "graph",
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "onstack.add(v)",
+            "line": 17,
+            "vars": [
+              "graph",
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+            "line": 18,
+            "vars": [
+              "graph",
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+            "line": 19,
+            "vars": [
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "strongconnect(w)",
+            "line": 20,
+            "vars": [
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "low[v] = min(low[v], low[w])",
+            "line": 21,
+            "vars": [
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+            "line": 22,
+            "vars": [
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "low[v] = min(low[v], idx[w])",
+            "line": 23,
+            "vars": [
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+            "line": 24,
+            "vars": [
+              "idx",
+              "low",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "comp = []",
+            "line": 25,
+            "vars": [
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+            "line": 26,
+            "vars": [
+              "comp",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "w = stack.pop()",
+            "line": 27,
+            "vars": [
+              "comp",
+              "onstack",
+              "sccs",
+              "stack",
+              "v"
+            ]
+          },
+          {
+            "code": "onstack.remove(w)",
+            "line": 28,
+            "vars": [
+              "comp",
+              "onstack",
+              "sccs",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "comp.append(w)",
+            "line": 29,
+            "vars": [
+              "comp",
+              "sccs",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "if w == v: break",
+            "line": 30,
+            "vars": [
+              "comp",
+              "sccs",
+              "v",
+              "w"
+            ]
+          },
+          {
+            "code": "break",
+            "line": 31,
+            "vars": [
+              "comp",
+              "sccs"
+            ]
+          },
+          {
+            "code": "sccs.append(comp)",
+            "line": 32,
+            "vars": [
+              "comp",
+              "sccs"
+            ]
+          }
+        ],
+        "liveout": {
+          "comp": false,
+          "graph": false,
+          "idx": false,
+          "index": false,
+          "low": false,
+          "onstack": false,
+          "sccs": false,
+          "stack": false,
+          "v": false,
+          "w": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for v in graph:",
+      "cond": "for v in graph",
+      "function": "tarjan_scc",
+      "header_id": 8,
+      "line": 34,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for w in graph.get(v, []):",
+      "cond": "for w in graph.get(v, [])",
+      "function": "tarjan_scc.strongconnect",
+      "header_id": 7,
+      "line": 18,
+      "reachable": true
+    },
+    {
+      "certainty": "always_runs",
+      "code": "while True:",
+      "cond": "True",
+      "function": "tarjan_scc.strongconnect",
+      "header_id": 15,
+      "line": 26,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "stack: List[Hashable] = []",
+      "b_line": 6,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "onstack = set()",
+      "b_line": 7,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "onstack = set()",
+      "b_line": 7,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "idx = {}",
+      "b_line": 8,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "idx = {}",
+      "b_line": 8,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "idx = {}",
+      "b_line": 8,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "low = {}",
+      "b_line": 9,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "low = {}",
+      "b_line": 9,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "low = {}",
+      "b_line": 9,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "low = {}",
+      "b_line": 9,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "sccs: List[List[Hashable]] = []",
+      "b_line": 10,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "sccs: List[List[Hashable]] = []",
+      "b_line": 10,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "sccs: List[List[Hashable]] = []",
+      "b_line": 10,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "sccs: List[List[Hashable]] = []",
+      "b_line": 10,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "low = {}",
+      "a_line": 9,
+      "b_code": "sccs: List[List[Hashable]] = []",
+      "b_line": 10,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 12,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 12,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 12,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 12,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "low = {}",
+      "a_line": 9,
+      "b_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 12,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "sccs: List[List[Hashable]] = []",
+      "a_line": 10,
+      "b_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 12,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "low = {}",
+      "a_line": 9,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "sccs: List[List[Hashable]] = []",
+      "a_line": 10,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 12,
+      "b_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "b_line": 34,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "low = {}",
+      "a_line": 9,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "sccs: List[List[Hashable]] = []",
+      "a_line": 10,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 12,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "a_line": 34,
+      "b_code": "if v not in idx: strongconnect(v)",
+      "b_line": 35,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "low = {}",
+      "a_line": 9,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "sccs: List[List[Hashable]] = []",
+      "a_line": 10,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 12,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "a_line": 34,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "if v not in idx: strongconnect(v)",
+      "a_line": 35,
+      "b_code": "strongconnect(v)",
+      "b_line": 36,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "index = 0",
+      "a_line": 5,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "stack: List[Hashable] = []",
+      "a_line": 6,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "onstack = set()",
+      "a_line": 7,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "idx = {}",
+      "a_line": 8,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "low = {}",
+      "a_line": 9,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "sccs: List[List[Hashable]] = []",
+      "a_line": 10,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "def strongconnect(v): nonlocal index idx[v] = index low[v] = index index += 1 stack.append(v); onstack.add(v) for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w]) if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 12,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "for v in graph: if v not in idx: strongconnect(v)",
+      "a_line": 34,
+      "b_code": "return sccs",
+      "b_line": 37,
+      "function": "tarjan_scc"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "idx[v] = index",
+      "b_line": 14,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "low[v] = index",
+      "b_line": 15,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "low[v] = index",
+      "b_line": 15,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "index += 1",
+      "b_line": 16,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "index += 1",
+      "b_line": 16,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "index += 1",
+      "b_line": 16,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "stack.append(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "stack.append(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "stack.append(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "stack.append(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "onstack.add(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "onstack.add(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "onstack.add(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "onstack.add(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "onstack.add(v)",
+      "b_line": 17,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 18,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 18,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 18,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 18,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 18,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 18,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 19,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 19,
+      "b_code": "strongconnect(w)",
+      "b_line": 20,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 19,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "strongconnect(w)",
+      "a_line": 20,
+      "b_code": "low[v] = min(low[v], low[w])",
+      "b_line": 21,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 19,
+      "b_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "b_line": 22,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 19,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 22,
+      "b_code": "low[v] = min(low[v], idx[w])",
+      "b_line": 23,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "b_line": 24,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "comp = []",
+      "b_line": 25,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "b_line": 26,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "a_line": 26,
+      "b_code": "w = stack.pop()",
+      "b_line": 27,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "a_line": 26,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "w = stack.pop()",
+      "a_line": 27,
+      "b_code": "onstack.remove(w)",
+      "b_line": 28,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "a_line": 26,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "w = stack.pop()",
+      "a_line": 27,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.remove(w)",
+      "a_line": 28,
+      "b_code": "comp.append(w)",
+      "b_line": 29,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "a_line": 26,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "w = stack.pop()",
+      "a_line": 27,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.remove(w)",
+      "a_line": 28,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp.append(w)",
+      "a_line": 29,
+      "b_code": "if w == v: break",
+      "b_line": 30,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "a_line": 26,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "w = stack.pop()",
+      "a_line": 27,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.remove(w)",
+      "a_line": 28,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp.append(w)",
+      "a_line": 29,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if w == v: break",
+      "a_line": 30,
+      "b_code": "break",
+      "b_line": 31,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "nonlocal index",
+      "a_line": 13,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "idx[v] = index",
+      "a_line": 14,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "low[v] = index",
+      "a_line": 15,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "index += 1",
+      "a_line": 16,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "stack.append(v)",
+      "a_line": 17,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "onstack.add(v)",
+      "a_line": 17,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "for w in graph.get(v, []): if w not in idx: strongconnect(w) low[v] = min(low[v], low[w]) elif w in onstack: low[v] = min(low[v], idx[w])",
+      "a_line": 18,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "if low[v] == idx[v]: comp = [] while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break sccs.append(comp)",
+      "a_line": 24,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "comp = []",
+      "a_line": 25,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    },
+    {
+      "a_code": "while True: w = stack.pop() onstack.remove(w) comp.append(w) if w == v: break",
+      "a_line": 26,
+      "b_code": "sccs.append(comp)",
+      "b_line": 32,
+      "function": "tarjan_scc.strongconnect"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {},
+  "unsupported_reasons": [],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "def tarjan_scc(graph:",
+        "line": 4,
+        "var": "graph"
+      },
+      "from": {
+        "code": "index = 0",
+        "line": 5,
+        "var": "index"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def tarjan_scc(graph:",
+        "line": 4,
+        "var": "graph"
+      },
+      "from": {
+        "code": "stack: List[Hashable] = []",
+        "line": 6,
+        "var": "stack"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def tarjan_scc(graph:",
+        "line": 4,
+        "var": "graph"
+      },
+      "from": {
+        "code": "onstack = set()",
+        "line": 7,
+        "var": "onstack"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def tarjan_scc(graph:",
+        "line": 4,
+        "var": "graph"
+      },
+      "from": {
+        "code": "idx = {}",
+        "line": 8,
+        "var": "idx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def tarjan_scc(graph:",
+        "line": 4,
+        "var": "graph"
+      },
+      "from": {
+        "code": "low = {}",
+        "line": 9,
+        "var": "low"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def tarjan_scc(graph:",
+        "line": 4,
+        "var": "graph"
+      },
+      "from": {
+        "code": "sccs: List[List[Hashable]] = []",
+        "line": 10,
+        "var": "sccs"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "idx[v] = index",
+        "line": 14,
+        "var": "index"
+      },
+      "from": {
+        "code": "idx[v] = index",
+        "line": 14,
+        "var": "idx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "v"
+      },
+      "from": {
+        "code": "idx[v] = index",
+        "line": 14,
+        "var": "idx"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "comp"
+      },
+      "from": {
+        "code": "idx[v] = index",
+        "line": 14,
+        "var": "idx"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "low[v] = index",
+        "line": 15,
+        "var": "index"
+      },
+      "from": {
+        "code": "low[v] = index",
+        "line": 15,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "v"
+      },
+      "from": {
+        "code": "low[v] = index",
+        "line": 15,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "comp"
+      },
+      "from": {
+        "code": "low[v] = index",
+        "line": 15,
+        "var": "low"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "comp"
+      },
+      "from": {
+        "code": "index += 1",
+        "line": 16,
+        "var": "index"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "index += 1",
+        "line": 16,
+        "var": "index"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "low[v] = index",
+        "line": 15,
+        "var": "low"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "v"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "w"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "comp"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "low"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "idx[v] = index",
+        "line": 14,
+        "var": "idx"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "index += 1",
+        "line": 16,
+        "var": "index"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "low[v] = min(low[v], low[w])",
+        "line": 21,
+        "var": "low"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "v"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "w"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "low"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "comp"
+      },
+      "from": {
+        "code": "low[v] = min(low[v], idx[w])",
+        "line": 23,
+        "var": "low"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def strongconnect(v):",
+        "line": 12,
+        "var": "graph"
+      },
+      "from": {
+        "code": "comp = []",
+        "line": 25,
+        "var": "comp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "w = stack.pop()",
+        "line": 27,
+        "var": "stack"
+      },
+      "from": {
+        "code": "w = stack.pop()",
+        "line": 27,
+        "var": "w"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "comp = []",
+        "line": 25,
+        "var": "comp"
+      },
+      "from": {
+        "code": "w = stack.pop()",
+        "line": 27,
+        "var": "w"
+      },
+      "label": "negative"
+    }
+  ]
+}

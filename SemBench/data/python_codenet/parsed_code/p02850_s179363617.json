@@ -1,0 +1,6591 @@
+{
+  "cfg_statements": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 7,
+      "node_id": 1
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 8,
+      "node_id": 2
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Import",
+      "line": 10,
+      "node_id": 3
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 11,
+      "node_id": 4
+    },
+    {
+      "code": "from fractions import gcd",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 12,
+      "node_id": 5
+    },
+    {
+      "code": "from functools import lru_cache",
+      "dead": false,
+      "function": "__module__",
+      "kind": "ImportFrom",
+      "line": 13,
+      "node_id": 6
+    },
+    {
+      "code": "MOD = 10**9+7",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 20,
+      "node_id": 7
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 8
+    },
+    {
+      "code": "kaijo_memo = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 41,
+      "node_id": 9
+    },
+    {
+      "code": "gyaku_kaijo_memo = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 10
+    },
+    {
+      "code": "N = inputI()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 98,
+      "node_id": 11
+    },
+    {
+      "code": "graph = [[] for _ in range(N)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 100,
+      "node_id": 12
+    },
+    {
+      "code": "edges = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 101,
+      "node_id": 13
+    },
+    {
+      "code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 103,
+      "node_id": 14
+    },
+    {
+      "code": "a, b = inputIL()",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 104,
+      "node_id": 15
+    },
+    {
+      "code": "edges.append((a-1, b-1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 105,
+      "node_id": 16
+    },
+    {
+      "code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 107,
+      "node_id": 17
+    },
+    {
+      "code": "graph[a].append(b)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 108,
+      "node_id": 18
+    },
+    {
+      "code": "graph[b].append(a)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 109,
+      "node_id": 19
+    },
+    {
+      "code": "k = max(len(edges) for edges in graph)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 111,
+      "node_id": 20
+    },
+    {
+      "code": "colors = [color for color in range(1, k + 1)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 113,
+      "node_id": 21
+    },
+    {
+      "code": "usedcolor = [ None for _ in range(N) ]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 114,
+      "node_id": 22
+    },
+    {
+      "code": "colored = {}",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 115,
+      "node_id": 23
+    },
+    {
+      "code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 123,
+      "node_id": 24
+    },
+    {
+      "code": "color = youcanusethiscolor(u)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 124,
+      "node_id": 25
+    },
+    {
+      "code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 125,
+      "node_id": 26
+    },
+    {
+      "code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 126,
+      "node_id": 27
+    },
+    {
+      "code": "now = next(color)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 127,
+      "node_id": 28
+    },
+    {
+      "code": "colored[(u,v)] = colored[(v,u)] = now",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 128,
+      "node_id": 29
+    },
+    {
+      "code": "usedcolor[v] = now",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 129,
+      "node_id": 30
+    },
+    {
+      "code": "print(k)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 131,
+      "node_id": 31
+    },
+    {
+      "code": "for a,b in edges: print(colored[(a,b)])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 132,
+      "node_id": 32
+    },
+    {
+      "code": "print(colored[(a,b)])",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 133,
+      "node_id": 33
+    },
+    {
+      "code": "return int(input().strip())",
+      "dead": false,
+      "function": "inputI",
+      "kind": "Return",
+      "line": 28,
+      "node_id": 1
+    },
+    {
+      "code": "return input().strip()",
+      "dead": false,
+      "function": "inputS",
+      "kind": "Return",
+      "line": 29,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(int,input().split()))",
+      "dead": false,
+      "function": "inputIL",
+      "kind": "Return",
+      "line": 30,
+      "node_id": 1
+    },
+    {
+      "code": "return list(map(str,input().split()))",
+      "dead": false,
+      "function": "inputSL",
+      "kind": "Return",
+      "line": 31,
+      "node_id": 1
+    },
+    {
+      "code": "return list(int(input()) for _ in range(n))",
+      "dead": false,
+      "function": "inputILs",
+      "kind": "Return",
+      "line": 32,
+      "node_id": 1
+    },
+    {
+      "code": "return list(input().strip() for _ in range(n))",
+      "dead": false,
+      "function": "inputSLs",
+      "kind": "Return",
+      "line": 33,
+      "node_id": 1
+    },
+    {
+      "code": "return [list(map(int, input().split())) for _ in range(n)]",
+      "dead": false,
+      "function": "inputILL",
+      "kind": "Return",
+      "line": 34,
+      "node_id": 1
+    },
+    {
+      "code": "return [list(map(str, input().split())) for _ in range(n)]",
+      "dead": false,
+      "function": "inputSLL",
+      "kind": "Return",
+      "line": 35,
+      "node_id": 1
+    },
+    {
+      "code": "return pow(n, MOD-2, MOD)",
+      "dead": false,
+      "function": "inv",
+      "kind": "Return",
+      "line": 38,
+      "node_id": 1
+    },
+    {
+      "code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "If",
+      "line": 43,
+      "node_id": 1
+    },
+    {
+      "code": "return kaijo_memo[n]",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "Return",
+      "line": 44,
+      "node_id": 2
+    },
+    {
+      "code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "If",
+      "line": 45,
+      "node_id": 3
+    },
+    {
+      "code": "kaijo_memo.append(1)",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "Expr",
+      "line": 46,
+      "node_id": 4
+    },
+    {
+      "code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "While",
+      "line": 47,
+      "node_id": 5
+    },
+    {
+      "code": "kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "Expr",
+      "line": 48,
+      "node_id": 6
+    },
+    {
+      "code": "return kaijo_memo[n]",
+      "dead": false,
+      "function": "kaijo",
+      "kind": "Return",
+      "line": 49,
+      "node_id": 7
+    },
+    {
+      "code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "If",
+      "line": 53,
+      "node_id": 1
+    },
+    {
+      "code": "return gyaku_kaijo_memo[n]",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "Return",
+      "line": 54,
+      "node_id": 2
+    },
+    {
+      "code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "If",
+      "line": 55,
+      "node_id": 3
+    },
+    {
+      "code": "gyaku_kaijo_memo.append(1)",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "Expr",
+      "line": 56,
+      "node_id": 4
+    },
+    {
+      "code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "While",
+      "line": 57,
+      "node_id": 5
+    },
+    {
+      "code": "gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "Expr",
+      "line": 58,
+      "node_id": 6
+    },
+    {
+      "code": "return gyaku_kaijo_memo[n]",
+      "dead": false,
+      "function": "gyaku_kaijo",
+      "kind": "Return",
+      "line": 59,
+      "node_id": 7
+    },
+    {
+      "code": "if(n == r): return 1",
+      "dead": false,
+      "function": "nCr",
+      "kind": "If",
+      "line": 62,
+      "node_id": 1
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Return",
+      "line": 63,
+      "node_id": 2
+    },
+    {
+      "code": "if(n < r or r < 0): return 0",
+      "dead": false,
+      "function": "nCr",
+      "kind": "If",
+      "line": 64,
+      "node_id": 3
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Return",
+      "line": 65,
+      "node_id": 4
+    },
+    {
+      "code": "ret = 1",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Assign",
+      "line": 66,
+      "node_id": 5
+    },
+    {
+      "code": "ret = ret * kaijo(n) % MOD",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Assign",
+      "line": 67,
+      "node_id": 6
+    },
+    {
+      "code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Assign",
+      "line": 68,
+      "node_id": 7
+    },
+    {
+      "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 8
+    },
+    {
+      "code": "return ret",
+      "dead": false,
+      "function": "nCr",
+      "kind": "Return",
+      "line": 70,
+      "node_id": 9
+    },
+    {
+      "code": "arr = []",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Assign",
+      "line": 74,
+      "node_id": 1
+    },
+    {
+      "code": "temp = n",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Assign",
+      "line": 75,
+      "node_id": 2
+    },
+    {
+      "code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "For",
+      "line": 76,
+      "node_id": 3
+    },
+    {
+      "code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "If",
+      "line": 77,
+      "node_id": 4
+    },
+    {
+      "code": "cnt=0",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Assign",
+      "line": 78,
+      "node_id": 5
+    },
+    {
+      "code": "while temp%i==0: cnt+=1 temp //= i",
+      "dead": false,
+      "function": "factorization",
+      "kind": "While",
+      "line": 79,
+      "node_id": 6
+    },
+    {
+      "code": "cnt+=1",
+      "dead": false,
+      "function": "factorization",
+      "kind": "AugAssign",
+      "line": 80,
+      "node_id": 7
+    },
+    {
+      "code": "temp //= i",
+      "dead": false,
+      "function": "factorization",
+      "kind": "AugAssign",
+      "line": 81,
+      "node_id": 8
+    },
+    {
+      "code": "arr.append([i, cnt])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Expr",
+      "line": 82,
+      "node_id": 9
+    },
+    {
+      "code": "if temp!=1: arr.append([temp, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "If",
+      "line": 83,
+      "node_id": 10
+    },
+    {
+      "code": "arr.append([temp, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Expr",
+      "line": 84,
+      "node_id": 11
+    },
+    {
+      "code": "if arr==[]: arr.append([n, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "If",
+      "line": 86,
+      "node_id": 12
+    },
+    {
+      "code": "arr.append([n, 1])",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Expr",
+      "line": 87,
+      "node_id": 13
+    },
+    {
+      "code": "return arr",
+      "dead": false,
+      "function": "factorization",
+      "kind": "Return",
+      "line": 88,
+      "node_id": 14
+    },
+    {
+      "code": "return a * b // gcd (a, b)",
+      "dead": false,
+      "function": "lcm",
+      "kind": "Return",
+      "line": 92,
+      "node_id": 1
+    },
+    {
+      "code": "for c in colors: if c == usedcolor[u]: continue yield c",
+      "dead": false,
+      "function": "youcanusethiscolor",
+      "kind": "For",
+      "line": 118,
+      "node_id": 1
+    },
+    {
+      "code": "if c == usedcolor[u]: continue",
+      "dead": false,
+      "function": "youcanusethiscolor",
+      "kind": "If",
+      "line": 119,
+      "node_id": 2
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "function": "youcanusethiscolor",
+      "kind": "Continue",
+      "line": 120,
+      "node_id": 3
+    },
+    {
+      "code": "yield c",
+      "dead": false,
+      "function": "youcanusethiscolor",
+      "kind": "Expr",
+      "line": 121,
+      "node_id": 4
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "import sys",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "input = sys.stdin.readline",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "import math",
+      "dead": false,
+      "line": 10
+    },
+    {
+      "code": "from collections import deque",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "from fractions import gcd",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "from functools import lru_cache",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "MOD = 10**9+7",
+      "dead": false,
+      "line": 20
+    },
+    {
+      "code": "INF = float('inf')",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "return int(input().strip())",
+      "dead": false,
+      "line": 28
+    },
+    {
+      "code": "return input().strip()",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "return list(map(int,input().split()))",
+      "dead": false,
+      "line": 30
+    },
+    {
+      "code": "return list(map(str,input().split()))",
+      "dead": false,
+      "line": 31
+    },
+    {
+      "code": "return list(int(input()) for _ in range(n))",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "return list(input().strip() for _ in range(n))",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "return [list(map(int, input().split())) for _ in range(n)]",
+      "dead": false,
+      "line": 34
+    },
+    {
+      "code": "return [list(map(str, input().split())) for _ in range(n)]",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return pow(n, MOD-2, MOD)",
+      "dead": false,
+      "line": 38
+    },
+    {
+      "code": "kaijo_memo = []",
+      "dead": false,
+      "line": 41
+    },
+    {
+      "code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "return kaijo_memo[n]",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "kaijo_memo.append(1)",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "return kaijo_memo[n]",
+      "dead": false,
+      "line": 49
+    },
+    {
+      "code": "gyaku_kaijo_memo = []",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "return gyaku_kaijo_memo[n]",
+      "dead": false,
+      "line": 54
+    },
+    {
+      "code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "dead": false,
+      "line": 55
+    },
+    {
+      "code": "gyaku_kaijo_memo.append(1)",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "dead": false,
+      "line": 57
+    },
+    {
+      "code": "gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "dead": false,
+      "line": 58
+    },
+    {
+      "code": "return gyaku_kaijo_memo[n]",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "if(n == r): return 1",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "return 1",
+      "dead": false,
+      "line": 63
+    },
+    {
+      "code": "if(n < r or r < 0): return 0",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "return 0",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "ret = 1",
+      "dead": false,
+      "line": 66
+    },
+    {
+      "code": "ret = ret * kaijo(n) % MOD",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "return ret",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "arr = []",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "temp = n",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "cnt=0",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "while temp%i==0: cnt+=1 temp //= i",
+      "dead": false,
+      "line": 79
+    },
+    {
+      "code": "cnt+=1",
+      "dead": false,
+      "line": 80
+    },
+    {
+      "code": "temp //= i",
+      "dead": false,
+      "line": 81
+    },
+    {
+      "code": "arr.append([i, cnt])",
+      "dead": false,
+      "line": 82
+    },
+    {
+      "code": "if temp!=1: arr.append([temp, 1])",
+      "dead": false,
+      "line": 83
+    },
+    {
+      "code": "arr.append([temp, 1])",
+      "dead": false,
+      "line": 84
+    },
+    {
+      "code": "if arr==[]: arr.append([n, 1])",
+      "dead": false,
+      "line": 86
+    },
+    {
+      "code": "arr.append([n, 1])",
+      "dead": false,
+      "line": 87
+    },
+    {
+      "code": "return arr",
+      "dead": false,
+      "line": 88
+    },
+    {
+      "code": "return a * b // gcd (a, b)",
+      "dead": false,
+      "line": 92
+    },
+    {
+      "code": "N = inputI()",
+      "dead": false,
+      "line": 98
+    },
+    {
+      "code": "graph = [[] for _ in range(N)]",
+      "dead": false,
+      "line": 100
+    },
+    {
+      "code": "edges = []",
+      "dead": false,
+      "line": 101
+    },
+    {
+      "code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "dead": false,
+      "line": 103
+    },
+    {
+      "code": "a, b = inputIL()",
+      "dead": false,
+      "line": 104
+    },
+    {
+      "code": "edges.append((a-1, b-1))",
+      "dead": false,
+      "line": 105
+    },
+    {
+      "code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "dead": false,
+      "line": 107
+    },
+    {
+      "code": "graph[a].append(b)",
+      "dead": true,
+      "line": 108
+    },
+    {
+      "code": "graph[b].append(a)",
+      "dead": true,
+      "line": 109
+    },
+    {
+      "code": "k = max(len(edges) for edges in graph)",
+      "dead": false,
+      "line": 111
+    },
+    {
+      "code": "colors = [color for color in range(1, k + 1)]",
+      "dead": false,
+      "line": 113
+    },
+    {
+      "code": "usedcolor = [ None for _ in range(N) ]",
+      "dead": false,
+      "line": 114
+    },
+    {
+      "code": "colored = {}",
+      "dead": false,
+      "line": 115
+    },
+    {
+      "code": "for c in colors: if c == usedcolor[u]: continue yield c",
+      "dead": false,
+      "line": 118
+    },
+    {
+      "code": "if c == usedcolor[u]: continue",
+      "dead": false,
+      "line": 119
+    },
+    {
+      "code": "continue",
+      "dead": false,
+      "line": 120
+    },
+    {
+      "code": "yield c",
+      "dead": false,
+      "line": 121
+    },
+    {
+      "code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "dead": false,
+      "line": 123
+    },
+    {
+      "code": "color = youcanusethiscolor(u)",
+      "dead": false,
+      "line": 124
+    },
+    {
+      "code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "dead": false,
+      "line": 125
+    },
+    {
+      "code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "dead": false,
+      "line": 126
+    },
+    {
+      "code": "now = next(color)",
+      "dead": false,
+      "line": 127
+    },
+    {
+      "code": "colored[(u,v)] = colored[(v,u)] = now",
+      "dead": false,
+      "line": 128
+    },
+    {
+      "code": "usedcolor[v] = now",
+      "dead": false,
+      "line": 129
+    },
+    {
+      "code": "print(k)",
+      "dead": false,
+      "line": 131
+    },
+    {
+      "code": "for a,b in edges: print(colored[(a,b)])",
+      "dead": false,
+      "line": 132
+    },
+    {
+      "code": "print(colored[(a,b)])",
+      "dead": true,
+      "line": 133
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/p02850_s179363617.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 28,
+      "lineno": 28,
+      "name": "inputI",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 29,
+      "lineno": 29,
+      "name": "inputS",
+      "variables": []
+    },
+    {
+      "calls": [],
+      "end_lineno": 30,
+      "lineno": 30,
+      "name": "inputIL",
+      "variables": [
+        "int"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 31,
+      "lineno": 31,
+      "name": "inputSL",
+      "variables": [
+        "str"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 32,
+      "lineno": 32,
+      "name": "inputILs",
+      "variables": [
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 33,
+      "lineno": 33,
+      "name": "inputSLs",
+      "variables": [
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 34,
+      "lineno": 34,
+      "name": "inputILL",
+      "variables": [
+        "int",
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 35,
+      "lineno": 35,
+      "name": "inputSLL",
+      "variables": [
+        "n",
+        "str"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 38,
+      "lineno": 38,
+      "name": "inv",
+      "variables": [
+        "MOD",
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 49,
+      "lineno": 42,
+      "name": "kaijo",
+      "variables": [
+        "MOD",
+        "kaijo_memo",
+        "n"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 59,
+      "lineno": 52,
+      "name": "gyaku_kaijo",
+      "variables": [
+        "MOD",
+        "gyaku_kaijo_memo",
+        "n"
+      ]
+    },
+    {
+      "calls": [
+        "gyaku_kaijo",
+        "kaijo"
+      ],
+      "end_lineno": 70,
+      "lineno": 61,
+      "name": "nCr",
+      "variables": [
+        "MOD",
+        "n",
+        "r",
+        "ret"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 88,
+      "lineno": 73,
+      "name": "factorization",
+      "variables": [
+        "arr",
+        "cnt",
+        "i",
+        "n",
+        "temp"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 92,
+      "lineno": 91,
+      "name": "lcm",
+      "variables": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 121,
+      "lineno": 117,
+      "name": "youcanusethiscolor",
+      "variables": [
+        "c",
+        "colors",
+        "u",
+        "usedcolor"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "import sys",
+            "line": 7,
+            "vars": [
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "input = sys.stdin.readline",
+            "line": 8,
+            "vars": [
+              "sys.stdin.readline"
+            ]
+          },
+          {
+            "code": "import math",
+            "line": 10,
+            "vars": []
+          },
+          {
+            "code": "from collections import deque",
+            "line": 11,
+            "vars": []
+          },
+          {
+            "code": "from fractions import gcd",
+            "line": 12,
+            "vars": []
+          },
+          {
+            "code": "from functools import lru_cache",
+            "line": 13,
+            "vars": []
+          },
+          {
+            "code": "MOD = 10**9+7",
+            "line": 20,
+            "vars": []
+          },
+          {
+            "code": "INF = float('inf')",
+            "line": 21,
+            "vars": []
+          },
+          {
+            "code": "kaijo_memo = []",
+            "line": 41,
+            "vars": []
+          },
+          {
+            "code": "gyaku_kaijo_memo = []",
+            "line": 51,
+            "vars": []
+          },
+          {
+            "code": "N = inputI()",
+            "line": 98,
+            "vars": []
+          },
+          {
+            "code": "graph = [[] for _ in range(N)]",
+            "line": 100,
+            "vars": [
+              "N"
+            ]
+          },
+          {
+            "code": "edges = []",
+            "line": 101,
+            "vars": [
+              "N",
+              "graph"
+            ]
+          },
+          {
+            "code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+            "line": 103,
+            "vars": [
+              "N",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "a, b = inputIL()",
+            "line": 104,
+            "vars": [
+              "N",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "edges.append((a-1, b-1))",
+            "line": 105,
+            "vars": [
+              "N",
+              "a",
+              "b",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+            "line": 107,
+            "vars": [
+              "N",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "graph[a].append(b)",
+            "line": 108,
+            "vars": [
+              "N",
+              "a",
+              "b",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "graph[b].append(a)",
+            "line": 109,
+            "vars": [
+              "N",
+              "a",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "k = max(len(edges) for edges in graph)",
+            "line": 111,
+            "vars": [
+              "N",
+              "edges",
+              "graph"
+            ]
+          },
+          {
+            "code": "colors = [color for color in range(1, k + 1)]",
+            "line": 113,
+            "vars": [
+              "N",
+              "edges",
+              "graph",
+              "k"
+            ]
+          },
+          {
+            "code": "usedcolor = [ None for _ in range(N) ]",
+            "line": 114,
+            "vars": [
+              "N",
+              "edges",
+              "graph",
+              "k"
+            ]
+          },
+          {
+            "code": "colored = {}",
+            "line": 115,
+            "vars": [
+              "N",
+              "edges",
+              "graph",
+              "k"
+            ]
+          },
+          {
+            "code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+            "line": 123,
+            "vars": [
+              "N",
+              "colored",
+              "edges",
+              "graph",
+              "k"
+            ]
+          },
+          {
+            "code": "color = youcanusethiscolor(u)",
+            "line": 124,
+            "vars": [
+              "colored",
+              "edges",
+              "graph",
+              "k",
+              "u"
+            ]
+          },
+          {
+            "code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+            "line": 125,
+            "vars": [
+              "color",
+              "colored",
+              "edges",
+              "graph",
+              "k",
+              "u"
+            ]
+          },
+          {
+            "code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+            "line": 126,
+            "vars": [
+              "color",
+              "colored",
+              "edges",
+              "k",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "now = next(color)",
+            "line": 127,
+            "vars": [
+              "color",
+              "edges",
+              "k",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "colored[(u,v)] = colored[(v,u)] = now",
+            "line": 128,
+            "vars": [
+              "edges",
+              "k",
+              "now",
+              "u",
+              "v"
+            ]
+          },
+          {
+            "code": "usedcolor[v] = now",
+            "line": 129,
+            "vars": [
+              "colored",
+              "edges",
+              "k",
+              "now",
+              "v"
+            ]
+          },
+          {
+            "code": "print(k)",
+            "line": 131,
+            "vars": [
+              "colored",
+              "edges",
+              "k"
+            ]
+          },
+          {
+            "code": "for a,b in edges: print(colored[(a,b)])",
+            "line": 132,
+            "vars": [
+              "colored",
+              "edges"
+            ]
+          },
+          {
+            "code": "print(colored[(a,b)])",
+            "line": 133,
+            "vars": [
+              "a",
+              "b",
+              "colored"
+            ]
+          }
+        ],
+        "liveout": {
+          "INF": false,
+          "MOD": false,
+          "N": false,
+          "_": false,
+          "a": false,
+          "b": false,
+          "color": false,
+          "colored": false,
+          "colors": false,
+          "edges": false,
+          "graph": false,
+          "gyaku_kaijo_memo": false,
+          "input": false,
+          "k": false,
+          "kaijo_memo": false,
+          "now": false,
+          "sys.stdin.readline": false,
+          "u": false,
+          "usedcolor": false,
+          "v": false
+        },
+        "return_vars": []
+      },
+      "factorization": {
+        "base_liveout": [
+          "arr"
+        ],
+        "live_before": [
+          {
+            "code": "arr = []",
+            "line": 74,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "temp = n",
+            "line": 75,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+            "line": 76,
+            "vars": [
+              "arr",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+            "line": 77,
+            "vars": [
+              "arr",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "cnt=0",
+            "line": 78,
+            "vars": [
+              "arr",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "while temp%i==0: cnt+=1 temp //= i",
+            "line": 79,
+            "vars": [
+              "arr",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "cnt+=1",
+            "line": 80,
+            "vars": [
+              "arr",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "temp //= i",
+            "line": 81,
+            "vars": [
+              "arr",
+              "cnt",
+              "i",
+              "n"
+            ]
+          },
+          {
+            "code": "arr.append([i, cnt])",
+            "line": 82,
+            "vars": [
+              "arr",
+              "cnt",
+              "i",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "if temp!=1: arr.append([temp, 1])",
+            "line": 83,
+            "vars": [
+              "arr",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "arr.append([temp, 1])",
+            "line": 84,
+            "vars": [
+              "arr",
+              "n",
+              "temp"
+            ]
+          },
+          {
+            "code": "if arr==[]: arr.append([n, 1])",
+            "line": 86,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "arr.append([n, 1])",
+            "line": 87,
+            "vars": [
+              "arr",
+              "n"
+            ]
+          },
+          {
+            "code": "return arr",
+            "line": 88,
+            "vars": [
+              "arr"
+            ]
+          }
+        ],
+        "liveout": {
+          "arr": true,
+          "cnt": false,
+          "i": false,
+          "n": false,
+          "temp": false
+        },
+        "return_vars": [
+          "arr"
+        ]
+      },
+      "gyaku_kaijo": {
+        "base_liveout": [
+          "gyaku_kaijo_memo",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+            "line": 53,
+            "vars": [
+              "MOD",
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return gyaku_kaijo_memo[n]",
+            "line": 54,
+            "vars": [
+              "MOD",
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+            "line": 55,
+            "vars": [
+              "MOD",
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "gyaku_kaijo_memo.append(1)",
+            "line": 56,
+            "vars": [
+              "MOD",
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+            "line": 57,
+            "vars": [
+              "MOD",
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+            "line": 58,
+            "vars": [
+              "MOD",
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return gyaku_kaijo_memo[n]",
+            "line": 59,
+            "vars": [
+              "gyaku_kaijo_memo",
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": false,
+          "gyaku_kaijo_memo": true,
+          "n": true
+        },
+        "return_vars": [
+          "gyaku_kaijo_memo",
+          "n"
+        ]
+      },
+      "inputI": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return int(input().strip())",
+            "line": 28,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "inputIL": {
+        "base_liveout": [
+          "int"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(int,input().split()))",
+            "line": 30,
+            "vars": [
+              "int"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true
+        },
+        "return_vars": [
+          "int"
+        ]
+      },
+      "inputILL": {
+        "base_liveout": [
+          "int",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return [list(map(int, input().split())) for _ in range(n)]",
+            "line": 34,
+            "vars": [
+              "int",
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "int": true,
+          "n": true
+        },
+        "return_vars": [
+          "int",
+          "n"
+        ]
+      },
+      "inputILs": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return list(int(input()) for _ in range(n))",
+            "line": 32,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "inputS": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "return input().strip()",
+            "line": 29,
+            "vars": []
+          }
+        ],
+        "liveout": {},
+        "return_vars": []
+      },
+      "inputSL": {
+        "base_liveout": [
+          "str"
+        ],
+        "live_before": [
+          {
+            "code": "return list(map(str,input().split()))",
+            "line": 31,
+            "vars": [
+              "str"
+            ]
+          }
+        ],
+        "liveout": {
+          "str": true
+        },
+        "return_vars": [
+          "str"
+        ]
+      },
+      "inputSLL": {
+        "base_liveout": [
+          "n",
+          "str"
+        ],
+        "live_before": [
+          {
+            "code": "return [list(map(str, input().split())) for _ in range(n)]",
+            "line": 35,
+            "vars": [
+              "n",
+              "str"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true,
+          "str": true
+        },
+        "return_vars": [
+          "n",
+          "str"
+        ]
+      },
+      "inputSLs": {
+        "base_liveout": [
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return list(input().strip() for _ in range(n))",
+            "line": 33,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": true
+        },
+        "return_vars": [
+          "n"
+        ]
+      },
+      "inv": {
+        "base_liveout": [
+          "MOD",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "return pow(n, MOD-2, MOD)",
+            "line": 38,
+            "vars": [
+              "MOD",
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": true,
+          "n": true
+        },
+        "return_vars": [
+          "MOD",
+          "n"
+        ]
+      },
+      "kaijo": {
+        "base_liveout": [
+          "kaijo_memo",
+          "n"
+        ],
+        "live_before": [
+          {
+            "code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+            "line": 43,
+            "vars": [
+              "MOD",
+              "kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return kaijo_memo[n]",
+            "line": 44,
+            "vars": [
+              "MOD",
+              "kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+            "line": 45,
+            "vars": [
+              "MOD",
+              "kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "kaijo_memo.append(1)",
+            "line": 46,
+            "vars": [
+              "MOD",
+              "kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+            "line": 47,
+            "vars": [
+              "MOD",
+              "kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+            "line": 48,
+            "vars": [
+              "MOD",
+              "kaijo_memo",
+              "n"
+            ]
+          },
+          {
+            "code": "return kaijo_memo[n]",
+            "line": 49,
+            "vars": [
+              "kaijo_memo",
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": false,
+          "kaijo_memo": true,
+          "n": true
+        },
+        "return_vars": [
+          "kaijo_memo",
+          "n"
+        ]
+      },
+      "lcm": {
+        "base_liveout": [
+          "a",
+          "b"
+        ],
+        "live_before": [
+          {
+            "code": "return a * b // gcd (a, b)",
+            "line": 92,
+            "vars": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "liveout": {
+          "a": true,
+          "b": true
+        },
+        "return_vars": [
+          "a",
+          "b"
+        ]
+      },
+      "nCr": {
+        "base_liveout": [
+          "ret"
+        ],
+        "live_before": [
+          {
+            "code": "if(n == r): return 1",
+            "line": 62,
+            "vars": [
+              "MOD",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "return 1",
+            "line": 63,
+            "vars": [
+              "MOD",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "if(n < r or r < 0): return 0",
+            "line": 64,
+            "vars": [
+              "MOD",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "return 0",
+            "line": 65,
+            "vars": [
+              "MOD",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "ret = 1",
+            "line": 66,
+            "vars": [
+              "MOD",
+              "n",
+              "r"
+            ]
+          },
+          {
+            "code": "ret = ret * kaijo(n) % MOD",
+            "line": 67,
+            "vars": [
+              "MOD",
+              "n",
+              "r",
+              "ret"
+            ]
+          },
+          {
+            "code": "ret = ret * gyaku_kaijo(r) % MOD",
+            "line": 68,
+            "vars": [
+              "MOD",
+              "n",
+              "r",
+              "ret"
+            ]
+          },
+          {
+            "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+            "line": 69,
+            "vars": [
+              "MOD",
+              "n",
+              "r",
+              "ret"
+            ]
+          },
+          {
+            "code": "return ret",
+            "line": 70,
+            "vars": [
+              "ret"
+            ]
+          }
+        ],
+        "liveout": {
+          "MOD": false,
+          "n": false,
+          "r": false,
+          "ret": true
+        },
+        "return_vars": [
+          "ret"
+        ]
+      },
+      "youcanusethiscolor": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "for c in colors: if c == usedcolor[u]: continue yield c",
+            "line": 118,
+            "vars": [
+              "colors",
+              "u",
+              "usedcolor"
+            ]
+          },
+          {
+            "code": "if c == usedcolor[u]: continue",
+            "line": 119,
+            "vars": [
+              "c",
+              "u",
+              "usedcolor"
+            ]
+          },
+          {
+            "code": "continue",
+            "line": 120,
+            "vars": [
+              "c"
+            ]
+          },
+          {
+            "code": "yield c",
+            "line": 121,
+            "vars": [
+              "c"
+            ]
+          }
+        ],
+        "liveout": {
+          "c": false,
+          "colors": false,
+          "u": false,
+          "usedcolor": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for _ in range(N - 1):",
+      "cond": "for _ in range(N - 1)",
+      "function": "__module__",
+      "header_id": 14,
+      "line": 103,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for a, b in edges:",
+      "cond": "for a, b in edges",
+      "function": "__module__",
+      "header_id": 17,
+      "line": 107,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for u in range(N):",
+      "cond": "for u in range(N)",
+      "function": "__module__",
+      "header_id": 24,
+      "line": 123,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for v in graph[u]:",
+      "cond": "for v in graph[u]",
+      "function": "__module__",
+      "header_id": 26,
+      "line": 125,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for a,b in edges:",
+      "cond": "for a,b in edges",
+      "function": "__module__",
+      "header_id": 32,
+      "line": 132,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(2, int(-(-n**0.5//1))+1):",
+      "cond": "for i in range(2, int(-(-n**0.5//1))+1)",
+      "function": "factorization",
+      "header_id": 3,
+      "line": 76,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while temp%i==0:",
+      "cond": "temp % i == 0",
+      "function": "factorization",
+      "header_id": 6,
+      "line": 79,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while(len(gyaku_kaijo_memo) <= n):",
+      "cond": "len(gyaku_kaijo_memo) <= n",
+      "function": "gyaku_kaijo",
+      "header_id": 5,
+      "line": 57,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "while(len(kaijo_memo) <= n):",
+      "cond": "len(kaijo_memo) <= n",
+      "function": "kaijo",
+      "header_id": 5,
+      "line": 47,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for c in colors:",
+      "cond": "for c in colors",
+      "function": "youcanusethiscolor",
+      "header_id": 1,
+      "line": 118,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "input = sys.stdin.readline",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "import math",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "import math",
+      "b_line": 10,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "from collections import deque",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "from collections import deque",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "from collections import deque",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "from fractions import gcd",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "from fractions import gcd",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "from fractions import gcd",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "from fractions import gcd",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "from functools import lru_cache",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "from functools import lru_cache",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "from functools import lru_cache",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "from functools import lru_cache",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "from functools import lru_cache",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "MOD = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "MOD = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "MOD = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "MOD = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "MOD = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "MOD = 10**9+7",
+      "b_line": 20,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "INF = float('inf')",
+      "b_line": 21,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "kaijo_memo = []",
+      "b_line": 41,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "gyaku_kaijo_memo = []",
+      "b_line": 51,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "N = inputI()",
+      "b_line": 98,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "graph = [[] for _ in range(N)]",
+      "b_line": 100,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "edges = []",
+      "b_line": 101,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "b_line": 103,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "a, b = inputIL()",
+      "b_line": 104,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "a, b = inputIL()",
+      "a_line": 104,
+      "b_code": "edges.append((a-1, b-1))",
+      "b_line": 105,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "b_line": 107,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "k = max(len(edges) for edges in graph)",
+      "b_line": 111,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "colors = [color for color in range(1, k + 1)]",
+      "b_line": 113,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "usedcolor = [ None for _ in range(N) ]",
+      "b_line": 114,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "colored = {}",
+      "b_line": 115,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 123,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "color = youcanusethiscolor(u)",
+      "b_line": 124,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "color = youcanusethiscolor(u)",
+      "a_line": 124,
+      "b_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 125,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "color = youcanusethiscolor(u)",
+      "a_line": 124,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 125,
+      "b_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "b_line": 126,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "color = youcanusethiscolor(u)",
+      "a_line": 124,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 125,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 126,
+      "b_code": "now = next(color)",
+      "b_line": 127,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "color = youcanusethiscolor(u)",
+      "a_line": 124,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 125,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 126,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "now = next(color)",
+      "a_line": 127,
+      "b_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "b_line": 128,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "color = youcanusethiscolor(u)",
+      "a_line": 124,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 125,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 126,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "now = next(color)",
+      "a_line": 127,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored[(u,v)] = colored[(v,u)] = now",
+      "a_line": 128,
+      "b_code": "usedcolor[v] = now",
+      "b_line": 129,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "print(k)",
+      "b_line": 131,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import sys",
+      "a_line": 7,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "input = sys.stdin.readline",
+      "a_line": 8,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "import math",
+      "a_line": 10,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from collections import deque",
+      "a_line": 11,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from fractions import gcd",
+      "a_line": 12,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "from functools import lru_cache",
+      "a_line": 13,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "MOD = 10**9+7",
+      "a_line": 20,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "INF = float('inf')",
+      "a_line": 21,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "kaijo_memo = []",
+      "a_line": 41,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "gyaku_kaijo_memo = []",
+      "a_line": 51,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "N = inputI()",
+      "a_line": 98,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "graph = [[] for _ in range(N)]",
+      "a_line": 100,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edges = []",
+      "a_line": 101,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for _ in range(N - 1): a, b = inputIL() edges.append((a-1, b-1))",
+      "a_line": 103,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for a, b in edges: graph[a].append(b) graph[b].append(a)",
+      "a_line": 107,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "k = max(len(edges) for edges in graph)",
+      "a_line": 111,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colors = [color for color in range(1, k + 1)]",
+      "a_line": 113,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "usedcolor = [ None for _ in range(N) ]",
+      "a_line": 114,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "colored = {}",
+      "a_line": 115,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for u in range(N): color = youcanusethiscolor(u) for v in graph[u]: if (u,v) not in colored and (v,u) not in colored: now = next(color) colored[(u,v)] = colored[(v,u)] = now usedcolor[v] = now",
+      "a_line": 123,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "print(k)",
+      "a_line": 131,
+      "b_code": "for a,b in edges: print(colored[(a,b)])",
+      "b_line": 132,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "a_line": 43,
+      "b_code": "return kaijo_memo[n]",
+      "b_line": 44,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "a_line": 43,
+      "b_code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "b_line": 45,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "a_line": 43,
+      "b_code": "kaijo_memo.append(1)",
+      "b_line": 46,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "a_line": 45,
+      "b_code": "kaijo_memo.append(1)",
+      "b_line": 46,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "a_line": 43,
+      "b_code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "b_line": 47,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "a_line": 45,
+      "b_code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "b_line": 47,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "a_line": 43,
+      "b_code": "kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "b_line": 48,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "a_line": 45,
+      "b_code": "kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "b_line": 48,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "a_line": 47,
+      "b_code": "kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "b_line": 48,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) > n): return kaijo_memo[n]",
+      "a_line": 43,
+      "b_code": "return kaijo_memo[n]",
+      "b_line": 49,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(kaijo_memo) == 0): kaijo_memo.append(1)",
+      "a_line": 45,
+      "b_code": "return kaijo_memo[n]",
+      "b_line": 49,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "while(len(kaijo_memo) <= n): kaijo_memo.append(kaijo_memo[-1] * len(kaijo_memo) % MOD)",
+      "a_line": 47,
+      "b_code": "return kaijo_memo[n]",
+      "b_line": 49,
+      "function": "kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "a_line": 53,
+      "b_code": "return gyaku_kaijo_memo[n]",
+      "b_line": 54,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "a_line": 53,
+      "b_code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "b_line": 55,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "a_line": 53,
+      "b_code": "gyaku_kaijo_memo.append(1)",
+      "b_line": 56,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "a_line": 55,
+      "b_code": "gyaku_kaijo_memo.append(1)",
+      "b_line": 56,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "a_line": 53,
+      "b_code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "b_line": 57,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "a_line": 55,
+      "b_code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "b_line": 57,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "a_line": 53,
+      "b_code": "gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "b_line": 58,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "a_line": 55,
+      "b_code": "gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "b_line": 58,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "a_line": 57,
+      "b_code": "gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "b_line": 58,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) > n): return gyaku_kaijo_memo[n]",
+      "a_line": 53,
+      "b_code": "return gyaku_kaijo_memo[n]",
+      "b_line": 59,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(len(gyaku_kaijo_memo) == 0): gyaku_kaijo_memo.append(1)",
+      "a_line": 55,
+      "b_code": "return gyaku_kaijo_memo[n]",
+      "b_line": 59,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "while(len(gyaku_kaijo_memo) <= n): gyaku_kaijo_memo.append(gyaku_kaijo_memo[-1] * pow(len(gyaku_kaijo_memo),MOD-2,MOD) % MOD)",
+      "a_line": 57,
+      "b_code": "return gyaku_kaijo_memo[n]",
+      "b_line": 59,
+      "function": "gyaku_kaijo"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "return 1",
+      "b_line": 63,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "if(n < r or r < 0): return 0",
+      "b_line": 64,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "return 0",
+      "b_line": 65,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n < r or r < 0): return 0",
+      "a_line": 64,
+      "b_code": "return 0",
+      "b_line": 65,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "ret = 1",
+      "b_line": 66,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n < r or r < 0): return 0",
+      "a_line": 64,
+      "b_code": "ret = 1",
+      "b_line": 66,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "ret = ret * kaijo(n) % MOD",
+      "b_line": 67,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n < r or r < 0): return 0",
+      "a_line": 64,
+      "b_code": "ret = ret * kaijo(n) % MOD",
+      "b_line": 67,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = 1",
+      "a_line": 66,
+      "b_code": "ret = ret * kaijo(n) % MOD",
+      "b_line": 67,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "b_line": 68,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n < r or r < 0): return 0",
+      "a_line": 64,
+      "b_code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "b_line": 68,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = 1",
+      "a_line": 66,
+      "b_code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "b_line": 68,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = ret * kaijo(n) % MOD",
+      "a_line": 67,
+      "b_code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "b_line": 68,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "b_line": 69,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n < r or r < 0): return 0",
+      "a_line": 64,
+      "b_code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "b_line": 69,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = 1",
+      "a_line": 66,
+      "b_code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "b_line": 69,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = ret * kaijo(n) % MOD",
+      "a_line": 67,
+      "b_code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "b_line": 69,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "a_line": 68,
+      "b_code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "b_line": 69,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n == r): return 1",
+      "a_line": 62,
+      "b_code": "return ret",
+      "b_line": 70,
+      "function": "nCr"
+    },
+    {
+      "a_code": "if(n < r or r < 0): return 0",
+      "a_line": 64,
+      "b_code": "return ret",
+      "b_line": 70,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = 1",
+      "a_line": 66,
+      "b_code": "return ret",
+      "b_line": 70,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = ret * kaijo(n) % MOD",
+      "a_line": 67,
+      "b_code": "return ret",
+      "b_line": 70,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = ret * gyaku_kaijo(r) % MOD",
+      "a_line": 68,
+      "b_code": "return ret",
+      "b_line": 70,
+      "function": "nCr"
+    },
+    {
+      "a_code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+      "a_line": 69,
+      "b_code": "return ret",
+      "b_line": 70,
+      "function": "nCr"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "temp = n",
+      "b_line": 75,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 76,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 76,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 77,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 77,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "b_line": 77,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "cnt=0",
+      "b_line": 78,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "cnt=0",
+      "b_line": 78,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "cnt=0",
+      "b_line": 78,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 77,
+      "b_code": "cnt=0",
+      "b_line": 78,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 79,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 79,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 79,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 77,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 79,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 78,
+      "b_code": "while temp%i==0: cnt+=1 temp //= i",
+      "b_line": 79,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "cnt+=1",
+      "b_line": 80,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "cnt+=1",
+      "b_line": 80,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "cnt+=1",
+      "b_line": 80,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 77,
+      "b_code": "cnt+=1",
+      "b_line": 80,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 78,
+      "b_code": "cnt+=1",
+      "b_line": 80,
+      "function": "factorization"
+    },
+    {
+      "a_code": "while temp%i==0: cnt+=1 temp //= i",
+      "a_line": 79,
+      "b_code": "cnt+=1",
+      "b_line": 80,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 77,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 78,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "while temp%i==0: cnt+=1 temp //= i",
+      "a_line": 79,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt+=1",
+      "a_line": 80,
+      "b_code": "temp //= i",
+      "b_line": 81,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 82,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 82,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 82,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 77,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 82,
+      "function": "factorization"
+    },
+    {
+      "a_code": "cnt=0",
+      "a_line": 78,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 82,
+      "function": "factorization"
+    },
+    {
+      "a_code": "while temp%i==0: cnt+=1 temp //= i",
+      "a_line": 79,
+      "b_code": "arr.append([i, cnt])",
+      "b_line": 82,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "if temp!=1: arr.append([temp, 1])",
+      "b_line": 83,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "if temp!=1: arr.append([temp, 1])",
+      "b_line": 83,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "if temp!=1: arr.append([temp, 1])",
+      "b_line": 83,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 84,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 84,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 84,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 83,
+      "b_code": "arr.append([temp, 1])",
+      "b_line": 84,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 86,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 86,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 86,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 83,
+      "b_code": "if arr==[]: arr.append([n, 1])",
+      "b_line": 86,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 87,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 87,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 87,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 83,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 87,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if arr==[]: arr.append([n, 1])",
+      "a_line": 86,
+      "b_code": "arr.append([n, 1])",
+      "b_line": 87,
+      "function": "factorization"
+    },
+    {
+      "a_code": "arr = []",
+      "a_line": 74,
+      "b_code": "return arr",
+      "b_line": 88,
+      "function": "factorization"
+    },
+    {
+      "a_code": "temp = n",
+      "a_line": 75,
+      "b_code": "return arr",
+      "b_line": 88,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for i in range(2, int(-(-n**0.5//1))+1): if temp%i==0: cnt=0 while temp%i==0: cnt+=1 temp //= i arr.append([i, cnt])",
+      "a_line": 76,
+      "b_code": "return arr",
+      "b_line": 88,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if temp!=1: arr.append([temp, 1])",
+      "a_line": 83,
+      "b_code": "return arr",
+      "b_line": 88,
+      "function": "factorization"
+    },
+    {
+      "a_code": "if arr==[]: arr.append([n, 1])",
+      "a_line": 86,
+      "b_code": "return arr",
+      "b_line": 88,
+      "function": "factorization"
+    },
+    {
+      "a_code": "for c in colors: if c == usedcolor[u]: continue yield c",
+      "a_line": 118,
+      "b_code": "if c == usedcolor[u]: continue",
+      "b_line": 119,
+      "function": "youcanusethiscolor"
+    },
+    {
+      "a_code": "for c in colors: if c == usedcolor[u]: continue yield c",
+      "a_line": 118,
+      "b_code": "continue",
+      "b_line": 120,
+      "function": "youcanusethiscolor"
+    },
+    {
+      "a_code": "if c == usedcolor[u]: continue",
+      "a_line": 119,
+      "b_code": "continue",
+      "b_line": 120,
+      "function": "youcanusethiscolor"
+    },
+    {
+      "a_code": "for c in colors: if c == usedcolor[u]: continue yield c",
+      "a_line": 118,
+      "b_code": "yield c",
+      "b_line": 121,
+      "function": "youcanusethiscolor"
+    },
+    {
+      "a_code": "if c == usedcolor[u]: continue",
+      "a_line": 119,
+      "b_code": "yield c",
+      "b_line": 121,
+      "function": "youcanusethiscolor"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external call skipped gcd at line 92",
+      "external call skipped input at line 28",
+      "external call skipped input at line 29",
+      "external call skipped input at line 30",
+      "external call skipped input at line 31",
+      "external call skipped input at line 32",
+      "external call skipped input at line 33",
+      "external call skipped input at line 34",
+      "external call skipped input at line 35",
+      "external call skipped pow at line 38",
+      "external call skipped pow at line 58"
+    ]
+  },
+  "unsupported_reasons": [
+    "external call skipped gcd at line 92",
+    "external call skipped input at line 28",
+    "external call skipped input at line 29",
+    "external call skipped input at line 30",
+    "external call skipped input at line 31",
+    "external call skipped input at line 32",
+    "external call skipped input at line 33",
+    "external call skipped input at line 34",
+    "external call skipped input at line 35",
+    "external call skipped pow at line 38",
+    "external call skipped pow at line 58"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "input = sys.stdin.readline",
+        "line": 8,
+        "var": "sys.stdin.readline"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 8,
+        "var": "input"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "INF"
+      },
+      "from": {
+        "code": "input = sys.stdin.readline",
+        "line": 8,
+        "var": "input"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "INF"
+      },
+      "from": {
+        "code": "MOD = 10**9+7",
+        "line": 20,
+        "var": "MOD"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "MOD = 10**9+7",
+        "line": 20,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "kaijo_memo = []",
+        "line": 41,
+        "var": "kaijo_memo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "gyaku_kaijo_memo = []",
+        "line": 51,
+        "var": "gyaku_kaijo_memo"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "N = inputI()",
+        "line": 98,
+        "var": "N"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = inputI()",
+        "line": 98,
+        "var": "N"
+      },
+      "from": {
+        "code": "graph = [[] for _ in range(N)]",
+        "line": 100,
+        "var": "graph"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "graph = [[] for _ in range(N)]",
+        "line": 100,
+        "var": "graph"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "edges = []",
+        "line": 101,
+        "var": "edges"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "a, b = inputIL()",
+        "line": 104,
+        "var": "a"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "a, b = inputIL()",
+        "line": 104,
+        "var": "b"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = inputI()",
+        "line": 98,
+        "var": "N"
+      },
+      "from": {
+        "code": "k = max(len(edges) for edges in graph)",
+        "line": 111,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "graph = [[] for _ in range(N)]",
+        "line": 100,
+        "var": "graph"
+      },
+      "from": {
+        "code": "k = max(len(edges) for edges in graph)",
+        "line": 111,
+        "var": "k"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "k = max(len(edges) for edges in graph)",
+        "line": 111,
+        "var": "k"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = inputI()",
+        "line": 98,
+        "var": "N"
+      },
+      "from": {
+        "code": "colors = [color for color in range(1, k + 1)]",
+        "line": 113,
+        "var": "colors"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "graph = [[] for _ in range(N)]",
+        "line": 100,
+        "var": "graph"
+      },
+      "from": {
+        "code": "colors = [color for color in range(1, k + 1)]",
+        "line": 113,
+        "var": "colors"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "k = max(len(edges) for edges in graph)",
+        "line": 111,
+        "var": "k"
+      },
+      "from": {
+        "code": "colors = [color for color in range(1, k + 1)]",
+        "line": 113,
+        "var": "colors"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "colors = [color for color in range(1, k + 1)]",
+        "line": 113,
+        "var": "colors"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "N = inputI()",
+        "line": 98,
+        "var": "N"
+      },
+      "from": {
+        "code": "usedcolor = [ None for _ in range(N) ]",
+        "line": 114,
+        "var": "usedcolor"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "usedcolor = [ None for _ in range(N) ]",
+        "line": 114,
+        "var": "usedcolor"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "colored = {}",
+        "line": 115,
+        "var": "colored"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "color = youcanusethiscolor(u)",
+        "line": 124,
+        "var": "u"
+      },
+      "from": {
+        "code": "color = youcanusethiscolor(u)",
+        "line": 124,
+        "var": "color"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "color = youcanusethiscolor(u)",
+        "line": 124,
+        "var": "color"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "color = youcanusethiscolor(u)",
+        "line": 124,
+        "var": "color"
+      },
+      "from": {
+        "code": "now = next(color)",
+        "line": 127,
+        "var": "now"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = next(color)",
+        "line": 127,
+        "var": "u"
+      },
+      "from": {
+        "code": "now = next(color)",
+        "line": 127,
+        "var": "now"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "now = next(color)",
+        "line": 127,
+        "var": "now"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "color = youcanusethiscolor(u)",
+        "line": 124,
+        "var": "color"
+      },
+      "from": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "colored"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = next(color)",
+        "line": 127,
+        "var": "now"
+      },
+      "from": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "colored"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "u"
+      },
+      "from": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "colored"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "v"
+      },
+      "from": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "colored"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "colored[(u,v)] = colored[(v,u)] = now",
+        "line": 128,
+        "var": "colored"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "color = youcanusethiscolor(u)",
+        "line": 124,
+        "var": "color"
+      },
+      "from": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "usedcolor"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "now = next(color)",
+        "line": 127,
+        "var": "now"
+      },
+      "from": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "usedcolor"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "u"
+      },
+      "from": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "usedcolor"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "v"
+      },
+      "from": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "usedcolor"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "INF = float('inf')",
+        "line": 21,
+        "var": "INF"
+      },
+      "from": {
+        "code": "usedcolor[v] = now",
+        "line": 129,
+        "var": "usedcolor"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = 1",
+        "line": 66,
+        "var": "ret"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ret = ret * kaijo(n) % MOD",
+        "line": 67,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = ret * kaijo(n) % MOD",
+        "line": 67,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "n"
+      },
+      "from": {
+        "code": "ret = ret * kaijo(n) % MOD",
+        "line": 67,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = 1",
+        "line": 66,
+        "var": "ret"
+      },
+      "from": {
+        "code": "ret = ret * kaijo(n) % MOD",
+        "line": 67,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "r"
+      },
+      "from": {
+        "code": "ret = ret * kaijo(n) % MOD",
+        "line": 67,
+        "var": "ret"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "ret = ret * gyaku_kaijo(r) % MOD",
+        "line": 68,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(r) % MOD",
+        "line": 68,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "n"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(r) % MOD",
+        "line": 68,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "r"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(r) % MOD",
+        "line": 68,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = ret * kaijo(n) % MOD",
+        "line": 67,
+        "var": "ret"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(r) % MOD",
+        "line": 68,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+        "line": 69,
+        "var": "MOD"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+        "line": 69,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "n"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+        "line": 69,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def nCr(n,r):",
+        "line": 61,
+        "var": "r"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+        "line": 69,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ret = ret * gyaku_kaijo(r) % MOD",
+        "line": 68,
+        "var": "ret"
+      },
+      "from": {
+        "code": "ret = ret * gyaku_kaijo(n-r) % MOD",
+        "line": 69,
+        "var": "ret"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def factorization(n):",
+        "line": 73,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "arr = []",
+        "line": 74,
+        "var": "arr"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def factorization(n):",
+        "line": 73,
+        "var": "n"
+      },
+      "from": {
+        "code": "temp = n",
+        "line": 75,
+        "var": "temp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 74,
+        "var": "arr"
+      },
+      "from": {
+        "code": "temp = n",
+        "line": 75,
+        "var": "temp"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 74,
+        "var": "arr"
+      },
+      "from": {
+        "code": "cnt=0",
+        "line": 78,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 74,
+        "var": "arr"
+      },
+      "from": {
+        "code": "cnt+=1",
+        "line": 80,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "temp //= i",
+        "line": 81,
+        "var": "i"
+      },
+      "from": {
+        "code": "temp //= i",
+        "line": 81,
+        "var": "temp"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "arr = []",
+        "line": 74,
+        "var": "arr"
+      },
+      "from": {
+        "code": "temp //= i",
+        "line": 81,
+        "var": "temp"
+      },
+      "label": "negative"
+    }
+  ]
+}

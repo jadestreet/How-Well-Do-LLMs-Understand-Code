@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does the value of variable self.links at line 40: <statement> self.links[to][rev][0] += d </statement> depend on the value of variable t at line 27: <statement> def dfs(self, v, t, flow): </statement>?",
+    "Does variable s at line 15: <statement> def bfs(self, s): </statement> determine the value stored in variable self.depth at line 25: <statement> self.depth = depth </statement>?",
+    "Does variable N at line 57: <statement> N = int(input()) </statement> determine the value stored in variable d at line 68: <statement> c, d = map(int, input().split()) </statement>?",
+    "Does variable current_flow at line 44: <statement> def max_flow(self, s, t): </statement> determine the value stored in variable self.progress at line 50: <statement> self.progress = [0] * self.n </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement for cap, to, rev in self.links[v]: if cap > 0 and depth[to] < 0: depth[to] = depth[v] + 1 q.append(to) be reached during execution?",
+    "Is the statement if d == 0: continue unreachable during execution?",
+    "Can the statement self.bfs(s) be considered dead code because it is never executed?",
+    "Is it possible for the statement flow = 0 to execute?"
+  ],
+  "dominators": [
+    "Does the statement line 72: <statement> if rl[i][0] < bl[j][0] and rl[i][1] < bl[j][1]: mf.add_link(i+1, j+N+1, 1) </statement> dominate line 60: <statement> mf = Dinic(2 * N + 2) </statement>?",
+    "Is it guaranteed that whenever line 24: <statement> q.append(to) </statement> is reached, the statement line 22: <statement> if cap > 0 and depth[to] < 0: depth[to] = depth[v] + 1 q.append(to) </statement> has already been reached?",
+    "Is it guaranteed that whenever line 58: <statement> rl = [] </statement> is reached, the statement line 62: <statement> mf.add_link(0, i+1, 1) </statement> has already been reached?",
+    "Does the statement line 39: <statement> link[0] -= d </statement> dominate line 40: <statement> self.links[to][rev][0] += d </statement>?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function Dinic.bfs to function main?",
+    "Can function Dinic.max_flow eventually call function Dinic.dfs?",
+    "Can function Dinic.dfs eventually call function Dinic.max_flow?",
+    "Can function main eventually call function Dinic.__init__?"
+  ],
+  "liveness": [
+    "Is variable flow live at the end of function Dinic.max_flow?",
+    "Does variable self remain in use at the end of function Dinic.add_link?",
+    "Does variable flow remain in use at the end of function Dinic.dfs?",
+    "Does variable v remain in use at the end of function Dinic.bfs?"
+  ],
+  "loop_reachability": [
+    "Can the loop with condition True be skipped entirely?",
+    "Is the loop with condition True always executed?"
+  ]
+}

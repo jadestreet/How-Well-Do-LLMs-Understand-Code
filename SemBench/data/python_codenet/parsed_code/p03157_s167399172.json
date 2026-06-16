@@ -1,0 +1,4285 @@
+{
+  "cfg_statements": [
+    {
+      "code": "H, W = map(int, input().split())",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 1,
+      "node_id": 1
+    },
+    {
+      "code": "S = [list(input()) for _ in range(H)]",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 2,
+      "node_id": 2
+    },
+    {
+      "code": "edge = []",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 3,
+      "node_id": 3
+    },
+    {
+      "code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 6,
+      "node_id": 4
+    },
+    {
+      "code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 7,
+      "node_id": 5
+    },
+    {
+      "code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 8,
+      "node_id": 6
+    },
+    {
+      "code": "edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 9,
+      "node_id": 7
+    },
+    {
+      "code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 11,
+      "node_id": 8
+    },
+    {
+      "code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 12,
+      "node_id": 9
+    },
+    {
+      "code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 13,
+      "node_id": 10
+    },
+    {
+      "code": "edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 14,
+      "node_id": 11
+    },
+    {
+      "code": "union = UnionFind(H*W)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 64,
+      "node_id": 12
+    },
+    {
+      "code": "for l, r in edge: union.unite(l, r)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 65,
+      "node_id": 13
+    },
+    {
+      "code": "union.unite(l, r)",
+      "dead": true,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 66,
+      "node_id": 14
+    },
+    {
+      "code": "cnt = [0] * (H*W)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 67,
+      "node_id": 15
+    },
+    {
+      "code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 68,
+      "node_id": 16
+    },
+    {
+      "code": "c = union.find_root(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 69,
+      "node_id": 17
+    },
+    {
+      "code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 70,
+      "node_id": 18
+    },
+    {
+      "code": "cnt[c] += 1",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 71,
+      "node_id": 19
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 73,
+      "node_id": 20
+    },
+    {
+      "code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "For",
+      "line": 74,
+      "node_id": 21
+    },
+    {
+      "code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "If",
+      "line": 75,
+      "node_id": 22
+    },
+    {
+      "code": "r = union.find_root(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 76,
+      "node_id": 23
+    },
+    {
+      "code": "c = union.count(i)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Assign",
+      "line": 77,
+      "node_id": 24
+    },
+    {
+      "code": "ans += cnt[r] * (c-cnt[r])",
+      "dead": false,
+      "function": "__module__",
+      "kind": "AugAssign",
+      "line": 78,
+      "node_id": 25
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "function": "__module__",
+      "kind": "Expr",
+      "line": 79,
+      "node_id": 26
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 21,
+      "node_id": 1
+    },
+    {
+      "code": "self.root = [-1]*(n+1)",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 22,
+      "node_id": 2
+    },
+    {
+      "code": "self.rnk = [0]*(n+1)",
+      "dead": false,
+      "function": "UnionFind.__init__",
+      "kind": "Assign",
+      "line": 23,
+      "node_id": 3
+    },
+    {
+      "code": "return self.root[x] < 0",
+      "dead": false,
+      "function": "UnionFind.is_root",
+      "kind": "Return",
+      "line": 26,
+      "node_id": 1
+    },
+    {
+      "code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+      "dead": false,
+      "function": "UnionFind.find_root",
+      "kind": "Expr",
+      "line": 29,
+      "node_id": 1
+    },
+    {
+      "code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+      "dead": false,
+      "function": "UnionFind.find_root",
+      "kind": "If",
+      "line": 32,
+      "node_id": 2
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "function": "UnionFind.find_root",
+      "kind": "Return",
+      "line": 33,
+      "node_id": 3
+    },
+    {
+      "code": "self.root[x] = self.find_root(self.root[x])",
+      "dead": false,
+      "function": "UnionFind.find_root",
+      "kind": "Assign",
+      "line": 35,
+      "node_id": 4
+    },
+    {
+      "code": "return self.root[x]",
+      "dead": false,
+      "function": "UnionFind.find_root",
+      "kind": "Return",
+      "line": 36,
+      "node_id": 5
+    },
+    {
+      "code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "Expr",
+      "line": 39,
+      "node_id": 1
+    },
+    {
+      "code": "x = self.find_root(x)",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "Assign",
+      "line": 42,
+      "node_id": 2
+    },
+    {
+      "code": "y = self.find_root(y)",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "Assign",
+      "line": 43,
+      "node_id": 3
+    },
+    {
+      "code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "If",
+      "line": 44,
+      "node_id": 4
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "Return",
+      "line": 45,
+      "node_id": 5
+    },
+    {
+      "code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "If",
+      "line": 46,
+      "node_id": 6
+    },
+    {
+      "code": "self.root[x] += self.root[y]",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "AugAssign",
+      "line": 47,
+      "node_id": 7
+    },
+    {
+      "code": "self.root[y] = x",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "Assign",
+      "line": 48,
+      "node_id": 8
+    },
+    {
+      "code": "self.root[y] += self.root[x]",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "AugAssign",
+      "line": 50,
+      "node_id": 9
+    },
+    {
+      "code": "self.root[x] = y",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "Assign",
+      "line": 51,
+      "node_id": 10
+    },
+    {
+      "code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "If",
+      "line": 52,
+      "node_id": 11
+    },
+    {
+      "code": "self.rnk[y] += 1",
+      "dead": false,
+      "function": "UnionFind.unite",
+      "kind": "AugAssign",
+      "line": 53,
+      "node_id": 12
+    },
+    {
+      "code": "''' \u540c\u4e00\u306e\u30eb\u30fc\u30c4\u3092\u6301\u3064\u304b\u3069\u3046\u304b\u8abf\u67fb\u3059\u308b '''",
+      "dead": false,
+      "function": "UnionFind.is_same_group",
+      "kind": "Expr",
+      "line": 56,
+      "node_id": 1
+    },
+    {
+      "code": "return self.find_root(x) == self.find_root(y)",
+      "dead": false,
+      "function": "UnionFind.is_same_group",
+      "kind": "Return",
+      "line": 59,
+      "node_id": 2
+    },
+    {
+      "code": "return -self.root[self.find_root(x)]",
+      "dead": false,
+      "function": "UnionFind.count",
+      "kind": "Return",
+      "line": 62,
+      "node_id": 1
+    }
+  ],
+  "dead_code": [
+    {
+      "code": "H, W = map(int, input().split())",
+      "dead": false,
+      "line": 1
+    },
+    {
+      "code": "S = [list(input()) for _ in range(H)]",
+      "dead": false,
+      "line": 2
+    },
+    {
+      "code": "edge = []",
+      "dead": false,
+      "line": 3
+    },
+    {
+      "code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "line": 6
+    },
+    {
+      "code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "line": 7
+    },
+    {
+      "code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "line": 8
+    },
+    {
+      "code": "edge.append((i*W+j,i*W+j+1))",
+      "dead": false,
+      "line": 9
+    },
+    {
+      "code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "line": 11
+    },
+    {
+      "code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "line": 12
+    },
+    {
+      "code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "line": 13
+    },
+    {
+      "code": "edge.append((i*W+j, (i+1)*W+j))",
+      "dead": false,
+      "line": 14
+    },
+    {
+      "code": "self.n = n",
+      "dead": false,
+      "line": 21
+    },
+    {
+      "code": "self.root = [-1]*(n+1)",
+      "dead": false,
+      "line": 22
+    },
+    {
+      "code": "self.rnk = [0]*(n+1)",
+      "dead": false,
+      "line": 23
+    },
+    {
+      "code": "return self.root[x] < 0",
+      "dead": false,
+      "line": 26
+    },
+    {
+      "code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+      "dead": false,
+      "line": 29
+    },
+    {
+      "code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+      "dead": false,
+      "line": 32
+    },
+    {
+      "code": "return x",
+      "dead": false,
+      "line": 33
+    },
+    {
+      "code": "self.root[x] = self.find_root(self.root[x])",
+      "dead": false,
+      "line": 35
+    },
+    {
+      "code": "return self.root[x]",
+      "dead": false,
+      "line": 36
+    },
+    {
+      "code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "dead": false,
+      "line": 39
+    },
+    {
+      "code": "x = self.find_root(x)",
+      "dead": false,
+      "line": 42
+    },
+    {
+      "code": "y = self.find_root(y)",
+      "dead": false,
+      "line": 43
+    },
+    {
+      "code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "dead": false,
+      "line": 44
+    },
+    {
+      "code": "return",
+      "dead": false,
+      "line": 45
+    },
+    {
+      "code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "dead": false,
+      "line": 46
+    },
+    {
+      "code": "self.root[x] += self.root[y]",
+      "dead": false,
+      "line": 47
+    },
+    {
+      "code": "self.root[y] = x",
+      "dead": false,
+      "line": 48
+    },
+    {
+      "code": "self.root[y] += self.root[x]",
+      "dead": false,
+      "line": 50
+    },
+    {
+      "code": "self.root[x] = y",
+      "dead": false,
+      "line": 51
+    },
+    {
+      "code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "dead": false,
+      "line": 52
+    },
+    {
+      "code": "self.rnk[y] += 1",
+      "dead": false,
+      "line": 53
+    },
+    {
+      "code": "''' \u540c\u4e00\u306e\u30eb\u30fc\u30c4\u3092\u6301\u3064\u304b\u3069\u3046\u304b\u8abf\u67fb\u3059\u308b '''",
+      "dead": false,
+      "line": 56
+    },
+    {
+      "code": "return self.find_root(x) == self.find_root(y)",
+      "dead": false,
+      "line": 59
+    },
+    {
+      "code": "return -self.root[self.find_root(x)]",
+      "dead": false,
+      "line": 62
+    },
+    {
+      "code": "union = UnionFind(H*W)",
+      "dead": false,
+      "line": 64
+    },
+    {
+      "code": "for l, r in edge: union.unite(l, r)",
+      "dead": false,
+      "line": 65
+    },
+    {
+      "code": "union.unite(l, r)",
+      "dead": true,
+      "line": 66
+    },
+    {
+      "code": "cnt = [0] * (H*W)",
+      "dead": false,
+      "line": 67
+    },
+    {
+      "code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "dead": false,
+      "line": 68
+    },
+    {
+      "code": "c = union.find_root(i)",
+      "dead": false,
+      "line": 69
+    },
+    {
+      "code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "dead": false,
+      "line": 70
+    },
+    {
+      "code": "cnt[c] += 1",
+      "dead": false,
+      "line": 71
+    },
+    {
+      "code": "ans = 0",
+      "dead": false,
+      "line": 73
+    },
+    {
+      "code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "dead": false,
+      "line": 74
+    },
+    {
+      "code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "dead": false,
+      "line": 75
+    },
+    {
+      "code": "r = union.find_root(i)",
+      "dead": false,
+      "line": 76
+    },
+    {
+      "code": "c = union.count(i)",
+      "dead": false,
+      "line": 77
+    },
+    {
+      "code": "ans += cnt[r] * (c-cnt[r])",
+      "dead": false,
+      "line": 78
+    },
+    {
+      "code": "print(ans)",
+      "dead": false,
+      "line": 79
+    }
+  ],
+  "file": "SemBench/data/python_codenet/code/others/p03157_s167399172.py",
+  "functions": [
+    {
+      "calls": [],
+      "end_lineno": 23,
+      "lineno": 20,
+      "name": "UnionFind.__init__",
+      "variables": [
+        "n",
+        "self",
+        "self.n",
+        "self.rnk",
+        "self.root"
+      ]
+    },
+    {
+      "calls": [],
+      "end_lineno": 26,
+      "lineno": 25,
+      "name": "UnionFind.is_root",
+      "variables": [
+        "self",
+        "self.root",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find_root"
+      ],
+      "end_lineno": 36,
+      "lineno": 28,
+      "name": "UnionFind.find_root",
+      "variables": [
+        "self",
+        "self.root",
+        "x"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find_root"
+      ],
+      "end_lineno": 53,
+      "lineno": 38,
+      "name": "UnionFind.unite",
+      "variables": [
+        "self",
+        "self.rnk",
+        "self.root",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find_root"
+      ],
+      "end_lineno": 59,
+      "lineno": 55,
+      "name": "UnionFind.is_same_group",
+      "variables": [
+        "self",
+        "x",
+        "y"
+      ]
+    },
+    {
+      "calls": [
+        "UnionFind.find_root"
+      ],
+      "end_lineno": 62,
+      "lineno": 61,
+      "name": "UnionFind.count",
+      "variables": [
+        "self",
+        "self.root",
+        "x"
+      ]
+    }
+  ],
+  "liveness": {
+    "functions": {
+      "UnionFind.__init__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "self.n = n",
+            "line": 21,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.root = [-1]*(n+1)",
+            "line": 22,
+            "vars": [
+              "n"
+            ]
+          },
+          {
+            "code": "self.rnk = [0]*(n+1)",
+            "line": 23,
+            "vars": [
+              "n"
+            ]
+          }
+        ],
+        "liveout": {
+          "n": false,
+          "self": false,
+          "self.n": false,
+          "self.rnk": false,
+          "self.root": false
+        },
+        "return_vars": []
+      },
+      "UnionFind.count": {
+        "base_liveout": [
+          "self",
+          "self.root",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "return -self.root[self.find_root(x)]",
+            "line": 62,
+            "vars": [
+              "self",
+              "self.root",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "self.root": true,
+          "x": true
+        },
+        "return_vars": [
+          "self",
+          "self.root",
+          "x"
+        ]
+      },
+      "UnionFind.find_root": {
+        "base_liveout": [
+          "self.root",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+            "line": 29,
+            "vars": [
+              "self",
+              "self.root",
+              "x"
+            ]
+          },
+          {
+            "code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+            "line": 32,
+            "vars": [
+              "self",
+              "self.root",
+              "x"
+            ]
+          },
+          {
+            "code": "return x",
+            "line": 33,
+            "vars": [
+              "self",
+              "self.root",
+              "x"
+            ]
+          },
+          {
+            "code": "self.root[x] = self.find_root(self.root[x])",
+            "line": 35,
+            "vars": [
+              "self",
+              "self.root",
+              "x"
+            ]
+          },
+          {
+            "code": "return self.root[x]",
+            "line": 36,
+            "vars": [
+              "self.root",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.root": true,
+          "x": true
+        },
+        "return_vars": [
+          "self.root",
+          "x"
+        ]
+      },
+      "UnionFind.is_root": {
+        "base_liveout": [
+          "self.root",
+          "x"
+        ],
+        "live_before": [
+          {
+            "code": "return self.root[x] < 0",
+            "line": 26,
+            "vars": [
+              "self.root",
+              "x"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.root": true,
+          "x": true
+        },
+        "return_vars": [
+          "self.root",
+          "x"
+        ]
+      },
+      "UnionFind.is_same_group": {
+        "base_liveout": [
+          "self",
+          "x",
+          "y"
+        ],
+        "live_before": [
+          {
+            "code": "''' \u540c\u4e00\u306e\u30eb\u30fc\u30c4\u3092\u6301\u3064\u304b\u3069\u3046\u304b\u8abf\u67fb\u3059\u308b '''",
+            "line": 56,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "return self.find_root(x) == self.find_root(y)",
+            "line": 59,
+            "vars": [
+              "self",
+              "x",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": true,
+          "x": true,
+          "y": true
+        },
+        "return_vars": [
+          "self",
+          "x",
+          "y"
+        ]
+      },
+      "UnionFind.unite": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+            "line": 39,
+            "vars": [
+              "self",
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "x = self.find_root(x)",
+            "line": 42,
+            "vars": [
+              "self",
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "y = self.find_root(y)",
+            "line": 43,
+            "vars": [
+              "self",
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+            "line": 44,
+            "vars": [
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "return",
+            "line": 45,
+            "vars": [
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+            "line": 46,
+            "vars": [
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.root[x] += self.root[y]",
+            "line": 47,
+            "vars": [
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.root[y] = x",
+            "line": 48,
+            "vars": [
+              "self.rnk",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.root[y] += self.root[x]",
+            "line": 50,
+            "vars": [
+              "self.rnk",
+              "self.root",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.root[x] = y",
+            "line": 51,
+            "vars": [
+              "self.rnk",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+            "line": 52,
+            "vars": [
+              "self.rnk",
+              "x",
+              "y"
+            ]
+          },
+          {
+            "code": "self.rnk[y] += 1",
+            "line": 53,
+            "vars": [
+              "self.rnk",
+              "y"
+            ]
+          }
+        ],
+        "liveout": {
+          "self": false,
+          "self.rnk": false,
+          "self.root": false,
+          "x": false,
+          "y": false
+        },
+        "return_vars": []
+      },
+      "__module__": {
+        "base_liveout": [],
+        "live_before": [
+          {
+            "code": "H, W = map(int, input().split())",
+            "line": 1,
+            "vars": [
+              "int"
+            ]
+          },
+          {
+            "code": "S = [list(input()) for _ in range(H)]",
+            "line": 2,
+            "vars": [
+              "H",
+              "W"
+            ]
+          },
+          {
+            "code": "edge = []",
+            "line": 3,
+            "vars": [
+              "H",
+              "S",
+              "W"
+            ]
+          },
+          {
+            "code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+            "line": 6,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge"
+            ]
+          },
+          {
+            "code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+            "line": 7,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "i"
+            ]
+          },
+          {
+            "code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+            "line": 8,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "edge.append((i*W+j,i*W+j+1))",
+            "line": 9,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+            "line": 11,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge"
+            ]
+          },
+          {
+            "code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+            "line": 12,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "i"
+            ]
+          },
+          {
+            "code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+            "line": 13,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "edge.append((i*W+j, (i+1)*W+j))",
+            "line": 14,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "code": "union = UnionFind(H*W)",
+            "line": 64,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge"
+            ]
+          },
+          {
+            "code": "for l, r in edge: union.unite(l, r)",
+            "line": 65,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "edge",
+              "union"
+            ]
+          },
+          {
+            "code": "union.unite(l, r)",
+            "line": 66,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "l",
+              "r",
+              "union"
+            ]
+          },
+          {
+            "code": "cnt = [0] * (H*W)",
+            "line": 67,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "union"
+            ]
+          },
+          {
+            "code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+            "line": 68,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "cnt",
+              "union"
+            ]
+          },
+          {
+            "code": "c = union.find_root(i)",
+            "line": 69,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "cnt",
+              "i",
+              "union"
+            ]
+          },
+          {
+            "code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+            "line": 70,
+            "vars": [
+              "H",
+              "S",
+              "W",
+              "c",
+              "cnt",
+              "i",
+              "union"
+            ]
+          },
+          {
+            "code": "cnt[c] += 1",
+            "line": 71,
+            "vars": [
+              "H",
+              "W",
+              "c",
+              "cnt",
+              "union"
+            ]
+          },
+          {
+            "code": "ans = 0",
+            "line": 73,
+            "vars": [
+              "H",
+              "W",
+              "cnt",
+              "union"
+            ]
+          },
+          {
+            "code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+            "line": 74,
+            "vars": [
+              "H",
+              "W",
+              "cnt",
+              "union"
+            ]
+          },
+          {
+            "code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+            "line": 75,
+            "vars": [
+              "cnt",
+              "i",
+              "union"
+            ]
+          },
+          {
+            "code": "r = union.find_root(i)",
+            "line": 76,
+            "vars": [
+              "cnt",
+              "i",
+              "union"
+            ]
+          },
+          {
+            "code": "c = union.count(i)",
+            "line": 77,
+            "vars": [
+              "cnt",
+              "i",
+              "r",
+              "union"
+            ]
+          },
+          {
+            "code": "ans += cnt[r] * (c-cnt[r])",
+            "line": 78,
+            "vars": [
+              "c",
+              "cnt",
+              "r"
+            ]
+          },
+          {
+            "code": "print(ans)",
+            "line": 79,
+            "vars": [
+              "ans"
+            ]
+          }
+        ],
+        "liveout": {
+          "H": false,
+          "S": false,
+          "W": false,
+          "ans": false,
+          "c": false,
+          "cnt": false,
+          "edge": false,
+          "i": false,
+          "int": false,
+          "j": false,
+          "l": false,
+          "r": false,
+          "union": false
+        },
+        "return_vars": []
+      }
+    }
+  },
+  "loops": [
+    {
+      "certainty": "unknown",
+      "code": "for i in range(H):",
+      "cond": "for i in range(H)",
+      "function": "__module__",
+      "header_id": 4,
+      "line": 6,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(W-1):",
+      "cond": "for j in range(W-1)",
+      "function": "__module__",
+      "header_id": 5,
+      "line": 7,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(H-1):",
+      "cond": "for i in range(H-1)",
+      "function": "__module__",
+      "header_id": 8,
+      "line": 11,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for j in range(W):",
+      "cond": "for j in range(W)",
+      "function": "__module__",
+      "header_id": 9,
+      "line": 12,
+      "reachable": true
+    },
+    {
+      "certainty": "never_runs",
+      "code": "for l, r in edge:",
+      "cond": "for l, r in edge",
+      "function": "__module__",
+      "header_id": 13,
+      "line": 65,
+      "reachable": false
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(H*W):",
+      "cond": "for i in range(H*W)",
+      "function": "__module__",
+      "header_id": 16,
+      "line": 68,
+      "reachable": true
+    },
+    {
+      "certainty": "unknown",
+      "code": "for i in range(H*W):",
+      "cond": "for i in range(H*W)",
+      "function": "__module__",
+      "header_id": 21,
+      "line": 74,
+      "reachable": true
+    }
+  ],
+  "strict_dominators": [
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "S = [list(input()) for _ in range(H)]",
+      "b_line": 2,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "edge = []",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "edge = []",
+      "b_line": 3,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 6,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 7,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 7,
+      "b_code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "b_line": 8,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "edge.append((i*W+j,i*W+j+1))",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "edge.append((i*W+j,i*W+j+1))",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "edge.append((i*W+j,i*W+j+1))",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "edge.append((i*W+j,i*W+j+1))",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 7,
+      "b_code": "edge.append((i*W+j,i*W+j+1))",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 8,
+      "b_code": "edge.append((i*W+j,i*W+j+1))",
+      "b_line": 9,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 11,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 12,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 12,
+      "b_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 13,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 12,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 13,
+      "b_code": "edge.append((i*W+j, (i+1)*W+j))",
+      "b_line": 14,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "union = UnionFind(H*W)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "union = UnionFind(H*W)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "union = UnionFind(H*W)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "union = UnionFind(H*W)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "union = UnionFind(H*W)",
+      "b_line": 64,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for l, r in edge: union.unite(l, r)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for l, r in edge: union.unite(l, r)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for l, r in edge: union.unite(l, r)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "for l, r in edge: union.unite(l, r)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "for l, r in edge: union.unite(l, r)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "for l, r in edge: union.unite(l, r)",
+      "b_line": 65,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "cnt = [0] * (H*W)",
+      "b_line": 67,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 68,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "c = union.find_root(i)",
+      "b_line": 69,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = union.find_root(i)",
+      "a_line": 69,
+      "b_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "b_line": 70,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = union.find_root(i)",
+      "a_line": 69,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 70,
+      "b_code": "cnt[c] += 1",
+      "b_line": 71,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "ans = 0",
+      "b_line": 73,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 73,
+      "b_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 74,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 73,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 74,
+      "b_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "b_line": 75,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 73,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 74,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 75,
+      "b_code": "r = union.find_root(i)",
+      "b_line": 76,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 73,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 74,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 75,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "r = union.find_root(i)",
+      "a_line": 76,
+      "b_code": "c = union.count(i)",
+      "b_line": 77,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 73,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 74,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 75,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "r = union.find_root(i)",
+      "a_line": 76,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "c = union.count(i)",
+      "a_line": 77,
+      "b_code": "ans += cnt[r] * (c-cnt[r])",
+      "b_line": 78,
+      "function": "__module__"
+    },
+    {
+      "a_code": "H, W = map(int, input().split())",
+      "a_line": 1,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "S = [list(input()) for _ in range(H)]",
+      "a_line": 2,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "edge = []",
+      "a_line": 3,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H): for j in range(W-1): if S[i][j] != S[i][j+1]: edge.append((i*W+j,i*W+j+1))",
+      "a_line": 6,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H-1): for j in range(W): if S[i][j] != S[i+1][j]: edge.append((i*W+j, (i+1)*W+j))",
+      "a_line": 11,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "union = UnionFind(H*W)",
+      "a_line": 64,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for l, r in edge: union.unite(l, r)",
+      "a_line": 65,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "cnt = [0] * (H*W)",
+      "a_line": 67,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): c = union.find_root(i) if S[i//W][i%W] == \"#\": cnt[c] += 1",
+      "a_line": 68,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "ans = 0",
+      "a_line": 73,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "for i in range(H*W): if union.is_root(i): r = union.find_root(i) c = union.count(i) ans += cnt[r] * (c-cnt[r])",
+      "a_line": 74,
+      "b_code": "print(ans)",
+      "b_line": 79,
+      "function": "__module__"
+    },
+    {
+      "a_code": "self.n = n",
+      "a_line": 21,
+      "b_code": "self.root = [-1]*(n+1)",
+      "b_line": 22,
+      "function": "UnionFind.__init__"
+    },
+    {
+      "a_code": "self.n = n",
+      "a_line": 21,
+      "b_code": "self.rnk = [0]*(n+1)",
+      "b_line": 23,
+      "function": "UnionFind.__init__"
+    },
+    {
+      "a_code": "self.root = [-1]*(n+1)",
+      "a_line": 22,
+      "b_code": "self.rnk = [0]*(n+1)",
+      "b_line": 23,
+      "function": "UnionFind.__init__"
+    },
+    {
+      "a_code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+      "a_line": 29,
+      "b_code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+      "b_line": 32,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+      "a_line": 29,
+      "b_code": "return x",
+      "b_line": 33,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+      "a_line": 32,
+      "b_code": "return x",
+      "b_line": 33,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+      "a_line": 29,
+      "b_code": "self.root[x] = self.find_root(self.root[x])",
+      "b_line": 35,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+      "a_line": 32,
+      "b_code": "self.root[x] = self.find_root(self.root[x])",
+      "b_line": 35,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "''' \u30eb\u30fc\u30c8\u306e\u30ce\u30fc\u30c9\u3092\u898b\u3064\u3051\u308b '''",
+      "a_line": 29,
+      "b_code": "return self.root[x]",
+      "b_line": 36,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "if(self.root[x] < 0): return x else: self.root[x] = self.find_root(self.root[x]) return self.root[x]",
+      "a_line": 32,
+      "b_code": "return self.root[x]",
+      "b_line": 36,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "self.root[x] = self.find_root(self.root[x])",
+      "a_line": 35,
+      "b_code": "return self.root[x]",
+      "b_line": 36,
+      "function": "UnionFind.find_root"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "x = self.find_root(x)",
+      "b_line": 42,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "y = self.find_root(y)",
+      "b_line": 43,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "y = self.find_root(y)",
+      "b_line": 43,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 44,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 44,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 44,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "return",
+      "b_line": 45,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "return",
+      "b_line": 45,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "return",
+      "b_line": 45,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "return",
+      "b_line": 45,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 46,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 46,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 46,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 46,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "self.root[x] += self.root[y]",
+      "b_line": 47,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "self.root[x] += self.root[y]",
+      "b_line": 47,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "self.root[x] += self.root[y]",
+      "b_line": 47,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "self.root[x] += self.root[y]",
+      "b_line": 47,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 46,
+      "b_code": "self.root[x] += self.root[y]",
+      "b_line": 47,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "self.root[y] = x",
+      "b_line": 48,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "self.root[y] = x",
+      "b_line": 48,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "self.root[y] = x",
+      "b_line": 48,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "self.root[y] = x",
+      "b_line": 48,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 46,
+      "b_code": "self.root[y] = x",
+      "b_line": 48,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "self.root[x] += self.root[y]",
+      "a_line": 47,
+      "b_code": "self.root[y] = x",
+      "b_line": 48,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "self.root[y] += self.root[x]",
+      "b_line": 50,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "self.root[y] += self.root[x]",
+      "b_line": 50,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "self.root[y] += self.root[x]",
+      "b_line": 50,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "self.root[y] += self.root[x]",
+      "b_line": 50,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 46,
+      "b_code": "self.root[y] += self.root[x]",
+      "b_line": 50,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "self.root[x] = y",
+      "b_line": 51,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "self.root[x] = y",
+      "b_line": 51,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "self.root[x] = y",
+      "b_line": 51,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "self.root[x] = y",
+      "b_line": 51,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 46,
+      "b_code": "self.root[x] = y",
+      "b_line": 51,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "self.root[y] += self.root[x]",
+      "a_line": 50,
+      "b_code": "self.root[x] = y",
+      "b_line": 51,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 46,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "self.root[y] += self.root[x]",
+      "a_line": 50,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "self.root[x] = y",
+      "a_line": 51,
+      "b_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "b_line": 52,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u30ce\u30fc\u30c9\u540c\u58eb\u3092\u9023\u7d50\u3059\u308b '''",
+      "a_line": 39,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "x = self.find_root(x)",
+      "a_line": 42,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "y = self.find_root(y)",
+      "a_line": 43,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(x == y): return elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 44,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "elif(self.rnk[x] > self.rnk[y]): self.root[x] += self.root[y] self.root[y] = x else: self.root[y] += self.root[x] self.root[x] = y if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 46,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "self.root[y] += self.root[x]",
+      "a_line": 50,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "self.root[x] = y",
+      "a_line": 51,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "if(self.rnk[x] == self.rnk[y]): self.rnk[y] += 1",
+      "a_line": 52,
+      "b_code": "self.rnk[y] += 1",
+      "b_line": 53,
+      "function": "UnionFind.unite"
+    },
+    {
+      "a_code": "''' \u540c\u4e00\u306e\u30eb\u30fc\u30c4\u3092\u6301\u3064\u304b\u3069\u3046\u304b\u8abf\u67fb\u3059\u308b '''",
+      "a_line": 56,
+      "b_code": "return self.find_root(x) == self.find_root(y)",
+      "b_line": 59,
+      "function": "UnionFind.is_same_group"
+    }
+  ],
+  "unsupported": false,
+  "unsupported_categories": {
+    "function_reachability": [
+      "external attribute call skipped union.find_root at line 69",
+      "external attribute call skipped union.find_root at line 76",
+      "external attribute call skipped union.is_root at line 75",
+      "external attribute call skipped union.unite at line 66",
+      "external call skipped input at line 1",
+      "external call skipped input at line 2"
+    ]
+  },
+  "unsupported_reasons": [
+    "external attribute call skipped union.find_root at line 69",
+    "external attribute call skipped union.find_root at line 76",
+    "external attribute call skipped union.is_root at line 75",
+    "external attribute call skipped union.unite at line 66",
+    "external call skipped input at line 1",
+    "external call skipped input at line 2"
+  ],
+  "var_dependencies": [
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "int"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "__module__",
+        "line": 1,
+        "var": "S"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "int"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "int"
+      },
+      "from": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "edge = []",
+        "line": 3,
+        "var": "edge"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "int"
+      },
+      "from": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "cnt = [0] * (H*W)",
+        "line": 67,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "cnt = [0] * (H*W)",
+        "line": 67,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = [0] * (H*W)",
+        "line": 67,
+        "var": "int"
+      },
+      "from": {
+        "code": "cnt = [0] * (H*W)",
+        "line": 67,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "cnt = [0] * (H*W)",
+        "line": 67,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "i"
+      },
+      "from": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "int"
+      },
+      "from": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "from": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = union.find_root(i)",
+        "line": 69,
+        "var": "c"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt = [0] * (H*W)",
+        "line": 67,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "i"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "int"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "ans = 0",
+        "line": 73,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "i"
+      },
+      "from": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "int"
+      },
+      "from": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "from": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "i"
+      },
+      "from": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "int"
+      },
+      "from": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "from": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "H"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "H, W = map(int, input().split())",
+        "line": 1,
+        "var": "W"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "c = union.count(i)",
+        "line": 77,
+        "var": "c"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "cnt[c] += 1",
+        "line": 71,
+        "var": "cnt"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "i"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "int"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "r = union.find_root(i)",
+        "line": 76,
+        "var": "r"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "union = UnionFind(H*W)",
+        "line": 64,
+        "var": "union"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "S = [list(input()) for _ in range(H)]",
+        "line": 2,
+        "var": "S"
+      },
+      "from": {
+        "code": "ans += cnt[r] * (c-cnt[r])",
+        "line": 78,
+        "var": "ans"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 21,
+        "var": "self.n"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 20,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.n = n",
+        "line": 21,
+        "var": "self.n"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.root = [-1]*(n+1)",
+        "line": 22,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 20,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root = [-1]*(n+1)",
+        "line": 22,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 20,
+        "var": "n"
+      },
+      "from": {
+        "code": "self.rnk = [0]*(n+1)",
+        "line": 23,
+        "var": "self.rnk"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def __init__(self, n):",
+        "line": 20,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rnk = [0]*(n+1)",
+        "line": 23,
+        "var": "self.rnk"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def find_root(self, x):",
+        "line": 28,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root[x] = self.find_root(self.root[x])",
+        "line": 35,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.root[x] = self.find_root(self.root[x])",
+        "line": 35,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "self.root[x] = self.find_root(self.root[x])",
+        "line": 35,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def find_root(self, x):",
+        "line": 28,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.root[x] = self.find_root(self.root[x])",
+        "line": 35,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "x"
+      },
+      "from": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "y"
+      },
+      "from": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root[x] += self.root[y]",
+        "line": 47,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.root[x] += self.root[y]",
+        "line": 47,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "self.root[x] += self.root[y]",
+        "line": 47,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.root[x] += self.root[y]",
+        "line": 47,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.root[x] += self.root[y]",
+        "line": 47,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "self.root[x] += self.root[y]",
+        "line": 47,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root[y] = x",
+        "line": 48,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.root[y] = x",
+        "line": 48,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.root[y] = x",
+        "line": 48,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "self.root[y] = x",
+        "line": 48,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root[y] += self.root[x]",
+        "line": 50,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.root[y] = x",
+        "line": 48,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "self.root[y] += self.root[x]",
+        "line": 50,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.root[y] += self.root[x]",
+        "line": 50,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.root[y] += self.root[x]",
+        "line": 50,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "self.root[y] += self.root[x]",
+        "line": 50,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.root[x] = y",
+        "line": 51,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "x = self.find_root(x)",
+        "line": 42,
+        "var": "x"
+      },
+      "from": {
+        "code": "self.root[x] = y",
+        "line": 51,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.root[x] = y",
+        "line": 51,
+        "var": "self.root"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "self.root[x] = y",
+        "line": 51,
+        "var": "self.root"
+      },
+      "label": "negative"
+    },
+    {
+      "depends_on": {
+        "code": "def unite(self, x, y):",
+        "line": 38,
+        "var": "self"
+      },
+      "from": {
+        "code": "self.rnk[y] += 1",
+        "line": 53,
+        "var": "self.rnk"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.rnk[y] += 1",
+        "line": 53,
+        "var": "self.rnk"
+      },
+      "from": {
+        "code": "self.rnk[y] += 1",
+        "line": 53,
+        "var": "self.rnk"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "y = self.find_root(y)",
+        "line": 43,
+        "var": "y"
+      },
+      "from": {
+        "code": "self.rnk[y] += 1",
+        "line": 53,
+        "var": "self.rnk"
+      },
+      "label": "must"
+    },
+    {
+      "depends_on": {
+        "code": "self.root[x] = y",
+        "line": 51,
+        "var": "self.root"
+      },
+      "from": {
+        "code": "self.rnk[y] += 1",
+        "line": 53,
+        "var": "self.rnk"
+      },
+      "label": "negative"
+    }
+  ]
+}

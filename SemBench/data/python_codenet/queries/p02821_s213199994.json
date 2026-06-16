@@ -1,0 +1,36 @@
+{
+  "data_dependency": [
+    "Does variable a at line 18: <statement> a[i], a[j] = a[j], a[i] </statement> determine the value stored in variable b at line 25: <statement> b = 1 </statement>?",
+    "Does variable k at line 31: <statement> t = a[j + k + b] * w </statement> determine the value stored in variable t at line 31: <statement> t = a[j + k + b] * w </statement>?",
+    "Does the value of variable sign at line 22: <statement> sign = 1.0 </statement> depend on the value of variable a at line 18: <statement> a[i], a[j] = a[j], a[i] </statement>?",
+    "Does the value of variable fg at line 52: <statement> fg = [int(item.real + 0.5) for item in ifft(FG)] </statement> depend on the value of variable n at line 46: <statement> n = 2**((len(f) + len(g) - 1).bit_length()) </statement>?"
+  ],
+  "dead_code": [
+    "Can the statement fg = [int(item.real + 0.5) for item in ifft(FG)] be reached during execution?",
+    "Is the statement for i, item in enumerate(fg): use = min(cnt, item) total -= i * use cnt -= use if cnt == 0: break unreachable during execution?",
+    "Is it possible for the statement sign = 1.0 to execute?",
+    "Can the statement a[i] /= n be considered dead code because it is never executed?"
+  ],
+  "dominators": [
+    "Is it guaranteed that whenever line 66: <statement> for i, item in enumerate(fg): use = min(cnt, item) total -= i * use cnt -= use if cnt == 0: break </statement> is reached, the statement line 60: <statement> for item in a: freq[item] += 1 </statement> has already been reached?",
+    "Does the statement line 66: <statement> for i, item in enumerate(fg): use = min(cnt, item) total -= i * use cnt -= use if cnt == 0: break </statement> dominate line 57: <statement> a = [int(item) for item in input().split()] </statement>?",
+    "Is it guaranteed that whenever line 28: <statement> w = exp(sign * 2.0j * pi / (2.0 * b) * j) </statement> is reached, the statement line 31: <statement> t = a[j + k + b] * w </statement> has already been reached?",
+    "Is it guaranteed that whenever line 29: <statement> for k in range(0, n, b*2): s = a[j + k] t = a[j + k + b] * w a[j + k] = s + t a[j + k + b] = s - t </statement> is reached, the statement line 27: <statement> for j in range(b): w = exp(sign * 2.0j * pi / (2.0 * b) * j) for k in range(0, n, b*2): s = a[j + k] t = a[j + k + b] * w a[j + k] = s + t a[j + k + b] = s - t </statement> has already been reached?"
+  ],
+  "function_reachability": [
+    "Is there a call path from function fft to function ifft?",
+    "Can function convolve eventually call function ifft?",
+    "Can function ifft eventually call function fft?",
+    "Is there a call path from function fft to function convolve?"
+  ],
+  "liveness": [
+    "Does variable n remain in use at the end of function convolve?",
+    "Does variable a remain in use at the end of function ifft?",
+    "Does variable a remain in use at the end of function fft?",
+    "Does variable exp remain in use at the end of function __module__?"
+  ],
+  "loop_reachability": [
+    "Can the loop with condition for j in range(b) be skipped entirely?",
+    "Is the loop with condition for j in range(b) always executed?"
+  ]
+}
