@@ -12,12 +12,12 @@
     "Is the loop with condition 'b < 256' always executed?"
   ],
   "dominators": [
-    "Does the statement line 38:  <statement> printf(\"\\n\\t\\t\"); </statement> dominate line 35:  <statement> for (size_t s = 0; s < 4; ++s) { </statement>?",
-    "Does the statement line 13:  <statement> uint64_t r = s == 0 ? b : crc64_table[s - 1][b]; </statement> dominate line 14:  <statement> for (size_t i = 0; i < 8; ++i) { </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 's < 4' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'b < 256' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable r at line 13: <statement> \t\t\tuint64_t r = s == 0 ? b : crc64_table[s - 1][b]; </statement> determine the value stored in variable r at line 16: <statement> \t\t\t\t\tr = (r >> 1) ^ poly64; </statement>?",
-    "Does the value of variable r at line 18: <statement> \t\t\t\t\tr >>= 1; </statement> depend on the value of variable b at line 12: <statement> \t\tfor (size_t b = 0; b < 256; ++b) { </statement>?"
+    "Is variable 'crc64_table (line 6)' used after its definition?",
+    "Is variable 'poly64 (line 10)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'poly64' live at the end of function 'init_crc64_table'?"

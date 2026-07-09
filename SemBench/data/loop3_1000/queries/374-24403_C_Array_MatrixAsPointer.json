@@ -12,11 +12,12 @@
     "Is the loop with condition 'col < colunas' always executed?"
   ],
   "dominators": [
-    "Does the statement line 15:  <statement> for (int col = 0; col < COLUNA; col++) mtr[lin][col] = cont++; </statement> dominate line 13:  <statement> for (int lin = 0, cont = 0; lin < LINHA; lin++) { </statement>?",
-    "Is it guaranteed that whenever line 14:  <statement> mtr[lin] = malloc(COLUNA * sizeof(*mtr[lin])); </statement> is reached, the statement line 11:  <statement> int main () { </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'lin < linhas' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'col < colunas' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable mtr at line 12: <statement>     int **mtr = malloc(LINHA * sizeof(*mtr)); </statement> determine the value stored in variable cont at line 13: <statement>     for (int lin = 0, cont = 0; lin < LINHA; lin++) { </statement>?"
+    "Does the value assigned to 'mtr (line 5)' affect subsequent computations?",
+    "Does the value assigned to 'linhas (line 5)' affect subsequent computations?"
   ],
   "liveness": [
     "Is variable 'col (line 7)' live at the end of function 'matriz_ponteiro'?",

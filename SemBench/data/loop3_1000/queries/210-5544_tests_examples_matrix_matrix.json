@@ -12,12 +12,12 @@
     "Is the loop with condition 'j < size' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 7:  <statement> size = atoi(getenv(\"N\")); </statement> is reached, the statement line 9:  <statement> float *b = malloc(sizeof(float) * size * size); </statement> has already been reached?",
-    "Does the statement line 12:  <statement> for (i = 0; i < size; ++i) { </statement> dominate line 21:  <statement> for (j = 0; j < size; ++j) { </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i < size' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'j < size' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable b at line 9: <statement>   float *b = malloc(sizeof(float) * size * size); </statement> depend on the value of variable size at line 7: <statement>     size = atoi(getenv(\"N\")); </statement>?",
-    "Does the value of variable i at line 20: <statement>   for (i = 0; i < size; ++i) { </statement> depend on the value of variable b at line 9: <statement>   float *b = malloc(sizeof(float) * size * size); </statement>?"
+    "Does the value assigned to 'size (line 5)' affect subsequent computations?",
+    "Is variable 'size (line 7)' used after its definition?"
   ],
   "liveness": [
     "Does variable 'b' remain in use at the end of function 'main'?",

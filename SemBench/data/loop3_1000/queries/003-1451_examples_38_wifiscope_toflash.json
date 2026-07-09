@@ -10,12 +10,11 @@
     "Is the loop with condition 'j<33' always executed?"
   ],
   "dominators": [
-    "Does the statement line 38:  <statement> for (j=0;j<33;j++) </statement> dominate line 28:  <statement> flash_size = ftell(fflash); </statement>?",
-    "Is it guaranteed that whenever line 13:  <statement> printf(\"   Can't open '%s' for reading.\\n\", binfile); </statement> is reached, the statement line 10:  <statement> int flash_size=0; </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'j<33' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable tmp_data at line 31: <statement>     tmp_data=malloc((1+file_size)*sizeof(char)); </statement> determine the value stored in variable len_read at line 35: <statement>     int len_read=fread(tmp_data,sizeof(char),file_size,fbin); </statement>?",
-    "Does variable fbin at line 5: <statement>     FILE *fbin; </statement> determine the value stored in variable file_size at line 9: <statement>     int file_size=0; </statement>?"
+    "Does the value assigned to 'binfile (line 3)' affect subsequent computations?",
+    "Does the value assigned to 'flashfile (line 3)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'flash_data' remain in use at the end of function 'merge_flash'?",

@@ -12,12 +12,12 @@
     "Is the loop with condition 'i<NUM_THREADS' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 36:  <statement> for (i=0; i<NUM_THREADS; ++i) { </statement> is reached, the statement line 40:  <statement> sem_destroy(&mutex); </statement> has already been reached?",
-    "Does the statement line 29:  <statement> sem_unlink(\"mutex\"); </statement> dominate line 38:  <statement> assert(0 == rc); </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i<100000' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'i<NUM_THREADS' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable threads at line 25: <statement>    pthread_t threads[NUM_THREADS]; </statement> determine the value stored in variable rc at line 33: <statement>       rc = pthread_create(&threads[i], NULL, TaskCode, (void *) &thread_args[i]); </statement>?",
-    "Does variable i at line 16: <statement>    for (i=0;i<100000;i++) { </statement> determine the value stored in variable a at line 17: <statement>       a++; </statement>?"
+    "Is variable 'a (line 8)' used after its definition?",
+    "Does the value assigned to 'mutex (line 9)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'i (line 13)' remain in use at the end of function 'TaskCode'?",

@@ -12,12 +12,12 @@
     "Is the loop with condition 'tasks_ref < end' always executed?"
   ],
   "dominators": [
-    "Does the statement line 99:  <statement> time -= a->pj; </statement> dominate line 93:  <statement> time += a->pj; </statement>?",
-    "Is it guaranteed that whenever line 118:  <statement> unsigned int time, fitness_curr_it; </statement> is reached, the statement line 115:  <statement> tasks_best[i] = tasks_prev_it[i] = &tasks_initial[i]; </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'tasks < end' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'tasks_ref < end' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable fitness_prev_it at line 98: <statement>     fitness_prev_it -= tj * b->wj; </statement> depend on the value of variable b at line 91: <statement> static unsigned int compute_fitness(task* restrict a, task* restrict b, unsigned int fitness_prev_it, unsigned int time) { </statement>?",
-    "Does the value of variable fitness_curr_it at line 126: <statement>           fitness_curr_it = fitness_temp; </statement> depend on the value of variable tasks_best at line 109: <statement>   task *tasks_best[ARRAY_SIZE(tasks_initial)], *tasks_prev_it[ARRAY_SIZE(tasks_initial)]; </statement>?"
+    "Is variable 'tasks_initial (line 13)' used after its definition?",
+    "Does the value assigned to 'tabu (line 29)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'end (line 32)' remain in use at the end of function 'iter_printout'?",

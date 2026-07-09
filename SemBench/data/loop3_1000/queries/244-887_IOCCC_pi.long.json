@@ -8,10 +8,12 @@
     "Is the loop with condition 'd += f[b] * a, f[b] = d % --g, d /= g--, --b' always executed?"
   ],
   "dominators": [
-    "Does the statement line 8:  <statement> for(b = c; d += f[b] * a, f[b] = d % --g, d /= g--, --b; d *= b) { </statement> dominate line 3:  <statement> int main() { </statement>?",
-    "Is it guaranteed that whenever line 7:  <statement> for(; d = 0, g = c * 2; c -= 14, printf(\"%.4ld\", e + d / a), e = d % a) { </statement> is reached, the statement line 4:  <statement> for (; b - c;) { </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'd += f[b] * a, f[b] = d % --g, d /= g--, --b' without passing through its header block?"
   ],
-  "data_dependency": [],
+  "data_dependency": [
+    "Does the value assigned to 'a (line 2)' affect subsequent computations?",
+    "Is variable 'b (line 2)' used after its definition?"
+  ],
   "liveness": [],
   "dead_code": [
     "Is the statement 'long a = 10000, b, c = 2800, d, e, f[2801], g;' unreachable?",

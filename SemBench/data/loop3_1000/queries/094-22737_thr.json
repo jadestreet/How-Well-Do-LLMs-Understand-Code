@@ -12,11 +12,12 @@
     "Is the loop with condition 'lock(&TT.q' always executed?"
   ],
   "dominators": [
-    "Does the statement line 35:  <statement> while (lock(&TT.q), done = TT.done, unlock(&TT.q), !done || !once_more++) { </statement> dominate line 30:  <statement> char done, once_more = 0; </statement>?",
-    "Does the statement line 34:  <statement> pthread_create(&find$, 0, find, 0); </statement> dominate line 38:  <statement> printf(\"%s\", TT.lines->line), free(TT.lines->line); </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'line = 0, -1 != getline(&line, &len, p' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'lock(&TT.q' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable p at line 20: <statement>   FILE *p = popen(\"./find .\", \"r\"); </statement> depend on the value of variable len at line 17: <statement>   size_t len; </statement>?"
+    "Is variable 'line (line 8)' used after its definition?",
+    "Is variable 'TT (line 11)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'line' live at the end of function 'find'?",

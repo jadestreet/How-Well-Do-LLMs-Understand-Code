@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < n' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 7:  <statement> temp = v[j]; </statement> is reached, the statement line 9:  <statement> v[j+gap] = temp; </statement> has already been reached?",
-    "Is it guaranteed that whenever line 7:  <statement> temp = v[j]; </statement> is reached, the statement line 4:  <statement> for (gap = n/2; gap > 0; gap /= 2) { </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'gap > 0' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'i < n' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable i at line 5: <statement> \t\tfor (i = gap; i < n; i++) { </statement> determine the value stored in variable j at line 6: <statement> \t\t\tfor (j = i - gap; j >= 0 && v[j] > v[j+gap]; j -= gap) { </statement>?",
-    "Does the value of variable temp at line 3: <statement> \tint gap, i, j, temp; </statement> depend on the value of variable gap at line 3: <statement> \tint gap, i, j, temp; </statement>?"
+    "Is variable 'v (line 2)' used after its definition?",
+    "Is variable 'n (line 2)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'gap' live at the end of function 'shellsort'?",

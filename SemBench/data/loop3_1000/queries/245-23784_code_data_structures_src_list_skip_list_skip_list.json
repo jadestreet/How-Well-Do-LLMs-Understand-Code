@@ -12,12 +12,12 @@
     "Is the loop with condition 'i >= 1' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 92:  <statement> while (x->forward[i]->key < key) </statement> is reached, the statement line 99:  <statement> if (update[i]->forward[i] != x) </statement> has already been reached?",
-    "Does the statement line 59:  <statement> x->forward = (snode **) malloc(sizeof(snode*) * (level + 1)); </statement> dominate line 62:  <statement> update[i]->forward[i] = x; </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i <= SKIPLIST_MAX_LEVEL' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'i >= 1' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable x at line 131: <statement>         snode *x = skiplist_search(&list, keys[i]); </statement> depend on the value of variable keys at line 129: <statement>     int keys[] = { 3, 4, 7, 10, 111 }; </statement>?",
-    "Does the value of variable i at line 98: <statement>         for (i = 1; i <= list->level; i++) { </statement> depend on the value of variable update at line 89: <statement>     snode *update[SKIPLIST_MAX_LEVEL + 1]; </statement>?"
+    "Is variable 'key (line 6)' used after its definition?",
+    "Does the value assigned to 'value (line 7)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'i (line 16)' remain in use at the end of function 'skiplist_init'?",

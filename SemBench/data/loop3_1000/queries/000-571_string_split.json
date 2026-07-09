@@ -12,12 +12,12 @@
     "Is the loop with condition '*tmp' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 17:  <statement> char** split(char *str, char* delimitators) </statement> is reached, the statement line 19:  <statement> int count = 0; </statement> has already been reached?",
-    "Is it guaranteed that whenever line 10:  <statement> for(size_t index = 0; *(result + index); index++) </statement> is reached, the statement line 9:  <statement> result = split(str, \"()\\n\"); </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition '*(result + index)' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition '*tmp' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable str at line 17: <statement> char** split(char *str, char* delimitators) </statement> determine the value stored in variable count at line 34: <statement> \tcount += last_delimitator < (str + strlen(str) - 1); </statement>?",
-    "Does variable str at line 17: <statement> char** split(char *str, char* delimitators) </statement> determine the value stored in variable count at line 35: <statement> \tcount++; </statement>?"
+    "Does the value assigned to 'str (line 4)' affect subsequent computations?",
+    "Does the value assigned to 'delimitators (line 4)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'result' remain in use at the end of function 'main'?",

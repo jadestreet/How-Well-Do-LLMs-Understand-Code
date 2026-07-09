@@ -12,12 +12,12 @@
     "Is the loop with condition 'i<VECLEN*NUMTHREADS' always executed?"
   ],
   "dominators": [
-    "Does the statement line 34:  <statement> dotstr.b = (double*) malloc (NUMTHREADS*VECLEN*sizeof(double)); </statement> dominate line 32:  <statement> int status; </statement>?",
-    "Is it guaranteed that whenever line 42:  <statement> for(i=0;i<NUMTHREADS;i++) { </statement> is reached, the statement line 35:  <statement> for (i=0; i<VECLEN*NUMTHREADS; i++) { </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'i < end' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'i<VECLEN*NUMTHREADS' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable start at line 19: <statement> \tstart = offset * dotstr.veclen; </statement> determine the value stored in variable i at line 22: <statement> \tfor (i = start; i < end; i++) { </statement>?",
-    "Does the value of variable end at line 20: <statement> \tend = start + dotstr.veclen; </statement> depend on the value of variable mysum at line 17: <statement> \tdouble mysum; </statement>?"
+    "Is variable 'dotstr (line 12)' used after its definition?",
+    "Is variable 'callThd (line 13)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'end' live at the end of function 'dotprod'?",

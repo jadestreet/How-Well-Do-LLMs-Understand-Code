@@ -12,12 +12,12 @@
     "Is the loop with condition '} else {\n    printf(\"cannot determine bits of (short) type: it seems to be %d bits but %ld bytes\\n\", short_bits, SIZEOF_CHAR)' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 28:  <statement> pointer_bits = sprintf(hexpointer, SPRINTF_FORMAT, (long long unsigned int)(void*)NEG_ONE) * NIBBLE_BIT; </statement> is reached, the statement line 56:  <statement> printf(\"uses %dbit (%ld byte) for (long) types\\n\", long_bits, SIZEOF_LONG); </statement> has already been reached?",
-    "Does the statement line 32:  <statement> long_bits = sprintf(hexlong, SPRINTF_FORMAT, (long long unsigned int)(unsigned long)NEG_ONE) * NIBBLE_BIT; </statement> dominate line 60:  <statement> if (longlong_bits == SIZEOF_LONGLONG * BYTE_BIT) { </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition '} else {\n    printf(\"cannot determine bits of (char) type: it seems to be %d bits but %ld bytes\\n\", char_bits, SIZEOF_CHAR)' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition '} else {\n    printf(\"cannot determine bits of (short) type: it seems to be %d bits but %ld bytes\\n\", short_bits, SIZEOF_CHAR)' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable char_bits at line 29: <statement>   char_bits = sprintf(hexchar, SPRINTF_FORMAT, (long long unsigned int)(unsigned char)NEG_ONE) * NIBBLE_BIT; </statement> depend on the value of variable hexchar at line 21: <statement>       hexchar[SIZEOF_CHAR * 2 + 1], </statement>?",
-    "Does the value of variable longlong_bits at line 33: <statement>   longlong_bits = sprintf(hexlonglong, SPRINTF_FORMAT, (long long unsigned int)NEG_ONE) * NIBBLE_BIT; </statement> depend on the value of variable hexchar at line 21: <statement>       hexchar[SIZEOF_CHAR * 2 + 1], </statement>?"
+    "Does the value assigned to 'hexpointer (line 20)' affect subsequent computations?",
+    "Does the value assigned to 'hexchar (line 21)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'hexshort' remain in use at the end of function 'main'?",

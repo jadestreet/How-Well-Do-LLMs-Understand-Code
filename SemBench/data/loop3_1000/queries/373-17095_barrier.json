@@ -12,12 +12,12 @@
     "Is the loop with condition 'thread < thread_count' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 29:  <statement> long my_rank = (long) rank; </statement> is reached, the statement line 44:  <statement> pthread_mutex_unlock(&barrier_mutex); </statement> has already been reached?",
-    "Is it guaranteed that whenever line 26:  <statement> return 0; </statement> is reached, the statement line 18:  <statement> pthread_create(&thread_handles[thread], NULL, Thread_work, (void*) thread); </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'thread < thread_count' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'thread < thread_count' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable thread_count at line 13: <statement>   thread_count = strtol(argv[1], NULL, 10); </statement> determine the value stored in variable thread_handles at line 14: <statement>   thread_handles = malloc (thread_count*sizeof(pthread_t));  </statement>?",
-    "Does variable argv at line 10: <statement> int main(int argc, char* argv[]){ </statement> determine the value stored in variable thread_handles at line 14: <statement>   thread_handles = malloc (thread_count*sizeof(pthread_t));  </statement>?"
+    "Does the value assigned to 'thread_count (line 5)' affect subsequent computations?",
+    "Does the value assigned to 'barrier_thread_count (line 6)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'thread' remain in use at the end of function 'main'?",

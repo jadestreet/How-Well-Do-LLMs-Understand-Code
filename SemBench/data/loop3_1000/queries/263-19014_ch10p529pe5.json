@@ -12,11 +12,12 @@
     "Is the loop with condition 'j < COLS' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 8:  <statement> for (int i = 0; i < ROWS; ++i) </statement> is reached, the statement line 27:  <statement> fclose(wrkFile); </statement> has already been reached?",
-    "Does the statement line 23:  <statement> fprintf(wrkFile, \"%7.1f\", vals[i][j]); </statement> dominate line 25:  <statement> fprintf(wrkFile, \"\\n\"); </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i < ROWS' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'j < COLS' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable j at line 10: <statement> \t\tfor (int j = 0; j < COLS; ++j) </statement> determine the value stored in variable i at line 19: <statement> \tfor (int i = 0; i < ROWS; ++i) </statement>?"
+    "Is variable 'vals (line 6)' used after its definition?",
+    "Does the value assigned to 'i (line 8)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'i' remain in use at the end of function 'main'?",

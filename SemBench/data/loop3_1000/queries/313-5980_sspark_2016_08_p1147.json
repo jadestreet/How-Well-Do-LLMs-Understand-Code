@@ -10,11 +10,12 @@
     "Is the loop with condition 'x <= 5' always executed?"
   ],
   "dominators": [
-    "Does the statement line 4:  <statement> for(y = 1; y <= 5; y++) for(x = 1; x <= 5; x++) a[y][x] += a[y - 1][x - 1] + a[y - 1][x + 1]; </statement> dominate line 3:  <statement> int x, y, a[6][7] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1}; </statement>?",
-    "Is it guaranteed that whenever line 3:  <statement> int x, y, a[6][7] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1}; </statement> is reached, the statement line 2:  <statement> int main(){ </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'y <= 5' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'x <= 5' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable x at line 4: <statement>     for(y = 1; y <= 5; y++) for(x = 1; x <= 5; x++) a[y][x] += a[y - 1][x - 1] + a[y - 1][x + 1]; </statement> depend on the value of variable a at line 3: <statement>     int x, y, a[6][7] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1}; </statement>?"
+    "Is variable 'x (line 3)' used after its definition?",
+    "Does the value assigned to 'y (line 3)' affect subsequent computations?"
   ],
   "liveness": [
     "Is variable 'a' live at the end of function 'main'?",

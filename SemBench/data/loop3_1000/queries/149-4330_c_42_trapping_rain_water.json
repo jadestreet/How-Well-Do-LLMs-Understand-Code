@@ -12,12 +12,12 @@
     "Is the loop with condition 'left < right && height[left] < currentHeight' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 8:  <statement> int left = 0; </statement> is reached, the statement line 17:  <statement> areaBar += height[left++]; </statement> has already been reached?",
-    "Is it guaranteed that whenever line 32:  <statement> if (height[left] >= currentHeight) </statement> is reached, the statement line 6:  <statement> return 0; </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'left < right' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'left < right && height[left] < currentHeight' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable height at line 2: <statement> int trap(int* height, int heightSize) </statement> determine the value stored in variable areaAll at line 34: <statement>             areaAll += height[left] + 1 - currentHeight; </statement>?",
-    "Does the value of variable areaBar at line 21: <statement>             areaBar += height[right--]; </statement> depend on the value of variable areaAll at line 11: <statement>     int areaAll = 0; </statement>?"
+    "Does the value assigned to 'height (line 2)' affect subsequent computations?",
+    "Does the value assigned to 'heightSize (line 2)' affect subsequent computations?"
   ],
   "liveness": [
     "Is variable 'right' live at the end of function 'trap'?",

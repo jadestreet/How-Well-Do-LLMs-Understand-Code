@@ -10,12 +10,11 @@
     "Is the loop with condition 'low < high' always executed?"
   ],
   "dominators": [
-    "Does the statement line 8:  <statement> for (; low < high && pivot >= array[low]; ++low) {} </statement> dominate line 6:  <statement> for (; low < high && pivot <= array[high]; --high) {} </statement>?",
-    "Is it guaranteed that whenever line 9:  <statement> array[high] = array[low]; </statement> is reached, the statement line 5:  <statement> while (low < high) { </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'low < high' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable low at line 8: <statement>         for (; low < high && pivot >= array[low]; ++low) {} </statement> depend on the value of variable low at line 3: <statement> int partition(int* array, int low, int high) { </statement>?",
-    "Does variable pivot at line 4: <statement>     int pivot = array[low]; </statement> determine the value stored in variable high at line 6: <statement>         for (; low < high && pivot <= array[high]; --high) {} </statement>?"
+    "Does the value assigned to 'array (line 3)' affect subsequent computations?",
+    "Is variable 'low (line 3)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'low (line 3)' live at the end of function 'partition'?",

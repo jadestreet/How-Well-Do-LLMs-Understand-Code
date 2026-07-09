@@ -12,12 +12,12 @@
     "Is the loop with condition 'A0<(1<<10)' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 21:  <statement> int M = (1<<23) + (u.i & ((1<<23)-1)); </statement> is reached, the statement line 32:  <statement> fprintf(stderr, \"diffMax = %d\\n\", diffMax); </statement> has already been reached?",
-    "Does the statement line 6:  <statement> for (i=0; i<1024; i++) { </statement> dominate line 36:  <statement> b = grad[i] & ((1<<4)-1); </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i<1024' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'A0<(1<<10)' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable diffMax at line 29: <statement>       if (diffMax < diff) diffMax = diff; </statement> depend on the value of variable diff at line 28: <statement>       int diff = M - finvman; </statement>?",
-    "Does the value of variable a at line 35: <statement>     a = (cons[i] << 9) | (grad[i] >> 4); </statement> depend on the value of variable diff at line 28: <statement>       int diff = M - finvman; </statement>?"
+    "Does the value assigned to 'i (line 5)' affect subsequent computations?",
+    "Is variable 'cons (line 5)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'A0' live at the end of function 'main'?",

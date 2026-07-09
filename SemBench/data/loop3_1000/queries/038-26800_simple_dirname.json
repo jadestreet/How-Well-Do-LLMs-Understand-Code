@@ -12,12 +12,12 @@
     "Is the loop with condition 'p > path && p[-1] != '/'' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 9:  <statement> return(1); </statement> is reached, the statement line 19:  <statement> printf(\"%.*s\\n\", (int) (p - path), path); </statement> has already been reached?",
-    "Is it guaranteed that whenever line 21:  <statement> return(0); </statement> is reached, the statement line 16:  <statement> if (p == path) { </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'p > path && p[-1] == '/'' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'p > path && p[-1] != '/'' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable p at line 14: <statement>   while (p > path && p[-1] != '/') p--;\t </statement> depend on the value of variable p at line 13: <statement>   while (p > path && p[-1] == '/') p--;\t </statement>?",
-    "Does variable argv at line 3: <statement> int main(int argc, char **argv) </statement> determine the value stored in variable path at line 6: <statement>   char *path; </statement>?"
+    "Is variable 'argc (line 3)' used after its definition?",
+    "Does the value assigned to 'argv (line 3)' affect subsequent computations?"
   ],
   "liveness": [
     "Is variable 'path' live at the end of function 'main'?",

@@ -12,12 +12,12 @@
     "Is the loop with condition 'leftPostion < leftLen' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 44:  <statement> data[k++] = left[leftPostion++]; </statement> is reached, the statement line 46:  <statement> while (rightPostion < rightLen) { </statement> has already been reached?",
-    "Does the statement line 47:  <statement> data[k++] = right[rightPostion++]; </statement> dominate line 50:  <statement> free(right); </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'leftPostion < leftLen && rightPostion < rightLen' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'leftPostion < leftLen' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable left at line 26: <statement>     int *left = (int *)malloc(leftLen * sizeof(int)); </statement> depend on the value of variable leftLen at line 24: <statement>     int leftLen = middle - start + 1; </statement>?",
-    "Does variable right at line 27: <statement>     int *right = (int *)malloc(rightLen * sizeof(int)); </statement> determine the value stored in variable i at line 29: <statement>     for (; i <= middle; i++) { </statement>?"
+    "Does the value assigned to 'data (line 3)' affect subsequent computations?",
+    "Does the value assigned to 'start (line 3)' affect subsequent computations?"
   ],
   "liveness": [
     "Is variable 'i (line 9)' live at the end of function 'main'?",

@@ -12,12 +12,12 @@
     "Is the loop with condition 'r < end' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 10:  <statement> for ( int *l = mid, sum = 0; l > begin - 1; --l ) { </statement> is reached, the statement line 13:  <statement> l_max_sum = sum; </statement> has already been reached?",
-    "Does the statement line 10:  <statement> for ( int *l = mid, sum = 0; l > begin - 1; --l ) { </statement> dominate line 19:  <statement> sum += *r; </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'l > begin - 1' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'r < end' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable l_max_sum at line 35: <statement>         int l_max_sum = find_max_sub ( base, size >> 1, tuple_set + 1 ); </statement> depend on the value of variable base at line 27: <statement> int find_max_sub ( int *base, size_t size, IndexTuple *ret ) { </statement>?",
-    "Does variable end at line 8: <statement> static int find_cross_max_sub ( int *begin, int *mid, int *end, IndexTuple *ret ) { </statement> determine the value stored in variable l_max_sum at line 9: <statement>         int l_max_sum = 0; </statement>?"
+    "Is variable 'a (line 2)' used after its definition?",
+    "Does the value assigned to 'a (line 3)' affect subsequent computations?"
   ],
   "liveness": [
     "Does variable 'end (line 8)' remain in use at the end of function 'find_cross_max_sub'?",

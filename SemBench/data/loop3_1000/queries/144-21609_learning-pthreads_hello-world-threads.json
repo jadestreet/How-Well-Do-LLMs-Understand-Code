@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < NUM_THREADS' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 18:  <statement> pthread_create(&thread_list[i], NULL , hello_world, (void *)i); </statement> is reached, the statement line 20:  <statement> for( int i = 0; i < 5; ++i ) { </statement> has already been reached?",
-    "Does the statement line 4:  <statement> void * hello_world( void * arg ) </statement> dominate line 6:  <statement> long thread_id = (long)arg; </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i < 2' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'i < NUM_THREADS' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does the value of variable thread_id at line 6: <statement>   long thread_id = (long)arg; </statement> depend on the value of variable arg at line 4: <statement> void * hello_world( void * arg ) </statement>?",
-    "Does the value of variable i at line 17: <statement>   for( long i = 0; i < NUM_THREADS; ++i ) { </statement> depend on the value of variable thread_list at line 15: <statement>   pthread_t thread_list[NUM_THREADS]; </statement>?"
+    "Is variable 'arg (line 4)' used after its definition?",
+    "Is variable 'thread_id (line 6)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'i (line 7)' live at the end of function 'hello_world'?",

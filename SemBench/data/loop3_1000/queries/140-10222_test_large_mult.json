@@ -12,12 +12,12 @@
     "Is the loop with condition 'i < n2->len' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 35:  <statement> bignum_t *res = bignum_alloc(n1->len + n2->len + 1); </statement> is reached, the statement line 37:  <statement> int carry = 0; </statement> has already been reached?",
-    "Does the statement line 76:  <statement> num3 = bignum_mult(num1, num2); </statement> dominate line 87:  <statement> int sum_digits = 0; </statement>?"
+    "Is there at least one path that reaches the body of the loop with condition 'i>=0' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'i < n2->len' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable num2 at line 84: <statement>         num2 = num3; </statement> determine the value stored in variable sum_digits at line 89: <statement>         sum_digits += num2->num[i]; </statement>?",
-    "Does variable num1 at line 70: <statement>     num1 = bignum_alloc(4); </statement> determine the value stored in variable num2 at line 71: <statement>     num2 = bignum_alloc(4); </statement>?"
+    "Is variable 'bignum (line 4)' used after its definition?",
+    "Is variable 'len (line 5)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'len' live at the end of function 'bignum_alloc'?",

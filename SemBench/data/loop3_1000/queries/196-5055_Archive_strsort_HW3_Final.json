@@ -12,12 +12,12 @@
     "Is the loop with condition 'j<n' always executed?"
   ],
   "dominators": [
-    "Is it guaranteed that whenever line 9:  <statement> for(i=0;i<n-1;i++) </statement> is reached, the statement line 16:  <statement> *(strarray+i) = *(strarray+j); </statement> has already been reached?",
-    "Is it guaranteed that whenever line 13:  <statement> if(strcmp(*(strarray+i),*(strarray+j))>0) </statement> is reached, the statement line 9:  <statement> for(i=0;i<n-1;i++) </statement> has already been reached?"
+    "Is there at least one path that reaches the body of the loop with condition 'i<n-1' without passing through its header block?",
+    "Is there at least one path that reaches the body of the loop with condition 'j<n' without passing through its header block?"
   ],
   "data_dependency": [
-    "Does variable i at line 9: <statement>     for(i=0;i<n-1;i++) </statement> determine the value stored in variable temp at line 15: <statement>                 temp = *(strarray+i); </statement>?",
-    "Does the value of variable j at line 11: <statement>         for(j=i+1;j<n;j++) </statement> depend on the value of variable temp at line 8: <statement>     const char * temp; </statement>?"
+    "Does the value assigned to 'strarray (line 4)' affect subsequent computations?",
+    "Is variable 'n (line 4)' used after its definition?"
   ],
   "liveness": [
     "Is variable 'i (line 6)' live at the end of function 'strsort'?",
