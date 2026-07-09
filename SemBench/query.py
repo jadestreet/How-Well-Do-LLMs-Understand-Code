@@ -249,7 +249,7 @@ def generate_statement_dominator_queries(parsed_code):
         # positive
         used_pos.add(key)
         queries.append(
-            rng.choice(TEMPLATES["dominators_new"])(
+            rng.choice(TEMPLATES["dominators"])(
                 fmt_stmt(rec["a_line"], rec["a_code"]),
                 fmt_stmt(rec["b_line"], rec["b_code"])
             )
@@ -260,7 +260,7 @@ def generate_statement_dominator_queries(parsed_code):
         # negative (cross-function, guaranteed False)
         a_l, a_c, b_l, b_c = cross_function_negative(fn_p, fn_n)
         queries.append(
-            rng.choice(TEMPLATES["dominators_new"])(
+            rng.choice(TEMPLATES["dominators"])(
                 fmt_stmt(a_l, a_c),
                 fmt_stmt(b_l, b_c)
             )
@@ -292,7 +292,7 @@ def generate_statement_dominator_queries(parsed_code):
         if neg_rec is not None:
             # negative only (reversed)
             queries.append(
-                rng.choice(TEMPLATES["dominators_new"])(
+                rng.choice(TEMPLATES["dominators"])(
                     fmt_stmt(neg_rec["b_line"], neg_rec["b_code"]),
                     fmt_stmt(neg_rec["a_line"], neg_rec["a_code"])
                 )
@@ -306,7 +306,7 @@ def generate_statement_dominator_queries(parsed_code):
                     continue
                 used_pos.add(key)
                 queries.append(
-                    rng.choice(TEMPLATES["dominators_new"])(
+                    rng.choice(TEMPLATES["dominators"])(
                         fmt_stmt(rec["a_line"], rec["a_code"]),
                         fmt_stmt(rec["b_line"], rec["b_code"])
                     )
@@ -328,7 +328,7 @@ def generate_statement_dominator_queries(parsed_code):
                 continue
             used_pos.add(key)
             queries.append(
-                rng.choice(TEMPLATES["dominators_new"])(
+                rng.choice(TEMPLATES["dominators"])(
                     fmt_stmt(rec["a_line"], rec["a_code"]),
                     fmt_stmt(rec["b_line"], rec["b_code"])
                 )
@@ -349,7 +349,7 @@ def generate_statement_dominator_queries(parsed_code):
                 continue
             used_pos.add(key)
             queries.append(
-                rng.choice(TEMPLATES["dominators_new"])(
+                rng.choice(TEMPLATES["dominators"])(
                     fmt_stmt(rec["a_line"], rec["a_code"]),
                     fmt_stmt(rec["b_line"], rec["b_code"])
                 )
@@ -364,7 +364,7 @@ def generate_statement_dominator_queries(parsed_code):
 
 def generate_variable_dependency_pair_queries(parsed_code, file_name):
     """
-    Generate queries for TEMPLATES["data_dependency_new"] from var_dependencies.
+    Generate queries for TEMPLATES["data_dependency"] from var_dependencies.
 
     - must     -> ground_truth True
     - negative -> ground_truth False
@@ -420,7 +420,7 @@ def generate_variable_dependency_pair_queries(parsed_code, file_name):
         a_id = make_id(a)
         b_id = make_id(b)
 
-        tmpl = random.choice(TEMPLATES["data_dependency_new"])
+        tmpl = random.choice(TEMPLATES["data_dependency"])
         q = tmpl(a_id, b_id)
 
         queries.append(q)
@@ -438,7 +438,7 @@ def generate_variable_dependency_pair_queries(parsed_code, file_name):
         a_id = make_id(a)
         b_id = make_id(b)
 
-        tmpl = random.choice(TEMPLATES["data_dependency_new"])
+        tmpl = random.choice(TEMPLATES["data_dependency"])
         q = tmpl(a_id, b_id)
 
         queries.append(q)
@@ -446,7 +446,7 @@ def generate_variable_dependency_pair_queries(parsed_code, file_name):
         neg_used += 1
 
     if queries and len(set(ground_truth)) < 2:
-        print("[warn] only one type of answer generated for data_dependency_new")
+        print("[warn] only one type of answer generated for data_dependency")
 
     return queries, ground_truth
 
