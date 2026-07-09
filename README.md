@@ -218,7 +218,15 @@ python collect.py \
 - librdtsc.so: the file uses the shared library librdtsc.so to access the CPU’s time-stamp counter (TSC) directly via the rdtsc instruction.
 - col.sh: the sbatch script you may use to run the collect.py script if you are working on a SLURM system.
 
+## Data sources
 
+The C programs used to construct the main SemBench benchmark are sampled from the Hugging Face `codeparrot/github-code` dataset:
+https://huggingface.co/datasets/codeparrot/github-code
+
+The Python programs used in the supplementary cross-language analysis are sampled from IBM Project CodeNet:
+https://github.com/IBM/Project_CodeNet
+
+We use these datasets as raw source-code pools and apply the filtering, parsing, and semantic-question generation pipeline described in the paper.
 
 
 
