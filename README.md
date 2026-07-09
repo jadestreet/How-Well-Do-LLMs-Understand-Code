@@ -1,5 +1,5 @@
 # SemBench: How Well Do LLMs Understand Code
-This repository includes the data and script of this project. After downloading the repository and setting up the environment, enter this directory by ```cd How_Well_Do_LLMs_Understand_Code```.
+This repository includes the data and script of this project. After downloading the repository and setting up the environment, enter this directory by ``` cd How_Well_Do_LLMs_Understand_Code```.
 ## SemBench
 This folder contains files for question generation, the evaluation stage, and figure plotting scripts.
 To view and execute the script, enter this directory by ```cd SemBench```.
