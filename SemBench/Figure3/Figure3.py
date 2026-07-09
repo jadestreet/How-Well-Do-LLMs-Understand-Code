@@ -1,3 +1,4 @@
+#figure 3
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
@@ -110,7 +111,7 @@ x_bar = np.arange(len(models_sorted))
 bar_colors = [line_colors[rank] for rank, _ in enumerate(sort_idx)]
 ax1.bar(x_bar, overall_acc_sorted, color=bar_colors, edgecolor="none")
 ax1.set_ylabel("Accuracy (%)")
-ax1.set_title("Accuracy of each model on SemBench")
+#ax1.set_title("Accuracy of each model on SemBench")
 ax1.set_ylim(0, 105)
 ax1.set_yticks(np.arange(0, 101, 20))
 ax1.grid(axis="y", alpha=0.25, linewidth=0.7)
@@ -143,7 +144,7 @@ ax2.bar(
     alpha=0.9
 )
 ax2.set_ylabel("Accuracy (%)")
-ax2.set_title("Average accuracy by category")
+#ax2.set_title("Average accuracy by category")
 ax2.set_ylim(0, 105)
 ax2.set_yticks(np.arange(0, 101, 20))
 ax2.set_xticks(x_cat)
@@ -191,7 +192,7 @@ ax3.set_xlim(x_cat[0] - 0.1, x_cat[-1] + 0.1)
 ax3.set_xticks(x_cat)
 ax3.set_xticklabels(categories_sorted, rotation=45, ha="right")
 ax3.set_ylabel("Accuracy (%)")
-ax3.set_title("Accuracy of the best model in each \n family across semantic categories")
+#ax3.set_title("Accuracy of the best model in each \n family across semantic categories")
 ax3.set_ylim(0, 105)
 ax3.set_yticks(np.arange(0, 101, 20))
 ax3.grid(alpha=0.25, linewidth=0.7)

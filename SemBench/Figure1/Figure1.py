@@ -147,7 +147,7 @@ def main():
     norm_y = mcolors.Normalize(0, 100)     
 
 
-    markers = ["o", "s", "^", "D", "P", "X", "*", "v", ">", "<"]
+    markers = ["o", "s", "^", "D", "P", "X", "*", "v", ">", "<", "H"]
     model_list = dfp["Model"].tolist()
     model_to_marker = {m: markers[i % len(markers)] for i, m in enumerate(model_list)}
 
